@@ -5,6 +5,7 @@ from dataclasses import asdict, dataclass, field, replace
 from decimal import Decimal
 from typing import Any
 
+from .alerts import AlertManager, AlertSeverity, WatchdogAction
 from .audit import AuditLog
 from .config import BotSettings
 from .data import DataStore
@@ -24,7 +25,9 @@ from .monitoring import RuntimeMetrics
 from .orderbook import TopOfBook
 from .order_lifecycle import OrderLifecycleStore
 from .paper import PaperTrader
+from .paper_accounting import PaperAccount
 from .risk import RiskEngine, RiskLimits
+from .session_report import export_session_report
 from .session_store import SessionStore, SessionSummary
 from .signal_model import RuleBasedSignalModel, TinyNeuralSignalModel
 from .types import (
@@ -98,6 +101,10 @@ class RuntimeSnapshot:
     credential_status: dict[str, Any] = field(default_factory=dict)
     user_data_stream: dict[str, Any] = field(default_factory=dict)
     order_lifecycle: list[dict[str, Any]] = field(default_factory=list)
+    alerts: list[dict[str, Any]] = field(default_factory=list)
+    paper_account: dict[str, Any] = field(default_factory=dict)
+    report_paths: dict[str, str] = field(default_factory=dict)
+    readiness: dict[str, Any] = field(default_factory=dict)
 
 
 class BotRuntime:
@@ -120,8 +127,11 @@ class BotRuntime:
         self.model_registry = ModelRegistry(self.datastore.models_dir)
         self.status = "created"
         self.message = "ready"
-        self.quote = options.starting_quote
-        self.base = Decimal("0")
+        self.paper_account = PaperAccount(
+            options.starting_quote,
+            fee_bps=Decimal("10"),
+            slippage_bps=self._limits().max_slippage_bps,
+        )
         self.latest_signal: Signal | None = None
         self.latest_risk_decision: RiskDecision | None = None
         self.latest_execution_result: ExecutionResult | None = None
@@ -136,6 +146,8 @@ class BotRuntime:
         self.data_source = self._create_data_source(candles)
         self.user_data_stream = UserDataStreamAdapter(settings.exchange_profile)
         self.order_lifecycle = OrderLifecycleStore()
+        self.alerts = AlertManager()
+        self.report_paths: dict[str, str] = {}
         self.paper_settings = replace(
             settings,
             trading_mode=TradingMode.PAPER,
@@ -153,6 +165,7 @@ class BotRuntime:
             metadata={"source": self._resolved_source(), "model_alias": options.model_alias},
         )
         self.session_finished = False
+        self._emit_alert("runtime_created", AlertSeverity.INFO, "runtime created", WatchdogAction.OBSERVE)
 
     def start(self) -> None:
         self.status = "running"
@@ -162,6 +175,7 @@ class BotRuntime:
             "started",
             {"mode": self.options.mode, "symbol": self.options.symbol, "source": self._resolved_source()},
         )
+        self._emit_alert("runtime_started", AlertSeverity.INFO, "runtime started", WatchdogAction.OBSERVE)
 
     def stop(self) -> None:
         self.status = "stopped"
@@ -184,6 +198,8 @@ class BotRuntime:
         if candle is None:
             self.status = "completed"
             self.message = "replay completed" if data_snapshot.status != "degraded" else data_snapshot.message
+            if data_snapshot.status == "degraded":
+                self._emit_alert("connectivity_fallback", AlertSeverity.WARNING, data_snapshot.message or "market data degraded")
             self._finish_session("completed")
             return self.snapshot()
         self.candles = data_snapshot.candles or [*self.candles, candle]
@@ -195,7 +211,12 @@ class BotRuntime:
             return self.snapshot()
         feature = build_feature_rows(self.options.symbol, self.candles, self.options.window)[-1]
         market = self._market_from_feature(feature, candle, self.top_of_book)
-        account = AccountState(quote_balance=self.quote, base_balance=self.base, equity_quote=self._equity(candle))
+        account = AccountState(
+            quote_balance=self.paper_account.quote_balance,
+            base_balance=self.paper_account.base_balance,
+            equity_quote=self._equity(candle),
+            daily_realized_pnl=self.paper_account.realized_pnl,
+        )
         result = self.paper.step(feature, account, market, self.filters)
         self.latest_signal = self.paper.last_signal
         self.latest_risk_decision = self.paper.last_decision
@@ -204,7 +225,9 @@ class BotRuntime:
             self.metrics.record_signal(self.latest_signal.signal.value)
         if self.latest_risk_decision is not None and self.latest_risk_decision.decision.value == "BLOCK":
             self.metrics.record_block(self.latest_risk_decision.reason)
+            self._emit_alert("risk_block", AlertSeverity.WARNING, self.latest_risk_decision.reason, WatchdogAction.OBSERVE)
         self._apply_paper_fill(result, candle)
+        self._record_order_event(result, candle)
         self.signal_points.append(
             {
                 "timestamp_ms": candle.close_time_ms,
@@ -217,6 +240,10 @@ class BotRuntime:
         self._record_equity(candle)
         self._record_session_snapshot(candle)
         self.message = "tick processed"
+        if self.alerts.should_stop_runtime():
+            self.status = "stopped"
+            self.message = "runtime stopped by critical alert"
+            self._finish_session("stopped")
         return self.snapshot()
 
     def run_steps(self, count: int) -> RuntimeSnapshot:
@@ -240,9 +267,9 @@ class BotRuntime:
             latest_signal=self.latest_signal,
             latest_risk_decision=self.latest_risk_decision,
             latest_execution_result=self.latest_execution_result,
-            equity=self._equity(current) if current else self.quote,
-            paper_quote=self.quote,
-            paper_position=self.base,
+            equity=self._equity(current) if current else self.paper_account.quote_balance,
+            paper_quote=self.paper_account.quote_balance,
+            paper_position=self.paper_account.base_balance,
             metrics=self.metrics,
             audit_tail=self.audit_tail(),
             candles=list(self.candles),
@@ -277,6 +304,10 @@ class BotRuntime:
             },
             user_data_stream=self.user_data_stream.status(),
             order_lifecycle=self.order_lifecycle.list_recent(),
+            alerts=[alert.to_dict() for alert in self.alerts.alerts()],
+            paper_account=self.paper_account.to_dict(current.close if current else None),
+            report_paths=dict(self.report_paths),
+            readiness=self._readiness_payload(),
         )
 
     def audit_tail(self, limit: int = 20) -> list[dict[str, Any]]:
@@ -381,20 +412,22 @@ class BotRuntime:
             return
         qty = result.order_request.quantity or Decimal("0")
         price = Decimal(str(result.response.get("price", candle.close)))
-        if result.order_request.side.value == "BUY":
-            cost = qty * price
-            if self.quote >= cost:
-                self.quote -= cost
-                self.base += qty
-        else:
-            qty = min(qty, self.base)
-            self.base -= qty
-            self.quote += qty * price
+        try:
+            if result.order_request.side.value == "BUY":
+                account_fill = self.paper_account.buy(result.order_request.symbol, qty, price)
+            else:
+                account_fill = self.paper_account.sell(result.order_request.symbol, qty, price)
+        except ValueError as exc:
+            self._emit_alert("paper_accounting_block", AlertSeverity.ERROR, str(exc), WatchdogAction.BLOCK_TRADING)
+            return
         fill = {
             "timestamp_ms": candle.close_time_ms,
-            "price": str(price),
+            "price": str(account_fill.price),
             "side": result.order_request.side.value,
-            "quantity": str(qty),
+            "quantity": str(account_fill.quantity),
+            "notional": str(account_fill.notional),
+            "fee": str(account_fill.fee),
+            "realized_pnl": str(account_fill.realized_pnl),
             "model_version": self._model_version(),
         }
         self.fill_points.append(fill)
@@ -403,7 +436,7 @@ class BotRuntime:
     def _record_equity(self, candle: Candle) -> None:
         equity = self._equity(candle)
         self.metrics.paper_pnl = equity - self.options.starting_quote
-        self.metrics.exposure_quote = self.base * candle.close
+        self.metrics.exposure_quote = self.paper_account.base_balance * candle.close
         self.equity_points.append({"timestamp_ms": candle.close_time_ms, "equity": str(equity)})
 
     def _record_session_snapshot(self, candle: Candle) -> None:
@@ -414,9 +447,13 @@ class BotRuntime:
                 "status": self.status,
                 "message": self.message,
                 "equity": str(self._equity(candle)),
-                "quote": str(self.quote),
-                "position": str(self.base),
+                "quote": str(self.paper_account.quote_balance),
+                "position": str(self.paper_account.base_balance),
                 "blocks": dict(self.metrics.block_reasons),
+                "alerts": len(self.alerts.alerts()),
+                "critical_alerts": len([alert for alert in self.alerts.alerts() if alert.severity == AlertSeverity.CRITICAL]),
+                "fees_paid": str(sum((fill.fee for fill in self.paper_account.fills), Decimal("0"))),
+                "realized_pnl": str(self.paper_account.realized_pnl),
                 "source": self._resolved_source(),
                 "model_version": self._model_version(),
             },
@@ -439,6 +476,13 @@ class BotRuntime:
                 "warning",
                 {"status": report.status, "issues": [issue.code for issue in report.issues]},
             )
+            for issue in report.issues:
+                severity = AlertSeverity.ERROR if issue.severity == "error" else AlertSeverity.WARNING
+                action = WatchdogAction.STOP_RUNTIME if issue.severity == "error" else WatchdogAction.OBSERVE
+                name = "stale_data" if issue.code == "stale_data" else "spread_above_limit" if issue.code == "extreme_spread" else issue.code
+                self._emit_alert(name, severity, issue.message, action, issue.details)
+        if self.paper_account.realized_pnl <= -self.options.max_daily_loss_quote:
+            self._emit_alert("max_loss_reached", AlertSeverity.CRITICAL, "paper account reached max loss", WatchdogAction.STOP_RUNTIME)
 
     def _finish_session(self, status: str) -> None:
         if self.session_finished:
@@ -451,8 +495,20 @@ class BotRuntime:
             blocks=sum(self.metrics.block_reasons.values()),
             status=status,
         )
+        summary.metadata.update(
+            {
+                "alerts_count": len(self.alerts.alerts()),
+                "critical_alerts_count": len([alert for alert in self.alerts.alerts() if alert.severity == AlertSeverity.CRITICAL]),
+                "realized_pnl": str(self.paper_account.realized_pnl),
+                "fees_paid": str(sum((fill.fee for fill in self.paper_account.fills), Decimal("0"))),
+                "slippage_bps": str(self.paper_account.slippage_bps),
+                "readiness_blockers": self._readiness_payload()["blockers"],
+            }
+        )
+        self.session_store._write_summary(summary)
         self.session = summary
         self.session_finished = True
+        self.report_paths = export_session_report(self.session_store, self.session.session_id)
 
     def _max_drawdown(self) -> Decimal:
         peak = Decimal("0")
@@ -465,8 +521,55 @@ class BotRuntime:
 
     def _equity(self, candle: Candle | None) -> Decimal:
         if candle is None:
-            return self.quote
-        return self.quote + self.base * candle.close
+            return self.paper_account.quote_balance
+        return self.paper_account.equity(candle.close)
+
+    def _emit_alert(
+        self,
+        name: str,
+        severity: AlertSeverity,
+        message: str,
+        action: WatchdogAction | None = None,
+        metadata: dict[str, Any] | None = None,
+    ) -> None:
+        alert = self.alerts.emit(name, severity, message, action, metadata)
+        self.audit.emit("alert", name, alert.to_dict())
+        if hasattr(self, "session"):
+            self.session_store.record_alert(self.session.session_id, alert.to_dict())
+
+    def _record_order_event(self, result: ExecutionResult, candle: Candle) -> None:
+        payload = {
+            "timestamp_ms": candle.close_time_ms,
+            "status": result.status,
+            "mode": result.mode.value,
+            "order_request": asdict(result.order_request) if result.order_request else None,
+            "response": result.response,
+        }
+        self.session_store.record_order(self.session.session_id, payload)
+        if result.status in {"BLOCKED", "DISABLED"}:
+            return
+        if result.order_request and result.order_request.client_order_id:
+            lifecycle = self.order_lifecycle.record_intent(
+                result.order_request.client_order_id,
+                result.order_request.symbol,
+                result.order_request.side.value,
+            )
+            lifecycle.status = result.status
+            lifecycle.events.append({"type": "PAPER", "status": result.status, "response": result.response})
+
+    def _readiness_payload(self) -> dict[str, Any]:
+        blockers = []
+        if self.alerts.should_stop_runtime():
+            blockers.append("critical alerts present")
+        if not self.report_paths and self.status in {"completed", "stopped"}:
+            blockers.append("session report missing")
+        if self.settings.live_trading_enabled:
+            blockers.append("live trading enabled")
+        return {
+            "level": "R3" if not blockers else "R2",
+            "blockers": blockers,
+            "live_allowed": False,
+        }
 
     def _model_version(self) -> str:
         return self.model_metadata.model_id if self.model_metadata else self.model.model_version

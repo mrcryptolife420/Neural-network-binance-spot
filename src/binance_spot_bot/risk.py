@@ -61,6 +61,11 @@ class RiskEngine:
             return self._block("quote size is zero")
         if signal.signal == SignalSide.BUY and account.quote_balance < quote_size:
             return self._block("insufficient quote balance")
+        if signal.signal == SignalSide.SELL:
+            if account.base_balance <= 0:
+                return self._block("insufficient base balance")
+            if account.base_balance * market.last_price < quote_size:
+                return self._block("insufficient base balance")
         side = OrderSide.BUY if signal.signal == SignalSide.BUY else OrderSide.SELL
         intent = TradeIntent(
             symbol=market.symbol,
@@ -77,4 +82,3 @@ class RiskEngine:
     @staticmethod
     def _block(reason: str) -> RiskDecision:
         return RiskDecision(RiskDecisionType.BLOCK, reason, None)
-

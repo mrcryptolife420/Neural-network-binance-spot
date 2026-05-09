@@ -1,0 +1,2 @@
+{"client_order_id": "manual-demo-btcusdt-buy", "fee": "0.02425384886400000000", "notional": "24.25384886400000000000", "origin": "manual_demo", "price": "80846.162880000000", "quantity": "0.00030000", "side": "BUY", "status": "PAPER_FILLED", "symbol": "BTCUSDT"}
+{"client_order_id": "manual-demo-btcusdt-sell", "fee": "0.02422961319340329835082458771", "notional": "24.22961319340329835082458771", "origin": "manual_demo", "price": "80765.37731134432783608195902", "quantity": "0.00030000", "side": "SELL", "status": "PAPER_FILLED", "symbol": "BTCUSDT"}

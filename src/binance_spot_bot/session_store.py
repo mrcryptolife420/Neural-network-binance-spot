@@ -71,6 +71,15 @@ class SessionStore:
     def record_fill(self, session_id: str, payload: dict[str, Any]) -> None:
         self._append_jsonl(session_id, "fills.jsonl", payload)
 
+    def record_alert(self, session_id: str, payload: dict[str, Any]) -> None:
+        self._append_jsonl(session_id, "alerts.jsonl", payload)
+
+    def record_order(self, session_id: str, payload: dict[str, Any]) -> None:
+        self._append_jsonl(session_id, "orders.jsonl", payload)
+
+    def record_heartbeat(self, session_id: str, payload: dict[str, Any]) -> None:
+        self._append_jsonl(session_id, "heartbeats.jsonl", payload)
+
     def finish_session(
         self,
         session_id: str,

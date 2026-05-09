@@ -3,30 +3,42 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import time
 from decimal import Decimal
+from pathlib import Path
 
 from .audit import AuditLog
 from .backtest import BacktestEngine
 from .config import BotSettings
 from .connectivity import connectivity_report
+from .check_all import payload_for, print_payload, run_checks
+from .control_center import start_control_center
 from .data import DataStore, parse_binance_klines
 from .data_quality import check_candles
 from .demo import DemoMarketReplay
+from .diagnostics import collect_diagnostics
 from .evaluation import evaluate_rule_baseline, report_to_dict
 from .features import build_feature_rows, build_label_rows
 from .launcher import find_free_port
 from .model_registry import ModelRegistry
+from .preflight import run_preflight
 from .risk import RiskEngine, RiskLimits
 from .runtime import BotRuntime, RuntimeOptions, snapshot_to_dict
 from .security import scan_for_secrets
+from .session_report import export_session_report
 from .session_store import SessionStore
 from .signal_model import TinyNeuralSignalModel
+from .support_bundle import create_support_bundle
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(prog="spot-bot")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("validate-config")
+    sub.add_parser("preflight")
+    sub.add_parser("diagnostics")
+    support_bundle = sub.add_parser("support-bundle")
+    support_bundle.add_argument("--output", default="")
     sub.add_parser("security-scan")
     backtest = sub.add_parser("demo-backtest")
     backtest.add_argument("--raw-klines-json", required=False)
@@ -43,9 +55,19 @@ def main() -> None:
     stream_paper.add_argument("--interval", default="1m")
     stream_paper.add_argument("--source", choices=["demo", "rest", "websocket"], default="websocket")
     stream_paper.add_argument("--steps", type=int, default=120)
+    paper_session = sub.add_parser("paper-session")
+    paper_session.add_argument("--symbol", default="BTCUSDT")
+    paper_session.add_argument("--interval", default="1m")
+    paper_session.add_argument("--minutes", type=int, default=15)
+    paper_session.add_argument("--max-steps", type=int, default=200)
+    paper_session.add_argument("--max-paper-orders", type=int, default=25)
+    paper_session.add_argument("--max-critical-alerts", type=int, default=1)
+    paper_session.add_argument("--source", choices=["auto", "demo", "rest", "websocket"], default="demo")
     sub.add_parser("list-sessions")
     show_session = sub.add_parser("show-session")
     show_session.add_argument("--session-id", required=True)
+    export_report = sub.add_parser("export-session-report")
+    export_report.add_argument("--session-id", required=True)
     register_model = sub.add_parser("register-demo-model")
     register_model.add_argument("--alias", default="candidate")
     evaluate = sub.add_parser("evaluate-model")
@@ -60,6 +82,13 @@ def main() -> None:
     connectivity.add_argument("--symbol", default="BTCUSDT")
     launch = sub.add_parser("launch-dashboard")
     launch.add_argument("--start-port", type=int, default=8503)
+    control_center = sub.add_parser("control-center")
+    control_center.add_argument("--start-port", type=int, default=8503)
+    control_center.add_argument("--no-browser", action="store_true")
+    control_center.add_argument("--dry-run", action="store_true")
+    check_all = sub.add_parser("check-all")
+    check_all.add_argument("--json", action="store_true")
+    check_all.add_argument("--skip-tests", action="store_true")
     dashboard = sub.add_parser("dashboard")
     dashboard.add_argument("--mode", choices=["demo", "paper", "testnet-readiness"], default="demo")
     dashboard.add_argument("--symbol", default="BTCUSDT")
@@ -70,6 +99,19 @@ def main() -> None:
     if args.command == "validate-config":
         settings.validate_startup()
         print(json.dumps({"status": "ok", "mode": settings.trading_mode.value}))
+        return
+    if args.command == "preflight":
+        report = run_preflight(settings, Path.cwd())
+        print(json.dumps(report.to_dict(), default=str))
+        if report.status != "ok":
+            raise SystemExit(1)
+        return
+    if args.command == "diagnostics":
+        print(json.dumps(collect_diagnostics(settings).to_dict(), default=str))
+        return
+    if args.command == "support-bundle":
+        output = Path(args.output) if args.output else settings.data_dir / "support" / "support-bundle.zip"
+        print(json.dumps(create_support_bundle(settings, output), default=str))
         return
     if args.command == "security-scan":
         findings = scan_for_secrets(settings.data_dir.parent if settings.data_dir.parent else settings.data_dir)
@@ -109,6 +151,55 @@ def main() -> None:
         snapshot = runtime.run_steps(args.steps)
         print(json.dumps(_runtime_summary(snapshot_to_dict(snapshot)), default=str))
         return
+    if args.command == "paper-session":
+        runtime = BotRuntime(
+            settings,
+            RuntimeOptions(
+                mode="paper",
+                symbol=args.symbol,
+                interval=args.interval,
+                source=args.source,
+                fetch_limit=max(args.max_steps, 80),
+            ),
+        )
+        started = time.time()
+        snapshot = runtime.snapshot()
+        try:
+            for step in range(max(1, args.max_steps)):
+                if time.time() - started > max(1, args.minutes) * 60:
+                    runtime.message = "paper session time budget reached"
+                    break
+                snapshot = runtime.step()
+                runtime.session_store.record_heartbeat(
+                    runtime.session.session_id,
+                    {"step": step + 1, "status": snapshot.status, "equity": str(snapshot.equity)},
+                )
+                critical = len([alert for alert in snapshot.alerts if alert.get("severity") == "critical"])
+                if len(snapshot.fills) >= args.max_paper_orders or critical >= args.max_critical_alerts:
+                    runtime.stop()
+                    snapshot = runtime.snapshot()
+                    break
+                if snapshot.status in {"completed", "stopped"}:
+                    break
+        except KeyboardInterrupt:
+            runtime.stop()
+            snapshot = runtime.snapshot()
+        finally:
+            if snapshot.status not in {"completed", "stopped"}:
+                runtime.stop()
+                snapshot = runtime.snapshot()
+        print(
+            json.dumps(
+                {
+                    **_runtime_summary(snapshot_to_dict(snapshot)),
+                    "report_paths": snapshot.report_paths,
+                    "alerts": len(snapshot.alerts),
+                    "paper_account": snapshot.paper_account,
+                },
+                default=str,
+            )
+        )
+        return
     if args.command == "list-sessions":
         sessions = SessionStore(settings.data_dir / "sessions").list_sessions(5)
         print(json.dumps([session.__dict__ for session in sessions], default=str))
@@ -128,6 +219,10 @@ def main() -> None:
                 default=str,
             )
         )
+        return
+    if args.command == "export-session-report":
+        store = SessionStore(settings.data_dir / "sessions")
+        print(json.dumps(export_session_report(store, args.session_id), default=str))
         return
     if args.command == "register-demo-model":
         datastore = DataStore(settings.data_dir)
@@ -167,6 +262,21 @@ def main() -> None:
     if args.command == "launch-dashboard":
         port = find_free_port(args.start_port)
         print(json.dumps({"port": port, "url": f"http://127.0.0.1:{port}", "live_trading_enabled": False}))
+        return
+    if args.command == "control-center":
+        result = start_control_center(
+            Path.cwd(),
+            start_port=args.start_port,
+            open_browser=not args.no_browser,
+            dry_run=args.dry_run,
+        )
+        print(json.dumps(result.to_dict(), default=str))
+        return
+    if args.command == "check-all":
+        payload = payload_for(run_checks(Path.cwd(), skip_tests=args.skip_tests))
+        print_payload(payload, as_json=args.json)
+        if payload["status"] != "ok":
+            raise SystemExit(1)
         return
     if args.command == "dashboard":
         command = [

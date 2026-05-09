@@ -1,0 +1,26 @@
+{
+  "session_id": "1778348703586-0cb51bd3",
+  "mode": "demo",
+  "symbol": "BTCUSDT",
+  "interval": "1m",
+  "started_at_ms": 1778348703586,
+  "ended_at_ms": 1778348827530,
+  "pnl": "6.840036634591097305694306",
+  "max_drawdown": "2.3240886846705696943056943",
+  "trades": 25,
+  "blocks": 90,
+  "model_version": "rule-baseline-0.1",
+  "status": "completed",
+  "metadata": {
+    "source": "demo",
+    "model_alias": "",
+    "alerts_count": 92,
+    "critical_alerts_count": 0,
+    "realized_pnl": "0.02673354579211850554270060211",
+    "fees_paid": "0.2501570149647498471528471528",
+    "slippage_bps": "10",
+    "readiness_blockers": [
+      "session report missing"
+    ]
+  }
+}

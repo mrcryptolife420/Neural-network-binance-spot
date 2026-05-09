@@ -1,0 +1,115 @@
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-4075d5d13d4f4daf8efe7673", "order_type": "MARKET", "price": null, "quantity": "0.09970", "quote_order_qty": null, "side": "BUY", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.09970", "paper": true, "price": "100.2988", "side": "BUY", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 359999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-409341ccdf51481abc73ce9e", "order_type": "MARKET", "price": null, "quantity": "0.09947", "quote_order_qty": null, "side": "BUY", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.09947", "paper": true, "price": "100.5266", "side": "BUY", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 419999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-6c07fe80bc6944d7b82084f6", "order_type": "MARKET", "price": null, "quantity": "0.09948", "quote_order_qty": null, "side": "BUY", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.09948", "paper": true, "price": "100.5225", "side": "BUY", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 479999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-a5cc25378c864b38b6b4a83f", "order_type": "MARKET", "price": null, "quantity": "0.09950", "quote_order_qty": null, "side": "BUY", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.09950", "paper": true, "price": "100.4950", "side": "BUY", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 539999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-1193466df298450186a25804", "order_type": "MARKET", "price": null, "quantity": "0.09936", "quote_order_qty": null, "side": "BUY", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.09936", "paper": true, "price": "100.6398", "side": "BUY", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 599999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-499e54c5ceef49ec9843ef54", "order_type": "MARKET", "price": null, "quantity": "0.09935", "quote_order_qty": null, "side": "BUY", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.09935", "paper": true, "price": "100.6479", "side": "BUY", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 659999}
+{"mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 719999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-da57ac7c6533491fa5ac2989", "order_type": "MARKET", "price": null, "quantity": "0.09972", "quote_order_qty": null, "side": "SELL", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.09972", "paper": true, "price": "100.2786", "side": "SELL", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 779999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-83d8fae3d99d448382f16631", "order_type": "MARKET", "price": null, "quantity": "0.09989", "quote_order_qty": null, "side": "SELL", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.09989", "paper": true, "price": "100.1050", "side": "SELL", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 839999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-d7aa7acb52814949a7b2b6b9", "order_type": "MARKET", "price": null, "quantity": "0.10000", "quote_order_qty": null, "side": "SELL", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.10000", "paper": true, "price": "99.9912", "side": "SELL", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 899999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-89870677c7124984ac5bb99e", "order_type": "MARKET", "price": null, "quantity": "0.10019", "quote_order_qty": null, "side": "SELL", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.10019", "paper": true, "price": "99.8070", "side": "SELL", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 959999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-16b744b4ba3348fe97d7465a", "order_type": "MARKET", "price": null, "quantity": "0.10029", "quote_order_qty": null, "side": "SELL", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.10029", "paper": true, "price": "99.7107", "side": "SELL", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 1019999}
+{"mode": "paper", "order_request": null, "response": {"reason": "insufficient base balance"}, "status": "BLOCKED", "timestamp_ms": 1079999}
+{"mode": "paper", "order_request": null, "response": {"reason": "insufficient base balance"}, "status": "BLOCKED", "timestamp_ms": 1139999}
+{"mode": "paper", "order_request": null, "response": {"reason": "insufficient base balance"}, "status": "BLOCKED", "timestamp_ms": 1199999}
+{"mode": "paper", "order_request": null, "response": {"reason": "insufficient base balance"}, "status": "BLOCKED", "timestamp_ms": 1259999}
+{"mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 1319999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-053ff0de5f9b48b2ab06c032", "order_type": "MARKET", "price": null, "quantity": "0.09996", "quote_order_qty": null, "side": "BUY", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.09996", "paper": true, "price": "100.0400", "side": "BUY", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 1379999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-cf0f5a465c04407fad018f11", "order_type": "MARKET", "price": null, "quantity": "0.09968", "quote_order_qty": null, "side": "BUY", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.09968", "paper": true, "price": "100.3153", "side": "BUY", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 1439999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-ca01e52307a048c0914c38e1", "order_type": "MARKET", "price": null, "quantity": "0.09941", "quote_order_qty": null, "side": "BUY", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.09941", "paper": true, "price": "100.5860", "side": "BUY", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 1499999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-8f4d4d4881114175ba0e6066", "order_type": "MARKET", "price": null, "quantity": "0.09930", "quote_order_qty": null, "side": "BUY", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.09930", "paper": true, "price": "100.7037", "side": "BUY", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 1559999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-73ac1163982c4b13ba1f048d", "order_type": "MARKET", "price": null, "quantity": "0.09932", "quote_order_qty": null, "side": "BUY", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.09932", "paper": true, "price": "100.6831", "side": "BUY", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 1619999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-8ec7d9b1aeaa43cb84d1c227", "order_type": "MARKET", "price": null, "quantity": "0.09936", "quote_order_qty": null, "side": "BUY", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.09936", "paper": true, "price": "100.6360", "side": "BUY", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 1679999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-993bb41323b346dfaf35dd6d", "order_type": "MARKET", "price": null, "quantity": "0.09948", "quote_order_qty": null, "side": "BUY", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.09948", "paper": true, "price": "100.5227", "side": "BUY", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 1739999}
+{"mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 1799999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-a008a60a19034bf6b847b24e", "order_type": "MARKET", "price": null, "quantity": "0.09950", "quote_order_qty": null, "side": "SELL", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.09950", "paper": true, "price": "100.5018", "side": "SELL", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 1859999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-5a18d8fc16ac404d9f50f0ed", "order_type": "MARKET", "price": null, "quantity": "0.09954", "quote_order_qty": null, "side": "SELL", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.09954", "paper": true, "price": "100.4593", "side": "SELL", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 1919999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-56ed011af68a47149a99b3ae", "order_type": "MARKET", "price": null, "quantity": "0.09980", "quote_order_qty": null, "side": "SELL", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.09980", "paper": true, "price": "100.2003", "side": "SELL", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 1979999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-ab8427556c66454e88b5a1ff", "order_type": "MARKET", "price": null, "quantity": "0.10014", "quote_order_qty": null, "side": "SELL", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.10014", "paper": true, "price": "99.8546", "side": "SELL", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 2039999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-c47de773aa8946249a2602ee", "order_type": "MARKET", "price": null, "quantity": "0.10045", "quote_order_qty": null, "side": "SELL", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.10045", "paper": true, "price": "99.5510", "side": "SELL", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 2099999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-07b09b7bc9d34f5983f9f9c5", "order_type": "MARKET", "price": null, "quantity": "0.10071", "quote_order_qty": null, "side": "SELL", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.10071", "paper": true, "price": "99.2933", "side": "SELL", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 2159999}
+{"mode": "paper", "order_request": {"client_order_id": "spotbot-5dfc622f437846e88d97c0fa", "order_type": "MARKET", "price": null, "quantity": "0.10087", "quote_order_qty": null, "side": "SELL", "symbol": "BTCUSDT"}, "response": {"executedQty": "0.10087", "paper": true, "price": "99.1282", "side": "SELL", "status": "FILLED", "symbol": "BTCUSDT"}, "status": "FILLED", "timestamp_ms": 2219999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 2279999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 2339999}
+{"mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 2399999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 2459999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 2519999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 2579999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 2639999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 2699999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 2759999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 2819999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 2879999}
+{"mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 2939999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 2999999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 3059999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 3119999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 3179999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 3239999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 3299999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 3359999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 3419999}
+{"mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 3479999}
+{"mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 3539999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 3599999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 3659999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 3719999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 3779999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 3839999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 3899999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 3959999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 4019999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 4079999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 4139999}
+{"mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 4199999}
+{"mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 4259999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 4319999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 4379999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 4439999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 4499999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 4559999}
+{"mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 4619999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 4679999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 4739999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 4799999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 4859999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 4919999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 4979999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 5039999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 5099999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 5159999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 5219999}
+{"mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 5279999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 5339999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 5399999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 5459999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 5519999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 5579999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 5639999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 5699999}
+{"mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 5759999}
+{"mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 5819999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 5879999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 5939999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 5999999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 6059999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 6119999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 6179999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 6239999}
+{"mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 6299999}
+{"mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 6359999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 6419999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 6479999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 6539999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 6599999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 6659999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 6719999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 6779999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 6839999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 6899999}
+{"mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 6959999}
+{"mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 7019999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 7079999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 7139999}
+{"mode": "paper", "order_request": null, "response": {"reason": "max trades per day reached"}, "status": "BLOCKED", "timestamp_ms": 7199999}

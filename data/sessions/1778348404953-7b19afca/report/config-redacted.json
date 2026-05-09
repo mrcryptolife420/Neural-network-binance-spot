@@ -1,0 +1,12 @@
+{
+  "source": "demo",
+  "model_alias": "",
+  "alerts_count": 92,
+  "critical_alerts_count": 0,
+  "realized_pnl": "-0.3556918295847869573554977458",
+  "fees_paid": "0.2500376367899885624375624378",
+  "slippage_bps": "10",
+  "readiness_blockers": [
+    "session report missing"
+  ]
+}

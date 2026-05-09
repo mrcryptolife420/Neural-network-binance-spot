@@ -73,3 +73,20 @@ If Binance read-only paper mode fails, use demo mode first. Paper mode must not 
 
 The dashboard always displays `LIVE TRADING DISABLED`. It never exposes a live order button and it does not duplicate risk logic. All trade decisions flow through the existing `RiskEngine` and `ExecutionEngine`.
 
+Roadmap 015 adds the operator flow on top of this dashboard:
+
+- the header shows live-disabled, mode, profile, session status and readiness;
+- Demo Spot Trading uses local paper fills only;
+- Strategy Lab explains risk blocks and signals without changing risk rules;
+- Research shows scanner ranking and local exports;
+- Portfolio shows paper account state from the same accounting source as reports;
+- Readiness records evidence and keeps `live_allowed=false`.
+
+For a long-running local paper smoke:
+
+```powershell
+$env:PYTHONPATH="src"
+python -m binance_spot_bot.cli paper-session --symbol BTCUSDT --minutes 15 --max-steps 200 --source demo
+```
+
+The command writes session summaries, alerts, orders, fills and report artifacts under `data/sessions/<session-id>/`.
