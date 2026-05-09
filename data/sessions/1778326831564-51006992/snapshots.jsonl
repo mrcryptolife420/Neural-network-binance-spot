@@ -1,0 +1,5 @@
+{"blocks": {}, "equity": "1000.0000", "message": "waiting_for_data", "model_version": "rule-baseline-0.1", "position": "0", "quote": "1000", "source": "demo", "status": "running", "timestamp_ms": 59999}
+{"blocks": {}, "equity": "1000.0000", "message": "waiting_for_data", "model_version": "rule-baseline-0.1", "position": "0", "quote": "1000", "source": "demo", "status": "running", "timestamp_ms": 119999}
+{"blocks": {}, "equity": "1000.0000", "message": "waiting_for_data", "model_version": "rule-baseline-0.1", "position": "0", "quote": "1000", "source": "demo", "status": "running", "timestamp_ms": 179999}
+{"blocks": {}, "equity": "1000.0000", "message": "waiting_for_data", "model_version": "rule-baseline-0.1", "position": "0", "quote": "1000", "source": "demo", "status": "running", "timestamp_ms": 239999}
+{"blocks": {}, "equity": "1000.0000", "message": "waiting_for_data", "model_version": "rule-baseline-0.1", "position": "0", "quote": "1000", "source": "demo", "status": "running", "timestamp_ms": 299999}

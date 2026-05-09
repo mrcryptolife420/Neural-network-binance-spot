@@ -1,0 +1,8 @@
+{"blocks": {}, "equity": "1000.0000", "message": "waiting_for_data", "model_version": "rule-baseline-0.1", "position": "0", "quote": "1000", "source": "demo", "status": "running", "timestamp_ms": 59999}
+{"blocks": {}, "equity": "1000.0000", "message": "waiting_for_data", "model_version": "rule-baseline-0.1", "position": "0", "quote": "1000", "source": "demo", "status": "running", "timestamp_ms": 119999}
+{"blocks": {}, "equity": "1000.0000", "message": "waiting_for_data", "model_version": "rule-baseline-0.1", "position": "0", "quote": "1000", "source": "demo", "status": "running", "timestamp_ms": 179999}
+{"blocks": {}, "equity": "1000.0000", "message": "waiting_for_data", "model_version": "rule-baseline-0.1", "position": "0", "quote": "1000", "source": "demo", "status": "running", "timestamp_ms": 239999}
+{"blocks": {}, "equity": "1000.0000", "message": "waiting_for_data", "model_version": "rule-baseline-0.1", "position": "0", "quote": "1000", "source": "demo", "status": "running", "timestamp_ms": 299999}
+{"blocks": {}, "equity": "1000.0000", "message": "waiting_for_data", "model_version": "rule-baseline-0.1", "position": "0", "quote": "1000.0000", "source": "demo", "status": "running", "timestamp_ms": 359999}
+{"blocks": {"model returned HOLD": 1}, "equity": "1000.0000", "message": "tick processed", "model_version": "rule-baseline-0.1", "position": "0", "quote": "1000.0000", "source": "demo", "status": "running", "timestamp_ms": 419999}
+{"blocks": {"model returned HOLD": 2}, "equity": "1000.0000", "message": "tick processed", "model_version": "rule-baseline-0.1", "position": "0", "quote": "1000.0000", "source": "demo", "status": "running", "timestamp_ms": 479999}

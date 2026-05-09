@@ -1,0 +1,18 @@
+{
+  "session_id": "1778327858093-b68da833",
+  "mode": "demo",
+  "symbol": "BTCUSDT",
+  "interval": "1m",
+  "started_at_ms": 1778327858093,
+  "ended_at_ms": 1778327960907,
+  "pnl": "-0.166490462",
+  "max_drawdown": "1.047056817",
+  "trades": 25,
+  "blocks": 90,
+  "model_version": "rule-baseline-0.1",
+  "status": "completed",
+  "metadata": {
+    "source": "demo",
+    "model_alias": ""
+  }
+}

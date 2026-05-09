@@ -1,0 +1,2 @@
+[console_scripts]
+spot-bot = binance_spot_bot.cli:main

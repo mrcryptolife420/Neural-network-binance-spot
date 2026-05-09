@@ -1,0 +1,14 @@
+{
+  "interval": "1m",
+  "model_alias": "",
+  "risk_preset": "balanced",
+  "scenario": "volatile",
+  "selected_profile": "binance-demo-spot",
+  "source": "auto",
+  "symbol": "BTCUSDT",
+  "watchlist": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "BNBUSDT"
+  ]
+}

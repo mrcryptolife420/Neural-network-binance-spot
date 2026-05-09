@@ -1,0 +1,75 @@
+# Local Dashboard
+
+Roadmap 002 adds a local visual operator dashboard on top of the existing safe bot modules. It does not enable live trading.
+
+## Install UI dependencies
+
+```powershell
+pip install -e ".[ui]"
+```
+
+The core tests and CLI do not require UI dependencies.
+
+## Safe first start
+
+```powershell
+$env:PYTHONPATH="src"
+python -m binance_spot_bot.cli run-local --mode demo --symbol BTCUSDT --steps 50
+```
+
+This runs the local runtime with deterministic demo candles and writes audit events under `data/audit/`.
+
+## Start visual dashboard
+
+```powershell
+$env:PYTHONPATH="src"
+python -m streamlit run src/binance_spot_bot/ui/streamlit_app.py -- --mode demo --symbol BTCUSDT --interval 1m
+```
+
+The dashboard opens in the browser and shows:
+
+- candles;
+- signal markers;
+- paper fills;
+- equity;
+- latest risk decision;
+- block reasons;
+- audit tail;
+- health metrics;
+- testnet readiness checks.
+
+## Modes
+
+- `demo`: local deterministic replay, no API keys, no network.
+- `paper`: read-only Binance candles when available, fallback/error state when unavailable, paper execution only.
+- `testnet-readiness`: shows whether credentials and safety settings are ready for Spot Testnet checks.
+
+`live` is intentionally not selectable in the dashboard.
+
+## Controls
+
+- `Start / run`: process replay ticks continuously.
+- `Pause`: stop automatic stepping.
+- `Single step`: process exactly one tick.
+- `Reset runtime`: rebuild the runtime with current controls.
+
+## Troubleshooting
+
+If Streamlit is missing:
+
+```powershell
+pip install -e ".[ui]"
+```
+
+If imports fail:
+
+```powershell
+$env:PYTHONPATH="src"
+```
+
+If Binance read-only paper mode fails, use demo mode first. Paper mode must not require signed endpoints or credentials.
+
+## Safety
+
+The dashboard always displays `LIVE TRADING DISABLED`. It never exposes a live order button and it does not duplicate risk logic. All trade decisions flow through the existing `RiskEngine` and `ExecutionEngine`.
+
