@@ -26,6 +26,9 @@ def create_runtime(
     model_alias: str = "",
     max_data_age_ms: int = 120_000,
     default_quote_size: Decimal = Decimal("10"),
+    demo_trading_armed: bool = False,
+    max_demo_orders_per_session: int = 25,
+    demo_pilot_preset: str = "smoke",
 ) -> BotRuntime:
     safe_settings = replace(settings, live_trading_enabled=False)
     return BotRuntime(
@@ -45,5 +48,8 @@ def create_runtime(
             max_spread_bps=max_spread_bps,
             max_data_age_ms=max_data_age_ms,
             default_quote_size=default_quote_size,
+            demo_trading_armed=demo_trading_armed,
+            max_demo_orders_per_session=max_demo_orders_per_session,
+            demo_pilot_preset=demo_pilot_preset,
         ),
     )

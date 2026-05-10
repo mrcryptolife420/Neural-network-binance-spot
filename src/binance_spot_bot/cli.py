@@ -17,10 +17,13 @@ from .data import DataStore, parse_binance_klines
 from .data_quality import check_candles
 from .demo import DemoMarketReplay
 from .diagnostics import collect_diagnostics
-from .evaluation import evaluate_rule_baseline, report_to_dict
+from .evaluation import WalkForwardConfig, evaluate_rule_baseline, evaluate_walk_forward, report_to_dict
+from .experiment_db import ExperimentDB
 from .features import build_feature_rows, build_label_rows
 from .launcher import find_free_port
 from .model_registry import ModelRegistry
+from .pilot_orchestrator import DemoPilotOrchestrator, PilotRunStore
+from .pilot_runner import PilotRunnerService, start_background_runner
 from .preflight import run_preflight
 from .risk import RiskEngine, RiskLimits
 from .runtime import BotRuntime, RuntimeOptions, snapshot_to_dict
@@ -50,6 +53,8 @@ def main() -> None:
     run_local.add_argument("--source", choices=["auto", "demo", "rest", "websocket"], default="auto")
     run_local.add_argument("--model-alias", default="")
     run_local.add_argument("--steps", type=int, default=100)
+    run_local.add_argument("--demo-trading-armed", action="store_true")
+    run_local.add_argument("--demo-pilot-preset", choices=["smoke", "operator", "endurance"], default="smoke")
     stream_paper = sub.add_parser("stream-paper")
     stream_paper.add_argument("--symbol", default="BTCUSDT")
     stream_paper.add_argument("--interval", default="1m")
@@ -68,12 +73,34 @@ def main() -> None:
     show_session.add_argument("--session-id", required=True)
     export_report = sub.add_parser("export-session-report")
     export_report.add_argument("--session-id", required=True)
+    sub.add_parser("pilot-status")
+    pilot_preflight = sub.add_parser("pilot-preflight")
+    pilot_preflight.add_argument("--symbol", default="BTCUSDT")
+    pilot_preflight.add_argument("--interval", default="1m")
+    pilot_preflight.add_argument("--preset", choices=["smoke", "operator", "endurance"], default="smoke")
+    pilot_report = sub.add_parser("pilot-report")
+    pilot_report.add_argument("--run-id", default="")
+    runner_start = sub.add_parser("pilot-runner-start")
+    runner_start.add_argument("--symbol", default="BTCUSDT")
+    runner_start.add_argument("--interval", default="1m")
+    runner_start.add_argument("--preset", choices=["smoke", "operator", "endurance"], default="smoke")
+    runner_start.add_argument("--source", choices=["demo", "rest", "websocket", "auto"], default="demo")
+    runner_start.add_argument("--max-steps", type=int, default=0)
+    runner_start.add_argument("--foreground", action="store_true")
+    sub.add_parser("pilot-runner-status")
+    sub.add_parser("pilot-runner-stop")
+    runner_command = sub.add_parser("pilot-runner-command")
+    runner_command.add_argument("--type", choices=["stop", "reconcile", "cancel_open_orders", "export_report"], required=True)
     register_model = sub.add_parser("register-demo-model")
     register_model.add_argument("--alias", default="candidate")
+    promote_model = sub.add_parser("promote-model")
+    promote_model.add_argument("--model-id", required=True)
+    promote_model.add_argument("--confirm", action="store_true")
     evaluate = sub.add_parser("evaluate-model")
     evaluate.add_argument("--symbol", default="BTCUSDT")
     evaluate.add_argument("--interval", default="1m")
     evaluate.add_argument("--scenario", default="sideways")
+    evaluate.add_argument("--walk-forward", action="store_true")
     quality = sub.add_parser("data-quality")
     quality.add_argument("--symbol", default="BTCUSDT")
     quality.add_argument("--interval", default="1m")
@@ -146,6 +173,8 @@ def main() -> None:
                 scenario=getattr(args, "scenario", "sideways"),
                 source=args.source,
                 model_alias=getattr(args, "model_alias", ""),
+                demo_trading_armed=getattr(args, "demo_trading_armed", False),
+                demo_pilot_preset=getattr(args, "demo_pilot_preset", "smoke"),
             ),
         )
         snapshot = runtime.run_steps(args.steps)
@@ -224,11 +253,104 @@ def main() -> None:
         store = SessionStore(settings.data_dir / "sessions")
         print(json.dumps(export_session_report(store, args.session_id), default=str))
         return
+    if args.command == "pilot-status":
+        store = PilotRunStore(settings.data_dir / "pilot-runs")
+        latest = store.latest()
+        unfinished = store.latest_non_terminal()
+        print(
+            json.dumps(
+                {
+                    "latest": latest.to_dict() if latest else {},
+                    "unfinished": unfinished.to_dict() if unfinished else {},
+                    "live_trading_enabled": False,
+                },
+                default=str,
+            )
+        )
+        return
+    if args.command == "pilot-preflight":
+        runtime = BotRuntime(
+            settings,
+            RuntimeOptions(
+                mode="demo",
+                symbol=args.symbol,
+                interval=args.interval,
+                source="demo",
+                demo_trading_armed=False,
+                demo_pilot_preset=args.preset,
+            ),
+        )
+        snapshot = snapshot_to_dict(runtime.snapshot())
+        orchestrator = DemoPilotOrchestrator(settings, PilotRunStore(settings.data_dir / "pilot-runs"))
+        print(json.dumps(orchestrator.evaluate_start_gate(snapshot), default=str))
+        return
+    if args.command == "pilot-report":
+        store = PilotRunStore(settings.data_dir / "pilot-runs")
+        run = store.load(args.run_id) if args.run_id else store.latest()
+        print(json.dumps(run.to_dict() if run else {}, default=str))
+        return
+    if args.command == "pilot-runner-start":
+        if args.foreground:
+            service = PilotRunnerService(settings)
+            print(
+                json.dumps(
+                    service.run(
+                        symbol=args.symbol,
+                        interval=args.interval,
+                        preset=args.preset,
+                        source=args.source,
+                        max_steps=args.max_steps,
+                        sleep_seconds=1.0,
+                    ),
+                    default=str,
+                )
+            )
+        else:
+            print(
+                json.dumps(
+                    start_background_runner(
+                        symbol=args.symbol,
+                        interval=args.interval,
+                        preset=args.preset,
+                        source=args.source,
+                        cwd=Path.cwd(),
+                    ),
+                    default=str,
+                )
+            )
+        return
+    if args.command == "pilot-runner-status":
+        print(json.dumps(PilotRunnerService(settings).status(), default=str))
+        return
+    if args.command == "pilot-runner-stop":
+        service = PilotRunnerService(settings)
+        print(json.dumps(service.enqueue_command("stop"), default=str))
+        return
+    if args.command == "pilot-runner-command":
+        service = PilotRunnerService(settings)
+        print(json.dumps(service.enqueue_command(args.type), default=str))
+        return
     if args.command == "register-demo-model":
         datastore = DataStore(settings.data_dir)
         candles = DemoMarketReplay(count=160).candles()
         features = build_feature_rows("BTCUSDT", candles, window=5)
         labels = build_label_rows(candles, window=5, horizon_bars=2)
+        evaluation_report = evaluate_walk_forward("BTCUSDT", "1m", candles)
+        eval_path = settings.data_dir / "evaluations" / "BTCUSDT_1m_walkforward_latest.json"
+        eval_path.parent.mkdir(parents=True, exist_ok=True)
+        eval_payload = report_to_dict(evaluation_report)
+        eval_path.write_text(json.dumps(eval_payload, indent=2, default=str), encoding="utf-8")
+        manifest_path = settings.data_dir / "datasets" / "demo-replay-manifest.json"
+        manifest_path.parent.mkdir(parents=True, exist_ok=True)
+        manifest_path.write_text(json.dumps(eval_payload["manifest"], indent=2, default=str), encoding="utf-8")
+        ExperimentDB(settings.data_dir / "experiments" / "experiments.json").add_walkforward_eval(
+            str(eval_path),
+            {
+                "dataset_id": "demo-replay",
+                "status": "completed",
+                "candidate_beats_baseline": eval_payload["candidate_summary"]["beats_baseline"],
+            },
+        )
         model = TinyNeuralSignalModel()
         model.fit(features, labels, epochs=10)
         registry = ModelRegistry(datastore.models_dir)
@@ -236,19 +358,75 @@ def main() -> None:
             model,
             alias=args.alias,
             dataset_id="demo-replay",
+            feature_schema_hash=eval_payload["manifest"]["feature_schema_hash"],
+            manifest_path=str(manifest_path),
+            walkforward_report_path=str(eval_path),
             train_range=f"{features[0].timestamp_ms}-{features[len(features)//2].timestamp_ms}",
             validation_range="chronological-demo-validation",
             test_range=f"{features[-40].timestamp_ms}-{features[-1].timestamp_ms}",
-            metrics={"train_rows": len(features), "label_rows": len(labels), "epochs": 10},
+            metrics={
+                "train_rows": len(features),
+                "label_rows": len(labels),
+                "epochs": 10,
+                "leakage_pass": eval_payload["leakage"]["passed"],
+                "candidate_beats_baseline": eval_payload["candidate_summary"]["beats_baseline"],
+                "trade_count": sum(fold["candidate"]["trades"] for fold in eval_payload["folds"]),
+                "min_trade_count": 1,
+                "max_drawdown_quote": max(float(fold["candidate"]["max_drawdown"]) for fold in eval_payload["folds"]),
+                "max_allowed_drawdown_quote": 100,
+            },
+        )
+        ExperimentDB(settings.data_dir / "experiments" / "experiments.json").add_model_card(
+            metadata.model_card_path,
+            {"dataset_id": metadata.dataset_id, "model_id": metadata.model_id, "status": metadata.status},
         )
         print(json.dumps(metadata.__dict__, default=str))
         return
+    if args.command == "promote-model":
+        registry = ModelRegistry(settings.data_dir / "models")
+        decision = registry.promote_to_champion(args.model_id, operator_confirmed=args.confirm)
+        decision_path = settings.data_dir / "models" / f"{args.model_id}-promotion-decision.json"
+        decision_path.write_text(json.dumps(decision.to_dict(), indent=2), encoding="utf-8")
+        ExperimentDB(settings.data_dir / "experiments" / "experiments.json").add_promotion_decision(
+            str(decision_path),
+            {"model_id": args.model_id, "status": "allowed" if decision.allowed else "blocked"},
+        )
+        print(json.dumps(decision.to_dict(), default=str))
+        if not decision.allowed:
+            raise SystemExit(1)
+        return
     if args.command == "evaluate-model":
         candles = _load_or_demo_candles(settings, args.symbol, args.interval, args.scenario)
-        report = evaluate_rule_baseline(args.symbol, args.interval, candles)
-        path = settings.data_dir / "evaluations" / f"{args.symbol}_{args.interval}_latest.json"
+        if args.walk_forward:
+            report = evaluate_walk_forward(
+                args.symbol,
+                args.interval,
+                candles,
+                dataset_id=f"{args.symbol}_{args.interval}_walkforward",
+                config=WalkForwardConfig(),
+            )
+            suffix = "walkforward_latest"
+        else:
+            report = evaluate_rule_baseline(args.symbol, args.interval, candles)
+            suffix = "latest"
+        path = settings.data_dir / "evaluations" / f"{args.symbol}_{args.interval}_{suffix}.json"
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(report_to_dict(report), indent=2, default=str), encoding="utf-8")
+        payload = report_to_dict(report)
+        if payload.get("manifest"):
+            manifest_path = settings.data_dir / "datasets" / f"{payload['manifest']['dataset_id']}.json"
+            manifest_path.parent.mkdir(parents=True, exist_ok=True)
+            manifest_path.write_text(json.dumps(payload["manifest"], indent=2, default=str), encoding="utf-8")
+            ExperimentDB(settings.data_dir / "experiments" / "experiments.json").add_dataset_manifest(
+                str(manifest_path),
+                {"dataset_id": payload["manifest"]["dataset_id"], "status": payload["leakage"]["status"]},
+            )
+        manifest_payload = payload.get("manifest") or {}
+        ExperimentDB(settings.data_dir / "experiments" / "experiments.json").add(
+            "walkforward_eval" if args.walk_forward else "evaluation",
+            str(path),
+            {"dataset_id": manifest_payload.get("dataset_id", ""), "status": "completed"},
+        )
         print(json.dumps({"path": str(path), **report_to_dict(report)}, default=str))
         return
     if args.command == "data-quality":
@@ -325,6 +503,9 @@ def _runtime_summary(payload: dict) -> dict:
         "data_quality": payload["data_quality"]["status"],
         "active_model": payload["active_model"].get("model_version"),
         "exchange_profile": payload.get("exchange_profile", {}).get("name"),
+        "demo_trading_armed": payload.get("demo_connection", {}).get("armed", False),
+        "demo_pilot": payload.get("demo_pilot", {}).get("config", {}).get("pilot_name"),
+        "reconciliation": payload.get("reconciliation", {}).get("status"),
     }
 
 

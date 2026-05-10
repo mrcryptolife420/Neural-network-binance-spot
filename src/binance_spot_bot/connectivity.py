@@ -6,6 +6,7 @@ from typing import Any
 
 from .binance import BinanceAPIError, BinanceSpotAdapter
 from .config import BotSettings
+from .demo_spot import connection_state_from_report
 from .exchange_profiles import CredentialProfile, profile_for
 from .redaction import redact_payload
 from .types import OrderRequest, OrderSide, OrderType
@@ -138,3 +139,20 @@ def connectivity_report(settings: BotSettings, symbol: str, adapter: BinanceSpot
         "checks": [check.to_dict() for check in checks],
         "checked_at_ms": int(time.time() * 1000),
     }
+
+
+def demo_spot_connection_state(
+    settings: BotSettings,
+    symbol: str,
+    *,
+    armed: bool = False,
+    api_key_fingerprint: str = "not-configured",
+    adapter: BinanceSpotAdapter | None = None,
+) -> dict[str, Any]:
+    report = connectivity_report(settings, symbol, adapter)
+    return connection_state_from_report(
+        report,
+        armed=armed,
+        kill_switch=settings.kill_switch,
+        api_key_fingerprint=api_key_fingerprint,
+    ).to_dict()

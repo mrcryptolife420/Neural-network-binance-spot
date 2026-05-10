@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import socket
+import sys
 from pathlib import Path
 
 
@@ -15,7 +16,7 @@ def find_free_port(start: int = 8503, host: str = "127.0.0.1", attempts: int = 5
 
 def dashboard_command(project_root: Path, port: int) -> list[str]:
     return [
-        "python",
+        sys.executable,
         "-m",
         "streamlit",
         "run",

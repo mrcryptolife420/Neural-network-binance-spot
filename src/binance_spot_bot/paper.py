@@ -36,6 +36,6 @@ class PaperTrader:
         self.last_decision = decision
         self.audit_log.emit("paper", "risk_decision", {"decision": decision})
         result = self.execution_engine.execute(decision, market, filters)
-        if result.status in {"FILLED", "TEST_ORDER_ACCEPTED"}:
+        if result.status in {"FILLED", "NEW", "PARTIALLY_FILLED", "TEST_ORDER_ACCEPTED", "DEMO_ORDER_ACCEPTED"}:
             self.risk_engine.record_trade()
         return result

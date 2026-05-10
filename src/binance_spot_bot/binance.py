@@ -10,6 +10,8 @@ from urllib import parse, request
 from urllib.error import HTTPError, URLError
 
 from .config import BotSettings, ConfigError
+from .demo_spot import DEMO_SPOT_BASE_URL, normalize_base_url
+from .exchange_profiles import BINANCE_DEMO_SPOT_PROFILE, BINANCE_SPOT_TESTNET_PROFILE
 from .types import OrderRequest, SymbolFilters
 
 
@@ -44,7 +46,7 @@ class BinanceSpotAdapter:
             headers["X-MBX-APIKEY"] = self.settings.binance_api_key
 
         query = parse.urlencode(params, doseq=True)
-        url = f"{self.base_url}{path}"
+        url = self._endpoint_url(path)
         data = None
         if method in {"GET", "DELETE"} and query:
             url = f"{url}?{query}"
@@ -89,7 +91,7 @@ class BinanceSpotAdapter:
         ).hexdigest()
 
     def server_time(self) -> int:
-        if self.settings.trading_mode.value in {"testnet", "live"}:
+        if self.settings.trading_mode.value in {"testnet", "live"} or self.settings.exchange_profile == BINANCE_DEMO_SPOT_PROFILE:
             result = self._request("GET", "/api/v3/time")
             return int(result["serverTime"])
         return int(time.time() * 1000)
@@ -144,15 +146,18 @@ class BinanceSpotAdapter:
         return self._request("GET", "/api/v3/account", signed=True)
 
     def test_order(self, order: OrderRequest) -> dict[str, Any]:
+        self._assert_signed_order_base_url()
         return self._request("POST", "/api/v3/order/test", params=self._order_params(order), signed=True)
 
     def place_order(self, order: OrderRequest) -> dict[str, Any]:
+        self._assert_signed_order_base_url()
         self.settings.validate_startup()
         if self.settings.trading_mode.value == "live":
             self.settings.validate_live_readiness()
         return self._request("POST", "/api/v3/order", params=self._order_params(order), signed=True)
 
     def cancel_order(self, symbol: str, order_id: int) -> dict[str, Any]:
+        self._assert_signed_order_base_url()
         return self._request(
             "DELETE",
             "/api/v3/order",
@@ -161,12 +166,44 @@ class BinanceSpotAdapter:
         )
 
     def get_order(self, symbol: str, order_id: int) -> dict[str, Any]:
+        self._assert_signed_order_base_url()
         return self._request(
             "GET",
             "/api/v3/order",
             params={"symbol": symbol, "orderId": order_id},
             signed=True,
         )
+
+    def open_orders(self, symbol: str | None = None) -> list[dict[str, Any]]:
+        self._assert_signed_order_base_url()
+        params = {"symbol": symbol} if symbol else {}
+        return self._request("GET", "/api/v3/openOrders", params=params, signed=True)
+
+    def query_order(
+        self,
+        symbol: str,
+        order_id: int | None = None,
+        client_order_id: str | None = None,
+    ) -> dict[str, Any]:
+        if order_id is None and client_order_id is None:
+            raise ValueError("order_id or client_order_id is required")
+        params: dict[str, Any] = {"symbol": symbol}
+        if order_id is not None:
+            params["orderId"] = order_id
+        if client_order_id is not None:
+            params["origClientOrderId"] = client_order_id
+        self._assert_signed_order_base_url()
+        return self._request("GET", "/api/v3/order", params=params, signed=True)
+
+    def create_listen_key(self) -> str:
+        payload = self._request("POST", "/api/v3/userDataStream", signed=False)
+        return str(payload.get("listenKey", ""))
+
+    def keepalive_listen_key(self, listen_key: str) -> dict[str, Any]:
+        return self._request("PUT", "/api/v3/userDataStream", params={"listenKey": listen_key}, signed=False)
+
+    def close_listen_key(self, listen_key: str) -> dict[str, Any]:
+        return self._request("DELETE", "/api/v3/userDataStream", params={"listenKey": listen_key}, signed=False)
 
     def _order_params(self, order: OrderRequest) -> dict[str, Any]:
         params: dict[str, Any] = {
@@ -184,3 +221,30 @@ class BinanceSpotAdapter:
             params["newClientOrderId"] = order.client_order_id
         return params
 
+    def _endpoint_url(self, path: str) -> str:
+        base = self.base_url.rstrip("/")
+        if base.endswith("/api") and path.startswith("/api/"):
+            return f"{base[:-4]}{path}"
+        return f"{base}{path}"
+
+    def _assert_signed_order_base_url(self) -> None:
+        base = normalize_base_url(self.base_url)
+        if self.settings.exchange_profile == BINANCE_DEMO_SPOT_PROFILE:
+            if base != DEMO_SPOT_BASE_URL:
+                raise BinanceAPIError(
+                    "Binance Demo Spot orders require demo-api.binance.com",
+                    payload={"base_url": base},
+                )
+            return
+        if self.settings.exchange_profile == BINANCE_SPOT_TESTNET_PROFILE:
+            if base != "https://testnet.binance.vision":
+                raise BinanceAPIError(
+                    "Binance Spot Testnet orders require testnet.binance.vision",
+                    payload={"base_url": base},
+                )
+            return
+        if self.settings.trading_mode.value != "live":
+            raise BinanceAPIError(
+                "signed order route blocked for non-demo profile",
+                payload={"profile": self.settings.exchange_profile},
+            )

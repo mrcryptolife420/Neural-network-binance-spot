@@ -33,11 +33,33 @@ class ExperimentDB:
         self.path.write_text(json.dumps([row.to_dict() for row in rows], indent=2, default=str), encoding="utf-8")
         return record
 
+    def add_dataset_manifest(self, artifact_path: str, metrics: dict[str, Any] | None = None) -> ExperimentRecord:
+        return self.add("dataset_manifest", artifact_path, metrics)
+
+    def add_walkforward_eval(self, artifact_path: str, metrics: dict[str, Any] | None = None) -> ExperimentRecord:
+        return self.add("walkforward_eval", artifact_path, metrics)
+
+    def add_model_card(self, artifact_path: str, metrics: dict[str, Any] | None = None) -> ExperimentRecord:
+        return self.add("model_card", artifact_path, metrics)
+
+    def add_promotion_decision(self, artifact_path: str, metrics: dict[str, Any] | None = None) -> ExperimentRecord:
+        return self.add("promotion_decision", artifact_path, metrics)
+
     def list(self) -> list[ExperimentRecord]:
         if not self.path.exists():
             return []
         payload = json.loads(self.path.read_text(encoding="utf-8"))
         return [ExperimentRecord(**item) for item in payload]
+
+    def filter(self, *, kind: str | None = None, dataset_id: str | None = None, status: str | None = None) -> list[ExperimentRecord]:
+        records = self.list()
+        if kind is not None:
+            records = [record for record in records if record.kind == kind]
+        if dataset_id is not None:
+            records = [record for record in records if record.metrics.get("dataset_id") == dataset_id]
+        if status is not None:
+            records = [record for record in records if record.metrics.get("status") == status]
+        return records
 
     def index_sessions(self, sessions_root: Path) -> list[ExperimentRecord]:
         records = []

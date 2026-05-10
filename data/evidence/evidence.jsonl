@@ -1,0 +1,1 @@
+{"created_at_ms": 1778378983563, "kind": "readiness-score", "payload": {"blockers": ["kill-switch-test", "readiness-review"], "level": "R3", "live_allowed": false, "passed": ["check-all", "paper-report", "secret-scan"]}, "record_id": "ev-1778378983563", "sha256": "[REDACTED]"}

@@ -5,8 +5,9 @@ import json
 import os
 import sys
 import time
-from dataclasses import replace
+from dataclasses import asdict, replace
 from decimal import Decimal
+from pathlib import Path
 
 import streamlit as st
 
@@ -15,16 +16,19 @@ from binance_spot_bot.connectivity import connectivity_report
 from binance_spot_bot.credentials import CredentialManager, WindowsSecretStoreAdapter
 from binance_spot_bot.chaos import simulate_failure
 from binance_spot_bot.copilot_permissions import check_copilot_action
+from binance_spot_bot.demo_pilot import operator_checklist, pilot_presets, pipeline_rows
 from binance_spot_bot.cache_manager import cache_manifest
 from binance_spot_bot.dashboard_state import DashboardProcessStatus, DashboardRuntimeState, bot_status_from_runtime
 from binance_spot_bot.diagnostics import collect_diagnostics
 from binance_spot_bot.evidence import EvidenceVault
-from binance_spot_bot.evaluation import evaluate_rule_baseline, report_to_dict
+from binance_spot_bot.evaluation import evaluate_rule_baseline, evaluate_walk_forward, report_to_dict
 from binance_spot_bot.experiment_db import ExperimentDB
-from binance_spot_bot.exchange_profiles import available_profiles, selectable_profile_names
+from binance_spot_bot.exchange_profiles import BINANCE_DEMO_SPOT_PROFILE, available_profiles, selectable_profile_names
 from binance_spot_bot.html_reports import export_html_report
 from binance_spot_bot.manual_demo_trading import ManualDemoTradeRequest, execute_manual_demo_trade
+from binance_spot_bot.model_registry import ModelRegistry
 from binance_spot_bot.notebook_export import export_notebook
+from binance_spot_bot.pilot_runner import PilotRunnerService, start_background_runner
 from binance_spot_bot.portfolio import Portfolio, Position
 from binance_spot_bot.preflight import run_preflight
 from binance_spot_bot.readiness import score_readiness
@@ -39,7 +43,14 @@ from binance_spot_bot.spot_preview import SpotPreview, load_spot_symbol_preview
 from binance_spot_bot.strategy_templates import list_strategy_templates
 from binance_spot_bot.testnet_endurance import TestnetEnduranceGuard
 from binance_spot_bot.types import FeatureRow, OrderSide
-from binance_spot_bot.ui.charts import candlestick_figure, equity_figure
+from binance_spot_bot.ui.charts import (
+    candlestick_figure,
+    command_status_figure,
+    equity_figure,
+    runner_counters_figure,
+    runner_equity_pnl_figure,
+    runner_heartbeat_figure,
+)
 from binance_spot_bot.ui.components import render_alert_list, render_badges, render_debug, render_table
 from binance_spot_bot.ui.demo_trading import demo_trading_badge
 from binance_spot_bot.ui.state import SELECTABLE_DATA_SOURCES, SELECTABLE_MODES, create_runtime
@@ -76,6 +87,10 @@ def main() -> None:
         st.session_state.evaluation_report = {}
     if "manual_demo_fills" not in st.session_state:
         st.session_state.manual_demo_fills = []
+    if "demo_trading_armed" not in st.session_state:
+        st.session_state.demo_trading_armed = False
+    if "demo_pilot_preset" not in st.session_state:
+        st.session_state.demo_pilot_preset = "smoke"
 
     saved = st.session_state.dashboard_settings
     profiles = available_profiles()
@@ -112,6 +127,18 @@ def main() -> None:
         pause = st.button("Pause", use_container_width=True)
         step_once = st.button("Single step", use_container_width=True)
         emergency_stop = st.button("Emergency stop", use_container_width=True)
+        st.header("Demo Spot")
+        st.session_state.demo_pilot_preset = st.selectbox(
+            "Pilot mode",
+            list(pilot_presets().keys()),
+            index=list(pilot_presets().keys()).index(st.session_state.demo_pilot_preset)
+            if st.session_state.demo_pilot_preset in pilot_presets()
+            else 0,
+        )
+        if st.button("Arm demo trading", use_container_width=True):
+            st.session_state.demo_trading_armed = selected_profile == BINANCE_DEMO_SPOT_PROFILE
+        if st.button("Disarm demo trading", use_container_width=True):
+            st.session_state.demo_trading_armed = False
 
     profile = profiles[selected_profile]
     st.session_state.credential_manager.set_session_credentials(
@@ -139,6 +166,7 @@ def main() -> None:
             "Portfolio",
             "Readiness",
             "Logs & Security",
+            "Demo Pilot",
         ]
     )
 
@@ -184,6 +212,8 @@ def main() -> None:
         int(max_data_age_ms),
         str(default_quote_size),
         st.session_state.credential_manager.status().api_key_fingerprint,
+        bool(st.session_state.demo_trading_armed),
+        st.session_state.demo_pilot_preset,
     )
     if reset_runtime or st.session_state.get("runtime_key") != runtime_key:
         st.session_state.runtime = create_runtime(
@@ -202,6 +232,8 @@ def main() -> None:
             model_alias,
             int(max_data_age_ms),
             default_quote_size,
+            bool(st.session_state.demo_trading_armed),
+            demo_pilot_preset=st.session_state.demo_pilot_preset,
         )
         st.session_state.runtime_key = runtime_key
         st.session_state.running = False
@@ -229,6 +261,8 @@ def main() -> None:
             model_alias,
             int(max_data_age_ms),
             default_quote_size,
+            bool(st.session_state.demo_trading_armed),
+            demo_pilot_preset=st.session_state.demo_pilot_preset,
         )
         st.session_state.runtime_key = runtime_key
         st.session_state.running = False
@@ -274,6 +308,8 @@ def main() -> None:
         _render_readiness(snapshot)
     with tabs[14]:
         _render_logs_security(snapshot, runtime_settings)
+    with tabs[15]:
+        _render_demo_pilot(st.session_state.runtime, snapshot)
 
     if st.session_state.running and snapshot.status not in {"completed", "stopped"}:
         time.sleep(0.7)
@@ -288,6 +324,7 @@ def _render_status_header(snapshot, profile, settings: BotSettings, saved) -> No
             "Workspace": "default",
             "Profile": profile.mode_badge,
             "Kill switch": "on" if settings.kill_switch else "paper override",
+            "Demo armed": "yes" if snapshot.demo_connection.get("armed") else "no",
             "Session": snapshot.status,
             "Readiness": snapshot.readiness.get("level", "R0"),
         }
@@ -316,7 +353,16 @@ def _render_overview(snapshot, profile, settings: BotSettings) -> None:
     st.info(f"{snapshot.message} | Base URL: {settings.active_base_url} | Live trading is not selectable.")
     chart_col, side_col = st.columns([3, 1])
     with chart_col:
-        st.plotly_chart(candlestick_figure(snapshot.candles, snapshot.signals, snapshot.fills), use_container_width=True)
+        st.plotly_chart(
+            candlestick_figure(
+                snapshot.candles,
+                snapshot.signals,
+                snapshot.fills,
+                open_orders=snapshot.demo_open_orders,
+                reconciliation_events=snapshot.reconciliation.get("events", []),
+            ),
+            use_container_width=True,
+        )
         st.plotly_chart(equity_figure(snapshot.equity_points), use_container_width=True)
     with side_col:
         render_debug("Health details", snapshot.metrics.health())
@@ -418,7 +464,17 @@ def _render_credentials(manager: CredentialManager, settings: BotSettings, selec
     render_debug("Credential status", manager.status().to_dict())
     if st.session_state.connectivity_report:
         st.subheader("Connectivity report")
-        render_debug("Connectivity report", st.session_state.connectivity_report)
+        report = st.session_state.connectivity_report
+        checks = {item["name"]: item["status"] for item in report.get("checks", [])}
+        render_badges(
+            {
+                "Connection": report.get("status", "unknown"),
+                "Base URL": report.get("base_url", "-"),
+                "Account": checks.get("signed_account", "-"),
+                "Server time": checks.get("server_time", "-"),
+            }
+        )
+        render_debug("Connectivity report", report)
 
 
 def _render_bot_controls(snapshot, running: bool, runtime_key: tuple) -> None:
@@ -428,6 +484,13 @@ def _render_bot_controls(snapshot, running: bool, runtime_key: tuple) -> None:
     b2.metric("Session", snapshot.session_id[-8:] if snapshot.session_id else "-")
     b3.metric("Fills", len(snapshot.fills))
     b4.metric("Blocks", sum(snapshot.metrics.block_reasons.values()))
+    render_badges(
+        {
+            "Demo armed": str(snapshot.demo_connection.get("armed", False)),
+            "Demo gate": snapshot.demo_connection.get("gate", {}).get("reason", "not-active"),
+            "Live": "disabled",
+        }
+    )
     st.caption("Start, pause, step and emergency stop are in the sidebar.")
     render_debug("Active runtime key", {"active_runtime_key": [str(item) for item in runtime_key]})
 
@@ -457,9 +520,234 @@ def _render_market(snapshot) -> None:
 def _render_orders(snapshot) -> None:
     st.subheader("Orders & Account")
     render_debug("User data stream", snapshot.user_data_stream)
+    if snapshot.demo_account:
+        render_debug("Demo account", snapshot.demo_account)
+    if snapshot.demo_open_orders:
+        render_table("Demo open orders", snapshot.demo_open_orders)
     render_table("Order lifecycle", snapshot.order_lifecycle)
     st.subheader("Testnet readiness")
     render_debug("Testnet readiness", snapshot.testnet_prechecks)
+
+
+def _operator_snapshot_payload(snapshot) -> dict[str, object]:
+    return asdict(snapshot)
+
+
+def _render_demo_pilot(runtime, snapshot) -> None:
+    st.subheader("Demo Pilot")
+    operator_payload = _operator_snapshot_payload(snapshot)
+    config = snapshot.demo_pilot.get("config", {})
+    counters = snapshot.demo_pilot.get("counters", {})
+    gate = snapshot.demo_connection.get("gate", {})
+    pilot_status = runtime.pilot_orchestrator.status_payload(operator_payload)
+    render_badges(
+        {
+            "Pilot": config.get("pilot_name", "-"),
+            "Pilot state": pilot_status.get("state", "-"),
+            "Run id": pilot_status.get("run_id", "-")[-12:] if pilot_status.get("run_id") else "-",
+            "Armed": str(snapshot.demo_connection.get("armed", False)),
+            "Status": snapshot.demo_pilot.get("status", "not-active"),
+            "Resume required": str(snapshot.resume_required),
+            "Base URL": snapshot.demo_connection.get("base_url", "-"),
+            "Live": "disabled",
+        }
+    )
+    if snapshot.resume_required or snapshot.reconciliation.get("needs_operator_action"):
+        st.error("Operator action required: reconcile/cancel open demo orders before continuing.")
+    elif not snapshot.demo_connection.get("armed"):
+        st.warning("Next safe action: load Demo Spot credentials, test the connection, then explicitly arm demo trading.")
+    else:
+        st.success("Demo pilot is armed for Demo Spot only. Live trading remains disabled.")
+
+    c1, c2, c3, c4, c5, c6 = st.columns(6)
+    c1.metric("Orders", counters.get("orders", 0))
+    c2.metric("Max orders", config.get("max_demo_orders", "-"))
+    c3.metric("Rejects", f"{counters.get('rejects', 0)} / {config.get('max_rejects', '-')}")
+    c4.metric("API errors", f"{counters.get('api_errors', 0)} / {config.get('max_api_errors', '-')}")
+    c5.metric("Reconcile fails", f"{counters.get('reconciliation_failures', 0)} / {config.get('max_reconciliation_failures', '-')}")
+    c6.metric("Elapsed sec", counters.get("elapsed_seconds", 0))
+
+    st.subheader("Pilot Run")
+    gate_payload = pilot_status.get("gate", {})
+    resume_payload = pilot_status.get("resume", {})
+    acceptance = pilot_status.get("acceptance", {})
+    render_badges(
+        {
+            "Start gate": "ready" if gate_payload.get("allowed") else "blocked",
+            "Next action": gate_payload.get("next_action", "-"),
+            "Resume": "required" if resume_payload.get("resume_required") else "clean",
+            "Open orders": resume_payload.get("open_orders", 0),
+            "Recon age ms": snapshot.demo_pilot.get("last_reconciliation_check_ms", 0),
+            "Account sync ms": snapshot.demo_pilot.get("last_demo_account_sync_ms", 0),
+        }
+    )
+    render_table("Start gate", gate_payload.get("checks", []))
+    render_table("Acceptance criteria", [acceptance])
+    run_cols = st.columns(3)
+    if run_cols[0].button("Start Demo Spot Pilot", use_container_width=True):
+        gate_now = runtime.pilot_orchestrator.evaluate_start_gate(operator_payload)
+        if gate_now.get("allowed"):
+            runtime.start()
+            st.session_state.running = True
+        else:
+            st.session_state.demo_pilot_hint = gate_now.get("next_action", "Resolve start blockers")
+        st.rerun()
+    if run_cols[1].button("Safe stop pilot", use_container_width=True):
+        runtime.stop()
+        st.session_state.running = False
+        st.session_state.demo_report_paths = runtime.report_paths
+        st.rerun()
+    if run_cols[2].button("Mark resolved", use_container_width=True):
+        record = runtime.pilot_orchestrator.mark_resolved(operator_payload)
+        st.session_state.demo_pilot_hint = "Resolved" if record and record.state == "completed" else "Blockers remain"
+        st.rerun()
+
+    st.subheader("Runner Mission Control")
+    runner_service = PilotRunnerService(BotSettings.from_env())
+    runner_status = runner_service.status()
+    runner = runner_status.get("runner", {})
+    runner_health = runner_status.get("runner_health", {})
+    telemetry_summary = runner_status.get("telemetry_summary", {})
+    stale_recovery = runner_status.get("stale_recovery", {})
+    telemetry_rows = runner_status.get("telemetry_rows", [])
+    runner_commands = runner_status.get("commands", [])
+    render_badges(
+        {
+            "Runner": runner.get("state", "not_running"),
+            "Alive": str(runner.get("alive", False)),
+            "Stale": str(runner.get("stale", False)),
+            "Heartbeat age ms": runner.get("heartbeat_age_ms", 0),
+            "PID": runner.get("pid", "-"),
+            "Next action": runner_health.get("next_safe_action", runner.get("next_action", "-")),
+            "Failed cmds": runner_health.get("failed_commands", 0),
+            "Telemetry rows": runner_health.get("telemetry_rows", 0),
+        }
+    )
+    render_table("Runner health", [runner_health])
+    render_table("Telemetry summary", [telemetry_summary])
+    chart_a, chart_b = st.columns(2)
+    with chart_a:
+        st.plotly_chart(runner_heartbeat_figure(telemetry_rows), use_container_width=True)
+        st.plotly_chart(runner_counters_figure(telemetry_rows), use_container_width=True)
+    with chart_b:
+        st.plotly_chart(runner_equity_pnl_figure(telemetry_rows), use_container_width=True)
+        st.plotly_chart(command_status_figure(runner_commands), use_container_width=True)
+    if stale_recovery.get("stale"):
+        st.warning("Runner stale: follow recovery steps before starting a new pilot.")
+    render_table("Stale recovery", stale_recovery.get("steps", []))
+    runner_cols = st.columns(6)
+    if runner_cols[0].button("Start runner", use_container_width=True):
+        st.session_state.runner_start_result = start_background_runner(
+            symbol=snapshot.symbol,
+            interval=snapshot.interval,
+            preset=config.get("pilot_name", "smoke"),
+            source="demo",
+            cwd=Path.cwd(),
+        )
+        st.rerun()
+    confirm_stop_runner = st.checkbox("Confirm stop runner")
+    confirm_cancel_runner = st.checkbox("Confirm runner cancel open orders")
+    confirm_clear_stale = st.checkbox("Confirm clear stale lock")
+    if runner_cols[1].button("Stop runner", use_container_width=True):
+        if not confirm_stop_runner:
+            st.session_state.runner_command = {"status": "blocked", "reason": "confirm stop runner first"}
+            st.rerun()
+        st.session_state.runner_command = runner_service.enqueue_command("stop")
+        st.rerun()
+    if runner_cols[2].button("Runner reconcile", use_container_width=True):
+        st.session_state.runner_command = runner_service.enqueue_command("reconcile")
+        st.rerun()
+    if runner_cols[3].button("Runner cancel", use_container_width=True):
+        if not confirm_cancel_runner:
+            st.session_state.runner_command = {"status": "blocked", "reason": "confirm runner cancel first"}
+            st.rerun()
+        st.session_state.runner_command = runner_service.enqueue_command("cancel_open_orders")
+        st.rerun()
+    if runner_cols[4].button("Runner export", use_container_width=True):
+        st.session_state.runner_command = runner_service.enqueue_command("export_report")
+        st.rerun()
+    if runner_cols[5].button("Clear stale lock", use_container_width=True):
+        if not confirm_clear_stale:
+            st.session_state.runner_clear_stale = {"status": "blocked", "reason": "confirm clear stale lock first"}
+            st.rerun()
+        st.session_state.runner_clear_stale = runner_service.clear_stale_lock()
+        st.rerun()
+    if st.session_state.get("runner_start_result"):
+        render_debug("Runner start", st.session_state.runner_start_result)
+    if st.session_state.get("runner_command"):
+        render_debug("Runner command", st.session_state.runner_command)
+    render_table("Runner telemetry", [runner_status.get("latest_telemetry", {})] if runner_status.get("latest_telemetry") else [])
+    render_table("Runner commands", runner_commands)
+    report_paths = runner_status.get("latest_run", {}).get("report_paths", {})
+    runner_paths = {
+        "command_dir": runner.get("command_dir", ""),
+        "telemetry_jsonl": runner.get("telemetry_jsonl", ""),
+        "latest_telemetry_json": runner.get("latest_telemetry_json", ""),
+        **{f"report_{key}": value for key, value in report_paths.items()},
+    }
+    render_table("Runner paths", [{"artifact": key, "path": value} for key, value in runner_paths.items() if value])
+
+    cols = st.columns(8)
+    if cols[0].button("Connect", use_container_width=True):
+        st.session_state.demo_pilot_hint = "Open Credentials & Profile, load Demo Spot keys, then use Test connection."
+    if cols[1].button("Test connection", use_container_width=True):
+        st.session_state.demo_pilot_hint = gate.get("reason", "Credentials are evaluated on runtime reset/connection checks.")
+    if cols[2].button("Reconcile now", use_container_width=True):
+        st.session_state.demo_reconciliation = runtime.reconcile_demo_orders()
+        st.rerun()
+    if cols[3].button("Arm", use_container_width=True):
+        st.session_state.demo_trading_armed = True
+        st.session_state.runtime_key = None
+        st.rerun()
+    if cols[4].button("Disarm", use_container_width=True):
+        st.session_state.demo_trading_armed = False
+        st.session_state.runtime_key = None
+        st.rerun()
+    if cols[5].button("Stop", use_container_width=True):
+        runtime.stop()
+        st.session_state.running = False
+        st.rerun()
+    if cols[6].button("Cancel open orders", use_container_width=True):
+        st.session_state.demo_cancel_status = runtime.cancel_demo_open_orders()
+        st.rerun()
+    if cols[7].button("Export report", use_container_width=True):
+        runtime.stop()
+        st.session_state.demo_report_paths = runtime.report_paths
+        st.rerun()
+    if st.button("Reset local runtime", use_container_width=True):
+        st.session_state.runtime_key = None
+        st.rerun()
+    if st.session_state.get("demo_pilot_hint"):
+        st.info(st.session_state.demo_pilot_hint)
+
+    render_table("Operator checklist", operator_checklist(operator_payload))
+    render_table(
+        "Pilot preset",
+        [
+            {
+                "name": config.get("pilot_name", "-"),
+                "duration_min": config.get("duration_minutes", "-"),
+                "max_orders": config.get("max_demo_orders", "-"),
+                "max_rejects": config.get("max_rejects", "-"),
+                "max_api_errors": config.get("max_api_errors", "-"),
+                "max_reconcile_failures": config.get("max_reconciliation_failures", "-"),
+                "cancel_on_stop": config.get("cancel_open_orders_on_stop", "-"),
+                "pause_reason": snapshot.demo_pilot.get("pause_reason", ""),
+            }
+        ],
+    )
+    render_table("Signal to order pipeline", pipeline_rows(operator_payload))
+    render_table("Open demo orders", snapshot.demo_open_orders)
+    render_table("Order lifecycle", snapshot.order_lifecycle)
+    if snapshot.demo_order_errors:
+        render_table("Demo order errors", snapshot.demo_order_errors)
+    if snapshot.cancel_on_stop_status or st.session_state.get("demo_cancel_status"):
+        render_table("Cancel status", snapshot.cancel_on_stop_status or st.session_state.demo_cancel_status)
+    if st.session_state.get("demo_report_paths"):
+        render_table("Pilot report paths", [{"artifact": key, "path": value} for key, value in st.session_state.demo_report_paths.items()])
+    with st.expander("Technical payloads"):
+        render_debug("Reconciliation", snapshot.reconciliation)
+        render_debug("Demo account", snapshot.demo_account)
 
 
 def _render_sessions(snapshot) -> None:
@@ -484,17 +772,74 @@ def _render_sessions(snapshot) -> None:
 
 
 def _render_evaluation(snapshot, settings: BotSettings, symbol: str, interval: str) -> None:
-    st.subheader("Evaluation")
-    if st.button("Run local evaluation"):
+    st.subheader("Model Lab")
+    col_a, col_b = st.columns(2)
+    with col_a:
+        run_baseline = st.button("Run baseline evaluation", use_container_width=True)
+    with col_b:
+        run_walk_forward = st.button("Run walk-forward evaluation", use_container_width=True)
+    if run_baseline or run_walk_forward:
         if len(snapshot.candles) > 20:
-            report = evaluate_rule_baseline(symbol, interval, snapshot.candles)
+            report = (
+                evaluate_walk_forward(symbol, interval, snapshot.candles)
+                if run_walk_forward
+                else evaluate_rule_baseline(symbol, interval, snapshot.candles)
+            )
             st.session_state.evaluation_report = report_to_dict(report)
         else:
             st.warning("Run the bot for more candles before evaluation.")
     if st.session_state.evaluation_report:
-        st.json(st.session_state.evaluation_report)
+        report = st.session_state.evaluation_report
+        render_badges(
+            {
+                "Mode": report.get("mode", "evaluation"),
+                "Folds": len(report.get("folds", [])),
+                "Leakage": report.get("leakage", {}).get("status", "not-run"),
+                "Live": "disabled",
+            }
+        )
+        if report.get("candidate_summary"):
+            c1, c2, c3 = st.columns(3)
+            c1.metric("Candidate pnl", report["candidate_summary"].get("pnl", "0"))
+            c2.metric("Baseline pnl", report["baseline_summary"].get("pnl", "0"))
+            c3.metric("Beats baseline", str(report["candidate_summary"].get("beats_baseline", False)))
+        if report.get("manifest"):
+            manifest = report["manifest"]
+            render_debug(
+                "Dataset manifest",
+                {
+                    "dataset_id": manifest.get("dataset_id"),
+                    "feature_schema_hash": manifest.get("feature_schema_hash"),
+                    "label_horizon": manifest.get("label_horizon"),
+                    "row_count": manifest.get("row_count"),
+                    "checksum": manifest.get("checksum"),
+                },
+            )
+        render_table("Walk-forward folds", report.get("folds", []))
+        with st.expander("Raw evaluation report"):
+            st.json(report)
     else:
         st.caption("Run after enough candles are available.")
+    registry = ModelRegistry(settings.data_dir / "models")
+    models = registry.list_models()
+    if models:
+        st.subheader("Model registry gates")
+        rows = []
+        for model in models:
+            decision = registry.evaluate_promotion(model, operator_confirmed=False)
+            rows.append(
+                {
+                    "model_id": model.model_id,
+                    "role": model.role,
+                    "dataset_id": model.dataset_id,
+                    "schema": model.feature_schema_hash,
+                    "promotion_blockers": ", ".join(decision.reasons),
+                    "shadow_only": model.role in {"candidate", "shadow"},
+                }
+            )
+        render_table("Registered models", rows)
+    else:
+        st.caption("No registered models yet.")
 
 
 def _render_strategy_lab(snapshot) -> None:

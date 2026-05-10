@@ -43,6 +43,24 @@ def run_checks(root: Path, skip_tests: bool = False) -> list[CheckResult]:
             ("preflight", [sys.executable, "-m", "binance_spot_bot.cli", "preflight"]),
             ("security_scan", [sys.executable, "-m", "binance_spot_bot.cli", "security-scan"]),
             ("dashboard_import", [sys.executable, "-c", "import binance_spot_bot.ui.streamlit_app"]),
+            ("pilot_orchestrator_import", [sys.executable, "-c", "import binance_spot_bot.pilot_orchestrator"]),
+            ("pilot_runner_import", [sys.executable, "-c", "import binance_spot_bot.pilot_runner"]),
+            (
+                "pilot_store_smoke",
+                [
+                    sys.executable,
+                    "-c",
+                    "import tempfile; from pathlib import Path; from binance_spot_bot.pilot_orchestrator import PilotRunStore; s=PilotRunStore(Path(tempfile.mkdtemp())/'runs'); v='abcde'*6; r=s.create_run('binance-demo-spot','BTCUSDT','smoke','blocked',[{'reason':'secret='+v}]); assert s.load(r.run_id).blockers[0]['reason']=='[REDACTED]'",
+                ],
+            ),
+            (
+                "pilot_runner_status_smoke",
+                [
+                    sys.executable,
+                    "-c",
+                    "import tempfile; from pathlib import Path; from binance_spot_bot.config import BotSettings; from binance_spot_bot.pilot_runner import PilotRunnerService; from dataclasses import replace; s=replace(BotSettings.from_env(), data_dir=Path(tempfile.mkdtemp())/'data'); p=PilotRunnerService(s).status(); assert p['runner']['state']=='not_running'",
+                ],
+            ),
             ("cli_smoke", [sys.executable, "-m", "binance_spot_bot.cli", "launch-dashboard", "--start-port", "8700"]),
             ("no_live_ui", [sys.executable, "-c", "from binance_spot_bot.ui.state import SELECTABLE_MODES; assert 'live' not in SELECTABLE_MODES"]),
             ("no_secret_artifacts", [sys.executable, "-m", "binance_spot_bot.cli", "security-scan"]),

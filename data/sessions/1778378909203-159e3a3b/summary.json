@@ -1,0 +1,20 @@
+{
+  "session_id": "1778378909203-159e3a3b",
+  "mode": "demo",
+  "symbol": "BTCUSDT",
+  "interval": "1m",
+  "started_at_ms": 1778378909203,
+  "ended_at_ms": null,
+  "pnl": "0",
+  "max_drawdown": "0",
+  "trades": 0,
+  "blocks": 0,
+  "model_version": "rule-baseline-0.1",
+  "status": "running",
+  "metadata": {
+    "source": "demo",
+    "model_alias": "",
+    "demo_trading_armed": false,
+    "exchange_profile": "binance-demo-spot"
+  }
+}

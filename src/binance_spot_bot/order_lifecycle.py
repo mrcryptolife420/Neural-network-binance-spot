@@ -73,5 +73,35 @@ class OrderLifecycleStore:
         )
         return lifecycle
 
+    def apply_order_payload(self, payload: dict[str, Any]) -> OrderLifecycle:
+        client_order_id = str(
+            payload.get("clientOrderId")
+            or payload.get("origClientOrderId")
+            or payload.get("newClientOrderId")
+            or ""
+        )
+        if not client_order_id:
+            raise ValueError("order payload missing client order id")
+        lifecycle = self.orders.setdefault(
+            client_order_id,
+            OrderLifecycle(client_order_id, str(payload.get("symbol", "")), str(payload.get("side", ""))),
+        )
+        lifecycle.symbol = str(payload.get("symbol", lifecycle.symbol))
+        lifecycle.side = str(payload.get("side", lifecycle.side))
+        lifecycle.status = str(payload.get("status", lifecycle.status))
+        lifecycle.order_id = int(payload["orderId"]) if str(payload.get("orderId", "")).isdigit() else lifecycle.order_id
+        lifecycle.filled_quantity = Decimal(str(payload.get("executedQty", "0") or "0"))
+        lifecycle.last_price = Decimal(str(payload.get("price", "0") or "0"))
+        lifecycle.needs_reconciliation = lifecycle.status not in TERMINAL_STATUSES
+        lifecycle.events.append({"type": "REST_QUERY", "status": lifecycle.status, "payload": payload})
+        return lifecycle
+
+    def record_external_order(self, client_order_id: str, symbol: str, side: str) -> OrderLifecycle:
+        lifecycle = self.orders.setdefault(client_order_id, OrderLifecycle(client_order_id, symbol, side))
+        lifecycle.symbol = symbol
+        lifecycle.side = side
+        lifecycle.needs_reconciliation = True
+        return lifecycle
+
     def list_recent(self, limit: int = 20) -> list[dict[str, Any]]:
         return [order.to_dict() for order in list(self.orders.values())[-limit:]]

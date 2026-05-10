@@ -104,6 +104,17 @@ class UserDataStreamAdapter:
         self.connected = False
         self.reconnect_count = 0
         self.last_message_ms: int | None = None
+        self.listen_key = ""
+        self.mode = "fallback-rest"
+
+    def attach_listen_key(self, listen_key: str) -> None:
+        self.listen_key = listen_key
+        self.connected = bool(listen_key)
+        self.mode = "connected" if listen_key else "fallback-rest"
+
+    def mark_fallback(self) -> None:
+        self.connected = False
+        self.mode = "fallback-rest"
 
     def status(self) -> dict[str, object]:
         return {
@@ -111,4 +122,6 @@ class UserDataStreamAdapter:
             "connected": self.connected,
             "reconnect_count": self.reconnect_count,
             "last_message_ms": self.last_message_ms,
+            "mode": self.mode,
+            "listen_key_present": bool(self.listen_key),
         }
