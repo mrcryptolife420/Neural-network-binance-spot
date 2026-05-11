@@ -1,0 +1,16 @@
+{
+  "execution_id": "exec-act-1778517196605-d054debd19-1778517197419",
+  "proposal_id": "act-1778517196605-d054debd19",
+  "started_at_ms": 1778517197419,
+  "finished_at_ms": 1778517197419,
+  "status": "executed",
+  "exit_code": 0,
+  "stdout_path": "data\\action-center\\executions\\exec-act-1778517196605-d054debd19-1778517197419.stdout.txt",
+  "stderr_path": "data\\action-center\\executions\\exec-act-1778517196605-d054debd19-1778517197419.stderr.txt",
+  "artifacts": [
+    "data\\action-center\\executions\\exec-act-1778517196605-d054debd19-1778517197419.stdout.txt",
+    "data\\action-center\\executions\\exec-act-1778517196605-d054debd19-1778517197419.stderr.txt"
+  ],
+  "redacted": true,
+  "live_trading_enabled": false
+}

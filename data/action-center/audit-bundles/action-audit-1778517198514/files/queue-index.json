@@ -1,0 +1,21 @@
+{
+  "items": [
+    {
+      "proposal_id": "act-1778517196605-d054debd19",
+      "title": "diagnostics",
+      "status": "completed",
+      "safety_class": "read_only",
+      "updated_at_ms": 1778517197799
+    },
+    {
+      "proposal_id": "act-1778517112605-93af3c0093",
+      "title": "diagnostics",
+      "status": "proposed",
+      "safety_class": "read_only",
+      "updated_at_ms": 1778517112606
+    }
+  ],
+  "count": 2,
+  "live_trading_enabled": false,
+  "manifest_hash": "56c1305ac0cec7ec0a1f169e"
+}

@@ -1,0 +1,21 @@
+{
+  "bundle_id": "governance-1778512722493",
+  "summary": {
+    "source": "cli"
+  },
+  "files": [
+    {
+      "file": "bundle-source.json",
+      "sha256": "6d963cbe1500e2cb...1e382cb93524d9b2",
+      "bytes": 3172,
+      "sha256_parts": [
+        "6d963cbe1500e2cb",
+        "4b81bb45ffd192d9",
+        "68c2d5b238a29eaa",
+        "1e382cb93524d9b2"
+      ]
+    }
+  ],
+  "verification": "sha256",
+  "live_trading_enabled": false
+}

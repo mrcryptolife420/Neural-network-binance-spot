@@ -1,68 +1,69 @@
 from __future__ import annotations
 
-import json
-import time
-from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
 
+from .action_policy import validate_action_proposal
+from .action_proposals import ActionProposal, ActionSafetyClass, proposal_from_command
+from .approval_workflow import ApprovalWorkflow
 from .config import BotSettings
 from .redaction import redact_payload
-
 
 SAFE_ACTIONS = {"export_report", "reconcile_orders", "pause_paper_runner", "create_support_bundle"}
 
 
-@dataclass(frozen=True)
-class ActionProposal:
-    action_id: str
-    action_type: str
-    reason: str
-    requested_by: str = "operator"
-    status: str = "pending_approval"
-    created_at_ms: int = field(default_factory=lambda: int(time.time() * 1000))
-    live_trading_enabled: bool = False
-
-    def to_dict(self) -> dict[str, Any]:
-        return redact_payload(asdict(self))
-
-
 def propose_action(action_type: str, reason: str) -> ActionProposal:
-    safe = action_type in SAFE_ACTIONS
-    return ActionProposal(
-        action_id=f"action-{int(time.time() * 1000)}",
-        action_type=action_type,
-        reason=reason,
-        status="pending_approval" if safe else "blocked_unsafe_action",
+    command = _legacy_action_to_command(action_type)
+    safety = ActionSafetyClass.SAFE_GENERATE_ARTIFACT if action_type in {"export_report", "create_support_bundle"} else ActionSafetyClass.READ_ONLY
+    if action_type not in SAFE_ACTIONS:
+        safety = ActionSafetyClass.FORBIDDEN
+    return proposal_from_command(
+        command,
+        ["--json"] if command in {"operator-report", "support-bundle", "pilot-status"} else [],
+        title=action_type,
+        description=reason,
+        source="dashboard" if reason == "dashboard preview" else "operator_manual",
+        category="support_bundle" if action_type == "create_support_bundle" else "report",
+        safety_class=safety,
     )
 
 
 def review_action(proposal: ActionProposal, *, approved: bool, reviewer: str = "operator") -> dict[str, Any]:
-    if proposal.status.startswith("blocked"):
-        status = proposal.status
-    elif approved:
-        status = "approved_waiting_execution"
-    else:
-        status = "rejected"
-    return {
-        "action": proposal.to_dict(),
-        "review": {"reviewer": reviewer, "approved": approved, "status": status, "reviewed_at_ms": int(time.time() * 1000)},
-        "execution": {"status": "not_executed", "requires_manual_click": True},
-        "live_trading_enabled": False,
-    }
+    validation = validate_action_proposal(proposal)
+    status = "blocked_unsafe_action" if not validation.allowed else ("approved_waiting_execution" if approved else "pending_approval")
+    return redact_payload(
+        {
+            "action": proposal.to_dict(),
+            "review": {"reviewer": reviewer, "approved": approved and validation.allowed, "status": status},
+            "execution": {"status": "not_executed", "requires_manual_click": True},
+            "validation": validation.to_dict(),
+            "live_trading_enabled": False,
+        }
+    )
 
 
 def write_action_journal(settings: BotSettings, decision: dict[str, Any]) -> dict[str, Any]:
-    out = settings.data_dir / "action-center"
-    out.mkdir(parents=True, exist_ok=True)
-    path = out / "decision-journal.jsonl"
-    safe = redact_payload(decision)
-    with path.open("a", encoding="utf-8") as handle:
-        handle.write(json.dumps(safe, default=str) + "\n")
-    latest = out / "latest-decision.json"
-    latest.write_text(json.dumps(safe, indent=2, default=str), encoding="utf-8")
-    return {"path": str(path), "latest": str(latest), **safe}
+    workflow = ApprovalWorkflow(settings.data_dir, data_dir=settings.data_dir)
+    proposal = ActionProposal.from_dict(decision["action"])
+    submitted = workflow.submit(proposal)
+    if decision.get("review", {}).get("approved") and submitted["validation"]["allowed"]:
+        decided = workflow.decide(proposal.proposal_id, "approve", operator_id=decision.get("review", {}).get("reviewer", "operator"))
+    else:
+        decided = workflow.decide(proposal.proposal_id, "reject" if not submitted["validation"]["allowed"] else "defer", reason="dashboard preview")
+    return {"path": str(Path(settings.data_dir) / "action-center" / "decision-journal.jsonl"), **decided, "live_trading_enabled": False}
 
 
 def create_reviewed_action(settings: BotSettings, action_type: str, reason: str, *, approved: bool = False) -> dict[str, Any]:
-    return write_action_journal(settings, review_action(propose_action(action_type, reason), approved=approved))
+    proposal = propose_action(action_type, reason)
+    preview = review_action(proposal, approved=approved)
+    journal = write_action_journal(settings, preview)
+    return {**preview, "journal": journal, "live_trading_enabled": False}
+
+
+def _legacy_action_to_command(action_type: str) -> str:
+    return {
+        "export_report": "operator-report",
+        "create_support_bundle": "support-bundle",
+        "pause_paper_runner": "pilot-runner-stop",
+        "reconcile_orders": "pilot-status",
+    }.get(action_type, action_type)

@@ -1,0 +1,53 @@
+{
+  "status": "ready",
+  "items": [
+    {
+      "id": "daily-operator-health",
+      "title": "Daily operator health",
+      "type": "daily",
+      "config": {
+        "time": "08:00"
+      },
+      "enabled": true
+    },
+    {
+      "id": "daily-operator-report",
+      "title": "Daily operator report",
+      "type": "daily",
+      "config": {
+        "time": "18:00"
+      },
+      "enabled": true
+    },
+    {
+      "id": "daily-evidence-manifest",
+      "title": "Daily evidence manifest",
+      "type": "daily",
+      "config": {
+        "time": "18:10"
+      },
+      "enabled": true
+    },
+    {
+      "id": "weekly-governance-report",
+      "title": "Weekly governance report",
+      "type": "weekly",
+      "config": {
+        "weekday": "monday",
+        "time": "09:00"
+      },
+      "enabled": true
+    },
+    {
+      "id": "weekly-support-verify",
+      "title": "Weekly support bundle verify",
+      "type": "weekly",
+      "config": {
+        "weekday": "friday",
+        "time": "16:00"
+      },
+      "enabled": true
+    }
+  ],
+  "live_trading_enabled": false
+}

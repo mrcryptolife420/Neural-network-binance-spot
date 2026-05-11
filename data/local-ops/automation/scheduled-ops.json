@@ -8,7 +8,7 @@
       "output": "data/reports",
       "runbook": "Check before demo trading.",
       "blocking": false,
-      "next_due_ms": 1778586926063,
+      "next_due_ms": 1778606758867,
       "safe_to_run_locally": true,
       "live_trading_enabled": false
     },
@@ -19,7 +19,7 @@
       "output": "data/reports/operator",
       "runbook": "Review paper health and incidents.",
       "blocking": false,
-      "next_due_ms": 1778586926063,
+      "next_due_ms": 1778606758867,
       "safe_to_run_locally": true,
       "live_trading_enabled": false
     },
@@ -30,7 +30,7 @@
       "output": "data/support",
       "runbook": "Verify bundle restore safety.",
       "blocking": false,
-      "next_due_ms": 1779105326063,
+      "next_due_ms": 1779125158867,
       "safe_to_run_locally": true,
       "live_trading_enabled": false
     },
@@ -41,7 +41,7 @@
       "output": "data/evidence",
       "runbook": "Check evidence integrity chain.",
       "blocking": true,
-      "next_due_ms": 1779105326063,
+      "next_due_ms": 1779125158867,
       "safe_to_run_locally": true,
       "live_trading_enabled": false
     }

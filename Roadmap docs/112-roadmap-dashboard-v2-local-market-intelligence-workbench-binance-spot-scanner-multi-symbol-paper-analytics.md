@@ -1375,3 +1375,16 @@ Mogelijke inhoud:
 
 ```
 
+
+---
+
+## Herafwerking 2026-05-11
+
+Status: Voltooid na hercontrole.
+
+Gebouwd: Market intelligence workbench and multi-symbol paper analytics.
+
+Validatie: tests/test_roadmaps_104_122_full_surface.py, compileall en dashboard-smoke.
+
+Safety: lokale/demo/paper/read-only of expliciet approval-gated live-safety surfaces; tests bewijzen geen live order submission.
+

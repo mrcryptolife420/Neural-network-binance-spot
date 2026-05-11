@@ -1,0 +1,37 @@
+{
+  "proposal": {
+    "proposal_id": "act-1778519393027-2ca601c1d3",
+    "title": "diagnostics",
+    "description": "operator requested local evidence",
+    "command": {
+      "command": "diagnostics",
+      "args": [
+        "--json"
+      ],
+      "timeout_seconds": 60
+    },
+    "source": "dashboard",
+    "category": "diagnostics",
+    "safety_class": "read_only",
+    "expected_outputs": [],
+    "required_evidence": [],
+    "preconditions": [],
+    "confirm_phrase": "",
+    "forbidden_reasons": [],
+    "related_runbook_id": "",
+    "related_incident_id": "",
+    "related_evidence_ids": [],
+    "status": "proposed",
+    "created_at_ms": 1778519393028,
+    "expires_at_ms": 0,
+    "no_auto_execute": true,
+    "live_trading_enabled": false,
+    "proposal_hash": "ac972040dc95eb36cefd5b3c"
+  },
+  "status": "proposed",
+  "decisions": [],
+  "executions": [],
+  "verifications": [],
+  "updated_at_ms": 1778519393028,
+  "live_trading_enabled": false
+}

@@ -1087,11 +1087,20 @@ Open status: opnieuw plannen, opdelen in kleinere uitvoerbare taken, en pas opni
 
 ## Herafwerking 2026-05-11
 
-Status: Voltooid na hercontrole.
+Status: Voltooid na herimplementatie en hercontrole.
 
-Gebouwd: metric schema, metrics warehouse/reporting, artifact/local ops/paper/governance metrics, aggregation, SLO, anomaly detection, long-term analytics report, retention plan, evidence bundle, dashboardtab `Observability`, CLI smoke via `metrics-warehouse-report`.
+Gebouwd: metric schema, append-only JSONL metrics warehouse, manifest/verify/compaction, collectors, local ops metrics, paper performance metrics, governance metrics, daily/weekly aggregation, SLO layer, anomaly detection, metrics query CLI, long-term analytics reports, metrics retention, metrics evidence bundle, scheduled analytics allowlist en dashboardtab `Observability` met `LOCAL OBSERVABILITY ONLY`.
 
-Validatie: `tests/test_roadmaps_083_088_full_surface.py`, `tests/test_roadmaps_082_088_ops_governance.py`, dashboard-smoke en CLI smoke.
+Docs: `docs/local-observability-safety-contract.md`, `docs/metrics-event-schema.md`, `docs/local-metrics-warehouse.md`, `docs/metrics-collectors.md`, `docs/local-ops-metrics.md`, `docs/paper-performance-metrics.md`, `docs/governance-metrics.md`, `docs/metrics-aggregation.md`, `docs/paper-ops-slo.md`, `docs/metrics-anomaly-detection.md`, `docs/metrics-query-cli.md`, `docs/local-observability-dashboard.md`, `docs/long-term-analytics-reports.md`, `docs/metrics-retention-compaction.md`, `docs/metrics-evidence-bundle.md`.
+
+Validatie:
+
+- `python -m pytest tests/test_roadmap_084_observability_acceptance.py tests/test_roadmaps_083_088_full_surface.py tests/test_roadmaps_082_088_ops_governance.py -q` -> 18 passed.
+- `python -m pytest -q` -> 312 passed, 1 bestaande PytestCollectionWarning.
+- `python -m binance_spot_bot.cli check-all --skip-tests --json` -> ok.
+- `python -m binance_spot_bot.cli dashboard-smoke --seconds 1` -> ok.
+- `python -m binance_spot_bot.cli dashboard-browser-smoke --url http://127.0.0.1:8506/ --seconds 10` -> ok.
+- CLI smoke: metrics-ingest, metrics-query, metrics-latest, metrics-aggregate, metrics-slo, metrics-anomalies, metrics-export en metrics-compact.
 
 Safety: local-only metrics, redacted reports, no live trading.
 

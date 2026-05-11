@@ -1,0 +1,29 @@
+{
+  "verification_id": "ver-act-1778517196605-d054debd19-1778517197789",
+  "execution_id": "",
+  "proposal_id": "act-1778517196605-d054debd19",
+  "checks": [
+    {
+      "name": "execution completed",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "no-live proof",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "output redacted",
+      "status": "pass",
+      "detail": ""
+    }
+  ],
+  "status": "pass",
+  "blockers": [],
+  "warnings": [],
+  "artifacts": [],
+  "next_action": "",
+  "timestamp_ms": 1778517197789,
+  "live_trading_enabled": false
+}

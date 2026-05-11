@@ -953,7 +953,7 @@ Open status: opnieuw plannen, opdelen in kleinere uitvoerbare taken, en pas opni
 
 ## Herafwerking 2026-05-11
 
-Status: Voltooid na hercontrole.
+Status: Voltooid na herimplementatie en hercontrole.
 
 Gebouwd:
 
@@ -969,12 +969,16 @@ Gebouwd:
 - `src/binance_spot_bot/governance_evidence_bundle.py`
 - `src/binance_spot_bot/governance_simulation.py`
 - CLI commands voor policy register/promote/rollout, A/B paper status/start/stop, governance decision, weekly report, rollback, evidence bundle en simulation.
-- Docs: `docs/paper-policy-governance-safety-contract.md`, `docs/portfolio-policy-registry.md`, `docs/paper-policy-rollout.md`.
+- Docs: `docs/paper-policy-governance-safety-contract.md`, `docs/portfolio-policy-registry.md`, `docs/paper-policy-rollout.md`, `docs/policy-promotion-gate.md`, `docs/ab-paper-experiments.md`, `docs/paper-experiment-split.md`, `docs/experiment-stopping-rules.md`, `docs/policy-governance.md`, `docs/weekly-governance-report.md`, `docs/policy-lineage-rollback.md`, `docs/governance-evidence-bundle.md`, `docs/governance-simulation-suite.md`.
 
 Validatie:
 
-- `python -m pytest -q tests/test_roadmap_082_policy_governance_full.py tests/test_roadmaps_082_088_ops_governance.py`
-- CLI smoke voor alle Roadmap 082 governance commands.
+- `python -m pytest tests/test_roadmap_082_policy_governance_full.py tests/test_roadmap_082_complete_governance_acceptance.py tests/test_roadmaps_082_088_ops_governance.py -q` -> 18 passed.
+- `python -m pytest -q` -> 301 passed, 1 bestaande PytestCollectionWarning.
+- `python -m binance_spot_bot.cli check-all --skip-tests --json` -> ok.
+- `python -m binance_spot_bot.cli dashboard-smoke --seconds 1` -> ok.
+- `python -m binance_spot_bot.cli dashboard-browser-smoke --url http://127.0.0.1:8506/ --seconds 10` -> ok.
+- CLI smoke voor Roadmap 082 governance commands: register, promote, rollout-plan, A/B start, simulation, weekly report, evidence bundle en rollback.
 
 Safety:
 

@@ -1,0 +1,19 @@
+{
+  "bundle_id": "action-audit-1778517198514",
+  "files": [
+    {
+      "source": "data\\action-center\\queue-index.json",
+      "target": "data\\action-center\\audit-bundles\\action-audit-1778517198514\\files\\queue-index.json",
+      "sha256": "75832e113b6bd363587501fe"
+    },
+    {
+      "source": "data\\action-center\\decision-journal.jsonl",
+      "target": "data\\action-center\\audit-bundles\\action-audit-1778517198514\\files\\decision-journal.jsonl",
+      "sha256": "7324786114cb7ee128531a3d"
+    }
+  ],
+  "no_live_proof": true,
+  "redaction_proof": true,
+  "live_trading_enabled": false,
+  "manifest_hash": "7a217d31e917e722a5ed9cb0"
+}

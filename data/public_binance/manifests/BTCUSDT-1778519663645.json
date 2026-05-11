@@ -1,0 +1,34 @@
+{
+  "fetched_at_ms": 1778519663645,
+  "files": {
+    "bundle": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\public_binance\\bundles\\BTCUSDT-1778519663645.json",
+    "klines_15m": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\processed\\BTCUSDT_15m_candles.csv",
+    "klines_1h": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\processed\\BTCUSDT_1h_candles.csv",
+    "klines_1m": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\processed\\BTCUSDT_1m_candles.csv",
+    "klines_5m": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\processed\\BTCUSDT_5m_candles.csv"
+  },
+  "freshness_score": 100,
+  "hashes": {
+    "bundle": "7afbd66d7ceaec9c0f0b147145b6a097219d519744e4c8475066c313130b43a7",
+    "klines_15m": "eb869349c82c555b9043178547e01e32421afeb60a25710528eafa5beb30cc97",
+    "klines_1h": "87c800c190ebbbd45ae41c5139430dbee442e9a262576442abceb4616513c218",
+    "klines_1m": "501b144ee4fab322c6db5b8cd16aeb9ee23764ee8e152d1ad43447ad9c7a23bc",
+    "klines_5m": "ce535ab708a6e2d9f6b2132f9dbdec78c3f75490de8a42b306ecd831b934eed1"
+  },
+  "intervals": [
+    "15m",
+    "1h",
+    "1m",
+    "5m"
+  ],
+  "live_trading_enabled": false,
+  "row_counts": {
+    "15m": 120,
+    "1h": 120,
+    "1m": 120,
+    "5m": 120
+  },
+  "source_endpoint": "public-rest/cache",
+  "symbol": "BTCUSDT",
+  "warnings": []
+}

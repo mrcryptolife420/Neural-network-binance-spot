@@ -1104,11 +1104,20 @@ Open status: opnieuw plannen, opdelen in kleinere uitvoerbare taken, en pas opni
 
 ## Herafwerking 2026-05-11
 
-Status: Voltooid na hercontrole.
+Status: Voltooid na herimplementatie en hercontrole.
 
-Gebouwd: local jobs, command allowlist, job store, runner, scheduler, scheduled reports, operator runbooks, governance reminders, paper ops calendar, Windows task plan, runbook drills, dashboardtab `Ops Automation`, CLI smoke via `local-ops-jobs`.
+Gebouwd: local job schema, command allowlist, job store, runner, scheduler tick/dry-run, scheduled report plans, operator runbooks, governance reminders, paper ops calendar, Windows Task Scheduler script generation, runbook drills, local ops CLI commands en dashboardtab `Ops Automation`.
 
-Validatie: `tests/test_roadmaps_083_088_full_surface.py`, `tests/test_roadmaps_082_088_ops_governance.py`, dashboard-smoke en CLI smoke.
+Docs: `docs/local-paper-ops-automation-safety-contract.md`, `docs/local-job-schema.md`, `docs/local-job-allowlist.md`, `docs/local-scheduler.md`, `docs/scheduled-reports.md`, `docs/operator-runbooks.md`, `docs/failure-support-bundles.md`, `docs/governance-reminders.md`, `docs/paper-ops-calendar.md`, `docs/windows-task-scheduler-local-ops.md`, `docs/local-ops-dashboard.md`, `docs/runbook-drills.md`, `docs/retention-data-growth-automation.md`.
+
+Validatie:
+
+- `python -m pytest tests/test_roadmap_083_local_ops_acceptance.py tests/test_roadmaps_083_088_full_surface.py tests/test_roadmaps_082_088_ops_governance.py -q` -> 19 passed.
+- `python -m pytest -q` -> 307 passed, 1 bestaande PytestCollectionWarning.
+- `python -m binance_spot_bot.cli check-all --skip-tests --json` -> ok.
+- `python -m binance_spot_bot.cli dashboard-smoke --seconds 1` -> ok.
+- `python -m binance_spot_bot.cli dashboard-browser-smoke --url http://127.0.0.1:8506/ --seconds 10` -> ok.
+- CLI smoke: local-job-create-defaults, local-job-run, local-scheduler-tick, scheduled-report-plan, runbook-list, governance-reminders, paper-ops-calendar en windows-scheduler-install.
 
 Safety: local/paper-only, unsafe order/live/withdraw commands blocked.
 

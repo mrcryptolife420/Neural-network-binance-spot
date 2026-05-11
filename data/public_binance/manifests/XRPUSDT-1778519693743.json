@@ -1,0 +1,34 @@
+{
+  "fetched_at_ms": 1778519693743,
+  "files": {
+    "bundle": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\public_binance\\bundles\\XRPUSDT-1778519693743.json",
+    "klines_15m": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\processed\\XRPUSDT_15m_candles.csv",
+    "klines_1h": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\processed\\XRPUSDT_1h_candles.csv",
+    "klines_1m": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\processed\\XRPUSDT_1m_candles.csv",
+    "klines_5m": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\processed\\XRPUSDT_5m_candles.csv"
+  },
+  "freshness_score": 100,
+  "hashes": {
+    "bundle": "d9d3dbc4c3f872e43976310281198e5290684611c24dee42c4da73df9ca6235a",
+    "klines_15m": "88d44851f80fa5fa5740a6681502f7e17eb8f61902a60abf554d348aa2063890",
+    "klines_1h": "ef2d4bb9b06ec3aadf1d2f8d35a398570beb954bee0bfdd35eeda6ad0522f962",
+    "klines_1m": "37454976673f44cb55659da008dc4ff57aa7cd725780c490b94966d33cccaf48",
+    "klines_5m": "fd50a98b000a1007a1c280ad18dec533a0a26f15ba352251d3e3491d2f001283"
+  },
+  "intervals": [
+    "15m",
+    "1h",
+    "1m",
+    "5m"
+  ],
+  "live_trading_enabled": false,
+  "row_counts": {
+    "15m": 120,
+    "1h": 120,
+    "1m": 120,
+    "5m": 120
+  },
+  "source_endpoint": "public-rest/cache",
+  "symbol": "XRPUSDT",
+  "warnings": []
+}

@@ -1,0 +1,1 @@
+def risk_limit_calibration(current: float, proposed: float): return {"status": "approval_required" if proposed > current else "safe_reduction", "mutates_active_profile": False, "live_trading_enabled": False}

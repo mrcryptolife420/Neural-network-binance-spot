@@ -1,0 +1,32 @@
+{
+  "operator_id": "op-2bd806c97f",
+  "display_name": "alice",
+  "local_machine_id_hash": "4bf26035962b5100",
+  "role_ids": [
+    "maintainer"
+  ],
+  "profile_hash": "6e95b48dac47f751b5f8bdce",
+  "created_at_ms": 1778518582646,
+  "updated_at_ms": 1778518582646,
+  "last_seen_ms": 1778518582646,
+  "disabled": false,
+  "notes": "",
+  "live_trading_enabled": false,
+  "role": "maintainer",
+  "permissions": [
+    "approve_confirm_required",
+    "approve_destructive_local",
+    "approve_read_only",
+    "approve_safe_artifact",
+    "create_action_proposal",
+    "execute_approved_action",
+    "manage_retention",
+    "manage_runbooks",
+    "manage_scheduler",
+    "verify_action",
+    "view_dashboard",
+    "view_evidence",
+    "view_metrics",
+    "view_reports"
+  ]
+}

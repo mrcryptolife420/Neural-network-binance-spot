@@ -1,0 +1,34 @@
+{
+  "fetched_at_ms": 1778519796640,
+  "files": {
+    "bundle": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\public_binance\\bundles\\BNBUSDT-1778519796640.json",
+    "klines_15m": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\processed\\BNBUSDT_15m_candles.csv",
+    "klines_1h": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\processed\\BNBUSDT_1h_candles.csv",
+    "klines_1m": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\processed\\BNBUSDT_1m_candles.csv",
+    "klines_5m": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\processed\\BNBUSDT_5m_candles.csv"
+  },
+  "freshness_score": 100,
+  "hashes": {
+    "bundle": "8f34117698a4fad26b9d40575a70716c9c1e4bab715acfd2ec59c1d6bc22ed61",
+    "klines_15m": "e3ceff4a81205f9e49de69443f301e48f9efa578fc92bbd258751beb5278192a",
+    "klines_1h": "27f8f3fee506bebdfc0ab4631c42a8c36e4f620f79ea21f8474e596c41a45acb",
+    "klines_1m": "6b6131d7cea393b8765f85069de90d9f635c85f09544abf44acf407d3399ff85",
+    "klines_5m": "b778b30d625d5a047e88248f4cbfc5b38bef15da4db54d2276a432031cc622f3"
+  },
+  "intervals": [
+    "15m",
+    "1h",
+    "1m",
+    "5m"
+  ],
+  "live_trading_enabled": false,
+  "row_counts": {
+    "15m": 500,
+    "1h": 500,
+    "1m": 500,
+    "5m": 500
+  },
+  "source_endpoint": "public-rest/cache",
+  "symbol": "BNBUSDT",
+  "warnings": []
+}

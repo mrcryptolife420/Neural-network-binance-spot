@@ -1,0 +1,1 @@
+def scaling_governance(current: int, target: int, grade: str, approved: bool): return {"decision": "approved_for_next_level" if approved and target == current + 1 and grade in {"A", "B"} else "blocked", "live_order_submitted": False, "live_trading_enabled": False}

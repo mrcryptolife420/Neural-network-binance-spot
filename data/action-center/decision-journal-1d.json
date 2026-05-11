@@ -1,0 +1,24 @@
+{
+  "entries": [
+    {
+      "decision_id": "dec-1778517197036",
+      "proposal_id": "act-1778517196605-d054debd19",
+      "operator_id_local": "local-operator",
+      "decision": "approve",
+      "reason_text": "",
+      "reason_codes": [],
+      "evidence_links": [],
+      "risk_acknowledgement": "read_only",
+      "confirm_phrase_used": "",
+      "previous_status": "proposed",
+      "next_status": "approved",
+      "created_at_ms": 1778517197036,
+      "redacted": true,
+      "live_trading_enabled": false,
+      "decision_hash": "787af005566d8620757c3148"
+    }
+  ],
+  "count": 1,
+  "live_trading_enabled": false,
+  "manifest_hash": "f135ba6782174b0e2bb5a4a5"
+}

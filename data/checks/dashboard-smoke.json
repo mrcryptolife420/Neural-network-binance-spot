@@ -1,5 +1,6 @@
 {
   "status": "ok",
+  "seconds": 1,
   "pages": [
     "overview",
     "demo_spot_trading",
@@ -16,7 +17,27 @@
     "portfolio",
     "readiness",
     "logs_security",
-    "demo_pilot"
+    "demo_pilot",
+    "policy_governance",
+    "ops_automation",
+    "observability",
+    "ai_ops_assistant",
+    "action_center",
+    "permissions",
+    "disaster_recovery",
+    "release_management",
+    "roadmap_automation",
+    "repo_knowledge",
+    "test_selection",
+    "performance",
+    "runtime_core",
+    "data_pipeline",
+    "model_training",
+    "model_monitoring",
+    "portfolio_ensemble",
+    "paper_os_audit",
+    "stabilization",
+    "operator_training"
   ],
   "chart_keys": [
     "overview.candlestick",

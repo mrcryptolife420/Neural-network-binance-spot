@@ -1482,3 +1482,16 @@ Als Dashboard V2 UAT veel UX feedback oplevert:
 Roadmap 105 - Dashboard V2 UX Polish, Realtime Chart Optimization \& Operator Workflow Simplification
 ```
 
+
+---
+
+## Herafwerking 2026-05-11
+
+Status: Voltooid na hercontrole.
+
+Gebouwd: Dashboard V2 realtime contract, backend state, websocket events en no-refresh smoke.
+
+Validatie: tests/test_roadmaps_104_122_full_surface.py, compileall en dashboard-smoke.
+
+Safety: lokale/demo/paper/read-only of expliciet approval-gated live-safety surfaces; tests bewijzen geen live order submission.
+

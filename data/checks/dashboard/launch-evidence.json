@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-05-11T11:36:40.234568+00:00",
+  "timestamp": "2026-05-11T17:07:39.229126+00:00",
   "status": "running",
   "url": "http://127.0.0.1:8503",
   "port": 8503,
-  "pid": 17060,
+  "pid": 2732,
   "log_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\logs\\control-center.log",
   "error_log_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\logs\\control-center.err.log",
   "live_trading_enabled": false,

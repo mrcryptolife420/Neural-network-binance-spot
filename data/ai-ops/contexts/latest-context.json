@@ -1,0 +1,155 @@
+{
+  "status": "ready",
+  "context": {
+    "items": [
+      {
+        "source": "dashboard_smoke",
+        "content": {
+          "timestamp": "2026-05-11T16:04:47.290022+00:00",
+          "status": "ok",
+          "url": "http://127.0.0.1:8506/",
+          "browser_mode": "playwright",
+          "seconds": 10,
+          "checks": [
+            {
+              "name": "marker:Neural Network Binance Spot Bot",
+              "status": "ok",
+              "message": "visible"
+            },
+            {
+              "name": "marker:LIVE TRADING DISABLED",
+              "status": "ok",
+              "message": "visible"
+            },
+            {
+              "name": "marker:Overview",
+              "status": "ok",
+              "message": "visible"
+            },
+            {
+              "name": "marker:Demo Spot Trading",
+              "status": "ok",
+              "message": "visible"
+            },
+            {
+              "name": "marker:Demo Pilot",
+              "status": "ok",
+              "message": "visible"
+            },
+            {
+              "name": "absent:StreamlitDuplicateElementId",
+              "status": "ok",
+              "message": "absent"
+            },
+            {
+              "name": "absent:Traceback",
+              "status": "ok",
+              "message": "absent"
+            },
+            {
+              "name": "absent:ModuleNotFoundError",
+              "status": "ok",
+              "message": "absent"
+            },
+            {
+              "name": "absent:StreamlitAPIException",
+              "status": "ok",
+              "message": "absent"
+            },
+            {
+              "name": "absent:Uncaught app exception",
+              "status": "ok",
+              "message": "absent"
+            }
+          ],
+          "screenshots": {
+            "Overview": "data\\checks\\dashboard\\screenshots\\overview.png",
+            "Demo Spot Trading": "data\\checks\\dashboard\\screenshots\\demo-spot-trading.png",
+            "Demo Pilot": "data\\checks\\dashboard\\screenshots\\demo-pilot.png",
+            "Logs & Security": "data\\checks\\dashboard\\screenshots\\logs-and-security.png"
+          },
+          "live_trading_enabled": false
+        },
+        "suspicious": false
+      },
+      {
+        "source": "metrics_manifest",
+        "content": {
+          "metrics_file": "metrics.jsonl",
+          "sha256": "19dccfa723cac0ee...d19f8c9665524698",
+          "sha256_parts": [
+            "19dccfa723cac0ee",
+            "ecd686cd2769f30f",
+            "b67b55d6dc52c8af",
+            "d19f8c9665524698"
+          ],
+          "bytes": 3012,
+          "live_trading_enabled": false
+        },
+        "suspicious": false
+      },
+      {
+        "source": "governance_reminders",
+        "content": {
+          "status": "ready",
+          "count": 0,
+          "reminders": [],
+          "generated_at_ms": 1778513841956,
+          "live_trading_enabled": false
+        },
+        "suspicious": false
+      }
+    ],
+    "manifest": {
+      "sources": [
+        {
+          "name": "dashboard_smoke",
+          "path": "checks/dashboard/browser-smoke.json",
+          "status": "ok",
+          "timestamp_ms": 1778515895115,
+          "sha256": "565ebdb0615c5ff2...1d464e64f8b33386",
+          "redacted": true
+        },
+        {
+          "name": "metrics_manifest",
+          "path": "metrics-warehouse/manifests/metrics-manifest.json",
+          "status": "ok",
+          "timestamp_ms": 1778515895115,
+          "sha256": "cce127dec51c00de...4c0c2a65ac41cf25",
+          "redacted": true
+        },
+        {
+          "name": "governance_reminders",
+          "path": "local-ops/reports/governance_reminders.json",
+          "status": "ok",
+          "timestamp_ms": 1778515895115,
+          "sha256": "282deb3b5126ae0d...08ae5bb3ac0f5f48",
+          "redacted": true
+        },
+        {
+          "name": "report_index",
+          "path": "reports/report-index.json",
+          "status": "missing",
+          "timestamp_ms": 1778515895115,
+          "sha256": "",
+          "redacted": true
+        },
+        {
+          "name": "support_bundle",
+          "path": "support/manifest.json",
+          "status": "missing",
+          "timestamp_ms": 1778515895115,
+          "sha256": "",
+          "redacted": true
+        }
+      ],
+      "warnings": [
+        "missing:report_index",
+        "missing:support_bundle"
+      ],
+      "live_trading_enabled": false
+    },
+    "live_trading_enabled": false
+  },
+  "live_trading_enabled": false
+}

@@ -1104,11 +1104,20 @@ Open status: opnieuw plannen, opdelen in kleinere uitvoerbare taken, en pas opni
 
 ## Herafwerking 2026-05-11
 
-Status: Voltooid na hercontrole.
+Status: Voltooid na herimplementatie en hercontrole.
 
-Gebouwd: AI/Ops context, index, query classifier, answerer, guidance policy, command proposals, runbook recommender, injection guard, local answer adapter, sessions, feedback, report, dashboardtab `AI Ops Assistant`, CLI smoke via `ops-assistant-query`.
+Gebouwd: AI/Ops safety contract, redacted context pack builder, local knowledge index, NL/EN query classifier, safe answer engine, guidance policy, command proposal builder, runbook recommender, prompt-injection guard, rules-only local adapter, AI Ops CLI, dashboardtab `AI Ops Assistant`, session export, feedback logging en AI Ops report.
 
-Validatie: `tests/test_roadmaps_083_088_full_surface.py`, `tests/test_roadmaps_082_088_ops_governance.py`, dashboard-smoke en CLI smoke.
+Docs: `docs/local-ai-ops-assistant-safety-contract.md`, `docs/ai-ops-context-packs.md`, `docs/ai-ops-knowledge-index.md`, `docs/ai-ops-natural-language-queries.md`, `docs/ai-ops-safe-answer-engine.md`, `docs/ai-ops-guidance-policy.md`, `docs/ai-ops-command-proposals.md`, `docs/ai-ops-runbook-recommendations.md`, `docs/ai-ops-prompt-injection-defense.md`, `docs/ai-ops-local-llm-optional.md`, `docs/ai-ops-dashboard.md`, `docs/ai-ops-safety-tests.md`.
+
+Validatie:
+
+- `python -m pytest tests/test_roadmap_085_ai_ops_acceptance.py tests/test_roadmaps_083_088_full_surface.py tests/test_roadmaps_082_088_ops_governance.py -q` -> 18 passed.
+- `python -m pytest -q` -> 317 passed, 1 bestaande PytestCollectionWarning.
+- `python -m binance_spot_bot.cli check-all --skip-tests --json` -> ok.
+- `python -m binance_spot_bot.cli dashboard-smoke --seconds 1` -> ok.
+- `python -m binance_spot_bot.cli dashboard-browser-smoke --url http://127.0.0.1:8506/ --seconds 10` -> ok.
+- CLI smoke: ai-ops-ask, ai-ops-context, ai-ops-command-proposal en ai-ops-safety-test.
 
 Safety: advisory/read-only, unsafe order/live/withdraw/secret intents blocked.
 

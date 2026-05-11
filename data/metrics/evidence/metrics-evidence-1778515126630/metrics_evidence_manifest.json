@@ -1,0 +1,30 @@
+{
+  "status": "ok",
+  "files": [
+    {
+      "file": "analytics-report.json",
+      "sha256": "00b3cdc7f023b62f...5998622ff588253a",
+      "sha256_parts": [
+        "00b3cdc7f023b62f",
+        "46c4da7329d12bfc",
+        "f8c85fddd401216d",
+        "5998622ff588253a"
+      ],
+      "bytes": 126
+    },
+    {
+      "file": "metrics-manifest.json",
+      "sha256": "71e23d1a382794e0...b37e6831bab55604",
+      "sha256_parts": [
+        "71e23d1a382794e0",
+        "ea578be5b56f2267",
+        "47b1ecf0916da83a",
+        "b37e6831bab55604"
+      ],
+      "bytes": 269
+    }
+  ],
+  "no_live_proof": true,
+  "redaction_proof": true,
+  "live_trading_enabled": false
+}

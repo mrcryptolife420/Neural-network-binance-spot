@@ -1,22 +1,17 @@
 {
-  "action": {
-    "action_id": "action-1778500503609",
-    "action_type": "export_report",
-    "reason": "dashboard preview",
-    "requested_by": "operator",
-    "status": "pending_approval",
-    "created_at_ms": 1778500503609,
-    "live_trading_enabled": false
-  },
-  "review": {
-    "reviewer": "operator",
-    "approved": false,
-    "status": "rejected",
-    "reviewed_at_ms": 1778500503609
-  },
-  "execution": {
-    "status": "not_executed",
-    "requires_manual_click": true
-  },
-  "live_trading_enabled": false
+  "decision_id": "dec-1778517197036",
+  "proposal_id": "act-1778517196605-d054debd19",
+  "operator_id_local": "local-operator",
+  "decision": "approve",
+  "reason_text": "",
+  "reason_codes": [],
+  "evidence_links": [],
+  "risk_acknowledgement": "read_only",
+  "confirm_phrase_used": "",
+  "previous_status": "proposed",
+  "next_status": "approved",
+  "created_at_ms": 1778517197036,
+  "redacted": true,
+  "live_trading_enabled": false,
+  "decision_hash": "787af005566d8620757c3148"
 }

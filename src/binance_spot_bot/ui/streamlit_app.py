@@ -33,7 +33,14 @@ from binance_spot_bot.local_ops_automation import generate_scheduled_ops_report
 from binance_spot_bot.metrics_warehouse import write_metrics_report
 from binance_spot_bot.ops_assistant import answer_ops_question
 from binance_spot_bot.action_center import create_reviewed_action
+from binance_spot_bot.action_proposals import ActionSafetyClass, proposal_from_command
+from binance_spot_bot.approval_queue import ApprovalQueueStore
+from binance_spot_bot.approval_workflow import ApprovalWorkflow
+from binance_spot_bot.decision_journal import DecisionJournal
 from binance_spot_bot.permission_profiles import permission_compliance_report
+from binance_spot_bot.compliance_report import write_compliance_report
+from binance_spot_bot.permission_drift import permission_drift
+from binance_spot_bot.local_operator_identity import local_operator_identity
 from binance_spot_bot.disaster_recovery_drills import run_disaster_recovery_drill
 from binance_spot_bot.versioning import version_payload
 from binance_spot_bot.roadmap_index import build_roadmap_index
@@ -509,7 +516,7 @@ def _render_ops_automation(settings: BotSettings) -> None:
 
 def _render_observability(settings: BotSettings) -> None:
     st.subheader("Local Observability")
-    st.caption("LOCAL METRICS ONLY")
+    st.caption("LOCAL OBSERVABILITY ONLY")
     report = write_metrics_report(settings, [{"equity": 1000, "pnl_quote": 0, "latency_ms": 25}])
     render_badges({"Status": report["status"], "Rows": report["rows"], "Live trading": "disabled"})
     render_table("Metric Aggregates", [{"metric": key, **value} for key, value in report["metrics"].items()])
@@ -519,7 +526,7 @@ def _render_observability(settings: BotSettings) -> None:
 
 def _render_ai_ops_assistant(settings: BotSettings) -> None:
     st.subheader("AI Ops Assistant")
-    st.caption("READ ONLY GUIDANCE")
+    st.caption("AI OPS ASSISTANT - READ ONLY")
     question = st.text_input("Question", value="Wat is de bot status?", key="ai_ops_question")
     answer = answer_ops_question(settings, question)
     render_badges({"Status": answer["status"], "Sources": len(answer["sources"]), "Live trading": "disabled"})
@@ -528,19 +535,77 @@ def _render_ai_ops_assistant(settings: BotSettings) -> None:
 
 def _render_action_center(settings: BotSettings) -> None:
     st.subheader("Human In The Loop Action Center")
-    st.caption("APPROVAL REQUIRED")
-    decision = create_reviewed_action(settings, "export_report", "dashboard preview", approved=False)
-    render_badges({"Review": decision["review"]["status"], "Execution": decision["execution"]["status"], "Live trading": "disabled"})
-    with st.expander("Decision journal preview"):
-        st.json(decision)
+    st.caption("HUMAN-IN-THE-LOOP REQUIRED - NO LIVE TRADING")
+    workflow = ApprovalWorkflow(settings.data_dir, data_dir=settings.data_dir)
+    queue = ApprovalQueueStore(settings.data_dir / "action-center")
+    records = queue.list_queue()
+    render_badges(
+        {
+            "Open proposals": len([record for record in records if record.status not in {"completed", "rejected", "expired"}]),
+            "Total proposals": len(records),
+            "Live trading": "disabled",
+        }
+    )
+    with st.form("action_center_new_proposal"):
+        command = st.selectbox("Safe local action", ["diagnostics", "operator-report", "support-bundle", "support-bundles-verify", "dashboard-smoke"], key="action_center_command")
+        safety = st.selectbox("Safety class", [item.value for item in ActionSafetyClass if item != ActionSafetyClass.FORBIDDEN], key="action_center_safety")
+        reason = st.text_input("Reason", value="operator requested local evidence", key="action_center_reason")
+        submitted = st.form_submit_button("Send to approval queue")
+    if submitted:
+        proposal = proposal_from_command(command, ["--json"] if command != "dashboard-smoke" else ["--seconds", "1"], title=command, description=reason, source="dashboard", safety_class=safety)
+        st.session_state.action_center_last = workflow.submit(proposal)
+    if st.session_state.get("action_center_last"):
+        st.success(f"Proposal status: {st.session_state.action_center_last['status']}")
+    rows = [
+        {
+            "proposal_id": record.proposal.proposal_id,
+            "title": record.proposal.title,
+            "status": record.status,
+            "safety": record.proposal.safety_class.value,
+            "command": record.proposal.command.preview(),
+        }
+        for record in records[:25]
+    ]
+    render_table("Approval queue", rows)
+    selected = st.selectbox("Proposal detail", [""] + [record.proposal.proposal_id for record in records[:25]], key="action_center_selected")
+    if selected:
+        record = queue.load(selected)
+        st.write("Command preview")
+        st.code(record.proposal.command.preview())
+        confirm = st.text_input("Confirm phrase", value="", key=f"action_center_confirm_{selected}")
+        c1, c2, c3 = st.columns(3)
+        if c1.button("Approve", key=f"action_center_approve_{selected}", use_container_width=True):
+            st.session_state.action_center_decision = workflow.decide(selected, "approve", confirm_phrase=confirm, reason="dashboard approval")
+        if c2.button("Reject", key=f"action_center_reject_{selected}", use_container_width=True):
+            st.session_state.action_center_decision = workflow.decide(selected, "reject", reason="dashboard rejection")
+        if c3.button("Defer", key=f"action_center_defer_{selected}", use_container_width=True):
+            st.session_state.action_center_decision = workflow.decide(selected, "defer", reason="dashboard defer")
+        with st.expander("Raw proposal"):
+            st.json(record.to_dict())
+    journal_rows = DecisionJournal(settings.data_dir / "action-center").entries(limit=20)
+    render_table("Decision journal", journal_rows)
 
 
 def _render_permissions(settings: BotSettings) -> None:
-    st.subheader("Permission Profiles")
-    st.caption("LOCAL ROLES ONLY")
+    st.subheader("Permissions & Compliance")
+    st.caption("LOCAL PERMISSIONS ONLY - NO LIVE TRADING")
     report = permission_compliance_report(settings)
-    render_badges({"Status": report["status"], "Violations": len(report["violations"]), "Live trading": "disabled"})
+    identity = local_operator_identity()
+    drift = permission_drift({"manifest": report["matrix"]["manifest_hash"]}, {"manifest": report["matrix"]["manifest_hash"]})
+    score_report = write_compliance_report(settings.data_dir)
+    render_badges(
+        {
+            "Status": report["status"],
+            "Operator": identity["identity"]["display_name"],
+            "Drift": drift["status"],
+            "Compliance": score_report["compliance_score"]["grade"],
+            "Live trading": "disabled",
+        }
+    )
     render_table("Profiles", list(report["matrix"]["profiles"].values()))
+    render_table("Permission drift", drift.get("findings", []))
+    with st.expander("Compliance report"):
+        st.json(score_report)
 
 
 def _render_disaster_recovery(settings: BotSettings) -> None:

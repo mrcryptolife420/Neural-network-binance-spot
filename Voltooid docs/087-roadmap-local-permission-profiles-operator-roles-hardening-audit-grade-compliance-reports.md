@@ -1220,3 +1220,65 @@ Validatie: `tests/test_roadmaps_083_088_full_surface.py`, `tests/test_roadmaps_0
 
 Safety: permissions cannot enable live trading; live-trade action remains blocked.
 
+---
+
+## Finale afwerking 2026-05-11
+
+Status: Voltooid en verplaatsbaar naar `Voltooid docs/`.
+
+Gebouwd en herbouwd zonder facade-only implementatie:
+
+* `src/binance_spot_bot/local_operator_identity.py`
+* `src/binance_spot_bot/permission_profiles.py`
+* `src/binance_spot_bot/operator_roles.py`
+* `src/binance_spot_bot/permission_engine.py`
+* `src/binance_spot_bot/separation_of_duties.py`
+* `src/binance_spot_bot/approval_policy_templates.py`
+* `src/binance_spot_bot/permission_change_workflow.py`
+* `src/binance_spot_bot/permission_drift.py`
+* `src/binance_spot_bot/compliance_evidence.py`
+* `src/binance_spot_bot/compliance_report.py`
+* `src/binance_spot_bot/compliance_score.py`
+* `src/binance_spot_bot/compliance_bundle.py`
+* `src/binance_spot_bot/permission_review.py`
+* `src/binance_spot_bot/ui/streamlit_app.py` Permissions & Compliance panel
+* `src/binance_spot_bot/cli.py` permission/compliance CLI
+* `tests/test_roadmap_087_permissions_compliance_acceptance.py`
+
+Docs toegevoegd:
+
+* `docs/local-permission-compliance-safety-contract.md`
+* `docs/local-operator-identity-v2.md`
+* `docs/permission-profile-schema.md`
+* `docs/operator-role-templates.md`
+* `docs/permission-engine.md`
+* `docs/separation-of-duties.md`
+* `docs/approval-policy-templates.md`
+* `docs/permission-change-workflow.md`
+* `docs/permission-drift-detection.md`
+* `docs/role-aware-action-center.md`
+* `docs/compliance-evidence-model.md`
+* `docs/audit-grade-compliance-report.md`
+* `docs/compliance-score.md`
+* `docs/compliance-dashboard.md`
+* `docs/compliance-bundle-export.md`
+* `docs/permission-review-workflow.md`
+
+Validatie uitgevoerd:
+
+* `python -m pytest tests/test_roadmap_087_permissions_compliance_acceptance.py tests/test_roadmap_086_action_center_acceptance.py tests/test_roadmaps_083_088_full_surface.py tests/test_roadmaps_082_088_ops_governance.py -q` -> groen.
+* Permission/compliance CLI flow: operator identity, profiles, permission check, permission change propose/approve, drift, evidence, report, score, bundle export -> groen.
+* `python -m pytest -q` -> `324 passed, 1 warning`.
+* `python -m binance_spot_bot.cli check-all --skip-tests --json` -> groen.
+* `python -m binance_spot_bot.cli dashboard-smoke --seconds 1` -> groen.
+* `python -m binance_spot_bot.cli dashboard-browser-smoke --url http://127.0.0.1:8506/ --seconds 10` -> groen.
+
+Safety evidence:
+
+* `admin_local` kan forbidden scopes niet toestaan.
+* Live/signed/account/secrets/arbitrary shell/remote upload scopes blijven globaal geblokkeerd.
+* Disabled operators kunnen niet approven/executen.
+* Sensitive self-approval wordt geblokkeerd door separation of duties.
+* Compliance reports en bundles bevatten no-live proof en redaction proof.
+* `live_trading_enabled=false` blijft expliciet in outputs.
+

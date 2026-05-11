@@ -1209,3 +1209,16 @@ Alternatief als parity nog niet hoog genoeg is:
 Roadmap 106 - Dashboard V2 Remaining Page Migration, Legacy Gap Burn-Down \& Browser Smoke Hardening
 ```
 
+
+---
+
+## Herafwerking 2026-05-11
+
+Status: Voltooid na hercontrole.
+
+Gebouwd: Dashboard V2 parity matrix en legacy feature migration guard.
+
+Validatie: tests/test_roadmaps_104_122_full_surface.py, compileall en dashboard-smoke.
+
+Safety: lokale/demo/paper/read-only of expliciet approval-gated live-safety surfaces; tests bewijzen geen live order submission.
+

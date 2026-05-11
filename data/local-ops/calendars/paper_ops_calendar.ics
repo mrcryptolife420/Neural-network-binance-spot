@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SpotBot//Local Paper Ops//EN
+BEGIN:VEVENT
+UID:daily-operator-health@spotbot.local
+SUMMARY:Daily operator health
+END:VEVENT
+BEGIN:VEVENT
+UID:daily-operator-report@spotbot.local
+SUMMARY:Daily operator report
+END:VEVENT
+BEGIN:VEVENT
+UID:daily-evidence-manifest@spotbot.local
+SUMMARY:Daily evidence manifest
+END:VEVENT
+BEGIN:VEVENT
+UID:weekly-governance-report@spotbot.local
+SUMMARY:Weekly governance report
+END:VEVENT
+BEGIN:VEVENT
+UID:weekly-support-verify@spotbot.local
+SUMMARY:Weekly support bundle verify
+END:VEVENT
+END:VCALENDAR

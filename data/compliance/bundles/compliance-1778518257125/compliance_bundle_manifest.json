@@ -1,0 +1,21 @@
+{
+  "bundle_id": "compliance-1778518257125",
+  "files": [
+    {
+      "path": "data\\compliance\\bundles\\compliance-1778518257125\\files\\compliance_report.json",
+      "hash": "9621a6e3c65aaa0883087bf6"
+    },
+    {
+      "path": "data\\compliance\\bundles\\compliance-1778518257125\\files\\compliance_report.md",
+      "hash": "85a51f1a691f92aef7258ffe"
+    },
+    {
+      "path": "data\\compliance\\bundles\\compliance-1778518257125\\files\\permission-profile-manifest.json",
+      "hash": "e07feb7e94276233ed5ff90b"
+    }
+  ],
+  "no_live_proof": true,
+  "redaction_proof": true,
+  "live_trading_enabled": false,
+  "manifest_hash": "22ae4012b64c27d9fb4513b3"
+}

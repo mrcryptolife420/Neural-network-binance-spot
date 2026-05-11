@@ -1311,3 +1311,66 @@ Validatie: `tests/test_roadmaps_083_088_full_surface.py`, `tests/test_roadmaps_0
 
 Safety: human approval required, local safe actions only, no live trading.
 
+---
+
+## Finale afwerking 2026-05-11
+
+Status: Voltooid en verplaatsbaar naar `Voltooid docs/`.
+
+Gebouwd en herbouwd zonder facade-only implementatie:
+
+* `src/binance_spot_bot/action_proposals.py`
+* `src/binance_spot_bot/action_policy.py`
+* `src/binance_spot_bot/approval_queue.py`
+* `src/binance_spot_bot/decision_journal.py`
+* `src/binance_spot_bot/approval_workflow.py`
+* `src/binance_spot_bot/action_executor.py`
+* `src/binance_spot_bot/action_verification.py`
+* `src/binance_spot_bot/runbook_action_workflow.py`
+* `src/binance_spot_bot/approval_plans.py`
+* `src/binance_spot_bot/local_operator_identity.py`
+* `src/binance_spot_bot/action_audit_bundle.py`
+* `src/binance_spot_bot/decision_outcome_analytics.py`
+* `src/binance_spot_bot/action_center_report.py`
+* `src/binance_spot_bot/ui/streamlit_app.py` Action Center-tab
+* `src/binance_spot_bot/cli.py` Action Center CLI
+* `tests/test_roadmap_086_action_center_acceptance.py`
+
+Docs toegevoegd:
+
+* `docs/human-in-the-loop-action-safety-contract.md`
+* `docs/action-proposal-schema.md`
+* `docs/action-policy-validator.md`
+* `docs/approval-queue.md`
+* `docs/operator-decision-journal.md`
+* `docs/manual-approval-workflow.md`
+* `docs/safe-action-executor.md`
+* `docs/post-action-verification.md`
+* `docs/action-center-dashboard.md`
+* `docs/action-center-cli.md`
+* `docs/ai-ops-action-center-integration.md`
+* `docs/runbook-step-approvals.md`
+* `docs/multi-step-approval-plans.md`
+* `docs/local-operator-identity-roles.md`
+* `docs/action-audit-bundle.md`
+* `docs/decision-outcome-analytics.md`
+* `docs/action-center-reports.md`
+
+Validatie uitgevoerd:
+
+* `python -m pytest tests/test_roadmap_086_action_center_acceptance.py tests/test_roadmaps_083_088_full_surface.py tests/test_roadmaps_082_088_ops_governance.py -q` -> groen.
+* Action Center CLI flow: propose, approve, execute, verify, journal export, audit export, safety test -> groen.
+* `python -m pytest -q` -> `321 passed, 1 warning`.
+* `python -m binance_spot_bot.cli check-all --skip-tests --json` -> groen.
+* `python -m binance_spot_bot.cli dashboard-smoke --seconds 1` -> groen.
+* `python -m binance_spot_bot.cli dashboard-browser-smoke --url http://127.0.0.1:8506/ --seconds 10` -> groen.
+
+Safety evidence:
+
+* AI/Ops kan voorstellen maken maar niet uitvoeren.
+* Unapproved proposals kunnen niet uitvoeren.
+* Forbidden proposals kunnen niet worden goedgekeurd.
+* Live/order/account/withdraw/signed/secrets/shell-injection acties worden geblokkeerd.
+* Outputs en audit bundles worden geredact.
+* `live_trading_enabled=false` blijft expliciet in outputs.
+

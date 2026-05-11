@@ -1,0 +1,1 @@
+def live_profile_lifecycle(state: str, action: str, approved: bool): return {"status": "promoted" if action == "promote" and approved else "blocked" if action == "promote" else action, "state": state, "live_trading_enabled": False}

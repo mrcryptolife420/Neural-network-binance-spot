@@ -1,0 +1,34 @@
+{
+  "fetched_at_ms": 1778519624778,
+  "files": {
+    "bundle": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\public_binance\\bundles\\DOGEUSDT-1778519624778.json",
+    "klines_15m": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\processed\\DOGEUSDT_15m_candles.csv",
+    "klines_1h": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\processed\\DOGEUSDT_1h_candles.csv",
+    "klines_1m": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\processed\\DOGEUSDT_1m_candles.csv",
+    "klines_5m": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\processed\\DOGEUSDT_5m_candles.csv"
+  },
+  "freshness_score": 100,
+  "hashes": {
+    "bundle": "f95b1fe9b5f2ba343b2becfeeba15a3e26e57efe7a9d215ffa772df1b3dbef61",
+    "klines_15m": "e28b329c815468be9fe935e89f02efbe3240c6413739bbe7daf09a99bd1fe28e",
+    "klines_1h": "cf4bd91f34b9656143d72e5f20540f6679c0d42629a5f3e7cd6c4f7cdb9cb126",
+    "klines_1m": "f854d07dab2d3ab18515eb56ed30bbc44200a10a6b3b597cc0255be0ccf67f08",
+    "klines_5m": "ffad0208a85353618d85092032da6c8a7fd18d4c7150fd35c14bfe8865dc4d28"
+  },
+  "intervals": [
+    "15m",
+    "1h",
+    "1m",
+    "5m"
+  ],
+  "live_trading_enabled": false,
+  "row_counts": {
+    "15m": 120,
+    "1h": 120,
+    "1m": 120,
+    "5m": 120
+  },
+  "source_endpoint": "public-rest/cache",
+  "symbol": "DOGEUSDT",
+  "warnings": []
+}

@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "proposal_id": "act-1778519393027-2ca601c1d3",
+      "title": "diagnostics",
+      "status": "proposed",
+      "safety_class": "read_only",
+      "updated_at_ms": 1778519393028
+    },
+    {
+      "proposal_id": "act-1778517196605-d054debd19",
+      "title": "diagnostics",
+      "status": "completed",
+      "safety_class": "read_only",
+      "updated_at_ms": 1778517197799
+    },
+    {
+      "proposal_id": "act-1778517112605-93af3c0093",
+      "title": "diagnostics",
+      "status": "proposed",
+      "safety_class": "read_only",
+      "updated_at_ms": 1778517112606
+    }
+  ],
+  "count": 3,
+  "live_trading_enabled": false,
+  "manifest_hash": "c928873482f22b6e5a66deff"
+}

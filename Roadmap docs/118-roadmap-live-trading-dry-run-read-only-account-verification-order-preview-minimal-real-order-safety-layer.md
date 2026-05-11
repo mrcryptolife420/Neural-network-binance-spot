@@ -1447,3 +1447,16 @@ Mogelijke inhoud:
 
 ```
 
+
+---
+
+## Herafwerking 2026-05-11
+
+Status: Voltooid na hercontrole.
+
+Gebouwd: Read-only live dry-run account verification and order preview safety.
+
+Validatie: tests/test_roadmaps_104_122_full_surface.py, compileall en dashboard-smoke.
+
+Safety: lokale/demo/paper/read-only of expliciet approval-gated live-safety surfaces; tests bewijzen geen live order submission.
+

@@ -1,0 +1,125 @@
+{
+  "case": "challenger_beats",
+  "plan": {
+    "rollout_id": "rollout-1778512722492",
+    "champion_policy_id": "champion",
+    "challenger_policy_id": "challenger",
+    "rollout_stage": "10pct",
+    "alloc_split": {
+      "champion": "90",
+      "challenger": "10"
+    },
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT"
+    ],
+    "max_duration_minutes": 60,
+    "min_sample_count": 30,
+    "stopping_rules": [
+      "max_drawdown",
+      "underperform_champion",
+      "data_quality",
+      "policy_violation",
+      "excess_turnover"
+    ],
+    "success_rules": [
+      "better_score",
+      "drawdown_ok",
+      "samples_ok",
+      "no_policy_violations"
+    ],
+    "rollback_target": "prev_champion",
+    "operator_confirmation": "",
+    "created_at_ms": 1778512722492,
+    "live_trading_enabled": false
+  },
+  "experiment": {
+    "status": "evaluated",
+    "experiment_id": "ab-rollout-1778512722492-11",
+    "experiment_type": "champion_challenger",
+    "rollout_id": "rollout-1778512722492",
+    "seed": 11,
+    "metrics": {
+      "champion": {
+        "observations": 1,
+        "pnl": 1.0,
+        "net_pnl": 1.0,
+        "drawdown": 1.0,
+        "risk_adjusted_ret": 0.5,
+        "trade_count": 5,
+        "blocked_rate": 0.0,
+        "conflict_rate": 0.0,
+        "data_quality_warnings": 0,
+        "liquidity_penalty": 0.0,
+        "turnover": 0.0,
+        "rotation_churn": 0.0,
+        "watchdog_alerts": 0,
+        "policy_violations": 0,
+        "last_updated_ms": 1778512722492
+      },
+      "challenger": {
+        "observations": 1,
+        "pnl": 3.0,
+        "net_pnl": 3.0,
+        "drawdown": 1.0,
+        "risk_adjusted_ret": 1.5,
+        "trade_count": 5,
+        "blocked_rate": 0.0,
+        "conflict_rate": 0.0,
+        "data_quality_warnings": 0,
+        "liquidity_penalty": 0.0,
+        "turnover": 0.0,
+        "rotation_churn": 0.0,
+        "watchdog_alerts": 0,
+        "policy_violations": 0,
+        "last_updated_ms": 1778512722492
+      }
+    },
+    "decision": "challenger_leads",
+    "rows": [
+      {
+        "symbol": "BTCUSDT",
+        "variant": "champion",
+        "pnl": "1",
+        "drawdown": "1",
+        "trades": 5,
+        "signed_endpoint_used": false
+      },
+      {
+        "symbol": "ETHUSDT",
+        "variant": "challenger",
+        "pnl": "3",
+        "drawdown": "1",
+        "trades": 5,
+        "signed_endpoint_used": false
+      }
+    ],
+    "guardrails": {
+      "paper_only": true,
+      "signed_endpoint_used": false,
+      "account_endpoint_used": false
+    },
+    "live_trading_enabled": false
+  },
+  "stopping": {
+    "status": "continue",
+    "action": "continue",
+    "reasons": [],
+    "evidence_refs": [
+      "ab-rollout-1778512722492-11"
+    ],
+    "live_trading_enabled": false
+  },
+  "decision": {
+    "decision": "promote_challenger",
+    "reasons": [
+      "challenger_leads",
+      "operator_confirmed",
+      "paper_only"
+    ],
+    "operator_confirmed": true,
+    "evidence_refs": [],
+    "live_trading_enabled": false
+  },
+  "live_trading_enabled": false
+}
