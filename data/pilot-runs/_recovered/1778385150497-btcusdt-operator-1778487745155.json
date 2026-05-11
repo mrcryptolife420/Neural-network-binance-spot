@@ -1,0 +1,2656 @@
+{
+  "run_id": "1778385150497-btcusdt-operator",
+  "state": "completed",
+  "profile": "binance-demo-spot",
+  "symbol": "BTCUSDT",
+  "preset": "operator",
+  "started_at_ms": 1778385150497,
+  "updated_at_ms": 1778487745118,
+  "completed_at_ms": 1778487745118,
+  "blockers": [],
+  "transitions": [
+    {
+      "from": "idle",
+      "to": "blocked",
+      "timestamp_ms": 1778385150497,
+      "reason": "run created"
+    },
+    {
+      "from": "blocked",
+      "to": "ready",
+      "timestamp_ms": 1778385150498,
+      "reason": "start gate evaluated"
+    },
+    {
+      "from": "ready",
+      "to": "running",
+      "timestamp_ms": 1778385150499,
+      "reason": "pilot started"
+    },
+    {
+      "from": "running",
+      "to": "stopping",
+      "timestamp_ms": 1778487720472,
+      "reason": "safe stop requested"
+    },
+    {
+      "from": "stopping",
+      "to": "completed",
+      "timestamp_ms": 1778487725326,
+      "reason": "pilot stop flow finished: completed"
+    },
+    {
+      "from": "completed",
+      "to": "completed",
+      "timestamp_ms": 1778487730255,
+      "reason": "pilot stop flow finished: completed"
+    },
+    {
+      "from": "completed",
+      "to": "completed",
+      "timestamp_ms": 1778487735135,
+      "reason": "pilot stop flow finished: completed"
+    },
+    {
+      "from": "completed",
+      "to": "completed",
+      "timestamp_ms": 1778487740178,
+      "reason": "pilot stop flow finished: completed"
+    },
+    {
+      "from": "completed",
+      "to": "completed",
+      "timestamp_ms": 1778487745118,
+      "reason": "pilot stop flow finished: completed"
+    }
+  ],
+  "checkpoints": [
+    {
+      "event": "stop_snapshot",
+      "timestamp_ms": 1778487725286,
+      "payload": {
+        "cancel_status": {
+          "count": 0,
+          "latest": null
+        },
+        "snapshot": {
+          "resume_required": false,
+          "message": "runtime stopped",
+          "session_id": "1778487191445-8b684cb0",
+          "symbol": "BTCUSDT",
+          "mode": "demo",
+          "status": "stopped",
+          "interval": "1m",
+          "exchange_profile": {
+            "name": "binance-demo-spot",
+            "label": "Binance Demo Spot API",
+            "mode_badge": "BINANCE DEMO SPOT",
+            "trading_mode": "testnet",
+            "rest_base_url": "https://demo-api.binance.com",
+            "websocket_base_url": "wss://stream.binance.com:9443",
+            "user_data_stream_enabled": true,
+            "requires_credentials": true,
+            "storage": "session"
+          },
+          "credential_status": {
+            "profile": "binance-demo-spot",
+            "has_api_key": true,
+            "has_api_secret": true,
+            "capability": "Credentials loaded for signed checks"
+          },
+          "demo_connection": {
+            "profile": "binance-demo-spot",
+            "base_url": "https://demo-api.binance.com",
+            "armed": true,
+            "connected": true,
+            "authenticated": true,
+            "trading_permission_ok": true,
+            "kill_switch": false,
+            "gate": {
+              "allowed": true,
+              "reason": "allowed",
+              "checks": {
+                "profile_is_demo_spot": "True",
+                "base_url_is_demo": "True",
+                "credentials_present": "True",
+                "connection_ok": "True",
+                "armed": "True",
+                "live_disabled": "True",
+                "kill_switch_off": "True",
+                "risk_allowed": "True",
+                "filters_loaded": "True",
+                "max_orders_ok": "True"
+              }
+            }
+          },
+          "demo_account": {
+            "status": "ok",
+            "can_trade": true,
+            "account_type": "SPOT",
+            "balances": {
+              "count": 39,
+              "latest": {
+                "asset": "XAUT",
+                "free": "0.00070160",
+                "locked": "0.00000000"
+              }
+            },
+            "last_sync_ms": 1778487195232,
+            "error": ""
+          },
+          "reconciliation": {
+            "status": "ok",
+            "known_orders": 3,
+            "open_orders": 0,
+            "orphan_orders": 0,
+            "failures": 0,
+            "events": {
+              "count": 0,
+              "latest": null
+            },
+            "checked_at_ms": 1778487723358,
+            "needs_operator_action": false
+          },
+          "demo_pilot": {
+            "config": {
+              "pilot_name": "smoke",
+              "duration_minutes": 15,
+              "max_demo_orders": 5,
+              "max_rejects": 2,
+              "max_api_errors": 3,
+              "max_reconciliation_failures": 1,
+              "cancel_open_orders_on_stop": true,
+              "reconciliation_interval_seconds": 30,
+              "account_sync_interval_seconds": 60,
+              "pause_on_connection_degraded": true,
+              "require_clean_start": true
+            },
+            "counters": {
+              "orders": 3,
+              "rejects": 3,
+              "api_errors": 3,
+              "reconciliation_failures": 0,
+              "started_at_ms": 1778487191445,
+              "elapsed_seconds": 533
+            },
+            "should_pause": true,
+            "pause_reason": "max rejects exceeded",
+            "status": "armed",
+            "last_reconciliation_check_ms": 1778487723358,
+            "last_demo_account_sync_ms": 1778487195232
+          },
+          "market_data": {
+            "source": "demo",
+            "status": "ok",
+            "message": "demo replay source",
+            "last_event_age_ms": 0,
+            "reconnect_count": 0,
+            "stream_url": null
+          },
+          "top_of_book": {
+            "symbol": "BTCUSDT",
+            "bid": "99.9699",
+            "bid_qty": "1",
+            "ask": "99.9899",
+            "ask_qty": "1",
+            "event_time_ms": 839999,
+            "last_update_id": 839999,
+            "received_time_ms": 1778487672791,
+            "mid_price": "99.9799",
+            "spread_bps": "2.000402080818244467137894717",
+            "age_ms": 0
+          },
+          "data_quality": {
+            "status": "ok",
+            "checked_rows": 14,
+            "issues": {
+              "count": 0,
+              "latest": null
+            }
+          },
+          "readiness": {
+            "level": "R2",
+            "blockers": {
+              "count": 1,
+              "latest": "critical alerts present"
+            },
+            "live_allowed": false
+          },
+          "active_model": {
+            "alias": "baseline",
+            "model_version": "rule-baseline-0.1",
+            "model_type": "rule-based",
+            "metrics": {}
+          },
+          "paper_account": {
+            "quote_balance": "1000",
+            "base_balance": "0",
+            "average_entry": "0",
+            "realized_pnl": "0",
+            "fees_paid": "0",
+            "slippage_bps": "10",
+            "fills": {
+              "count": 0,
+              "latest": null
+            },
+            "equity": "1000.0000"
+          },
+          "session_summary": {
+            "session_id": "1778487191445-8b684cb0",
+            "mode": "demo",
+            "symbol": "BTCUSDT",
+            "interval": "1m",
+            "started_at_ms": 1778487191445,
+            "ended_at_ms": 1778487677024,
+            "pnl": "0.0000",
+            "max_drawdown": "0",
+            "trades": 0,
+            "blocks": 6,
+            "model_version": "rule-baseline-0.1",
+            "status": "stopped",
+            "metadata": {
+              "source": "demo",
+              "model_alias": "",
+              "demo_trading_armed": true,
+              "exchange_profile": "binance-demo-spot",
+              "demo_pilot": {
+                "config": "{'pilot_name': 'smoke', 'duration_minutes': 15, 'max_demo_orders': 5, 'max_rejects': 2, 'max_api_errors': 3, 'max_reconciliation_failures': 1, 'cancel_open_orders_on_stop': True, 'reconciliation_interval_seconds': 30, 'account_sync_interval",
+                "counters": "{'orders': 3, 'rejects': 3, 'api_errors': 3, 'reconciliation_failures': 0, 'started_at_ms': 1778487191445, 'elapsed_seconds': 485}",
+                "should_pause": "True",
+                "pause_reason": "max rejects exceeded",
+                "status": "armed",
+                "last_reconciliation_check_ms": "1778487677020",
+                "last_demo_account_sync_ms": "1778487195232"
+              },
+              "pilot_run": {
+                "run_id": "1778385150497-btcusdt-operator",
+                "state": "running",
+                "profile": "binance-demo-spot",
+                "symbol": "BTCUSDT",
+                "preset": "operator",
+                "started_at_ms": "1778385150497",
+                "updated_at_ms": "1778487240384",
+                "completed_at_ms": "None",
+                "blockers": "[]",
+                "transitions": "[{'from': 'idle', 'to': 'blocked', 'timestamp_ms': 1778385150497, 'reason': 'run created'}, {'from': 'blocked', 'to': 'ready', 'timestamp_ms': 1778385150498, 'reason': 'start gate evaluated'}, {'from': 'ready', 'to': 'running', 'timestamp_m",
+                "checkpoints": "[{'event': 'start_snapshot', 'timestamp_ms': 1778385150507, 'payload': {'resume_required': False, 'message': 'runtime started', 'session_id': '1778385115057-4a6e1748', 'symbol': 'BTCUSDT', 'mode': 'demo', 'status': 'running', 'interval': '1",
+                "report_paths": "{}"
+              },
+              "pilot_start_gate": {
+                "allowed": "True",
+                "state": "ready",
+                "checks": "[{'check': 'profile', 'status': 'pass', 'reason': 'binance-demo-spot', 'next_action': 'Select Binance Demo Spot profile', 'blocking': True}, {'check': 'demo_base_url', 'status': 'pass', 'reason': 'https://demo-api.binance.com', 'next_action",
+                "blockers": "[]",
+                "next_action": "Start Demo Spot pilot"
+              },
+              "alerts_count": 9,
+              "critical_alerts_count": 0,
+              "realized_pnl": "0",
+              "fees_paid": "0",
+              "slippage_bps": "10",
+              "readiness_blockers": {
+                "count": "2",
+                "latest": "session report missing"
+              },
+              "reconciliation": {
+                "status": "ok",
+                "known_orders": "3",
+                "open_orders": "0",
+                "orphan_orders": "0",
+                "failures": "0",
+                "events": "[]",
+                "checked_at_ms": "1778487677020",
+                "needs_operator_action": "False"
+              },
+              "cancel_on_stop_status": {
+                "count": "0",
+                "latest": "None"
+              }
+            }
+          },
+          "testnet_prechecks": {
+            "api_key_present": true,
+            "api_secret_present": true,
+            "mode_is_testnet": true,
+            "live_disabled": true,
+            "risk_limits_set": true,
+            "demo_trading_armed": true
+          },
+          "current_candle": {
+            "open_time_ms": 780000,
+            "open": "99.8697",
+            "high": "100.2787",
+            "low": "99.5709",
+            "close": "99.9799",
+            "volume": "15.4761",
+            "close_time_ms": 839999,
+            "quote_volume": "1547.2989",
+            "trade_count": 35
+          },
+          "latest_signal": {
+            "signal": "BUY",
+            "confidence": 0.6451697579251177,
+            "horizon": "3 bars",
+            "model_version": "rule-baseline-0.1",
+            "metadata": {}
+          },
+          "latest_risk_decision": {
+            "decision": "ALLOW",
+            "reason": "risk checks passed",
+            "intent": {
+              "symbol": "BTCUSDT",
+              "side": "BUY",
+              "quote_size": "10",
+              "order_type": "MARKET",
+              "max_slippage_bps": "10"
+            }
+          },
+          "latest_execution_result": {
+            "mode": "testnet",
+            "status": "REJECTED",
+            "order_request": {
+              "symbol": "BTCUSDT",
+              "side": "BUY",
+              "order_type": "MARKET",
+              "quantity": "0.10002",
+              "quote_order_qty": null,
+              "price": null,
+              "client_order_id": "spotbot-9a4a59bc2b974eeca4e0d3ac"
+            },
+            "response": {
+              "error": "Binance API request failed",
+              "status": 400,
+              "payload": {
+                "code": "-2010",
+                "msg": "Account has insufficient balance for requested action."
+              }
+            }
+          },
+          "metrics": {
+            "api_requests": 0,
+            "api_errors": 0,
+            "rate_limit_events": 0,
+            "signals": {
+              "BUY": 3,
+              "SELL": 1,
+              "HOLD": 5
+            },
+            "block_reasons": {
+              "insufficient base balance": 1,
+              "model returned HOLD": 5
+            },
+            "paper_pnl": "0.0000",
+            "exposure_quote": "0.0000",
+            "reconciliation_failures": 0,
+            "data_quality_warnings": 0,
+            "stream_status": "ok"
+          },
+          "alerts": {
+            "count": 9,
+            "latest": {
+              "name": "demo_pilot_paused",
+              "severity": "warning",
+              "message": "max rejects exceeded",
+              "action": "stop_runtime",
+              "created_at_ms": 1778487677022,
+              "metadata": {}
+            }
+          },
+          "signals": {
+            "count": 9,
+            "latest": {
+              "timestamp_ms": 839999,
+              "price": "99.9799",
+              "side": "BUY",
+              "confidence": 0.6451697579251177,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "audit_tail": {
+            "count": 20,
+            "latest": {
+              "component": "execution",
+              "correlation_id": "10334647-a025-418d-bebb-be4c664cd4cd",
+              "event": "demo_reconciliation",
+              "payload": {
+                "checked_at_ms": 1778487723358,
+                "events": {
+                  "count": 0,
+                  "latest": null
+                },
+                "failures": 0,
+                "known_orders": 3,
+                "needs_operator_action": false,
+                "open_orders": 0,
+                "orphan_orders": 0,
+                "status": "ok"
+              },
+              "timestamp_ms": 1778487723358
+            }
+          },
+          "cancel_on_stop_status": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
+            "count": 0,
+            "latest": null
+          },
+          "candles": {
+            "count": 14,
+            "latest": {
+              "open_time_ms": 780000,
+              "open": "99.8697",
+              "high": "100.2787",
+              "low": "99.5709",
+              "close": "99.9799",
+              "volume": "15.4761",
+              "close_time_ms": 839999,
+              "quote_volume": "1547.2989",
+              "trade_count": 35
+            }
+          },
+          "demo_order_errors": {
+            "count": 3,
+            "latest": {
+              "error": "Binance API request failed",
+              "status": 400,
+              "payload": {
+                "code": -2010,
+                "msg": "Account has insufficient balance for requested action."
+              }
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "recent_sessions": {
+            "count": 5,
+            "latest": {
+              "session_id": "1778487191456-6c8d861c",
+              "mode": "demo",
+              "symbol": "BNBUSDT",
+              "interval": "1m",
+              "started_at_ms": 1778487191456,
+              "ended_at_ms": 1778487699823,
+              "pnl": "0.0000",
+              "max_drawdown": "0",
+              "trades": 0,
+              "blocks": 6,
+              "model_version": "rule-baseline-0.1",
+              "status": "stopped",
+              "metadata": {
+                "source": "demo",
+                "model_alias": "",
+                "demo_trading_armed": true,
+                "exchange_profile": "binance-demo-spot",
+                "demo_pilot": {
+                  "config": "{'pilot_name': 'smoke', 'duration_minutes': 15, 'max_demo_orders': 5, 'max_rejects': 2, 'max_api_errors': 3, 'max_reconciliation_failures': 1, 'cancel_open_orders_on_stop': True, 'reconciliation_interval_seconds': 30, 'account_sync_interval",
+                  "counters": "{'orders': 3, 'rejects': 3, 'api_errors': 3, 'reconciliation_failures': 0, 'started_at_ms': 1778487191456, 'elapsed_seconds': 508}",
+                  "should_pause": "True",
+                  "pause_reason": "max rejects exceeded",
+                  "status": "armed",
+                  "last_reconciliation_check_ms": "1778487699820",
+                  "last_demo_account_sync_ms": "1778487209172"
+                },
+                "pilot_run": {
+                  "run_id": "1778385150497-btcusdt-operator",
+                  "state": "running",
+                  "profile": "binance-demo-spot",
+                  "symbol": "BTCUSDT",
+                  "preset": "operator",
+                  "started_at_ms": "1778385150497",
+                  "updated_at_ms": "1778487240384",
+                  "completed_at_ms": "None",
+                  "blockers": "[]",
+                  "transitions": "[{'from': 'idle', 'to': 'blocked', 'timestamp_ms': 1778385150497, 'reason': 'run created'}, {'from': 'blocked', 'to': 'ready', 'timestamp_ms': 1778385150498, 'reason': 'start gate evaluated'}, {'from': 'ready', 'to': 'running', 'timestamp_m",
+                  "checkpoints": "[{'event': 'start_snapshot', 'timestamp_ms': 1778385150507, 'payload': {'resume_required': False, 'message': 'runtime started', 'session_id': '1778385115057-4a6e1748', 'symbol': 'BTCUSDT', 'mode': 'demo', 'status': 'running', 'interval': '1",
+                  "report_paths": "{}"
+                },
+                "pilot_start_gate": {
+                  "allowed": "True",
+                  "state": "ready",
+                  "checks": "[{'check': 'profile', 'status': 'pass', 'reason': 'binance-demo-spot', 'next_action': 'Select Binance Demo Spot profile', 'blocking': True}, {'check': 'demo_base_url', 'status': 'pass', 'reason': 'https://demo-api.binance.com', 'next_action",
+                  "blockers": "[]",
+                  "next_action": "Start Demo Spot pilot"
+                },
+                "alerts_count": 9,
+                "critical_alerts_count": 0,
+                "realized_pnl": "0",
+                "fees_paid": "0",
+                "slippage_bps": "10",
+                "readiness_blockers": {
+                  "count": 2,
+                  "latest": "session report missing"
+                },
+                "reconciliation": {
+                  "status": "ok",
+                  "known_orders": "3",
+                  "open_orders": "0",
+                  "orphan_orders": "0",
+                  "failures": "0",
+                  "events": "[]",
+                  "checked_at_ms": "1778487699820",
+                  "needs_operator_action": "False"
+                },
+                "cancel_on_stop_status": {
+                  "count": 0,
+                  "latest": null
+                }
+              }
+            }
+          },
+          "order_lifecycle": {
+            "count": 3,
+            "latest": {
+              "client_order_id": "spotbot-9a4a59bc2b974eeca4e0d3ac",
+              "symbol": "BTCUSDT",
+              "side": "BUY",
+              "status": "REJECTED",
+              "order_id": null,
+              "filled_quantity": "0",
+              "last_price": "0",
+              "events": {
+                "count": 2,
+                "latest": {
+                  "type": "DEMO_SPOT",
+                  "status": "REJECTED",
+                  "response": {
+                    "error": "Binance API request failed",
+                    "status": 400,
+                    "payload": {
+                      "code": "-2010",
+                      "msg": "Account has insufficient balance for requested action."
+                    }
+                  }
+                }
+              },
+              "needs_reconciliation": false
+            }
+          },
+          "equity_points": {
+            "count": 14,
+            "latest": {
+              "timestamp_ms": 839999,
+              "equity": "1000.0000"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "stop_snapshot",
+      "timestamp_ms": 1778487730214,
+      "payload": {
+        "cancel_status": {
+          "count": 0,
+          "latest": null
+        },
+        "snapshot": {
+          "resume_required": false,
+          "message": "runtime stopped",
+          "session_id": "1778487191451-9e8d121b",
+          "symbol": "ETHUSDT",
+          "mode": "demo",
+          "status": "stopped",
+          "interval": "1m",
+          "exchange_profile": {
+            "name": "binance-demo-spot",
+            "label": "Binance Demo Spot API",
+            "mode_badge": "BINANCE DEMO SPOT",
+            "trading_mode": "testnet",
+            "rest_base_url": "https://demo-api.binance.com",
+            "websocket_base_url": "wss://stream.binance.com:9443",
+            "user_data_stream_enabled": true,
+            "requires_credentials": true,
+            "storage": "session"
+          },
+          "credential_status": {
+            "profile": "binance-demo-spot",
+            "has_api_key": true,
+            "has_api_secret": true,
+            "capability": "Credentials loaded for signed checks"
+          },
+          "demo_connection": {
+            "profile": "binance-demo-spot",
+            "base_url": "https://demo-api.binance.com",
+            "armed": true,
+            "connected": true,
+            "authenticated": true,
+            "trading_permission_ok": true,
+            "kill_switch": false,
+            "gate": {
+              "allowed": true,
+              "reason": "allowed",
+              "checks": {
+                "profile_is_demo_spot": "True",
+                "base_url_is_demo": "True",
+                "credentials_present": "True",
+                "connection_ok": "True",
+                "armed": "True",
+                "live_disabled": "True",
+                "kill_switch_off": "True",
+                "risk_allowed": "True",
+                "filters_loaded": "True",
+                "max_orders_ok": "True"
+              }
+            }
+          },
+          "demo_account": {
+            "status": "ok",
+            "can_trade": true,
+            "account_type": "SPOT",
+            "balances": {
+              "count": 39,
+              "latest": {
+                "asset": "XAUT",
+                "free": "0.00070160",
+                "locked": "0.00000000"
+              }
+            },
+            "last_sync_ms": 1778487202182,
+            "error": ""
+          },
+          "reconciliation": {
+            "status": "ok",
+            "known_orders": 3,
+            "open_orders": 0,
+            "orphan_orders": 0,
+            "failures": 0,
+            "events": {
+              "count": 0,
+              "latest": null
+            },
+            "checked_at_ms": 1778487728202,
+            "needs_operator_action": false
+          },
+          "demo_pilot": {
+            "config": {
+              "pilot_name": "smoke",
+              "duration_minutes": 15,
+              "max_demo_orders": 5,
+              "max_rejects": 2,
+              "max_api_errors": 3,
+              "max_reconciliation_failures": 1,
+              "cancel_open_orders_on_stop": true,
+              "reconciliation_interval_seconds": 30,
+              "account_sync_interval_seconds": 60,
+              "pause_on_connection_degraded": true,
+              "require_clean_start": true
+            },
+            "counters": {
+              "orders": 3,
+              "rejects": 3,
+              "api_errors": 3,
+              "reconciliation_failures": 0,
+              "started_at_ms": 1778487191450,
+              "elapsed_seconds": 538
+            },
+            "should_pause": true,
+            "pause_reason": "max rejects exceeded",
+            "status": "armed",
+            "last_reconciliation_check_ms": 1778487728202,
+            "last_demo_account_sync_ms": 1778487202182
+          },
+          "market_data": {
+            "source": "demo",
+            "status": "ok",
+            "message": "demo replay source",
+            "last_event_age_ms": 0,
+            "reconnect_count": 0,
+            "stream_url": null
+          },
+          "top_of_book": {
+            "symbol": "ETHUSDT",
+            "bid": "99.9699",
+            "bid_qty": "1",
+            "ask": "99.9899",
+            "ask_qty": "1",
+            "event_time_ms": 839999,
+            "last_update_id": 839999,
+            "received_time_ms": 1778487685593,
+            "mid_price": "99.9799",
+            "spread_bps": "2.000402080818244467137894717",
+            "age_ms": 0
+          },
+          "data_quality": {
+            "status": "ok",
+            "checked_rows": 14,
+            "issues": {
+              "count": 0,
+              "latest": null
+            }
+          },
+          "readiness": {
+            "level": "R2",
+            "blockers": {
+              "count": 1,
+              "latest": "critical alerts present"
+            },
+            "live_allowed": false
+          },
+          "active_model": {
+            "alias": "baseline",
+            "model_version": "rule-baseline-0.1",
+            "model_type": "rule-based",
+            "metrics": {}
+          },
+          "paper_account": {
+            "quote_balance": "1000",
+            "base_balance": "0",
+            "average_entry": "0",
+            "realized_pnl": "0",
+            "fees_paid": "0",
+            "slippage_bps": "10",
+            "fills": {
+              "count": 0,
+              "latest": null
+            },
+            "equity": "1000.0000"
+          },
+          "session_summary": {
+            "session_id": "1778487191451-9e8d121b",
+            "mode": "demo",
+            "symbol": "ETHUSDT",
+            "interval": "1m",
+            "started_at_ms": 1778487191451,
+            "ended_at_ms": 1778487688422,
+            "pnl": "0.0000",
+            "max_drawdown": "0",
+            "trades": 0,
+            "blocks": 6,
+            "model_version": "rule-baseline-0.1",
+            "status": "stopped",
+            "metadata": {
+              "source": "demo",
+              "model_alias": "",
+              "demo_trading_armed": true,
+              "exchange_profile": "binance-demo-spot",
+              "demo_pilot": {
+                "config": "{'pilot_name': 'smoke', 'duration_minutes': 15, 'max_demo_orders': 5, 'max_rejects': 2, 'max_api_errors': 3, 'max_reconciliation_failures': 1, 'cancel_open_orders_on_stop': True, 'reconciliation_interval_seconds': 30, 'account_sync_interval",
+                "counters": "{'orders': 3, 'rejects': 3, 'api_errors': 3, 'reconciliation_failures': 0, 'started_at_ms': 1778487191450, 'elapsed_seconds': 496}",
+                "should_pause": "True",
+                "pause_reason": "max rejects exceeded",
+                "status": "armed",
+                "last_reconciliation_check_ms": "1778487688418",
+                "last_demo_account_sync_ms": "1778487202182"
+              },
+              "pilot_run": {
+                "run_id": "1778385150497-btcusdt-operator",
+                "state": "running",
+                "profile": "binance-demo-spot",
+                "symbol": "BTCUSDT",
+                "preset": "operator",
+                "started_at_ms": "1778385150497",
+                "updated_at_ms": "1778487240384",
+                "completed_at_ms": "None",
+                "blockers": "[]",
+                "transitions": "[{'from': 'idle', 'to': 'blocked', 'timestamp_ms': 1778385150497, 'reason': 'run created'}, {'from': 'blocked', 'to': 'ready', 'timestamp_ms': 1778385150498, 'reason': 'start gate evaluated'}, {'from': 'ready', 'to': 'running', 'timestamp_m",
+                "checkpoints": "[{'event': 'start_snapshot', 'timestamp_ms': 1778385150507, 'payload': {'resume_required': False, 'message': 'runtime started', 'session_id': '1778385115057-4a6e1748', 'symbol': 'BTCUSDT', 'mode': 'demo', 'status': 'running', 'interval': '1",
+                "report_paths": "{}"
+              },
+              "pilot_start_gate": {
+                "allowed": "True",
+                "state": "ready",
+                "checks": "[{'check': 'profile', 'status': 'pass', 'reason': 'binance-demo-spot', 'next_action': 'Select Binance Demo Spot profile', 'blocking': True}, {'check': 'demo_base_url', 'status': 'pass', 'reason': 'https://demo-api.binance.com', 'next_action",
+                "blockers": "[]",
+                "next_action": "Start Demo Spot pilot"
+              },
+              "alerts_count": 9,
+              "critical_alerts_count": 0,
+              "realized_pnl": "0",
+              "fees_paid": "0",
+              "slippage_bps": "10",
+              "readiness_blockers": {
+                "count": "2",
+                "latest": "session report missing"
+              },
+              "reconciliation": {
+                "status": "ok",
+                "known_orders": "3",
+                "open_orders": "0",
+                "orphan_orders": "0",
+                "failures": "0",
+                "events": "[]",
+                "checked_at_ms": "1778487688418",
+                "needs_operator_action": "False"
+              },
+              "cancel_on_stop_status": {
+                "count": "0",
+                "latest": "None"
+              }
+            }
+          },
+          "testnet_prechecks": {
+            "api_key_present": true,
+            "api_secret_present": true,
+            "mode_is_testnet": true,
+            "live_disabled": true,
+            "risk_limits_set": true,
+            "demo_trading_armed": true
+          },
+          "current_candle": {
+            "open_time_ms": 780000,
+            "open": "99.8697",
+            "high": "100.2787",
+            "low": "99.5709",
+            "close": "99.9799",
+            "volume": "15.4761",
+            "close_time_ms": 839999,
+            "quote_volume": "1547.2989",
+            "trade_count": 35
+          },
+          "latest_signal": {
+            "signal": "BUY",
+            "confidence": 0.6451697579251177,
+            "horizon": "3 bars",
+            "model_version": "rule-baseline-0.1",
+            "metadata": {}
+          },
+          "latest_risk_decision": {
+            "decision": "ALLOW",
+            "reason": "risk checks passed",
+            "intent": {
+              "symbol": "ETHUSDT",
+              "side": "BUY",
+              "quote_size": "10",
+              "order_type": "MARKET",
+              "max_slippage_bps": "10"
+            }
+          },
+          "latest_execution_result": {
+            "mode": "testnet",
+            "status": "REJECTED",
+            "order_request": {
+              "symbol": "ETHUSDT",
+              "side": "BUY",
+              "order_type": "MARKET",
+              "quantity": "0.10002",
+              "quote_order_qty": null,
+              "price": null,
+              "client_order_id": "spotbot-0b0648a704304ce6bcd56791"
+            },
+            "response": {
+              "error": "Binance API request failed",
+              "status": 400,
+              "payload": {
+                "code": "-1013",
+                "msg": "Filter failure: LOT_SIZE"
+              }
+            }
+          },
+          "metrics": {
+            "api_requests": 0,
+            "api_errors": 0,
+            "rate_limit_events": 0,
+            "signals": {
+              "BUY": 3,
+              "SELL": 1,
+              "HOLD": 5
+            },
+            "block_reasons": {
+              "insufficient base balance": 1,
+              "model returned HOLD": 5
+            },
+            "paper_pnl": "0.0000",
+            "exposure_quote": "0.0000",
+            "reconciliation_failures": 0,
+            "data_quality_warnings": 0,
+            "stream_status": "ok"
+          },
+          "alerts": {
+            "count": 9,
+            "latest": {
+              "name": "demo_pilot_paused",
+              "severity": "warning",
+              "message": "max rejects exceeded",
+              "action": "stop_runtime",
+              "created_at_ms": 1778487688420,
+              "metadata": {}
+            }
+          },
+          "signals": {
+            "count": 9,
+            "latest": {
+              "timestamp_ms": 839999,
+              "price": "99.9799",
+              "side": "BUY",
+              "confidence": 0.6451697579251177,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "audit_tail": {
+            "count": 20,
+            "latest": {
+              "component": "execution",
+              "correlation_id": "2579a752-6003-49b9-ac36-500977de170c",
+              "event": "demo_reconciliation",
+              "payload": {
+                "checked_at_ms": 1778487728202,
+                "events": {
+                  "count": 0,
+                  "latest": null
+                },
+                "failures": 0,
+                "known_orders": 3,
+                "needs_operator_action": false,
+                "open_orders": 0,
+                "orphan_orders": 0,
+                "status": "ok"
+              },
+              "timestamp_ms": 1778487728202
+            }
+          },
+          "cancel_on_stop_status": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
+            "count": 0,
+            "latest": null
+          },
+          "candles": {
+            "count": 14,
+            "latest": {
+              "open_time_ms": 780000,
+              "open": "99.8697",
+              "high": "100.2787",
+              "low": "99.5709",
+              "close": "99.9799",
+              "volume": "15.4761",
+              "close_time_ms": 839999,
+              "quote_volume": "1547.2989",
+              "trade_count": 35
+            }
+          },
+          "demo_order_errors": {
+            "count": 3,
+            "latest": {
+              "error": "Binance API request failed",
+              "status": 400,
+              "payload": {
+                "code": -1013,
+                "msg": "Filter failure: LOT_SIZE"
+              }
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "recent_sessions": {
+            "count": 5,
+            "latest": {
+              "session_id": "1778487191456-6c8d861c",
+              "mode": "demo",
+              "symbol": "BNBUSDT",
+              "interval": "1m",
+              "started_at_ms": 1778487191456,
+              "ended_at_ms": 1778487699823,
+              "pnl": "0.0000",
+              "max_drawdown": "0",
+              "trades": 0,
+              "blocks": 6,
+              "model_version": "rule-baseline-0.1",
+              "status": "stopped",
+              "metadata": {
+                "source": "demo",
+                "model_alias": "",
+                "demo_trading_armed": true,
+                "exchange_profile": "binance-demo-spot",
+                "demo_pilot": {
+                  "config": "{'pilot_name': 'smoke', 'duration_minutes': 15, 'max_demo_orders': 5, 'max_rejects': 2, 'max_api_errors': 3, 'max_reconciliation_failures': 1, 'cancel_open_orders_on_stop': True, 'reconciliation_interval_seconds': 30, 'account_sync_interval",
+                  "counters": "{'orders': 3, 'rejects': 3, 'api_errors': 3, 'reconciliation_failures': 0, 'started_at_ms': 1778487191456, 'elapsed_seconds': 508}",
+                  "should_pause": "True",
+                  "pause_reason": "max rejects exceeded",
+                  "status": "armed",
+                  "last_reconciliation_check_ms": "1778487699820",
+                  "last_demo_account_sync_ms": "1778487209172"
+                },
+                "pilot_run": {
+                  "run_id": "1778385150497-btcusdt-operator",
+                  "state": "running",
+                  "profile": "binance-demo-spot",
+                  "symbol": "BTCUSDT",
+                  "preset": "operator",
+                  "started_at_ms": "1778385150497",
+                  "updated_at_ms": "1778487240384",
+                  "completed_at_ms": "None",
+                  "blockers": "[]",
+                  "transitions": "[{'from': 'idle', 'to': 'blocked', 'timestamp_ms': 1778385150497, 'reason': 'run created'}, {'from': 'blocked', 'to': 'ready', 'timestamp_ms': 1778385150498, 'reason': 'start gate evaluated'}, {'from': 'ready', 'to': 'running', 'timestamp_m",
+                  "checkpoints": "[{'event': 'start_snapshot', 'timestamp_ms': 1778385150507, 'payload': {'resume_required': False, 'message': 'runtime started', 'session_id': '1778385115057-4a6e1748', 'symbol': 'BTCUSDT', 'mode': 'demo', 'status': 'running', 'interval': '1",
+                  "report_paths": "{}"
+                },
+                "pilot_start_gate": {
+                  "allowed": "True",
+                  "state": "ready",
+                  "checks": "[{'check': 'profile', 'status': 'pass', 'reason': 'binance-demo-spot', 'next_action': 'Select Binance Demo Spot profile', 'blocking': True}, {'check': 'demo_base_url', 'status': 'pass', 'reason': 'https://demo-api.binance.com', 'next_action",
+                  "blockers": "[]",
+                  "next_action": "Start Demo Spot pilot"
+                },
+                "alerts_count": 9,
+                "critical_alerts_count": 0,
+                "realized_pnl": "0",
+                "fees_paid": "0",
+                "slippage_bps": "10",
+                "readiness_blockers": {
+                  "count": 2,
+                  "latest": "session report missing"
+                },
+                "reconciliation": {
+                  "status": "ok",
+                  "known_orders": "3",
+                  "open_orders": "0",
+                  "orphan_orders": "0",
+                  "failures": "0",
+                  "events": "[]",
+                  "checked_at_ms": "1778487699820",
+                  "needs_operator_action": "False"
+                },
+                "cancel_on_stop_status": {
+                  "count": 0,
+                  "latest": null
+                }
+              }
+            }
+          },
+          "order_lifecycle": {
+            "count": 3,
+            "latest": {
+              "client_order_id": "spotbot-0b0648a704304ce6bcd56791",
+              "symbol": "ETHUSDT",
+              "side": "BUY",
+              "status": "REJECTED",
+              "order_id": null,
+              "filled_quantity": "0",
+              "last_price": "0",
+              "events": {
+                "count": 2,
+                "latest": {
+                  "type": "DEMO_SPOT",
+                  "status": "REJECTED",
+                  "response": {
+                    "error": "Binance API request failed",
+                    "status": 400,
+                    "payload": {
+                      "code": "-1013",
+                      "msg": "Filter failure: LOT_SIZE"
+                    }
+                  }
+                }
+              },
+              "needs_reconciliation": false
+            }
+          },
+          "equity_points": {
+            "count": 14,
+            "latest": {
+              "timestamp_ms": 839999,
+              "equity": "1000.0000"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "stop_snapshot",
+      "timestamp_ms": 1778487735090,
+      "payload": {
+        "cancel_status": {
+          "count": 0,
+          "latest": null
+        },
+        "snapshot": {
+          "resume_required": false,
+          "message": "runtime stopped",
+          "session_id": "1778487191456-6c8d861c",
+          "symbol": "BNBUSDT",
+          "mode": "demo",
+          "status": "stopped",
+          "interval": "1m",
+          "exchange_profile": {
+            "name": "binance-demo-spot",
+            "label": "Binance Demo Spot API",
+            "mode_badge": "BINANCE DEMO SPOT",
+            "trading_mode": "testnet",
+            "rest_base_url": "https://demo-api.binance.com",
+            "websocket_base_url": "wss://stream.binance.com:9443",
+            "user_data_stream_enabled": true,
+            "requires_credentials": true,
+            "storage": "session"
+          },
+          "credential_status": {
+            "profile": "binance-demo-spot",
+            "has_api_key": true,
+            "has_api_secret": true,
+            "capability": "Credentials loaded for signed checks"
+          },
+          "demo_connection": {
+            "profile": "binance-demo-spot",
+            "base_url": "https://demo-api.binance.com",
+            "armed": true,
+            "connected": true,
+            "authenticated": true,
+            "trading_permission_ok": true,
+            "kill_switch": false,
+            "gate": {
+              "allowed": true,
+              "reason": "allowed",
+              "checks": {
+                "profile_is_demo_spot": "True",
+                "base_url_is_demo": "True",
+                "credentials_present": "True",
+                "connection_ok": "True",
+                "armed": "True",
+                "live_disabled": "True",
+                "kill_switch_off": "True",
+                "risk_allowed": "True",
+                "filters_loaded": "True",
+                "max_orders_ok": "True"
+              }
+            }
+          },
+          "demo_account": {
+            "status": "ok",
+            "can_trade": true,
+            "account_type": "SPOT",
+            "balances": {
+              "count": 39,
+              "latest": {
+                "asset": "XAUT",
+                "free": "0.00070160",
+                "locked": "0.00000000"
+              }
+            },
+            "last_sync_ms": 1778487209172,
+            "error": ""
+          },
+          "reconciliation": {
+            "status": "ok",
+            "known_orders": 3,
+            "open_orders": 0,
+            "orphan_orders": 0,
+            "failures": 0,
+            "events": {
+              "count": 0,
+              "latest": null
+            },
+            "checked_at_ms": 1778487733145,
+            "needs_operator_action": false
+          },
+          "demo_pilot": {
+            "config": {
+              "pilot_name": "smoke",
+              "duration_minutes": 15,
+              "max_demo_orders": 5,
+              "max_rejects": 2,
+              "max_api_errors": 3,
+              "max_reconciliation_failures": 1,
+              "cancel_open_orders_on_stop": true,
+              "reconciliation_interval_seconds": 30,
+              "account_sync_interval_seconds": 60,
+              "pause_on_connection_degraded": true,
+              "require_clean_start": true
+            },
+            "counters": {
+              "orders": 3,
+              "rejects": 3,
+              "api_errors": 3,
+              "reconciliation_failures": 0,
+              "started_at_ms": 1778487191456,
+              "elapsed_seconds": 543
+            },
+            "should_pause": true,
+            "pause_reason": "max rejects exceeded",
+            "status": "armed",
+            "last_reconciliation_check_ms": 1778487733145,
+            "last_demo_account_sync_ms": 1778487209172
+          },
+          "market_data": {
+            "source": "demo",
+            "status": "ok",
+            "message": "demo replay source",
+            "last_event_age_ms": 0,
+            "reconnect_count": 0,
+            "stream_url": null
+          },
+          "top_of_book": {
+            "symbol": "BNBUSDT",
+            "bid": "99.9699",
+            "bid_qty": "1",
+            "ask": "99.9899",
+            "ask_qty": "1",
+            "event_time_ms": 839999,
+            "last_update_id": 839999,
+            "received_time_ms": 1778487696983,
+            "mid_price": "99.9799",
+            "spread_bps": "2.000402080818244467137894717",
+            "age_ms": 0
+          },
+          "data_quality": {
+            "status": "ok",
+            "checked_rows": 14,
+            "issues": {
+              "count": 0,
+              "latest": null
+            }
+          },
+          "readiness": {
+            "level": "R2",
+            "blockers": {
+              "count": 1,
+              "latest": "critical alerts present"
+            },
+            "live_allowed": false
+          },
+          "active_model": {
+            "alias": "baseline",
+            "model_version": "rule-baseline-0.1",
+            "model_type": "rule-based",
+            "metrics": {}
+          },
+          "paper_account": {
+            "quote_balance": "1000",
+            "base_balance": "0",
+            "average_entry": "0",
+            "realized_pnl": "0",
+            "fees_paid": "0",
+            "slippage_bps": "10",
+            "fills": {
+              "count": 0,
+              "latest": null
+            },
+            "equity": "1000.0000"
+          },
+          "session_summary": {
+            "session_id": "1778487191456-6c8d861c",
+            "mode": "demo",
+            "symbol": "BNBUSDT",
+            "interval": "1m",
+            "started_at_ms": 1778487191456,
+            "ended_at_ms": 1778487699823,
+            "pnl": "0.0000",
+            "max_drawdown": "0",
+            "trades": 0,
+            "blocks": 6,
+            "model_version": "rule-baseline-0.1",
+            "status": "stopped",
+            "metadata": {
+              "source": "demo",
+              "model_alias": "",
+              "demo_trading_armed": true,
+              "exchange_profile": "binance-demo-spot",
+              "demo_pilot": {
+                "config": "{'pilot_name': 'smoke', 'duration_minutes': 15, 'max_demo_orders': 5, 'max_rejects': 2, 'max_api_errors': 3, 'max_reconciliation_failures': 1, 'cancel_open_orders_on_stop': True, 'reconciliation_interval_seconds': 30, 'account_sync_interval",
+                "counters": "{'orders': 3, 'rejects': 3, 'api_errors': 3, 'reconciliation_failures': 0, 'started_at_ms': 1778487191456, 'elapsed_seconds': 508}",
+                "should_pause": "True",
+                "pause_reason": "max rejects exceeded",
+                "status": "armed",
+                "last_reconciliation_check_ms": "1778487699820",
+                "last_demo_account_sync_ms": "1778487209172"
+              },
+              "pilot_run": {
+                "run_id": "1778385150497-btcusdt-operator",
+                "state": "running",
+                "profile": "binance-demo-spot",
+                "symbol": "BTCUSDT",
+                "preset": "operator",
+                "started_at_ms": "1778385150497",
+                "updated_at_ms": "1778487240384",
+                "completed_at_ms": "None",
+                "blockers": "[]",
+                "transitions": "[{'from': 'idle', 'to': 'blocked', 'timestamp_ms': 1778385150497, 'reason': 'run created'}, {'from': 'blocked', 'to': 'ready', 'timestamp_ms': 1778385150498, 'reason': 'start gate evaluated'}, {'from': 'ready', 'to': 'running', 'timestamp_m",
+                "checkpoints": "[{'event': 'start_snapshot', 'timestamp_ms': 1778385150507, 'payload': {'resume_required': False, 'message': 'runtime started', 'session_id': '1778385115057-4a6e1748', 'symbol': 'BTCUSDT', 'mode': 'demo', 'status': 'running', 'interval': '1",
+                "report_paths": "{}"
+              },
+              "pilot_start_gate": {
+                "allowed": "True",
+                "state": "ready",
+                "checks": "[{'check': 'profile', 'status': 'pass', 'reason': 'binance-demo-spot', 'next_action': 'Select Binance Demo Spot profile', 'blocking': True}, {'check': 'demo_base_url', 'status': 'pass', 'reason': 'https://demo-api.binance.com', 'next_action",
+                "blockers": "[]",
+                "next_action": "Start Demo Spot pilot"
+              },
+              "alerts_count": 9,
+              "critical_alerts_count": 0,
+              "realized_pnl": "0",
+              "fees_paid": "0",
+              "slippage_bps": "10",
+              "readiness_blockers": {
+                "count": "2",
+                "latest": "session report missing"
+              },
+              "reconciliation": {
+                "status": "ok",
+                "known_orders": "3",
+                "open_orders": "0",
+                "orphan_orders": "0",
+                "failures": "0",
+                "events": "[]",
+                "checked_at_ms": "1778487699820",
+                "needs_operator_action": "False"
+              },
+              "cancel_on_stop_status": {
+                "count": "0",
+                "latest": "None"
+              }
+            }
+          },
+          "testnet_prechecks": {
+            "api_key_present": true,
+            "api_secret_present": true,
+            "mode_is_testnet": true,
+            "live_disabled": true,
+            "risk_limits_set": true,
+            "demo_trading_armed": true
+          },
+          "current_candle": {
+            "open_time_ms": 780000,
+            "open": "99.8697",
+            "high": "100.2787",
+            "low": "99.5709",
+            "close": "99.9799",
+            "volume": "15.4761",
+            "close_time_ms": 839999,
+            "quote_volume": "1547.2989",
+            "trade_count": 35
+          },
+          "latest_signal": {
+            "signal": "BUY",
+            "confidence": 0.6451697579251177,
+            "horizon": "3 bars",
+            "model_version": "rule-baseline-0.1",
+            "metadata": {}
+          },
+          "latest_risk_decision": {
+            "decision": "ALLOW",
+            "reason": "risk checks passed",
+            "intent": {
+              "symbol": "BNBUSDT",
+              "side": "BUY",
+              "quote_size": "10",
+              "order_type": "MARKET",
+              "max_slippage_bps": "10"
+            }
+          },
+          "latest_execution_result": {
+            "mode": "testnet",
+            "status": "REJECTED",
+            "order_request": {
+              "symbol": "BNBUSDT",
+              "side": "BUY",
+              "order_type": "MARKET",
+              "quantity": "0.10002",
+              "quote_order_qty": null,
+              "price": null,
+              "client_order_id": "spotbot-e6887900c07349b7829b2c4e"
+            },
+            "response": {
+              "error": "Binance API request failed",
+              "status": 400,
+              "payload": {
+                "code": "-1013",
+                "msg": "Filter failure: LOT_SIZE"
+              }
+            }
+          },
+          "metrics": {
+            "api_requests": 0,
+            "api_errors": 0,
+            "rate_limit_events": 0,
+            "signals": {
+              "BUY": 3,
+              "SELL": 1,
+              "HOLD": 5
+            },
+            "block_reasons": {
+              "insufficient base balance": 1,
+              "model returned HOLD": 5
+            },
+            "paper_pnl": "0.0000",
+            "exposure_quote": "0.0000",
+            "reconciliation_failures": 0,
+            "data_quality_warnings": 0,
+            "stream_status": "ok"
+          },
+          "alerts": {
+            "count": 9,
+            "latest": {
+              "name": "demo_pilot_paused",
+              "severity": "warning",
+              "message": "max rejects exceeded",
+              "action": "stop_runtime",
+              "created_at_ms": 1778487699821,
+              "metadata": {}
+            }
+          },
+          "signals": {
+            "count": 9,
+            "latest": {
+              "timestamp_ms": 839999,
+              "price": "99.9799",
+              "side": "BUY",
+              "confidence": 0.6451697579251177,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "audit_tail": {
+            "count": 20,
+            "latest": {
+              "component": "execution",
+              "correlation_id": "720e8813-8169-4798-834c-d98646d71748",
+              "event": "demo_reconciliation",
+              "payload": {
+                "checked_at_ms": 1778487733145,
+                "events": {
+                  "count": 0,
+                  "latest": null
+                },
+                "failures": 0,
+                "known_orders": 3,
+                "needs_operator_action": false,
+                "open_orders": 0,
+                "orphan_orders": 0,
+                "status": "ok"
+              },
+              "timestamp_ms": 1778487733146
+            }
+          },
+          "cancel_on_stop_status": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
+            "count": 0,
+            "latest": null
+          },
+          "candles": {
+            "count": 14,
+            "latest": {
+              "open_time_ms": 780000,
+              "open": "99.8697",
+              "high": "100.2787",
+              "low": "99.5709",
+              "close": "99.9799",
+              "volume": "15.4761",
+              "close_time_ms": 839999,
+              "quote_volume": "1547.2989",
+              "trade_count": 35
+            }
+          },
+          "demo_order_errors": {
+            "count": 3,
+            "latest": {
+              "error": "Binance API request failed",
+              "status": 400,
+              "payload": {
+                "code": -1013,
+                "msg": "Filter failure: LOT_SIZE"
+              }
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "recent_sessions": {
+            "count": 5,
+            "latest": {
+              "session_id": "1778487191456-6c8d861c",
+              "mode": "demo",
+              "symbol": "BNBUSDT",
+              "interval": "1m",
+              "started_at_ms": 1778487191456,
+              "ended_at_ms": 1778487699823,
+              "pnl": "0.0000",
+              "max_drawdown": "0",
+              "trades": 0,
+              "blocks": 6,
+              "model_version": "rule-baseline-0.1",
+              "status": "stopped",
+              "metadata": {
+                "source": "demo",
+                "model_alias": "",
+                "demo_trading_armed": true,
+                "exchange_profile": "binance-demo-spot",
+                "demo_pilot": {
+                  "config": "{'pilot_name': 'smoke', 'duration_minutes': 15, 'max_demo_orders': 5, 'max_rejects': 2, 'max_api_errors': 3, 'max_reconciliation_failures': 1, 'cancel_open_orders_on_stop': True, 'reconciliation_interval_seconds': 30, 'account_sync_interval",
+                  "counters": "{'orders': 3, 'rejects': 3, 'api_errors': 3, 'reconciliation_failures': 0, 'started_at_ms': 1778487191456, 'elapsed_seconds': 508}",
+                  "should_pause": "True",
+                  "pause_reason": "max rejects exceeded",
+                  "status": "armed",
+                  "last_reconciliation_check_ms": "1778487699820",
+                  "last_demo_account_sync_ms": "1778487209172"
+                },
+                "pilot_run": {
+                  "run_id": "1778385150497-btcusdt-operator",
+                  "state": "running",
+                  "profile": "binance-demo-spot",
+                  "symbol": "BTCUSDT",
+                  "preset": "operator",
+                  "started_at_ms": "1778385150497",
+                  "updated_at_ms": "1778487240384",
+                  "completed_at_ms": "None",
+                  "blockers": "[]",
+                  "transitions": "[{'from': 'idle', 'to': 'blocked', 'timestamp_ms': 1778385150497, 'reason': 'run created'}, {'from': 'blocked', 'to': 'ready', 'timestamp_ms': 1778385150498, 'reason': 'start gate evaluated'}, {'from': 'ready', 'to': 'running', 'timestamp_m",
+                  "checkpoints": "[{'event': 'start_snapshot', 'timestamp_ms': 1778385150507, 'payload': {'resume_required': False, 'message': 'runtime started', 'session_id': '1778385115057-4a6e1748', 'symbol': 'BTCUSDT', 'mode': 'demo', 'status': 'running', 'interval': '1",
+                  "report_paths": "{}"
+                },
+                "pilot_start_gate": {
+                  "allowed": "True",
+                  "state": "ready",
+                  "checks": "[{'check': 'profile', 'status': 'pass', 'reason': 'binance-demo-spot', 'next_action': 'Select Binance Demo Spot profile', 'blocking': True}, {'check': 'demo_base_url', 'status': 'pass', 'reason': 'https://demo-api.binance.com', 'next_action",
+                  "blockers": "[]",
+                  "next_action": "Start Demo Spot pilot"
+                },
+                "alerts_count": 9,
+                "critical_alerts_count": 0,
+                "realized_pnl": "0",
+                "fees_paid": "0",
+                "slippage_bps": "10",
+                "readiness_blockers": {
+                  "count": 2,
+                  "latest": "session report missing"
+                },
+                "reconciliation": {
+                  "status": "ok",
+                  "known_orders": "3",
+                  "open_orders": "0",
+                  "orphan_orders": "0",
+                  "failures": "0",
+                  "events": "[]",
+                  "checked_at_ms": "1778487699820",
+                  "needs_operator_action": "False"
+                },
+                "cancel_on_stop_status": {
+                  "count": 0,
+                  "latest": null
+                }
+              }
+            }
+          },
+          "order_lifecycle": {
+            "count": 3,
+            "latest": {
+              "client_order_id": "spotbot-e6887900c07349b7829b2c4e",
+              "symbol": "BNBUSDT",
+              "side": "BUY",
+              "status": "REJECTED",
+              "order_id": null,
+              "filled_quantity": "0",
+              "last_price": "0",
+              "events": {
+                "count": 2,
+                "latest": {
+                  "type": "DEMO_SPOT",
+                  "status": "REJECTED",
+                  "response": {
+                    "error": "Binance API request failed",
+                    "status": 400,
+                    "payload": {
+                      "code": "-1013",
+                      "msg": "Filter failure: LOT_SIZE"
+                    }
+                  }
+                }
+              },
+              "needs_reconciliation": false
+            }
+          },
+          "equity_points": {
+            "count": 14,
+            "latest": {
+              "timestamp_ms": 839999,
+              "equity": "1000.0000"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "stop_snapshot",
+      "timestamp_ms": 1778487740134,
+      "payload": {
+        "cancel_status": {
+          "count": 0,
+          "latest": null
+        },
+        "snapshot": {
+          "resume_required": false,
+          "message": "runtime stopped",
+          "session_id": "1778487191461-67b13a46",
+          "symbol": "SOLUSDT",
+          "mode": "demo",
+          "status": "stopped",
+          "interval": "1m",
+          "exchange_profile": {
+            "name": "binance-demo-spot",
+            "label": "Binance Demo Spot API",
+            "mode_badge": "BINANCE DEMO SPOT",
+            "trading_mode": "testnet",
+            "rest_base_url": "https://demo-api.binance.com",
+            "websocket_base_url": "wss://stream.binance.com:9443",
+            "user_data_stream_enabled": true,
+            "requires_credentials": true,
+            "storage": "session"
+          },
+          "credential_status": {
+            "profile": "binance-demo-spot",
+            "has_api_key": true,
+            "has_api_secret": true,
+            "capability": "Credentials loaded for signed checks"
+          },
+          "demo_connection": {
+            "profile": "binance-demo-spot",
+            "base_url": "https://demo-api.binance.com",
+            "armed": true,
+            "connected": true,
+            "authenticated": true,
+            "trading_permission_ok": true,
+            "kill_switch": false,
+            "gate": {
+              "allowed": true,
+              "reason": "allowed",
+              "checks": {
+                "profile_is_demo_spot": "True",
+                "base_url_is_demo": "True",
+                "credentials_present": "True",
+                "connection_ok": "True",
+                "armed": "True",
+                "live_disabled": "True",
+                "kill_switch_off": "True",
+                "risk_allowed": "True",
+                "filters_loaded": "True",
+                "max_orders_ok": "True"
+              }
+            }
+          },
+          "demo_account": {
+            "status": "ok",
+            "can_trade": true,
+            "account_type": "SPOT",
+            "balances": {
+              "count": 39,
+              "latest": {
+                "asset": "XAUT",
+                "free": "0.00070160",
+                "locked": "0.00000000"
+              }
+            },
+            "last_sync_ms": 1778487216142,
+            "error": ""
+          },
+          "reconciliation": {
+            "status": "ok",
+            "known_orders": 3,
+            "open_orders": 0,
+            "orphan_orders": 0,
+            "failures": 0,
+            "events": {
+              "count": 0,
+              "latest": null
+            },
+            "checked_at_ms": 1778487738195,
+            "needs_operator_action": false
+          },
+          "demo_pilot": {
+            "config": {
+              "pilot_name": "smoke",
+              "duration_minutes": 15,
+              "max_demo_orders": 5,
+              "max_rejects": 2,
+              "max_api_errors": 3,
+              "max_reconciliation_failures": 1,
+              "cancel_open_orders_on_stop": true,
+              "reconciliation_interval_seconds": 30,
+              "account_sync_interval_seconds": 60,
+              "pause_on_connection_degraded": true,
+              "require_clean_start": true
+            },
+            "counters": {
+              "orders": 3,
+              "rejects": 3,
+              "api_errors": 3,
+              "reconciliation_failures": 0,
+              "started_at_ms": 1778487191461,
+              "elapsed_seconds": 548
+            },
+            "should_pause": true,
+            "pause_reason": "max rejects exceeded",
+            "status": "armed",
+            "last_reconciliation_check_ms": 1778487738195,
+            "last_demo_account_sync_ms": 1778487216142
+          },
+          "market_data": {
+            "source": "demo",
+            "status": "ok",
+            "message": "demo replay source",
+            "last_event_age_ms": 0,
+            "reconnect_count": 0,
+            "stream_url": null
+          },
+          "top_of_book": {
+            "symbol": "SOLUSDT",
+            "bid": "99.9699",
+            "bid_qty": "1",
+            "ask": "99.9899",
+            "ask_qty": "1",
+            "event_time_ms": 839999,
+            "last_update_id": 839999,
+            "received_time_ms": 1778487708299,
+            "mid_price": "99.9799",
+            "spread_bps": "2.000402080818244467137894717",
+            "age_ms": 0
+          },
+          "data_quality": {
+            "status": "ok",
+            "checked_rows": 14,
+            "issues": {
+              "count": 0,
+              "latest": null
+            }
+          },
+          "readiness": {
+            "level": "R2",
+            "blockers": {
+              "count": 1,
+              "latest": "critical alerts present"
+            },
+            "live_allowed": false
+          },
+          "active_model": {
+            "alias": "baseline",
+            "model_version": "rule-baseline-0.1",
+            "model_type": "rule-based",
+            "metrics": {}
+          },
+          "paper_account": {
+            "quote_balance": "1000",
+            "base_balance": "0",
+            "average_entry": "0",
+            "realized_pnl": "0",
+            "fees_paid": "0",
+            "slippage_bps": "10",
+            "fills": {
+              "count": 0,
+              "latest": null
+            },
+            "equity": "1000.0000"
+          },
+          "session_summary": {
+            "session_id": "1778487191461-67b13a46",
+            "mode": "demo",
+            "symbol": "SOLUSDT",
+            "interval": "1m",
+            "started_at_ms": 1778487191461,
+            "ended_at_ms": 1778487711105,
+            "pnl": "0.0000",
+            "max_drawdown": "0",
+            "trades": 0,
+            "blocks": 6,
+            "model_version": "rule-baseline-0.1",
+            "status": "stopped",
+            "metadata": {
+              "source": "demo",
+              "model_alias": "",
+              "demo_trading_armed": true,
+              "exchange_profile": "binance-demo-spot",
+              "demo_pilot": {
+                "config": "{'pilot_name': 'smoke', 'duration_minutes': 15, 'max_demo_orders': 5, 'max_rejects': 2, 'max_api_errors': 3, 'max_reconciliation_failures': 1, 'cancel_open_orders_on_stop': True, 'reconciliation_interval_seconds': 30, 'account_sync_interval",
+                "counters": "{'orders': 3, 'rejects': 3, 'api_errors': 3, 'reconciliation_failures': 0, 'started_at_ms': 1778487191461, 'elapsed_seconds': 519}",
+                "should_pause": "True",
+                "pause_reason": "max rejects exceeded",
+                "status": "armed",
+                "last_reconciliation_check_ms": "1778487711100",
+                "last_demo_account_sync_ms": "1778487216142"
+              },
+              "pilot_run": {
+                "run_id": "1778385150497-btcusdt-operator",
+                "state": "running",
+                "profile": "binance-demo-spot",
+                "symbol": "BTCUSDT",
+                "preset": "operator",
+                "started_at_ms": "1778385150497",
+                "updated_at_ms": "1778487240384",
+                "completed_at_ms": "None",
+                "blockers": "[]",
+                "transitions": "[{'from': 'idle', 'to': 'blocked', 'timestamp_ms': 1778385150497, 'reason': 'run created'}, {'from': 'blocked', 'to': 'ready', 'timestamp_ms': 1778385150498, 'reason': 'start gate evaluated'}, {'from': 'ready', 'to': 'running', 'timestamp_m",
+                "checkpoints": "[{'event': 'start_snapshot', 'timestamp_ms': 1778385150507, 'payload': {'resume_required': False, 'message': 'runtime started', 'session_id': '1778385115057-4a6e1748', 'symbol': 'BTCUSDT', 'mode': 'demo', 'status': 'running', 'interval': '1",
+                "report_paths": "{}"
+              },
+              "pilot_start_gate": {
+                "allowed": "True",
+                "state": "ready",
+                "checks": "[{'check': 'profile', 'status': 'pass', 'reason': 'binance-demo-spot', 'next_action': 'Select Binance Demo Spot profile', 'blocking': True}, {'check': 'demo_base_url', 'status': 'pass', 'reason': 'https://demo-api.binance.com', 'next_action",
+                "blockers": "[]",
+                "next_action": "Start Demo Spot pilot"
+              },
+              "alerts_count": 9,
+              "critical_alerts_count": 0,
+              "realized_pnl": "0",
+              "fees_paid": "0",
+              "slippage_bps": "10",
+              "readiness_blockers": {
+                "count": "2",
+                "latest": "session report missing"
+              },
+              "reconciliation": {
+                "status": "ok",
+                "known_orders": "3",
+                "open_orders": "0",
+                "orphan_orders": "0",
+                "failures": "0",
+                "events": "[]",
+                "checked_at_ms": "1778487711100",
+                "needs_operator_action": "False"
+              },
+              "cancel_on_stop_status": {
+                "count": "0",
+                "latest": "None"
+              }
+            }
+          },
+          "testnet_prechecks": {
+            "api_key_present": true,
+            "api_secret_present": true,
+            "mode_is_testnet": true,
+            "live_disabled": true,
+            "risk_limits_set": true,
+            "demo_trading_armed": true
+          },
+          "current_candle": {
+            "open_time_ms": 780000,
+            "open": "99.8697",
+            "high": "100.2787",
+            "low": "99.5709",
+            "close": "99.9799",
+            "volume": "15.4761",
+            "close_time_ms": 839999,
+            "quote_volume": "1547.2989",
+            "trade_count": 35
+          },
+          "latest_signal": {
+            "signal": "BUY",
+            "confidence": 0.6451697579251177,
+            "horizon": "3 bars",
+            "model_version": "rule-baseline-0.1",
+            "metadata": {}
+          },
+          "latest_risk_decision": {
+            "decision": "ALLOW",
+            "reason": "risk checks passed",
+            "intent": {
+              "symbol": "SOLUSDT",
+              "side": "BUY",
+              "quote_size": "10",
+              "order_type": "MARKET",
+              "max_slippage_bps": "10"
+            }
+          },
+          "latest_execution_result": {
+            "mode": "testnet",
+            "status": "REJECTED",
+            "order_request": {
+              "symbol": "SOLUSDT",
+              "side": "BUY",
+              "order_type": "MARKET",
+              "quantity": "0.10002",
+              "quote_order_qty": null,
+              "price": null,
+              "client_order_id": "spotbot-649db41b4c25431d957f77dd"
+            },
+            "response": {
+              "error": "Binance API request failed",
+              "status": 400,
+              "payload": {
+                "code": "-1013",
+                "msg": "Filter failure: LOT_SIZE"
+              }
+            }
+          },
+          "metrics": {
+            "api_requests": 0,
+            "api_errors": 0,
+            "rate_limit_events": 0,
+            "signals": {
+              "BUY": 3,
+              "SELL": 1,
+              "HOLD": 5
+            },
+            "block_reasons": {
+              "insufficient base balance": 1,
+              "model returned HOLD": 5
+            },
+            "paper_pnl": "0.0000",
+            "exposure_quote": "0.0000",
+            "reconciliation_failures": 0,
+            "data_quality_warnings": 0,
+            "stream_status": "ok"
+          },
+          "alerts": {
+            "count": 9,
+            "latest": {
+              "name": "demo_pilot_paused",
+              "severity": "warning",
+              "message": "max rejects exceeded",
+              "action": "stop_runtime",
+              "created_at_ms": 1778487711102,
+              "metadata": {}
+            }
+          },
+          "signals": {
+            "count": 9,
+            "latest": {
+              "timestamp_ms": 839999,
+              "price": "99.9799",
+              "side": "BUY",
+              "confidence": 0.6451697579251177,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "audit_tail": {
+            "count": 20,
+            "latest": {
+              "component": "execution",
+              "correlation_id": "912235f9-e8c9-49c1-b9c9-b090c45cccd6",
+              "event": "demo_trading_gate",
+              "payload": {
+                "allowed": true,
+                "checks": {
+                  "armed": "True",
+                  "base_url_is_demo": "True",
+                  "connection_ok": "True",
+                  "credentials_present": "True",
+                  "filters_loaded": "True",
+                  "kill_switch_off": "True",
+                  "live_disabled": "True",
+                  "max_orders_ok": "True",
+                  "profile_is_demo_spot": "True",
+                  "risk_allowed": "True"
+                },
+                "reason": "allowed"
+              },
+              "timestamp_ms": 1778487738201
+            }
+          },
+          "cancel_on_stop_status": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
+            "count": 0,
+            "latest": null
+          },
+          "candles": {
+            "count": 14,
+            "latest": {
+              "open_time_ms": 780000,
+              "open": "99.8697",
+              "high": "100.2787",
+              "low": "99.5709",
+              "close": "99.9799",
+              "volume": "15.4761",
+              "close_time_ms": 839999,
+              "quote_volume": "1547.2989",
+              "trade_count": 35
+            }
+          },
+          "demo_order_errors": {
+            "count": 3,
+            "latest": {
+              "error": "Binance API request failed",
+              "status": 400,
+              "payload": {
+                "code": -1013,
+                "msg": "Filter failure: LOT_SIZE"
+              }
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "recent_sessions": {
+            "count": 5,
+            "latest": {
+              "session_id": "1778487191456-6c8d861c",
+              "mode": "demo",
+              "symbol": "BNBUSDT",
+              "interval": "1m",
+              "started_at_ms": 1778487191456,
+              "ended_at_ms": 1778487699823,
+              "pnl": "0.0000",
+              "max_drawdown": "0",
+              "trades": 0,
+              "blocks": 6,
+              "model_version": "rule-baseline-0.1",
+              "status": "stopped",
+              "metadata": {
+                "source": "demo",
+                "model_alias": "",
+                "demo_trading_armed": true,
+                "exchange_profile": "binance-demo-spot",
+                "demo_pilot": {
+                  "config": "{'pilot_name': 'smoke', 'duration_minutes': 15, 'max_demo_orders': 5, 'max_rejects': 2, 'max_api_errors': 3, 'max_reconciliation_failures': 1, 'cancel_open_orders_on_stop': True, 'reconciliation_interval_seconds': 30, 'account_sync_interval",
+                  "counters": "{'orders': 3, 'rejects': 3, 'api_errors': 3, 'reconciliation_failures': 0, 'started_at_ms': 1778487191456, 'elapsed_seconds': 508}",
+                  "should_pause": "True",
+                  "pause_reason": "max rejects exceeded",
+                  "status": "armed",
+                  "last_reconciliation_check_ms": "1778487699820",
+                  "last_demo_account_sync_ms": "1778487209172"
+                },
+                "pilot_run": {
+                  "run_id": "1778385150497-btcusdt-operator",
+                  "state": "running",
+                  "profile": "binance-demo-spot",
+                  "symbol": "BTCUSDT",
+                  "preset": "operator",
+                  "started_at_ms": "1778385150497",
+                  "updated_at_ms": "1778487240384",
+                  "completed_at_ms": "None",
+                  "blockers": "[]",
+                  "transitions": "[{'from': 'idle', 'to': 'blocked', 'timestamp_ms': 1778385150497, 'reason': 'run created'}, {'from': 'blocked', 'to': 'ready', 'timestamp_ms': 1778385150498, 'reason': 'start gate evaluated'}, {'from': 'ready', 'to': 'running', 'timestamp_m",
+                  "checkpoints": "[{'event': 'start_snapshot', 'timestamp_ms': 1778385150507, 'payload': {'resume_required': False, 'message': 'runtime started', 'session_id': '1778385115057-4a6e1748', 'symbol': 'BTCUSDT', 'mode': 'demo', 'status': 'running', 'interval': '1",
+                  "report_paths": "{}"
+                },
+                "pilot_start_gate": {
+                  "allowed": "True",
+                  "state": "ready",
+                  "checks": "[{'check': 'profile', 'status': 'pass', 'reason': 'binance-demo-spot', 'next_action': 'Select Binance Demo Spot profile', 'blocking': True}, {'check': 'demo_base_url', 'status': 'pass', 'reason': 'https://demo-api.binance.com', 'next_action",
+                  "blockers": "[]",
+                  "next_action": "Start Demo Spot pilot"
+                },
+                "alerts_count": 9,
+                "critical_alerts_count": 0,
+                "realized_pnl": "0",
+                "fees_paid": "0",
+                "slippage_bps": "10",
+                "readiness_blockers": {
+                  "count": 2,
+                  "latest": "session report missing"
+                },
+                "reconciliation": {
+                  "status": "ok",
+                  "known_orders": "3",
+                  "open_orders": "0",
+                  "orphan_orders": "0",
+                  "failures": "0",
+                  "events": "[]",
+                  "checked_at_ms": "1778487699820",
+                  "needs_operator_action": "False"
+                },
+                "cancel_on_stop_status": {
+                  "count": 0,
+                  "latest": null
+                }
+              }
+            }
+          },
+          "order_lifecycle": {
+            "count": 3,
+            "latest": {
+              "client_order_id": "spotbot-649db41b4c25431d957f77dd",
+              "symbol": "SOLUSDT",
+              "side": "BUY",
+              "status": "REJECTED",
+              "order_id": null,
+              "filled_quantity": "0",
+              "last_price": "0",
+              "events": {
+                "count": 2,
+                "latest": {
+                  "type": "DEMO_SPOT",
+                  "status": "REJECTED",
+                  "response": {
+                    "error": "Binance API request failed",
+                    "status": 400,
+                    "payload": {
+                      "code": "-1013",
+                      "msg": "Filter failure: LOT_SIZE"
+                    }
+                  }
+                }
+              },
+              "needs_reconciliation": false
+            }
+          },
+          "equity_points": {
+            "count": 14,
+            "latest": {
+              "timestamp_ms": 839999,
+              "equity": "1000.0000"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "stop_snapshot",
+      "timestamp_ms": 1778487745065,
+      "payload": {
+        "cancel_status": {
+          "count": 0,
+          "latest": null
+        },
+        "snapshot": {
+          "resume_required": false,
+          "message": "runtime stopped",
+          "session_id": "1778487191466-555f97bd",
+          "symbol": "XRPUSDT",
+          "mode": "demo",
+          "status": "stopped",
+          "interval": "1m",
+          "exchange_profile": {
+            "name": "binance-demo-spot",
+            "label": "Binance Demo Spot API",
+            "mode_badge": "BINANCE DEMO SPOT",
+            "trading_mode": "testnet",
+            "rest_base_url": "https://demo-api.binance.com",
+            "websocket_base_url": "wss://stream.binance.com:9443",
+            "user_data_stream_enabled": true,
+            "requires_credentials": true,
+            "storage": "session"
+          },
+          "credential_status": {
+            "profile": "binance-demo-spot",
+            "has_api_key": true,
+            "has_api_secret": true,
+            "capability": "Credentials loaded for signed checks"
+          },
+          "demo_connection": {
+            "profile": "binance-demo-spot",
+            "base_url": "https://demo-api.binance.com",
+            "armed": true,
+            "connected": true,
+            "authenticated": true,
+            "trading_permission_ok": true,
+            "kill_switch": false,
+            "gate": {
+              "allowed": true,
+              "reason": "allowed",
+              "checks": {
+                "profile_is_demo_spot": "True",
+                "base_url_is_demo": "True",
+                "credentials_present": "True",
+                "connection_ok": "True",
+                "armed": "True",
+                "live_disabled": "True",
+                "kill_switch_off": "True",
+                "risk_allowed": "True",
+                "filters_loaded": "True",
+                "max_orders_ok": "True"
+              }
+            }
+          },
+          "demo_account": {
+            "status": "ok",
+            "can_trade": true,
+            "account_type": "SPOT",
+            "balances": {
+              "count": 39,
+              "latest": {
+                "asset": "XAUT",
+                "free": "0.00070160",
+                "locked": "0.00000000"
+              }
+            },
+            "last_sync_ms": 1778487223137,
+            "error": ""
+          },
+          "reconciliation": {
+            "status": "ok",
+            "known_orders": 3,
+            "open_orders": 0,
+            "orphan_orders": 0,
+            "failures": 0,
+            "events": {
+              "count": 0,
+              "latest": null
+            },
+            "checked_at_ms": 1778487743195,
+            "needs_operator_action": false
+          },
+          "demo_pilot": {
+            "config": {
+              "pilot_name": "smoke",
+              "duration_minutes": 15,
+              "max_demo_orders": 5,
+              "max_rejects": 2,
+              "max_api_errors": 3,
+              "max_reconciliation_failures": 1,
+              "cancel_open_orders_on_stop": true,
+              "reconciliation_interval_seconds": 30,
+              "account_sync_interval_seconds": 60,
+              "pause_on_connection_degraded": true,
+              "require_clean_start": true
+            },
+            "counters": {
+              "orders": 3,
+              "rejects": 3,
+              "api_errors": 3,
+              "reconciliation_failures": 0,
+              "started_at_ms": 1778487191466,
+              "elapsed_seconds": 553
+            },
+            "should_pause": true,
+            "pause_reason": "max rejects exceeded",
+            "status": "armed",
+            "last_reconciliation_check_ms": 1778487743195,
+            "last_demo_account_sync_ms": 1778487223137
+          },
+          "market_data": {
+            "source": "demo",
+            "status": "ok",
+            "message": "demo replay source",
+            "last_event_age_ms": 0,
+            "reconnect_count": 0,
+            "stream_url": null
+          },
+          "top_of_book": {
+            "symbol": "XRPUSDT",
+            "bid": "99.9699",
+            "bid_qty": "1",
+            "ask": "99.9899",
+            "ask_qty": "1",
+            "event_time_ms": 839999,
+            "last_update_id": 839999,
+            "received_time_ms": 1778487719737,
+            "mid_price": "99.9799",
+            "spread_bps": "2.000402080818244467137894717",
+            "age_ms": 0
+          },
+          "data_quality": {
+            "status": "ok",
+            "checked_rows": 14,
+            "issues": {
+              "count": 0,
+              "latest": null
+            }
+          },
+          "readiness": {
+            "level": "R2",
+            "blockers": {
+              "count": 1,
+              "latest": "critical alerts present"
+            },
+            "live_allowed": false
+          },
+          "active_model": {
+            "alias": "baseline",
+            "model_version": "rule-baseline-0.1",
+            "model_type": "rule-based",
+            "metrics": {}
+          },
+          "paper_account": {
+            "quote_balance": "1000",
+            "base_balance": "0",
+            "average_entry": "0",
+            "realized_pnl": "0",
+            "fees_paid": "0",
+            "slippage_bps": "10",
+            "fills": {
+              "count": 0,
+              "latest": null
+            },
+            "equity": "1000.0000"
+          },
+          "session_summary": {
+            "session_id": "1778487191466-555f97bd",
+            "mode": "demo",
+            "symbol": "XRPUSDT",
+            "interval": "1m",
+            "started_at_ms": 1778487191466,
+            "ended_at_ms": 1778487722554,
+            "pnl": "0.0000",
+            "max_drawdown": "0",
+            "trades": 0,
+            "blocks": 6,
+            "model_version": "rule-baseline-0.1",
+            "status": "stopped",
+            "metadata": {
+              "source": "demo",
+              "model_alias": "",
+              "demo_trading_armed": true,
+              "exchange_profile": "binance-demo-spot",
+              "demo_pilot": {
+                "config": "{'pilot_name': 'smoke', 'duration_minutes': 15, 'max_demo_orders': 5, 'max_rejects': 2, 'max_api_errors': 3, 'max_reconciliation_failures': 1, 'cancel_open_orders_on_stop': True, 'reconciliation_interval_seconds': 30, 'account_sync_interval",
+                "counters": "{'orders': 3, 'rejects': 3, 'api_errors': 3, 'reconciliation_failures': 0, 'started_at_ms': 1778487191466, 'elapsed_seconds': 531}",
+                "should_pause": "True",
+                "pause_reason": "max rejects exceeded",
+                "status": "armed",
+                "last_reconciliation_check_ms": "1778487722550",
+                "last_demo_account_sync_ms": "1778487223137"
+              },
+              "pilot_run": {
+                "run_id": "1778385150497-btcusdt-operator",
+                "state": "stopping",
+                "profile": "binance-demo-spot",
+                "symbol": "BTCUSDT",
+                "preset": "operator",
+                "started_at_ms": "1778385150497",
+                "updated_at_ms": "1778487720472",
+                "completed_at_ms": "None",
+                "blockers": "[]",
+                "transitions": "[{'from': 'idle', 'to': 'blocked', 'timestamp_ms': 1778385150497, 'reason': 'run created'}, {'from': 'blocked', 'to': 'ready', 'timestamp_ms': 1778385150498, 'reason': 'start gate evaluated'}, {'from': 'ready', 'to': 'running', 'timestamp_m",
+                "checkpoints": "[{'event': 'start_snapshot', 'timestamp_ms': 1778385150507, 'payload': {'resume_required': False, 'message': 'runtime started', 'session_id': '1778385115057-4a6e1748', 'symbol': 'BTCUSDT', 'mode': 'demo', 'status': 'running', 'interval': '1",
+                "report_paths": "{}"
+              },
+              "pilot_start_gate": {
+                "allowed": "True",
+                "state": "ready",
+                "checks": "[{'check': 'profile', 'status': 'pass', 'reason': 'binance-demo-spot', 'next_action': 'Select Binance Demo Spot profile', 'blocking': True}, {'check': 'demo_base_url', 'status': 'pass', 'reason': 'https://demo-api.binance.com', 'next_action",
+                "blockers": "[]",
+                "next_action": "Start Demo Spot pilot"
+              },
+              "alerts_count": 9,
+              "critical_alerts_count": 0,
+              "realized_pnl": "0",
+              "fees_paid": "0",
+              "slippage_bps": "10",
+              "readiness_blockers": {
+                "count": "2",
+                "latest": "session report missing"
+              },
+              "reconciliation": {
+                "status": "ok",
+                "known_orders": "3",
+                "open_orders": "0",
+                "orphan_orders": "0",
+                "failures": "0",
+                "events": "[]",
+                "checked_at_ms": "1778487722550",
+                "needs_operator_action": "False"
+              },
+              "cancel_on_stop_status": {
+                "count": "0",
+                "latest": "None"
+              }
+            }
+          },
+          "testnet_prechecks": {
+            "api_key_present": true,
+            "api_secret_present": true,
+            "mode_is_testnet": true,
+            "live_disabled": true,
+            "risk_limits_set": true,
+            "demo_trading_armed": true
+          },
+          "current_candle": {
+            "open_time_ms": 780000,
+            "open": "99.8697",
+            "high": "100.2787",
+            "low": "99.5709",
+            "close": "99.9799",
+            "volume": "15.4761",
+            "close_time_ms": 839999,
+            "quote_volume": "1547.2989",
+            "trade_count": 35
+          },
+          "latest_signal": {
+            "signal": "BUY",
+            "confidence": 0.6451697579251177,
+            "horizon": "3 bars",
+            "model_version": "rule-baseline-0.1",
+            "metadata": {}
+          },
+          "latest_risk_decision": {
+            "decision": "ALLOW",
+            "reason": "risk checks passed",
+            "intent": {
+              "symbol": "XRPUSDT",
+              "side": "BUY",
+              "quote_size": "10",
+              "order_type": "MARKET",
+              "max_slippage_bps": "10"
+            }
+          },
+          "latest_execution_result": {
+            "mode": "testnet",
+            "status": "REJECTED",
+            "order_request": {
+              "symbol": "XRPUSDT",
+              "side": "BUY",
+              "order_type": "MARKET",
+              "quantity": "0.10002",
+              "quote_order_qty": null,
+              "price": null,
+              "client_order_id": "spotbot-ebb409004662439983762042"
+            },
+            "response": {
+              "error": "Binance API request failed",
+              "status": 400,
+              "payload": {
+                "code": "-1013",
+                "msg": "Filter failure: LOT_SIZE"
+              }
+            }
+          },
+          "metrics": {
+            "api_requests": 0,
+            "api_errors": 0,
+            "rate_limit_events": 0,
+            "signals": {
+              "BUY": 3,
+              "SELL": 1,
+              "HOLD": 5
+            },
+            "block_reasons": {
+              "insufficient base balance": 1,
+              "model returned HOLD": 5
+            },
+            "paper_pnl": "0.0000",
+            "exposure_quote": "0.0000",
+            "reconciliation_failures": 0,
+            "data_quality_warnings": 0,
+            "stream_status": "ok"
+          },
+          "alerts": {
+            "count": 9,
+            "latest": {
+              "name": "demo_pilot_paused",
+              "severity": "warning",
+              "message": "max rejects exceeded",
+              "action": "stop_runtime",
+              "created_at_ms": 1778487722552,
+              "metadata": {}
+            }
+          },
+          "signals": {
+            "count": 9,
+            "latest": {
+              "timestamp_ms": 839999,
+              "price": "99.9799",
+              "side": "BUY",
+              "confidence": 0.6451697579251177,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "audit_tail": {
+            "count": 20,
+            "latest": {
+              "component": "execution",
+              "correlation_id": "2060dcb8-6519-4977-bd2a-5dc03735764d",
+              "event": "demo_reconciliation",
+              "payload": {
+                "checked_at_ms": 1778487743195,
+                "events": {
+                  "count": 0,
+                  "latest": null
+                },
+                "failures": 0,
+                "known_orders": 3,
+                "needs_operator_action": false,
+                "open_orders": 0,
+                "orphan_orders": 0,
+                "status": "ok"
+              },
+              "timestamp_ms": 1778487743196
+            }
+          },
+          "cancel_on_stop_status": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
+            "count": 0,
+            "latest": null
+          },
+          "candles": {
+            "count": 14,
+            "latest": {
+              "open_time_ms": 780000,
+              "open": "99.8697",
+              "high": "100.2787",
+              "low": "99.5709",
+              "close": "99.9799",
+              "volume": "15.4761",
+              "close_time_ms": 839999,
+              "quote_volume": "1547.2989",
+              "trade_count": 35
+            }
+          },
+          "demo_order_errors": {
+            "count": 3,
+            "latest": {
+              "error": "Binance API request failed",
+              "status": 400,
+              "payload": {
+                "code": -1013,
+                "msg": "Filter failure: LOT_SIZE"
+              }
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "recent_sessions": {
+            "count": 5,
+            "latest": {
+              "session_id": "1778487191456-6c8d861c",
+              "mode": "demo",
+              "symbol": "BNBUSDT",
+              "interval": "1m",
+              "started_at_ms": 1778487191456,
+              "ended_at_ms": 1778487699823,
+              "pnl": "0.0000",
+              "max_drawdown": "0",
+              "trades": 0,
+              "blocks": 6,
+              "model_version": "rule-baseline-0.1",
+              "status": "stopped",
+              "metadata": {
+                "source": "demo",
+                "model_alias": "",
+                "demo_trading_armed": true,
+                "exchange_profile": "binance-demo-spot",
+                "demo_pilot": {
+                  "config": "{'pilot_name': 'smoke', 'duration_minutes': 15, 'max_demo_orders': 5, 'max_rejects': 2, 'max_api_errors': 3, 'max_reconciliation_failures': 1, 'cancel_open_orders_on_stop': True, 'reconciliation_interval_seconds': 30, 'account_sync_interval",
+                  "counters": "{'orders': 3, 'rejects': 3, 'api_errors': 3, 'reconciliation_failures': 0, 'started_at_ms': 1778487191456, 'elapsed_seconds': 508}",
+                  "should_pause": "True",
+                  "pause_reason": "max rejects exceeded",
+                  "status": "armed",
+                  "last_reconciliation_check_ms": "1778487699820",
+                  "last_demo_account_sync_ms": "1778487209172"
+                },
+                "pilot_run": {
+                  "run_id": "1778385150497-btcusdt-operator",
+                  "state": "running",
+                  "profile": "binance-demo-spot",
+                  "symbol": "BTCUSDT",
+                  "preset": "operator",
+                  "started_at_ms": "1778385150497",
+                  "updated_at_ms": "1778487240384",
+                  "completed_at_ms": "None",
+                  "blockers": "[]",
+                  "transitions": "[{'from': 'idle', 'to': 'blocked', 'timestamp_ms': 1778385150497, 'reason': 'run created'}, {'from': 'blocked', 'to': 'ready', 'timestamp_ms': 1778385150498, 'reason': 'start gate evaluated'}, {'from': 'ready', 'to': 'running', 'timestamp_m",
+                  "checkpoints": "[{'event': 'start_snapshot', 'timestamp_ms': 1778385150507, 'payload': {'resume_required': False, 'message': 'runtime started', 'session_id': '1778385115057-4a6e1748', 'symbol': 'BTCUSDT', 'mode': 'demo', 'status': 'running', 'interval': '1",
+                  "report_paths": "{}"
+                },
+                "pilot_start_gate": {
+                  "allowed": "True",
+                  "state": "ready",
+                  "checks": "[{'check': 'profile', 'status': 'pass', 'reason': 'binance-demo-spot', 'next_action': 'Select Binance Demo Spot profile', 'blocking': True}, {'check': 'demo_base_url', 'status': 'pass', 'reason': 'https://demo-api.binance.com', 'next_action",
+                  "blockers": "[]",
+                  "next_action": "Start Demo Spot pilot"
+                },
+                "alerts_count": 9,
+                "critical_alerts_count": 0,
+                "realized_pnl": "0",
+                "fees_paid": "0",
+                "slippage_bps": "10",
+                "readiness_blockers": {
+                  "count": 2,
+                  "latest": "session report missing"
+                },
+                "reconciliation": {
+                  "status": "ok",
+                  "known_orders": "3",
+                  "open_orders": "0",
+                  "orphan_orders": "0",
+                  "failures": "0",
+                  "events": "[]",
+                  "checked_at_ms": "1778487699820",
+                  "needs_operator_action": "False"
+                },
+                "cancel_on_stop_status": {
+                  "count": 0,
+                  "latest": null
+                }
+              }
+            }
+          },
+          "order_lifecycle": {
+            "count": 3,
+            "latest": {
+              "client_order_id": "spotbot-ebb409004662439983762042",
+              "symbol": "XRPUSDT",
+              "side": "BUY",
+              "status": "REJECTED",
+              "order_id": null,
+              "filled_quantity": "0",
+              "last_price": "0",
+              "events": {
+                "count": 2,
+                "latest": {
+                  "type": "DEMO_SPOT",
+                  "status": "REJECTED",
+                  "response": {
+                    "error": "Binance API request failed",
+                    "status": 400,
+                    "payload": {
+                      "code": "-1013",
+                      "msg": "Filter failure: LOT_SIZE"
+                    }
+                  }
+                }
+              },
+              "needs_reconciliation": false
+            }
+          },
+          "equity_points": {
+            "count": 14,
+            "latest": {
+              "timestamp_ms": 839999,
+              "equity": "1000.0000"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "report_paths": {
+    "summary_json": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778487191461-67b13a46\\report\\summary.json",
+    "summary_md": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778487191461-67b13a46\\report\\summary.md",
+    "fills_csv": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778487191461-67b13a46\\report\\fills.csv",
+    "equity_csv": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778487191461-67b13a46\\report\\equity.csv",
+    "alerts_jsonl": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778487191461-67b13a46\\report\\alerts.jsonl",
+    "orders_jsonl": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778487191461-67b13a46\\report\\orders.jsonl",
+    "config_redacted_json": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778487191461-67b13a46\\report\\config-redacted.json",
+    "demo_pilot_json": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778487191461-67b13a46\\report\\demo-pilot.json",
+    "demo_pilot_md": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778487191461-67b13a46\\report\\demo-pilot.md",
+    "pilot_acceptance_json": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778487191461-67b13a46\\report\\pilot-acceptance.json",
+    "pilot_acceptance_md": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778487191461-67b13a46\\report\\pilot-acceptance.md"
+  },
+  "storage_error": "[WinError 5] Toegang geweigerd: 'C:\\\\Users\\\\highlife\\\\Desktop\\\\Neural network binance spot\\\\data\\\\pilot-runs\\\\1778385150497-btcusdt-operator\\\\pilot-run.json.tmp' -> 'C:\\\\Users\\\\highlife\\\\Desktop\\\\Neural network binance spot\\\\data\\\\pilot-runs\\\\1778385150497-btcusdt-operator\\\\pilot-run.json'"
+}
