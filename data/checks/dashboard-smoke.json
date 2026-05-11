@@ -1,0 +1,31 @@
+{
+  "status": "ok",
+  "pages": [
+    "overview",
+    "demo_spot_trading",
+    "credentials_profile",
+    "bot_controls",
+    "risk_controls",
+    "strategy_model",
+    "market_data",
+    "orders_account",
+    "sessions",
+    "evaluation",
+    "strategy_lab",
+    "research",
+    "portfolio",
+    "readiness",
+    "logs_security",
+    "demo_pilot"
+  ],
+  "chart_keys": [
+    "overview.candlestick",
+    "overview.equity",
+    "demo_pilot.runner.heartbeat",
+    "demo_pilot.runner.counters",
+    "demo_pilot.runner.equity_pnl",
+    "demo_pilot.runner.command_status"
+  ],
+  "unique_chart_keys": true,
+  "live_trading_enabled": false
+}

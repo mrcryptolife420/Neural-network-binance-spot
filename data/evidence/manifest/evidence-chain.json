@@ -1,0 +1,982 @@
+{
+  "status": "ok",
+  "chain": [
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\checks\\check-all.json",
+      "sha256": "7eeb1a81-5c1195f0-52703237-84207340-56ba9f76-71896ada-a9569059-e8f3efe1",
+      "previous": "00000000-00000000-00000000-00000000-00000000-00000000-00000000-00000000"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\checks\\dashboard-smoke.json",
+      "sha256": "c7f77fef-a3510aa6-5e952857-2ed5e745-674867c3-637b7c6f-f6494fda-98e8995f",
+      "previous": "7eeb1a81-5c1195f0-52703237-84207340-56ba9f76-71896ada-a9569059-e8f3efe1"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\checks\\dashboard\\browser-smoke.json",
+      "sha256": "48526fee-76137e62-d4bc3152-2f283d0b-3a774c49-ccd74cb1-efb0ed55-664f6bd4",
+      "previous": "c7f77fef-a3510aa6-5e952857-2ed5e745-674867c3-637b7c6f-f6494fda-98e8995f"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\checks\\dashboard\\launch-evidence.json",
+      "sha256": "273fd04e-d37f502e-986c50e9-b41b6da3-86265410-418a583d-f8020d13-bb33bd68",
+      "previous": "48526fee-76137e62-d4bc3152-2f283d0b-3a774c49-ccd74cb1-efb0ed55-664f6bd4"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\checks\\dashboard\\screenshots\\demo-pilot.png",
+      "sha256": "90112ef0-b6c2699f-632a287b-bb023faa-03d4061d-86e90664-f0796881-273721a1",
+      "previous": "273fd04e-d37f502e-986c50e9-b41b6da3-86265410-418a583d-f8020d13-bb33bd68"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\checks\\dashboard\\screenshots\\demo-spot-trading.png",
+      "sha256": "98160438-1cc45ae4-3ae9eeaa-e6983961-ad20d41f-62ba57e1-924f037b-7034158f",
+      "previous": "90112ef0-b6c2699f-632a287b-bb023faa-03d4061d-86e90664-f0796881-273721a1"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\checks\\dashboard\\screenshots\\logs-and-security.png",
+      "sha256": "711f61f3-2e0c6163-e14cb8c4-7c0e83cd-c6b8d522-c5940f46-5fbc23bb-9efc01b0",
+      "previous": "98160438-1cc45ae4-3ae9eeaa-e6983961-ad20d41f-62ba57e1-924f037b-7034158f"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\checks\\dashboard\\screenshots\\overview.png",
+      "sha256": "eff70e64-8902a9ce-9ca0d22b-10c20190-1f7caaf8-5bb0f655-b5566422-d670e469",
+      "previous": "711f61f3-2e0c6163-e14cb8c4-7c0e83cd-c6b8d522-c5940f46-5fbc23bb-9efc01b0"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\dashboard\\operator-evidence-2026-05-10T095104.532357Z0000.json",
+      "sha256": "7b7a5ddc-d7752873-45c60dca-397fe5b8-167d776d-f7490f31-ff0bed37-f2a4f8c7",
+      "previous": "eff70e64-8902a9ce-9ca0d22b-10c20190-1f7caaf8-5bb0f655-b5566422-d670e469"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\dashboard\\operator-evidence-2026-05-10T095127.364639Z0000.json",
+      "sha256": "0ace84ec-92edc79f-0f25c318-bd301d0c-93911fe1-431375bf-e5cc8a8b-d8d5335a",
+      "previous": "7b7a5ddc-d7752873-45c60dca-397fe5b8-167d776d-f7490f31-ff0bed37-f2a4f8c7"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\dashboard\\operator-evidence-2026-05-10T100450.377377Z0000.json",
+      "sha256": "ec2b4210-ab8bc706-1a544a81-d2ad01d1-0ca21d56-cd68e2bf-8ed6152f-c981902f",
+      "previous": "0ace84ec-92edc79f-0f25c318-bd301d0c-93911fe1-431375bf-e5cc8a8b-d8d5335a"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\dashboard\\operator-evidence-2026-05-10T185924.124475Z0000.json",
+      "sha256": "c8c41213-2fc85f58-6dc2ce5d-373867d8-7a13f4d7-ada866e9-295855ea-9875ebf7",
+      "previous": "ec2b4210-ab8bc706-1a544a81-d2ad01d1-0ca21d56-cd68e2bf-8ed6152f-c981902f"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\dashboard\\operator-evidence-2026-05-10T191201.462297Z0000.json",
+      "sha256": "03030db6-c5eb265f-2e12737e-e9324d7b-3f63a6f6-da2c6e50-429c4ee3-f6791aab",
+      "previous": "c8c41213-2fc85f58-6dc2ce5d-373867d8-7a13f4d7-ada866e9-295855ea-9875ebf7"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\dashboard\\operator-evidence-2026-05-10T192724.115700Z0000.json",
+      "sha256": "db961a1e-c70421e2-c7ed4a14-dee489d0-0dccf7e2-4e57d3dc-bf036aae-02f69bba",
+      "previous": "03030db6-c5eb265f-2e12737e-e9324d7b-3f63a6f6-da2c6e50-429c4ee3-f6791aab"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\demo-execution\\demo_execution_drill.json",
+      "sha256": "1abef018-4fddace3-079f89ef-a2e2cb3a-351c6e10-f60a8e6f-6a090850-2a885506",
+      "previous": "db961a1e-c70421e2-c7ed4a14-dee489d0-0dccf7e2-4e57d3dc-bf036aae-02f69bba"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\demo-execution\\demo_execution_drill_1778406687351.json",
+      "sha256": "e31b6cb5-5b9ffbce-582706bb-2f24447e-274557f6-3cea9fd7-4ab9b19a-86204ba0",
+      "previous": "1abef018-4fddace3-079f89ef-a2e2cb3a-351c6e10-f60a8e6f-6a090850-2a885506"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\demo-execution\\demo_execution_drill_1778407490366.json",
+      "sha256": "857efc2a-bd290177-c6a13b8b-a14845ed-0c6d019d-3f61f82f-972518b3-c8258917",
+      "previous": "e31b6cb5-5b9ffbce-582706bb-2f24447e-274557f6-3cea9fd7-4ab9b19a-86204ba0"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\demo-execution\\demo_execution_drill_1778439564099.json",
+      "sha256": "535a8933-c30a7397-15d0ed30-a597054f-71e41865-0fad9ccd-853e8a99-bb561080",
+      "previous": "857efc2a-bd290177-c6a13b8b-a14845ed-0c6d019d-3f61f82f-972518b3-c8258917"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\demo-execution\\demo_execution_drill_1778440321444.json",
+      "sha256": "f37a7ec9-a299a37c-d819bf0c-85e7af41-359df833-3b3697cc-1ead5305-251758c8",
+      "previous": "535a8933-c30a7397-15d0ed30-a597054f-71e41865-0fad9ccd-853e8a99-bb561080"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\demo-execution\\demo_execution_drill_1778441244103.json",
+      "sha256": "9188606f-77d72465-2ca88d88-8a67f00d-4ea99c35-a403b381-180ba85c-44fb6fbd",
+      "previous": "f37a7ec9-a299a37c-d819bf0c-85e7af41-359df833-3b3697cc-1ead5305-251758c8"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\diagnostics\\baseline.json",
+      "sha256": "0827129d-a49921a6-d87dfed8-92a41813-00260afa-53c2ff12-3a60d854-155562f3",
+      "previous": "9188606f-77d72465-2ca88d88-8a67f00d-4ea99c35-a403b381-180ba85c-44fb6fbd"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\diagnostics\\history.jsonl",
+      "sha256": "6c8b238d-dfca1e90-e40889e7-da821067-54bc2b78-670c8038-cabd4021-a5e05020",
+      "previous": "0827129d-a49921a6-d87dfed8-92a41813-00260afa-53c2ff12-3a60d854-155562f3"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\diagnostics\\latest-diagnostics.json",
+      "sha256": "505a3e2a-f7098f13-8341672e-d1eaf146-98cc0d3a-21df7b13-28e2918c-249d1f67",
+      "previous": "6c8b238d-dfca1e90-e40889e7-da821067-54bc2b78-670c8038-cabd4021-a5e05020"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\evidence.jsonl",
+      "sha256": "11bb921a-1a3df7b0-9f005d00-113ed7c1-7cf51984-30a51aaf-019bc44f-8a4168e0",
+      "previous": "505a3e2a-f7098f13-8341672e-d1eaf146-98cc0d3a-21df7b13-28e2918c-249d1f67"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\manifest\\latest-evidence-manifest.json",
+      "sha256": "27aa2c55-d664723e-9f58c260-03bb52f7-c9afae48-1bdb3343-56507567-8fe453be",
+      "previous": "11bb921a-1a3df7b0-9f005d00-113ed7c1-7cf51984-30a51aaf-019bc44f-8a4168e0"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\pilot-idempotency-runs\\1778407490343-btcusdt-smoke\\pilot-run.json",
+      "sha256": "a6f39c55-5241a897-b3fb265f-8e68eff7-ad83380b-7ada1dcb-1c0b8eed-e42efd93",
+      "previous": "27aa2c55-d664723e-9f58c260-03bb52f7-c9afae48-1bdb3343-56507567-8fe453be"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\pilot-start-idempotency.json",
+      "sha256": "a477eb20-03251337-8e603e99-3d594e5c-22a8a6e4-6dfffd00-2095cd4e-29c3a6d6",
+      "previous": "a6f39c55-5241a897-b3fb265f-8e68eff7-ad83380b-7ada1dcb-1c0b8eed-e42efd93"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\rehearsals\\history.jsonl",
+      "sha256": "bf24e018-2d2acef4-62a60fba-70db211d-abfb42b8-fc3f92a0-75ab7a74-36a755ef",
+      "previous": "a477eb20-03251337-8e603e99-3d594e5c-22a8a6e4-6dfffd00-2095cd4e-29c3a6d6"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\rehearsals\\latest.json",
+      "sha256": "9bb604c9-b9092d04-2bc7e92f-640753a7-195d6cc8-4edbf754-58fdc957-9d0983bb",
+      "previous": "bf24e018-2d2acef4-62a60fba-70db211d-abfb42b8-fc3f92a0-75ab7a74-36a755ef"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\rehearsals\\rehearsal-1778406681754\\artifacts.json",
+      "sha256": "a8b3f54e-b6a24f43-90470f80-e652787b-eebf9bb3-ccf06b12-f9cd4b63-5f13fac6",
+      "previous": "9bb604c9-b9092d04-2bc7e92f-640753a7-195d6cc8-4edbf754-58fdc957-9d0983bb"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\rehearsals\\rehearsal-1778406681754\\summary.json",
+      "sha256": "b4529d98-861a4cff-f4fd04b6-fa800dda-88dfe706-bf31de89-bc3a9353-49aaf3de",
+      "previous": "a8b3f54e-b6a24f43-90470f80-e652787b-eebf9bb3-ccf06b12-f9cd4b63-5f13fac6"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\rehearsals\\rehearsal-1778407484443\\artifacts.json",
+      "sha256": "baea109e-258bd1b8-b2637e3a-21ca58db-3615ed5f-e62bfd14-aa9b37e4-9b659651",
+      "previous": "b4529d98-861a4cff-f4fd04b6-fa800dda-88dfe706-bf31de89-bc3a9353-49aaf3de"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\rehearsals\\rehearsal-1778407484443\\summary.json",
+      "sha256": "5486577d-10e2be2a-e3e53c41-175e7a2d-f054efa7-72bc9daa-6be1803d-e4a3645b",
+      "previous": "baea109e-258bd1b8-b2637e3a-21ca58db-3615ed5f-e62bfd14-aa9b37e4-9b659651"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\rehearsals\\rehearsal-1778439558113\\artifacts.json",
+      "sha256": "dba501a6-9ae15aa1-f6b3d214-a5b4aa9f-95984655-91535c9d-13dd4f99-1121ab66",
+      "previous": "5486577d-10e2be2a-e3e53c41-175e7a2d-f054efa7-72bc9daa-6be1803d-e4a3645b"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\rehearsals\\rehearsal-1778439558113\\summary.json",
+      "sha256": "fa0b8e40-f08a609b-3c3484d9-7f7a449b-1921278e-95f22586-3189c19c-3b54ea36",
+      "previous": "dba501a6-9ae15aa1-f6b3d214-a5b4aa9f-95984655-91535c9d-13dd4f99-1121ab66"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\rehearsals\\rehearsal-1778440314146\\artifacts.json",
+      "sha256": "515c8110-47716920-310245d7-ae1b4930-163e66db-84d179fa-78993996-0d776e58",
+      "previous": "fa0b8e40-f08a609b-3c3484d9-7f7a449b-1921278e-95f22586-3189c19c-3b54ea36"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\rehearsals\\rehearsal-1778440314146\\summary.json",
+      "sha256": "0fe876f6-db36e4cc-e5c2d67d-32f3558b-dfd2494e-91c3850b-6053a6ba-d2d1e8e7",
+      "previous": "515c8110-47716920-310245d7-ae1b4930-163e66db-84d179fa-78993996-0d776e58"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\rehearsals\\rehearsal-1778441236555\\artifacts.json",
+      "sha256": "927822c7-00052eca-985e2865-6075c523-eaba6d46-6d25f3fd-764f439f-3052d39e",
+      "previous": "0fe876f6-db36e4cc-e5c2d67d-32f3558b-dfd2494e-91c3850b-6053a6ba-d2d1e8e7"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\rehearsals\\rehearsal-1778441236555\\summary.json",
+      "sha256": "85429d4d-297205b7-d1f611f9-a33f4cc0-bf9265d1-c87fe0d8-586ec9ca-ea9abc69",
+      "previous": "927822c7-00052eca-985e2865-6075c523-eaba6d46-6d25f3fd-764f439f-3052d39e"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\scorecards\\latest-scorecard.json",
+      "sha256": "a2975d09-e3cfc0c4-25f871ec-064f5e16-6304d1ed-091fd133-85b7b799-384112db",
+      "previous": "85429d4d-297205b7-d1f611f9-a33f4cc0-bf9265d1-c87fe0d8-586ec9ca-ea9abc69"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\scorecards\\scorecard-20260510T093820Z.json",
+      "sha256": "849f76ce-89896b89-fa553032-e724fd06-34a6e7f7-f2a672f2-921e57c9-8c4f883f",
+      "previous": "a2975d09-e3cfc0c4-25f871ec-064f5e16-6304d1ed-091fd133-85b7b799-384112db"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\scorecards\\scorecard-20260510T095127Z.json",
+      "sha256": "304ee81e-b59bf05a-833089a4-708d86cd-f96ddf70-bab5463a-e2ea7cd8-19a026e5",
+      "previous": "849f76ce-89896b89-fa553032-e724fd06-34a6e7f7-f2a672f2-921e57c9-8c4f883f"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\scorecards\\scorecard-20260510T100450Z.json",
+      "sha256": "2270b2cc-e8972e0e-5b964053-80e37652-0709722d-5283d160-1bbe33f1-58a787b7",
+      "previous": "304ee81e-b59bf05a-833089a4-708d86cd-f96ddf70-bab5463a-e2ea7cd8-19a026e5"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\scorecards\\scorecard-20260510T185924Z.json",
+      "sha256": "16b65931-9203e4bc-9215ac46-348da1a4-970df1af-acfada9d-b650087a-20112c47",
+      "previous": "2270b2cc-e8972e0e-5b964053-80e37652-0709722d-5283d160-1bbe33f1-58a787b7"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\scorecards\\scorecard-20260510T191201Z.json",
+      "sha256": "0c8d189b-9db4c042-37e6fccc-4577671c-50d43487-73f21ecd-86c635fb-2e42a7a9",
+      "previous": "16b65931-9203e4bc-9215ac46-348da1a4-970df1af-acfada9d-b650087a-20112c47"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\scorecards\\scorecard-20260510T192724Z.json",
+      "sha256": "59e064e2-229bdd2e-89ff9074-f87ba3c7-1428cdc6-6c9944f8-1e93c13f-ad3afc38",
+      "previous": "0c8d189b-9db4c042-37e6fccc-4577671c-50d43487-73f21ecd-86c635fb-2e42a7a9"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pilot-runs\\1778385150497-btcusdt-operator\\pilot-run.json",
+      "sha256": "961ae68d-16dea141-7f7dd914-0c84fc3f-f2c27371-9e0b00b5-ce14b0a9-8b6a948c",
+      "previous": "59e064e2-229bdd2e-89ff9074-f87ba3c7-1428cdc6-6c9944f8-1e93c13f-ad3afc38"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pilot-runs\\1778406528859-btcusdt-smoke\\latest-telemetry.json",
+      "sha256": "a9b1081c-efa1da7b-04d42531-2c49989a-4c93ee3a-ba73ba3a-7c76d707-9301700e",
+      "previous": "961ae68d-16dea141-7f7dd914-0c84fc3f-f2c27371-9e0b00b5-ce14b0a9-8b6a948c"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pilot-runs\\1778406528859-btcusdt-smoke\\pilot-run.json",
+      "sha256": "082f7d32-8cacf14b-98a50ae6-07063339-8ae7a8ef-b4c748d3-7cd1c871-3591beef",
+      "previous": "a9b1081c-efa1da7b-04d42531-2c49989a-4c93ee3a-ba73ba3a-7c76d707-9301700e"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pilot-runs\\1778406528859-btcusdt-smoke\\telemetry.jsonl",
+      "sha256": "752667b0-dedfbacb-581484a0-b6ee9292-437d0249-0dcd84de-858e13b4-fbc262c5",
+      "previous": "082f7d32-8cacf14b-98a50ae6-07063339-8ae7a8ef-b4c748d3-7cd1c871-3591beef"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pilot-runs\\1778409001250-btcusdt-smoke\\latest-telemetry.json",
+      "sha256": "fc8636a9-2ee87940-2202d654-48316a76-77586cba-28005ca1-0364565d-961403ab",
+      "previous": "752667b0-dedfbacb-581484a0-b6ee9292-437d0249-0dcd84de-858e13b4-fbc262c5"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pilot-runs\\1778409001250-btcusdt-smoke\\pilot-run.json",
+      "sha256": "a1b6b615-f1541553-8a4a5ecd-e9356c77-ee78eb04-9bf55fd5-1ecae934-b30fb635",
+      "previous": "fc8636a9-2ee87940-2202d654-48316a76-77586cba-28005ca1-0364565d-961403ab"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pilot-runs\\1778409001250-btcusdt-smoke\\telemetry.jsonl",
+      "sha256": "3824afa0-47909822-0f6b13f0-7353ed74-9041d6e0-e507bdbf-2cf44fc6-ad0d6303",
+      "previous": "a1b6b615-f1541553-8a4a5ecd-e9356c77-ee78eb04-9bf55fd5-1ecae934-b30fb635"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pilot-runs\\runner.json",
+      "sha256": "5e07943b-79b8730a-fd50a534-ab3ac9fb-fa9c18cc-162a6847-2d9e98cf-2b421a10",
+      "previous": "3824afa0-47909822-0f6b13f0-7353ed74-9041d6e0-e507bdbf-2cf44fc6-ad0d6303"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pilot-runs\\runner.lock.json",
+      "sha256": "d992297b-4f396cda-cbc1b971-ae1ba667-025b9c9b-1febef58-0754896b-6648dc4b",
+      "previous": "5e07943b-79b8730a-fd50a534-ab3ac9fb-fa9c18cc-162a6847-2d9e98cf-2b421a10"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\reports\\operator\\operator-report.html",
+      "sha256": "eb11cdc8-943568a7-bdf1b9a3-de3cc00a-7f9ecc09-4a3da7a2-3f2bb886-6a5c71d1",
+      "previous": "d992297b-4f396cda-cbc1b971-ae1ba667-025b9c9b-1febef58-0754896b-6648dc4b"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\reports\\operator\\operator-report.md",
+      "sha256": "14fb9493-75ed78c2-5593fba1-816676f7-b00e1504-91c5868d-954854e3-461c3968",
+      "previous": "eb11cdc8-943568a7-bdf1b9a3-de3cc00a-7f9ecc09-4a3da7a2-3f2bb886-6a5c71d1"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778325491657-c68027ce\\fills.jsonl",
+      "sha256": "803b31cc-bb06f7be-0305756a-c9e15c4c-dc0f4c75-eafa30dc-14e62dd5-b7f8f85a",
+      "previous": "14fb9493-75ed78c2-5593fba1-816676f7-b00e1504-91c5868d-954854e3-461c3968"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778325491657-c68027ce\\snapshots.jsonl",
+      "sha256": "d5ef5eb3-2958529a-d85cdb9f-b8463e77-0df89122-2f227a38-8fbfcb21-3766b9fc",
+      "previous": "803b31cc-bb06f7be-0305756a-c9e15c4c-dc0f4c75-eafa30dc-14e62dd5-b7f8f85a"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778325491657-c68027ce\\summary.json",
+      "sha256": "c8b5f58e-ff1215a9-e14aeda7-a468ca39-7c5a67f7-aa5f3c1a-6fd2d019-a799b2d1",
+      "previous": "d5ef5eb3-2958529a-d85cdb9f-b8463e77-0df89122-2f227a38-8fbfcb21-3766b9fc"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778325600312-7225244d\\summary.json",
+      "sha256": "be700e91-ee255ec9-02a94738-053dd6f9-45d8d5a9-185855d9-65e72a51-5743795c",
+      "previous": "c8b5f58e-ff1215a9-e14aeda7-a468ca39-7c5a67f7-aa5f3c1a-6fd2d019-a799b2d1"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778326831564-51006992\\snapshots.jsonl",
+      "sha256": "d518eec7-69152a0f-b95250d4-69ab1936-9c3198bf-1dd8c651-d1c9c5c5-b9d66abb",
+      "previous": "be700e91-ee255ec9-02a94738-053dd6f9-45d8d5a9-185855d9-65e72a51-5743795c"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778326831564-51006992\\summary.json",
+      "sha256": "8e1ef0aa-6ad598f5-94d88294-38287cad-b893dbf0-e17aa589-3a0acb42-ae5a65e7",
+      "previous": "d518eec7-69152a0f-b95250d4-69ab1936-9c3198bf-1dd8c651-d1c9c5c5-b9d66abb"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778326992841-621cd9c8\\summary.json",
+      "sha256": "541ea76d-50d69b83-263cad5e-7bb0cd1b-2f6c9d28-7170d241-f637b9ea-ec988639",
+      "previous": "8e1ef0aa-6ad598f5-94d88294-38287cad-b893dbf0-e17aa589-3a0acb42-ae5a65e7"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327122951-bfc58d25\\summary.json",
+      "sha256": "18b16c84-8d34ad91-07909d7a-8dfed732-cb0ccc46-309e74c4-92e9d6de-7a759512",
+      "previous": "541ea76d-50d69b83-263cad5e-7bb0cd1b-2f6c9d28-7170d241-f637b9ea-ec988639"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327143517-34884d1d\\summary.json",
+      "sha256": "22628715-d47cc096-996ef814-65a76c6d-8532c2ec-0babb640-f545c68b-885c4a76",
+      "previous": "18b16c84-8d34ad91-07909d7a-8dfed732-cb0ccc46-309e74c4-92e9d6de-7a759512"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327151289-b1713e54\\summary.json",
+      "sha256": "508720e3-916abe89-49f789b5-693d6873-7c51e255-6d9e8797-f36e6a13-18bdec5e",
+      "previous": "22628715-d47cc096-996ef814-65a76c6d-8532c2ec-0babb640-f545c68b-885c4a76"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327161455-c021060f\\fills.jsonl",
+      "sha256": "11c696d0-c88b14e8-b7a779fb-8ab6a8bd-a42b43c1-0fe2ef86-7b206b47-67fb3f8c",
+      "previous": "508720e3-916abe89-49f789b5-693d6873-7c51e255-6d9e8797-f36e6a13-18bdec5e"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327161455-c021060f\\snapshots.jsonl",
+      "sha256": "e8fb0884-e55604e4-a438058d-c0f718a8-670a01b6-ac5cd46d-c60a9f9b-fb2fb12f",
+      "previous": "11c696d0-c88b14e8-b7a779fb-8ab6a8bd-a42b43c1-0fe2ef86-7b206b47-67fb3f8c"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327161455-c021060f\\summary.json",
+      "sha256": "73c3fa7d-aed8d0bd-cbc24695-53c282cd-4f58db7e-6a9511c5-303ba4c0-c7e25c5c",
+      "previous": "e8fb0884-e55604e4-a438058d-c0f718a8-670a01b6-ac5cd46d-c60a9f9b-fb2fb12f"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327381532-cd5cab4a\\fills.jsonl",
+      "sha256": "4a6171d7-798f5a9e-bdd8cf17-b79e99e5-aebcb17e-0936c8ba-10c1af18-b2268d8d",
+      "previous": "73c3fa7d-aed8d0bd-cbc24695-53c282cd-4f58db7e-6a9511c5-303ba4c0-c7e25c5c"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327381532-cd5cab4a\\snapshots.jsonl",
+      "sha256": "aaed8d8f-ae276ab3-1f2f21a6-aac58c0c-532b3e2f-05734e00-3843f7b5-e5c204aa",
+      "previous": "4a6171d7-798f5a9e-bdd8cf17-b79e99e5-aebcb17e-0936c8ba-10c1af18-b2268d8d"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327381532-cd5cab4a\\summary.json",
+      "sha256": "a245f26f-5bb1a39c-e0a84e89-dafd1a3b-6f5e9d07-79ef07de-caacdbdf-8d3ea39e",
+      "previous": "aaed8d8f-ae276ab3-1f2f21a6-aac58c0c-532b3e2f-05734e00-3843f7b5-e5c204aa"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327673403-63783448\\summary.json",
+      "sha256": "afc45ddf-d9d60218-b2004bcb-0727d8dd-9c3480a7-3fd7dd44-983c5188-29277f08",
+      "previous": "a245f26f-5bb1a39c-e0a84e89-dafd1a3b-6f5e9d07-79ef07de-caacdbdf-8d3ea39e"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327676429-b3ff8a18\\summary.json",
+      "sha256": "623797b9-3e9073ac-d0f17781-e1883b8a-a9402cd1-308036af-539b4c16-1cb0dbac",
+      "previous": "afc45ddf-d9d60218-b2004bcb-0727d8dd-9c3480a7-3fd7dd44-983c5188-29277f08"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327681614-57669102\\fills.jsonl",
+      "sha256": "528b9830-3bf5a302-2f04c95a-0146252b-5a1d0d09-2b75f509-cdb8d883-b77a8228",
+      "previous": "623797b9-3e9073ac-d0f17781-e1883b8a-a9402cd1-308036af-539b4c16-1cb0dbac"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327681614-57669102\\snapshots.jsonl",
+      "sha256": "7ff45c10-a6703b35-546b6fc7-638cd472-350ceba2-028e58e3-c2a228bc-488d1200",
+      "previous": "528b9830-3bf5a302-2f04c95a-0146252b-5a1d0d09-2b75f509-cdb8d883-b77a8228"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327681614-57669102\\summary.json",
+      "sha256": "50cb4f1a-e88232a4-96d0ec54-2dae709a-d3f70e60-576a7f86-13fa8672-41edaaa4",
+      "previous": "7ff45c10-a6703b35-546b6fc7-638cd472-350ceba2-028e58e3-c2a228bc-488d1200"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327849256-70d7f568\\summary.json",
+      "sha256": "c8fea042-8b2d8825-f2ed0765-53a4ac5a-7cedbff7-d4abf4cf-cf9c97fc-a990648f",
+      "previous": "50cb4f1a-e88232a4-96d0ec54-2dae709a-d3f70e60-576a7f86-13fa8672-41edaaa4"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327854301-5b8c62d9\\summary.json",
+      "sha256": "27f4a8ef-907f65ab-6ec857ba-296ce94b-00b3322f-55fea4ba-341735a3-170faa5a",
+      "previous": "c8fea042-8b2d8825-f2ed0765-53a4ac5a-7cedbff7-d4abf4cf-cf9c97fc-a990648f"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327858093-b68da833\\fills.jsonl",
+      "sha256": "6f4406d9-ac542382-d03e723e-4433c78e-3ea5de28-711f4056-410102ca-717a3a3a",
+      "previous": "27f4a8ef-907f65ab-6ec857ba-296ce94b-00b3322f-55fea4ba-341735a3-170faa5a"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327858093-b68da833\\snapshots.jsonl",
+      "sha256": "bd4240be-a4840591-c46ab81c-19d2d872-0710fecd-9311f329-934a5ed3-3608346d",
+      "previous": "6f4406d9-ac542382-d03e723e-4433c78e-3ea5de28-711f4056-410102ca-717a3a3a"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778327858093-b68da833\\summary.json",
+      "sha256": "85fac6b0-e0fabf98-a6902c93-540f8936-9ecc61b6-93f4b146-f8b00b00-bd7d1215",
+      "previous": "bd4240be-a4840591-c46ab81c-19d2d872-0710fecd-9311f329-934a5ed3-3608346d"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348404953-7b19afca\\alerts.jsonl",
+      "sha256": "12e3ddb3-1474a8f4-f096b990-dad8998d-3a5800ae-336059b3-2f3b0599-7064b6ae",
+      "previous": "85fac6b0-e0fabf98-a6902c93-540f8936-9ecc61b6-93f4b146-f8b00b00-bd7d1215"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348404953-7b19afca\\fills.jsonl",
+      "sha256": "75c44503-3d314b35-3abf5715-7507b53a-8579d0f4-6ec39eea-63131793-c4a48516",
+      "previous": "12e3ddb3-1474a8f4-f096b990-dad8998d-3a5800ae-336059b3-2f3b0599-7064b6ae"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348404953-7b19afca\\orders.jsonl",
+      "sha256": "e2bbb763-4fc8474f-9d07bc96-b2035b43-115a9662-33a6294c-eb02e910-cde5300e",
+      "previous": "75c44503-3d314b35-3abf5715-7507b53a-8579d0f4-6ec39eea-63131793-c4a48516"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348404953-7b19afca\\report\\alerts.jsonl",
+      "sha256": "8d87d6b6-95dbbe37-3f14dad0-0db3be76-ac778edc-e7b8c7fd-46eff5a7-c30d91ba",
+      "previous": "e2bbb763-4fc8474f-9d07bc96-b2035b43-115a9662-33a6294c-eb02e910-cde5300e"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348404953-7b19afca\\report\\config-redacted.json",
+      "sha256": "bbc5fc22-d9d5c16b-0ac86e2d-5a5d6343-6bccb148-b89e7007-e0fd4d95-2058e163",
+      "previous": "8d87d6b6-95dbbe37-3f14dad0-0db3be76-ac778edc-e7b8c7fd-46eff5a7-c30d91ba"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348404953-7b19afca\\report\\equity.csv",
+      "sha256": "32555135-486deeb0-3ee276a8-be0e4dfc-283e7a66-e391cc83-e61ece2e-06ff0097",
+      "previous": "bbc5fc22-d9d5c16b-0ac86e2d-5a5d6343-6bccb148-b89e7007-e0fd4d95-2058e163"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348404953-7b19afca\\report\\fills.csv",
+      "sha256": "3335dcb8-8f5c1514-91a9396c-b34271a7-c3ee875c-8e5ce01f-9fb10502-3cab7af6",
+      "previous": "32555135-486deeb0-3ee276a8-be0e4dfc-283e7a66-e391cc83-e61ece2e-06ff0097"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348404953-7b19afca\\report\\orders.jsonl",
+      "sha256": "4b41a781-7c657679-9d182c52-e85349a8-87fd754a-bcab58e5-bedac4cc-c6f2a502",
+      "previous": "3335dcb8-8f5c1514-91a9396c-b34271a7-c3ee875c-8e5ce01f-9fb10502-3cab7af6"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348404953-7b19afca\\report\\summary.json",
+      "sha256": "78247c46-5b55bf01-feb3de82-0dedb10c-9b32d5f5-667ab70f-75a7e084-63262b34",
+      "previous": "4b41a781-7c657679-9d182c52-e85349a8-87fd754a-bcab58e5-bedac4cc-c6f2a502"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348404953-7b19afca\\report\\summary.md",
+      "sha256": "b6e77fd8-ec024a48-519d0d69-54530dde-e7944b00-34a1bce1-4c670db3-99b07108",
+      "previous": "78247c46-5b55bf01-feb3de82-0dedb10c-9b32d5f5-667ab70f-75a7e084-63262b34"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348404953-7b19afca\\snapshots.jsonl",
+      "sha256": "39807da4-731ecdf8-b91999a7-0f838e63-6f0c38da-5f31edf8-6fc9767a-474156cf",
+      "previous": "b6e77fd8-ec024a48-519d0d69-54530dde-e7944b00-34a1bce1-4c670db3-99b07108"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348404953-7b19afca\\summary.json",
+      "sha256": "54565f03-d739a8fc-12a3fd20-688e57ea-a110a7e1-628f9eef-d5232ae2-c0c7ad73",
+      "previous": "39807da4-731ecdf8-b91999a7-0f838e63-6f0c38da-5f31edf8-6fc9767a-474156cf"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348703586-0cb51bd3\\alerts.jsonl",
+      "sha256": "f989c471-c1a94a96-f4800a4b-4101b209-c08b74c8-f75aa324-6e8ed71a-eecc297f",
+      "previous": "54565f03-d739a8fc-12a3fd20-688e57ea-a110a7e1-628f9eef-d5232ae2-c0c7ad73"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348703586-0cb51bd3\\fills.jsonl",
+      "sha256": "76cd1fe1-a87082ce-659b77c4-3c6a6095-3d35978b-57648c3f-35c67737-ffe8fe16",
+      "previous": "f989c471-c1a94a96-f4800a4b-4101b209-c08b74c8-f75aa324-6e8ed71a-eecc297f"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348703586-0cb51bd3\\orders.jsonl",
+      "sha256": "a7f99379-db4b5e2c-f4b9865e-e570e115-3ff3ac2a-816369e1-81ba40fd-9798966d",
+      "previous": "76cd1fe1-a87082ce-659b77c4-3c6a6095-3d35978b-57648c3f-35c67737-ffe8fe16"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348703586-0cb51bd3\\report\\alerts.jsonl",
+      "sha256": "d19dcbf9-6ace23f7-99609d71-226a8c0c-7bfe7fde-2d8f5311-43f578a7-5dfefba5",
+      "previous": "a7f99379-db4b5e2c-f4b9865e-e570e115-3ff3ac2a-816369e1-81ba40fd-9798966d"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348703586-0cb51bd3\\report\\config-redacted.json",
+      "sha256": "ec4cd9a6-a5efe2a3-4419f851-e780a062-e5d5a47d-64115c95-6ef25566-3fd94816",
+      "previous": "d19dcbf9-6ace23f7-99609d71-226a8c0c-7bfe7fde-2d8f5311-43f578a7-5dfefba5"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348703586-0cb51bd3\\report\\equity.csv",
+      "sha256": "db62dfdb-6b3f1f86-c4484c4f-d0b12c8f-8e9ecaf9-b868e3d3-3737fe39-73200d23",
+      "previous": "ec4cd9a6-a5efe2a3-4419f851-e780a062-e5d5a47d-64115c95-6ef25566-3fd94816"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348703586-0cb51bd3\\report\\fills.csv",
+      "sha256": "d2ec0697-0734c052-dad31d1e-87185aac-150e5210-a29d27cc-9f4e4eb8-a0aeb817",
+      "previous": "db62dfdb-6b3f1f86-c4484c4f-d0b12c8f-8e9ecaf9-b868e3d3-3737fe39-73200d23"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348703586-0cb51bd3\\report\\orders.jsonl",
+      "sha256": "24ad9ff6-2305ca68-d66b9206-bcc8c16b-469f70bf-5d7244e6-2e3103a4-d3403de2",
+      "previous": "d2ec0697-0734c052-dad31d1e-87185aac-150e5210-a29d27cc-9f4e4eb8-a0aeb817"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348703586-0cb51bd3\\report\\summary.json",
+      "sha256": "5fa2ae74-4e0eba74-f3fa3528-3b8e4e4f-cf3c6a20-a8a0daa4-7b9c2f5a-ff29e1c8",
+      "previous": "24ad9ff6-2305ca68-d66b9206-bcc8c16b-469f70bf-5d7244e6-2e3103a4-d3403de2"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348703586-0cb51bd3\\report\\summary.md",
+      "sha256": "b07f20dc-a0fb76ea-cb83d83a-b2ff5d00-db83cb01-8599ea49-af46be42-bb5d9d51",
+      "previous": "5fa2ae74-4e0eba74-f3fa3528-3b8e4e4f-cf3c6a20-a8a0daa4-7b9c2f5a-ff29e1c8"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348703586-0cb51bd3\\snapshots.jsonl",
+      "sha256": "3804d4e8-6a91eb91-6363b001-d227bfe2-0f39b49e-64c9a081-c0a5b563-b41abcca",
+      "previous": "b07f20dc-a0fb76ea-cb83d83a-b2ff5d00-db83cb01-8599ea49-af46be42-bb5d9d51"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348703586-0cb51bd3\\summary.json",
+      "sha256": "042e3586-113aa947-2606efca-735fff11-a85c5814-72d75bd9-62f81888-4510cb34",
+      "previous": "3804d4e8-6a91eb91-6363b001-d227bfe2-0f39b49e-64c9a081-c0a5b563-b41abcca"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348942766-efe8716d\\alerts.jsonl",
+      "sha256": "c5fb81ff-81b0db23-bab1babd-42debe5e-86b38da2-b7edc6dd-9e7545dd-15beb6e5",
+      "previous": "042e3586-113aa947-2606efca-735fff11-a85c5814-72d75bd9-62f81888-4510cb34"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348942766-efe8716d\\fills.jsonl",
+      "sha256": "3395dcc8-fff28c9b-a5c57be9-de3a3f76-9aa9fc58-38328afa-28e5f090-cb5687df",
+      "previous": "c5fb81ff-81b0db23-bab1babd-42debe5e-86b38da2-b7edc6dd-9e7545dd-15beb6e5"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778348942766-efe8716d\\summary.json",
+      "sha256": "d3db2061-7ba58772-150c8a6b-452d0055-191aa2ab-552b4f53-f69156ce-14c3bb61",
+      "previous": "3395dcc8-fff28c9b-a5c57be9-de3a3f76-9aa9fc58-38328afa-28e5f090-cb5687df"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349114431-df666f31\\alerts.jsonl",
+      "sha256": "98b4138c-40497d62-7d8e3576-07f85d7d-dba31986-9042dec5-4cafc313-93946d29",
+      "previous": "d3db2061-7ba58772-150c8a6b-452d0055-191aa2ab-552b4f53-f69156ce-14c3bb61"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349114431-df666f31\\fills.jsonl",
+      "sha256": "8602fa82-fd2b9475-19249404-89019d60-1689f67f-ea02f2ad-ee5d48ad-9adf289d",
+      "previous": "98b4138c-40497d62-7d8e3576-07f85d7d-dba31986-9042dec5-4cafc313-93946d29"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349114431-df666f31\\orders.jsonl",
+      "sha256": "3d47fc04-45d1cdef-302cd0d3-01bf2b31-da26dc7c-0a91741a-adb56a30-a4b095a3",
+      "previous": "8602fa82-fd2b9475-19249404-89019d60-1689f67f-ea02f2ad-ee5d48ad-9adf289d"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349114431-df666f31\\report\\alerts.jsonl",
+      "sha256": "ad4b70c8-61efb1ce-10c0e096-8c329a46-c97c4b1c-7b9bcc3c-cc74a4bc-f8922bb7",
+      "previous": "3d47fc04-45d1cdef-302cd0d3-01bf2b31-da26dc7c-0a91741a-adb56a30-a4b095a3"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349114431-df666f31\\report\\config-redacted.json",
+      "sha256": "28384f3d-aff0bc03-7a053f2c-9475c231-9a8ee4f0-a90660cc-a15f240d-d696ee74",
+      "previous": "ad4b70c8-61efb1ce-10c0e096-8c329a46-c97c4b1c-7b9bcc3c-cc74a4bc-f8922bb7"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349114431-df666f31\\report\\equity.csv",
+      "sha256": "53ee3470-764d09c1-3d79a1be-e203cd56-0de7fd80-60971fd8-f17f726e-a3656fb0",
+      "previous": "28384f3d-aff0bc03-7a053f2c-9475c231-9a8ee4f0-a90660cc-a15f240d-d696ee74"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349114431-df666f31\\report\\fills.csv",
+      "sha256": "55d5b0a0-936f954b-caef9820-a96f0719-4c6a0ba3-b22ebbae-018abb8c-6a51d2e6",
+      "previous": "53ee3470-764d09c1-3d79a1be-e203cd56-0de7fd80-60971fd8-f17f726e-a3656fb0"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349114431-df666f31\\report\\orders.jsonl",
+      "sha256": "d71e3b0a-c23bbcca-d4b6299b-ee7ed301-5314c5ac-f5fe2591-ea895fb8-5a3db9cd",
+      "previous": "55d5b0a0-936f954b-caef9820-a96f0719-4c6a0ba3-b22ebbae-018abb8c-6a51d2e6"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349114431-df666f31\\report\\summary.json",
+      "sha256": "83bfe60b-ba5bd510-ca31d085-00a8bc8f-85c1708c-27e93e4d-c7651c21-2afe1c24",
+      "previous": "d71e3b0a-c23bbcca-d4b6299b-ee7ed301-5314c5ac-f5fe2591-ea895fb8-5a3db9cd"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349114431-df666f31\\report\\summary.md",
+      "sha256": "48439dd8-0b2bd269-267f364b-44a2e026-a4e92718-2e6b227a-3aa88b2c-379ce73b",
+      "previous": "83bfe60b-ba5bd510-ca31d085-00a8bc8f-85c1708c-27e93e4d-c7651c21-2afe1c24"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349114431-df666f31\\snapshots.jsonl",
+      "sha256": "db9a977c-2b08f4da-5ff76892-1fab17fc-cbd28ac9-6c3ae0cc-052e642a-d6da8149",
+      "previous": "48439dd8-0b2bd269-267f364b-44a2e026-a4e92718-2e6b227a-3aa88b2c-379ce73b"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349114431-df666f31\\summary.json",
+      "sha256": "aec2b8cd-56dc3a52-727db884-d20b4d1a-2f339bdf-56eb0839-c6175682-e55b6a04",
+      "previous": "db9a977c-2b08f4da-5ff76892-1fab17fc-cbd28ac9-6c3ae0cc-052e642a-d6da8149"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349149147-8e1d0b02\\alerts.jsonl",
+      "sha256": "1f8f64fd-fbe31345-a4734d27-dc01818e-54454b08-749eb4fe-63428e95-3d2c4593",
+      "previous": "aec2b8cd-56dc3a52-727db884-d20b4d1a-2f339bdf-56eb0839-c6175682-e55b6a04"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349149147-8e1d0b02\\summary.json",
+      "sha256": "9ee22c0c-4a25fc50-621796e3-af21a3d5-0b1f62d8-240c00e8-01c34117-0d589b55",
+      "previous": "1f8f64fd-fbe31345-a4734d27-dc01818e-54454b08-749eb4fe-63428e95-3d2c4593"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349151323-57787d9c\\alerts.jsonl",
+      "sha256": "a01906c3-17701735-0f876993-453e401a-d75ed5c3-52e68e63-5156753f-c19e2046",
+      "previous": "9ee22c0c-4a25fc50-621796e3-af21a3d5-0b1f62d8-240c00e8-01c34117-0d589b55"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349151323-57787d9c\\fills.jsonl",
+      "sha256": "65f5fa77-5921d0f4-c7f141db-9fe62377-a7e0e978-ffe608f2-b48260a7-82fc0c0a",
+      "previous": "a01906c3-17701735-0f876993-453e401a-d75ed5c3-52e68e63-5156753f-c19e2046"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349151323-57787d9c\\orders.jsonl",
+      "sha256": "69e72a8c-eb81b05b-6987f3bf-71dd93f6-0803b4c7-ec5a44a7-144d3418-ea522cfb",
+      "previous": "65f5fa77-5921d0f4-c7f141db-9fe62377-a7e0e978-ffe608f2-b48260a7-82fc0c0a"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349151323-57787d9c\\report\\alerts.jsonl",
+      "sha256": "9513bafa-ac653c08-c922ba9b-4d3cca3f-a32da8a8-d8c0892b-f7c02a7c-01836982",
+      "previous": "69e72a8c-eb81b05b-6987f3bf-71dd93f6-0803b4c7-ec5a44a7-144d3418-ea522cfb"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349151323-57787d9c\\report\\config-redacted.json",
+      "sha256": "e665b941-9f02776c-8f7340e6-0dd85828-2a53b2a2-c72e205f-f2ea1cb1-786dbfc2",
+      "previous": "9513bafa-ac653c08-c922ba9b-4d3cca3f-a32da8a8-d8c0892b-f7c02a7c-01836982"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349151323-57787d9c\\report\\equity.csv",
+      "sha256": "9b129cd8-cd3d2f20-7e6884a7-baf967b0-e28467fb-071189bc-c6eb1a81-65f66557",
+      "previous": "e665b941-9f02776c-8f7340e6-0dd85828-2a53b2a2-c72e205f-f2ea1cb1-786dbfc2"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349151323-57787d9c\\report\\fills.csv",
+      "sha256": "e0ccab2f-c5b38ac4-58321d55-38d787e6-7acacd9d-72759d3c-b3f5a09c-5bdfa78a",
+      "previous": "9b129cd8-cd3d2f20-7e6884a7-baf967b0-e28467fb-071189bc-c6eb1a81-65f66557"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349151323-57787d9c\\report\\orders.jsonl",
+      "sha256": "e18eadab-9ff57d2b-ec5110a3-da746400-7bdbf25f-4f1c428e-b96e680a-cbd2c622",
+      "previous": "e0ccab2f-c5b38ac4-58321d55-38d787e6-7acacd9d-72759d3c-b3f5a09c-5bdfa78a"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349151323-57787d9c\\report\\summary.json",
+      "sha256": "3b1b8f42-5161cd79-f0f189bd-137c95f8-869e9655-a8472b62-f1483087-5e2f30ae",
+      "previous": "e18eadab-9ff57d2b-ec5110a3-da746400-7bdbf25f-4f1c428e-b96e680a-cbd2c622"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349151323-57787d9c\\report\\summary.md",
+      "sha256": "bf089839-8b3fc986-a4cf864c-ecf74d46-a1e12105-c464b5a0-c1769314-5fbfd2a8",
+      "previous": "3b1b8f42-5161cd79-f0f189bd-137c95f8-869e9655-a8472b62-f1483087-5e2f30ae"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349151323-57787d9c\\snapshots.jsonl",
+      "sha256": "c09f8bc1-3a9391da-503529b8-2b3291c1-0b09d758-6b04b681-60dda943-0d5aa190",
+      "previous": "bf089839-8b3fc986-a4cf864c-ecf74d46-a1e12105-c464b5a0-c1769314-5fbfd2a8"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349151323-57787d9c\\summary.json",
+      "sha256": "fb73c33c-0fade54a-40b19587-eb1fb180-230151a7-5c977483-d010cea3-987e09be",
+      "previous": "c09f8bc1-3a9391da-503529b8-2b3291c1-0b09d758-6b04b681-60dda943-0d5aa190"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349198161-a5455c13\\alerts.jsonl",
+      "sha256": "6a715234-4c7858b6-4105d71d-88663072-8905fc14-92ebf8be-5ae17844-105824f2",
+      "previous": "fb73c33c-0fade54a-40b19587-eb1fb180-230151a7-5c977483-d010cea3-987e09be"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349198161-a5455c13\\summary.json",
+      "sha256": "b8b46e31-145d45d1-b89000b4-8cf88120-a6813e4d-3b1c3417-467decdf-1dbe8384",
+      "previous": "6a715234-4c7858b6-4105d71d-88663072-8905fc14-92ebf8be-5ae17844-105824f2"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349199727-23202ff7\\alerts.jsonl",
+      "sha256": "7ed1b8eb-bc173aea-6c086c2a-00812387-2b714a33-44553977-3c61c05f-d995dd07",
+      "previous": "b8b46e31-145d45d1-b89000b4-8cf88120-a6813e4d-3b1c3417-467decdf-1dbe8384"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349199727-23202ff7\\fills.jsonl",
+      "sha256": "971a6cff-9014299b-cba4f0fd-22c8be88-b8eaf536-72d9b080-cc485320-8c388719",
+      "previous": "7ed1b8eb-bc173aea-6c086c2a-00812387-2b714a33-44553977-3c61c05f-d995dd07"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349199727-23202ff7\\orders.jsonl",
+      "sha256": "1a3059af-bff30d14-2abe1ec3-83975d11-fd944f76-04cfd316-efb8d511-f9c42972",
+      "previous": "971a6cff-9014299b-cba4f0fd-22c8be88-b8eaf536-72d9b080-cc485320-8c388719"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349199727-23202ff7\\report\\alerts.jsonl",
+      "sha256": "0c1d4bf6-6d2afac1-bae23795-768e1996-1a892a89-25ac0845-c2fe7e13-c347d5b0",
+      "previous": "1a3059af-bff30d14-2abe1ec3-83975d11-fd944f76-04cfd316-efb8d511-f9c42972"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349199727-23202ff7\\report\\config-redacted.json",
+      "sha256": "71c5f19f-e166b2ab-35a4beb0-7290f973-6629362e-12f59c51-27b11e2f-a0fdff64",
+      "previous": "0c1d4bf6-6d2afac1-bae23795-768e1996-1a892a89-25ac0845-c2fe7e13-c347d5b0"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349199727-23202ff7\\report\\equity.csv",
+      "sha256": "90332e3b-8d67ab32-02947eab-08a15beb-814990c6-affb286e-cd3dd088-677f5ef2",
+      "previous": "71c5f19f-e166b2ab-35a4beb0-7290f973-6629362e-12f59c51-27b11e2f-a0fdff64"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349199727-23202ff7\\report\\fills.csv",
+      "sha256": "4b172782-ce6cd159-3200d9c8-1ec0bd7a-c5bca7e8-ae4ff79d-b76b3c71-f5f72568",
+      "previous": "90332e3b-8d67ab32-02947eab-08a15beb-814990c6-affb286e-cd3dd088-677f5ef2"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349199727-23202ff7\\report\\orders.jsonl",
+      "sha256": "94510875-087f7892-467c3bb8-e652c3bf-2731f892-a663975f-e46f0a20-e88cf8d3",
+      "previous": "4b172782-ce6cd159-3200d9c8-1ec0bd7a-c5bca7e8-ae4ff79d-b76b3c71-f5f72568"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349199727-23202ff7\\report\\summary.json",
+      "sha256": "d7a30c03-68c174bc-bd1da54b-51f5d516-6daf10f5-3e03241c-10dd3e66-140825b4",
+      "previous": "94510875-087f7892-467c3bb8-e652c3bf-2731f892-a663975f-e46f0a20-e88cf8d3"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349199727-23202ff7\\report\\summary.md",
+      "sha256": "f35f0616-1bb34bed-17ed03ee-0020606f-be504181-d819017b-20e3cdef-751c927c",
+      "previous": "d7a30c03-68c174bc-bd1da54b-51f5d516-6daf10f5-3e03241c-10dd3e66-140825b4"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349199727-23202ff7\\snapshots.jsonl",
+      "sha256": "37299271-7207746d-106a068c-b8f8d95d-f9b1d502-916f2a61-181507cf-8046219f",
+      "previous": "f35f0616-1bb34bed-17ed03ee-0020606f-be504181-d819017b-20e3cdef-751c927c"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778349199727-23202ff7\\summary.json",
+      "sha256": "86eb3955-5f74d469-56399044-8d652bdd-3e6770f6-43d85806-51d0c8a1-cbcf8625",
+      "previous": "37299271-7207746d-106a068c-b8f8d95d-f9b1d502-916f2a61-181507cf-8046219f"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778378909203-159e3a3b\\alerts.jsonl",
+      "sha256": "ae14798a-8f5f665f-41e01a73-6fc998ad-3522d995-0902b35c-6bfcba32-6b572604",
+      "previous": "86eb3955-5f74d469-56399044-8d652bdd-3e6770f6-43d85806-51d0c8a1-cbcf8625"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778378909203-159e3a3b\\summary.json",
+      "sha256": "85d4eaaf-0db2948c-6cc39eeb-98107fb0-5257fa77-68bb3efe-6de20b5e-6a9d5bd2",
+      "previous": "ae14798a-8f5f665f-41e01a73-6fc998ad-3522d995-0902b35c-6bfcba32-6b572604"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778378967050-c11f2428\\alerts.jsonl",
+      "sha256": "7a4e43b4-59a40d20-1bb197a2-85406812-086ef539-cc2a2d9b-cbd7faf4-073fc207",
+      "previous": "85d4eaaf-0db2948c-6cc39eeb-98107fb0-5257fa77-68bb3efe-6de20b5e-6a9d5bd2"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778378967050-c11f2428\\fills.jsonl",
+      "sha256": "4aeb7670-60885bee-84a9c71f-87e09578-439473c1-79c44b5c-cf593385-7a1b98f0",
+      "previous": "7a4e43b4-59a40d20-1bb197a2-85406812-086ef539-cc2a2d9b-cbd7faf4-073fc207"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778378967050-c11f2428\\summary.json",
+      "sha256": "00b6599d-81ada0f4-2c6c6cb3-f0a47189-c83b1343-9d087d9b-d1a68488-065a381f",
+      "previous": "4aeb7670-60885bee-84a9c71f-87e09578-439473c1-79c44b5c-cf593385-7a1b98f0"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778384999619-5706ad66\\alerts.jsonl",
+      "sha256": "9a15e572-285484f1-156b4f40-ab7bc20a-024f604b-01fac3c6-7c7cf5b0-d519ebfa",
+      "previous": "00b6599d-81ada0f4-2c6c6cb3-f0a47189-c83b1343-9d087d9b-d1a68488-065a381f"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778384999619-5706ad66\\summary.json",
+      "sha256": "32f609fe-5de2899c-776fda68-30f82c66-19f2eb44-70891b79-0335f87d-c8e37548",
+      "previous": "9a15e572-285484f1-156b4f40-ab7bc20a-024f604b-01fac3c6-7c7cf5b0-d519ebfa"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778385012910-0dec6ab4\\alerts.jsonl",
+      "sha256": "45965f84-bbebcac3-ab3540df-142a9041-9432818f-5ddff3e9-4e90c039-3e584882",
+      "previous": "32f609fe-5de2899c-776fda68-30f82c66-19f2eb44-70891b79-0335f87d-c8e37548"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778385012910-0dec6ab4\\summary.json",
+      "sha256": "ca7fb8f1-1e960dca-c971af44-f84b4fc1-f32b5c3c-27a70e3a-727d7a3e-8a46795e",
+      "previous": "45965f84-bbebcac3-ab3540df-142a9041-9432818f-5ddff3e9-4e90c039-3e584882"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778385015977-1589deac\\alerts.jsonl",
+      "sha256": "94251025-1a4737cc-7bc01c62-6a30e3db-9b4e669a-57c79de5-557e2da4-81838cd8",
+      "previous": "ca7fb8f1-1e960dca-c971af44-f84b4fc1-f32b5c3c-27a70e3a-727d7a3e-8a46795e"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778385015977-1589deac\\summary.json",
+      "sha256": "ce3acd41-43896e8e-d2e99d65-6d624a31-2013e869-6f3af362-6ddcbc46-89254c09",
+      "previous": "94251025-1a4737cc-7bc01c62-6a30e3db-9b4e669a-57c79de5-557e2da4-81838cd8"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778385115057-4a6e1748\\alerts.jsonl",
+      "sha256": "fca67619-8f0e6f93-a945787b-e1d567f3-2f404946-bb39965e-00f9d3dc-5f5f5e0b",
+      "previous": "ce3acd41-43896e8e-d2e99d65-6d624a31-2013e869-6f3af362-6ddcbc46-89254c09"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778385115057-4a6e1748\\orders.jsonl",
+      "sha256": "d2c66ec6-a900f7c0-7ffe92df-aba33fa6-3478dc69-3cdcb5dc-4d9d0199-e149352f",
+      "previous": "fca67619-8f0e6f93-a945787b-e1d567f3-2f404946-bb39965e-00f9d3dc-5f5f5e0b"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778385115057-4a6e1748\\snapshots.jsonl",
+      "sha256": "4a9bd3cc-cd54e3df-2e7eb27d-8407c7bd-8ecf1383-e8a12236-3ca74a9a-e2518434",
+      "previous": "d2c66ec6-a900f7c0-7ffe92df-aba33fa6-3478dc69-3cdcb5dc-4d9d0199-e149352f"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778385115057-4a6e1748\\summary.json",
+      "sha256": "1ccfc181-33125c62-ad32b687-870fe2c6-07b2942a-b96aae45-07fe1c46-1bef6488",
+      "previous": "4a9bd3cc-cd54e3df-2e7eb27d-8407c7bd-8ecf1383-e8a12236-3ca74a9a-e2518434"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778386710442-fa04669c\\alerts.jsonl",
+      "sha256": "29db0e4a-c40faa90-28e68cc5-cb159da3-7553f048-71bd377b-dc463183-bd77283a",
+      "previous": "1ccfc181-33125c62-ad32b687-870fe2c6-07b2942a-b96aae45-07fe1c46-1bef6488"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778386710442-fa04669c\\orders.jsonl",
+      "sha256": "74ef1d66-da0cfc2c-4f57c1ef-a544c600-d6c1c3fc-60af6d8d-0088c12e-b26e1558",
+      "previous": "29db0e4a-c40faa90-28e68cc5-cb159da3-7553f048-71bd377b-dc463183-bd77283a"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778386710442-fa04669c\\summary.json",
+      "sha256": "a84c1bce-689d8763-0949fbad-c0c60543-bf5da79d-c42f8129-58aa1cf7-7fb4b014",
+      "previous": "74ef1d66-da0cfc2c-4f57c1ef-a544c600-d6c1c3fc-60af6d8d-0088c12e-b26e1558"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778406324217-97bbd315\\alerts.jsonl",
+      "sha256": "c064dd0d-b51d51ac-12a5eb6a-573a3b3d-c6b54429-d41cb129-6753963e-7d753545",
+      "previous": "a84c1bce-689d8763-0949fbad-c0c60543-bf5da79d-c42f8129-58aa1cf7-7fb4b014"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778406324217-97bbd315\\summary.json",
+      "sha256": "f5a130ba-73221b42-6da92cdd-f36eb173-0263bec0-66eb1590-33796404-1bb7545e",
+      "previous": "c064dd0d-b51d51ac-12a5eb6a-573a3b3d-c6b54429-d41cb129-6753963e-7d753545"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778406469416-98024573\\alerts.jsonl",
+      "sha256": "5c135e68-b34ae354-7c4f4d6f-32077909-e4b3470f-fe740296-f73e1b3d-e13bfaa9",
+      "previous": "f5a130ba-73221b42-6da92cdd-f36eb173-0263bec0-66eb1590-33796404-1bb7545e"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778406469416-98024573\\summary.json",
+      "sha256": "f865de22-e65003fe-7b28fb7e-209a1ea4-ea05903a-f229ec7f-fcb16492-09c64bf0",
+      "previous": "5c135e68-b34ae354-7c4f4d6f-32077909-e4b3470f-fe740296-f73e1b3d-e13bfaa9"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778406528830-f327db37\\alerts.jsonl",
+      "sha256": "401f8baf-ace71c15-be9d76be-5f1e21ea-6f2f29e8-5d383793-36c90d0e-80c50e04",
+      "previous": "f865de22-e65003fe-7b28fb7e-209a1ea4-ea05903a-f229ec7f-fcb16492-09c64bf0"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778406528830-f327db37\\summary.json",
+      "sha256": "6eccf310-a7530d24-436dcc1d-35e854e6-2a3cec8f-a9bfc30d-1c7a9d08-d750bfcc",
+      "previous": "401f8baf-ace71c15-be9d76be-5f1e21ea-6f2f29e8-5d383793-36c90d0e-80c50e04"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778406599992-375f15e5\\alerts.jsonl",
+      "sha256": "4a012ff0-eb148ba3-90fea934-17740a55-dafe08b3-513b968b-7c3fd301-ddca8997",
+      "previous": "6eccf310-a7530d24-436dcc1d-35e854e6-2a3cec8f-a9bfc30d-1c7a9d08-d750bfcc"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778406599992-375f15e5\\orders.jsonl",
+      "sha256": "71eaea89-4f581aad-21ce2716-c9c422d7-8ffdf99a-0a28e042-6a421152-0ad0625a",
+      "previous": "4a012ff0-eb148ba3-90fea934-17740a55-dafe08b3-513b968b-7c3fd301-ddca8997"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778406599992-375f15e5\\summary.json",
+      "sha256": "4ed61f7e-a50b7505-cbb0aee4-8dde2000-864d486d-6322a3b5-98686b65-84077297",
+      "previous": "71eaea89-4f581aad-21ce2716-c9c422d7-8ffdf99a-0a28e042-6a421152-0ad0625a"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778406679615-e27ee178\\alerts.jsonl",
+      "sha256": "678eb5c8-5ce4ad02-c4ec8a50-370c37ee-d7a31f11-0f5aea28-6116f3ae-f6e1c0ea",
+      "previous": "4ed61f7e-a50b7505-cbb0aee4-8dde2000-864d486d-6322a3b5-98686b65-84077297"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778406679615-e27ee178\\orders.jsonl",
+      "sha256": "5a1e3b54-37bb7180-de7af6a3-3c84032b-1497c677-16921524-7c076ca3-0f10f01c",
+      "previous": "678eb5c8-5ce4ad02-c4ec8a50-370c37ee-d7a31f11-0f5aea28-6116f3ae-f6e1c0ea"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778406679615-e27ee178\\snapshots.jsonl",
+      "sha256": "0ba1ed9f-9e1e8ac9-8971f8ff-73cc8804-47edf81a-f6cee77a-cafa72a3-68d29722",
+      "previous": "5a1e3b54-37bb7180-de7af6a3-3c84032b-1497c677-16921524-7c076ca3-0f10f01c"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778406679615-e27ee178\\summary.json",
+      "sha256": "6ffe83cd-4e948fda-b4dd1e5f-87f7e96a-c84e9abb-c64d582a-458eac29-aad79695",
+      "previous": "0ba1ed9f-9e1e8ac9-8971f8ff-73cc8804-47edf81a-f6cee77a-cafa72a3-68d29722"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778408882932-ceb86f06\\alerts.jsonl",
+      "sha256": "962d4d28-775bae83-9a92a51e-d71129de-fe3f474d-03ec198a-f7291a6a-78556ba8",
+      "previous": "6ffe83cd-4e948fda-b4dd1e5f-87f7e96a-c84e9abb-c64d582a-458eac29-aad79695"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778408882932-ceb86f06\\summary.json",
+      "sha256": "432da97d-129fe445-63ab7e7e-cf727508-59b8d1cf-86df095b-36c53e00-8fadc222",
+      "previous": "962d4d28-775bae83-9a92a51e-d71129de-fe3f474d-03ec198a-f7291a6a-78556ba8"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778408924072-64aa4de9\\alerts.jsonl",
+      "sha256": "1224986e-96e16841-af6dd584-538cb21f-8a9fe407-4a62d28e-90166b79-e2477cb0",
+      "previous": "432da97d-129fe445-63ab7e7e-cf727508-59b8d1cf-86df095b-36c53e00-8fadc222"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778408924072-64aa4de9\\summary.json",
+      "sha256": "0c7cc951-f6d37678-0cdc012c-276ab169-fc70535d-4b1ea89a-04c3f72b-5029b6ce",
+      "previous": "1224986e-96e16841-af6dd584-538cb21f-8a9fe407-4a62d28e-90166b79-e2477cb0"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778409001221-314eee3c\\alerts.jsonl",
+      "sha256": "9eeb2e7a-8dd241df-9903f925-369b19ba-aa489f36-e2cc38a8-14bfa766-0955b97a",
+      "previous": "0c7cc951-f6d37678-0cdc012c-276ab169-fc70535d-4b1ea89a-04c3f72b-5029b6ce"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778409001221-314eee3c\\summary.json",
+      "sha256": "05df73de-f4743b1a-573b9c87-9cb99433-b967d664-3fde0c40-d47fc1c4-047bdf30",
+      "previous": "9eeb2e7a-8dd241df-9903f925-369b19ba-aa489f36-e2cc38a8-14bfa766-0955b97a"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778409057440-fd520bd7\\alerts.jsonl",
+      "sha256": "bcf3f912-1c23aa3d-8aa902e3-72765819-47529839-1796d97b-3627ec5b-f238ebd2",
+      "previous": "05df73de-f4743b1a-573b9c87-9cb99433-b967d664-3fde0c40-d47fc1c4-047bdf30"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778409057440-fd520bd7\\summary.json",
+      "sha256": "20dd5f2d-09f22622-9e2f0ee1-d68f6cf1-aad9ded2-6467aa44-5697a2b9-c2b119bb",
+      "previous": "bcf3f912-1c23aa3d-8aa902e3-72765819-47529839-1796d97b-3627ec5b-f238ebd2"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778409091717-1cc9786b\\alerts.jsonl",
+      "sha256": "2b363a9b-45972ff3-154868d6-964597c0-e452efbf-edd92190-390735f0-fe1fa849",
+      "previous": "20dd5f2d-09f22622-9e2f0ee1-d68f6cf1-aad9ded2-6467aa44-5697a2b9-c2b119bb"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778409091717-1cc9786b\\summary.json",
+      "sha256": "1826cc2d-82d46009-aa3ae6c2-129d72f7-7138aebd-d62dd8a3-57c88738-a2597387",
+      "previous": "2b363a9b-45972ff3-154868d6-964597c0-e452efbf-edd92190-390735f0-fe1fa849"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778474709354-6fdfd975\\alerts.jsonl",
+      "sha256": "b55c3b2e-d97f104b-e9c09b2d-b15b3a15-8abb84b2-2cc9c63e-4b956c4d-2b809aa4",
+      "previous": "1826cc2d-82d46009-aa3ae6c2-129d72f7-7138aebd-d62dd8a3-57c88738-a2597387"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\sessions\\1778474709354-6fdfd975\\summary.json",
+      "sha256": "16f5b17c-0d463dfc-cf93e4e5-d7f55164-21e0a4b0-9c7b8ff9-94d3e24b-b290ae75",
+      "previous": "b55c3b2e-d97f104b-e9c09b2d-b15b3a15-8abb84b2-2cc9c63e-4b956c4d-2b809aa4"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\support\\quality-gate-support.zip",
+      "sha256": "60a085e7-50b21d76-a44c13e6-288b3104-aefaf509-6f7fcb9b-7aca97a2-2c227afa",
+      "previous": "16f5b17c-0d463dfc-cf93e4e5-d7f55164-21e0a4b0-9c7b8ff9-94d3e24b-b290ae75"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\support\\support-bundle.zip",
+      "sha256": "edc14c44-1be7655b-ae842fd5-706b4dd0-d8733f55-fc8c36fe-784f9b6e-c9276f6e",
+      "previous": "60a085e7-50b21d76-a44c13e6-288b3104-aefaf509-6f7fcb9b-7aca97a2-2c227afa"
+    }
+  ],
+  "count": 195,
+  "live_trading_enabled": false
+}

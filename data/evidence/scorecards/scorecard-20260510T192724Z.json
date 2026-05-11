@@ -1,0 +1,23 @@
+{
+  "status": "warn",
+  "blockers": [],
+  "warnings": [
+    {
+      "severity": "warning",
+      "name": "operator_diagnostics.warn",
+      "message": "operator diagnostics has warnings",
+      "path": "data\\evidence\\diagnostics\\latest-diagnostics.json"
+    }
+  ],
+  "artifacts": {
+    "launch_evidence": "data\\checks\\dashboard\\launch-evidence.json",
+    "browser_smoke": "data\\checks\\dashboard\\browser-smoke.json",
+    "operator_evidence": "data\\evidence\\dashboard\\operator-evidence-2026-05-10T192724.115700Z0000.json",
+    "demo_execution": "data\\evidence\\demo-execution\\demo_execution_drill.json",
+    "pilot_start_idempotency": "data\\evidence\\pilot-start-idempotency.json",
+    "operator_diagnostics": "data\\evidence\\diagnostics\\latest-diagnostics.json"
+  },
+  "next_safe_action": "Collect or refresh evidence: operator diagnostics has warnings",
+  "live_trading_enabled": false,
+  "generated_at": "2026-05-10T19:27:24.128848+00:00"
+}

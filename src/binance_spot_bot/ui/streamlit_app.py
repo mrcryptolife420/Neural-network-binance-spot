@@ -11,23 +11,63 @@ from pathlib import Path
 
 import streamlit as st
 
+from binance_spot_bot.binance import BinanceSpotAdapter
 from binance_spot_bot.config import BotSettings
 from binance_spot_bot.connectivity import connectivity_report
 from binance_spot_bot.credentials import CredentialManager, WindowsSecretStoreAdapter
 from binance_spot_bot.chaos import simulate_failure
 from binance_spot_bot.copilot_permissions import check_copilot_action
+from binance_spot_bot.demo_execution_sandbox import DemoExecutionSandbox, intent_from_values
 from binance_spot_bot.demo_pilot import operator_checklist, pilot_presets, pipeline_rows
 from binance_spot_bot.cache_manager import cache_manifest
 from binance_spot_bot.dashboard_state import DashboardProcessStatus, DashboardRuntimeState, bot_status_from_runtime
+from binance_spot_bot.dashboard_evidence import build_operator_evidence, write_operator_evidence
+from binance_spot_bot.demo_acceptance_rehearsal import DemoAcceptanceRehearsal, RehearsalHistory
 from binance_spot_bot.diagnostics import collect_diagnostics
 from binance_spot_bot.evidence import EvidenceVault
+from binance_spot_bot.evidence_scorecard import generate_evidence_scorecard, write_scorecard
 from binance_spot_bot.evaluation import evaluate_rule_baseline, evaluate_walk_forward, report_to_dict
 from binance_spot_bot.experiment_db import ExperimentDB
 from binance_spot_bot.exchange_profiles import BINANCE_DEMO_SPOT_PROFILE, available_profiles, selectable_profile_names
 from binance_spot_bot.html_reports import export_html_report
+from binance_spot_bot.indicators import (
+    INDICATOR_PROFILES,
+    allocation_hints,
+    indicator_rows_from_runtimes,
+    indicator_summary,
+    write_indicator_evidence,
+)
 from binance_spot_bot.manual_demo_trading import ManualDemoTradeRequest, execute_manual_demo_trade
 from binance_spot_bot.model_registry import ModelRegistry
+from binance_spot_bot.multi_symbol import (
+    DEFAULT_DEMO_SYMBOLS,
+    allocation_plan,
+    choose_active_symbols,
+    next_multi_action,
+    risk_limit_rows,
+    summarize_multi_rows,
+    validate_demo_symbols,
+    write_multi_symbol_evidence,
+)
 from binance_spot_bot.notebook_export import export_notebook
+from binance_spot_bot.operator_ops import (
+    artifact_catalog,
+    data_growth_budget,
+    diagnostics_baseline,
+    environment_doctor,
+    evidence_chain,
+    export_operator_report,
+    incident_timeline,
+    local_ops_snapshot,
+    operator_command_manifest,
+    operator_health_score,
+    operator_report_diff,
+    redaction_self_test,
+    rehearsal_profiles,
+    report_index,
+    retention_preview,
+    verify_support_bundles,
+)
 from binance_spot_bot.pilot_runner import PilotRunnerService, start_background_runner
 from binance_spot_bot.portfolio import Portfolio, Position
 from binance_spot_bot.preflight import run_preflight
@@ -41,18 +81,29 @@ from binance_spot_bot.settings_store import DashboardSettingsStore, RISK_PRESETS
 from binance_spot_bot.session_store import SessionStore
 from binance_spot_bot.spot_preview import SpotPreview, load_spot_symbol_preview
 from binance_spot_bot.strategy_templates import list_strategy_templates
+from binance_spot_bot.support_bundle import create_support_bundle
 from binance_spot_bot.testnet_endurance import TestnetEnduranceGuard
 from binance_spot_bot.types import FeatureRow, OrderSide
+from binance_spot_bot.ui.chart_registry import (
+    DEMO_PILOT_COMMAND_STATUS,
+    DEMO_PILOT_COUNTERS,
+    DEMO_PILOT_EQUITY_PNL,
+    DEMO_PILOT_HEARTBEAT,
+    OVERVIEW_CANDLESTICK,
+    OVERVIEW_EQUITY,
+)
 from binance_spot_bot.ui.charts import (
     candlestick_figure,
     command_status_figure,
     equity_figure,
+    multi_symbol_overview_figure,
     runner_counters_figure,
     runner_equity_pnl_figure,
     runner_heartbeat_figure,
 )
-from binance_spot_bot.ui.components import render_alert_list, render_badges, render_debug, render_table
+from binance_spot_bot.ui.components import render_alert_list, render_badges, render_debug, render_plotly_chart, render_table
 from binance_spot_bot.ui.demo_trading import demo_trading_badge
+from binance_spot_bot.ui.page_registry import page_titles, validate_page_registry
 from binance_spot_bot.ui.state import SELECTABLE_DATA_SOURCES, SELECTABLE_MODES, create_runtime
 from binance_spot_bot.ui.wizard import wizard_options
 from binance_spot_bot.workspaces import WorkspaceProfile, WorkspaceStore
@@ -71,9 +122,11 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    validate_page_registry()
     st.set_page_config(page_title="Spot Bot Control Center", layout="wide")
     st.title("Neural Network Binance Spot Bot")
     st.caption("LIVE TRADING DISABLED")
+    st.caption("Advanced tools: Overview, Demo Spot Trading, Demo Pilot.")
 
     base_settings = BotSettings.from_env()
     store = DashboardSettingsStore(base_settings.data_dir / "settings")
@@ -91,12 +144,20 @@ def main() -> None:
         st.session_state.demo_trading_armed = False
     if "demo_pilot_preset" not in st.session_state:
         st.session_state.demo_pilot_preset = "smoke"
+    if "multi_demo_runtimes" not in st.session_state:
+        st.session_state.multi_demo_runtimes = {}
+    if "multi_demo_running" not in st.session_state:
+        st.session_state.multi_demo_running = False
+    if "multi_demo_cycles" not in st.session_state:
+        st.session_state.multi_demo_cycles = {}
 
     saved = st.session_state.dashboard_settings
     profiles = available_profiles()
 
     with st.sidebar:
-        st.header("Control")
+        st.header("Dashboard")
+        dashboard_view = st.radio("View", ["Simple demo trading", "Advanced tools"], horizontal=False)
+        simple_dashboard = dashboard_view == "Simple demo trading"
         selected_profile = st.selectbox(
             "Exchange profile",
             selectable_profile_names(),
@@ -105,40 +166,61 @@ def main() -> None:
             else 0,
             format_func=lambda value: profiles[value].label,
         )
-        mode = st.selectbox("Runtime mode", SELECTABLE_MODES, index=SELECTABLE_MODES.index(args.mode))
-        source = st.selectbox(
-            "Market data source",
-            SELECTABLE_DATA_SOURCES,
-            index=SELECTABLE_DATA_SOURCES.index(saved.source if saved.source in SELECTABLE_DATA_SOURCES else args.source),
-        )
         symbol = st.text_input("Symbol", value=saved.symbol or args.symbol).upper()
         intervals = ["1m", "5m", "15m", "1h"]
-        interval = st.selectbox(
-            "Interval",
-            intervals,
-            index=intervals.index(saved.interval if saved.interval in intervals else args.interval),
-        )
-        scenario = st.selectbox("Demo scenario", ["sideways", "uptrend", "downtrend", "volatile"], index=0)
-        model_alias = st.text_input("Model alias", value=saved.model_alias)
-        speed = st.selectbox("Replay speed", [1, 5, 10], index=0)
-        st.header("Run")
-        reset_runtime = st.button("Reset runtime", use_container_width=True)
-        start = st.button("Start / run", use_container_width=True)
-        pause = st.button("Pause", use_container_width=True)
-        step_once = st.button("Single step", use_container_width=True)
-        emergency_stop = st.button("Emergency stop", use_container_width=True)
-        st.header("Demo Spot")
-        st.session_state.demo_pilot_preset = st.selectbox(
-            "Pilot mode",
-            list(pilot_presets().keys()),
-            index=list(pilot_presets().keys()).index(st.session_state.demo_pilot_preset)
-            if st.session_state.demo_pilot_preset in pilot_presets()
-            else 0,
-        )
-        if st.button("Arm demo trading", use_container_width=True):
-            st.session_state.demo_trading_armed = selected_profile == BINANCE_DEMO_SPOT_PROFILE
-        if st.button("Disarm demo trading", use_container_width=True):
-            st.session_state.demo_trading_armed = False
+        if simple_dashboard:
+            mode = "demo"
+            source = saved.source if saved.source in SELECTABLE_DATA_SOURCES else "auto"
+            interval = saved.interval if saved.interval in intervals else "1m"
+            scenario = saved.scenario or "sideways"
+            model_alias = saved.model_alias
+            speed = 5
+            st.header("Demo bot")
+            reset_runtime = st.button("Reset demo bot", use_container_width=True)
+            start = False
+            pause = False
+            step_once = False
+            emergency_stop = st.button("Stop demo bot", use_container_width=True)
+            st.session_state.demo_pilot_preset = "smoke"
+            if st.button("Connect demo trading", use_container_width=True):
+                st.session_state.demo_trading_armed = selected_profile == BINANCE_DEMO_SPOT_PROFILE
+            if st.button("Disconnect demo trading", use_container_width=True):
+                st.session_state.demo_trading_armed = False
+            st.caption("Advanced tools blijven beschikbaar via de view-keuze hierboven.")
+        else:
+            st.header("Control")
+            mode = st.selectbox("Runtime mode", SELECTABLE_MODES, index=SELECTABLE_MODES.index(args.mode))
+            source = st.selectbox(
+                "Market data source",
+                SELECTABLE_DATA_SOURCES,
+                index=SELECTABLE_DATA_SOURCES.index(saved.source if saved.source in SELECTABLE_DATA_SOURCES else args.source),
+            )
+            interval = st.selectbox(
+                "Interval",
+                intervals,
+                index=intervals.index(saved.interval if saved.interval in intervals else args.interval),
+            )
+            scenario = st.selectbox("Demo scenario", ["sideways", "uptrend", "downtrend", "volatile"], index=0)
+            model_alias = st.text_input("Model alias", value=saved.model_alias)
+            speed = st.selectbox("Replay speed", [1, 5, 10], index=0)
+            st.header("Run")
+            reset_runtime = st.button("Reset runtime", use_container_width=True)
+            start = st.button("Start / run", use_container_width=True)
+            pause = st.button("Pause", use_container_width=True)
+            step_once = st.button("Single step", use_container_width=True)
+            emergency_stop = st.button("Emergency stop", use_container_width=True)
+            st.header("Demo Spot")
+            st.session_state.demo_pilot_preset = st.selectbox(
+                "Pilot mode",
+                list(pilot_presets().keys()),
+                index=list(pilot_presets().keys()).index(st.session_state.demo_pilot_preset)
+                if st.session_state.demo_pilot_preset in pilot_presets()
+                else 0,
+            )
+            if st.button("Arm demo trading", use_container_width=True):
+                st.session_state.demo_trading_armed = selected_profile == BINANCE_DEMO_SPOT_PROFILE
+            if st.button("Disarm demo trading", use_container_width=True):
+                st.session_state.demo_trading_armed = False
 
     profile = profiles[selected_profile]
     st.session_state.credential_manager.set_session_credentials(
@@ -149,44 +231,26 @@ def main() -> None:
     runtime_settings = st.session_state.credential_manager.apply_to_settings(base_settings, selected_profile)
 
     current_preset = RISK_PRESETS.get(saved.risk_preset, RISK_PRESETS["balanced"])
-    tabs = st.tabs(
-        [
-            "Overview",
-            "Demo Spot Trading",
-            "Credentials & Profile",
-            "Bot Controls",
-            "Risk Controls",
-            "Strategy & Model",
-            "Market Data",
-            "Orders & Account",
-            "Sessions",
-            "Evaluation",
-            "Strategy Lab",
-            "Research",
-            "Portfolio",
-            "Readiness",
-            "Logs & Security",
-            "Demo Pilot",
-        ]
-    )
-
-    with tabs[4]:
-        st.subheader("Risk controls")
-        with st.form("risk_controls"):
-            risk_preset = st.selectbox("Risk preset", list(RISK_PRESETS.keys()), index=list(RISK_PRESETS.keys()).index(saved.risk_preset if saved.risk_preset in RISK_PRESETS else "balanced"))
-            preset = RISK_PRESETS[risk_preset]
-            max_daily_loss = Decimal(str(st.number_input("Max daily loss quote", value=float(preset["max_daily_loss_quote"]), min_value=0.0)))
-            max_position = Decimal(str(st.number_input("Max position quote", value=float(preset["max_position_quote"]), min_value=0.0)))
-            max_trades = st.number_input("Max trades per day", value=int(preset["max_trades_per_day"]), min_value=0, step=1)
-            min_conf = st.slider("Min signal confidence", 0.0, 1.0, float(preset["min_signal_confidence"]), 0.01)
-            max_spread = Decimal(str(st.number_input("Max spread bps", value=float(preset["max_spread_bps"]), min_value=0.0)))
-            max_data_age_ms = st.number_input("Max data age ms", value=int(preset["max_data_age_ms"]), min_value=1_000, step=1_000)
-            default_quote_size = Decimal(str(st.number_input("Default quote size", value=float(preset["default_quote_size"]), min_value=0.0)))
-            apply_risk = st.form_submit_button("Apply risk settings")
-        if apply_risk:
-            saved.risk_preset = risk_preset
-            store.save(saved)
-            st.success("Risk settings applied to next runtime reset.")
+    tabs = None
+    if not simple_dashboard:
+        tabs = st.tabs(page_titles())
+        with tabs[4]:
+            st.subheader("Risk controls")
+            with st.form("risk_controls"):
+                risk_preset = st.selectbox("Risk preset", list(RISK_PRESETS.keys()), index=list(RISK_PRESETS.keys()).index(saved.risk_preset if saved.risk_preset in RISK_PRESETS else "balanced"))
+                preset = RISK_PRESETS[risk_preset]
+                max_daily_loss = Decimal(str(st.number_input("Max daily loss quote", value=float(preset["max_daily_loss_quote"]), min_value=0.0)))
+                max_position = Decimal(str(st.number_input("Max position quote", value=float(preset["max_position_quote"]), min_value=0.0)))
+                max_trades = st.number_input("Max trades per day", value=int(preset["max_trades_per_day"]), min_value=0, step=1)
+                min_conf = st.slider("Min signal confidence", 0.0, 1.0, float(preset["min_signal_confidence"]), 0.01)
+                max_spread = Decimal(str(st.number_input("Max spread bps", value=float(preset["max_spread_bps"]), min_value=0.0)))
+                max_data_age_ms = st.number_input("Max data age ms", value=int(preset["max_data_age_ms"]), min_value=1_000, step=1_000)
+                default_quote_size = Decimal(str(st.number_input("Default quote size", value=float(preset["default_quote_size"]), min_value=0.0)))
+                apply_risk = st.form_submit_button("Apply risk settings")
+            if apply_risk:
+                saved.risk_preset = risk_preset
+                store.save(saved)
+                st.success("Risk settings applied to next runtime reset.")
     if "max_daily_loss" not in locals():
         max_daily_loss = Decimal(str(current_preset["max_daily_loss_quote"]))
         max_position = Decimal(str(current_preset["max_position_quote"]))
@@ -272,6 +336,9 @@ def main() -> None:
         st.session_state.running = False
     if emergency_stop:
         st.session_state.running = False
+        st.session_state.multi_demo_running = False
+        for multi_runtime in st.session_state.get("multi_demo_runtimes", {}).values():
+            multi_runtime.stop()
         st.session_state.runtime.stop()
     if step_once:
         st.session_state.runtime.step()
@@ -279,6 +346,29 @@ def main() -> None:
         st.session_state.runtime.run_steps(int(speed))
     snapshot = st.session_state.runtime.snapshot()
     _render_status_header(snapshot, profile, runtime_settings, saved)
+    if simple_dashboard:
+        _render_simple_demo_dashboard(
+            st.session_state.runtime,
+            snapshot,
+            st.session_state.credential_manager,
+            runtime_settings,
+            selected_profile,
+            symbol,
+            interval,
+            scenario,
+            source,
+            model_alias,
+            max_daily_loss,
+            max_position,
+            int(max_trades),
+            float(min_conf),
+            max_spread,
+            int(max_data_age_ms),
+            default_quote_size,
+            saved,
+            store,
+        )
+        return
 
     with tabs[0]:
         _render_overview(snapshot, profile, runtime_settings)
@@ -312,23 +402,42 @@ def main() -> None:
         _render_demo_pilot(st.session_state.runtime, snapshot)
 
     if st.session_state.running and snapshot.status not in {"completed", "stopped"}:
-        time.sleep(0.7)
+        time.sleep(2.0)
         st.rerun()
 
 
 def _render_status_header(snapshot, profile, settings: BotSettings, saved) -> None:
+    runner_status = PilotRunnerService(settings).status()
+    runner = runner_status.get("runner", {})
     render_badges(
         {
             "Live": "disabled" if not settings.live_trading_enabled else "blocked",
             "Mode": snapshot.mode,
+            "Source": snapshot.market_data.get("source", "unknown"),
             "Workspace": "default",
             "Profile": profile.mode_badge,
+            "Base URL": settings.active_base_url,
             "Kill switch": "on" if settings.kill_switch else "paper override",
             "Demo armed": "yes" if snapshot.demo_connection.get("armed") else "no",
+            "Runner": runner.get("state", "not_running"),
             "Session": snapshot.status,
             "Readiness": snapshot.readiness.get("level", "R0"),
         }
     )
+    if st.button("Export operator evidence", key="operator_evidence_export", use_container_width=True):
+        payload = build_operator_evidence(
+            settings,
+            mode=snapshot.mode,
+            profile=profile.name,
+            source=snapshot.market_data.get("source", "unknown"),
+            snapshot=snapshot,
+            connectivity=st.session_state.get("connectivity_report", {}),
+            runner_status=runner_status,
+        )
+        path = write_operator_evidence(settings, payload)
+        st.session_state.operator_evidence_path = str(path)
+    if st.session_state.get("operator_evidence_path"):
+        st.caption(f"Operator evidence: {st.session_state.operator_evidence_path}")
     if snapshot.readiness.get("blockers"):
         st.warning("Readiness blockers: " + ", ".join(snapshot.readiness["blockers"]))
 
@@ -353,7 +462,7 @@ def _render_overview(snapshot, profile, settings: BotSettings) -> None:
     st.info(f"{snapshot.message} | Base URL: {settings.active_base_url} | Live trading is not selectable.")
     chart_col, side_col = st.columns([3, 1])
     with chart_col:
-        st.plotly_chart(
+        render_plotly_chart(
             candlestick_figure(
                 snapshot.candles,
                 snapshot.signals,
@@ -361,9 +470,9 @@ def _render_overview(snapshot, profile, settings: BotSettings) -> None:
                 open_orders=snapshot.demo_open_orders,
                 reconciliation_events=snapshot.reconciliation.get("events", []),
             ),
-            use_container_width=True,
+            key=OVERVIEW_CANDLESTICK,
         )
-        st.plotly_chart(equity_figure(snapshot.equity_points), use_container_width=True)
+        render_plotly_chart(equity_figure(snapshot.equity_points), key=OVERVIEW_EQUITY)
     with side_col:
         render_debug("Health details", snapshot.metrics.health())
         render_debug("Credential status", snapshot.credential_status)
@@ -376,13 +485,651 @@ def _render_overview(snapshot, profile, settings: BotSettings) -> None:
         render_table("Saved workspaces", [workspace.to_dict() for workspace in workspace_store.list()])
 
 
+def _render_simple_demo_dashboard(
+    runtime,
+    snapshot,
+    manager: CredentialManager,
+    settings: BotSettings,
+    selected_profile: str,
+    symbol: str,
+    interval: str,
+    scenario: str,
+    source: str,
+    model_alias: str,
+    max_daily_loss: Decimal,
+    max_position: Decimal,
+    max_trades: int,
+    min_conf: float,
+    max_spread: Decimal,
+    max_data_age_ms: int,
+    default_quote_size: Decimal,
+    saved,
+    store,
+) -> None:
+    st.subheader("Start Demo Trading")
+    st.caption("Simple mode voor Binance Demo Spot. Kies een of meerdere crypto-symbolen en start ze samen. Advanced tools: Overview, Demo Spot Trading, Demo Pilot.")
+    profile = available_profiles()[selected_profile]
+    credential_status = manager.status()
+    connection = st.session_state.get("connectivity_report", {})
+    connection_status = connection.get("status", "not-tested")
+    armed = bool(snapshot.demo_connection.get("armed"))
+    can_arm = selected_profile == BINANCE_DEMO_SPOT_PROFILE and credential_status.has_api_key and credential_status.has_api_secret
+    has_keys = credential_status.has_api_key and credential_status.has_api_secret
+    render_badges(
+        {
+            "Profile": profile.label,
+            "Mode": "Demo Binance Spot",
+            "Symbol": symbol,
+            "Interval": interval,
+            "Keys": "loaded" if credential_status.has_api_key and credential_status.has_api_secret else "missing",
+            "Connected": connection_status,
+            "Trading": "armed" if armed else "not armed",
+            "Bots": "running" if st.session_state.multi_demo_running else snapshot.status,
+            "Live": "disabled",
+        }
+    )
+    with st.form("simple_demo_credentials"):
+        st.write("Binance demo keys")
+        api_key = st.text_input("API key", value="", type="password", key="simple_demo_api_key")
+        api_secret = st.text_input("API secret", value="", type="password", key="simple_demo_api_secret")
+        save_keys = st.form_submit_button("Use demo keys for this session")
+    if save_keys:
+        manager.set_session_credentials(selected_profile, api_key, api_secret)
+        st.session_state.demo_trading_armed = False
+        st.session_state.multi_demo_running = False
+        st.success("Demo keys loaded for this Streamlit session.")
+        st.rerun()
+
+    st.subheader("Multi Crypto Demo Trading")
+    default_watchlist = saved.watchlist if getattr(saved, "watchlist", None) else list(DEFAULT_DEMO_SYMBOLS[:3])
+    selected_symbols = st.multiselect(
+        "Crypto symbols",
+        list(DEFAULT_DEMO_SYMBOLS),
+        default=[item for item in default_watchlist if item in DEFAULT_DEMO_SYMBOLS] or ([symbol] if symbol in DEFAULT_DEMO_SYMBOLS else list(DEFAULT_DEMO_SYMBOLS[:3])),
+        key="simple_multi_symbols",
+    )
+    custom_symbols = st.text_input("Extra symbols", value="", placeholder="Bijvoorbeeld: AVAXUSDT, MATICUSDT, DOT", key="simple_custom_symbols")
+    max_active_symbols = st.number_input("Max active symbols", min_value=1, max_value=10, value=min(3, max(1, len(selected_symbols) or 1)), step=1)
+    max_open_orders_per_symbol = st.number_input("Max open orders per symbol", min_value=1, max_value=10, value=2, step=1)
+    total_quote_budget = Decimal(str(st.number_input("Total demo quote budget", min_value=10.0, value=1000.0, step=50.0)))
+    candle_window = st.slider("Visible candles", min_value=20, max_value=120, value=40, step=10)
+    st.subheader("Adaptive Indicator Advisor")
+    auto_indicator_profile = st.checkbox("Auto-select indicator profile", value=True, key="auto_indicator_profile")
+    indicator_profile = st.selectbox(
+        "Indicator profile",
+        list(INDICATOR_PROFILES),
+        index=0,
+        disabled=auto_indicator_profile,
+        key="indicator_profile",
+    )
+    active_symbols = choose_active_symbols(selected_symbols or [symbol], custom_symbols, max_active=int(max_active_symbols))
+    validation = validate_demo_symbols(active_symbols, max_active=int(max_active_symbols))
+    ready = can_arm and armed and connection_status in {"ok", "warn", "not-tested"} and validation["status"] != "fail"
+    allocation = allocation_plan(
+        active_symbols,
+        total_quote_budget=total_quote_budget,
+        default_quote_size=default_quote_size,
+        max_position_quote=max_position,
+    )
+    risk_rows = risk_limit_rows(
+        active_symbols,
+        max_open_orders_per_symbol=int(max_open_orders_per_symbol),
+        max_trades=max_trades,
+        max_position_quote=max_position,
+        max_daily_loss=max_daily_loss,
+        max_spread=max_spread,
+        min_conf=min_conf,
+    )
+    next_action = next_multi_action(
+        has_keys=has_keys,
+        connection_status=connection_status,
+        armed=armed,
+        validation_status=str(validation["status"]),
+        running=bool(st.session_state.multi_demo_running),
+    )
+    st.info(f"Next step: {next_action}")
+    st.caption("Elke crypto krijgt een eigen demo-runtime met eigen risk checks en eigen open-order overzicht.")
+    preset_cols = st.columns(2)
+    if preset_cols[0].button("Save active watchlist", use_container_width=True):
+        saved.watchlist = active_symbols
+        store.save(saved)
+        st.success("Watchlist saved locally without secrets.")
+    if preset_cols[1].button("Reset watchlist preset", use_container_width=True):
+        saved.watchlist = list(DEFAULT_DEMO_SYMBOLS[:3])
+        store.save(saved)
+        st.rerun()
+    render_table("Symbol validation guardrails", [*validation.get("blockers", []), *validation.get("warnings", [])])
+
+    actions = st.columns(4)
+    if actions[0].button("Test demo connection", use_container_width=True, disabled=not (credential_status.has_api_key and credential_status.has_api_secret)):
+        checked = manager.apply_to_settings(settings, selected_profile)
+        st.session_state.connectivity_report = connectivity_report(checked, symbol)
+        st.rerun()
+    if actions[1].button("Connect demo trading", use_container_width=True, disabled=not can_arm):
+        st.session_state.demo_trading_armed = True
+        st.rerun()
+    if actions[2].button("Start selected symbols", use_container_width=True, type="primary", disabled=not ready or not active_symbols):
+        try:
+            _sync_multi_demo_runtimes(
+                settings,
+                active_symbols,
+                interval,
+                scenario,
+                source,
+                model_alias,
+                max_daily_loss,
+                max_position,
+                max_trades,
+                min_conf,
+                max_spread,
+                max_data_age_ms,
+                default_quote_size,
+                max_open_orders_per_symbol=int(max_open_orders_per_symbol),
+                demo_trading_armed=True,
+            )
+            for multi_runtime in st.session_state.multi_demo_runtimes.values():
+                multi_runtime.start()
+            st.session_state.multi_demo_running = True
+        except (OSError, ValueError) as exc:
+            st.session_state.simple_demo_error = str(exc)
+        st.rerun()
+    if actions[3].button("Stop all symbols", use_container_width=True):
+        st.session_state.running = False
+        st.session_state.multi_demo_running = False
+        for multi_runtime in st.session_state.get("multi_demo_runtimes", {}).values():
+            multi_runtime.stop()
+        st.rerun()
+    stop_symbol = st.text_input("Stop one symbol", value="", placeholder="Bijvoorbeeld ETH of ETHUSDT", key="simple_stop_one_symbol")
+    if st.button("Stop selected symbol only", use_container_width=True):
+        stopped = _stop_one_multi_symbol(stop_symbol)
+        st.session_state.simple_demo_error = "" if stopped else f"Symbol not running: {stop_symbol}"
+        st.rerun()
+
+    if st.session_state.get("simple_demo_error"):
+        st.error(st.session_state.simple_demo_error)
+    live_panel_updates = st.toggle(
+        "Live status panel",
+        value=True,
+        key="simple_live_status_panel",
+        help="Only this live panel refreshes every 2 seconds; the full dashboard does not rerun.",
+    )
+    if live_panel_updates:
+        _render_simple_live_fragment(
+            settings,
+            snapshot,
+            active_symbols,
+            interval,
+            scenario,
+            source,
+            model_alias,
+            max_daily_loss,
+            max_position,
+            max_trades,
+            min_conf,
+            max_spread,
+            max_data_age_ms,
+            default_quote_size,
+            int(max_open_orders_per_symbol),
+            allocation,
+            risk_rows,
+            validation,
+            credential_status.has_api_key and credential_status.has_api_secret,
+            connection_status,
+            armed,
+            candle_window,
+            "auto" if auto_indicator_profile else indicator_profile,
+            bool(auto_indicator_profile),
+            total_quote_budget,
+        )
+    else:
+        if st.button("Refresh live status once", use_container_width=True):
+            _advance_multi_demo_once(
+                settings,
+                active_symbols,
+                interval,
+                scenario,
+                source,
+                model_alias,
+                max_daily_loss,
+                max_position,
+                max_trades,
+                min_conf,
+                max_spread,
+                max_data_age_ms,
+                default_quote_size,
+                int(max_open_orders_per_symbol),
+            )
+        _render_simple_live_content(
+            settings,
+            snapshot,
+            active_symbols,
+            allocation,
+            risk_rows,
+            validation,
+            credential_status.has_api_key and credential_status.has_api_secret,
+            connection_status,
+            armed,
+            candle_window,
+            "auto" if auto_indicator_profile else indicator_profile,
+            bool(auto_indicator_profile),
+            total_quote_budget,
+        )
+    with st.expander("Simple multi-symbol help"):
+        st.write("Gebruik eerst demo keys, test de verbinding, connect demo trading en start daarna alleen de geselecteerde symbolen.")
+        st.write("Elke crypto draait in een aparte demo-runtime. Stop one symbol stopt alleen die runtime; Stop all symbols stopt alles.")
+    if connection:
+        with st.expander("Connection details"):
+            render_debug("Connectivity report", connection)
+
+
+@st.fragment(run_every="2s")
+def _render_simple_live_fragment(
+    settings: BotSettings,
+    snapshot,
+    active_symbols: list[str],
+    interval: str,
+    scenario: str,
+    source: str,
+    model_alias: str,
+    max_daily_loss: Decimal,
+    max_position: Decimal,
+    max_trades: int,
+    min_conf: float,
+    max_spread: Decimal,
+    max_data_age_ms: int,
+    default_quote_size: Decimal,
+    max_open_orders_per_symbol: int,
+    allocation: list[dict[str, str]],
+    risk_rows: list[dict[str, object]],
+    validation: dict[str, object],
+    has_keys: bool,
+    connection_status: str,
+    armed: bool,
+    candle_window: int,
+    indicator_profile: str,
+    auto_indicator_profile: bool,
+    total_quote_budget: Decimal,
+) -> None:
+    _advance_multi_demo_once(
+        settings,
+        active_symbols,
+        interval,
+        scenario,
+        source,
+        model_alias,
+        max_daily_loss,
+        max_position,
+        max_trades,
+        min_conf,
+        max_spread,
+        max_data_age_ms,
+        default_quote_size,
+        max_open_orders_per_symbol,
+    )
+    _render_simple_live_content(
+        settings,
+        snapshot,
+        active_symbols,
+        allocation,
+        risk_rows,
+        validation,
+        has_keys,
+        connection_status,
+        armed,
+        candle_window,
+        indicator_profile,
+        auto_indicator_profile,
+        total_quote_budget,
+    )
+
+
+def _advance_multi_demo_once(
+    settings: BotSettings,
+    active_symbols: list[str],
+    interval: str,
+    scenario: str,
+    source: str,
+    model_alias: str,
+    max_daily_loss: Decimal,
+    max_position: Decimal,
+    max_trades: int,
+    min_conf: float,
+    max_spread: Decimal,
+    max_data_age_ms: int,
+    default_quote_size: Decimal,
+    max_open_orders_per_symbol: int,
+) -> None:
+    if not st.session_state.multi_demo_running:
+        return
+    _sync_multi_demo_runtimes(
+        settings,
+        active_symbols,
+        interval,
+        scenario,
+        source,
+        model_alias,
+        max_daily_loss,
+        max_position,
+        max_trades,
+        min_conf,
+        max_spread,
+        max_data_age_ms,
+        default_quote_size,
+        max_open_orders_per_symbol=max_open_orders_per_symbol,
+        demo_trading_armed=True,
+    )
+    for multi_runtime in list(st.session_state.multi_demo_runtimes.values()):
+        if multi_runtime.status == "completed":
+            _restart_completed_multi_runtime(
+                settings,
+                multi_runtime.options.symbol,
+                interval,
+                scenario,
+                source,
+                model_alias,
+                max_daily_loss,
+                max_position,
+                max_trades,
+                min_conf,
+                max_spread,
+                max_data_age_ms,
+                default_quote_size,
+            )
+        elif multi_runtime.status != "stopped":
+            multi_runtime.run_steps(2)
+
+
+def _render_simple_live_content(
+    settings: BotSettings,
+    snapshot,
+    active_symbols: list[str],
+    allocation: list[dict[str, str]],
+    risk_rows: list[dict[str, object]],
+    validation: dict[str, object],
+    has_keys: bool,
+    connection_status: str,
+    armed: bool,
+    candle_window: int,
+    indicator_profile: str,
+    auto_indicator_profile: bool,
+    total_quote_budget: Decimal,
+) -> None:
+    st.caption("Live status updates run inside this panel only; the full dashboard stays stable.")
+    multi_rows = _multi_demo_rows()
+    if st.session_state.multi_demo_running and multi_rows and all(row["status"] == "stopped" for row in multi_rows):
+        st.session_state.multi_demo_running = False
+    summary = summarize_multi_rows(multi_rows)
+    render_badges(
+        {
+            "Selected symbols": len(active_symbols),
+            "Active bots": summary["active_bots"],
+            "Total fills": summary["total_fills"],
+            "Open orders": summary["total_open_orders"],
+            "Live panel": "fragment",
+        }
+    )
+    render_table(
+        "Setup checklist",
+        [
+            {"step": "Demo profile", "status": "ok"},
+            {"step": "Demo keys", "status": "ok" if has_keys else "missing"},
+            {"step": "Connection test", "status": connection_status},
+            {"step": "Demo trading connected", "status": "yes" if armed else "no"},
+            {"step": "Symbols selected", "status": ", ".join(active_symbols) if active_symbols else "none"},
+            {"step": "Multi bot running", "status": "yes" if st.session_state.multi_demo_running else "no"},
+        ],
+    )
+    render_table("Multi crypto bot status", multi_rows)
+    render_plotly_chart(multi_symbol_overview_figure(multi_rows), key="multi_symbol_visual_overview")
+    indicator_rows = indicator_rows_from_runtimes(st.session_state.get("multi_demo_runtimes", {}), indicator_profile)
+    indicator_payload = indicator_summary(indicator_rows)
+    render_badges(
+        {
+            "Indicator profile": indicator_profile,
+            "Auto profile": str(auto_indicator_profile),
+            "Indicator symbols": indicator_payload["symbols"],
+            "Avg confidence": indicator_payload["avg_confidence"],
+        }
+    )
+    render_table("Adaptive indicator advisor", indicator_rows)
+    render_table("Risk adjusted allocation hints", allocation_hints(indicator_rows, total_quote_budget))
+    with st.expander("Bot trading decision explanation"):
+        render_table(
+            "Indicator decision reasons",
+            [
+                {
+                    "symbol": row.get("symbol"),
+                    "bias": row.get("bias"),
+                    "confidence": row.get("confidence"),
+                    "reason": row.get("reason"),
+                    "risk_engine": "still authoritative",
+                }
+                for row in indicator_rows
+            ],
+        )
+        render_debug("Indicator sanity summary", indicator_payload)
+    if st.button("Export indicator evidence", use_container_width=True, key="export_indicator_evidence_live_panel"):
+        st.session_state.indicator_evidence = write_indicator_evidence(
+            settings.data_dir,
+            indicator_rows,
+            indicator_profile,
+            auto_indicator_profile,
+        )
+    if st.session_state.get("indicator_evidence"):
+        render_debug("Indicator evidence export", st.session_state.indicator_evidence)
+    render_table("Budget allocation", allocation)
+    render_table("Risk limit summary", risk_rows)
+    if st.button("Export multi-symbol evidence", use_container_width=True, key="export_multi_symbol_evidence_live_panel"):
+        st.session_state.multi_symbol_evidence = write_multi_symbol_evidence(
+            settings.data_dir,
+            symbols=active_symbols,
+            rows=multi_rows,
+            validation=validation,
+            allocation=allocation,
+            summary=summary,
+        )
+    if st.session_state.get("multi_symbol_evidence"):
+        render_debug("Multi-symbol evidence export", st.session_state.multi_symbol_evidence)
+    chart_symbols = [row["symbol"] for row in multi_rows] or active_symbols
+    focus_symbol = st.selectbox("Chart focus symbol", chart_symbols, index=0, key="simple_chart_focus_symbol")
+    primary_snapshot = _snapshot_for_symbol(str(focus_symbol)) or _primary_multi_snapshot() or snapshot
+    focused_indicator = next((row for row in indicator_rows if row.get("symbol") == focus_symbol), {})
+    if focused_indicator:
+        render_badges(
+            {
+                "Focused regime": focused_indicator.get("regime", "-"),
+                "Focused RSI": focused_indicator.get("rsi", "-"),
+                "Focused bias": focused_indicator.get("bias", "-"),
+                "Focused reason": focused_indicator.get("reason", "-"),
+            }
+        )
+    metrics = st.columns(4)
+    metrics[0].metric("Equity", str(primary_snapshot.equity))
+    metrics[1].metric("Paper quote", str(primary_snapshot.paper_quote))
+    metrics[2].metric("Fills", sum(int(row["fills"]) for row in multi_rows))
+    metrics[3].metric("Open demo orders", sum(int(row["open_orders"]) for row in multi_rows))
+    render_plotly_chart(
+        candlestick_figure(
+            primary_snapshot.candles[-candle_window:],
+            primary_snapshot.signals[-candle_window:],
+            primary_snapshot.fills[-candle_window:],
+            open_orders=primary_snapshot.demo_open_orders,
+            reconciliation_events=primary_snapshot.reconciliation.get("events", []),
+        ),
+        key="simple_demo_candlestick",
+    )
+    render_table(
+        "Bot activity",
+        [
+            {
+                "message": primary_snapshot.message,
+                "signal": primary_snapshot.latest_signal.signal.value if primary_snapshot.latest_signal else "HOLD",
+                "risk": primary_snapshot.latest_risk_decision.decision.value if primary_snapshot.latest_risk_decision else "-",
+                "last_order": primary_snapshot.latest_execution_result.status if primary_snapshot.latest_execution_result else "-",
+            }
+        ],
+    )
+
+
+def _sync_multi_demo_runtimes(
+    settings: BotSettings,
+    symbols: list[str],
+    interval: str,
+    scenario: str,
+    source: str,
+    model_alias: str,
+    max_daily_loss: Decimal,
+    max_position: Decimal,
+    max_trades: int,
+    min_conf: float,
+    max_spread: Decimal,
+    max_data_age_ms: int,
+    default_quote_size: Decimal,
+    *,
+    max_open_orders_per_symbol: int,
+    demo_trading_armed: bool,
+) -> None:
+    current = st.session_state.get("multi_demo_runtimes", {})
+    for old_symbol in list(current):
+        if old_symbol not in symbols:
+            current[old_symbol].stop()
+            del current[old_symbol]
+    for item in symbols:
+        if item in current:
+            continue
+        current[item] = create_runtime(
+            settings,
+            "demo",
+            item,
+            interval,
+            scenario,
+            7,
+            max_daily_loss,
+            max_position,
+            max_trades,
+            min_conf,
+            max_spread,
+            source,
+            model_alias,
+            max_data_age_ms,
+            default_quote_size,
+            demo_trading_armed,
+            max_demo_orders_per_session=max(10, max_trades),
+            demo_pilot_preset="smoke",
+        )
+    st.session_state.multi_demo_runtimes = current
+
+
+def _restart_completed_multi_runtime(
+    settings: BotSettings,
+    symbol: str,
+    interval: str,
+    scenario: str,
+    source: str,
+    model_alias: str,
+    max_daily_loss: Decimal,
+    max_position: Decimal,
+    max_trades: int,
+    min_conf: float,
+    max_spread: Decimal,
+    max_data_age_ms: int,
+    default_quote_size: Decimal,
+) -> None:
+    cycles = st.session_state.get("multi_demo_cycles", {})
+    cycles[symbol] = int(cycles.get(symbol, 0)) + 1
+    st.session_state.multi_demo_cycles = cycles
+    runtime = create_runtime(
+        settings,
+        "demo",
+        symbol,
+        interval,
+        scenario,
+        7 + cycles[symbol],
+        max_daily_loss,
+        max_position,
+        max_trades,
+        min_conf,
+        max_spread,
+        source,
+        model_alias,
+        max_data_age_ms,
+        default_quote_size,
+        True,
+        max_demo_orders_per_session=max(10, max_trades),
+        demo_pilot_preset="smoke",
+    )
+    try:
+        runtime.start()
+        st.session_state.multi_demo_runtimes[symbol] = runtime
+    except (OSError, ValueError) as exc:
+        st.session_state.simple_demo_error = str(exc)
+
+
+def _multi_demo_rows() -> list[dict[str, object]]:
+    rows: list[dict[str, object]] = []
+    cycles = st.session_state.get("multi_demo_cycles", {})
+    for item, runtime in st.session_state.get("multi_demo_runtimes", {}).items():
+        snapshot = runtime.snapshot()
+        rows.append(
+            {
+                "symbol": item,
+                "status": snapshot.status,
+                "message": snapshot.message,
+                "cycles": int(cycles.get(item, 0)),
+                "signal": snapshot.latest_signal.signal.value if snapshot.latest_signal else "HOLD",
+                "risk": snapshot.latest_risk_decision.decision.value if snapshot.latest_risk_decision else "-",
+                "fills": len(snapshot.fills),
+                "open_orders": len(snapshot.demo_open_orders),
+                "equity": str(snapshot.equity),
+            }
+        )
+    return rows
+
+
+def _stop_one_multi_symbol(symbol: str) -> bool:
+    target = symbol.strip().upper()
+    if target and not target.endswith("USDT") and len(target) <= 6:
+        target = f"{target}USDT"
+    runtimes = st.session_state.get("multi_demo_runtimes", {})
+    if not target or target not in runtimes:
+        return False
+    runtimes[target].stop()
+    del runtimes[target]
+    st.session_state.multi_demo_runtimes = runtimes
+    if not runtimes:
+        st.session_state.multi_demo_running = False
+    return True
+
+
+def _primary_multi_snapshot():
+    runtimes = st.session_state.get("multi_demo_runtimes", {})
+    if not runtimes:
+        return None
+    return next(iter(runtimes.values())).snapshot()
+
+
+def _snapshot_for_symbol(symbol: str):
+    runtime = st.session_state.get("multi_demo_runtimes", {}).get(symbol)
+    return runtime.snapshot() if runtime else None
+
+
 def _render_demo_spot_trading(settings: BotSettings, snapshot, symbol: str, interval: str) -> None:
     st.subheader("Demo Spot Trading")
     st.caption(f"{demo_trading_badge()} - Manual demo fills are local paper events only; no signed Binance order endpoint is called.")
-    col_a, col_b, col_c = st.columns(3)
+    col_a, col_b, col_c, col_d, col_e = st.columns(5)
     col_a.metric("Mode", snapshot.mode)
     col_b.metric("Live", "disabled")
     col_c.metric("Manual fills", len(st.session_state.manual_demo_fills))
+    col_d.metric("Base URL", settings.active_base_url)
+    col_e.metric("Armed", "yes" if snapshot.demo_connection.get("armed") else "no")
+    st.info(
+        "Next safe action: "
+        + (
+            "use Demo Spot controls or start the Demo Pilot"
+            if snapshot.demo_connection.get("armed")
+            else "load/test Demo Spot credentials, then explicitly arm demo trading"
+        )
+    )
     if st.button("Refresh public Spot preview"):
         st.session_state.spot_preview = load_spot_symbol_preview(settings, symbol, interval, limit=60)
     preview: SpotPreview | None = st.session_state.get("spot_preview")
@@ -432,6 +1179,59 @@ def _render_demo_spot_trading(settings: BotSettings, snapshot, symbol: str, inte
             render_debug("Trade result", {"status": result.status, "preview": result.preview.to_dict(), "fill": result.fill})
     if st.session_state.manual_demo_fills:
         render_table("Local demo fill history", st.session_state.manual_demo_fills[-10:])
+    _render_demo_execution_drill(settings, snapshot, symbol)
+
+
+def _render_demo_execution_drill(settings: BotSettings, snapshot, symbol: str) -> None:
+    st.subheader("Demo Execution Drill")
+    adapter = BinanceSpotAdapter(settings) if settings.binance_api_key and settings.binance_api_secret else None
+    sandbox = DemoExecutionSandbox(settings, adapter=adapter)
+    latest = sandbox.latest_report()
+    render_badges(
+        {
+            "Profile": settings.exchange_profile,
+            "Base URL": settings.active_base_url,
+            "Credentials": "present" if settings.binance_api_key and settings.binance_api_secret else "missing",
+            "Demo armed": "yes" if snapshot.demo_connection.get("armed") else "no",
+            "Live": "disabled",
+            "Kill switch": "on" if settings.kill_switch else "off",
+            "Last drill": latest.get("status", "missing"),
+        }
+    )
+    cols = st.columns(4)
+    side = cols[0].selectbox("Drill side", [OrderSide.BUY.value, OrderSide.SELL.value], key="demo_execution_side")
+    quote_size = cols[1].number_input("Drill quote size", min_value=0.0, value=10.0, step=5.0, key="demo_execution_quote_size")
+    last_price = cols[2].number_input("Drill last price", min_value=0.000001, value=100.0, step=1.0, key="demo_execution_last_price")
+    confirm_demo_order = cols[3].checkbox("Confirm demo order", key="demo_execution_confirm_order")
+    action_cols = st.columns(6)
+    intent = intent_from_values(symbol, side, str(quote_size), str(last_price))
+    if action_cols[0].button("Preview order", key="demo_execution_preview", use_container_width=True):
+        st.session_state.demo_execution_result = sandbox.preview(intent).to_dict()
+    if action_cols[1].button("Test order only", key="demo_execution_test_order", use_container_width=True):
+        st.session_state.demo_execution_result = sandbox.test_order_only(intent).to_dict()
+    if action_cols[2].button("Place demo order", key="demo_execution_place_order", use_container_width=True):
+        st.session_state.demo_execution_result = sandbox.place_demo_order(
+            intent,
+            confirm_demo_order=confirm_demo_order,
+            armed=bool(snapshot.demo_connection.get("armed")),
+        ).to_dict()
+    query_client_id = st.text_input("Query client order id", value="", key="demo_execution_query_client_id")
+    order_id = st.number_input("Cancel/query order id", min_value=0, value=0, step=1, key="demo_execution_order_id")
+    confirm_cancel = st.checkbox("Confirm cancel", key="demo_execution_confirm_cancel")
+    if action_cols[3].button("Query status", key="demo_execution_query", use_container_width=True):
+        st.session_state.demo_execution_result = sandbox.query_order(
+            symbol,
+            order_id=int(order_id) or None,
+            client_order_id=query_client_id or None,
+        ).to_dict()
+    if action_cols[4].button("Cancel order", key="demo_execution_cancel", use_container_width=True):
+        st.session_state.demo_execution_result = sandbox.cancel_order(symbol, int(order_id), confirm_cancel=confirm_cancel).to_dict()
+    if action_cols[5].button("Export drill evidence", key="demo_execution_export", use_container_width=True):
+        st.session_state.demo_execution_result = latest
+    result = st.session_state.get("demo_execution_result") or latest
+    render_debug("Demo execution drill result", result)
+    lifecycle = result.get("lifecycle", []) if isinstance(result, dict) else []
+    render_table("Demo execution lifecycle", lifecycle if isinstance(lifecycle, list) else [])
 
 
 def _render_credentials(manager: CredentialManager, settings: BotSettings, selected_profile: str, symbol: str) -> None:
@@ -570,12 +1370,26 @@ def _render_demo_pilot(runtime, snapshot) -> None:
     st.subheader("Pilot Run")
     gate_payload = pilot_status.get("gate", {})
     resume_payload = pilot_status.get("resume", {})
+    start_action = pilot_status.get("start_action", {})
+    latest_run = pilot_status.get("latest_run", {})
+    pilot_run_state = str(latest_run.get("state") or pilot_status.get("state") or "idle")
     acceptance = pilot_status.get("acceptance", {})
+    start_disabled = (
+        bool(st.session_state.get("running"))
+        or pilot_run_state in {"running", "stopping"}
+        or bool(resume_payload.get("resume_required"))
+        or not bool(gate_payload.get("allowed"))
+    )
+    recovery_action = "Resolve pilot recovery" if resume_payload.get("resume_required") or pilot_run_state == "resume_required" else "None"
     render_badges(
         {
             "Start gate": "ready" if gate_payload.get("allowed") else "blocked",
             "Next action": gate_payload.get("next_action", "-"),
             "Resume": "required" if resume_payload.get("resume_required") else "clean",
+            "Runtime": snapshot.status,
+            "Pilot run": pilot_run_state,
+            "Start action": start_action.get("next_action", "Start Demo Spot pilot"),
+            "Recovery action": recovery_action,
             "Open orders": resume_payload.get("open_orders", 0),
             "Recon age ms": snapshot.demo_pilot.get("last_reconciliation_check_ms", 0),
             "Account sync ms": snapshot.demo_pilot.get("last_demo_account_sync_ms", 0),
@@ -584,11 +1398,18 @@ def _render_demo_pilot(runtime, snapshot) -> None:
     render_table("Start gate", gate_payload.get("checks", []))
     render_table("Acceptance criteria", [acceptance])
     run_cols = st.columns(3)
-    if run_cols[0].button("Start Demo Spot Pilot", use_container_width=True):
+    if pilot_run_state == "running":
+        st.info("Pilot is already running. Use Safe stop pilot before starting another run.")
+    elif start_disabled:
+        st.caption(start_action.get("next_action") or gate_payload.get("next_action") or "Resolve start blockers before starting.")
+    if run_cols[0].button("Start Demo Spot Pilot", use_container_width=True, disabled=start_disabled):
         gate_now = runtime.pilot_orchestrator.evaluate_start_gate(operator_payload)
         if gate_now.get("allowed"):
-            runtime.start()
-            st.session_state.running = True
+            try:
+                runtime.start()
+                st.session_state.running = True
+            except ValueError as exc:
+                st.session_state.demo_pilot_hint = f"Pilot start blocked: {exc}"
         else:
             st.session_state.demo_pilot_hint = gate_now.get("next_action", "Resolve start blockers")
         st.rerun()
@@ -625,13 +1446,26 @@ def _render_demo_pilot(runtime, snapshot) -> None:
     )
     render_table("Runner health", [runner_health])
     render_table("Telemetry summary", [telemetry_summary])
+    render_table(
+        "Operator link status",
+        [
+            {
+                "demo_armed": snapshot.demo_connection.get("armed", False),
+                "runner_alive": runner.get("alive", False),
+                "runner_stale": runner.get("stale", False),
+                "heartbeat_age_ms": runner.get("heartbeat_age_ms", 0),
+                "command_queue": len(runner_commands),
+                "next_safe_action": runner_health.get("next_safe_action", runner.get("next_action", "-")),
+            }
+        ],
+    )
     chart_a, chart_b = st.columns(2)
     with chart_a:
-        st.plotly_chart(runner_heartbeat_figure(telemetry_rows), use_container_width=True)
-        st.plotly_chart(runner_counters_figure(telemetry_rows), use_container_width=True)
+        render_plotly_chart(runner_heartbeat_figure(telemetry_rows), key=DEMO_PILOT_HEARTBEAT)
+        render_plotly_chart(runner_counters_figure(telemetry_rows), key=DEMO_PILOT_COUNTERS)
     with chart_b:
-        st.plotly_chart(runner_equity_pnl_figure(telemetry_rows), use_container_width=True)
-        st.plotly_chart(command_status_figure(runner_commands), use_container_width=True)
+        render_plotly_chart(runner_equity_pnl_figure(telemetry_rows), key=DEMO_PILOT_EQUITY_PNL)
+        render_plotly_chart(command_status_figure(runner_commands), key=DEMO_PILOT_COMMAND_STATUS)
     if stale_recovery.get("stale"):
         st.warning("Runner stale: follow recovery steps before starting a new pilot.")
     render_table("Stale recovery", stale_recovery.get("steps", []))
@@ -952,6 +1786,140 @@ def _render_readiness(snapshot) -> None:
         st.session_state.readiness_evidence = evidence_record.to_dict()
     if st.session_state.get("readiness_evidence"):
         render_debug("Readiness evidence", st.session_state.readiness_evidence)
+    st.subheader("Evidence Scorecard")
+    settings = BotSettings.from_env()
+    if st.button("Generate scorecard", key="evidence_scorecard_generate", use_container_width=True):
+        scorecard = generate_evidence_scorecard(settings, write=False)
+        path = write_scorecard(settings, scorecard)
+        st.session_state.evidence_scorecard = {"path": str(path), **scorecard.to_dict()}
+    scorecard_payload = st.session_state.get("evidence_scorecard")
+    if not scorecard_payload:
+        scorecard = generate_evidence_scorecard(settings, write=False)
+        scorecard_payload = scorecard.to_dict()
+    render_badges(
+        {
+            "Overall": scorecard_payload.get("status", "unknown"),
+            "Blockers": len(scorecard_payload.get("blockers", [])),
+            "Warnings": len(scorecard_payload.get("warnings", [])),
+            "Live": "disabled",
+            "Browser smoke": "ok"
+            if "browser_smoke" in scorecard_payload.get("artifacts", {})
+            else "missing",
+            "Demo execution": "present"
+            if "demo_execution" in scorecard_payload.get("artifacts", {})
+            else "missing",
+        }
+    )
+    st.info(f"Next safe action: {scorecard_payload.get('next_safe_action', '-')}")
+    render_table("Evidence scorecard blockers", scorecard_payload.get("blockers", []))
+    render_table("Evidence scorecard warnings", scorecard_payload.get("warnings", []))
+    render_debug("Evidence scorecard details", scorecard_payload)
+    st.subheader("Demo Acceptance Rehearsal")
+    browser_url = st.text_input("Rehearsal browser URL", value="", key="rehearsal_browser_url")
+    if st.button("Run rehearsal", key="demo_acceptance_rehearsal_run", use_container_width=True):
+        st.session_state.demo_acceptance_rehearsal = DemoAcceptanceRehearsal(settings, Path.cwd()).run(
+            browser_url=browser_url
+        ).to_dict()
+    history = RehearsalHistory(settings.data_dir)
+    latest_rehearsal = st.session_state.get("demo_acceptance_rehearsal") or history.latest()
+    recent_rehearsals = history.list_recent(10)
+    trend_points = history.trend_points(20)
+    if latest_rehearsal:
+        render_badges(
+            {
+                "Latest": latest_rehearsal.get("status", "unknown"),
+                "Scorecard": latest_rehearsal.get("scorecard_status", "unknown"),
+                "Blockers": len(latest_rehearsal.get("blockers", [])),
+                "Warnings": len(latest_rehearsal.get("warnings", [])),
+                "Duration": latest_rehearsal.get("duration_seconds", 0),
+                "Artifacts": len(latest_rehearsal.get("artifacts", {})),
+            }
+        )
+        render_table("Rehearsal steps", latest_rehearsal.get("steps", []))
+        render_table("Rehearsal blockers", latest_rehearsal.get("blockers", []))
+        render_table("Rehearsal warnings", latest_rehearsal.get("warnings", []))
+    render_table("Recent rehearsals", recent_rehearsals)
+    render_table("Rehearsal trend", trend_points)
+    st.subheader("Recovery & Diagnostics")
+    diagnostics_payload = st.session_state.get("operator_diagnostics")
+    if st.button("Refresh diagnostics", key="operator_diagnostics_refresh", use_container_width=True):
+        diagnostics_payload = collect_diagnostics(settings).to_dict()
+        st.session_state.operator_diagnostics = diagnostics_payload
+    if not diagnostics_payload:
+        diagnostics_payload = collect_diagnostics(settings).to_dict()
+    diag_cols = st.columns(2)
+    if diag_cols[0].button("Run diagnostics rehearsal", key="operator_diagnostics_rehearsal", use_container_width=True):
+        st.session_state.demo_acceptance_rehearsal = DemoAcceptanceRehearsal(settings, Path.cwd()).run(
+            browser_url=browser_url
+        ).to_dict()
+        st.session_state.operator_diagnostics = collect_diagnostics(settings).to_dict()
+        st.rerun()
+    if diag_cols[1].button("Export support bundle", key="operator_diagnostics_support_bundle", use_container_width=True):
+        st.session_state.support_bundle = create_support_bundle(
+            settings, settings.data_dir / "support" / "support-bundle.zip"
+        )
+    render_badges(
+        {
+            "Overall health": diagnostics_payload.get("status", "unknown"),
+            "Pilot run": (diagnostics_payload.get("pilot_run_health") or {}).get("state", "unknown"),
+            "Runner lock": (diagnostics_payload.get("runner_lock_health") or {}).get("state", "unknown"),
+            "Latest rehearsal": latest_rehearsal.get("status", "missing") if latest_rehearsal else "missing",
+            "Latest scorecard": scorecard_payload.get("status", "unknown"),
+            "Live": "disabled",
+        }
+    )
+    st.info(f"Diagnostics next safe action: {diagnostics_payload.get('next_safe_action', '-')}")
+    render_table("Diagnostics blockers", diagnostics_payload.get("blockers", []))
+    render_table("Diagnostics warnings", diagnostics_payload.get("warnings", []))
+    render_table("Recommended actions", diagnostics_payload.get("recommended_actions", []))
+    render_table("Artifact inventory", diagnostics_payload.get("artifact_inventory", []))
+    render_table("Diagnostics retention preview", retention_preview(settings).get("items", []))
+    render_table("Operator incident timeline", incident_timeline(settings, limit=20))
+    health_score = operator_health_score(settings)
+    render_badges(
+        {
+            "Operator health score": health_score.get("score", 0),
+            "Health grade": health_score.get("grade", "unknown"),
+            "Next best action": health_score.get("next_best_action", "-"),
+            "Live trading": "disabled",
+        }
+    )
+    render_table("Operator action priority engine", health_score.get("priorities", []))
+    render_debug("Operator health severity counts", health_score.get("severity_counts", {}))
+    catalog = artifact_catalog(settings)
+    render_badges(
+        {
+            "Artifact catalog files": catalog.get("count", 0),
+            "Stale artifacts": catalog.get("summaries", {}).get("stale_count", 0),
+            "Catalog groups": len(catalog.get("summaries", {}).get("by_category", {})),
+        }
+    )
+    render_table("Local artifact catalog", catalog.get("artifacts", [])[:20])
+    render_debug("Artifact catalog filters and staleness groups", catalog.get("summaries", {}))
+    render_table("Rehearsal profiles fast standard deep", rehearsal_profiles().get("profiles", []))
+    render_debug("Operator report diff last two runs", operator_report_diff(settings))
+    render_debug("Evidence integrity chain hashes", evidence_chain(settings))
+    render_table("Environment doctor Python deps paths", environment_doctor(settings).get("checks", []))
+    render_debug("Data growth budget forecast", data_growth_budget(settings))
+    render_table(
+        "Local Ops Command Palette",
+        [
+            {"command": item.get("command"), "purpose": item.get("purpose")}
+            for item in operator_command_manifest().get("commands", [])
+        ],
+    )
+    render_debug("Diagnostics baseline drift", diagnostics_baseline(settings))
+    render_table("Operator report index", report_index(settings).get("reports", []))
+    render_table("Support bundle verification matrix", verify_support_bundles(settings).get("bundles", []))
+    render_debug("Redaction self-test", redaction_self_test())
+    render_table("Operator command manifest", operator_command_manifest().get("commands", []))
+    render_debug("Local ops snapshot", local_ops_snapshot(settings))
+    if st.button("Export operator report", key="operator_report_export", use_container_width=True):
+        st.session_state.operator_report = export_operator_report(settings)
+    if st.session_state.get("operator_report"):
+        render_debug("Operator report", st.session_state.operator_report)
+    if st.session_state.get("support_bundle"):
+        render_debug("Support bundle", st.session_state.support_bundle)
     st.info("Live-readiness remains design-only; live trading is not enabled from this dashboard.")
 
 

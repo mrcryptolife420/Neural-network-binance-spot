@@ -11,6 +11,7 @@ SECRET_PATTERNS = [
     re.compile(r"(?i)\b(signature|listenKey)\s*[:=]\s*[A-Za-z0-9_-]{16,}"),
     re.compile(r"\b[A-Za-z0-9]{56,128}\b"),
 ]
+JSON_SECRET_PATTERN = re.compile(r"(?i)(\"(?:BINANCE_API_KEY|BINANCE_API_SECRET|api[_-]?key|api[_-]?secret|secret)\"\s*:\s*\")[^\"]+(\")")
 
 
 def fingerprint(value: str) -> str:
@@ -23,7 +24,7 @@ def fingerprint(value: str) -> str:
 
 
 def redact_text(value: str) -> str:
-    redacted = value
+    redacted = JSON_SECRET_PATTERN.sub(r"\1[REDACTED]\2", value)
     for pattern in SECRET_PATTERNS:
         redacted = pattern.sub("[REDACTED]", redacted)
     return redacted

@@ -1,0 +1,105 @@
+{
+  "run_id": "rehearsal-1778441236555",
+  "status": "warn",
+  "started_at_ms": 1778441236555,
+  "finished_at_ms": 1778441244136,
+  "duration_seconds": 7.581,
+  "steps": [
+    {
+      "name": "validate-config",
+      "status": "ok",
+      "message": "configuration validates",
+      "artifact": ""
+    },
+    {
+      "name": "preflight",
+      "status": "ok",
+      "message": "ok",
+      "artifact": ""
+    },
+    {
+      "name": "launch-evidence",
+      "status": "ok",
+      "message": "launch plan evidence written",
+      "artifact": "data\\checks\\dashboard\\launch-evidence.json"
+    },
+    {
+      "name": "dashboard-smoke",
+      "status": "ok",
+      "message": "static dashboard smoke ok",
+      "artifact": "data\\checks\\dashboard-smoke.json"
+    },
+    {
+      "name": "dashboard-browser-smoke",
+      "status": "skipped",
+      "message": "browser URL not provided",
+      "artifact": ""
+    },
+    {
+      "name": "check-all",
+      "status": "ok",
+      "message": "ok",
+      "artifact": "data\\checks\\check-all.json"
+    },
+    {
+      "name": "pilot-idempotent-start-smoke",
+      "status": "ok",
+      "message": "ok",
+      "artifact": "data\\evidence\\pilot-start-idempotency.json"
+    },
+    {
+      "name": "operator-diagnostics",
+      "status": "warn",
+      "message": "warn",
+      "artifact": "data\\evidence\\diagnostics\\latest-diagnostics.json"
+    },
+    {
+      "name": "demo-execution-preview",
+      "status": "ok",
+      "message": "PREVIEW_READY",
+      "artifact": "data\\evidence\\demo-execution\\demo_execution_drill.json"
+    },
+    {
+      "name": "demo-execution-test-order",
+      "status": "skipped",
+      "message": "Demo Spot credentials not configured",
+      "artifact": ""
+    },
+    {
+      "name": "dashboard-operator-evidence",
+      "status": "ok",
+      "message": "operator evidence written",
+      "artifact": "data\\evidence\\dashboard\\operator-evidence-2026-05-10T192724.115700Z0000.json"
+    },
+    {
+      "name": "evidence-scorecard",
+      "status": "warn",
+      "message": "warn",
+      "artifact": "data\\evidence\\scorecards\\latest-scorecard.json"
+    }
+  ],
+  "artifacts": {
+    "launch_evidence": "data\\checks\\dashboard\\launch-evidence.json",
+    "dashboard_smoke": "data\\checks\\dashboard-smoke.json",
+    "check_all": "data\\checks\\check-all.json",
+    "pilot_start_idempotency": "data\\evidence\\pilot-start-idempotency.json",
+    "operator_diagnostics": "data\\evidence\\diagnostics\\latest-diagnostics.json",
+    "demo_execution": "data\\evidence\\demo-execution\\demo_execution_drill.json",
+    "operator_evidence": "data\\evidence\\dashboard\\operator-evidence-2026-05-10T192724.115700Z0000.json",
+    "scorecard": "data\\evidence\\scorecards\\latest-scorecard.json",
+    "summary": "data\\evidence\\rehearsals\\rehearsal-1778441236555\\summary.json",
+    "artifacts": "data\\evidence\\rehearsals\\rehearsal-1778441236555\\artifacts.json"
+  },
+  "scorecard_status": "warn",
+  "blockers": [],
+  "warnings": [
+    {
+      "severity": "warning",
+      "name": "operator_diagnostics.warn",
+      "message": "operator diagnostics has warnings",
+      "path": "data\\evidence\\diagnostics\\latest-diagnostics.json"
+    }
+  ],
+  "next_safe_action": "Collect or refresh evidence: operator diagnostics has warnings",
+  "live_trading_enabled": false
+}

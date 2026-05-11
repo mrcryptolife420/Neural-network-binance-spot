@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "blockers": [],
+  "warnings": [],
+  "artifacts": {
+    "launch_evidence": "data\\checks\\dashboard\\launch-evidence.json",
+    "browser_smoke": "data\\checks\\dashboard\\browser-smoke.json",
+    "operator_evidence": "data\\evidence\\dashboard\\operator-evidence-2026-05-10T095127.364639Z0000.json",
+    "demo_execution": "data\\evidence\\demo-execution\\demo_execution_drill.json"
+  },
+  "next_safe_action": "Evidence gates pass; continue demo/paper operations only.",
+  "live_trading_enabled": false,
+  "generated_at": "2026-05-10T09:51:27.376794+00:00"
+}

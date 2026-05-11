@@ -1,0 +1,8 @@
+{
+  "launch_evidence": "data\\checks\\dashboard\\launch-evidence.json",
+  "dashboard_smoke": "data\\checks\\dashboard-smoke.json",
+  "check_all": "data\\checks\\check-all.json",
+  "demo_execution": "data\\evidence\\demo-execution\\demo_execution_drill.json",
+  "operator_evidence": "data\\evidence\\dashboard\\operator-evidence-2026-05-10T095127.364639Z0000.json",
+  "scorecard": "data\\evidence\\scorecards\\latest-scorecard.json"
+}

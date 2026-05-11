@@ -1,0 +1,31 @@
+{
+  "status": "warn",
+  "blockers": [],
+  "warnings": [
+    {
+      "severity": "warning",
+      "name": "operator_evidence.missing",
+      "message": "artifact missing",
+      "path": "data\\evidence\\dashboard"
+    },
+    {
+      "severity": "warning",
+      "name": "demo_execution.missing",
+      "message": "artifact missing",
+      "path": "data\\evidence\\demo-execution\\demo_execution_drill.json"
+    },
+    {
+      "severity": "warning",
+      "name": "check_all.missing",
+      "message": "no saved check-all artifact found",
+      "path": ""
+    }
+  ],
+  "artifacts": {
+    "launch_evidence": "data\\checks\\dashboard\\launch-evidence.json",
+    "browser_smoke": "data\\checks\\dashboard\\browser-smoke.json"
+  },
+  "next_safe_action": "Collect or refresh evidence: artifact missing",
+  "live_trading_enabled": false,
+  "generated_at": "2026-05-10T09:38:20.314457+00:00"
+}

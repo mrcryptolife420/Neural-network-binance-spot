@@ -1,0 +1,85 @@
+{
+  "run_id": "1778409001250-btcusdt-smoke",
+  "state": "blocked",
+  "profile": "local-demo",
+  "symbol": "BTCUSDT",
+  "preset": "smoke",
+  "started_at_ms": 1778409001250,
+  "updated_at_ms": 1778409001250,
+  "completed_at_ms": null,
+  "blockers": [
+    {
+      "check": "profile",
+      "status": "fail",
+      "reason": "local-demo",
+      "next_action": "Select Binance Demo Spot profile",
+      "blocking": true
+    },
+    {
+      "check": "demo_base_url",
+      "status": "fail",
+      "reason": "https://api.binance.com",
+      "next_action": "Use Demo Spot base URL",
+      "blocking": true
+    },
+    {
+      "check": "credentials",
+      "status": "fail",
+      "reason": "No signed credentials required",
+      "next_action": "Load Demo Spot credentials",
+      "blocking": true
+    },
+    {
+      "check": "connection",
+      "status": "fail",
+      "reason": "profile_is_demo_spot, base_url_is_demo, credentials_present, connection_ok",
+      "next_action": "Test connection",
+      "blocking": true
+    },
+    {
+      "check": "account_can_trade",
+      "status": "fail",
+      "reason": "not-active",
+      "next_action": "Sync Demo Spot account",
+      "blocking": true
+    },
+    {
+      "check": "Profile",
+      "status": "fail",
+      "reason": "local-demo",
+      "next_action": "Resolve dashboard checklist blocker",
+      "blocking": true
+    },
+    {
+      "check": "Credentials",
+      "status": "fail",
+      "reason": "No signed credentials required",
+      "next_action": "Resolve dashboard checklist blocker",
+      "blocking": true
+    },
+    {
+      "check": "Connection",
+      "status": "fail",
+      "reason": "profile_is_demo_spot, base_url_is_demo, credentials_present, connection_ok",
+      "next_action": "Resolve dashboard checklist blocker",
+      "blocking": true
+    },
+    {
+      "check": "Account canTrade",
+      "status": "fail",
+      "reason": "not-active",
+      "next_action": "Resolve dashboard checklist blocker",
+      "blocking": true
+    }
+  ],
+  "transitions": [
+    {
+      "from": "idle",
+      "to": "blocked",
+      "timestamp_ms": 1778409001250,
+      "reason": "run created"
+    }
+  ],
+  "checkpoints": [],
+  "report_paths": {}
+}

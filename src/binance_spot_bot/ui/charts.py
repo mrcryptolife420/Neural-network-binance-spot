@@ -89,7 +89,7 @@ def candlestick_figure(
             )
         )
     fig.update_layout(
-        height=520,
+        height=640,
         margin={"l": 10, "r": 10, "t": 30, "b": 10},
         xaxis_rangeslider_visible=False,
         legend_orientation="h",
@@ -151,6 +151,48 @@ def equity_figure(points: list[dict[str, Any]]) -> go.Figure:
         height=260,
         margin={"l": 10, "r": 10, "t": 30, "b": 10},
         template="plotly_white",
+    )
+    return fig
+
+
+def multi_symbol_overview_figure(rows: list[dict[str, Any]]) -> go.Figure:
+    fig = go.Figure()
+    symbols = [str(row.get("symbol", "-")) for row in rows]
+    if symbols:
+        fig.add_trace(
+            go.Bar(
+                x=symbols,
+                y=[int(row.get("fills", 0) or 0) for row in rows],
+                name="Fills",
+                marker={"color": "#2563eb"},
+            )
+        )
+        fig.add_trace(
+            go.Bar(
+                x=symbols,
+                y=[int(row.get("open_orders", 0) or 0) for row in rows],
+                name="Open orders",
+                marker={"color": "#f59e0b"},
+            )
+        )
+        fig.add_trace(
+            go.Scatter(
+                x=symbols,
+                y=[float(Decimal(str(row.get("equity", "0")))) for row in rows],
+                mode="lines+markers",
+                name="Equity",
+                yaxis="y2",
+                line={"color": "#1f9d55", "width": 2},
+            )
+        )
+    fig.update_layout(
+        height=280,
+        barmode="group",
+        margin={"l": 10, "r": 10, "t": 30, "b": 10},
+        template="plotly_white",
+        yaxis={"title": "Orders"},
+        yaxis2={"title": "Equity", "overlaying": "y", "side": "right"},
+        legend_orientation="h",
     )
     return fig
 

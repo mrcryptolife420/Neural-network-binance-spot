@@ -1,5 +1,7 @@
 # Security Runbook
 
+Support bundles and operator diagnostics must keep live trading disabled and redact API keys, secrets and token-like values before writing artifacts. Use `spot-bot security-scan` after exporting a support bundle when sharing debugging evidence.
+
 ## Defaults
 
 - Live trading is disabled by default.
@@ -23,8 +25,10 @@
 - Confirm `TRADING_MODE=testnet`.
 - Confirm `LIVE_TRADING_ENABLED=false`.
 - Confirm no real key is present in repository files.
+- Run Demo Execution Drill preview and test-order-only before any confirmed Demo Spot order.
+- Never use API keys with withdrawal permissions.
+- Cancel or reconcile open Demo Spot orders before continuing after unknown or timeout states.
 
 ## Before live pilot
 
 Live pilot is out of MVP scope. It requires all live-readiness checklist items in `docs/live-readiness-checklist.md` and manual approval.
-

@@ -16,4 +16,10 @@ Live trading is blocked until every item is checked and documented.
 - [ ] Logs redact keys, signatures and auth headers.
 - [ ] Position size, max trades per day and daily max loss are small and explicit.
 - [ ] Manual approval phrase is set only for the live launch session.
+## Evidence Scorecard
 
+- Generate `spot-bot evidence-scorecard --strict`.
+- Treat `pass` as demo/paper readiness only.
+- Treat `warn` as incomplete evidence.
+- Treat `fail` as a blocker.
+- This scorecard is not live-trading approval.

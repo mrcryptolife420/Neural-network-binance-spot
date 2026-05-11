@@ -1,0 +1,470 @@
+{
+  "session": {
+    "session_id": "1778477501977-41ab58de",
+    "mode": "demo",
+    "symbol": "ETHUSDT",
+    "interval": "1m",
+    "status": "stopped",
+    "pnl": "0.0000",
+    "max_drawdown": "0"
+  },
+  "demo_pilot": {
+    "config": {
+      "account_sync_interval_seconds": 60,
+      "cancel_open_orders_on_stop": true,
+      "duration_minutes": 15,
+      "max_api_errors": 3,
+      "max_demo_orders": 5,
+      "max_reconciliation_failures": 1,
+      "max_rejects": 2,
+      "pause_on_connection_degraded": true,
+      "pilot_name": "smoke",
+      "reconciliation_interval_seconds": 30,
+      "require_clean_start": true
+    },
+    "counters": {
+      "api_errors": 3,
+      "elapsed_seconds": 174,
+      "orders": 3,
+      "reconciliation_failures": 0,
+      "rejects": 3,
+      "started_at_ms": 1778477501976
+    },
+    "last_demo_account_sync_ms": 1778477511424,
+    "last_reconciliation_check_ms": 1778477676577,
+    "pause_reason": "max rejects exceeded",
+    "should_pause": true,
+    "status": "armed"
+  },
+  "connection": {},
+  "account": {},
+  "reconciliation": {
+    "checked_at_ms": 1778477676577,
+    "events": [],
+    "failures": 0,
+    "known_orders": 3,
+    "needs_operator_action": false,
+    "open_orders": 0,
+    "orphan_orders": 0,
+    "status": "ok"
+  },
+  "operator_checklist": [
+    {
+      "check": "Profile",
+      "status": "fail",
+      "detail": "unknown",
+      "blocking": true
+    },
+    {
+      "check": "Credentials",
+      "status": "fail",
+      "detail": "not loaded",
+      "blocking": true
+    },
+    {
+      "check": "Connection",
+      "status": "fail",
+      "detail": "not tested",
+      "blocking": true
+    },
+    {
+      "check": "Server time",
+      "status": "warn",
+      "detail": "test connection first",
+      "blocking": false
+    },
+    {
+      "check": "Account canTrade",
+      "status": "fail",
+      "detail": "not synced",
+      "blocking": true
+    },
+    {
+      "check": "Clean start",
+      "status": "pass",
+      "detail": "ok",
+      "blocking": true
+    },
+    {
+      "check": "No orphan orders",
+      "status": "pass",
+      "detail": "0 orphan orders",
+      "blocking": true
+    },
+    {
+      "check": "Risk limits",
+      "status": "fail",
+      "detail": "missing limits",
+      "blocking": true
+    },
+    {
+      "check": "Pilot preset",
+      "status": "pass",
+      "detail": "smoke",
+      "blocking": false
+    },
+    {
+      "check": "Armed",
+      "status": "warn",
+      "detail": "explicit arm required",
+      "blocking": false
+    }
+  ],
+  "pipeline": [
+    {
+      "step": "Signal",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "-",
+      "reference": "-"
+    },
+    {
+      "step": "Risk",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "-",
+      "reference": "-"
+    },
+    {
+      "step": "Intent",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "-",
+      "reference": "-"
+    },
+    {
+      "step": "Test order",
+      "status": "ok",
+      "timestamp_ms": "-",
+      "detail": "ok",
+      "reference": "-"
+    },
+    {
+      "step": "Demo order",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "ok",
+      "reference": "-"
+    },
+    {
+      "step": "Reconciliation",
+      "status": "ok",
+      "timestamp_ms": "1778477676577",
+      "detail": "ok",
+      "reference": "0"
+    },
+    {
+      "step": "Fill/Cancel/Reject",
+      "status": "ok",
+      "timestamp_ms": "-",
+      "detail": "ok",
+      "reference": "ok"
+    }
+  ],
+  "cancel_on_stop_status": [],
+  "orders": [
+    {
+      "checked_at_ms": 1778477509516,
+      "events": [],
+      "failures": 0,
+      "known_orders": 0,
+      "needs_operator_action": false,
+      "open_orders": 0,
+      "orphan_orders": 0,
+      "status": "ok",
+      "type": "clean_start"
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": null,
+      "response": {
+        "reason": "insufficient base balance"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 359999
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 419999
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 479999
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 539999
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 599999
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": {
+        "client_order_id": "spotbot-afd07ffa182a4521896b6c32",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.10019",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "ETHUSDT"
+      },
+      "response": {
+        "error": "Binance API request failed",
+        "payload": {
+          "code": -1013,
+          "msg": "Filter failure: LOT_SIZE"
+        },
+        "status": 400
+      },
+      "status": "REJECTED",
+      "timestamp_ms": 659999
+    },
+    {
+      "checked_at_ms": 1778477637545,
+      "events": [],
+      "failures": 0,
+      "known_orders": 1,
+      "needs_operator_action": false,
+      "open_orders": 0,
+      "orphan_orders": 0,
+      "status": "ok",
+      "type": "reconciliation"
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 719999
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": {
+        "client_order_id": "spotbot-c70744ace853436e99a72795",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.10013",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "ETHUSDT"
+      },
+      "response": {
+        "error": "Binance API request failed",
+        "payload": {
+          "code": -1013,
+          "msg": "Filter failure: LOT_SIZE"
+        },
+        "status": 400
+      },
+      "status": "REJECTED",
+      "timestamp_ms": 779999
+    },
+    {
+      "checked_at_ms": 1778477672362,
+      "events": [],
+      "failures": 0,
+      "known_orders": 2,
+      "needs_operator_action": false,
+      "open_orders": 0,
+      "orphan_orders": 0,
+      "status": "ok",
+      "type": "reconciliation"
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": {
+        "client_order_id": "spotbot-04f127342aa5498e877fdeef",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.10002",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "ETHUSDT"
+      },
+      "response": {
+        "error": "Binance API request failed",
+        "payload": {
+          "code": -1013,
+          "msg": "Filter failure: LOT_SIZE"
+        },
+        "status": 400
+      },
+      "status": "REJECTED",
+      "timestamp_ms": 839999
+    },
+    {
+      "checked_at_ms": 1778477676577,
+      "events": [],
+      "failures": 0,
+      "known_orders": 3,
+      "needs_operator_action": false,
+      "open_orders": 0,
+      "orphan_orders": 0,
+      "status": "ok",
+      "type": "reconciliation"
+    }
+  ],
+  "alerts": [
+    {
+      "action": "observe",
+      "created_at_ms": 1778477501978,
+      "message": "runtime created",
+      "metadata": {},
+      "name": "runtime_created",
+      "severity": "info"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778477514263,
+      "message": "runtime started",
+      "metadata": {},
+      "name": "runtime_started",
+      "severity": "info"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778477569375,
+      "message": "insufficient base balance",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778477588786,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778477590213,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778477609658,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778477611092,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778477639006,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "stop_runtime",
+      "created_at_ms": 1778477676580,
+      "message": "max rejects exceeded",
+      "metadata": {},
+      "name": "demo_pilot_paused",
+      "severity": "warning"
+    }
+  ],
+  "latest_snapshot": {
+    "alerts": 8,
+    "blocks": {
+      "insufficient base balance": 1,
+      "model returned HOLD": 5
+    },
+    "critical_alerts": 0,
+    "demo_pilot": {
+      "config": {
+        "account_sync_interval_seconds": 60,
+        "cancel_open_orders_on_stop": true,
+        "duration_minutes": 15,
+        "max_api_errors": 3,
+        "max_demo_orders": 5,
+        "max_reconciliation_failures": 1,
+        "max_rejects": 2,
+        "pause_on_connection_degraded": true,
+        "pilot_name": "smoke",
+        "reconciliation_interval_seconds": 30,
+        "require_clean_start": true
+      },
+      "counters": {
+        "api_errors": 3,
+        "elapsed_seconds": 174,
+        "orders": 3,
+        "reconciliation_failures": 0,
+        "rejects": 3,
+        "started_at_ms": 1778477501976
+      },
+      "last_demo_account_sync_ms": 1778477511424,
+      "last_reconciliation_check_ms": 1778477676577,
+      "pause_reason": "max rejects exceeded",
+      "should_pause": true,
+      "status": "armed"
+    },
+    "equity": "1000.0000",
+    "fees_paid": "0",
+    "message": "tick processed",
+    "model_version": "rule-baseline-0.1",
+    "position": "0",
+    "quote": "1000",
+    "realized_pnl": "0",
+    "reconciliation": {
+      "checked_at_ms": 1778477676577,
+      "events": [],
+      "failures": 0,
+      "known_orders": 3,
+      "needs_operator_action": false,
+      "open_orders": 0,
+      "orphan_orders": 0,
+      "status": "ok"
+    },
+    "source": "demo",
+    "status": "running",
+    "timestamp_ms": 839999
+  }
+}

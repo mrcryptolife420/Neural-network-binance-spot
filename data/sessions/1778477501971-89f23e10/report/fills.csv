@@ -1,0 +1,2 @@
+fee,model_version,notional,price,quantity,realized_pnl,side,timestamp_ms
+0E-16,rule-baseline-0.1,0E-16,0E-11,0.10019,0,BUY,659999

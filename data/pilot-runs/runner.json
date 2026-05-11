@@ -1,0 +1,29 @@
+{
+  "runner_id": "runner-1778409001251",
+  "run_id": "1778409001250-btcusdt-smoke",
+  "pid": 27516,
+  "status": "failed",
+  "started_at_ms": 1778409001251,
+  "updated_at_ms": 1778409001253,
+  "command_dir": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pilot-runs\\1778409001250-btcusdt-smoke\\commands",
+  "telemetry_jsonl": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pilot-runs\\1778409001250-btcusdt-smoke\\telemetry.jsonl",
+  "latest_telemetry_json": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pilot-runs\\1778409001250-btcusdt-smoke\\latest-telemetry.json",
+  "process_command": [
+    "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\src\\binance_spot_bot\\cli.py",
+    "pilot-runner-start",
+    "--foreground",
+    "--symbol",
+    "BTCUSDT",
+    "--interval",
+    "1m",
+    "--preset",
+    "smoke",
+    "--source",
+    "demo"
+  ],
+  "last_tick_ms": 0,
+  "last_reconciliation_ms": 0,
+  "last_account_sync_ms": 0,
+  "last_command": "",
+  "last_error": "Select Binance Demo Spot profile"
+}

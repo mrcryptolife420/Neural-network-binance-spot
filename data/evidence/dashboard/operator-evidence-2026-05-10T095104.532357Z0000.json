@@ -1,0 +1,205 @@
+{
+  "timestamp": "2026-05-10T09:51:04.531613+00:00",
+  "mode": "demo",
+  "profile": "binance-demo-spot",
+  "source": "demo",
+  "base_url": "https://demo-api.binance.com",
+  "live_trading_enabled": false,
+  "kill_switch": true,
+  "connectivity": {
+    "status": "ok",
+    "profile": {
+      "name": "binance-demo-spot",
+      "label": "Binance Demo Spot API",
+      "mode_badge": "BINANCE DEMO SPOT",
+      "trading_mode": "testnet",
+      "rest_base_url": "https://demo-api.binance.com",
+      "websocket_base_url": "wss://stream.binance.com:9443",
+      "user_data_stream_enabled": true,
+      "requires_credentials": true,
+      "storage": "session"
+    },
+    "base_url": "https://demo-api.binance.com",
+    "live_trading_enabled": false,
+    "checks": [
+      {
+        "name": "public_market_data",
+        "status": "ok",
+        "message": "public market data reachable",
+        "details": {
+          "lastUpdateId": 4076397963
+        }
+      },
+      {
+        "name": "server_time",
+        "status": "ok",
+        "message": "server time checked",
+        "details": {
+          "drift_ms": 1083,
+          "server_time_ms": 1778406481116
+        }
+      },
+      {
+        "name": "exchange_info",
+        "status": "ok",
+        "message": "exchange filters loaded",
+        "details": {
+          "symbol": "BTCUSDT",
+          "status": "TRADING",
+          "tick_size": "0.01000000",
+          "step_size": "0.00001000",
+          "min_notional": "5.00000000"
+        }
+      },
+      {
+        "name": "signed_account",
+        "status": "ok",
+        "message": "signed account check ok",
+        "details": {
+          "canTrade": true,
+          "accountType": "SPOT"
+        }
+      },
+      {
+        "name": "test_order",
+        "status": "ready",
+        "message": "test-order endpoint available but not called by default",
+        "details": {
+          "symbol": "BTCUSDT"
+        }
+      }
+    ],
+    "checked_at_ms": 1778406482584
+  },
+  "snapshot": {
+    "mode": "demo",
+    "symbol": "BTCUSDT",
+    "interval": "1m",
+    "status": "running",
+    "message": "runtime started",
+    "session_id": "1778406599992-375f15e5",
+    "demo_connection": {
+      "profile": "binance-demo-spot",
+      "base_url": "https://demo-api.binance.com",
+      "armed": true,
+      "connected": true,
+      "authenticated": true,
+      "trading_permission_ok": true,
+      "kill_switch": false,
+      "gate": {
+        "allowed": true,
+        "reason": "allowed",
+        "checks": {
+          "profile_is_demo_spot": true,
+          "base_url_is_demo": true,
+          "credentials_present": true,
+          "connection_ok": true,
+          "armed": true,
+          "live_disabled": true,
+          "kill_switch_off": true,
+          "risk_allowed": true,
+          "filters_loaded": true,
+          "max_orders_ok": true
+        }
+      }
+    },
+    "readiness": {
+      "level": "R3",
+      "blockers": [],
+      "live_allowed": false
+    }
+  },
+  "runner": {
+    "state": "failed",
+    "alive": false,
+    "stale": false,
+    "heartbeat_age_ms": 135661,
+    "health": {
+      "state": "failed",
+      "alive": false,
+      "stale": false,
+      "heartbeat_age_ms": 135661,
+      "run_id": "1778406528859-btcusdt-smoke",
+      "runner_id": "runner-1778406528861",
+      "pid": 16320,
+      "latest_command": "",
+      "pending_commands": 0,
+      "failed_commands": 0,
+      "ignored_commands": 0,
+      "telemetry_rows": 1,
+      "latest_equity": "0",
+      "latest_pnl": "0",
+      "report_paths": 0,
+      "next_safe_action": "Start runner"
+    },
+    "telemetry_summary": {
+      "row_count": 1,
+      "first_timestamp_ms": 1778406528863,
+      "last_timestamp_ms": 1778406528863,
+      "max_heartbeat_age_ms": 0,
+      "latest_equity": "0",
+      "latest_pnl": "0",
+      "latest_runner_status": "failed",
+      "latest_runtime_status": "-",
+      "orders": 0,
+      "rejects": 0,
+      "api_errors": 0,
+      "alerts_count": 0,
+      "reconciliation_status_counts": {
+        "unknown": 1
+      }
+    },
+    "commands": []
+  },
+  "dashboard": {
+    "pages": [
+      "overview",
+      "demo_spot_trading",
+      "credentials_profile",
+      "bot_controls",
+      "risk_controls",
+      "strategy_model",
+      "market_data",
+      "orders_account",
+      "sessions",
+      "evaluation",
+      "strategy_lab",
+      "research",
+      "portfolio",
+      "readiness",
+      "logs_security",
+      "demo_pilot"
+    ],
+    "page_titles": [
+      "Overview",
+      "Demo Spot Trading",
+      "Credentials & Profile",
+      "Bot Controls",
+      "Risk Controls",
+      "Strategy & Model",
+      "Market Data",
+      "Orders & Account",
+      "Sessions",
+      "Evaluation",
+      "Strategy Lab",
+      "Research",
+      "Portfolio",
+      "Readiness",
+      "Logs & Security",
+      "Demo Pilot"
+    ],
+    "chart_keys": [
+      "overview.candlestick",
+      "overview.equity",
+      "demo_pilot.runner.heartbeat",
+      "demo_pilot.runner.counters",
+      "demo_pilot.runner.equity_pnl",
+      "demo_pilot.runner.command_status"
+    ],
+    "unique_chart_keys": true
+  },
+  "demo_execution_drill": {
+    "status": "missing",
+    "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\demo-execution\\demo_execution_drill.json"
+  }
+}

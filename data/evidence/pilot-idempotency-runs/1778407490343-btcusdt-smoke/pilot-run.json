@@ -1,0 +1,457 @@
+{
+  "run_id": "1778407490343-btcusdt-smoke",
+  "state": "running",
+  "profile": "binance-demo-spot",
+  "symbol": "BTCUSDT",
+  "preset": "smoke",
+  "started_at_ms": 1778407490343,
+  "updated_at_ms": 1778441243991,
+  "completed_at_ms": null,
+  "blockers": [],
+  "transitions": [
+    {
+      "from": "idle",
+      "to": "ready",
+      "timestamp_ms": 1778407490343,
+      "reason": "run created"
+    },
+    {
+      "from": "ready",
+      "to": "running",
+      "timestamp_ms": 1778407490344,
+      "reason": "pilot started"
+    }
+  ],
+  "checkpoints": [
+    {
+      "event": "start_snapshot",
+      "timestamp_ms": 1778407490352,
+      "payload": {
+        "status": "created",
+        "symbol": "BTCUSDT",
+        "exchange_profile": {
+          "name": "binance-demo-spot"
+        },
+        "credential_status": {
+          "has_api_key": true,
+          "has_api_secret": true,
+          "capability": "rehearsal"
+        },
+        "demo_connection": {
+          "profile": "binance-demo-spot",
+          "base_url": "https://demo-api.binance.com",
+          "armed": true,
+          "connected": true,
+          "authenticated": true,
+          "gate": {
+            "checks": {
+              "filters_loaded": true,
+              "demo_base_url": true
+            },
+            "reason": "allowed"
+          }
+        },
+        "demo_account": {
+          "status": "ok",
+          "can_trade": true
+        },
+        "demo_open_orders": [],
+        "reconciliation": {
+          "status": "ok",
+          "orphan_orders": 0,
+          "failures": 0,
+          "needs_operator_action": false
+        },
+        "testnet_prechecks": {
+          "risk_limits_set": true
+        },
+        "demo_pilot": {
+          "config": {
+            "pilot_name": "smoke"
+          },
+          "counters": {}
+        },
+        "resume_required": false
+      }
+    },
+    {
+      "event": "start_idempotent",
+      "timestamp_ms": 1778407490363,
+      "payload": {
+        "status": "already_running",
+        "snapshot": {
+          "status": "created",
+          "symbol": "BTCUSDT",
+          "exchange_profile": {
+            "name": "binance-demo-spot"
+          },
+          "credential_status": {
+            "has_api_key": true,
+            "has_api_secret": true,
+            "capability": "rehearsal"
+          },
+          "demo_connection": {
+            "profile": "binance-demo-spot",
+            "base_url": "https://demo-api.binance.com",
+            "armed": true,
+            "connected": true,
+            "authenticated": true,
+            "gate": {
+              "checks": {
+                "filters_loaded": true,
+                "demo_base_url": true
+              },
+              "reason": "allowed"
+            }
+          },
+          "demo_account": {
+            "status": "ok",
+            "can_trade": true
+          },
+          "demo_open_orders": [],
+          "reconciliation": {
+            "status": "ok",
+            "orphan_orders": 0,
+            "failures": 0,
+            "needs_operator_action": false
+          },
+          "testnet_prechecks": {
+            "risk_limits_set": true
+          },
+          "demo_pilot": {
+            "config": {
+              "pilot_name": "smoke"
+            },
+            "counters": {}
+          },
+          "resume_required": false
+        }
+      }
+    },
+    {
+      "event": "start_idempotent",
+      "timestamp_ms": 1778439563971,
+      "payload": {
+        "status": "already_running",
+        "snapshot": {
+          "status": "created",
+          "symbol": "BTCUSDT",
+          "exchange_profile": {
+            "name": "binance-demo-spot"
+          },
+          "credential_status": {
+            "has_api_key": true,
+            "has_api_secret": true,
+            "capability": "rehearsal"
+          },
+          "demo_connection": {
+            "profile": "binance-demo-spot",
+            "base_url": "https://demo-api.binance.com",
+            "armed": true,
+            "connected": true,
+            "authenticated": true,
+            "gate": {
+              "checks": {
+                "filters_loaded": true,
+                "demo_base_url": true
+              },
+              "reason": "allowed"
+            }
+          },
+          "demo_account": {
+            "status": "ok",
+            "can_trade": true
+          },
+          "demo_open_orders": [],
+          "reconciliation": {
+            "status": "ok",
+            "orphan_orders": 0,
+            "failures": 0,
+            "needs_operator_action": false
+          },
+          "testnet_prechecks": {
+            "risk_limits_set": true
+          },
+          "demo_pilot": {
+            "config": {
+              "pilot_name": "smoke"
+            },
+            "counters": {}
+          },
+          "resume_required": false
+        }
+      }
+    },
+    {
+      "event": "start_idempotent",
+      "timestamp_ms": 1778439563981,
+      "payload": {
+        "status": "already_running",
+        "snapshot": {
+          "status": "created",
+          "symbol": "BTCUSDT",
+          "exchange_profile": {
+            "name": "binance-demo-spot"
+          },
+          "credential_status": {
+            "has_api_key": true,
+            "has_api_secret": true,
+            "capability": "rehearsal"
+          },
+          "demo_connection": {
+            "profile": "binance-demo-spot",
+            "base_url": "https://demo-api.binance.com",
+            "armed": true,
+            "connected": true,
+            "authenticated": true,
+            "gate": {
+              "checks": {
+                "filters_loaded": true,
+                "demo_base_url": true
+              },
+              "reason": "allowed"
+            }
+          },
+          "demo_account": {
+            "status": "ok",
+            "can_trade": true
+          },
+          "demo_open_orders": [],
+          "reconciliation": {
+            "status": "ok",
+            "orphan_orders": 0,
+            "failures": 0,
+            "needs_operator_action": false
+          },
+          "testnet_prechecks": {
+            "risk_limits_set": true
+          },
+          "demo_pilot": {
+            "config": {
+              "pilot_name": "smoke"
+            },
+            "counters": {}
+          },
+          "resume_required": false
+        }
+      }
+    },
+    {
+      "event": "start_idempotent",
+      "timestamp_ms": 1778440321321,
+      "payload": {
+        "status": "already_running",
+        "snapshot": {
+          "status": "created",
+          "symbol": "BTCUSDT",
+          "exchange_profile": {
+            "name": "binance-demo-spot"
+          },
+          "credential_status": {
+            "has_api_key": true,
+            "has_api_secret": true,
+            "capability": "rehearsal"
+          },
+          "demo_connection": {
+            "profile": "binance-demo-spot",
+            "base_url": "https://demo-api.binance.com",
+            "armed": true,
+            "connected": true,
+            "authenticated": true,
+            "gate": {
+              "checks": {
+                "filters_loaded": true,
+                "demo_base_url": true
+              },
+              "reason": "allowed"
+            }
+          },
+          "demo_account": {
+            "status": "ok",
+            "can_trade": true
+          },
+          "demo_open_orders": [],
+          "reconciliation": {
+            "status": "ok",
+            "orphan_orders": 0,
+            "failures": 0,
+            "needs_operator_action": false
+          },
+          "testnet_prechecks": {
+            "risk_limits_set": true
+          },
+          "demo_pilot": {
+            "config": {
+              "pilot_name": "smoke"
+            },
+            "counters": {}
+          },
+          "resume_required": false
+        }
+      }
+    },
+    {
+      "event": "start_idempotent",
+      "timestamp_ms": 1778440321331,
+      "payload": {
+        "status": "already_running",
+        "snapshot": {
+          "status": "created",
+          "symbol": "BTCUSDT",
+          "exchange_profile": {
+            "name": "binance-demo-spot"
+          },
+          "credential_status": {
+            "has_api_key": true,
+            "has_api_secret": true,
+            "capability": "rehearsal"
+          },
+          "demo_connection": {
+            "profile": "binance-demo-spot",
+            "base_url": "https://demo-api.binance.com",
+            "armed": true,
+            "connected": true,
+            "authenticated": true,
+            "gate": {
+              "checks": {
+                "filters_loaded": true,
+                "demo_base_url": true
+              },
+              "reason": "allowed"
+            }
+          },
+          "demo_account": {
+            "status": "ok",
+            "can_trade": true
+          },
+          "demo_open_orders": [],
+          "reconciliation": {
+            "status": "ok",
+            "orphan_orders": 0,
+            "failures": 0,
+            "needs_operator_action": false
+          },
+          "testnet_prechecks": {
+            "risk_limits_set": true
+          },
+          "demo_pilot": {
+            "config": {
+              "pilot_name": "smoke"
+            },
+            "counters": {}
+          },
+          "resume_required": false
+        }
+      }
+    },
+    {
+      "event": "start_idempotent",
+      "timestamp_ms": 1778441243980,
+      "payload": {
+        "status": "already_running",
+        "snapshot": {
+          "status": "created",
+          "symbol": "BTCUSDT",
+          "exchange_profile": {
+            "name": "binance-demo-spot"
+          },
+          "credential_status": {
+            "has_api_key": true,
+            "has_api_secret": true,
+            "capability": "rehearsal"
+          },
+          "demo_connection": {
+            "profile": "binance-demo-spot",
+            "base_url": "https://demo-api.binance.com",
+            "armed": true,
+            "connected": true,
+            "authenticated": true,
+            "gate": {
+              "checks": {
+                "filters_loaded": true,
+                "demo_base_url": true
+              },
+              "reason": "allowed"
+            }
+          },
+          "demo_account": {
+            "status": "ok",
+            "can_trade": true
+          },
+          "demo_open_orders": [],
+          "reconciliation": {
+            "status": "ok",
+            "orphan_orders": 0,
+            "failures": 0,
+            "needs_operator_action": false
+          },
+          "testnet_prechecks": {
+            "risk_limits_set": true
+          },
+          "demo_pilot": {
+            "config": {
+              "pilot_name": "smoke"
+            },
+            "counters": {}
+          },
+          "resume_required": false
+        }
+      }
+    },
+    {
+      "event": "start_idempotent",
+      "timestamp_ms": 1778441243991,
+      "payload": {
+        "status": "already_running",
+        "snapshot": {
+          "status": "created",
+          "symbol": "BTCUSDT",
+          "exchange_profile": {
+            "name": "binance-demo-spot"
+          },
+          "credential_status": {
+            "has_api_key": true,
+            "has_api_secret": true,
+            "capability": "rehearsal"
+          },
+          "demo_connection": {
+            "profile": "binance-demo-spot",
+            "base_url": "https://demo-api.binance.com",
+            "armed": true,
+            "connected": true,
+            "authenticated": true,
+            "gate": {
+              "checks": {
+                "filters_loaded": true,
+                "demo_base_url": true
+              },
+              "reason": "allowed"
+            }
+          },
+          "demo_account": {
+            "status": "ok",
+            "can_trade": true
+          },
+          "demo_open_orders": [],
+          "reconciliation": {
+            "status": "ok",
+            "orphan_orders": 0,
+            "failures": 0,
+            "needs_operator_action": false
+          },
+          "testnet_prechecks": {
+            "risk_limits_set": true
+          },
+          "demo_pilot": {
+            "config": {
+              "pilot_name": "smoke"
+            },
+            "counters": {}
+          },
+          "resume_required": false
+        }
+      }
+    }
+  ],
+  "report_paths": {}
+}

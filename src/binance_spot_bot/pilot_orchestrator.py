@@ -36,6 +36,29 @@ PILOT_TRANSITIONS = {
     "completed": set(),
     "failed": set(),
 }
+PILOT_CHECKPOINT_LIMIT = 50
+_SNAPSHOT_LIST_KEYS = {
+    "audit_tail",
+    "candles",
+    "signals",
+    "fills",
+    "equity_points",
+    "recent_sessions",
+    "order_lifecycle",
+    "alerts",
+    "demo_open_orders",
+    "demo_order_errors",
+    "cancel_on_stop_status",
+}
+_SNAPSHOT_SCALAR_KEYS = {
+    "mode",
+    "symbol",
+    "interval",
+    "status",
+    "message",
+    "session_id",
+    "resume_required",
+}
 
 
 def now_ms() -> int:
@@ -96,10 +119,17 @@ class PilotRunStore:
         return record
 
     def save(self, record: PilotRunRecord) -> PilotRunRecord:
+        record.checkpoints = [_compact_checkpoint(item) for item in record.checkpoints[-PILOT_CHECKPOINT_LIMIT:]]
         payload = redact_payload(record.to_dict())
         path = self.path_for(record.run_id)
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps(payload, indent=2, default=str), encoding="utf-8")
+        encoded = json.dumps(payload, indent=2, default=str)
+        tmp_path = path.with_name("pilot-run.json.tmp")
+        try:
+            tmp_path.write_text(encoded, encoding="utf-8")
+            tmp_path.replace(path)
+        except OSError as exc:
+            self._write_recovery(record, payload, exc)
         return record
 
     def load(self, run_id: str) -> PilotRunRecord:
@@ -133,7 +163,14 @@ class PilotRunStore:
     def add_checkpoint(self, run_id: str, event: str, payload: dict[str, Any]) -> PilotRunRecord:
         record = self.load(run_id)
         record.updated_at_ms = now_ms()
-        record.checkpoints.append({"event": event, "timestamp_ms": record.updated_at_ms, "payload": redact_payload(payload)})
+        record.checkpoints.append(
+            {
+                "event": event,
+                "timestamp_ms": record.updated_at_ms,
+                "payload": redact_payload(_compact_checkpoint_payload(payload)),
+            }
+        )
+        record.checkpoints = record.checkpoints[-PILOT_CHECKPOINT_LIMIT:]
         return self.save(record)
 
     def attach_report_paths(self, run_id: str, report_paths: dict[str, str]) -> PilotRunRecord:
@@ -144,6 +181,95 @@ class PilotRunStore:
 
     def path_for(self, run_id: str) -> Path:
         return self.root / run_id / "pilot-run.json"
+
+    def _write_recovery(self, record: PilotRunRecord, payload: dict[str, Any], exc: OSError) -> None:
+        recovery_dir = self.root / "_recovered"
+        try:
+            recovery_dir.mkdir(parents=True, exist_ok=True)
+            recovery_payload = dict(payload)
+            recovery_payload["checkpoints"] = recovery_payload.get("checkpoints", [])[-5:]
+            recovery_payload["storage_error"] = str(exc)
+            recovery_path = recovery_dir / f"{record.run_id}-{now_ms()}.json"
+            recovery_path.write_text(json.dumps(redact_payload(recovery_payload), indent=2, default=str), encoding="utf-8")
+        except OSError:
+            return
+
+
+def _compact_checkpoint(checkpoint: dict[str, Any]) -> dict[str, Any]:
+    compacted = dict(checkpoint)
+    payload = compacted.get("payload")
+    if isinstance(payload, dict):
+        compacted["payload"] = redact_payload(_compact_checkpoint_payload(payload))
+    return compacted
+
+
+def _compact_checkpoint_payload(payload: dict[str, Any]) -> dict[str, Any]:
+    if not isinstance(payload, dict):
+        return {"value": _compact_value(payload)}
+    if isinstance(payload.get("snapshot"), dict):
+        compacted = {key: _compact_value(value) for key, value in payload.items() if key != "snapshot"}
+        compacted["snapshot"] = _compact_runtime_snapshot(payload["snapshot"])
+        return compacted
+    if _looks_like_runtime_snapshot(payload):
+        return _compact_runtime_snapshot(payload)
+    return _compact_value(payload)
+
+
+def _looks_like_runtime_snapshot(payload: dict[str, Any]) -> bool:
+    return any(key in payload for key in _SNAPSHOT_LIST_KEYS) or {"status", "symbol", "demo_pilot"}.issubset(payload.keys())
+
+
+def _compact_runtime_snapshot(snapshot: dict[str, Any]) -> dict[str, Any]:
+    compacted = {key: snapshot.get(key) for key in _SNAPSHOT_SCALAR_KEYS if key in snapshot}
+    for key in (
+        "exchange_profile",
+        "credential_status",
+        "demo_connection",
+        "demo_account",
+        "reconciliation",
+        "demo_pilot",
+        "market_data",
+        "top_of_book",
+        "data_quality",
+        "readiness",
+        "active_model",
+        "paper_account",
+        "session_summary",
+        "testnet_prechecks",
+        "current_candle",
+        "latest_signal",
+        "latest_risk_decision",
+        "latest_execution_result",
+        "metrics",
+    ):
+        if key in snapshot:
+            compacted[key] = _compact_value(snapshot.get(key), depth=1)
+    for key in _SNAPSHOT_LIST_KEYS:
+        if key in snapshot:
+            compacted[key] = _compact_list(snapshot.get(key))
+    return compacted
+
+
+def _compact_list(value: Any) -> dict[str, Any]:
+    if isinstance(value, dict) and {"count", "latest"}.issubset(value.keys()):
+        return value
+    rows = list(value or []) if isinstance(value, list) else []
+    latest = rows[-1] if rows else None
+    return {"count": len(rows), "latest": _compact_value(latest, depth=1) if latest is not None else None}
+
+
+def _compact_value(value: Any, depth: int = 0) -> Any:
+    if depth >= 4:
+        return str(value)[:240]
+    if isinstance(value, dict):
+        return {str(key): _compact_value(item, depth + 1) for key, item in list(value.items())[:40]}
+    if isinstance(value, list):
+        return _compact_list(value)
+    if isinstance(value, tuple):
+        return _compact_list(list(value))
+    if isinstance(value, str) and len(value) > 500:
+        return value[:500] + "...[truncated]"
+    return value
 
 
 def transition_record(
@@ -165,6 +291,20 @@ def transition_record(
     if to_state in PILOT_TERMINAL_STATES or to_state == "resume_required":
         record.completed_at_ms = timestamp if to_state in PILOT_TERMINAL_STATES else record.completed_at_ms
     return record
+
+
+def pilot_start_action(record: PilotRunRecord | None, gate: dict[str, Any]) -> dict[str, Any]:
+    if record is None:
+        return {"allowed": bool(gate.get("allowed")), "action": "start", "next_action": gate.get("next_action", "Start Demo Spot pilot")}
+    if record.state == "running":
+        return {"allowed": False, "action": "already_running", "next_action": "Pilot is already running"}
+    if record.state == "stopping":
+        return {"allowed": False, "action": "wait_for_stop", "next_action": "Wait for safe stop to finish"}
+    if record.state == "resume_required":
+        return {"allowed": False, "action": "recover", "next_action": "Resolve pilot recovery before starting"}
+    if not gate.get("allowed"):
+        return {"allowed": False, "action": "blocked", "next_action": gate.get("next_action", "Resolve start blockers")}
+    return {"allowed": True, "action": "start", "next_action": "Start Demo Spot pilot"}
 
 
 class DemoPilotOrchestrator:
@@ -209,6 +349,24 @@ class DemoPilotOrchestrator:
 
     def mark_running(self, snapshot: dict[str, Any]) -> PilotRunRecord:
         record = self._ensure_run(snapshot)
+        if record.state == "running":
+            self.active_run_id = record.run_id
+            return self.store.add_checkpoint(record.run_id, "start_idempotent", {"status": "already_running", "snapshot": snapshot})
+        if record.state in {"stopping", "resume_required"}:
+            blocker = {
+                "check": "pilot_state",
+                "status": "fail",
+                "reason": record.state,
+                "next_action": "Wait for safe stop to finish" if record.state == "stopping" else "Resolve pilot recovery before starting",
+                "blocking": True,
+            }
+            transition_record(record, record.state, "start blocked by pilot state", [blocker])
+            self.store.save(record)
+            self.active_run_id = record.run_id
+            return record
+        if record.state in PILOT_TERMINAL_STATES:
+            self.active_run_id = None
+            record = self.prepare_run(snapshot)
         if record.state != "ready":
             gate = self.evaluate_start_gate(snapshot, require_not_running=False)
             transition_record(record, gate["state"], "start gate evaluated", gate["blockers"])
@@ -256,11 +414,13 @@ class DemoPilotOrchestrator:
         gate = self.evaluate_start_gate(snapshot, require_not_running=False)
         resume = self.detect_resume(snapshot)
         latest = self.store.latest()
+        active = self._active_record()
         return {
             "state": resume["state"] if resume["resume_required"] else gate["state"],
             "run_id": latest.run_id if latest else "",
             "gate": gate,
             "resume": resume,
+            "start_action": pilot_start_action(active, gate),
             "latest_run": latest.to_dict() if latest else {},
             "acceptance": acceptance_summary(snapshot),
         }

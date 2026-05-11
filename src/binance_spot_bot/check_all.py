@@ -43,6 +43,10 @@ def run_checks(root: Path, skip_tests: bool = False) -> list[CheckResult]:
             ("preflight", [sys.executable, "-m", "binance_spot_bot.cli", "preflight"]),
             ("security_scan", [sys.executable, "-m", "binance_spot_bot.cli", "security-scan"]),
             ("dashboard_import", [sys.executable, "-c", "import binance_spot_bot.ui.streamlit_app"]),
+            ("diagnostics_cli", [sys.executable, "-m", "binance_spot_bot.cli", "diagnostics", "--json"]),
+            ("support_bundle_cli", [sys.executable, "-m", "binance_spot_bot.cli", "support-bundle", "--json"]),
+            ("operator_quality_gate_cli", [sys.executable, "-m", "binance_spot_bot.cli", "operator-quality-gate", "--json"]),
+            ("local_ops_snapshot_cli", [sys.executable, "-m", "binance_spot_bot.cli", "local-ops-snapshot", "--json"]),
             ("pilot_orchestrator_import", [sys.executable, "-c", "import binance_spot_bot.pilot_orchestrator"]),
             ("pilot_runner_import", [sys.executable, "-c", "import binance_spot_bot.pilot_runner"]),
             (

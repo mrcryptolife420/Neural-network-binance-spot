@@ -212,6 +212,14 @@ class BotRuntime:
         self._emit_alert("runtime_created", AlertSeverity.INFO, "runtime created", WatchdogAction.OBSERVE)
 
     def start(self) -> None:
+        if self.status == "running":
+            self.message = "runtime already running"
+            if self._demo_spot_enabled():
+                pilot_run = self.pilot_orchestrator.mark_running(snapshot_to_dict(self.snapshot()))
+                self.session.metadata["pilot_run"] = pilot_run.to_dict()
+                self.session_store._write_summary(self.session)
+            self._emit_alert("runtime_start_idempotent", AlertSeverity.INFO, "runtime already running", WatchdogAction.OBSERVE)
+            return
         self.status = "running"
         self.message = "runtime started"
         self.audit.emit(

@@ -1,0 +1,169 @@
+{
+  "timestamp": "2026-05-10T19:12:01.454974+00:00",
+  "mode": "demo",
+  "profile": "local-demo",
+  "source": "demo",
+  "base_url": "https://api.binance.com",
+  "live_trading_enabled": false,
+  "kill_switch": true,
+  "connectivity": {},
+  "snapshot": {},
+  "runner": {
+    "state": "failed",
+    "alive": false,
+    "stale": false,
+    "heartbeat_age_ms": 31320198,
+    "health": {
+      "state": "failed",
+      "alive": false,
+      "stale": false,
+      "heartbeat_age_ms": 31320198,
+      "run_id": "1778409001250-btcusdt-smoke",
+      "runner_id": "runner-1778409001251",
+      "pid": 27516,
+      "latest_command": "",
+      "pending_commands": 0,
+      "failed_commands": 0,
+      "ignored_commands": 0,
+      "telemetry_rows": 1,
+      "latest_equity": "0",
+      "latest_pnl": "0",
+      "report_paths": 0,
+      "next_safe_action": "Start runner"
+    },
+    "telemetry_summary": {
+      "row_count": 1,
+      "first_timestamp_ms": 1778409001254,
+      "last_timestamp_ms": 1778409001254,
+      "max_heartbeat_age_ms": 0,
+      "latest_equity": "0",
+      "latest_pnl": "0",
+      "latest_runner_status": "failed",
+      "latest_runtime_status": "-",
+      "orders": 0,
+      "rejects": 0,
+      "api_errors": 0,
+      "alerts_count": 0,
+      "reconciliation_status_counts": {
+        "unknown": 1
+      }
+    },
+    "commands": []
+  },
+  "dashboard": {
+    "pages": [
+      "overview",
+      "demo_spot_trading",
+      "credentials_profile",
+      "bot_controls",
+      "risk_controls",
+      "strategy_model",
+      "market_data",
+      "orders_account",
+      "sessions",
+      "evaluation",
+      "strategy_lab",
+      "research",
+      "portfolio",
+      "readiness",
+      "logs_security",
+      "demo_pilot"
+    ],
+    "page_titles": [
+      "Overview",
+      "Demo Spot Trading",
+      "Credentials & Profile",
+      "Bot Controls",
+      "Risk Controls",
+      "Strategy & Model",
+      "Market Data",
+      "Orders & Account",
+      "Sessions",
+      "Evaluation",
+      "Strategy Lab",
+      "Research",
+      "Portfolio",
+      "Readiness",
+      "Logs & Security",
+      "Demo Pilot"
+    ],
+    "chart_keys": [
+      "overview.candlestick",
+      "overview.equity",
+      "demo_pilot.runner.heartbeat",
+      "demo_pilot.runner.counters",
+      "demo_pilot.runner.equity_pnl",
+      "demo_pilot.runner.command_status"
+    ],
+    "unique_chart_keys": true
+  },
+  "demo_execution_drill": {
+    "action": "preview",
+    "status": "PREVIEW_READY",
+    "reason": "order preview created",
+    "preview": {
+      "intent": {
+        "symbol": "BTCUSDT",
+        "side": "BUY",
+        "quote_size": "10",
+        "last_price": "100",
+        "order_type": "MARKET"
+      },
+      "order": {
+        "symbol": "BTCUSDT",
+        "side": "BUY",
+        "order_type": "MARKET",
+        "quantity": "0.1",
+        "quote_order_qty": null,
+        "price": null,
+        "client_order_id": "spotbot-a03d3751827a46edb4160b12"
+      },
+      "filters": {
+        "symbol": "BTCUSDT",
+        "status": "TRADING",
+        "tick_size": "0.01",
+        "step_size": "0.000001",
+        "min_qty": "0.000001",
+        "max_qty": "1000",
+        "min_notional": "5",
+        "market_max_qty": "None"
+      },
+      "market": {
+        "symbol": "BTCUSDT",
+        "last_price": "100",
+        "bid": "100",
+        "ask": "100"
+      },
+      "risk_decision": {
+        "decision": "ALLOW",
+        "reason": "manual sandbox intent"
+      },
+      "live_trading_enabled": false
+    },
+    "response": null,
+    "lifecycle": [
+      {
+        "client_order_id": "spotbot-a03d3751827a46edb4160b12",
+        "symbol": "BTCUSDT",
+        "side": "BUY",
+        "status": "INTENT",
+        "order_id": null,
+        "filled_quantity": "0",
+        "last_price": "0",
+        "events": [
+          {
+            "type": "INTENT",
+            "status": "INTENT"
+          },
+          {
+            "type": "PREVIEW_CREATED",
+            "status": "PREVIEW"
+          }
+        ],
+        "needs_reconciliation": false
+      }
+    ],
+    "evidence_path": "",
+    "live_trading_enabled": false
+  }
+}

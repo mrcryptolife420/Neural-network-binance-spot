@@ -12,3 +12,14 @@ if ($LASTEXITCODE -ne 0) {
     Read-Host "Press Enter to close"
     exit $LASTEXITCODE
 }
+try {
+    $payload = $result | ConvertFrom-Json
+    Write-Host ("Dashboard URL: " + $payload.url) -ForegroundColor Green
+    Write-Host ("Launch evidence: " + $payload.evidence_path)
+    Write-Host ("Logs: " + $payload.log_path)
+    Write-Host ("Error logs: " + $payload.error_log_path)
+    Write-Host "Live trading disabled; kill switch enabled." -ForegroundColor Yellow
+}
+catch {
+    Write-Host "Dashboard started; JSON launch payload could not be parsed." -ForegroundColor Yellow
+}

@@ -8,6 +8,9 @@ import webbrowser
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
+from .dashboard_evidence import write_launch_evidence
+from .config import BotSettings
+from .diagnostics import collect_diagnostics
 from .launcher import dashboard_command, find_free_port
 
 
@@ -22,6 +25,7 @@ class ControlCenterLaunch:
     live_trading_enabled: bool
     kill_switch: bool
     command: list[str]
+    evidence_path: str = ""
 
     def to_dict(self) -> dict[str, object]:
         return asdict(self)
@@ -58,7 +62,7 @@ def build_launch_plan(project_root: Path, start_port: int = 8503) -> ControlCent
 def start_control_center(project_root: Path, start_port: int = 8503, open_browser: bool = True, dry_run: bool = False) -> ControlCenterLaunch:
     plan = build_launch_plan(project_root, start_port)
     if dry_run:
-        return plan
+        return _with_evidence(project_root, plan, "not_run")
     env = safe_environment(project_root)
     preflight = subprocess.run(
         [sys.executable, "-m", "binance_spot_bot.cli", "preflight"],
@@ -70,7 +74,9 @@ def start_control_center(project_root: Path, start_port: int = 8503, open_browse
     )
     if preflight.returncode != 0:
         Path(plan.error_log_path).write_text(preflight.stderr + preflight.stdout, encoding="utf-8")
-        return ControlCenterLaunch(
+        return _with_evidence(
+            project_root,
+            ControlCenterLaunch(
             status="preflight_failed",
             url=plan.url,
             port=plan.port,
@@ -80,6 +86,8 @@ def start_control_center(project_root: Path, start_port: int = 8503, open_browse
             live_trading_enabled=False,
             kill_switch=True,
             command=plan.command,
+            ),
+            "failed",
         )
     with open(plan.log_path, "w", encoding="utf-8") as stdout, open(plan.error_log_path, "w", encoding="utf-8") as stderr:
         process = subprocess.Popen(plan.command, cwd=project_root, env=env, stdout=stdout, stderr=stderr)
@@ -91,7 +99,9 @@ def start_control_center(project_root: Path, start_port: int = 8503, open_browse
             with socket.create_connection(("127.0.0.1", plan.port), timeout=0.5):
                 if open_browser:
                     webbrowser.open(plan.url)
-                return ControlCenterLaunch(
+                return _with_evidence(
+                    project_root,
+                    ControlCenterLaunch(
                     status="running",
                     url=plan.url,
                     port=plan.port,
@@ -101,17 +111,36 @@ def start_control_center(project_root: Path, start_port: int = 8503, open_browse
                     live_trading_enabled=False,
                     kill_switch=True,
                     command=plan.command,
+                    ),
+                    "ok",
                 )
         except OSError:
             time.sleep(0.5)
-    return ControlCenterLaunch(
-        status="unreachable",
-        url=plan.url,
-        port=plan.port,
-        pid=process.pid,
-        log_path=plan.log_path,
-        error_log_path=plan.error_log_path,
-        live_trading_enabled=False,
-        kill_switch=True,
-        command=plan.command,
+    return _with_evidence(
+        project_root,
+        ControlCenterLaunch(
+            status="unreachable",
+            url=plan.url,
+            port=plan.port,
+            pid=process.pid,
+            log_path=plan.log_path,
+            error_log_path=plan.error_log_path,
+            live_trading_enabled=False,
+            kill_switch=True,
+            command=plan.command,
+        ),
+        "ok",
     )
+
+
+def _with_evidence(project_root: Path, launch: ControlCenterLaunch, preflight_status: str) -> ControlCenterLaunch:
+    launch_payload = launch.to_dict()
+    try:
+        diagnostics = collect_diagnostics(BotSettings.from_env()).to_dict()
+        launch_payload["diagnostics_status"] = diagnostics.get("status", "unknown")
+        launch_payload["diagnostics_next_safe_action"] = diagnostics.get("next_safe_action", "")
+    except Exception as exc:
+        launch_payload["diagnostics_status"] = "unavailable"
+        launch_payload["diagnostics_error"] = str(exc)
+    evidence_path = write_launch_evidence(project_root / "data", launch_payload, preflight_status=preflight_status)
+    return ControlCenterLaunch(**{**launch.to_dict(), "evidence_path": str(evidence_path)})

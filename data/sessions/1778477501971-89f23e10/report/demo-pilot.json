@@ -1,0 +1,524 @@
+{
+  "session": {
+    "session_id": "1778477501971-89f23e10",
+    "mode": "demo",
+    "symbol": "BTCUSDT",
+    "interval": "1m",
+    "status": "stopped",
+    "pnl": "10.0356215210000000",
+    "max_drawdown": "0.0082356180000000"
+  },
+  "demo_pilot": {
+    "config": {
+      "account_sync_interval_seconds": 60,
+      "cancel_open_orders_on_stop": true,
+      "duration_minutes": 15,
+      "max_api_errors": 3,
+      "max_demo_orders": 5,
+      "max_reconciliation_failures": 1,
+      "max_rejects": 2,
+      "pause_on_connection_degraded": true,
+      "pilot_name": "smoke",
+      "reconciliation_interval_seconds": 30,
+      "require_clean_start": true
+    },
+    "counters": {
+      "api_errors": 3,
+      "elapsed_seconds": 199,
+      "orders": 4,
+      "reconciliation_failures": 0,
+      "rejects": 3,
+      "started_at_ms": 1778477501970
+    },
+    "last_demo_account_sync_ms": 1778477505294,
+    "last_reconciliation_check_ms": 1778477701891,
+    "pause_reason": "max rejects exceeded",
+    "should_pause": true,
+    "status": "armed"
+  },
+  "connection": {},
+  "account": {},
+  "reconciliation": {
+    "checked_at_ms": 1778477701891,
+    "events": [],
+    "failures": 0,
+    "known_orders": 4,
+    "needs_operator_action": false,
+    "open_orders": 0,
+    "orphan_orders": 0,
+    "status": "ok"
+  },
+  "operator_checklist": [
+    {
+      "check": "Profile",
+      "status": "fail",
+      "detail": "unknown",
+      "blocking": true
+    },
+    {
+      "check": "Credentials",
+      "status": "fail",
+      "detail": "not loaded",
+      "blocking": true
+    },
+    {
+      "check": "Connection",
+      "status": "fail",
+      "detail": "not tested",
+      "blocking": true
+    },
+    {
+      "check": "Server time",
+      "status": "warn",
+      "detail": "test connection first",
+      "blocking": false
+    },
+    {
+      "check": "Account canTrade",
+      "status": "fail",
+      "detail": "not synced",
+      "blocking": true
+    },
+    {
+      "check": "Clean start",
+      "status": "pass",
+      "detail": "ok",
+      "blocking": true
+    },
+    {
+      "check": "No orphan orders",
+      "status": "pass",
+      "detail": "0 orphan orders",
+      "blocking": true
+    },
+    {
+      "check": "Risk limits",
+      "status": "fail",
+      "detail": "missing limits",
+      "blocking": true
+    },
+    {
+      "check": "Pilot preset",
+      "status": "pass",
+      "detail": "smoke",
+      "blocking": false
+    },
+    {
+      "check": "Armed",
+      "status": "warn",
+      "detail": "explicit arm required",
+      "blocking": false
+    }
+  ],
+  "pipeline": [
+    {
+      "step": "Signal",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "-",
+      "reference": "-"
+    },
+    {
+      "step": "Risk",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "-",
+      "reference": "-"
+    },
+    {
+      "step": "Intent",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "-",
+      "reference": "-"
+    },
+    {
+      "step": "Test order",
+      "status": "ok",
+      "timestamp_ms": "-",
+      "detail": "ok",
+      "reference": "-"
+    },
+    {
+      "step": "Demo order",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "ok",
+      "reference": "-"
+    },
+    {
+      "step": "Reconciliation",
+      "status": "ok",
+      "timestamp_ms": "1778477701891",
+      "detail": "ok",
+      "reference": "0"
+    },
+    {
+      "step": "Fill/Cancel/Reject",
+      "status": "ok",
+      "timestamp_ms": "-",
+      "detail": "ok",
+      "reference": "ok"
+    }
+  ],
+  "cancel_on_stop_status": [],
+  "orders": [
+    {
+      "checked_at_ms": 1778477503386,
+      "events": [],
+      "failures": 0,
+      "known_orders": 0,
+      "needs_operator_action": false,
+      "open_orders": 0,
+      "orphan_orders": 0,
+      "status": "ok",
+      "type": "clean_start"
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": null,
+      "response": {
+        "reason": "insufficient base balance"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 359999
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 419999
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 479999
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 539999
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 599999
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": {
+        "client_order_id": "spotbot-b12de702d4a740e8939a1f95",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.10019",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "clientOrderId": "spotbot-b12de702d4a740e8939a1f95",
+        "cummulativeQuoteQty": "8112.97341720",
+        "executedQty": "0.10019000",
+        "fills": [
+          {
+            "commission": "0.00010019",
+            "commissionAsset": "BTC",
+            "price": "80975.88000000",
+            "qty": "0.10019000",
+            "tradeId": 215892680
+          }
+        ],
+        "orderId": 33416031767,
+        "orderListId": -1,
+        "origQty": "0.10019000",
+        "origQuoteOrderQty": "0.00000000",
+        "price": "0.00000000",
+        "selfTradePreventionMode": "EXPIRE_MAKER",
+        "side": "BUY",
+        "status": "FILLED",
+        "symbol": "BTCUSDT",
+        "test_order": {},
+        "timeInForce": "GTC",
+        "transactTime": 1778477630197,
+        "type": "MARKET",
+        "workingTime": 1778477630197
+      },
+      "status": "FILLED",
+      "timestamp_ms": 659999
+    },
+    {
+      "checked_at_ms": 1778477630425,
+      "events": [],
+      "failures": 0,
+      "known_orders": 1,
+      "needs_operator_action": false,
+      "open_orders": 0,
+      "orphan_orders": 0,
+      "status": "ok",
+      "type": "reconciliation"
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 719999
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": {
+        "client_order_id": "spotbot-6dc39776150d4f289f61ae84",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.10013",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "error": "Binance API request failed",
+        "payload": {
+          "code": -2010,
+          "msg": "Account has insufficient balance for requested action."
+        },
+        "status": 400
+      },
+      "status": "REJECTED",
+      "timestamp_ms": 779999
+    },
+    {
+      "checked_at_ms": 1778477661096,
+      "events": [],
+      "failures": 0,
+      "known_orders": 2,
+      "needs_operator_action": false,
+      "open_orders": 0,
+      "orphan_orders": 0,
+      "status": "ok",
+      "type": "reconciliation"
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": {
+        "client_order_id": "spotbot-f4003ae813a546168981bc90",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.10002",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "error": "Binance API request failed",
+        "payload": {
+          "code": -2010,
+          "msg": "Account has insufficient balance for requested action."
+        },
+        "status": 400
+      },
+      "status": "REJECTED",
+      "timestamp_ms": 839999
+    },
+    {
+      "checked_at_ms": 1778477666731,
+      "events": [],
+      "failures": 0,
+      "known_orders": 3,
+      "needs_operator_action": false,
+      "open_orders": 0,
+      "orphan_orders": 0,
+      "status": "ok",
+      "type": "reconciliation"
+    },
+    {
+      "demo_trading_armed": true,
+      "mode": "testnet",
+      "order_request": {
+        "client_order_id": "spotbot-430e579a4e4840e3b20dfc24",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09983",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "error": "Binance API request failed",
+        "payload": {
+          "code": -2010,
+          "msg": "Account has insufficient balance for requested action."
+        },
+        "status": 400
+      },
+      "status": "REJECTED",
+      "timestamp_ms": 899999
+    },
+    {
+      "checked_at_ms": 1778477701891,
+      "events": [],
+      "failures": 0,
+      "known_orders": 4,
+      "needs_operator_action": false,
+      "open_orders": 0,
+      "orphan_orders": 0,
+      "status": "ok",
+      "type": "reconciliation"
+    }
+  ],
+  "alerts": [
+    {
+      "action": "observe",
+      "created_at_ms": 1778477501972,
+      "message": "runtime created",
+      "metadata": {},
+      "name": "runtime_created",
+      "severity": "info"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778477508120,
+      "message": "runtime started",
+      "metadata": {},
+      "name": "runtime_started",
+      "severity": "info"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778477565088,
+      "message": "insufficient base balance",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778477584493,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778477585921,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778477605353,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778477606800,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778477631848,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "stop_runtime",
+      "created_at_ms": 1778477701893,
+      "message": "max rejects exceeded",
+      "metadata": {},
+      "name": "demo_pilot_paused",
+      "severity": "warning"
+    }
+  ],
+  "latest_snapshot": {
+    "alerts": 8,
+    "blocks": {
+      "insufficient base balance": 1,
+      "model returned HOLD": 5
+    },
+    "critical_alerts": 0,
+    "demo_pilot": {
+      "config": {
+        "account_sync_interval_seconds": 60,
+        "cancel_open_orders_on_stop": true,
+        "duration_minutes": 15,
+        "max_api_errors": 3,
+        "max_demo_orders": 5,
+        "max_reconciliation_failures": 1,
+        "max_rejects": 2,
+        "pause_on_connection_degraded": true,
+        "pilot_name": "smoke",
+        "reconciliation_interval_seconds": 30,
+        "require_clean_start": true
+      },
+      "counters": {
+        "api_errors": 3,
+        "elapsed_seconds": 199,
+        "orders": 4,
+        "reconciliation_failures": 0,
+        "rejects": 3,
+        "started_at_ms": 1778477501970
+      },
+      "last_demo_account_sync_ms": 1778477505294,
+      "last_reconciliation_check_ms": 1778477701891,
+      "pause_reason": "max rejects exceeded",
+      "should_pause": true,
+      "status": "armed"
+    },
+    "equity": "1010.0356215210000000",
+    "fees_paid": "0E-16",
+    "message": "tick processed",
+    "model_version": "rule-baseline-0.1",
+    "position": "0.10019",
+    "quote": "1000.0000000000000000",
+    "realized_pnl": "0",
+    "reconciliation": {
+      "checked_at_ms": 1778477701891,
+      "events": [],
+      "failures": 0,
+      "known_orders": 4,
+      "needs_operator_action": false,
+      "open_orders": 0,
+      "orphan_orders": 0,
+      "status": "ok"
+    },
+    "source": "demo",
+    "status": "running",
+    "timestamp_ms": 899999
+  }
+}

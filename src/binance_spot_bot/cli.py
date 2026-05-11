@@ -22,6 +22,29 @@ from .experiment_db import ExperimentDB
 from .features import build_feature_rows, build_label_rows
 from .launcher import find_free_port
 from .model_registry import ModelRegistry
+from .operator_ops import (
+    artifact_catalog,
+    create_state_archive,
+    data_growth_budget,
+    diagnostics_baseline,
+    environment_doctor,
+    evidence_chain,
+    export_operator_report,
+    incident_timeline,
+    local_ops_snapshot,
+    operator_command_manifest,
+    operator_health_score,
+    operator_quality_gate,
+    operator_report_diff,
+    redaction_self_test,
+    rehearsal_profiles,
+    report_index,
+    retention_preview,
+    support_bundle_restore_preview,
+    verify_support_bundles,
+    write_evidence_manifest,
+    write_timeline_markdown,
+)
 from .pilot_orchestrator import DemoPilotOrchestrator, PilotRunStore
 from .pilot_runner import PilotRunnerService, start_background_runner
 from .preflight import run_preflight
@@ -31,7 +54,7 @@ from .security import scan_for_secrets
 from .session_report import export_session_report
 from .session_store import SessionStore
 from .signal_model import TinyNeuralSignalModel
-from .support_bundle import create_support_bundle
+from .support_bundle import create_support_bundle, verify_support_bundle
 
 
 def main() -> None:
@@ -39,9 +62,66 @@ def main() -> None:
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("validate-config")
     sub.add_parser("preflight")
-    sub.add_parser("diagnostics")
+    diagnostics = sub.add_parser("diagnostics")
+    diagnostics.add_argument("--json", action="store_true")
+    diagnostics.add_argument("--strict", action="store_true")
     support_bundle = sub.add_parser("support-bundle")
     support_bundle.add_argument("--output", default="")
+    support_bundle.add_argument("--json", action="store_true")
+    support_verify = sub.add_parser("support-bundle-verify")
+    support_verify.add_argument("--bundle", required=True)
+    support_verify.add_argument("--json", action="store_true")
+    retention = sub.add_parser("retention-preview")
+    retention.add_argument("--older-than-days", type=int, default=7)
+    retention.add_argument("--json", action="store_true")
+    archive_state = sub.add_parser("state-archive")
+    archive_state.add_argument("--output", default="")
+    archive_state.add_argument("--older-than-days", type=int, default=7)
+    archive_state.add_argument("--json", action="store_true")
+    timeline = sub.add_parser("incident-timeline")
+    timeline.add_argument("--markdown", action="store_true")
+    timeline.add_argument("--json", action="store_true")
+    operator_report = sub.add_parser("operator-report")
+    operator_report.add_argument("--json", action="store_true")
+    quality_gate = sub.add_parser("operator-quality-gate")
+    quality_gate.add_argument("--json", action="store_true")
+    quality_gate.add_argument("--strict", action="store_true")
+    artifact_catalog_parser = sub.add_parser("artifact-catalog")
+    artifact_catalog_parser.add_argument("--category", default="")
+    artifact_catalog_parser.add_argument("--suffix", default="")
+    artifact_catalog_parser.add_argument("--stale-days", type=int, default=7)
+    artifact_catalog_parser.add_argument("--json", action="store_true")
+    health_score = sub.add_parser("operator-health-score")
+    health_score.add_argument("--json", action="store_true")
+    profiles_parser = sub.add_parser("rehearsal-profiles")
+    profiles_parser.add_argument("--json", action="store_true")
+    report_diff_parser = sub.add_parser("operator-report-diff")
+    report_diff_parser.add_argument("--json", action="store_true")
+    restore_preview_parser = sub.add_parser("support-bundle-restore-preview")
+    restore_preview_parser.add_argument("--bundle", required=True)
+    restore_preview_parser.add_argument("--json", action="store_true")
+    evidence_chain_parser = sub.add_parser("evidence-chain")
+    evidence_chain_parser.add_argument("--json", action="store_true")
+    environment_doctor_parser = sub.add_parser("environment-doctor")
+    environment_doctor_parser.add_argument("--json", action="store_true")
+    data_growth_parser = sub.add_parser("data-growth-budget")
+    data_growth_parser.add_argument("--budget-bytes", type=int, default=100_000_000)
+    data_growth_parser.add_argument("--json", action="store_true")
+    baseline = sub.add_parser("diagnostics-baseline")
+    baseline.add_argument("--write", action="store_true")
+    baseline.add_argument("--json", action="store_true")
+    report_index_parser = sub.add_parser("report-index")
+    report_index_parser.add_argument("--json", action="store_true")
+    support_bundles_verify = sub.add_parser("support-bundles-verify")
+    support_bundles_verify.add_argument("--json", action="store_true")
+    redaction_parser = sub.add_parser("redaction-self-test")
+    redaction_parser.add_argument("--json", action="store_true")
+    snapshot_parser = sub.add_parser("local-ops-snapshot")
+    snapshot_parser.add_argument("--json", action="store_true")
+    command_manifest_parser = sub.add_parser("operator-command-manifest")
+    command_manifest_parser.add_argument("--json", action="store_true")
+    evidence_manifest_parser = sub.add_parser("evidence-manifest")
+    evidence_manifest_parser.add_argument("--json", action="store_true")
     sub.add_parser("security-scan")
     backtest = sub.add_parser("demo-backtest")
     backtest.add_argument("--raw-klines-json", required=False)
@@ -116,6 +196,49 @@ def main() -> None:
     check_all = sub.add_parser("check-all")
     check_all.add_argument("--json", action="store_true")
     check_all.add_argument("--skip-tests", action="store_true")
+    evidence_scorecard = sub.add_parser("evidence-scorecard")
+    evidence_scorecard.add_argument("--json", action="store_true")
+    evidence_scorecard.add_argument("--strict", action="store_true")
+    rehearsal = sub.add_parser("demo-acceptance-rehearsal")
+    rehearsal.add_argument("--browser-url", default="")
+    rehearsal.add_argument("--json", action="store_true")
+    rehearsal.add_argument("--strict", action="store_true")
+    dashboard_smoke = sub.add_parser("dashboard-smoke")
+    dashboard_smoke.add_argument("--seconds", type=int, default=10)
+    browser_smoke = sub.add_parser("dashboard-browser-smoke")
+    browser_smoke.add_argument("--url", required=True)
+    browser_smoke.add_argument("--seconds", type=int, default=15)
+    browser_smoke.add_argument("--update-baseline", action="store_true")
+    operator_evidence = sub.add_parser("dashboard-operator-evidence")
+    operator_evidence.add_argument("--mode", default="demo")
+    operator_evidence.add_argument("--profile", default="local-demo")
+    operator_evidence.add_argument("--source", default="demo")
+    demo_preview = sub.add_parser("demo-execution-preview")
+    demo_preview.add_argument("--symbol", default="BTCUSDT")
+    demo_preview.add_argument("--side", choices=["BUY", "SELL"], default="BUY")
+    demo_preview.add_argument("--quote-size", default="10")
+    demo_preview.add_argument("--last-price", default="100")
+    demo_test = sub.add_parser("demo-execution-test-order")
+    demo_test.add_argument("--symbol", default="BTCUSDT")
+    demo_test.add_argument("--side", choices=["BUY", "SELL"], default="BUY")
+    demo_test.add_argument("--quote-size", default="10")
+    demo_test.add_argument("--last-price", default="100")
+    demo_place = sub.add_parser("demo-execution-place")
+    demo_place.add_argument("--symbol", default="BTCUSDT")
+    demo_place.add_argument("--side", choices=["BUY", "SELL"], default="BUY")
+    demo_place.add_argument("--quote-size", default="10")
+    demo_place.add_argument("--last-price", default="100")
+    demo_place.add_argument("--armed", action="store_true")
+    demo_place.add_argument("--confirm-demo-order", action="store_true")
+    demo_query = sub.add_parser("demo-execution-query")
+    demo_query.add_argument("--symbol", default="BTCUSDT")
+    demo_query.add_argument("--order-id", type=int, default=0)
+    demo_query.add_argument("--client-order-id", default="")
+    demo_cancel = sub.add_parser("demo-execution-cancel")
+    demo_cancel.add_argument("--symbol", default="BTCUSDT")
+    demo_cancel.add_argument("--order-id", type=int, required=True)
+    demo_cancel.add_argument("--confirm-cancel", action="store_true")
+    sub.add_parser("demo-execution-report")
     dashboard = sub.add_parser("dashboard")
     dashboard.add_argument("--mode", choices=["demo", "paper", "testnet-readiness"], default="demo")
     dashboard.add_argument("--symbol", default="BTCUSDT")
@@ -134,11 +257,103 @@ def main() -> None:
             raise SystemExit(1)
         return
     if args.command == "diagnostics":
-        print(json.dumps(collect_diagnostics(settings).to_dict(), default=str))
+        payload = collect_diagnostics(settings).to_dict()
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if args.strict and payload.get("status") != "ok":
+            raise SystemExit(1)
         return
     if args.command == "support-bundle":
         output = Path(args.output) if args.output else settings.data_dir / "support" / "support-bundle.zip"
-        print(json.dumps(create_support_bundle(settings, output), default=str))
+        print(json.dumps(create_support_bundle(settings, output), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "support-bundle-verify":
+        print(json.dumps(verify_support_bundle(Path(args.bundle)), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "retention-preview":
+        print(json.dumps(retention_preview(settings, older_than_days=args.older_than_days), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "state-archive":
+        output = Path(args.output) if args.output else settings.data_dir / "support" / "state-archive.zip"
+        print(json.dumps(create_state_archive(settings, output, older_than_days=args.older_than_days), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "incident-timeline":
+        payload = {"markdown": str(write_timeline_markdown(settings))} if args.markdown else {"events": incident_timeline(settings), "live_trading_enabled": False}
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "operator-report":
+        print(json.dumps(export_operator_report(settings), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "operator-quality-gate":
+        payload = operator_quality_gate(settings)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if args.strict and payload.get("status") != "ok":
+            raise SystemExit(1)
+        return
+    if args.command == "artifact-catalog":
+        print(
+            json.dumps(
+                artifact_catalog(settings, category=args.category, suffix=args.suffix, stale_days=args.stale_days),
+                indent=2 if args.json else None,
+                default=str,
+            )
+        )
+        return
+    if args.command == "operator-health-score":
+        print(json.dumps(operator_health_score(settings), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "rehearsal-profiles":
+        print(json.dumps(rehearsal_profiles(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "operator-report-diff":
+        print(json.dumps(operator_report_diff(settings), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "support-bundle-restore-preview":
+        print(
+            json.dumps(
+                support_bundle_restore_preview(Path(args.bundle)),
+                indent=2 if args.json else None,
+                default=str,
+            )
+        )
+        return
+    if args.command == "evidence-chain":
+        print(json.dumps(evidence_chain(settings), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "environment-doctor":
+        print(json.dumps(environment_doctor(settings), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "data-growth-budget":
+        print(
+            json.dumps(
+                data_growth_budget(settings, budget_bytes=args.budget_bytes),
+                indent=2 if args.json else None,
+                default=str,
+            )
+        )
+        return
+    if args.command == "diagnostics-baseline":
+        print(json.dumps(diagnostics_baseline(settings, write=args.write), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "report-index":
+        print(json.dumps(report_index(settings), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "support-bundles-verify":
+        print(json.dumps(verify_support_bundles(settings), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "redaction-self-test":
+        payload = redaction_self_test()
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") != "ok":
+            raise SystemExit(1)
+        return
+    if args.command == "local-ops-snapshot":
+        print(json.dumps(local_ops_snapshot(settings), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "operator-command-manifest":
+        print(json.dumps(operator_command_manifest(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "evidence-manifest":
+        print(json.dumps(write_evidence_manifest(settings), indent=2 if args.json else None, default=str))
         return
     if args.command == "security-scan":
         findings = scan_for_secrets(settings.data_dir.parent if settings.data_dir.parent else settings.data_dir)
@@ -454,6 +669,100 @@ def main() -> None:
         payload = payload_for(run_checks(Path.cwd(), skip_tests=args.skip_tests))
         print_payload(payload, as_json=args.json)
         if payload["status"] != "ok":
+            raise SystemExit(1)
+        return
+    if args.command == "evidence-scorecard":
+        from .evidence_scorecard import generate_evidence_scorecard, write_scorecard
+
+        scorecard = generate_evidence_scorecard(settings, write=False)
+        path = write_scorecard(settings, scorecard)
+        payload = {"path": str(path), **scorecard.to_dict()}
+        print(json.dumps(payload, default=str) if args.json else json.dumps(payload, indent=2, default=str))
+        if args.strict and scorecard.status != "pass":
+            raise SystemExit(1)
+        return
+    if args.command == "demo-acceptance-rehearsal":
+        from .demo_acceptance_rehearsal import DemoAcceptanceRehearsal
+
+        summary = DemoAcceptanceRehearsal(settings, Path.cwd()).run(browser_url=args.browser_url)
+        payload = summary.to_dict()
+        print(json.dumps(payload, default=str) if args.json else json.dumps(payload, indent=2, default=str))
+        if args.strict and summary.status != "pass":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-smoke":
+        from .ui.chart_registry import all_chart_keys
+        from .ui.page_registry import PAGES, validate_page_registry
+
+        validate_page_registry()
+        chart_keys = all_chart_keys()
+        payload = {
+            "status": "ok",
+            "seconds": args.seconds,
+            "pages": [page.key for page in PAGES],
+            "chart_keys": list(chart_keys),
+            "unique_chart_keys": len(chart_keys) == len(set(chart_keys)),
+            "live_trading_enabled": False,
+        }
+        out = settings.data_dir / "checks" / "dashboard-smoke.json"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+        print(json.dumps({"path": str(out), **payload}))
+        return
+    if args.command == "dashboard-browser-smoke":
+        from .dashboard_browser_smoke import run_dashboard_browser_smoke
+
+        payload = run_dashboard_browser_smoke(
+            args.url,
+            settings.data_dir,
+            seconds=args.seconds,
+            update_baseline=args.update_baseline,
+        )
+        print(json.dumps(payload, default=str))
+        if payload["status"] != "ok":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-operator-evidence":
+        from .dashboard_evidence import build_operator_evidence, write_operator_evidence
+
+        payload = build_operator_evidence(
+            settings,
+            mode=args.mode,
+            profile=args.profile,
+            source=args.source,
+        )
+        path = write_operator_evidence(settings, payload)
+        print(json.dumps({"path": str(path), **payload}, default=str))
+        return
+    if args.command.startswith("demo-execution"):
+        from .binance import BinanceSpotAdapter
+        from .demo_execution_sandbox import DemoExecutionSandbox, intent_from_values
+
+        adapter = BinanceSpotAdapter(settings) if settings.binance_api_key and settings.binance_api_secret else None
+        sandbox = DemoExecutionSandbox(settings, adapter=adapter)
+        if args.command == "demo-execution-preview":
+            result = sandbox.preview(intent_from_values(args.symbol, args.side, args.quote_size, args.last_price))
+        elif args.command == "demo-execution-test-order":
+            result = sandbox.test_order_only(intent_from_values(args.symbol, args.side, args.quote_size, args.last_price))
+        elif args.command == "demo-execution-place":
+            result = sandbox.place_demo_order(
+                intent_from_values(args.symbol, args.side, args.quote_size, args.last_price),
+                confirm_demo_order=args.confirm_demo_order,
+                armed=args.armed,
+            )
+        elif args.command == "demo-execution-query":
+            result = sandbox.query_order(
+                args.symbol,
+                order_id=args.order_id or None,
+                client_order_id=args.client_order_id or None,
+            )
+        elif args.command == "demo-execution-cancel":
+            result = sandbox.cancel_order(args.symbol, args.order_id, confirm_cancel=args.confirm_cancel)
+        else:
+            print(json.dumps(sandbox.latest_report(), default=str))
+            return
+        print(json.dumps(result.to_dict(), default=str))
+        if result.status == "BLOCKED" and args.command in {"demo-execution-place", "demo-execution-cancel"}:
             raise SystemExit(1)
         return
     if args.command == "dashboard":

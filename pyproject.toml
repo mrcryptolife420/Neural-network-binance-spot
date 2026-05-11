@@ -21,6 +21,9 @@ ui = [
   "streamlit>=1.40",
   "plotly>=5.24",
 ]
+visual = [
+  "playwright>=1.44",
+]
 realtime = [
   "websockets>=12",
 ]

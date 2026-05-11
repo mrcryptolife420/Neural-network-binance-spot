@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-05-11T06:01:03.071933+00:00",
+  "status": "ok",
+  "url": "http://127.0.0.1:8504",
+  "browser_mode": "playwright",
+  "seconds": 8,
+  "checks": [
+    {
+      "name": "marker:Neural Network Binance Spot Bot",
+      "status": "ok",
+      "message": "visible"
+    },
+    {
+      "name": "marker:LIVE TRADING DISABLED",
+      "status": "ok",
+      "message": "visible"
+    },
+    {
+      "name": "marker:Overview",
+      "status": "ok",
+      "message": "visible"
+    },
+    {
+      "name": "marker:Demo Spot Trading",
+      "status": "ok",
+      "message": "visible"
+    },
+    {
+      "name": "marker:Demo Pilot",
+      "status": "ok",
+      "message": "visible"
+    },
+    {
+      "name": "absent:StreamlitDuplicateElementId",
+      "status": "ok",
+      "message": "absent"
+    },
+    {
+      "name": "absent:Traceback",
+      "status": "ok",
+      "message": "absent"
+    },
+    {
+      "name": "absent:ModuleNotFoundError",
+      "status": "ok",
+      "message": "absent"
+    },
+    {
+      "name": "absent:StreamlitAPIException",
+      "status": "ok",
+      "message": "absent"
+    },
+    {
+      "name": "absent:Uncaught app exception",
+      "status": "ok",
+      "message": "absent"
+    }
+  ],
+  "screenshots": {
+    "Overview": "data\\checks\\dashboard\\screenshots\\overview.png",
+    "Demo Spot Trading": "data\\checks\\dashboard\\screenshots\\demo-spot-trading.png",
+    "Demo Pilot": "data\\checks\\dashboard\\screenshots\\demo-pilot.png",
+    "Logs & Security": "data\\checks\\dashboard\\screenshots\\logs-and-security.png"
+  },
+  "live_trading_enabled": false
+}
