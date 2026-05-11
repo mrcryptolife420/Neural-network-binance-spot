@@ -1,0 +1,77 @@
+{
+  "status": "pass",
+  "archive": {
+    "status": "ok",
+    "archive": "data\\tmp-roadmap-083-088-smoke\\support\\dr-state-archive.zip",
+    "mode": "preview-only",
+    "live_trading_enabled": false
+  },
+  "restore_preview": {
+    "status": "skipped",
+    "reason": "no_bundle_supplied"
+  },
+  "integrity": {
+    "status": "ok",
+    "checked": 11,
+    "unreadable": [],
+    "hashes": [
+      {
+        "path": "data\\tmp-roadmap-083-088-smoke\\action-center\\decision-journal.jsonl",
+        "sha256": "[REDACTED]",
+        "bytes": 484
+      },
+      {
+        "path": "data\\tmp-roadmap-083-088-smoke\\action-center\\latest-decision.json",
+        "sha256": "[REDACTED]",
+        "bytes": 577
+      },
+      {
+        "path": "data\\tmp-roadmap-083-088-smoke\\metrics-warehouse\\metrics.jsonl",
+        "sha256": "[REDACTED]",
+        "bytes": 223
+      },
+      {
+        "path": "data\\tmp-roadmap-083-088-smoke\\ops-assistant\\latest-answer.json",
+        "sha256": "[REDACTED]",
+        "bytes": 357
+      },
+      {
+        "path": "data\\tmp-roadmap-083-088-smoke\\permission-profiles\\compliance-report.json",
+        "sha256": "[REDACTED]",
+        "bytes": 985
+      },
+      {
+        "path": "data\\tmp-roadmap-083-088-smoke\\reports\\operator\\operator-report.md",
+        "sha256": "[REDACTED]",
+        "bytes": 460
+      },
+      {
+        "path": "data\\tmp-roadmap-083-088-smoke\\metrics-warehouse\\reports\\latest-metrics-report.json",
+        "sha256": "[REDACTED]",
+        "bytes": 550
+      },
+      {
+        "path": "data\\tmp-roadmap-083-088-smoke\\metrics-warehouse\\reports\\latest-metrics-report.md",
+        "sha256": "[REDACTED]",
+        "bytes": 92
+      },
+      {
+        "path": "data\\tmp-roadmap-083-088-smoke\\local-ops\\automation\\operator-runbook.md",
+        "sha256": "[REDACTED]",
+        "bytes": 480
+      },
+      {
+        "path": "data\\tmp-roadmap-083-088-smoke\\local-ops\\automation\\scheduled-ops.json",
+        "sha256": "[REDACTED]",
+        "bytes": 1583
+      },
+      {
+        "path": "data\\tmp-roadmap-083-088-smoke\\evidence\\diagnostics\\baseline.json",
+        "sha256": "[REDACTED]",
+        "bytes": 5035
+      }
+    ]
+  },
+  "blockers": [],
+  "live_trading_enabled": false
+}

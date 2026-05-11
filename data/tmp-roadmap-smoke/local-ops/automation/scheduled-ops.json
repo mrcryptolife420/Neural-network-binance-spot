@@ -1,0 +1,51 @@
+{
+  "status": "ready",
+  "jobs": [
+    {
+      "job_id": "morning-quality-gate",
+      "cadence": "daily",
+      "command": "spot-bot operator-quality-gate --json",
+      "output": "data/reports",
+      "runbook": "Check before demo trading.",
+      "blocking": false,
+      "next_due_ms": 1778583423256,
+      "safe_to_run_locally": true,
+      "live_trading_enabled": false
+    },
+    {
+      "job_id": "evening-operator-report",
+      "cadence": "daily",
+      "command": "spot-bot operator-report --json",
+      "output": "data/reports/operator",
+      "runbook": "Review paper health and incidents.",
+      "blocking": false,
+      "next_due_ms": 1778583423256,
+      "safe_to_run_locally": true,
+      "live_trading_enabled": false
+    },
+    {
+      "job_id": "weekly-support-verify",
+      "cadence": "weekly",
+      "command": "spot-bot support-bundles-verify --json",
+      "output": "data/support",
+      "runbook": "Verify bundle restore safety.",
+      "blocking": false,
+      "next_due_ms": 1779101823256,
+      "safe_to_run_locally": true,
+      "live_trading_enabled": false
+    },
+    {
+      "job_id": "weekly-evidence-chain",
+      "cadence": "weekly",
+      "command": "spot-bot evidence-chain --json",
+      "output": "data/evidence",
+      "runbook": "Check evidence integrity chain.",
+      "blocking": true,
+      "next_due_ms": 1779101823256,
+      "safe_to_run_locally": true,
+      "live_trading_enabled": false
+    }
+  ],
+  "data_dir": "data\\tmp-roadmap-smoke",
+  "live_trading_enabled": false
+}

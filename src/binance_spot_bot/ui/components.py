@@ -14,10 +14,14 @@ def render_plotly_chart(figure: Any, *, key: str, use_container_width: bool = Tr
     st.plotly_chart(figure, use_container_width=use_container_width, key=key)
 
 
-def render_badges(items: dict[str, Any]) -> None:
-    cols = st.columns(max(1, len(items)))
-    for col, (label, value) in zip(cols, items.items()):
-        col.metric(label, value)
+def render_badges(items: dict[str, Any] | list[dict[str, Any]]) -> None:
+    if isinstance(items, list):
+        pairs = [(str(row.get("label", "")), row.get("value", "")) for row in items]
+    else:
+        pairs = list(items.items())
+    cols = st.columns(max(1, len(pairs)))
+    for col, (label, val) in zip(cols, pairs):
+        col.metric(label, val)
 
 
 def render_table(title: str, rows: list[dict[str, Any]]) -> None:
@@ -34,15 +38,19 @@ def render_debug(label: str, payload: Any) -> None:
 
 
 def render_alert_list(rows: list[dict[str, Any]]) -> None:
-    render_table(
-        "Alerts",
+    if not rows:
+        st.caption("No alerts.")
+        return
+    st.dataframe(
         [
             {
                 "severity": row.get("severity"),
                 "name": row.get("name"),
                 "action": row.get("action"),
-                "message": row.get("message"),
+                "msg": row.get("msg") or row.get("message"),
             }
             for row in rows
         ],
+        use_container_width=True,
+        hide_index=True,
     )

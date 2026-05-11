@@ -1,0 +1,10 @@
+{"action": "observe", "created_at_ms": 1778500654172, "message": "runtime created", "metadata": {}, "name": "runtime_created", "severity": "info"}
+{"action": "observe", "created_at_ms": 1778500703521, "message": "runtime started", "metadata": {}, "name": "runtime_started", "severity": "info"}
+{"action": "observe", "created_at_ms": 1778500834573, "message": "insufficient base balance", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778500841297, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778500843456, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778500848747, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778500851017, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778500863484, "message": "runtime already running", "metadata": {}, "name": "runtime_start_idempotent", "severity": "info"}
+{"action": "observe", "created_at_ms": 1778500905614, "message": "runtime already running", "metadata": {}, "name": "runtime_start_idempotent", "severity": "info"}
+{"action": "observe", "created_at_ms": 1778500927034, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}

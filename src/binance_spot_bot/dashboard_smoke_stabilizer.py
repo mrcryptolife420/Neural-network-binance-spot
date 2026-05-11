@@ -1,0 +1,1 @@
+from .dashboard_smoke_v2 import dashboard_smoke_v2 as dashboard_smoke_stabilizer

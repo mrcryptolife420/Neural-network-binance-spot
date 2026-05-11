@@ -1,0 +1,1 @@
+def evidence_gap_detector(required: list[str], present: list[str]): return {"status": "ok" if set(required) <= set(present) else "warn", "missing": sorted(set(required)-set(present)), "live_trading_enabled": False}

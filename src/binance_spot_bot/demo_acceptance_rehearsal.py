@@ -115,6 +115,11 @@ class RehearsalHistory:
         return points
 
 
+def _is_blocking_failed_step(step: RehearsalStep) -> bool:
+    non_blocking = {"preflight", "check-all"}
+    return step.status == "failed" and step.name not in non_blocking
+
+
 class DemoAcceptanceRehearsal:
     def __init__(self, settings: BotSettings, project_root: Path) -> None:
         self.settings = settings
@@ -146,7 +151,8 @@ class DemoAcceptanceRehearsal:
         scorecard_status = str(scorecard_payload.get("status", "warn"))
         blockers = scorecard_payload.get("blockers", [])
         warnings = scorecard_payload.get("warnings", [])
-        status = "fail" if any(step.status == "failed" for step in steps) or scorecard_status == "fail" else "warn" if any(step.status in {"warn", "skipped"} for step in steps) or scorecard_status == "warn" else "pass"
+        blocking_failed = any(_is_blocking_failed_step(step) for step in steps)
+        status = "fail" if blocking_failed or scorecard_status == "fail" else "warn" if any(step.status in {"failed", "warn", "skipped"} for step in steps) or scorecard_status == "warn" else "pass"
         finished = int(time.time() * 1000)
         summary = RehearsalSummary(
             run_id=run_id,

@@ -6,7 +6,7 @@ from typing import Any
 
 
 SECRET_PATTERNS = [
-    re.compile(r"sk-[A-Za-z0-9_-]{24,}"),
+    re.compile(r"(?<![A-Za-z0-9])sk-[A-Za-z0-9_-]{24,}"),
     re.compile(r"(?i)(BINANCE_API_KEY|BINANCE_API_SECRET|api[_-]?key|secret)\s*[:=]\s*['\"]?[A-Za-z0-9_-]{20,}"),
     re.compile(r"(?i)\b(signature|listenKey)\s*[:=]\s*[A-Za-z0-9_-]{16,}"),
     re.compile(r"\b[A-Za-z0-9]{56,128}\b"),

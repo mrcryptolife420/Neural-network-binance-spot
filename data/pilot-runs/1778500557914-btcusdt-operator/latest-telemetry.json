@@ -1,0 +1,195 @@
+{
+  "timestamp_ms": 1778500557919,
+  "runner_status": "failed",
+  "gate": {
+    "allowed": false,
+    "state": "blocked",
+    "checks": [
+      {
+        "check": "profile",
+        "status": "fail",
+        "reason": "local-demo",
+        "next_action": "Select Binance Demo Spot profile",
+        "blocking": true
+      },
+      {
+        "check": "demo_base_url",
+        "status": "fail",
+        "reason": "https://api.binance.com",
+        "next_action": "Use Demo Spot base URL",
+        "blocking": true
+      },
+      {
+        "check": "live_disabled",
+        "status": "pass",
+        "reason": "live disabled",
+        "next_action": "Disable live trading",
+        "blocking": true
+      },
+      {
+        "check": "credentials",
+        "status": "fail",
+        "reason": "No signed credentials required",
+        "next_action": "Load Demo Spot credentials",
+        "blocking": true
+      },
+      {
+        "check": "connection",
+        "status": "fail",
+        "reason": "profile_is_demo_spot, base_url_is_demo, credentials_present, connection_ok",
+        "next_action": "Test connection",
+        "blocking": true
+      },
+      {
+        "check": "account_can_trade",
+        "status": "fail",
+        "reason": "not-active",
+        "next_action": "Sync Demo Spot account",
+        "blocking": true
+      },
+      {
+        "check": "filters_loaded",
+        "status": "pass",
+        "reason": "symbol filters ready",
+        "next_action": "Refresh symbol filters",
+        "blocking": true
+      },
+      {
+        "check": "risk_limits",
+        "status": "pass",
+        "reason": "configured",
+        "next_action": "Set risk limits",
+        "blocking": true
+      },
+      {
+        "check": "pilot_preset",
+        "status": "pass",
+        "reason": "operator",
+        "next_action": "Choose pilot preset",
+        "blocking": true
+      },
+      {
+        "check": "armed",
+        "status": "pass",
+        "reason": "armed",
+        "next_action": "Arm Demo Spot trading",
+        "blocking": true
+      },
+      {
+        "check": "clean_start",
+        "status": "pass",
+        "reason": "not-run",
+        "next_action": "Reconcile/cancel before start",
+        "blocking": true
+      },
+      {
+        "check": "no_open_orders",
+        "status": "pass",
+        "reason": "0 open orders",
+        "next_action": "Cancel or reconcile open orders",
+        "blocking": true
+      },
+      {
+        "check": "runtime_idle",
+        "status": "pass",
+        "reason": "created",
+        "next_action": "Stop current runtime",
+        "blocking": true
+      },
+      {
+        "check": "Profile",
+        "status": "fail",
+        "reason": "local-demo",
+        "next_action": "Resolve dashboard checklist blocker",
+        "blocking": true
+      },
+      {
+        "check": "Credentials",
+        "status": "fail",
+        "reason": "No signed credentials required",
+        "next_action": "Resolve dashboard checklist blocker",
+        "blocking": true
+      },
+      {
+        "check": "Connection",
+        "status": "fail",
+        "reason": "profile_is_demo_spot, base_url_is_demo, credentials_present, connection_ok",
+        "next_action": "Resolve dashboard checklist blocker",
+        "blocking": true
+      },
+      {
+        "check": "Account canTrade",
+        "status": "fail",
+        "reason": "not-active",
+        "next_action": "Resolve dashboard checklist blocker",
+        "blocking": true
+      }
+    ],
+    "blockers": [
+      {
+        "check": "profile",
+        "status": "fail",
+        "reason": "local-demo",
+        "next_action": "Select Binance Demo Spot profile",
+        "blocking": true
+      },
+      {
+        "check": "demo_base_url",
+        "status": "fail",
+        "reason": "https://api.binance.com",
+        "next_action": "Use Demo Spot base URL",
+        "blocking": true
+      },
+      {
+        "check": "credentials",
+        "status": "fail",
+        "reason": "No signed credentials required",
+        "next_action": "Load Demo Spot credentials",
+        "blocking": true
+      },
+      {
+        "check": "connection",
+        "status": "fail",
+        "reason": "profile_is_demo_spot, base_url_is_demo, credentials_present, connection_ok",
+        "next_action": "Test connection",
+        "blocking": true
+      },
+      {
+        "check": "account_can_trade",
+        "status": "fail",
+        "reason": "not-active",
+        "next_action": "Sync Demo Spot account",
+        "blocking": true
+      },
+      {
+        "check": "Profile",
+        "status": "fail",
+        "reason": "local-demo",
+        "next_action": "Resolve dashboard checklist blocker",
+        "blocking": true
+      },
+      {
+        "check": "Credentials",
+        "status": "fail",
+        "reason": "No signed credentials required",
+        "next_action": "Resolve dashboard checklist blocker",
+        "blocking": true
+      },
+      {
+        "check": "Connection",
+        "status": "fail",
+        "reason": "profile_is_demo_spot, base_url_is_demo, credentials_present, connection_ok",
+        "next_action": "Resolve dashboard checklist blocker",
+        "blocking": true
+      },
+      {
+        "check": "Account canTrade",
+        "status": "fail",
+        "reason": "not-active",
+        "next_action": "Resolve dashboard checklist blocker",
+        "blocking": true
+      }
+    ],
+    "next_action": "Select Binance Demo Spot profile"
+  }
+}

@@ -1,0 +1,1 @@
+def model_downgrade_executor(action: str, confirm: str): return {"status": "applied" if action == "downgrade_candidate" and confirm == "DOWNGRADE_PAPER_MODEL" else "blocked", "live_trading_enabled": False}

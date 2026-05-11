@@ -1,0 +1,1 @@
+def performance_budget(actual_ms: float, budget_ms: float): return {"status": "ok" if actual_ms <= budget_ms else "warn", "actual_ms": actual_ms, "budget_ms": budget_ms, "live_trading_enabled": False}

@@ -1,0 +1,19 @@
+{
+  "status": "answered",
+  "answer": "Bot health score is 60 with status ok.",
+  "sources": [
+    {
+      "name": "local_ops_snapshot",
+      "status": "ok"
+    },
+    {
+      "name": "operator_health_score",
+      "status": "ok"
+    },
+    {
+      "name": "artifact_catalog",
+      "items": 0
+    }
+  ],
+  "live_trading_enabled": false
+}

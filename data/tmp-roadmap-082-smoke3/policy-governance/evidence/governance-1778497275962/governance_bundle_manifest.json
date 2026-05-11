@@ -1,0 +1,14 @@
+{
+  "bundle_id": "governance-1778497275962",
+  "summary": {
+    "source": "cli"
+  },
+  "files": [
+    {
+      "file": "bundle-source.json",
+      "sha256": "[REDACTED]",
+      "bytes": 1692
+    }
+  ],
+  "live_trading_enabled": false
+}

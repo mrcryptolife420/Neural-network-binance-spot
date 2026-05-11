@@ -7,7 +7,7 @@ from .redaction import SECRET_PATTERNS
 
 
 SECRET_REGEXES = [
-    re.compile(r"sk-[A-Za-z0-9_-]{24,}"),
+    re.compile(r"(?<![A-Za-z0-9])sk-[A-Za-z0-9_-]{24,}"),
     re.compile(r"(?i)binance(.{0,20})?(secret|api[_-]?key).{0,10}[:=]\s*['\"][A-Za-z0-9_-]{20,}"),
     re.compile(r"(?i)(signature|listenKey)\s*[:=]\s*['\"]?[A-Za-z0-9_-]{16,}"),
     *SECRET_PATTERNS,

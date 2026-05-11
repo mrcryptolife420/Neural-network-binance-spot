@@ -1,0 +1,1 @@
+from .local_paper_os_facade import compliance_score

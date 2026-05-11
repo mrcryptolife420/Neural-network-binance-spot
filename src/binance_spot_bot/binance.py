@@ -142,6 +142,62 @@ class BinanceSpotAdapter:
     def get_order_book(self, symbol: str, depth: int = 100) -> dict[str, Any]:
         return self._request("GET", "/api/v3/depth", params={"symbol": symbol, "limit": depth})
 
+    def get_24hr_ticker(self, symbol: str | None = None) -> dict[str, Any] | list[dict[str, Any]]:
+        params = {"symbol": symbol.upper()} if symbol else None
+        return self._request("GET", "/api/v3/ticker/24hr", params=params, signed=False)
+
+    def get_rolling_ticker(self, symbol: str, window_size: str = "1h") -> dict[str, Any]:
+        return self._request(
+            "GET",
+            "/api/v3/ticker",
+            params={"symbol": symbol.upper(), "windowSize": window_size},
+            signed=False,
+        )
+
+    def get_avg_price(self, symbol: str) -> dict[str, Any]:
+        return self._request("GET", "/api/v3/avgPrice", params={"symbol": symbol.upper()}, signed=False)
+
+    def get_recent_trades(self, symbol: str, limit: int = 100) -> list[dict[str, Any]]:
+        return self._request(
+            "GET",
+            "/api/v3/trades",
+            params={"symbol": symbol.upper(), "limit": min(max(limit, 1), 1000)},
+            signed=False,
+        )
+
+    def get_agg_trades(
+        self,
+        symbol: str,
+        start_time: int | None = None,
+        end_time: int | None = None,
+        limit: int = 500,
+    ) -> list[dict[str, Any]]:
+        params: dict[str, Any] = {"symbol": symbol.upper(), "limit": min(max(limit, 1), 1000)}
+        if start_time is not None:
+            params["startTime"] = start_time
+        if end_time is not None:
+            params["endTime"] = end_time
+        return self._request("GET", "/api/v3/aggTrades", params=params, signed=False)
+
+    def get_book_ticker(self, symbol: str | None = None) -> dict[str, Any] | list[dict[str, Any]]:
+        params = {"symbol": symbol.upper()} if symbol else None
+        return self._request("GET", "/api/v3/ticker/bookTicker", params=params, signed=False)
+
+    def get_ui_klines(
+        self,
+        symbol: str,
+        interval: str,
+        limit: int = 500,
+        start_time: int | None = None,
+        end_time: int | None = None,
+    ) -> list[list[Any]]:
+        params: dict[str, Any] = {"symbol": symbol.upper(), "interval": interval, "limit": min(max(limit, 1), 1000)}
+        if start_time is not None:
+            params["startTime"] = start_time
+        if end_time is not None:
+            params["endTime"] = end_time
+        return self._request("GET", "/api/v3/uiKlines", params=params, signed=False)
+
     def get_account_state(self) -> dict[str, Any]:
         return self._request("GET", "/api/v3/account", signed=True)
 

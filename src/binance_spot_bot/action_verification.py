@@ -1,0 +1,1 @@
+def verify_action_result(action_type: str, result: dict): return {"status": "ok" if result.get("status") in {"executed", "not_executed"} else "warn", "action_type": action_type, "live_trading_enabled": False}

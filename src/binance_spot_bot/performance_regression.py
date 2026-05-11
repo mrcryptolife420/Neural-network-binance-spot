@@ -1,0 +1,1 @@
+def performance_regression(baseline_ms: float, current_ms: float): return {"status": "ok" if current_ms <= baseline_ms * 1.2 else "warn", "delta_ms": current_ms-baseline_ms, "live_trading_enabled": False}

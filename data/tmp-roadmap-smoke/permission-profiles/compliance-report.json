@@ -1,0 +1,39 @@
+{
+  "status": "ok",
+  "matrix": {
+    "status": "ready",
+    "profiles": {
+      "viewer": {
+        "role": "viewer",
+        "can_start_demo": false,
+        "can_approve_safe_action": false,
+        "can_edit_keys": false,
+        "can_live_trade": false
+      },
+      "operator": {
+        "role": "operator",
+        "can_start_demo": true,
+        "can_approve_safe_action": true,
+        "can_edit_keys": false,
+        "can_live_trade": false
+      },
+      "key_manager": {
+        "role": "key_manager",
+        "can_start_demo": false,
+        "can_approve_safe_action": false,
+        "can_edit_keys": true,
+        "can_live_trade": false
+      },
+      "admin": {
+        "role": "admin",
+        "can_start_demo": true,
+        "can_approve_safe_action": true,
+        "can_edit_keys": true,
+        "can_live_trade": false
+      }
+    },
+    "live_trading_enabled": false
+  },
+  "violations": [],
+  "live_trading_enabled": false
+}

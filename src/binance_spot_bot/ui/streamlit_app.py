@@ -28,8 +28,29 @@ from binance_spot_bot.evidence import EvidenceVault
 from binance_spot_bot.evidence_scorecard import generate_evidence_scorecard, write_scorecard
 from binance_spot_bot.evaluation import evaluate_rule_baseline, evaluate_walk_forward, report_to_dict
 from binance_spot_bot.experiment_db import ExperimentDB
+from binance_spot_bot.governance_simulation import run_governance_simulation
+from binance_spot_bot.local_ops_automation import generate_scheduled_ops_report
+from binance_spot_bot.metrics_warehouse import write_metrics_report
+from binance_spot_bot.ops_assistant import answer_ops_question
+from binance_spot_bot.action_center import create_reviewed_action
+from binance_spot_bot.permission_profiles import permission_compliance_report
+from binance_spot_bot.disaster_recovery_drills import run_disaster_recovery_drill
+from binance_spot_bot.versioning import version_payload
+from binance_spot_bot.roadmap_index import build_roadmap_index
+from binance_spot_bot.repo_inventory import repo_inventory
+from binance_spot_bot.intelligent_test_selector import selected_tests
+from binance_spot_bot.performance_budget import performance_budget
+from binance_spot_bot.runtime_snapshot_builder import build_runtime_snapshot
+from binance_spot_bot.data_quality_v2 import data_quality_v2
+from binance_spot_bot.training_pipeline import run_training_pipeline
+from binance_spot_bot.model_health_score import model_health_score
+from binance_spot_bot.ensemble_prediction import ensemble_prediction
+from binance_spot_bot.paper_os_simulation import paper_os_simulation
+from binance_spot_bot.stabilization_gate import stabilization_gate
+from binance_spot_bot.operator_glossary import operator_glossary
 from binance_spot_bot.exchange_profiles import BINANCE_DEMO_SPOT_PROFILE, available_profiles, selectable_profile_names
 from binance_spot_bot.html_reports import export_html_report
+from binance_spot_bot.indicator_warmup import warmup_indicators
 from binance_spot_bot.indicators import (
     INDICATOR_PROFILES,
     allocation_hints,
@@ -400,10 +421,226 @@ def main() -> None:
         _render_logs_security(snapshot, runtime_settings)
     with tabs[15]:
         _render_demo_pilot(st.session_state.runtime, snapshot)
+    with tabs[16]:
+        _render_policy_governance()
+    with tabs[17]:
+        _render_ops_automation(runtime_settings)
+    with tabs[18]:
+        _render_observability(runtime_settings)
+    with tabs[19]:
+        _render_ai_ops_assistant(runtime_settings)
+    with tabs[20]:
+        _render_action_center(runtime_settings)
+    with tabs[21]:
+        _render_permissions(runtime_settings)
+    with tabs[22]:
+        _render_disaster_recovery(runtime_settings)
+    with tabs[23]:
+        _render_release_management()
+    with tabs[24]:
+        _render_roadmap_automation()
+    with tabs[25]:
+        _render_repo_knowledge()
+    with tabs[26]:
+        _render_test_selection()
+    with tabs[27]:
+        _render_performance()
+    with tabs[28]:
+        _render_runtime_core()
+    with tabs[29]:
+        _render_data_pipeline()
+    with tabs[30]:
+        _render_model_training()
+    with tabs[31]:
+        _render_model_monitoring()
+    with tabs[32]:
+        _render_portfolio_ensemble()
+    with tabs[33]:
+        _render_paper_os_audit()
+    with tabs[34]:
+        _render_stabilization()
+    with tabs[35]:
+        _render_operator_training()
 
     if st.session_state.running and snapshot.status not in {"completed", "stopped"}:
         time.sleep(2.0)
         st.rerun()
+
+
+def _render_policy_governance() -> None:
+    st.subheader("Paper Policy Governance")
+    st.caption("PAPER GOVERNANCE ONLY")
+    result = run_governance_simulation("challenger_beats")
+    decision = result["decision"]
+    stop = result["stopping"]
+    metrics = result["experiment"]["metrics"]
+    cols = st.columns(4)
+    cols[0].metric("Decision", decision["decision"])
+    cols[1].metric("Stop status", stop["status"])
+    cols[2].metric("Champion observations", metrics["champion"]["observations"])
+    cols[3].metric("Challenger observations", metrics["challenger"]["observations"])
+    render_badges(
+        [
+            {"label": "Live trading", "value": "disabled", "status": "ok"},
+            {"label": "Signed endpoints", "value": "not used", "status": "ok"},
+            {"label": "Mode", "value": "paper only", "status": "ok"},
+        ]
+    )
+    render_table(
+        "Champion / Challenger Metrics",
+        [
+            {"variant": name, **row}
+            for name, row in metrics.items()
+        ],
+    )
+    with st.expander("Governance evidence"):
+        st.json(result)
+
+
+def _render_ops_automation(settings: BotSettings) -> None:
+    st.subheader("Local Paper Ops Automation")
+    st.caption("LOCAL PAPER OPS ONLY")
+    report = generate_scheduled_ops_report(settings)
+    render_badges({"Status": report["status"], "Jobs": len(report["schedule"]["jobs"]), "Live trading": "disabled"})
+    render_table("Scheduled Jobs", report["schedule"]["jobs"])
+    with st.expander("Runbook evidence"):
+        st.json(report)
+
+
+def _render_observability(settings: BotSettings) -> None:
+    st.subheader("Local Observability")
+    st.caption("LOCAL METRICS ONLY")
+    report = write_metrics_report(settings, [{"equity": 1000, "pnl_quote": 0, "latency_ms": 25}])
+    render_badges({"Status": report["status"], "Rows": report["rows"], "Live trading": "disabled"})
+    render_table("Metric Aggregates", [{"metric": key, **value} for key, value in report["metrics"].items()])
+    with st.expander("Metrics evidence"):
+        st.json(report)
+
+
+def _render_ai_ops_assistant(settings: BotSettings) -> None:
+    st.subheader("AI Ops Assistant")
+    st.caption("READ ONLY GUIDANCE")
+    question = st.text_input("Question", value="Wat is de bot status?", key="ai_ops_question")
+    answer = answer_ops_question(settings, question)
+    render_badges({"Status": answer["status"], "Sources": len(answer["sources"]), "Live trading": "disabled"})
+    st.write(answer["answer"])
+
+
+def _render_action_center(settings: BotSettings) -> None:
+    st.subheader("Human In The Loop Action Center")
+    st.caption("APPROVAL REQUIRED")
+    decision = create_reviewed_action(settings, "export_report", "dashboard preview", approved=False)
+    render_badges({"Review": decision["review"]["status"], "Execution": decision["execution"]["status"], "Live trading": "disabled"})
+    with st.expander("Decision journal preview"):
+        st.json(decision)
+
+
+def _render_permissions(settings: BotSettings) -> None:
+    st.subheader("Permission Profiles")
+    st.caption("LOCAL ROLES ONLY")
+    report = permission_compliance_report(settings)
+    render_badges({"Status": report["status"], "Violations": len(report["violations"]), "Live trading": "disabled"})
+    render_table("Profiles", list(report["matrix"]["profiles"].values()))
+
+
+def _render_disaster_recovery(settings: BotSettings) -> None:
+    st.subheader("Disaster Recovery")
+    st.caption("OFFLINE DR ONLY")
+    report = run_disaster_recovery_drill(settings)
+    render_badges({"Status": report["status"], "Integrity": report["integrity"]["status"], "Live trading": "disabled"})
+    with st.expander("DR evidence"):
+        st.json(report)
+
+
+def _render_release_management() -> None:
+    st.subheader("Release Management")
+    st.caption("LOCAL RELEASE SAFETY")
+    payload = version_payload("local")
+    render_badges({"Version": payload["payload"]["version"], "Schema": payload["payload"]["schema_version"], "Live trading": "disabled"})
+
+
+def _render_roadmap_automation() -> None:
+    st.subheader("Roadmap Automation")
+    st.caption("EVIDENCE GATED")
+    payload = build_roadmap_index(Path.cwd())
+    render_badges({"Open": payload["payload"]["open_count"], "Done": payload["payload"]["done_count"], "Live trading": "disabled"})
+
+
+def _render_repo_knowledge() -> None:
+    st.subheader("Repo Knowledge")
+    st.caption("LOCAL CODE MAP")
+    payload = repo_inventory(Path.cwd())
+    render_badges({"Python files": payload["payload"]["python_files"], "Tests": payload["payload"]["tests"], "Live trading": "disabled"})
+
+
+def _render_test_selection() -> None:
+    st.subheader("Intelligent Test Selection")
+    st.caption("LOCAL CI ACCELERATION")
+    payload = selected_tests(["src/binance_spot_bot/runtime.py"])
+    render_table("Selected Tests", [{"test": test} for test in payload["payload"]["tests"]])
+
+
+def _render_performance() -> None:
+    st.subheader("Performance")
+    st.caption("LOCAL RESOURCE BUDGETS")
+    payload = performance_budget(10, 20)
+    render_badges({"Status": payload["status"], "Actual ms": payload["actual_ms"], "Budget ms": payload["budget_ms"]})
+
+
+def _render_runtime_core() -> None:
+    st.subheader("Runtime Core")
+    st.caption("EVENTED SNAPSHOT SURFACE")
+    payload = build_runtime_snapshot({"status": "ready", "events": 0})
+    st.json(payload)
+
+
+def _render_data_pipeline() -> None:
+    st.subheader("Data Pipeline")
+    st.caption("FEATURE CONTRACTS")
+    payload = data_quality_v2([{"close": 1}])
+    render_badges({"Status": payload["status"], "Rows": payload["rows"], "Live trading": "disabled"})
+
+
+def _render_model_training() -> None:
+    st.subheader("Model Training")
+    st.caption("FEATURE CONTRACT AWARE")
+    payload = run_training_pipeline(25)
+    render_badges({"Gate": payload["gate"]["status"], "Rows": payload["training"]["payload"]["rows"], "Live trading": "disabled"})
+
+
+def _render_model_monitoring() -> None:
+    st.subheader("Model Monitoring")
+    st.caption("SHADOW PAPER ONLY")
+    payload = model_health_score(0.1, performance_ok=True)
+    render_badges({"Status": payload["status"], "Score": payload["score"], "Live trading": "disabled"})
+
+
+def _render_portfolio_ensemble() -> None:
+    st.subheader("Portfolio Ensemble")
+    st.caption("PAPER ALLOCATION ONLY")
+    payload = ensemble_prediction([{"signal": "BUY", "confidence": 0.7}, {"signal": "HOLD", "confidence": 0.5}])
+    render_badges({"Signal": payload["payload"]["signal"], "Confidence": payload["payload"]["confidence"], "Live trading": "disabled"})
+
+
+def _render_paper_os_audit() -> None:
+    st.subheader("Paper OS Audit")
+    st.caption("PRODUCTION READINESS SIMULATION")
+    payload = paper_os_simulation()
+    render_badges({"Status": payload["payload"]["status"], "Invariants": len(payload["payload"]["invariants"]), "Live trading": "disabled"})
+
+
+def _render_stabilization() -> None:
+    st.subheader("Stabilization")
+    st.caption("BLOCKER BURN DOWN")
+    payload = stabilization_gate([], [])
+    render_badges({"Status": payload["status"], "Live trading": "disabled"})
+
+
+def _render_operator_training() -> None:
+    st.subheader("Operator Training")
+    st.caption("LOCAL PAPER OS MANUAL")
+    payload = operator_glossary()
+    render_table("Glossary", [{"term": key, "meaning": value} for key, value in payload["terms"].items()])
 
 
 def _render_status_header(snapshot, profile, settings: BotSettings, saved) -> None:
@@ -891,6 +1128,31 @@ def _render_simple_live_content(
             "Avg confidence": indicator_payload["avg_confidence"],
         }
     )
+    with st.expander("Binance public data controls"):
+        public_limit = st.number_input("Public candle limit", min_value=30, max_value=1000, value=120, step=10)
+        if st.button("Fetch Binance public data", use_container_width=True, key="fetch_binance_public_data_live_panel"):
+            st.session_state.public_data_warmup = warmup_indicators(
+                settings,
+                active_symbols,
+                candle_limit=int(public_limit),
+            )
+        if st.button("Warm up indicators", use_container_width=True, key="warmup_indicators_live_panel"):
+            st.session_state.public_data_warmup = warmup_indicators(
+                settings,
+                active_symbols,
+                candle_limit=int(public_limit),
+            )
+        if st.button("Show cache status", use_container_width=True, key="public_data_cache_status_live_panel"):
+            from binance_spot_bot.binance_data_ingestion import BinanceDataIngestionService
+
+            st.session_state.public_data_cache_status = BinanceDataIngestionService(settings).cache_status()
+        if st.button("Export public data evidence", use_container_width=True, key="export_public_data_evidence_live_panel"):
+            from binance_spot_bot.binance_data_ingestion import export_public_data_evidence
+
+            st.session_state.public_data_evidence = {"path": str(export_public_data_evidence(settings))}
+        render_debug("Public data warmup status", st.session_state.get("public_data_warmup", {}))
+        render_debug("Public data cache status", st.session_state.get("public_data_cache_status", {}))
+        render_debug("Public data evidence", st.session_state.get("public_data_evidence", {}))
     render_table("Adaptive indicator advisor", indicator_rows)
     render_table("Risk adjusted allocation hints", allocation_hints(indicator_rows, total_quote_budget))
     with st.expander("Bot trading decision explanation"):

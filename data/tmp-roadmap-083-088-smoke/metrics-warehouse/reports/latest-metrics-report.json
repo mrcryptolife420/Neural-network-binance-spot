@@ -1,0 +1,32 @@
+{
+  "status": "ok",
+  "metrics": {
+    "equity": {
+      "avg": 1000.625,
+      "min": 1000.0,
+      "max": 1001.25,
+      "count": 2
+    },
+    "pnl_quote": {
+      "avg": 0.75,
+      "min": 0.25,
+      "max": 1.25,
+      "count": 2
+    },
+    "latency_ms": {
+      "avg": 40.0,
+      "min": 38.0,
+      "max": 42.0,
+      "count": 2
+    },
+    "live_trading_enabled": {
+      "avg": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "count": 2
+    }
+  },
+  "anomalies": [],
+  "rows": 2,
+  "live_trading_enabled": false
+}

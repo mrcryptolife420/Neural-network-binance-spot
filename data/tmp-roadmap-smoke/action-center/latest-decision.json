@@ -1,0 +1,22 @@
+{
+  "action": {
+    "action_id": "action-1778497035493",
+    "action_type": "export_report",
+    "reason": "operator requested safe local action",
+    "requested_by": "operator",
+    "status": "pending_approval",
+    "created_at_ms": 1778497035493,
+    "live_trading_enabled": false
+  },
+  "review": {
+    "reviewer": "operator",
+    "approved": true,
+    "status": "approved_waiting_execution",
+    "reviewed_at_ms": 1778497035493
+  },
+  "execution": {
+    "status": "not_executed",
+    "requires_manual_click": true
+  },
+  "live_trading_enabled": false
+}

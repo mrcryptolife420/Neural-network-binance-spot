@@ -1,0 +1,91 @@
+{
+  "policies": [
+    {
+      "policy_id": "smoke",
+      "policy_name": "Demo paper policy",
+      "policy_type": "paper_portfolio",
+      "allocation_weights": {
+        "BTCUSDT": "0.50",
+        "ETHUSDT": "0.50"
+      },
+      "risk_budget_hash": "risk-demo",
+      "scenario_weight_hash": "scenario-demo",
+      "optimizer_id": "optimizer-demo",
+      "benchmark_id": "benchmark-demo",
+      "robustness_score": 0.74,
+      "max_drawdown": "5.0",
+      "worst_case_scenario": "volatile",
+      "policy_card_path": "data/paper-portfolio/policies/policy-card.md",
+      "evidence_manifest_path": "data/evidence/manifest/evidence-chain.json",
+      "status": "champion",
+      "role": "champion",
+      "previous_champion_id": "",
+      "governance_notes": "",
+      "created_at_ms": 1778497254818,
+      "promoted_at_ms": 1778497255130,
+      "live_trading_enabled": false
+    },
+    {
+      "policy_id": "previous",
+      "policy_name": "Demo paper policy",
+      "policy_type": "paper_portfolio",
+      "allocation_weights": {
+        "BTCUSDT": "0.50",
+        "ETHUSDT": "0.50"
+      },
+      "risk_budget_hash": "risk-demo",
+      "scenario_weight_hash": "scenario-demo",
+      "optimizer_id": "optimizer-demo",
+      "benchmark_id": "benchmark-demo",
+      "robustness_score": 0.74,
+      "max_drawdown": "5.0",
+      "worst_case_scenario": "volatile",
+      "policy_card_path": "data/paper-portfolio/policies/policy-card.md",
+      "evidence_manifest_path": "data/evidence/manifest/evidence-chain.json",
+      "status": "candidate",
+      "role": "candidate",
+      "previous_champion_id": "",
+      "governance_notes": "",
+      "created_at_ms": 1778497257233,
+      "promoted_at_ms": 0,
+      "live_trading_enabled": false
+    },
+    {
+      "policy_id": "current",
+      "policy_name": "Demo paper policy",
+      "policy_type": "paper_portfolio",
+      "allocation_weights": {
+        "BTCUSDT": "0.50",
+        "ETHUSDT": "0.50"
+      },
+      "risk_budget_hash": "risk-demo",
+      "scenario_weight_hash": "scenario-demo",
+      "optimizer_id": "optimizer-demo",
+      "benchmark_id": "benchmark-demo",
+      "robustness_score": 0.74,
+      "max_drawdown": "5.0",
+      "worst_case_scenario": "volatile",
+      "policy_card_path": "data/paper-portfolio/policies/policy-card.md",
+      "evidence_manifest_path": "data/evidence/manifest/evidence-chain.json",
+      "status": "candidate",
+      "role": "candidate",
+      "previous_champion_id": "",
+      "governance_notes": "",
+      "created_at_ms": 1778497257240,
+      "promoted_at_ms": 0,
+      "live_trading_enabled": false
+    }
+  ],
+  "lineage": [
+    {
+      "policy_id": "smoke",
+      "parent_policy_id": "",
+      "previous_champion_id": "",
+      "decision": "promote",
+      "reason": "operator_confirmed",
+      "created_at_ms": 1778497255130,
+      "live_trading_enabled": false
+    }
+  ],
+  "live_trading_enabled": false
+}

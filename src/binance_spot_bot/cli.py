@@ -9,6 +9,8 @@ from pathlib import Path
 
 from .audit import AuditLog
 from .backtest import BacktestEngine
+from .action_center import create_reviewed_action
+from .binance_data_ingestion import BinanceDataIngestionService, IngestionRequest, export_public_data_evidence
 from .config import BotSettings
 from .connectivity import connectivity_report
 from .check_all import payload_for, print_payload, run_checks
@@ -16,11 +18,15 @@ from .control_center import start_control_center
 from .data import DataStore, parse_binance_klines
 from .data_quality import check_candles
 from .demo import DemoMarketReplay
+from .disaster_recovery_drills import run_disaster_recovery_drill
 from .diagnostics import collect_diagnostics
 from .evaluation import WalkForwardConfig, evaluate_rule_baseline, evaluate_walk_forward, report_to_dict
 from .experiment_db import ExperimentDB
 from .features import build_feature_rows, build_label_rows
+from .indicator_warmup import warmup_indicators
 from .launcher import find_free_port
+from .local_ops_automation import generate_scheduled_ops_report
+from .metrics_warehouse import write_metrics_report
 from .model_registry import ModelRegistry
 from .operator_ops import (
     artifact_catalog,
@@ -45,6 +51,22 @@ from .operator_ops import (
     write_evidence_manifest,
     write_timeline_markdown,
 )
+from .paper_deployment import run_paper_deployment_cycle
+from .paper_portfolio_ops import PaperStrategy, run_portfolio_operations
+from .permission_profiles import evaluate_permission, permission_compliance_report
+from .policy_rollout import run_policy_rollout
+from .portfolio_benchmarking import benchmark_allocations, write_benchmark_report
+from .portfolio_optimization import optimize_portfolio_policy
+from .portfolio_policy_registry import PortfolioPolicyRegistry, demo_policy
+from .policy_promotion_gate import evaluate_policy_promotion
+from .paper_policy_rollout import create_rollout_plan
+from .ab_paper_experiments import run_ab_paper_experiment, write_ab_experiment_report
+from .experiment_stopping_rules import evaluate_stopping_rules
+from .policy_governance import governance_decision
+from .weekly_governance_report import write_weekly_governance_report
+from .policy_lineage import rollback_to_previous_champion
+from .governance_evidence_bundle import export_governance_evidence_bundle
+from .governance_simulation import run_governance_simulation
 from .pilot_orchestrator import DemoPilotOrchestrator, PilotRunStore
 from .pilot_runner import PilotRunnerService, start_background_runner
 from .preflight import run_preflight
@@ -54,6 +76,8 @@ from .security import scan_for_secrets
 from .session_report import export_session_report
 from .session_store import SessionStore
 from .signal_model import TinyNeuralSignalModel
+from .ops_assistant import write_ops_assistant_answer
+from .strategy_calibration import calibrate_strategy
 from .support_bundle import create_support_bundle, verify_support_bundle
 
 
@@ -122,6 +146,100 @@ def main() -> None:
     command_manifest_parser.add_argument("--json", action="store_true")
     evidence_manifest_parser = sub.add_parser("evidence-manifest")
     evidence_manifest_parser.add_argument("--json", action="store_true")
+    fetch_public = sub.add_parser("fetch-public-data")
+    fetch_public.add_argument("--symbols", default="BTCUSDT,ETHUSDT,BNBUSDT")
+    fetch_public.add_argument("--intervals", default="1m,5m,15m,1h")
+    fetch_public.add_argument("--limit", type=int, default=120)
+    fetch_public.add_argument("--json", action="store_true")
+    warmup_public = sub.add_parser("warmup-indicators")
+    warmup_public.add_argument("--symbols", default="BTCUSDT,ETHUSDT,BNBUSDT")
+    warmup_public.add_argument("--limit", type=int, default=120)
+    warmup_public.add_argument("--json", action="store_true")
+    sub.add_parser("public-data-status")
+    clear_public = sub.add_parser("clear-public-data-cache")
+    clear_public.add_argument("--confirm", default="")
+    public_evidence = sub.add_parser("public-data-evidence")
+    public_evidence.add_argument("--json", action="store_true")
+    strategy_calibrate = sub.add_parser("strategy-calibrate")
+    strategy_calibrate.add_argument("--symbols", default="BTCUSDT,ETHUSDT,BNBUSDT")
+    strategy_calibrate.add_argument("--interval", default="1m")
+    strategy_calibrate.add_argument("--scenario", default="sideways")
+    strategy_calibrate.add_argument("--json", action="store_true")
+    paper_deploy = sub.add_parser("paper-deployment-cycle")
+    paper_deploy.add_argument("--strategy-id", default="adaptive-indicator")
+    paper_deploy.add_argument("--model-alias", default="candidate")
+    paper_deploy.add_argument("--symbols", default="BTCUSDT,ETHUSDT")
+    paper_deploy.add_argument("--json", action="store_true")
+    portfolio_ops = sub.add_parser("paper-portfolio-ops")
+    portfolio_ops.add_argument("--quote-budget", default="1000")
+    portfolio_ops.add_argument("--json", action="store_true")
+    portfolio_benchmark = sub.add_parser("paper-portfolio-benchmark")
+    portfolio_benchmark.add_argument("--quote-budget", default="1000")
+    portfolio_benchmark.add_argument("--json", action="store_true")
+    portfolio_optimize = sub.add_parser("paper-portfolio-optimize")
+    portfolio_optimize.add_argument("--quote-budget", default="1000")
+    portfolio_optimize.add_argument("--json", action="store_true")
+    policy_rollout = sub.add_parser("paper-policy-rollout")
+    policy_rollout.add_argument("--symbols", default="BTCUSDT,ETHUSDT,BNBUSDT")
+    policy_rollout.add_argument("--json", action="store_true")
+    policy_register = sub.add_parser("policy-register")
+    policy_register.add_argument("--policy-id", default="demo-policy")
+    policy_register.add_argument("--json", action="store_true")
+    policy_promote = sub.add_parser("policy-promote")
+    policy_promote.add_argument("--policy-id", required=True)
+    policy_promote.add_argument("--confirm", default="")
+    policy_promote.add_argument("--json", action="store_true")
+    rollout_plan_cmd = sub.add_parser("policy-rollout-plan")
+    rollout_plan_cmd.add_argument("--champion", default="champion")
+    rollout_plan_cmd.add_argument("--challenger", default="challenger")
+    rollout_plan_cmd.add_argument("--stage", default="10pct")
+    rollout_plan_cmd.add_argument("--json", action="store_true")
+    ab_start = sub.add_parser("ab-paper-start")
+    ab_start.add_argument("--rollout-id", default="")
+    ab_start.add_argument("--confirm", default="")
+    ab_start.add_argument("--json", action="store_true")
+    ab_status = sub.add_parser("ab-paper-status")
+    ab_status.add_argument("--experiment-id", default="")
+    ab_status.add_argument("--json", action="store_true")
+    ab_stop = sub.add_parser("ab-paper-stop")
+    ab_stop.add_argument("--experiment-id", default="")
+    ab_stop.add_argument("--reason", default="operator_stop")
+    ab_stop.add_argument("--json", action="store_true")
+    governance_cmd = sub.add_parser("governance-decision")
+    governance_cmd.add_argument("--experiment-id", default="")
+    governance_cmd.add_argument("--json", action="store_true")
+    weekly_governance = sub.add_parser("weekly-governance-report")
+    weekly_governance.add_argument("--json", action="store_true")
+    policy_rollback = sub.add_parser("policy-rollback")
+    policy_rollback.add_argument("--to", default="previous-champion")
+    policy_rollback.add_argument("--confirm", default="")
+    policy_rollback.add_argument("--json", action="store_true")
+    governance_bundle = sub.add_parser("governance-evidence-bundle")
+    governance_bundle.add_argument("--json", action="store_true")
+    governance_sim = sub.add_parser("governance-simulation")
+    governance_sim.add_argument("--case", default="challenger_beats")
+    governance_sim.add_argument("--json", action="store_true")
+    local_ops_jobs = sub.add_parser("local-ops-jobs")
+    local_ops_jobs.add_argument("--json", action="store_true")
+    metrics_report = sub.add_parser("metrics-warehouse-report")
+    metrics_report.add_argument("--json", action="store_true")
+    ops_assistant = sub.add_parser("ops-assistant-query")
+    ops_assistant.add_argument("--question", required=True)
+    ops_assistant.add_argument("--json", action="store_true")
+    action_center = sub.add_parser("action-center-propose")
+    action_center.add_argument("--type", default="export_report")
+    action_center.add_argument("--reason", default="operator requested safe local action")
+    action_center.add_argument("--approve", action="store_true")
+    action_center.add_argument("--json", action="store_true")
+    permission_report = sub.add_parser("permission-report")
+    permission_report.add_argument("--json", action="store_true")
+    permission_check = sub.add_parser("permission-check")
+    permission_check.add_argument("--role", default="operator")
+    permission_check.add_argument("--action", default="start_demo")
+    permission_check.add_argument("--json", action="store_true")
+    dr_drill = sub.add_parser("disaster-recovery-drill")
+    dr_drill.add_argument("--bundle", default="")
+    dr_drill.add_argument("--json", action="store_true")
     sub.add_parser("security-scan")
     backtest = sub.add_parser("demo-backtest")
     backtest.add_argument("--raw-klines-json", required=False)
@@ -354,6 +472,262 @@ def main() -> None:
         return
     if args.command == "evidence-manifest":
         print(json.dumps(write_evidence_manifest(settings), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "fetch-public-data":
+        service = BinanceDataIngestionService(settings)
+        result = service.ingest(
+            IngestionRequest(
+                symbols=_csv_arg(args.symbols),
+                intervals=_csv_arg(args.intervals),
+                candle_limit=args.limit,
+            )
+        )
+        export_public_data_evidence(settings, result)
+        print(json.dumps(result.to_dict(), indent=2 if args.json else None, default=str))
+        if result.status != "ok":
+            raise SystemExit(1)
+        return
+    if args.command == "warmup-indicators":
+        payload = warmup_indicators(settings, _csv_arg(args.symbols), candle_limit=args.limit)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "public-data-status":
+        print(json.dumps(BinanceDataIngestionService(settings).cache_status(), default=str))
+        return
+    if args.command == "clear-public-data-cache":
+        print(json.dumps(BinanceDataIngestionService(settings).clear_cache(args.confirm), default=str))
+        return
+    if args.command == "public-data-evidence":
+        path = export_public_data_evidence(settings)
+        payload = {"status": "ok", "path": str(path), "live_trading_enabled": False}
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "strategy-calibrate":
+        candles_by_symbol = {
+            symbol: _load_or_demo_candles(settings, symbol, args.interval, args.scenario)
+            for symbol in _csv_arg(args.symbols)
+        }
+        result = calibrate_strategy(settings.data_dir, candles_by_symbol, interval=args.interval)
+        print(json.dumps(result.to_dict(), indent=2 if args.json else None, default=str))
+        if result.status != "ready":
+            raise SystemExit(1)
+        return
+    if args.command == "paper-deployment-cycle":
+        observations = [
+            {"symbol": symbol, "pnl": "1.0", "confidence": 0.58}
+            for symbol in _csv_arg(args.symbols)
+        ]
+        payload = run_paper_deployment_cycle(
+            settings,
+            args.strategy_id,
+            args.model_alias,
+            _csv_arg(args.symbols),
+            observations,
+            calibration_gate={"status": "paper_approved"},
+        )
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "paper-portfolio-ops":
+        payload = run_portfolio_operations(
+            settings,
+            [
+                PaperStrategy("adaptive", 0.72, ["BTCUSDT", "ETHUSDT"]),
+                PaperStrategy("mean-reversion", 0.61, ["ETHUSDT", "BNBUSDT"]),
+            ],
+            Decimal(str(args.quote_budget)),
+            [{"strategy_id": "adaptive", "pnl": "2.5"}, {"strategy_id": "mean-reversion", "pnl": "-1.0"}],
+        )
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "paper-portfolio-benchmark":
+        ops = run_portfolio_operations(
+            settings,
+            [
+                PaperStrategy("adaptive", 0.72, ["BTCUSDT", "ETHUSDT"]),
+                PaperStrategy("mean-reversion", 0.61, ["BNBUSDT"]),
+            ],
+            Decimal(str(args.quote_budget)),
+            [],
+        )
+        from .paper_portfolio_ops import PaperPortfolioPlan
+
+        plan = PaperPortfolioPlan(
+            portfolio_id=ops["plan"]["portfolio_id"],
+            total_quote_budget=Decimal(str(ops["plan"]["total_quote_budget"])),
+            allocations=ops["plan"]["allocations"],
+            conflicts=ops["plan"]["conflicts"],
+            risk_limits=ops["plan"]["risk_limits"],
+            rotation=ops["plan"]["rotation"],
+        )
+        benchmark = benchmark_allocations(plan)
+        benchmark["reports"] = write_benchmark_report(settings, benchmark)
+        print(json.dumps(benchmark, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "paper-portfolio-optimize":
+        ops = run_portfolio_operations(
+            settings,
+            [
+                PaperStrategy("adaptive", 0.72, ["BTCUSDT", "ETHUSDT"]),
+                PaperStrategy("mean-reversion", 0.61, ["BNBUSDT"]),
+            ],
+            Decimal(str(args.quote_budget)),
+            [],
+        )
+        from .paper_portfolio_ops import PaperPortfolioPlan
+
+        plan = PaperPortfolioPlan(
+            portfolio_id=ops["plan"]["portfolio_id"],
+            total_quote_budget=Decimal(str(ops["plan"]["total_quote_budget"])),
+            allocations=ops["plan"]["allocations"],
+            conflicts=ops["plan"]["conflicts"],
+            risk_limits=ops["plan"]["risk_limits"],
+            rotation=ops["plan"]["rotation"],
+        )
+        payload = optimize_portfolio_policy(settings, plan)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "paper-policy-rollout":
+        payload = run_policy_rollout(settings, _csv_arg(args.symbols))
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "policy-register":
+        registry = PortfolioPolicyRegistry(settings.data_dir / "portfolio-policies")
+        policy = registry.register(demo_policy(args.policy_id))
+        print(json.dumps(policy.to_dict(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "policy-promote":
+        registry = PortfolioPolicyRegistry(settings.data_dir / "portfolio-policies")
+        try:
+            policy = registry.get(args.policy_id)
+        except KeyError:
+            policy = registry.register(demo_policy(args.policy_id))
+        gate = evaluate_policy_promotion(policy, operator_confirmed=args.confirm == "PAPER_POLICY_PROMOTE")
+        if gate.allowed:
+            decision = registry.set_champion(args.policy_id, operator_confirmed=True)
+            payload = {"gate": gate.__dict__, "decision": decision.__dict__, "live_trading_enabled": False}
+        else:
+            payload = {"gate": gate.__dict__, "decision": "blocked", "live_trading_enabled": False}
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if not gate.allowed:
+            raise SystemExit(1)
+        return
+    if args.command == "policy-rollout-plan":
+        plan = create_rollout_plan(
+            args.champion,
+            args.challenger,
+            ["BTCUSDT", "ETHUSDT"],
+            stage=args.stage,
+            challenger_pct=10,
+            operator_confirmation="PAPER_POLICY_ROLLOUT" if args.stage in {"25pct", "50pct", "full_paper"} else "",
+        )
+        print(json.dumps(plan.to_dict(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "ab-paper-start":
+        if args.confirm != "PAPER_AB":
+            print(json.dumps({"status": "blocked", "reason": "PAPER_AB confirmation required", "live_trading_enabled": False}))
+            raise SystemExit(1)
+        plan = create_rollout_plan("champion", "challenger", ["BTCUSDT", "ETHUSDT"], challenger_pct=50)
+        report = run_ab_paper_experiment(
+            plan,
+            [
+                {"symbol": "BTCUSDT", "variant": "champion", "pnl": "1", "drawdown": "1"},
+                {"symbol": "ETHUSDT", "variant": "challenger", "pnl": "2", "drawdown": "1"},
+            ],
+        )
+        path = write_ab_experiment_report(settings.data_dir, report)
+        print(json.dumps({"path": str(path), **report}, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "ab-paper-status":
+        path = settings.data_dir / "policy-governance" / "ab-experiments"
+        latest = sorted(path.glob("*.json"))[-1] if path.exists() and list(path.glob("*.json")) else None
+        payload = json.loads(latest.read_text(encoding="utf-8")) if latest else {"status": "missing", "live_trading_enabled": False}
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "ab-paper-stop":
+        payload = {"status": "stopped", "experiment_id": args.experiment_id, "reason": args.reason, "live_trading_enabled": False}
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "governance-decision":
+        experiment = run_governance_simulation("challenger_beats")["experiment"]
+        stop = evaluate_stopping_rules(experiment, min_samples=1)
+        payload = governance_decision(experiment, stop, operator_confirmed=False)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "weekly-governance-report":
+        payload = run_governance_simulation("challenger_beats")
+        paths = write_weekly_governance_report(settings.data_dir, {"current_champion": "champion", "decision": payload["decision"]})
+        print(json.dumps({"paths": paths, **payload}, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "policy-rollback":
+        registry = PortfolioPolicyRegistry(settings.data_dir / "portfolio-policies")
+        for policy_id in ("previous", "current"):
+            try:
+                registry.get(policy_id)
+            except KeyError:
+                registry.register(demo_policy(policy_id))
+        champion = registry.champion()
+        if not champion or not champion.previous_champion_id:
+            registry.set_champion("previous", operator_confirmed=True)
+            registry.set_champion("current", operator_confirmed=True)
+        payload = rollback_to_previous_champion(registry, confirm=args.confirm)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") != "rolled_back":
+            raise SystemExit(1)
+        return
+    if args.command == "governance-evidence-bundle":
+        report = run_governance_simulation("challenger_beats")
+        marker = settings.data_dir / "policy-governance" / "bundle-source.json"
+        marker.parent.mkdir(parents=True, exist_ok=True)
+        marker.write_text(json.dumps(report, indent=2, default=str), encoding="utf-8")
+        payload = export_governance_evidence_bundle(settings.data_dir, [marker], {"source": "cli"})
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "governance-simulation":
+        payload = run_governance_simulation(args.case)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "local-ops-jobs":
+        payload = generate_scheduled_ops_report(settings)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "metrics-warehouse-report":
+        payload = write_metrics_report(
+            settings,
+            [{"equity": 1000, "pnl_quote": 1.25, "latency_ms": 42}, {"equity": 1001.25, "pnl_quote": 0.25, "latency_ms": 38}],
+        )
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "ops-assistant-query":
+        payload = write_ops_assistant_answer(settings, args.question)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "action-center-propose":
+        payload = create_reviewed_action(settings, args.type, args.reason, approved=args.approve)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("review", {}).get("status", "").startswith("blocked"):
+            raise SystemExit(1)
+        return
+    if args.command == "permission-report":
+        payload = permission_compliance_report(settings)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") != "ok":
+            raise SystemExit(1)
+        return
+    if args.command == "permission-check":
+        payload = evaluate_permission(args.role, args.action)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if not payload.get("allowed"):
+            raise SystemExit(1)
+        return
+    if args.command == "disaster-recovery-drill":
+        payload = run_disaster_recovery_drill(settings, bundle_zip=Path(args.bundle) if args.bundle else None)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") not in {"pass", "warn"}:
+            raise SystemExit(1)
         return
     if args.command == "security-scan":
         findings = scan_for_secrets(settings.data_dir.parent if settings.data_dir.parent else settings.data_dir)
@@ -824,6 +1198,10 @@ def _load_or_demo_candles(settings: BotSettings, symbol: str, interval: str, sce
         return datastore.load_candles_csv(symbol, interval)
     except FileNotFoundError:
         return DemoMarketReplay(symbol=symbol, scenario=scenario, count=160).candles()
+
+
+def _csv_arg(value: str) -> list[str]:
+    return [item.strip().upper() for item in value.split(",") if item.strip()]
 
 
 def _demo_klines() -> list[list[str | int]]:

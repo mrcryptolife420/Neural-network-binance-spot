@@ -139,6 +139,13 @@ class RiskExecutionSecurityTests(unittest.TestCase):
             findings = scan_for_secrets(Path(tmp))
         self.assertEqual(len(findings), 1)
 
+    def test_secret_scan_ignores_words_ending_in_sk_dash(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "roadmap.md"
+            path.write_text("risk-budget-search-robust-allocation-selection.md\n", encoding="utf-8")
+            findings = scan_for_secrets(Path(tmp))
+        self.assertEqual(findings, [])
+
 
 if __name__ == "__main__":
     unittest.main()

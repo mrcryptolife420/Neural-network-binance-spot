@@ -1,0 +1,272 @@
+{
+  "status": "pass",
+  "archive": {
+    "status": "ok",
+    "archive": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\support\\dr-state-archive.zip",
+    "mode": "preview-only",
+    "live_trading_enabled": false
+  },
+  "restore_preview": {
+    "status": "skipped",
+    "reason": "no_bundle_supplied"
+  },
+  "integrity": {
+    "status": "ok",
+    "checked": 500,
+    "unreadable": [],
+    "hashes": [
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\action-center\\decision-journal.jsonl",
+        "sha256": "[REDACTED]",
+        "bytes": 6272
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\action-center\\latest-decision.json",
+        "sha256": "[REDACTED]",
+        "bytes": 541
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\audit\\events.jsonl",
+        "sha256": "[REDACTED]",
+        "bytes": 1279573
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\checks\\check-all.json",
+        "sha256": "[REDACTED]",
+        "bytes": 5134
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\checks\\dashboard-smoke.json",
+        "sha256": "[REDACTED]",
+        "bytes": 662
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\disaster-recovery\\latest-dr-drill.json",
+        "sha256": "[REDACTED]",
+        "bytes": 10979
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\disaster-recovery\\latest-dr-drill.md",
+        "sha256": "[REDACTED]",
+        "bytes": 115
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\evidence.jsonl",
+        "sha256": "[REDACTED]",
+        "bytes": 279
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\evidence\\pilot-start-idempotency.json",
+        "sha256": "[REDACTED]",
+        "bytes": 253
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\experiments\\experiments.json",
+        "sha256": "[REDACTED]",
+        "bytes": 305
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\features\\demo_features.jsonl",
+        "sha256": "[REDACTED]",
+        "bytes": 9789
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\features\\demo_labels.jsonl",
+        "sha256": "[REDACTED]",
+        "bytes": 3128
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\metrics-warehouse\\metrics.jsonl",
+        "sha256": "[REDACTED]",
+        "bytes": 1498
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\models\\registry.json",
+        "sha256": "[REDACTED]",
+        "bytes": 705
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\permission-profiles\\compliance-report.json",
+        "sha256": "[REDACTED]",
+        "bytes": 985
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pilot-runs\\runner.json",
+        "sha256": "[REDACTED]",
+        "bytes": 1111
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pilot-runs\\runner.lock.json",
+        "sha256": "[REDACTED]",
+        "bytes": 1111
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\processed\\BTCUSDT_1m_candles.csv",
+        "sha256": "[REDACTED]",
+        "bytes": 14454
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\raw\\BTCUSDT_1m_latest.json",
+        "sha256": "[REDACTED]",
+        "bytes": 29666
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\scanner\\history.jsonl",
+        "sha256": "[REDACTED]",
+        "bytes": 177
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\settings\\dashboard.json",
+        "sha256": "[REDACTED]",
+        "bytes": 328
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-smoke\\action-center\\decision-journal.jsonl",
+        "sha256": "[REDACTED]",
+        "bytes": 484
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-smoke\\action-center\\latest-decision.json",
+        "sha256": "[REDACTED]",
+        "bytes": 577
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-smoke\\disaster-recovery\\latest-dr-drill.json",
+        "sha256": "[REDACTED]",
+        "bytes": 2741
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-smoke\\disaster-recovery\\latest-dr-drill.md",
+        "sha256": "[REDACTED]",
+        "bytes": 115
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-smoke\\metrics-warehouse\\metrics.jsonl",
+        "sha256": "[REDACTED]",
+        "bytes": 223
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-smoke\\ops-assistant\\latest-answer.json",
+        "sha256": "[REDACTED]",
+        "bytes": 357
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-smoke\\paper-policy-rollouts\\latest-policy-rollout.json",
+        "sha256": "[REDACTED]",
+        "bytes": 1542
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-smoke\\paper-policy-rollouts\\paper-policy-1778497022970.json",
+        "sha256": "[REDACTED]",
+        "bytes": 1542
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-smoke\\paper-policy-rollouts\\paper-policy-1778497022970.md",
+        "sha256": "[REDACTED]",
+        "bytes": 152
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-smoke\\permission-profiles\\compliance-report.json",
+        "sha256": "[REDACTED]",
+        "bytes": 985
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-smoke\\reports\\operator\\operator-report.md",
+        "sha256": "[REDACTED]",
+        "bytes": 460
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-smoke\\metrics-warehouse\\reports\\latest-metrics-report.json",
+        "sha256": "[REDACTED]",
+        "bytes": 550
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-smoke\\metrics-warehouse\\reports\\latest-metrics-report.md",
+        "sha256": "[REDACTED]",
+        "bytes": 92
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-smoke\\local-ops\\automation\\operator-runbook.md",
+        "sha256": "[REDACTED]",
+        "bytes": 480
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-smoke\\local-ops\\automation\\scheduled-ops.json",
+        "sha256": "[REDACTED]",
+        "bytes": 1575
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-smoke\\evidence\\diagnostics\\baseline.json",
+        "sha256": "[REDACTED]",
+        "bytes": 4915
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-083-088-smoke\\action-center\\decision-journal.jsonl",
+        "sha256": "[REDACTED]",
+        "bytes": 484
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-083-088-smoke\\action-center\\latest-decision.json",
+        "sha256": "[REDACTED]",
+        "bytes": 577
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-083-088-smoke\\checks\\dashboard-smoke.json",
+        "sha256": "[REDACTED]",
+        "bytes": 706
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-083-088-smoke\\disaster-recovery\\latest-dr-drill.json",
+        "sha256": "[REDACTED]",
+        "bytes": 2320
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-083-088-smoke\\disaster-recovery\\latest-dr-drill.md",
+        "sha256": "[REDACTED]",
+        "bytes": 115
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-083-088-smoke\\metrics-warehouse\\metrics.jsonl",
+        "sha256": "[REDACTED]",
+        "bytes": 223
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-083-088-smoke\\ops-assistant\\latest-answer.json",
+        "sha256": "[REDACTED]",
+        "bytes": 357
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-083-088-smoke\\permission-profiles\\compliance-report.json",
+        "sha256": "[REDACTED]",
+        "bytes": 985
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-083-088-smoke\\reports\\operator\\operator-report.md",
+        "sha256": "[REDACTED]",
+        "bytes": 460
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-083-088-smoke\\metrics-warehouse\\reports\\latest-metrics-report.json",
+        "sha256": "[REDACTED]",
+        "bytes": 550
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-083-088-smoke\\metrics-warehouse\\reports\\latest-metrics-report.md",
+        "sha256": "[REDACTED]",
+        "bytes": 92
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-083-088-smoke\\local-ops\\automation\\operator-runbook.md",
+        "sha256": "[REDACTED]",
+        "bytes": 480
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\tmp-roadmap-083-088-smoke\\local-ops\\automation\\scheduled-ops.json",
+        "sha256": "[REDACTED]",
+        "bytes": 1583
+      }
+    ]
+  },
+  "blockers": [],
+  "live_trading_enabled": false
+}

@@ -1,0 +1,71 @@
+{
+  "plan": {
+    "rollout_id": "rollout-1778497275961",
+    "champion_policy_id": "champion",
+    "challenger_policy_id": "challenger",
+    "rollout_stage": "10pct",
+    "allocation_split": {
+      "champion": "50",
+      "challenger": "50"
+    },
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT"
+    ],
+    "max_duration_minutes": 60,
+    "min_sample_count": 30,
+    "stopping_rules": [
+      "max_drawdown",
+      "underperform_champion",
+      "data_quality"
+    ],
+    "success_rules": [
+      "better_score",
+      "drawdown_ok",
+      "samples_ok"
+    ],
+    "rollback_target": "previous_champion",
+    "operator_confirmation": "",
+    "created_at_ms": 1778497275961,
+    "live_trading_enabled": false
+  },
+  "experiment": {
+    "status": "evaluated",
+    "rollout_id": "rollout-1778497275961",
+    "metrics": {
+      "challenger": {
+        "observations": 1,
+        "pnl": 3.0,
+        "drawdown": 1.0,
+        "risk_adjusted_return": 1.5,
+        "trade_count": 1,
+        "policy_violations": 0
+      },
+      "champion": {
+        "observations": 1,
+        "pnl": 1.0,
+        "drawdown": 1.0,
+        "risk_adjusted_return": 0.5,
+        "trade_count": 1,
+        "policy_violations": 0
+      }
+    },
+    "decision": "challenger_leads",
+    "live_trading_enabled": false
+  },
+  "stopping": {
+    "status": "continue",
+    "action": "continue",
+    "reasons": [],
+    "live_trading_enabled": false
+  },
+  "decision": {
+    "decision": "promote_challenger",
+    "reasons": [
+      "challenger_leads",
+      "operator_confirmed"
+    ],
+    "live_trading_enabled": false
+  },
+  "live_trading_enabled": false
+}

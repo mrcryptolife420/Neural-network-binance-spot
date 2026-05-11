@@ -1,0 +1,22 @@
+{
+  "action": {
+    "action_id": "action-1778500503609",
+    "action_type": "export_report",
+    "reason": "dashboard preview",
+    "requested_by": "operator",
+    "status": "pending_approval",
+    "created_at_ms": 1778500503609,
+    "live_trading_enabled": false
+  },
+  "review": {
+    "reviewer": "operator",
+    "approved": false,
+    "status": "rejected",
+    "reviewed_at_ms": 1778500503609
+  },
+  "execution": {
+    "status": "not_executed",
+    "requires_manual_click": true
+  },
+  "live_trading_enabled": false
+}
