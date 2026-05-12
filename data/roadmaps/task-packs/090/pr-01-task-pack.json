@@ -1,0 +1,56 @@
+{
+  "task_pack_id": "roadmap-090",
+  "roadmap_number": 90,
+  "roadmap_title": "Developer Experience, Codex Task Packs \\& Roadmap Execution Automation",
+  "tasks": [
+    {
+      "task_id": "pr-01",
+      "title": "Developer Experience, Codex Task Packs \\& Roadmap Execution Automation - foundation",
+      "goal": "Implement and validate the foundation slice without rebuilding existing infrastructure.",
+      "phase": "foundation",
+      "file_boundary": {
+        "allowed_files": [
+          "src/binance_spot_bot/roadmap_index.py",
+          "src/binance_spot_bot/roadmap_duplicate_guard.py"
+        ],
+        "forbidden_files": [
+          ".env",
+          "*.pem",
+          "data/secrets/*",
+          "live_trading/*"
+        ]
+      },
+      "required_tests": [
+        "python -m pytest tests/test_roadmap_090_roadmap_execution_acceptance.py -q",
+        "python -m binance_spot_bot.cli check-all --skip-tests --json"
+      ],
+      "required_docs": [
+        "docs/roadmap-execution-cli.md",
+        "docs/roadmap-execution-dashboard.md"
+      ],
+      "required_evidence": [
+        "data/roadmaps/evidence/090/roadmap_evidence_manifest.json"
+      ],
+      "safety_constraints": [
+        "local-only roadmap execution",
+        "live_trading_enabled must remain false",
+        "no signed Binance endpoints",
+        "no order or account endpoints",
+        "no API keys in files, logs, reports, or task packs"
+      ],
+      "validation_commands": [
+        "python -m pytest -q",
+        "python -m binance_spot_bot.cli dashboard-smoke --seconds 1"
+      ],
+      "acceptance_criteria": [
+        "scope boundaries respected",
+        "reports are secret-free",
+        "live_trading_enabled=false"
+      ],
+      "rollback_notes": "Use git diff to revert only files listed in the task boundary.",
+      "live_trading_enabled": false
+    }
+  ],
+  "no_live_statement": "Live trading blijft disabled; geen signed/order/account endpoints.",
+  "live_trading_enabled": false
+}

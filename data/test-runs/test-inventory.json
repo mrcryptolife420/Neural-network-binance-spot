@@ -1,0 +1,3138 @@
+{
+  "status": "ready",
+  "payload": {
+    "tests": [
+      {
+        "path": "tests/safety/test_no_live_cli.py",
+        "sha256": "778c376c6bd1a36a7f8f8f57",
+        "line_count": 49,
+        "test_count": 2,
+        "imported_source_modules": [
+          "binance_spot_bot.cli",
+          "binance_spot_bot.manual_demo_trading",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "general",
+        "safety_relevance": false,
+        "estimated_profile": "fast",
+        "recommended_command": "python -m pytest tests/safety/test_no_live_cli.py -q",
+        "tests": [
+          {
+            "name": "test_control_center_dry_run_keeps_live_disabled",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_manual_demo_trade_uses_no_signed_exchange_adapter",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/safety/test_no_live_ui.py",
+        "sha256": "14121b48cb95870efb9f273a",
+        "line_count": 13,
+        "test_count": 1,
+        "imported_source_modules": [
+          "binance_spot_bot.ui.state"
+        ],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/safety/test_no_live_ui.py -q",
+        "tests": [
+          {
+            "name": "test_dashboard_modes_do_not_include_live",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_check_all_control_center.py",
+        "sha256": "bd0edffefc452f2363f312c7",
+        "line_count": 60,
+        "test_count": 4,
+        "imported_source_modules": [
+          "binance_spot_bot.check_all",
+          "binance_spot_bot.cli",
+          "binance_spot_bot.control_center"
+        ],
+        "likely_domain": "general",
+        "safety_relevance": false,
+        "estimated_profile": "fast",
+        "recommended_command": "python -m pytest tests/test_check_all_control_center.py -q",
+        "tests": [
+          {
+            "name": "test_check_all_payload_fails_on_failed_check",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_control_center_plan_forces_safe_runtime",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_control_center_dry_run_cli_outputs_safe_json",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_start_control_center_dry_run_does_not_spawn",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_config.py",
+        "sha256": "d8852cdd88ecb54d96eb31c3",
+        "line_count": 67,
+        "test_count": 4,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "general",
+        "safety_relevance": false,
+        "estimated_profile": "fast",
+        "recommended_command": "python -m pytest tests/test_config.py -q",
+        "tests": [
+          {
+            "name": "test_default_config_is_disabled_and_kill_switch_on",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_live_mode_is_fail_closed",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_live_mode_requires_manual_phrase",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_paper_limits_parse",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_control_center_004.py",
+        "sha256": "82e4dfcc4bc872967ade901e",
+        "line_count": 166,
+        "test_count": 9,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.connectivity",
+          "binance_spot_bot.credentials",
+          "binance_spot_bot.exchange_profiles",
+          "binance_spot_bot.launcher",
+          "binance_spot_bot.order_lifecycle",
+          "binance_spot_bot.redaction",
+          "binance_spot_bot.settings_store",
+          "binance_spot_bot.types",
+          "binance_spot_bot.ui.state",
+          "binance_spot_bot.user_data_stream"
+        ],
+        "likely_domain": "redaction",
+        "safety_relevance": true,
+        "estimated_profile": "deep",
+        "recommended_command": "python -m pytest tests/test_control_center_004.py -q",
+        "tests": [
+          {
+            "name": "test_profiles_and_ui_do_not_expose_live",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_config_supports_binance_api_base_url_alias",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_credential_manager_session_only_and_redacted",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_redaction_masks_sensitive_values",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_connectivity_report_with_fake_adapter",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_user_data_parsers_and_order_lifecycle",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_settings_store_never_writes_secrets_and_recovers_invalid_json",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_launcher_free_port_and_command_handle_spaced_path",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_windows_secret_store_adapter_can_be_mocked",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_dashboard_demo_trading.py",
+        "sha256": "62a3ec369f84c27fa74a7bb8",
+        "line_count": 96,
+        "test_count": 5,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.dashboard_state",
+          "binance_spot_bot.manual_demo_trading",
+          "binance_spot_bot.spot_preview",
+          "binance_spot_bot.types",
+          "binance_spot_bot.ui.wizard"
+        ],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_dashboard_demo_trading.py -q",
+        "tests": [
+          {
+            "name": "test_dashboard_state_maps_runtime_status",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_wizard_options_exclude_live_mode",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_spot_preview_uses_public_adapter_only",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_manual_demo_buy_creates_local_paper_fill",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_manual_demo_blocks_unconfirmed_or_underfunded_sell",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_experiment_portfolio_readiness.py",
+        "sha256": "0c7e4f8b81c549d94a65df49",
+        "line_count": 95,
+        "test_count": 5,
+        "imported_source_modules": [
+          "binance_spot_bot.cache_manager",
+          "binance_spot_bot.chaos",
+          "binance_spot_bot.dashboard_profiler",
+          "binance_spot_bot.evidence",
+          "binance_spot_bot.experiment_db",
+          "binance_spot_bot.html_reports",
+          "binance_spot_bot.notebook_export",
+          "binance_spot_bot.portfolio",
+          "binance_spot_bot.portfolio_paper_session",
+          "binance_spot_bot.portfolio_risk",
+          "binance_spot_bot.readiness",
+          "binance_spot_bot.scanner_history",
+          "binance_spot_bot.shadow",
+          "binance_spot_bot.testnet_endurance",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_experiment_portfolio_readiness.py -q",
+        "tests": [
+          {
+            "name": "test_experiment_db_and_scanner_history_do_not_trade",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_notebook_html_and_cache_exports_are_local_redacted_files",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_portfolio_and_risk_limits",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_portfolio_paper_session_and_testnet_guard",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_evidence_shadow_chaos_and_readiness",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_features_model_backtest.py",
+        "sha256": "435f8c3906650a145093ca54",
+        "line_count": 78,
+        "test_count": 3,
+        "imported_source_modules": [
+          "binance_spot_bot.backtest",
+          "binance_spot_bot.data",
+          "binance_spot_bot.features",
+          "binance_spot_bot.risk",
+          "binance_spot_bot.signal_model"
+        ],
+        "likely_domain": "general",
+        "safety_relevance": false,
+        "estimated_profile": "fast",
+        "recommended_command": "python -m pytest tests/test_features_model_backtest.py -q",
+        "tests": [
+          {
+            "name": "test_features_are_chronological_and_split",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_tiny_neural_model_trains_and_predicts_schema",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_backtest_runs_with_fees_and_slippage",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_indicators.py",
+        "sha256": "aaa588afc535577ac68bd834",
+        "line_count": 60,
+        "test_count": 4,
+        "imported_source_modules": [
+          "binance_spot_bot.demo",
+          "binance_spot_bot.indicators"
+        ],
+        "likely_domain": "general",
+        "safety_relevance": false,
+        "estimated_profile": "fast",
+        "recommended_command": "python -m pytest tests/test_indicators.py -q",
+        "tests": [
+          {
+            "name": "test_indicator_snapshot_contains_adaptive_fields",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_regime_and_profile_are_deterministic",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_indicator_summary_and_allocation_hints",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_indicator_evidence_export",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_modelops_sessions_quality.py",
+        "sha256": "061938499fc345efdfbddafe",
+        "line_count": 97,
+        "test_count": 5,
+        "imported_source_modules": [
+          "binance_spot_bot.cli",
+          "binance_spot_bot.data_quality",
+          "binance_spot_bot.demo",
+          "binance_spot_bot.evaluation",
+          "binance_spot_bot.features",
+          "binance_spot_bot.model_registry",
+          "binance_spot_bot.session_store",
+          "binance_spot_bot.signal_model",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "general",
+        "safety_relevance": false,
+        "estimated_profile": "fast",
+        "recommended_command": "python -m pytest tests/test_modelops_sessions_quality.py -q",
+        "tests": [
+          {
+            "name": "test_session_store_write_read_export",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_model_registry_register_and_load_alias",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_evaluation_uses_chronological_gap",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_data_quality_warnings",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_cli_smoke_new_commands",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_multi_symbol_demo.py",
+        "sha256": "02f2fcf35dc4f29b18d89abc",
+        "line_count": 112,
+        "test_count": 9,
+        "imported_source_modules": [
+          "binance_spot_bot.multi_symbol",
+          "binance_spot_bot.ui.charts"
+        ],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_multi_symbol_demo.py -q",
+        "tests": [
+          {
+            "name": "test_normalize_symbol_adds_usdt_for_short_base_assets",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_parse_symbol_list_deduplicates_and_caps",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_choose_active_symbols_combines_selected_and_custom_with_limit",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_validate_demo_symbols_reports_empty_and_non_usdt_warning",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_allocation_plan_warns_when_order_size_exceeds_symbol_budget",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_risk_rows_and_summary_are_demo_safe",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_next_multi_action_guides_operator",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_write_multi_symbol_evidence",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_multi_symbol_overview_figure_contains_order_and_equity_traces",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_preflight_reports_accounting.py",
+        "sha256": "62e4ed97bb37ce52655c52d4",
+        "line_count": 77,
+        "test_count": 5,
+        "imported_source_modules": [
+          "binance_spot_bot.alerts",
+          "binance_spot_bot.config",
+          "binance_spot_bot.paper_accounting",
+          "binance_spot_bot.preflight",
+          "binance_spot_bot.session_report",
+          "binance_spot_bot.session_store"
+        ],
+        "likely_domain": "general",
+        "safety_relevance": false,
+        "estimated_profile": "fast",
+        "recommended_command": "python -m pytest tests/test_preflight_reports_accounting.py -q",
+        "tests": [
+          {
+            "name": "test_preflight_ok_without_credentials_for_local_demo",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_preflight_blocks_live_enabled",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_alert_manager_maps_severity_to_actions",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_paper_accounting_buy_sell_fee_and_pnl",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_session_report_exports_redacted_bundle",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_realtime_marketdata.py",
+        "sha256": "a660a7f634e96facfa857d64",
+        "line_count": 107,
+        "test_count": 6,
+        "imported_source_modules": [
+          "binance_spot_bot.market_data_source",
+          "binance_spot_bot.market_stream",
+          "binance_spot_bot.orderbook",
+          "binance_spot_bot.risk",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "general",
+        "safety_relevance": false,
+        "estimated_profile": "fast",
+        "recommended_command": "python -m pytest tests/test_realtime_marketdata.py -q",
+        "tests": [
+          {
+            "name": "test_stream_url_and_payloads_force_lowercase_symbol",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_parse_official_shape_kline_and_book_ticker",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_reconnect_policy_handles_error_and_24h_rotation",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_book_ticker_to_market_state_and_stale_risk_block",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_depth_gap_requires_resync",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_data_source_contracts",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_risk_execution_security.py",
+        "sha256": "a2bcf049b2f12823cde5dda6",
+        "line_count": 152,
+        "test_count": 6,
+        "imported_source_modules": [
+          "binance_spot_bot.audit",
+          "binance_spot_bot.config",
+          "binance_spot_bot.execution",
+          "binance_spot_bot.risk",
+          "binance_spot_bot.security",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "security",
+        "safety_relevance": true,
+        "estimated_profile": "deep",
+        "recommended_command": "python -m pytest tests/test_risk_execution_security.py -q",
+        "tests": [
+          {
+            "name": "test_kill_switch_blocks",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_risk_allows_valid_buy",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_execution_quantizes_and_paper_fills",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_execution_blocks_below_min_notional",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_secret_scan_finds_obvious_secret",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_secret_scan_ignores_words_ending_in_sk_dash",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_015_ops.py",
+        "sha256": "0b15d72e04fc2efb02fa92b7",
+        "line_count": 167,
+        "test_count": 13,
+        "imported_source_modules": [
+          "binance_spot_bot.alerts",
+          "binance_spot_bot.cli",
+          "binance_spot_bot.config",
+          "binance_spot_bot.evidence",
+          "binance_spot_bot.experiment_db",
+          "binance_spot_bot.html_reports",
+          "binance_spot_bot.notebook_export",
+          "binance_spot_bot.replay_sandbox",
+          "binance_spot_bot.runtime",
+          "binance_spot_bot.scanner_history",
+          "binance_spot_bot.session_compare",
+          "binance_spot_bot.session_store",
+          "binance_spot_bot.workspaces"
+        ],
+        "likely_domain": "runtime",
+        "safety_relevance": true,
+        "estimated_profile": "deep",
+        "recommended_command": "python -m pytest tests/test_roadmap_015_ops.py -q",
+        "tests": [
+          {
+            "name": "test_runtime_writes_alerts_orders_and_report_bundle",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_runtime_accounting_is_snapshot_source",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_critical_alert_stops_runtime",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_runtime_uses_paper_mode_without_signed_adapter",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_workspace_lifecycle_create_rename_duplicate_archive",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_workspace_export_import_refuses_overwrite",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_paper_session_cli_outputs_report_paths",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_scanner_history_indexes_experiment_and_exports",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_replay_and_compare_flow_reads_existing_sessions",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_evidence_records_and_verifies_session_report",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_session_report_contains_runtime_summary_fields",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_profile_readiness_keeps_live_disallowed",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_heartbeat_events_are_recorded",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_016_model_governance.py",
+        "sha256": "d67bc4753a4355324977c770",
+        "line_count": 152,
+        "test_count": 5,
+        "imported_source_modules": [
+          "binance_spot_bot.dataset_governance",
+          "binance_spot_bot.dataset_model_wizard",
+          "binance_spot_bot.demo",
+          "binance_spot_bot.evaluation",
+          "binance_spot_bot.experiment_db",
+          "binance_spot_bot.features",
+          "binance_spot_bot.model_registry",
+          "binance_spot_bot.signal_model"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_016_model_governance.py -q",
+        "tests": [
+          {
+            "name": "test_dataset_manifest_schema_hash_and_roundtrip",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_leakage_guard_blocks_bad_splits",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_walk_forward_evaluation_reports_costs_and_leakage",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_model_registry_promotion_gates_and_model_card",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_wizard_manifest_and_experiment_filter",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_017_demo_spot_control_center.py",
+        "sha256": "d185b4a73f6ab9c6182db568",
+        "line_count": 150,
+        "test_count": 5,
+        "imported_source_modules": [
+          "binance_spot_bot.audit",
+          "binance_spot_bot.binance",
+          "binance_spot_bot.config",
+          "binance_spot_bot.connectivity",
+          "binance_spot_bot.demo_spot",
+          "binance_spot_bot.exchange_profiles",
+          "binance_spot_bot.execution",
+          "binance_spot_bot.risk",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_017_demo_spot_control_center.py -q",
+        "tests": [
+          {
+            "name": "test_order",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_demo_gate_requires_profile_base_url_credentials_and_arm",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_adapter_blocks_non_demo_order_base_url",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_execution_demo_order_requires_arm_and_calls_test_before_place",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_demo_connection_state_uses_redacted_connectivity_report",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_018_demo_pilot_reconciliation.py",
+        "sha256": "214fe3c6239b22c562504c01",
+        "line_count": 148,
+        "test_count": 6,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.demo_pilot",
+          "binance_spot_bot.exchange_profiles",
+          "binance_spot_bot.order_lifecycle",
+          "binance_spot_bot.runtime",
+          "binance_spot_bot.session_store",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "runtime",
+        "safety_relevance": true,
+        "estimated_profile": "deep",
+        "recommended_command": "python -m pytest tests/test_roadmap_018_demo_pilot_reconciliation.py -q",
+        "tests": [
+          {
+            "name": "test_order",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_pilot_presets_and_pause_limits",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_reconciler_updates_known_and_detects_orphan_orders",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_account_sync_filters_zero_balances",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_runtime_clean_start_blocks_orphan_open_orders",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_cancel_on_stop_records_cancel_and_report_metadata",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_019_dashboard_ux.py",
+        "sha256": "bd374b9fda634d80e13e9ac3",
+        "line_count": 120,
+        "test_count": 4,
+        "imported_source_modules": [
+          "binance_spot_bot.demo_pilot",
+          "binance_spot_bot.session_report",
+          "binance_spot_bot.session_store",
+          "binance_spot_bot.types",
+          "binance_spot_bot.ui.charts",
+          "binance_spot_bot.ui.streamlit_app"
+        ],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_019_dashboard_ux.py -q",
+        "tests": [
+          {
+            "name": "test_operator_checklist_and_pipeline_payloads",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_chart_accepts_empty_data_and_demo_markers",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_session_report_contains_demo_pilot_operator_sections",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_dashboard_module_imports",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_020_pilot_acceptance_gate.py",
+        "sha256": "26c8a582c098810665ec9430",
+        "line_count": 199,
+        "test_count": 9,
+        "imported_source_modules": [
+          "binance_spot_bot.binance",
+          "binance_spot_bot.config",
+          "binance_spot_bot.exchange_profiles",
+          "binance_spot_bot.pilot_orchestrator",
+          "binance_spot_bot.runtime",
+          "binance_spot_bot.session_report",
+          "binance_spot_bot.session_store",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "runtime",
+        "safety_relevance": true,
+        "estimated_profile": "deep",
+        "recommended_command": "python -m pytest tests/test_roadmap_020_pilot_acceptance_gate.py -q",
+        "tests": [
+          {
+            "name": "test_order",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_start_gate_allows_valid_demo_spot_payload",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_start_gate_blocks_wrong_profile_missing_credentials_and_orphans",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_state_transitions_reject_invalid_transition",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_pilot_store_redacts_and_detects_non_terminal",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_runtime_stop_flow_exports_acceptance_report",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_stop_flow_sets_resume_required_on_cancel_failure",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_periodic_reconciliation_and_account_sync",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_acceptance_payload_and_report_are_redacted",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_021_pilot_runner.py",
+        "sha256": "be4c3f0a1139e0032914482b",
+        "line_count": 184,
+        "test_count": 9,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.exchange_profiles",
+          "binance_spot_bot.pilot_orchestrator",
+          "binance_spot_bot.pilot_runner",
+          "binance_spot_bot.runtime",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "runtime",
+        "safety_relevance": true,
+        "estimated_profile": "deep",
+        "recommended_command": "python -m pytest tests/test_roadmap_021_pilot_runner.py -q",
+        "tests": [
+          {
+            "name": "test_order",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_heartbeat_lock_active_and_stale_detection",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_active_lock_blocks_duplicate_runner_start",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_telemetry_latest_and_rows",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_command_queue_create_process_fail_ignore_and_redact",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_runner_status_payload_without_active_runner",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_runner_service_run_writes_lock_heartbeat_telemetry_and_report",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_runner_processes_reconcile_cancel_unknown_and_stop_commands",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_clear_stale_lock",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_022_runner_dashboard_telemetry.py",
+        "sha256": "147eb291c6610ecc7c94c350",
+        "line_count": 155,
+        "test_count": 6,
+        "imported_source_modules": [
+          "binance_spot_bot.pilot_orchestrator",
+          "binance_spot_bot.pilot_runner",
+          "binance_spot_bot.ui.charts",
+          "binance_spot_bot.ui.streamlit_app"
+        ],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_022_runner_dashboard_telemetry.py -q",
+        "tests": [
+          {
+            "name": "test_telemetry_store_ignores_corrupt_lines_and_summarizes",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_empty_telemetry_summary_is_safe",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_command_summary_and_health_payload",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_stale_recovery_payload_and_clear_guard",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_runner_charts_accept_empty_and_populated_data",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_dashboard_module_imports",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_023_dashboard_stability.py",
+        "sha256": "ea9d47c7443baf320cce5cb3",
+        "line_count": 43,
+        "test_count": 4,
+        "imported_source_modules": [
+          "binance_spot_bot.ui.chart_registry",
+          "binance_spot_bot.ui.components"
+        ],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_023_dashboard_stability.py -q",
+        "tests": [
+          {
+            "name": "test_chart_registry_keys_are_unique",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_plotly_helper_requires_stable_key",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_streamlit_plotly_calls_are_centralized_or_keyed",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_streamlit_app_uses_plotly_helper_not_direct_calls",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_024_dashboard_architecture.py",
+        "sha256": "392f115e2a2beb79d0cbe1fa",
+        "line_count": 51,
+        "test_count": 4,
+        "imported_source_modules": [
+          "binance_spot_bot.ui.page_registry"
+        ],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_024_dashboard_architecture.py -q",
+        "tests": [
+          {
+            "name": "test_dashboard_page_registry_is_unique_and_live_disabled",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_dashboard_page_modules_import",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_ui_pages_do_not_import_direct_order_execution",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_dashboard_architecture_docs_exist",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_025_dashboard_browser_smoke.py",
+        "sha256": "689c6da9fbcf8c24e7b98591",
+        "line_count": 60,
+        "test_count": 4,
+        "imported_source_modules": [
+          "binance_spot_bot.cli",
+          "binance_spot_bot.dashboard_browser_smoke"
+        ],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_025_dashboard_browser_smoke.py -q",
+        "tests": [
+          {
+            "name": "test_dashboard_text_analysis_requires_operator_markers",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_dashboard_text_analysis_fails_on_duplicate_element_error",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_browser_smoke_cli_writes_schema_via_service_patch",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_browser_smoke_writes_failed_payload_for_missing_dashboard",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_025_operator_evidence.py",
+        "sha256": "f5f954b07065ac5bcf649b53",
+        "line_count": 70,
+        "test_count": 3,
+        "imported_source_modules": [
+          "binance_spot_bot.cli",
+          "binance_spot_bot.config",
+          "binance_spot_bot.control_center",
+          "binance_spot_bot.dashboard_evidence"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_025_operator_evidence.py -q",
+        "tests": [
+          {
+            "name": "test_control_center_dry_run_writes_launch_evidence",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_operator_evidence_contains_dashboard_contract_without_secrets",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_operator_evidence_cli_outputs_path_and_safe_flags",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_026_demo_execution_cli.py",
+        "sha256": "026b0b3a1f05d995778e4fa9",
+        "line_count": 74,
+        "test_count": 6,
+        "imported_source_modules": [
+          "binance_spot_bot.cli",
+          "binance_spot_bot.exchange_profiles"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_026_demo_execution_cli.py -q",
+        "tests": [
+          {
+            "name": "test_preview_cli_works_offline",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_place_cli_requires_confirmation",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_test_order_cli_blocks_without_credentials",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_cancel_cli_requires_confirmation",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_report_cli_returns_latest_preview",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_demo_profile_env_still_no_live",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_026_demo_execution_dashboard.py",
+        "sha256": "0c9acb75504ce1c715834fb3",
+        "line_count": 26,
+        "test_count": 3,
+        "imported_source_modules": [],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_026_demo_execution_dashboard.py -q",
+        "tests": [
+          {
+            "name": "test_dashboard_contains_demo_execution_drill_panel",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_operator_evidence_includes_demo_execution_drill",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_demo_execution_docs_exist",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_026_demo_execution_sandbox.py",
+        "sha256": "0156ff4bccddb0c67e909993",
+        "line_count": 109,
+        "test_count": 7,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.demo_execution_sandbox",
+          "binance_spot_bot.exchange_profiles",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_026_demo_execution_sandbox.py -q",
+        "tests": [
+          {
+            "name": "test_preview_quantizes_order_and_writes_evidence",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_preview_blocks_min_notional",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_test_order_only_does_not_place_order",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_place_order_requires_confirmation",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_place_order_gated_and_records_lifecycle",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_live_settings_are_blocked",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_order",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_027_evidence_scorecard.py",
+        "sha256": "2952e7b80bd831ec1e0d63ec",
+        "line_count": 67,
+        "test_count": 5,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.evidence_scorecard"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_027_evidence_scorecard.py -q",
+        "tests": [
+          {
+            "name": "test_missing_artifacts_warn_without_crash",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_live_enabled_artifact_fails",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_browser_smoke_failed_is_blocker",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_demo_execution_reconcile_needed_is_blocker",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_clean_sample_artifacts_pass",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_027_scorecard_cli_dashboard.py",
+        "sha256": "7b595c589732c8354987126d",
+        "line_count": 45,
+        "test_count": 4,
+        "imported_source_modules": [
+          "binance_spot_bot.cli"
+        ],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_027_scorecard_cli_dashboard.py -q",
+        "tests": [
+          {
+            "name": "test_scorecard_cli_writes_latest",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_scorecard_strict_fails_on_warning",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_dashboard_contains_evidence_scorecard_markers",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_scorecard_docs_exist",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_028_demo_acceptance_rehearsal.py",
+        "sha256": "03c5229ac6f2816388b56943",
+        "line_count": 76,
+        "test_count": 4,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.demo_acceptance_rehearsal"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_028_demo_acceptance_rehearsal.py -q",
+        "tests": [
+          {
+            "name": "test_rehearsal_works_without_binance_keys",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_missing_browser_url_is_warning_not_failure",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_history_append_latest_recent_and_trends",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_rehearsal_summary_redacts_and_keeps_no_live",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_028_rehearsal_cli_dashboard.py",
+        "sha256": "a57cddfc3491903afc0a46a7",
+        "line_count": 45,
+        "test_count": 4,
+        "imported_source_modules": [
+          "binance_spot_bot.cli"
+        ],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_028_rehearsal_cli_dashboard.py -q",
+        "tests": [
+          {
+            "name": "test_rehearsal_cli_writes_latest_json",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_rehearsal_cli_strict_fails_on_warning",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_dashboard_contains_rehearsal_markers",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_rehearsal_docs_exist",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_029_dashboard_start_guardrails.py",
+        "sha256": "dcebdf8231c2169bcd7d310d",
+        "line_count": 21,
+        "test_count": 2,
+        "imported_source_modules": [],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_029_dashboard_start_guardrails.py -q",
+        "tests": [
+          {
+            "name": "test_dashboard_contains_pilot_start_guardrail_markers",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_pilot_recovery_docs_exist",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_029_pilot_state_machine.py",
+        "sha256": "fb35b14e1ad0ff7972137519",
+        "line_count": 90,
+        "test_count": 5,
+        "imported_source_modules": [
+          "binance_spot_bot.pilot_orchestrator",
+          "binance_spot_bot.runtime"
+        ],
+        "likely_domain": "runtime",
+        "safety_relevance": true,
+        "estimated_profile": "deep",
+        "recommended_command": "python -m pytest tests/test_roadmap_029_pilot_state_machine.py -q",
+        "tests": [
+          {
+            "name": "test_mark_running_is_idempotent_for_existing_running_run",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_runtime_start_is_idempotent_for_running_demo_pilot",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_stopping_run_blocks_start_without_invalid_transition",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_pilot_checkpoints_compact_large_runtime_snapshots",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_pilot_store_trims_existing_large_checkpoint_history",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_029_rehearsal_idempotency.py",
+        "sha256": "34af557684ea7e0fd56b5a82",
+        "line_count": 37,
+        "test_count": 2,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.demo_acceptance_rehearsal",
+          "binance_spot_bot.evidence_scorecard"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_029_rehearsal_idempotency.py -q",
+        "tests": [
+          {
+            "name": "test_rehearsal_writes_pilot_start_idempotency_artifact",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_scorecard_requires_pilot_start_idempotency_artifact",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_030_operator_diagnostics.py",
+        "sha256": "d56482d01057e215589fe920",
+        "line_count": 30,
+        "test_count": 2,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.diagnostics"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_030_operator_diagnostics.py -q",
+        "tests": [
+          {
+            "name": "test_diagnostics_empty_data_warns_without_live",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_diagnostics_writes_health_report",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_031_artifact_inventory.py",
+        "sha256": "2d386d7517eac9c25c5417d4",
+        "line_count": 37,
+        "test_count": 2,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.diagnostics"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_031_artifact_inventory.py -q",
+        "tests": [
+          {
+            "name": "test_artifact_inventory_marks_invalid_json",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_artifact_inventory_detects_fresh_artifact",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_032_dashboard_diagnostics_ux.py",
+        "sha256": "438c97cb6f07a2ba61da01d1",
+        "line_count": 16,
+        "test_count": 1,
+        "imported_source_modules": [],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_032_dashboard_diagnostics_ux.py -q",
+        "tests": [
+          {
+            "name": "test_dashboard_contains_recovery_diagnostics_markers",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_033_support_bundle_hardening.py",
+        "sha256": "d6c7b1ee43288bad079da450",
+        "line_count": 32,
+        "test_count": 1,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.support_bundle"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_033_support_bundle_hardening.py -q",
+        "tests": [
+          {
+            "name": "test_support_bundle_manifest_checksums_and_redaction",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_034_cli_diagnostics.py",
+        "sha256": "c411cc3a072251a4afc670cb",
+        "line_count": 40,
+        "test_count": 2,
+        "imported_source_modules": [
+          "binance_spot_bot.cli"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_034_cli_diagnostics.py -q",
+        "tests": [
+          {
+            "name": "test_diagnostics_cli_json_and_strict",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_support_bundle_cli_json",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_035_rehearsal_scorecard_diagnostics.py",
+        "sha256": "3a105a76d7509fd942b4dc48",
+        "line_count": 25,
+        "test_count": 1,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.demo_acceptance_rehearsal",
+          "binance_spot_bot.evidence_scorecard"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_035_rehearsal_scorecard_diagnostics.py -q",
+        "tests": [
+          {
+            "name": "test_rehearsal_writes_operator_diagnostics_and_scorecard_reads_it",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_036_docs_state_hygiene.py",
+        "sha256": "4344d1f6f63b05e68a98c52f",
+        "line_count": 19,
+        "test_count": 1,
+        "imported_source_modules": [],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_036_docs_state_hygiene.py -q",
+        "tests": [
+          {
+            "name": "test_operator_diagnostics_docs_exist_and_keep_live_disabled_language",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_037_diagnostics_trends.py",
+        "sha256": "a0701e6db5f520ab2a5c5694",
+        "line_count": 25,
+        "test_count": 1,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.diagnostics"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_037_diagnostics_trends.py -q",
+        "tests": [
+          {
+            "name": "test_diagnostics_history_and_trend_ignore_corrupt_rows",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_038_retention_archive.py",
+        "sha256": "1922962c1ad04e74dd17ad10",
+        "line_count": 24,
+        "test_count": 1,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.operator_ops"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_038_retention_archive.py -q",
+        "tests": [
+          {
+            "name": "test_retention_preview_and_archive_work_without_deleting",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_039_support_bundle_verify.py",
+        "sha256": "4b2faa9697900a32ae82cedb",
+        "line_count": 19,
+        "test_count": 1,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.support_bundle"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_039_support_bundle_verify.py -q",
+        "tests": [
+          {
+            "name": "test_support_bundle_verify_ok_and_missing_fail",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_040_incident_timeline.py",
+        "sha256": "5d9d090da5521809c4a0b308",
+        "line_count": 26,
+        "test_count": 1,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.operator_ops"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_040_incident_timeline.py -q",
+        "tests": [
+          {
+            "name": "test_incident_timeline_sorts_and_exports_markdown",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_041_operator_report.py",
+        "sha256": "1fe1ef7a7a41e449735fc19f",
+        "line_count": 20,
+        "test_count": 1,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.operator_ops"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_041_operator_report.py -q",
+        "tests": [
+          {
+            "name": "test_operator_report_exports_markdown_and_html",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_042_dashboard_ops_polish.py",
+        "sha256": "f2ad2a3da96b41efd88c6249",
+        "line_count": 16,
+        "test_count": 1,
+        "imported_source_modules": [],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_042_dashboard_ops_polish.py -q",
+        "tests": [
+          {
+            "name": "test_dashboard_contains_trend_retention_timeline_report_markers",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_043_operator_quality_gate.py",
+        "sha256": "232bae04f8e4ea148eeb7cab",
+        "line_count": 28,
+        "test_count": 1,
+        "imported_source_modules": [
+          "binance_spot_bot.cli"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_043_operator_quality_gate.py -q",
+        "tests": [
+          {
+            "name": "test_operator_quality_gate_cli_json_and_strict",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_044_final_ops_docs.py",
+        "sha256": "48707a09e485b74a5a19dfcb",
+        "line_count": 14,
+        "test_count": 1,
+        "imported_source_modules": [],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_044_final_ops_docs.py -q",
+        "tests": [
+          {
+            "name": "test_operator_ops_docs_exist",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_045_artifact_catalog.py",
+        "sha256": "8f069aa0922a249ccf34ae9e",
+        "line_count": 25,
+        "test_count": 1,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.operator_ops"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_045_artifact_catalog.py -q",
+        "tests": [
+          {
+            "name": "test_artifact_catalog_lists_local_artifacts_without_live",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_046_diagnostics_baseline.py",
+        "sha256": "51a9125f457400c63b663505",
+        "line_count": 22,
+        "test_count": 1,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.operator_ops"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_046_diagnostics_baseline.py -q",
+        "tests": [
+          {
+            "name": "test_diagnostics_baseline_write_and_compare",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_047_report_index.py",
+        "sha256": "bffe0dcda8dde28df56b5de8",
+        "line_count": 22,
+        "test_count": 1,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.operator_ops"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_047_report_index.py -q",
+        "tests": [
+          {
+            "name": "test_report_index_finds_operator_reports",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_048_bundle_matrix.py",
+        "sha256": "a3582d921dcd808fbf7c1bc2",
+        "line_count": 23,
+        "test_count": 1,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.operator_ops",
+          "binance_spot_bot.support_bundle"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_048_bundle_matrix.py -q",
+        "tests": [
+          {
+            "name": "test_support_bundle_verification_matrix",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_049_redaction_self_test.py",
+        "sha256": "f6ee65d217aa53c0a7f6e3c7",
+        "line_count": 12,
+        "test_count": 1,
+        "imported_source_modules": [
+          "binance_spot_bot.operator_ops"
+        ],
+        "likely_domain": "redaction",
+        "safety_relevance": true,
+        "estimated_profile": "deep",
+        "recommended_command": "python -m pytest tests/test_roadmap_049_redaction_self_test.py -q",
+        "tests": [
+          {
+            "name": "test_redaction_self_test_passes_without_leaks",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_050_local_ops_snapshot.py",
+        "sha256": "f923d7f7418e2eb426d1956e",
+        "line_count": 21,
+        "test_count": 1,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.operator_ops"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_050_local_ops_snapshot.py -q",
+        "tests": [
+          {
+            "name": "test_local_ops_snapshot_contains_single_pane_sections",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_051_dashboard_local_ops.py",
+        "sha256": "d0349e4f67518fe4d7f54519",
+        "line_count": 16,
+        "test_count": 1,
+        "imported_source_modules": [],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_051_dashboard_local_ops.py -q",
+        "tests": [
+          {
+            "name": "test_dashboard_contains_local_ops_single_pane_markers",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_052_command_manifest.py",
+        "sha256": "6bda29b5b460f2e54a88f7f3",
+        "line_count": 13,
+        "test_count": 1,
+        "imported_source_modules": [
+          "binance_spot_bot.operator_ops"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_052_command_manifest.py -q",
+        "tests": [
+          {
+            "name": "test_operator_command_manifest_is_demo_safe",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_053_evidence_manifest.py",
+        "sha256": "0502d1c5291092b63ae7214d",
+        "line_count": 20,
+        "test_count": 1,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.operator_ops"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_053_evidence_manifest.py -q",
+        "tests": [
+          {
+            "name": "test_evidence_manifest_is_written",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_054_local_ops_cli.py",
+        "sha256": "cdebdd7fb26b2755ee90593f",
+        "line_count": 22,
+        "test_count": 1,
+        "imported_source_modules": [
+          "binance_spot_bot.cli"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_054_local_ops_cli.py -q",
+        "tests": [
+          {
+            "name": "test_local_ops_cli_commands_return_json",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_076_public_data_ingestion.py",
+        "sha256": "7cb254be062809fe216c3769",
+        "line_count": 178,
+        "test_count": 4,
+        "imported_source_modules": [
+          "binance_spot_bot.binance",
+          "binance_spot_bot.binance_data_ingestion",
+          "binance_spot_bot.cli",
+          "binance_spot_bot.config",
+          "binance_spot_bot.data",
+          "binance_spot_bot.exchange_profiles",
+          "binance_spot_bot.indicator_warmup",
+          "binance_spot_bot.public_data_quality",
+          "binance_spot_bot.public_ws_ingestion",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_076_public_data_ingestion.py -q",
+        "tests": [
+          {
+            "name": "test_public_binance_client_methods_are_unsigned",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_ingestion_warms_multiple_symbols_saves_manifest_and_cache_fallback",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_indicator_warmup_quality_liquidity_market_context_and_ws_plan",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_public_data_cli_commands_with_fake_service",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_077_strategy_calibration.py",
+        "sha256": "41f217b539ddc555fc05fef8",
+        "line_count": 122,
+        "test_count": 4,
+        "imported_source_modules": [
+          "binance_spot_bot.cli",
+          "binance_spot_bot.config",
+          "binance_spot_bot.data",
+          "binance_spot_bot.exchange_profiles",
+          "binance_spot_bot.strategy_calibration",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_077_strategy_calibration.py -q",
+        "tests": [
+          {
+            "name": "test_strategy_dataset_builder_uses_chronological_splits_and_no_lookahead",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_confidence_indicator_symbol_backtest_and_paper_gate_are_evidence_based",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_strategy_dataset_can_be_built_individually",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_strategy_calibration_cli_exports_json",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_078_paper_deployment.py",
+        "sha256": "cd6f7788be1762e3e8f990f7",
+        "line_count": 98,
+        "test_count": 3,
+        "imported_source_modules": [
+          "binance_spot_bot.cli",
+          "binance_spot_bot.config",
+          "binance_spot_bot.exchange_profiles",
+          "binance_spot_bot.paper_deployment",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_078_paper_deployment.py -q",
+        "tests": [
+          {
+            "name": "test_paper_deployment_plan_version_lock_store_and_report",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_paper_deployment_watchdog_triggers_auto_rollback",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_paper_deployment_cycle_and_cli_are_paper_only",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_079_paper_portfolio_ops.py",
+        "sha256": "27030c1fe90fd73c99ffa8ed",
+        "line_count": 101,
+        "test_count": 3,
+        "imported_source_modules": [
+          "binance_spot_bot.cli",
+          "binance_spot_bot.config",
+          "binance_spot_bot.exchange_profiles",
+          "binance_spot_bot.paper_portfolio_ops",
+          "binance_spot_bot.portfolio",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_079_paper_portfolio_ops.py -q",
+        "tests": [
+          {
+            "name": "test_portfolio_allocation_conflicts_and_rotation_policy",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_portfolio_watchdog_and_evidence",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_portfolio_watchdog_blocks_exposure_and_cli_runs",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_080_portfolio_benchmarking.py",
+        "sha256": "0a06b803756b1f3f39af3a5e",
+        "line_count": 90,
+        "test_count": 3,
+        "imported_source_modules": [
+          "binance_spot_bot.cli",
+          "binance_spot_bot.config",
+          "binance_spot_bot.exchange_profiles",
+          "binance_spot_bot.paper_portfolio_ops",
+          "binance_spot_bot.portfolio_benchmarking",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_080_portfolio_benchmarking.py -q",
+        "tests": [
+          {
+            "name": "test_scenario_replay_benchmark_and_report_are_reproducible",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_correlation_and_rotation_robustness",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_portfolio_benchmark_cli_exports_json",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_081_portfolio_optimization.py",
+        "sha256": "822e82677b28872eacd17e62",
+        "line_count": 79,
+        "test_count": 3,
+        "imported_source_modules": [
+          "binance_spot_bot.cli",
+          "binance_spot_bot.config",
+          "binance_spot_bot.exchange_profiles",
+          "binance_spot_bot.paper_portfolio_ops",
+          "binance_spot_bot.portfolio_optimization",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_081_portfolio_optimization.py -q",
+        "tests": [
+          {
+            "name": "test_risk_budget_search_selects_conservative_robust_policy",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_optimize_portfolio_policy_writes_policy_card",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_portfolio_optimization_cli_exports_json",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_082_complete_governance_acceptance.py",
+        "sha256": "b95605c57c35089efd00beed",
+        "line_count": 158,
+        "test_count": 6,
+        "imported_source_modules": [
+          "binance_spot_bot.ab_paper_experiments",
+          "binance_spot_bot.experiment_stopping_rules",
+          "binance_spot_bot.governance_evidence_bundle",
+          "binance_spot_bot.governance_simulation",
+          "binance_spot_bot.paper_experiment_split",
+          "binance_spot_bot.paper_policy_rollout",
+          "binance_spot_bot.policy_governance",
+          "binance_spot_bot.policy_lineage",
+          "binance_spot_bot.policy_promotion_gate",
+          "binance_spot_bot.portfolio_policy_registry",
+          "binance_spot_bot.weekly_governance_report"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_082_complete_governance_acceptance.py -q",
+        "tests": [
+          {
+            "name": "test_registry_rejects_live_status_and_preserves_lineage_without_secrets",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_promotion_gate_requires_full_evidence_and_operator_confirmation",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_rollout_split_experiment_stopping_and_decision_acceptance",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_stopping_rules_and_governance_cover_failure_actions",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_reports_bundle_and_rollback_are_verifiable",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_all_governance_simulation_cases_are_deterministic_and_paper_only",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_082_policy_governance_full.py",
+        "sha256": "3b3315383a0fff28b1d192c5",
+        "line_count": 94,
+        "test_count": 5,
+        "imported_source_modules": [
+          "binance_spot_bot.ab_paper_experiments",
+          "binance_spot_bot.experiment_stopping_rules",
+          "binance_spot_bot.governance_evidence_bundle",
+          "binance_spot_bot.governance_simulation",
+          "binance_spot_bot.paper_experiment_split",
+          "binance_spot_bot.paper_policy_rollout",
+          "binance_spot_bot.policy_governance",
+          "binance_spot_bot.policy_lineage",
+          "binance_spot_bot.policy_promotion_gate",
+          "binance_spot_bot.portfolio_policy_registry",
+          "binance_spot_bot.weekly_governance_report"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_082_policy_governance_full.py -q",
+        "tests": [
+          {
+            "name": "test_portfolio_policy_registry_promotes_and_preserves_previous_champion",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_policy_promotion_gate_blocks_weak_or_unconfirmed_policy",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_rollout_split_ab_stopping_governance_and_reports",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_policy_lineage_rollback_requires_confirmation",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_governance_simulation_is_deterministic_and_no_live",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_083_local_ops_acceptance.py",
+        "sha256": "d9638e1a8b9f216dfa15f2f0",
+        "line_count": 118,
+        "test_count": 6,
+        "imported_source_modules": [
+          "binance_spot_bot.governance_reminders",
+          "binance_spot_bot.local_job_allowlist",
+          "binance_spot_bot.local_job_runner",
+          "binance_spot_bot.local_job_store",
+          "binance_spot_bot.local_jobs",
+          "binance_spot_bot.local_scheduler",
+          "binance_spot_bot.operator_runbooks",
+          "binance_spot_bot.paper_ops_calendar",
+          "binance_spot_bot.runbook_drills",
+          "binance_spot_bot.scheduled_reports",
+          "binance_spot_bot.windows_task_scheduler"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_083_local_ops_acceptance.py -q",
+        "tests": [
+          {
+            "name": "test_local_job_schema_store_and_secret_free_outputs",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_allowlist_blocks_live_order_account_shell_and_secret_args",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_runner_validates_executes_safe_job_and_redacts_env",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_scheduler_due_jobs_dry_run_and_lock",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_scheduled_reports_runbooks_reminders_calendar_and_drills",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_windows_scheduler_plan_is_confirmed_safe_and_path_space_aware",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_084_observability_acceptance.py",
+        "sha256": "d0a3feef0bf1c55198f7a63e",
+        "line_count": 97,
+        "test_count": 5,
+        "imported_source_modules": [
+          "binance_spot_bot.governance_metrics",
+          "binance_spot_bot.local_ops_metrics",
+          "binance_spot_bot.long_term_analytics_report",
+          "binance_spot_bot.metrics_aggregation",
+          "binance_spot_bot.metrics_anomaly_detection",
+          "binance_spot_bot.metrics_collectors",
+          "binance_spot_bot.metrics_evidence_bundle",
+          "binance_spot_bot.metrics_retention",
+          "binance_spot_bot.metrics_schema",
+          "binance_spot_bot.metrics_warehouse",
+          "binance_spot_bot.ops_slo",
+          "binance_spot_bot.paper_performance_metrics"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_084_observability_acceptance.py -q",
+        "tests": [
+          {
+            "name": "test_metric_event_redacts_labels_and_rejects_live",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_metrics_warehouse_append_query_latest_manifest_and_compaction",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_collectors_local_ops_paper_and_governance_metrics",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_aggregation_slo_anomalies_reports_retention_and_bundle",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_write_metrics_report_keeps_existing_cli_surface",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_085_ai_ops_acceptance.py",
+        "sha256": "b1220c508fc179220ada2c93",
+        "line_count": 93,
+        "test_count": 5,
+        "imported_source_modules": [
+          "binance_spot_bot.ai_ops_answer",
+          "binance_spot_bot.ai_ops_command_proposals",
+          "binance_spot_bot.ai_ops_context",
+          "binance_spot_bot.ai_ops_feedback",
+          "binance_spot_bot.ai_ops_guidance_policy",
+          "binance_spot_bot.ai_ops_index",
+          "binance_spot_bot.ai_ops_injection_guard",
+          "binance_spot_bot.ai_ops_llm",
+          "binance_spot_bot.ai_ops_query",
+          "binance_spot_bot.ai_ops_report",
+          "binance_spot_bot.ai_ops_runbook_recommender",
+          "binance_spot_bot.ai_ops_sessions"
+        ],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_085_ai_ops_acceptance.py -q",
+        "tests": [
+          {
+            "name": "test_context_pack_is_redacted_manifested_and_missing_sources_warn",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_query_parser_blocks_forbidden_nl_and_en_intents",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_answer_engine_sources_uncertainty_and_forbidden_refusal",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_guidance_policy_command_proposals_and_injection_guard",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_index_runbook_llm_sessions_feedback_and_report",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_086_action_center_acceptance.py",
+        "sha256": "36a7a7b7541a2a389a6c0d11",
+        "line_count": 110,
+        "test_count": 4,
+        "imported_source_modules": [
+          "binance_spot_bot.action_audit_bundle",
+          "binance_spot_bot.action_executor",
+          "binance_spot_bot.action_policy",
+          "binance_spot_bot.action_proposals",
+          "binance_spot_bot.action_verification",
+          "binance_spot_bot.approval_plans",
+          "binance_spot_bot.approval_queue",
+          "binance_spot_bot.approval_workflow",
+          "binance_spot_bot.decision_journal",
+          "binance_spot_bot.decision_outcome_analytics",
+          "binance_spot_bot.local_operator_identity",
+          "binance_spot_bot.runbook_action_workflow"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_086_action_center_acceptance.py -q",
+        "tests": [
+          {
+            "name": "test_action_policy_blocks_live_orders_sensitive_values_and_injection",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_approval_queue_workflow_journal_execute_verify",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_confirm_evidence_and_forbidden_boundaries",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_ai_ops_runbook_plans_identity_audit_analytics_and_report",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_087_permissions_compliance_acceptance.py",
+        "sha256": "ddbe0bc64e39afdec996dd02",
+        "line_count": 77,
+        "test_count": 3,
+        "imported_source_modules": [
+          "binance_spot_bot.action_proposals",
+          "binance_spot_bot.approval_policy_templates",
+          "binance_spot_bot.compliance_bundle",
+          "binance_spot_bot.compliance_evidence",
+          "binance_spot_bot.compliance_report",
+          "binance_spot_bot.compliance_score",
+          "binance_spot_bot.local_operator_identity",
+          "binance_spot_bot.operator_roles",
+          "binance_spot_bot.permission_change_workflow",
+          "binance_spot_bot.permission_drift",
+          "binance_spot_bot.permission_engine",
+          "binance_spot_bot.permission_profiles",
+          "binance_spot_bot.permission_review",
+          "binance_spot_bot.separation_of_duties"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_087_permissions_compliance_acceptance.py -q",
+        "tests": [
+          {
+            "name": "test_identity_profiles_roles_and_permission_engine",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_separation_templates_permission_change_and_drift",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_compliance_evidence_report_score_bundle_and_review",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_088_disaster_recovery_acceptance.py",
+        "sha256": "c09a23fb7ddd5f1a5aea51aa",
+        "line_count": 89,
+        "test_count": 3,
+        "imported_source_modules": [
+          "binance_spot_bot.backup_preflight",
+          "binance_spot_bot.backup_profiles",
+          "binance_spot_bot.backup_verification",
+          "binance_spot_bot.data_dir_migration",
+          "binance_spot_bot.disaster_recovery_report",
+          "binance_spot_bot.dr_evidence_bundle",
+          "binance_spot_bot.evidence_continuity",
+          "binance_spot_bot.offline_backup",
+          "binance_spot_bot.permission_restore_validation",
+          "binance_spot_bot.restore_drill",
+          "binance_spot_bot.restore_executor",
+          "binance_spot_bot.restore_preview",
+          "binance_spot_bot.state_integrity",
+          "binance_spot_bot.state_inventory"
+        ],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_088_disaster_recovery_acceptance.py -q",
+        "tests": [
+          {
+            "name": "test_backup_profiles_inventory_preflight_and_package_are_secret_free",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_restore_preview_drill_executor_integrity_and_continuity",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_reports_bundle_migration_and_corrupt_detection",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_089_release_management_acceptance.py",
+        "sha256": "b2a3a3f605806b0307311b59",
+        "line_count": 79,
+        "test_count": 3,
+        "imported_source_modules": [
+          "binance_spot_bot.backup_verification",
+          "binance_spot_bot.migration_apply",
+          "binance_spot_bot.migration_dry_run",
+          "binance_spot_bot.migration_registry",
+          "binance_spot_bot.offline_backup",
+          "binance_spot_bot.post_upgrade_validation",
+          "binance_spot_bot.pre_upgrade_backup_gate",
+          "binance_spot_bot.release_candidate",
+          "binance_spot_bot.release_evidence_bundle",
+          "binance_spot_bot.release_manifest",
+          "binance_spot_bot.release_notes",
+          "binance_spot_bot.release_quality_gate",
+          "binance_spot_bot.rollback_planner",
+          "binance_spot_bot.schema_registry",
+          "binance_spot_bot.upgrade_compatibility",
+          "binance_spot_bot.versioning"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_089_release_management_acceptance.py -q",
+        "tests": [
+          {
+            "name": "test_version_fingerprint_manifest_notes_and_schema",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_migration_backup_gate_apply_rollback_and_quality",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_release_candidate_evidence_bundle_and_legacy_surface",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_090_roadmap_execution_acceptance.py",
+        "sha256": "2f78035a6acaba18b1ef8c5c",
+        "line_count": 95,
+        "test_count": 4,
+        "imported_source_modules": [
+          "binance_spot_bot.codex_task_pack_generator",
+          "binance_spot_bot.codex_task_packs",
+          "binance_spot_bot.pr_template_generator",
+          "binance_spot_bot.roadmap_completion_gate",
+          "binance_spot_bot.roadmap_dependency_graph",
+          "binance_spot_bot.roadmap_duplicate_guard",
+          "binance_spot_bot.roadmap_evidence_bundle",
+          "binance_spot_bot.roadmap_execution_report",
+          "binance_spot_bot.roadmap_index",
+          "binance_spot_bot.roadmap_mover",
+          "binance_spot_bot.roadmap_quality_score",
+          "binance_spot_bot.roadmap_release_integration",
+          "binance_spot_bot.roadmap_validation"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_090_roadmap_execution_acceptance.py -q",
+        "tests": [
+          {
+            "name": "test_roadmap_index_duplicate_validation_and_quality",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_task_packs_pr_templates_graph_and_release_input",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_completion_gate_mover_and_evidence_bundle",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_execution_report_writes_outputs",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_091_repo_knowledge_acceptance.py",
+        "sha256": "babc86a83dc97b640d3b34be",
+        "line_count": 91,
+        "test_count": 4,
+        "imported_source_modules": [
+          "binance_spot_bot.artifact_flow_graph",
+          "binance_spot_bot.cli_surface_map",
+          "binance_spot_bot.code_graph",
+          "binance_spot_bot.code_ownership",
+          "binance_spot_bot.dashboard_surface_map",
+          "binance_spot_bot.docs_code_consistency",
+          "binance_spot_bot.impact_analysis",
+          "binance_spot_bot.refactor_candidates",
+          "binance_spot_bot.repo_inventory",
+          "binance_spot_bot.repo_knowledge_codex_integration",
+          "binance_spot_bot.repo_knowledge_report",
+          "binance_spot_bot.repo_knowledge_store",
+          "binance_spot_bot.roadmap_traceability",
+          "binance_spot_bot.safety_surface_map",
+          "binance_spot_bot.test_impact_map"
+        ],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmap_091_repo_knowledge_acceptance.py -q",
+        "tests": [
+          {
+            "name": "test_inventory_manifest_code_graph_and_surfaces",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_impact_test_selection_ownership_and_safety",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_traceability_artifacts_reports_store_and_refactors",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_docs_consistency_legacy_function",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmap_092_intelligent_test_selection_acceptance.py",
+        "sha256": "1a80b5d6a38f32d5dc043f83",
+        "line_count": 68,
+        "test_count": 3,
+        "imported_source_modules": [
+          "binance_spot_bot.changed_files",
+          "binance_spot_bot.check_all_v2",
+          "binance_spot_bot.flaky_tests",
+          "binance_spot_bot.intelligent_test_selector",
+          "binance_spot_bot.regression_risk",
+          "binance_spot_bot.regression_risk_report",
+          "binance_spot_bot.test_evidence_bundle",
+          "binance_spot_bot.test_inventory",
+          "binance_spot_bot.test_profiles",
+          "binance_spot_bot.test_runtime_history"
+        ],
+        "likely_domain": "runtime",
+        "safety_relevance": true,
+        "estimated_profile": "deep",
+        "recommended_command": "python -m pytest tests/test_roadmap_092_intelligent_test_selection_acceptance.py -q",
+        "tests": [
+          {
+            "name": "test_test_inventory_manifest_and_runtime_history",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_changed_files_risk_profiles_and_selector",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_check_all_v2_evidence_flaky_and_reports",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmaps_055_064_operator_local_ops.py",
+        "sha256": "6593a2839c36d9f478f782de",
+        "line_count": 172,
+        "test_count": 10,
+        "imported_source_modules": [
+          "binance_spot_bot.cli",
+          "binance_spot_bot.config",
+          "binance_spot_bot.operator_ops"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmaps_055_064_operator_local_ops.py -q",
+        "tests": [
+          {
+            "name": "test_055_operator_health_score_action_priority_engine",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_056_artifact_catalog_filters_staleness_and_groups",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_057_rehearsal_profiles_fast_standard_deep",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_058_operator_report_diff_empty_and_single_report",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_059_support_bundle_restore_preview_is_non_destructive",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_060_evidence_integrity_chain_writes_redacted_hash_manifest",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_061_dashboard_command_palette_and_local_ops_panels_are_registered",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_062_environment_doctor_checks_python_deps_and_paths",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_063_data_growth_budget_forecast",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_064_local_ops_cli_new_commands_return_json_without_live",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmaps_076_102_paper_os.py",
+        "sha256": "85b0bfd18f2d03dbb60040ac",
+        "line_count": 189,
+        "test_count": 4,
+        "imported_source_modules": [
+          "binance_spot_bot.config",
+          "binance_spot_bot.exchange_profiles",
+          "binance_spot_bot.paper_os",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmaps_076_102_paper_os.py -q",
+        "tests": [
+          {
+            "name": "test_roadmap_prioritization_and_public_data_warmup_are_dependency_ordered",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_indicator_strategy_deployment_and_portfolio_chain_stays_paper_only",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_local_ops_security_recovery_release_and_safe_assistant_contracts",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_developer_runtime_model_monitoring_and_operator_os_audit",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmaps_082_088_ops_governance.py",
+        "sha256": "667c5a9aa31a648ff6b5e6ea",
+        "line_count": 132,
+        "test_count": 7,
+        "imported_source_modules": [
+          "binance_spot_bot.action_center",
+          "binance_spot_bot.config",
+          "binance_spot_bot.disaster_recovery_drills",
+          "binance_spot_bot.local_ops_automation",
+          "binance_spot_bot.metrics_warehouse",
+          "binance_spot_bot.ops_assistant",
+          "binance_spot_bot.permission_profiles",
+          "binance_spot_bot.policy_rollout",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmaps_082_088_ops_governance.py -q",
+        "tests": [
+          {
+            "name": "test_082_policy_rollout_ab_champion_challenger_report",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_083_local_ops_automation_writes_schedule_and_runbook",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_084_metrics_warehouse_aggregates_and_flags_anomalies",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_085_ops_assistant_answers_status_and_blocks_trading_intents",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_086_action_center_requires_approval_and_blocks_unsafe_actions",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_087_permission_profiles_block_live_trading_and_write_compliance",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_088_disaster_recovery_drill_archives_and_scans_state",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmaps_083_088_full_surface.py",
+        "sha256": "2730f8ae9b56ae64ac711dcf",
+        "line_count": 82,
+        "test_count": 6,
+        "imported_source_modules": [
+          "binance_spot_bot.action_executor",
+          "binance_spot_bot.ai_ops_answer",
+          "binance_spot_bot.backup_profiles",
+          "binance_spot_bot.backup_verification",
+          "binance_spot_bot.compliance_score",
+          "binance_spot_bot.data_dir_migration",
+          "binance_spot_bot.local_job_allowlist",
+          "binance_spot_bot.local_job_runner",
+          "binance_spot_bot.metrics_anomaly_detection",
+          "binance_spot_bot.metrics_warehouse",
+          "binance_spot_bot.offline_backup",
+          "binance_spot_bot.permission_drift",
+          "binance_spot_bot.restore_preview",
+          "binance_spot_bot.separation_of_duties",
+          "binance_spot_bot.state_inventory"
+        ],
+        "likely_domain": "roadmap",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmaps_083_088_full_surface.py -q",
+        "tests": [
+          {
+            "name": "test_083_local_jobs_allowlist_blocks_trading_commands",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_084_metrics_surface_reports_anomalies_and_no_live",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_085_ai_ops_blocks_unsafe_intents",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_086_action_center_surface_is_approval_gated",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_087_permissions_compliance_and_separation_of_duties",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_088_backup_restore_inventory_preview_no_forbidden_files",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmaps_089_096_full_surface.py",
+        "sha256": "b265efc47cb3033a53c040a6",
+        "line_count": 101,
+        "test_count": 8,
+        "imported_source_modules": [
+          "binance_spot_bot.check_all_v2",
+          "binance_spot_bot.code_graph",
+          "binance_spot_bot.dashboard_smoke_v2",
+          "binance_spot_bot.data_quality_v2",
+          "binance_spot_bot.impact_analysis",
+          "binance_spot_bot.indicator_compute",
+          "binance_spot_bot.intelligent_test_selector",
+          "binance_spot_bot.migration_apply",
+          "binance_spot_bot.performance_budget",
+          "binance_spot_bot.release_manifest",
+          "binance_spot_bot.roadmap_completion_gate",
+          "binance_spot_bot.roadmap_duplicate_guard",
+          "binance_spot_bot.runtime_event_bus",
+          "binance_spot_bot.runtime_snapshot_builder",
+          "binance_spot_bot.runtime_snapshot_limits",
+          "binance_spot_bot.versioning"
+        ],
+        "likely_domain": "runtime",
+        "safety_relevance": true,
+        "estimated_profile": "deep",
+        "recommended_command": "python -m pytest tests/test_roadmaps_089_096_full_surface.py -q",
+        "tests": [
+          {
+            "name": "test_089_release_management_blocks_unconfirmed_migration",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_090_roadmap_execution_guards_duplicates_and_completion",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_091_repo_knowledge_graph_and_impact",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_092_intelligent_test_selection_selects_risk_tests",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_093_performance_budget_warns_on_regression",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_094_dashboard_smoke_v2_surface",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_095_runtime_event_bus_and_snapshot_limits",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_096_data_pipeline_contracts_indicator_compute",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmaps_097_102_full_surface.py",
+        "sha256": "d89726bc9ab817d2957f9acd",
+        "line_count": 87,
+        "test_count": 6,
+        "imported_source_modules": [
+          "binance_spot_bot.allocation_policy",
+          "binance_spot_bot.champion_challenger",
+          "binance_spot_bot.ensemble_prediction",
+          "binance_spot_bot.evidence_gap_detector",
+          "binance_spot_bot.feature_drift",
+          "binance_spot_bot.model_downgrade_executor",
+          "binance_spot_bot.model_downgrade_policy",
+          "binance_spot_bot.model_health_score",
+          "binance_spot_bot.model_promotion_gate",
+          "binance_spot_bot.no_live_proof_pack",
+          "binance_spot_bot.operator_certification",
+          "binance_spot_bot.operator_glossary",
+          "binance_spot_bot.operator_signoff",
+          "binance_spot_bot.paper_os_simulation",
+          "binance_spot_bot.production_readiness_simulation",
+          "binance_spot_bot.stabilization_gate",
+          "binance_spot_bot.training_data_gate",
+          "binance_spot_bot.training_pipeline"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmaps_097_102_full_surface.py -q",
+        "tests": [
+          {
+            "name": "test_097_training_pipeline_and_promotion_gate_are_contract_gated",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_098_monitoring_detects_drift_and_requires_confirmed_downgrade",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_099_ensemble_allocation_and_prediction_are_paper_only",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_100_paper_os_audit_blocks_production_readiness",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_101_stabilization_gate_burns_down_unwaived_blockers",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_102_operator_training_and_manual_surfaces",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_roadmaps_104_122_full_surface.py",
+        "sha256": "b94df04e018f0253ec834010",
+        "line_count": 116,
+        "test_count": 8,
+        "imported_source_modules": [
+          "binance_spot_bot.dashboard_v2_facade",
+          "binance_spot_bot.demo_data_validation_gate",
+          "binance_spot_bot.live_trading.automatic_disarm_rules",
+          "binance_spot_bot.live_trading.live_dry_run_account",
+          "binance_spot_bot.live_trading.live_execution_quality",
+          "binance_spot_bot.live_trading.live_order_preview",
+          "binance_spot_bot.live_trading.live_session_review",
+          "binance_spot_bot.live_trading.micro_position_scaling",
+          "binance_spot_bot.live_trading.minimal_real_order_safety",
+          "binance_spot_bot.live_trading.operator_approval_workflow",
+          "binance_spot_bot.live_trading.risk_limit_calibration",
+          "binance_spot_bot.live_trading.scaling_governance",
+          "binance_spot_bot.one_click_unified_launcher",
+          "binance_spot_bot.packaging_facade",
+          "binance_spot_bot.portfolio_experiment_orchestrator",
+          "binance_spot_bot.portfolio_rebalance_lab",
+          "binance_spot_bot.strategy_lab_queue"
+        ],
+        "likely_domain": "operator",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_roadmaps_104_122_full_surface.py -q",
+        "tests": [
+          {
+            "name": "test_104_dashboard_v2_realtime_contract_has_no_full_refresh",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_105_109_dashboard_v2_parity_deprecation_and_extension_surfaces",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_112_115_market_strategy_portfolio_research_is_paper_only",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_116_117_one_click_and_demo_data_gate_remain_safe",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_118_live_dry_run_and_order_preview_never_submit_order",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_119_controlled_live_session_scaling_requires_approval_and_disarms",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_120_review_scaling_risk_calibration_approval_workflow",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_122_packaging_safe_update_rollback_plan",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_runtime_dashboard.py",
+        "sha256": "46532193611f77e40287657e",
+        "line_count": 86,
+        "test_count": 4,
+        "imported_source_modules": [
+          "binance_spot_bot.cli",
+          "binance_spot_bot.config",
+          "binance_spot_bot.demo",
+          "binance_spot_bot.runtime",
+          "binance_spot_bot.ui.state"
+        ],
+        "likely_domain": "runtime",
+        "safety_relevance": true,
+        "estimated_profile": "deep",
+        "recommended_command": "python -m pytest tests/test_runtime_dashboard.py -q",
+        "tests": [
+          {
+            "name": "test_demo_replay_is_deterministic",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_ui_modes_do_not_include_live",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_runtime_runs_demo_steps_without_keys",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_cli_run_local_outputs_summary",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_simple_demo_dashboard.py",
+        "sha256": "c30137c4ae54b52c0b01c886",
+        "line_count": 59,
+        "test_count": 3,
+        "imported_source_modules": [],
+        "likely_domain": "dashboard",
+        "safety_relevance": false,
+        "estimated_profile": "standard",
+        "recommended_command": "python -m pytest tests/test_simple_demo_dashboard.py -q",
+        "tests": [
+          {
+            "name": "test_dashboard_defaults_to_simple_demo_trading_flow",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_simple_dashboard_does_not_use_fast_full_page_rerun_loop",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_simple_dashboard_keeps_advanced_markers_for_smoke_checks",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_strategy_lab_copilot.py",
+        "sha256": "141864dc6a3aedfff2617330",
+        "line_count": 71,
+        "test_count": 6,
+        "imported_source_modules": [
+          "binance_spot_bot.copilot_permissions",
+          "binance_spot_bot.copilot_redaction",
+          "binance_spot_bot.copilot_summary",
+          "binance_spot_bot.dataset_model_wizard",
+          "binance_spot_bot.replay_sandbox",
+          "binance_spot_bot.risk_debugger",
+          "binance_spot_bot.session_compare",
+          "binance_spot_bot.session_store",
+          "binance_spot_bot.signal_explainer",
+          "binance_spot_bot.strategy_templates",
+          "binance_spot_bot.types"
+        ],
+        "likely_domain": "redaction",
+        "safety_relevance": true,
+        "estimated_profile": "deep",
+        "recommended_command": "python -m pytest tests/test_strategy_lab_copilot.py -q",
+        "tests": [
+          {
+            "name": "test_risk_debugger_never_overrides_blocks",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_signal_explainer_is_deterministic",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_replay_and_session_compare_work_offline",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_copilot_denies_order_paths_and_redacts",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_rule_based_summary_and_templates_are_safe",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_dataset_model_wizard_requires_chronological_splits",
+            "kind": "pytest_function"
+          }
+        ]
+      },
+      {
+        "path": "tests/test_workspace_backup_diagnostics.py",
+        "sha256": "5a8781b31101ec55a7d76aaf",
+        "line_count": 62,
+        "test_count": 3,
+        "imported_source_modules": [
+          "binance_spot_bot.backup_restore",
+          "binance_spot_bot.config",
+          "binance_spot_bot.diagnostics",
+          "binance_spot_bot.support_bundle",
+          "binance_spot_bot.workspaces"
+        ],
+        "likely_domain": "general",
+        "safety_relevance": false,
+        "estimated_profile": "fast",
+        "recommended_command": "python -m pytest tests/test_workspace_backup_diagnostics.py -q",
+        "tests": [
+          {
+            "name": "test_workspace_profile_roundtrip_without_secrets",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_backup_redacts_and_restore_requires_confirmation",
+            "kind": "pytest_function"
+          },
+          {
+            "name": "test_diagnostics_and_support_bundle_are_redacted_zip_outputs",
+            "kind": "pytest_function"
+          }
+        ]
+      }
+    ],
+    "count": 90
+  },
+  "live_trading_enabled": false
+}

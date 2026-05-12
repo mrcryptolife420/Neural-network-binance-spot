@@ -1,0 +1,2090 @@
+{
+  "status": "ok",
+  "preview_id": "preview-1778556651635",
+  "backup": "data\\disaster-recovery\\backup.zip",
+  "target": "C:\\Users\\highlife\\AppData\\Local\\Temp\\spotbot-restore-drill-zipois9e",
+  "creates": [
+    "action-center/audit-bundles/action-audit-1778517198514/action_audit_manifest.json",
+    "action-center/audit-bundles/action-audit-1778517198514/files/queue-index.json",
+    "action-center/decision-journal-1d.json",
+    "action-center/executions/exec-act-1778517196605-d054debd19-1778517197419.json",
+    "action-center/latest-decision.json",
+    "action-center/proposals/act-1778517112605-93af3c0093.json",
+    "action-center/proposals/act-1778517196605-d054debd19.json",
+    "action-center/proposals/act-1778519393027-2ca601c1d3.json",
+    "action-center/queue-index.json",
+    "action-center/verification/ver-act-1778517196605-d054debd19-1778517197789.json",
+    "ai-ops/contexts/latest-context.json",
+    "ai-ops/sessions/latest-session.json",
+    "checks/check-all.json",
+    "checks/dashboard/browser-smoke.json",
+    "checks/dashboard/launch-evidence.json",
+    "checks/dashboard/screenshots/demo-pilot.png",
+    "checks/dashboard/screenshots/demo-spot-trading.png",
+    "checks/dashboard/screenshots/logs-and-security.png",
+    "checks/dashboard/screenshots/overview.png",
+    "checks/dashboard-smoke.json",
+    "compliance/2026-05-11/compliance_report.json",
+    "compliance/bundles/compliance-1778518257125/compliance_bundle_manifest.json",
+    "compliance/bundles/compliance-1778518257125/files/compliance_report.json",
+    "compliance/bundles/compliance-1778518257125/files/permission-profile-manifest.json",
+    "disaster-recovery/backup_preflight_report.json",
+    "disaster-recovery/inventory_manifest.json",
+    "disaster-recovery/latest-dr-drill.json",
+    "evidence/dashboard/operator-evidence-2026-05-10T095104.532357Z0000.json",
+    "evidence/dashboard/operator-evidence-2026-05-10T095127.364639Z0000.json",
+    "evidence/dashboard/operator-evidence-2026-05-10T100450.377377Z0000.json",
+    "evidence/dashboard/operator-evidence-2026-05-10T185924.124475Z0000.json",
+    "evidence/dashboard/operator-evidence-2026-05-10T191201.462297Z0000.json",
+    "evidence/dashboard/operator-evidence-2026-05-10T192724.115700Z0000.json",
+    "evidence/dashboard/operator-evidence-2026-05-11T114544.387650Z0000.json",
+    "evidence/dashboard/operator-evidence-2026-05-11T114732.634571Z0000.json",
+    "evidence/dashboard/operator-evidence-2026-05-11T115100.118197Z0000.json",
+    "evidence/dashboard/operator-evidence-2026-05-11T120802.034503Z0000.json",
+    "evidence/demo-execution/demo_execution_drill.json",
+    "evidence/demo-execution/demo_execution_drill_1778406687351.json",
+    "evidence/demo-execution/demo_execution_drill_1778407490366.json",
+    "evidence/demo-execution/demo_execution_drill_1778439564099.json",
+    "evidence/demo-execution/demo_execution_drill_1778440321444.json",
+    "evidence/demo-execution/demo_execution_drill_1778441244103.json",
+    "evidence/diagnostics/baseline.json",
+    "evidence/diagnostics/latest-diagnostics.json",
+    "evidence/manifest/evidence-chain.json",
+    "evidence/manifest/latest-evidence-manifest.json",
+    "evidence/pilot-idempotency-runs/1778407490343-btcusdt-smoke/pilot-run.json",
+    "evidence/pilot-start-idempotency.json",
+    "evidence/rehearsals/latest.json",
+    "evidence/rehearsals/rehearsal-1778406681754/artifacts.json",
+    "evidence/rehearsals/rehearsal-1778406681754/summary.json",
+    "evidence/rehearsals/rehearsal-1778407484443/artifacts.json",
+    "evidence/rehearsals/rehearsal-1778407484443/summary.json",
+    "evidence/rehearsals/rehearsal-1778439558113/artifacts.json",
+    "evidence/rehearsals/rehearsal-1778439558113/summary.json",
+    "evidence/rehearsals/rehearsal-1778440314146/artifacts.json",
+    "evidence/rehearsals/rehearsal-1778440314146/summary.json",
+    "evidence/rehearsals/rehearsal-1778441236555/artifacts.json",
+    "evidence/rehearsals/rehearsal-1778441236555/summary.json",
+    "evidence/scorecards/latest-scorecard.json",
+    "evidence/scorecards/scorecard-20260510T093820Z.json",
+    "evidence/scorecards/scorecard-20260510T095127Z.json",
+    "evidence/scorecards/scorecard-20260510T100450Z.json",
+    "evidence/scorecards/scorecard-20260510T185924Z.json",
+    "evidence/scorecards/scorecard-20260510T191201Z.json",
+    "evidence/scorecards/scorecard-20260510T192724Z.json",
+    "experiments/experiments.json",
+    "local-jobs/jobs.json",
+    "local-ops/automation/scheduled-ops.json",
+    "local-ops/calendars/paper_ops_calendar.json",
+    "local-ops/reports/governance_reminders.json",
+    "local-ops/runbooks/runbooks.json",
+    "metrics/evidence/metrics-evidence-1778515126630/files/analytics-report.json",
+    "metrics/evidence/metrics-evidence-1778515126630/files/metrics-manifest.json",
+    "metrics/evidence/metrics-evidence-1778515126630/metrics_evidence_manifest.json",
+    "metrics/reports/daily/2026-05-11/analytics-report.json",
+    "metrics-warehouse/daily/2026-05-11.json",
+    "metrics-warehouse/manifests/metrics-manifest.json",
+    "metrics-warehouse/reports/latest-metrics-report.json",
+    "models/model-1778325559324-0e0ecd/model.json",
+    "models/registry.json",
+    "permission-profiles/compliance-report.json",
+    "permissions/approved-permission-change.json",
+    "permissions/approved-permission-change.rollback.json",
+    "permissions/identities/op-2bd806c97f.json",
+    "permissions/identities/op-e89ea0f9eb.json",
+    "permissions/latest-permission-change.json",
+    "permissions/permission-profile-manifest.json",
+    "pilot-runs/1778385150497-btcusdt-operator/pilot-run.json",
+    "pilot-runs/1778406528859-btcusdt-smoke/latest-telemetry.json",
+    "pilot-runs/1778406528859-btcusdt-smoke/pilot-run.json",
+    "pilot-runs/1778409001250-btcusdt-smoke/latest-telemetry.json",
+    "pilot-runs/1778409001250-btcusdt-smoke/pilot-run.json",
+    "pilot-runs/1778500209995-btcusdt-smoke/latest-telemetry.json",
+    "pilot-runs/1778500209995-btcusdt-smoke/pilot-run.json",
+    "pilot-runs/1778500348843-btcusdt-operator/pilot-run.json",
+    "pilot-runs/1778500348845-btcusdt-operator/pilot-run.json",
+    "pilot-runs/1778500471277-btcusdt-operator/latest-telemetry.json",
+    "pilot-runs/1778500471277-btcusdt-operator/pilot-run.json",
+    "pilot-runs/1778500557914-btcusdt-operator/latest-telemetry.json",
+    "pilot-runs/1778500557914-btcusdt-operator/pilot-run.json",
+    "pilot-runs/_recovered/1778385150497-btcusdt-operator-1778487745155.json",
+    "pilot-runs/runner.json",
+    "pilot-runs/runner.lock.json",
+    "policy-governance/ab-experiments/ab-rollout-1778512707547-7.json",
+    "policy-governance/bundle-source.json",
+    "policy-governance/evidence/governance-1778512722493/files/bundle-source.json",
+    "policy-governance/evidence/governance-1778512722493/governance_bundle_manifest.json",
+    "policy-governance/weekly/2026-W20/evidence_manifest.json",
+    "policy-governance/weekly/2026-W20/weekly_governance_report.json",
+    "portfolio-policies/registry.json",
+    "public_binance/bundles/ADAUSDT-1778519617262.json",
+    "public_binance/bundles/ADAUSDT-1778519701253.json",
+    "public_binance/bundles/ADAUSDT-1778519822093.json",
+    "public_binance/bundles/BNBUSDT-1778519594778.json",
+    "public_binance/bundles/BNBUSDT-1778519678723.json",
+    "public_binance/bundles/BNBUSDT-1778519796640.json",
+    "public_binance/bundles/BTCUSDT-1778519579687.json",
+    "public_binance/bundles/BTCUSDT-1778519663645.json",
+    "public_binance/bundles/BTCUSDT-1778519779644.json",
+    "public_binance/bundles/DOGEUSDT-1778519624778.json",
+    "public_binance/bundles/DOGEUSDT-1778519708819.json",
+    "public_binance/bundles/DOGEUSDT-1778519830574.json",
+    "public_binance/bundles/ETHUSDT-1778519587199.json",
+    "public_binance/bundles/ETHUSDT-1778519671206.json",
+    "public_binance/bundles/ETHUSDT-1778519788152.json",
+    "public_binance/bundles/LINKUSDT-1778519632259.json",
+    "public_binance/bundles/LINKUSDT-1778519716340.json",
+    "public_binance/bundles/LINKUSDT-1778519839068.json",
+    "public_binance/bundles/SOLUSDT-1778519602279.json",
+    "public_binance/bundles/SOLUSDT-1778519686260.json",
+    "public_binance/bundles/SOLUSDT-1778519805120.json",
+    "public_binance/bundles/XRPUSDT-1778519609768.json",
+    "public_binance/bundles/XRPUSDT-1778519693743.json",
+    "public_binance/bundles/XRPUSDT-1778519813613.json",
+    "public_binance/manifests/ADAUSDT-1778519617262.json",
+    "public_binance/manifests/ADAUSDT-1778519701253.json",
+    "public_binance/manifests/ADAUSDT-1778519822093.json",
+    "public_binance/manifests/BNBUSDT-1778519594778.json",
+    "public_binance/manifests/BNBUSDT-1778519678723.json",
+    "public_binance/manifests/BNBUSDT-1778519796640.json",
+    "public_binance/manifests/BTCUSDT-1778519579687.json",
+    "public_binance/manifests/BTCUSDT-1778519663645.json",
+    "public_binance/manifests/BTCUSDT-1778519779644.json",
+    "public_binance/manifests/DOGEUSDT-1778519624778.json",
+    "public_binance/manifests/DOGEUSDT-1778519708819.json",
+    "public_binance/manifests/DOGEUSDT-1778519830574.json",
+    "public_binance/manifests/ETHUSDT-1778519587199.json",
+    "public_binance/manifests/ETHUSDT-1778519671206.json",
+    "public_binance/manifests/ETHUSDT-1778519788152.json",
+    "public_binance/manifests/LINKUSDT-1778519632259.json",
+    "public_binance/manifests/LINKUSDT-1778519716340.json",
+    "public_binance/manifests/LINKUSDT-1778519839068.json",
+    "public_binance/manifests/SOLUSDT-1778519602279.json",
+    "public_binance/manifests/SOLUSDT-1778519686260.json",
+    "public_binance/manifests/SOLUSDT-1778519805120.json",
+    "public_binance/manifests/XRPUSDT-1778519609768.json",
+    "public_binance/manifests/XRPUSDT-1778519693743.json",
+    "public_binance/manifests/XRPUSDT-1778519813613.json",
+    "public_binance/reports/indicator_warmup_report.json",
+    "raw/BTCUSDT_1m_latest.json",
+    "reports/operator/operator-report.html",
+    "reports/operator/operator-report.md",
+    "sessions/1778325491657-c68027ce/summary.json",
+    "sessions/1778325600312-7225244d/summary.json",
+    "sessions/1778326831564-51006992/summary.json",
+    "sessions/1778326992841-621cd9c8/summary.json",
+    "sessions/1778327122951-bfc58d25/summary.json",
+    "sessions/1778327143517-34884d1d/summary.json",
+    "sessions/1778327151289-b1713e54/summary.json",
+    "sessions/1778327161455-c021060f/summary.json",
+    "sessions/1778327381532-cd5cab4a/summary.json",
+    "sessions/1778327673403-63783448/summary.json",
+    "sessions/1778327676429-b3ff8a18/summary.json",
+    "sessions/1778327681614-57669102/summary.json",
+    "sessions/1778327849256-70d7f568/summary.json",
+    "sessions/1778327854301-5b8c62d9/summary.json",
+    "sessions/1778327858093-b68da833/summary.json",
+    "sessions/1778348404953-7b19afca/report/config-redacted.json",
+    "sessions/1778348404953-7b19afca/report/summary.json",
+    "sessions/1778348404953-7b19afca/summary.json",
+    "sessions/1778348703586-0cb51bd3/report/config-redacted.json",
+    "sessions/1778348703586-0cb51bd3/report/summary.json",
+    "sessions/1778348703586-0cb51bd3/summary.json",
+    "sessions/1778348942766-efe8716d/summary.json",
+    "sessions/1778349114431-df666f31/report/config-redacted.json",
+    "sessions/1778349114431-df666f31/report/summary.json",
+    "sessions/1778349114431-df666f31/summary.json",
+    "sessions/1778349149147-8e1d0b02/summary.json",
+    "sessions/1778349151323-57787d9c/report/config-redacted.json",
+    "sessions/1778349151323-57787d9c/report/summary.json",
+    "sessions/1778349151323-57787d9c/summary.json",
+    "sessions/1778349198161-a5455c13/summary.json",
+    "sessions/1778349199727-23202ff7/report/config-redacted.json",
+    "sessions/1778349199727-23202ff7/report/summary.json",
+    "sessions/1778349199727-23202ff7/summary.json",
+    "sessions/1778378909203-159e3a3b/summary.json",
+    "sessions/1778378967050-c11f2428/summary.json",
+    "sessions/1778384999619-5706ad66/summary.json",
+    "sessions/1778385012910-0dec6ab4/summary.json",
+    "sessions/1778385015977-1589deac/summary.json",
+    "sessions/1778385115057-4a6e1748/summary.json",
+    "sessions/1778386710442-fa04669c/summary.json",
+    "sessions/1778406324217-97bbd315/summary.json",
+    "sessions/1778406469416-98024573/summary.json",
+    "sessions/1778406528830-f327db37/summary.json",
+    "sessions/1778406599992-375f15e5/summary.json",
+    "sessions/1778406679615-e27ee178/summary.json",
+    "sessions/1778408882932-ceb86f06/summary.json",
+    "sessions/1778408924072-64aa4de9/summary.json",
+    "sessions/1778409001221-314eee3c/summary.json",
+    "sessions/1778409057440-fd520bd7/summary.json",
+    "sessions/1778409091717-1cc9786b/summary.json",
+    "sessions/1778474709354-6fdfd975/summary.json",
+    "sessions/1778475106043-eb85fbb2/summary.json",
+    "sessions/1778475160433-ae476f00/summary.json",
+    "sessions/1778475504956-b8f71962/summary.json",
+    "sessions/1778475542551-9b1dc547/summary.json",
+    "sessions/1778477291934-95b0d991/summary.json",
+    "sessions/1778477331945-0b2ef739/summary.json",
+    "sessions/1778477450847-9b7acd6f/summary.json",
+    "sessions/1778477490215-eaa6e9d6/summary.json",
+    "sessions/1778477501971-89f23e10/report/config-redacted.json",
+    "sessions/1778477501971-89f23e10/report/demo-pilot.json",
+    "sessions/1778477501971-89f23e10/report/pilot-acceptance.json",
+    "sessions/1778477501971-89f23e10/report/summary.json",
+    "sessions/1778477501971-89f23e10/summary.json",
+    "sessions/1778477501977-41ab58de/report/config-redacted.json",
+    "sessions/1778477501977-41ab58de/report/demo-pilot.json",
+    "sessions/1778477501977-41ab58de/report/pilot-acceptance.json",
+    "sessions/1778477501977-41ab58de/report/summary.json",
+    "sessions/1778477501977-41ab58de/summary.json",
+    "sessions/1778477501982-da054061/report/config-redacted.json",
+    "sessions/1778477501982-da054061/report/demo-pilot.json",
+    "sessions/1778477501982-da054061/report/pilot-acceptance.json",
+    "sessions/1778477501982-da054061/report/summary.json",
+    "sessions/1778477501982-da054061/summary.json",
+    "sessions/1778477866998-6c85935d/summary.json",
+    "sessions/1778478915694-eab7b87b/summary.json",
+    "sessions/1778479206060-b38b8059/summary.json",
+    "sessions/1778479247261-058651d2/summary.json",
+    "sessions/1778479577849-83bfb84f/summary.json",
+    "sessions/1778479628310-2d56f8c1/summary.json",
+    "sessions/1778479676046-ce56b18f/summary.json",
+    "sessions/1778479714802-7ef3c7be/summary.json",
+    "sessions/1778479714807-ef1b9645/summary.json",
+    "sessions/1778479714814-8150e6df/summary.json",
+    "sessions/1778480293851-c6f0b7b6/summary.json",
+    "sessions/1778480337187-33d2218e/summary.json",
+    "sessions/1778480358812-5dbd4f7a/summary.json",
+    "sessions/1778480368010-7cac3460/report/config-redacted.json",
+    "sessions/1778480368010-7cac3460/report/demo-pilot.json",
+    "sessions/1778480368010-7cac3460/report/pilot-acceptance.json",
+    "sessions/1778480368010-7cac3460/report/summary.json",
+    "sessions/1778480368010-7cac3460/summary.json",
+    "sessions/1778480368017-795d618b/report/config-redacted.json",
+    "sessions/1778480368017-795d618b/report/demo-pilot.json",
+    "sessions/1778480368017-795d618b/report/pilot-acceptance.json",
+    "sessions/1778480368017-795d618b/report/summary.json",
+    "sessions/1778480368017-795d618b/summary.json",
+    "sessions/1778480368022-cfca50d4/report/config-redacted.json",
+    "sessions/1778480368022-cfca50d4/report/demo-pilot.json",
+    "sessions/1778480368022-cfca50d4/report/pilot-acceptance.json",
+    "sessions/1778480368022-cfca50d4/report/summary.json",
+    "sessions/1778480368022-cfca50d4/summary.json",
+    "sessions/1778487042262-ffcb8c8f/summary.json",
+    "sessions/1778487175305-affc522d/summary.json",
+    "sessions/1778487183280-30315ca6/summary.json",
+    "sessions/1778487191445-8b684cb0/report/config-redacted.json",
+    "sessions/1778487191445-8b684cb0/report/demo-pilot.json",
+    "sessions/1778487191445-8b684cb0/report/pilot-acceptance.json",
+    "sessions/1778487191445-8b684cb0/report/summary.json",
+    "sessions/1778487191445-8b684cb0/summary.json",
+    "sessions/1778487191451-9e8d121b/report/config-redacted.json",
+    "sessions/1778487191451-9e8d121b/report/demo-pilot.json",
+    "sessions/1778487191451-9e8d121b/report/pilot-acceptance.json",
+    "sessions/1778487191451-9e8d121b/report/summary.json",
+    "sessions/1778487191451-9e8d121b/summary.json",
+    "sessions/1778487191456-6c8d861c/report/config-redacted.json",
+    "sessions/1778487191456-6c8d861c/report/demo-pilot.json",
+    "sessions/1778487191456-6c8d861c/report/pilot-acceptance.json",
+    "sessions/1778487191456-6c8d861c/report/summary.json",
+    "sessions/1778487191456-6c8d861c/summary.json",
+    "sessions/1778487191461-67b13a46/report/config-redacted.json",
+    "sessions/1778487191461-67b13a46/report/demo-pilot.json",
+    "sessions/1778487191461-67b13a46/report/pilot-acceptance.json",
+    "sessions/1778487191461-67b13a46/report/summary.json",
+    "sessions/1778487191461-67b13a46/summary.json",
+    "sessions/1778487191466-555f97bd/report/config-redacted.json",
+    "sessions/1778487191466-555f97bd/report/demo-pilot.json",
+    "sessions/1778487191466-555f97bd/report/pilot-acceptance.json",
+    "sessions/1778487191466-555f97bd/report/summary.json",
+    "sessions/1778487191466-555f97bd/summary.json",
+    "sessions/1778487191471-82fee22b/report/config-redacted.json",
+    "sessions/1778487191471-82fee22b/report/demo-pilot.json",
+    "sessions/1778487191471-82fee22b/report/pilot-acceptance.json",
+    "sessions/1778487191471-82fee22b/report/summary.json",
+    "sessions/1778487191471-82fee22b/summary.json",
+    "sessions/1778487191476-17d77f76/report/config-redacted.json",
+    "sessions/1778487191476-17d77f76/report/demo-pilot.json",
+    "sessions/1778487191476-17d77f76/report/pilot-acceptance.json",
+    "sessions/1778487191476-17d77f76/report/summary.json",
+    "sessions/1778487191476-17d77f76/summary.json",
+    "sessions/1778494290810-2381049b/summary.json",
+    "sessions/1778494328345-4007ab73/summary.json",
+    "sessions/1778494352603-a931b066/summary.json",
+    "sessions/1778494364459-f3c1e57e/summary.json",
+    "sessions/1778494410321-31be7b9b/summary.json",
+    "sessions/1778494430620-0b1a810e/summary.json",
+    "sessions/1778499401269-bcd722d5/summary.json",
+    "sessions/1778499432004-48e95279/summary.json",
+    "sessions/1778499597989-1027abda/summary.json",
+    "sessions/1778499721926-5f49861e/summary.json",
+    "sessions/1778500209544-95b01306/summary.json",
+    "sessions/1778500281135-f111696a/summary.json",
+    "sessions/1778500470805-ab68d6bf/summary.json",
+    "sessions/1778500557443-2d72d8dd/summary.json",
+    "sessions/1778500568568-d50f761e/summary.json",
+    "sessions/1778500594755-7d953dfa/summary.json",
+    "sessions/1778500637612-92af84ac/summary.json",
+    "sessions/1778500654119-fa3aba9b/report/config-redacted.json",
+    "sessions/1778500654119-fa3aba9b/report/demo-pilot.json",
+    "sessions/1778500654119-fa3aba9b/report/pilot-acceptance.json",
+    "sessions/1778500654119-fa3aba9b/report/summary.json",
+    "sessions/1778500654119-fa3aba9b/summary.json",
+    "sessions/1778500654142-874620fc/report/config-redacted.json",
+    "sessions/1778500654142-874620fc/report/demo-pilot.json",
+    "sessions/1778500654142-874620fc/report/pilot-acceptance.json",
+    "sessions/1778500654142-874620fc/report/summary.json",
+    "sessions/1778500654142-874620fc/summary.json",
+    "sessions/1778500654148-eecd792d/report/config-redacted.json",
+    "sessions/1778500654148-eecd792d/report/demo-pilot.json",
+    "sessions/1778500654148-eecd792d/report/pilot-acceptance.json",
+    "sessions/1778500654148-eecd792d/report/summary.json",
+    "sessions/1778500654148-eecd792d/summary.json",
+    "sessions/1778500654153-edc5fc86/report/config-redacted.json",
+    "sessions/1778500654153-edc5fc86/report/demo-pilot.json",
+    "sessions/1778500654153-edc5fc86/report/pilot-acceptance.json",
+    "sessions/1778500654153-edc5fc86/report/summary.json",
+    "sessions/1778500654153-edc5fc86/summary.json",
+    "sessions/1778500654159-0cf85019/report/config-redacted.json",
+    "sessions/1778500654159-0cf85019/report/demo-pilot.json",
+    "sessions/1778500654159-0cf85019/report/pilot-acceptance.json",
+    "sessions/1778500654159-0cf85019/report/summary.json",
+    "sessions/1778500654159-0cf85019/summary.json",
+    "sessions/1778500654165-4ac2a810/report/config-redacted.json",
+    "sessions/1778500654165-4ac2a810/report/demo-pilot.json",
+    "sessions/1778500654165-4ac2a810/report/pilot-acceptance.json",
+    "sessions/1778500654165-4ac2a810/report/summary.json",
+    "sessions/1778500654165-4ac2a810/summary.json",
+    "sessions/1778500654171-22412784/report/config-redacted.json",
+    "sessions/1778500654171-22412784/report/demo-pilot.json",
+    "sessions/1778500654171-22412784/report/pilot-acceptance.json",
+    "sessions/1778500654171-22412784/report/summary.json",
+    "sessions/1778500654171-22412784/summary.json",
+    "sessions/1778500654177-ca724fee/report/config-redacted.json",
+    "sessions/1778500654177-ca724fee/report/demo-pilot.json",
+    "sessions/1778500654177-ca724fee/report/pilot-acceptance.json",
+    "sessions/1778500654177-ca724fee/report/summary.json",
+    "sessions/1778500654177-ca724fee/summary.json",
+    "sessions/1778513345661-425240dd/summary.json",
+    "sessions/1778513355078-0b7f6352/summary.json",
+    "sessions/1778514318100-c34f4e38/summary.json",
+    "sessions/1778515469630-e5d72371/summary.json",
+    "sessions/1778516424829-e97f249c/summary.json",
+    "sessions/1778517922188-2beb39c9/summary.json",
+    "sessions/1778518605068-78fff663/summary.json",
+    "sessions/1778519260291-6aaedefa/summary.json",
+    "sessions/1778519294186-ca0f92b4/summary.json",
+    "sessions/1778519469621-f76ac25c/summary.json",
+    "sessions/1778519500288-364df1c4/summary.json",
+    "sessions/1778519533819-c404221d/summary.json",
+    "sessions/1778520032142-d9b33695/summary.json",
+    "sessions/1778520048882-4a65427c/summary.json",
+    "sessions/1778520133563-cdbe0a44/summary.json",
+    "sessions/1778520338083-eff6fcbf/summary.json",
+    "sessions/1778520426562-9d4ea9db/summary.json",
+    "settings/dashboard.json",
+    "tmp-dashboard-smoke/checks/dashboard-smoke.json",
+    "tmp-dashboard-smoke-083-088/checks/dashboard-smoke.json",
+    "tmp-dashboard-smoke-089-096/checks/dashboard-smoke.json",
+    "tmp-dashboard-smoke-097-102/checks/dashboard-smoke.json",
+    "tmp-dashboard-smoke-104-122/checks/dashboard-smoke.json",
+    "tmp-roadmap-082-smoke/policy-governance/ab-experiments/rollout-1778497255724.json",
+    "tmp-roadmap-082-smoke/policy-governance/weekly/2026-W20/weekly_governance_report.json",
+    "tmp-roadmap-082-smoke/portfolio-policies/registry.json",
+    "tmp-roadmap-082-smoke2/portfolio-policies/registry.json",
+    "tmp-roadmap-082-smoke3/policy-governance/ab-experiments/rollout-1778497274138.json",
+    "tmp-roadmap-082-smoke3/policy-governance/bundle-source.json",
+    "tmp-roadmap-082-smoke3/policy-governance/evidence/governance-1778497275962/files/bundle-source.json",
+    "tmp-roadmap-082-smoke3/policy-governance/evidence/governance-1778497275962/governance_bundle_manifest.json",
+    "tmp-roadmap-082-smoke3/policy-governance/weekly/2026-W20/weekly_governance_report.json",
+    "tmp-roadmap-082-smoke3/portfolio-policies/registry.json",
+    "tmp-roadmap-083-088-smoke/action-center/latest-decision.json",
+    "tmp-roadmap-083-088-smoke/checks/dashboard-smoke.json",
+    "tmp-roadmap-083-088-smoke/disaster-recovery/latest-dr-drill.json",
+    "tmp-roadmap-083-088-smoke/evidence/diagnostics/baseline.json",
+    "tmp-roadmap-083-088-smoke/local-ops/automation/scheduled-ops.json",
+    "tmp-roadmap-083-088-smoke/metrics-warehouse/reports/latest-metrics-report.json",
+    "tmp-roadmap-083-088-smoke/ops-assistant/latest-answer.json",
+    "tmp-roadmap-083-088-smoke/permission-profiles/compliance-report.json",
+    "tmp-roadmap-smoke/action-center/latest-decision.json",
+    "tmp-roadmap-smoke/disaster-recovery/latest-dr-drill.json",
+    "tmp-roadmap-smoke/evidence/diagnostics/baseline.json",
+    "tmp-roadmap-smoke/local-ops/automation/scheduled-ops.json",
+    "tmp-roadmap-smoke/metrics-warehouse/reports/latest-metrics-report.json",
+    "tmp-roadmap-smoke/ops-assistant/latest-answer.json",
+    "tmp-roadmap-smoke/paper-policy-rollouts/latest-policy-rollout.json",
+    "tmp-roadmap-smoke/paper-policy-rollouts/paper-policy-1778497022970.json",
+    "tmp-roadmap-smoke/permission-profiles/compliance-report.json"
+  ],
+  "overwrites": [],
+  "skips": [],
+  "conflicts": [],
+  "forbidden": [],
+  "verify": {
+    "status": "ok",
+    "zip": "data\\disaster-recovery\\backup.zip",
+    "files": [
+      {
+        "path": "files/action-center/audit-bundles/action-audit-1778517198514/action_audit_manifest.json",
+        "sha256": "4bafec6fcc58ed93e986541d"
+      },
+      {
+        "path": "files/action-center/audit-bundles/action-audit-1778517198514/files/queue-index.json",
+        "sha256": "a4b2dc8ad62f76e9bb6b534e"
+      },
+      {
+        "path": "files/action-center/decision-journal-1d.json",
+        "sha256": "499d53fdbe45c76052651b22"
+      },
+      {
+        "path": "files/action-center/executions/exec-act-1778517196605-d054debd19-1778517197419.json",
+        "sha256": "5c1a050f60151ae766df247b"
+      },
+      {
+        "path": "files/action-center/latest-decision.json",
+        "sha256": "43620d1743be4543e8663e9d"
+      },
+      {
+        "path": "files/action-center/proposals/act-1778517112605-93af3c0093.json",
+        "sha256": "7f10a43a437c2caff05b37f0"
+      },
+      {
+        "path": "files/action-center/proposals/act-1778517196605-d054debd19.json",
+        "sha256": "53bba12e7306c521f5d643fc"
+      },
+      {
+        "path": "files/action-center/proposals/act-1778519393027-2ca601c1d3.json",
+        "sha256": "065dd6162563d6c7eb4ccdcd"
+      },
+      {
+        "path": "files/action-center/queue-index.json",
+        "sha256": "4f5f91a2c595b92d9958659d"
+      },
+      {
+        "path": "files/action-center/verification/ver-act-1778517196605-d054debd19-1778517197789.json",
+        "sha256": "63f955fa5f3f41daff64edb2"
+      },
+      {
+        "path": "files/ai-ops/contexts/latest-context.json",
+        "sha256": "9d7891e1ec89d234974e87a3"
+      },
+      {
+        "path": "files/ai-ops/sessions/latest-session.json",
+        "sha256": "c2d22e0f692a92b2918ecf5d"
+      },
+      {
+        "path": "files/checks/check-all.json",
+        "sha256": "3c8feabf6c3ec67f00795445"
+      },
+      {
+        "path": "files/checks/dashboard/browser-smoke.json",
+        "sha256": "7a4a28bc3f506d7665c7408e"
+      },
+      {
+        "path": "files/checks/dashboard/launch-evidence.json",
+        "sha256": "1cba23daec803c3081348f07"
+      },
+      {
+        "path": "files/checks/dashboard/screenshots/demo-pilot.png",
+        "sha256": "76f2d729056fa34fac3c1f1f"
+      },
+      {
+        "path": "files/checks/dashboard/screenshots/demo-spot-trading.png",
+        "sha256": "76f2d729056fa34fac3c1f1f"
+      },
+      {
+        "path": "files/checks/dashboard/screenshots/logs-and-security.png",
+        "sha256": "76f2d729056fa34fac3c1f1f"
+      },
+      {
+        "path": "files/checks/dashboard/screenshots/overview.png",
+        "sha256": "76f2d729056fa34fac3c1f1f"
+      },
+      {
+        "path": "files/checks/dashboard-smoke.json",
+        "sha256": "b2988ad7dc6298ce98b4d110"
+      },
+      {
+        "path": "files/compliance/2026-05-11/compliance_report.json",
+        "sha256": "02d2e07e0c0cf8aa4037e9bd"
+      },
+      {
+        "path": "files/compliance/bundles/compliance-1778518257125/compliance_bundle_manifest.json",
+        "sha256": "caa4e58e6d136b16f42cc54e"
+      },
+      {
+        "path": "files/compliance/bundles/compliance-1778518257125/files/compliance_report.json",
+        "sha256": "a7f9e8a3fd4a33c422a015d3"
+      },
+      {
+        "path": "files/compliance/bundles/compliance-1778518257125/files/permission-profile-manifest.json",
+        "sha256": "3859fa4db7b20befd638b0bf"
+      },
+      {
+        "path": "files/disaster-recovery/backup_preflight_report.json",
+        "sha256": "0b1a90040d4d5e3189262405"
+      },
+      {
+        "path": "files/disaster-recovery/inventory_manifest.json",
+        "sha256": "1f568eb8ebfbe8fa826950f4"
+      },
+      {
+        "path": "files/disaster-recovery/latest-dr-drill.json",
+        "sha256": "96a42fc395bd8108e2e94ad9"
+      },
+      {
+        "path": "files/evidence/dashboard/operator-evidence-2026-05-10T095104.532357Z0000.json",
+        "sha256": "5fc67c81839eeddd0d6bec8b"
+      },
+      {
+        "path": "files/evidence/dashboard/operator-evidence-2026-05-10T095127.364639Z0000.json",
+        "sha256": "5b6d8d4adcc22a28ef2334b5"
+      },
+      {
+        "path": "files/evidence/dashboard/operator-evidence-2026-05-10T100450.377377Z0000.json",
+        "sha256": "68c7b87f8ea954fb6ed26e6f"
+      },
+      {
+        "path": "files/evidence/dashboard/operator-evidence-2026-05-10T185924.124475Z0000.json",
+        "sha256": "1fc4a85a3cc57e4b9b9c11f4"
+      },
+      {
+        "path": "files/evidence/dashboard/operator-evidence-2026-05-10T191201.462297Z0000.json",
+        "sha256": "27597f45105c199dbf68814a"
+      },
+      {
+        "path": "files/evidence/dashboard/operator-evidence-2026-05-10T192724.115700Z0000.json",
+        "sha256": "b38976e813d1413895e45f00"
+      },
+      {
+        "path": "files/evidence/dashboard/operator-evidence-2026-05-11T114544.387650Z0000.json",
+        "sha256": "81a246179a49a516c5745758"
+      },
+      {
+        "path": "files/evidence/dashboard/operator-evidence-2026-05-11T114732.634571Z0000.json",
+        "sha256": "2653c8f7cb1ef5c5a1c2168c"
+      },
+      {
+        "path": "files/evidence/dashboard/operator-evidence-2026-05-11T115100.118197Z0000.json",
+        "sha256": "8b14d73bb5963c661ac8e902"
+      },
+      {
+        "path": "files/evidence/dashboard/operator-evidence-2026-05-11T120802.034503Z0000.json",
+        "sha256": "7e632c514fb78d718a787a5c"
+      },
+      {
+        "path": "files/evidence/demo-execution/demo_execution_drill.json",
+        "sha256": "96414bb8151ccd857493105c"
+      },
+      {
+        "path": "files/evidence/demo-execution/demo_execution_drill_1778406687351.json",
+        "sha256": "f8e92cf32230ebb39eaac2a3"
+      },
+      {
+        "path": "files/evidence/demo-execution/demo_execution_drill_1778407490366.json",
+        "sha256": "410cc4f984accd0a17816618"
+      },
+      {
+        "path": "files/evidence/demo-execution/demo_execution_drill_1778439564099.json",
+        "sha256": "5214c0a16b81e68c578c0679"
+      },
+      {
+        "path": "files/evidence/demo-execution/demo_execution_drill_1778440321444.json",
+        "sha256": "d5af51a09fd8ef1b54ad7b63"
+      },
+      {
+        "path": "files/evidence/demo-execution/demo_execution_drill_1778441244103.json",
+        "sha256": "96414bb8151ccd857493105c"
+      },
+      {
+        "path": "files/evidence/diagnostics/baseline.json",
+        "sha256": "f7c013d7bdb17efd440d2149"
+      },
+      {
+        "path": "files/evidence/diagnostics/latest-diagnostics.json",
+        "sha256": "a05c4a8f35097bbe66e55af7"
+      },
+      {
+        "path": "files/evidence/manifest/evidence-chain.json",
+        "sha256": "89e07b74609b1621fac597ae"
+      },
+      {
+        "path": "files/evidence/manifest/latest-evidence-manifest.json",
+        "sha256": "81308041e937ebca8ece7733"
+      },
+      {
+        "path": "files/evidence/pilot-idempotency-runs/1778407490343-btcusdt-smoke/pilot-run.json",
+        "sha256": "42dbef6e3470885fd4b2d97e"
+      },
+      {
+        "path": "files/evidence/pilot-start-idempotency.json",
+        "sha256": "7bf6e66689bd3d80537025a7"
+      },
+      {
+        "path": "files/evidence/rehearsals/latest.json",
+        "sha256": "b1f363fcafa75cca1e62be15"
+      },
+      {
+        "path": "files/evidence/rehearsals/rehearsal-1778406681754/artifacts.json",
+        "sha256": "1b1673e7f4fd775917fe9070"
+      },
+      {
+        "path": "files/evidence/rehearsals/rehearsal-1778406681754/summary.json",
+        "sha256": "0baa5421d2f621ee5991ad91"
+      },
+      {
+        "path": "files/evidence/rehearsals/rehearsal-1778407484443/artifacts.json",
+        "sha256": "9f0457a112e4aadf922dfe6f"
+      },
+      {
+        "path": "files/evidence/rehearsals/rehearsal-1778407484443/summary.json",
+        "sha256": "d67a680ddac67e3ce615873a"
+      },
+      {
+        "path": "files/evidence/rehearsals/rehearsal-1778439558113/artifacts.json",
+        "sha256": "82db34d5e26f66e560ce6406"
+      },
+      {
+        "path": "files/evidence/rehearsals/rehearsal-1778439558113/summary.json",
+        "sha256": "694ff31be70493e8199f455b"
+      },
+      {
+        "path": "files/evidence/rehearsals/rehearsal-1778440314146/artifacts.json",
+        "sha256": "acd7fe56c2eab1e96de902d7"
+      },
+      {
+        "path": "files/evidence/rehearsals/rehearsal-1778440314146/summary.json",
+        "sha256": "258a25cd9566c64bee563606"
+      },
+      {
+        "path": "files/evidence/rehearsals/rehearsal-1778441236555/artifacts.json",
+        "sha256": "ca7cf6a15ee5ba5415f2a899"
+      },
+      {
+        "path": "files/evidence/rehearsals/rehearsal-1778441236555/summary.json",
+        "sha256": "b1f363fcafa75cca1e62be15"
+      },
+      {
+        "path": "files/evidence/scorecards/latest-scorecard.json",
+        "sha256": "fd6b3026957fc0fe053039da"
+      },
+      {
+        "path": "files/evidence/scorecards/scorecard-20260510T093820Z.json",
+        "sha256": "dac7f5f990ecae1d93f7de10"
+      },
+      {
+        "path": "files/evidence/scorecards/scorecard-20260510T095127Z.json",
+        "sha256": "174e675a466c6262c170dae7"
+      },
+      {
+        "path": "files/evidence/scorecards/scorecard-20260510T100450Z.json",
+        "sha256": "610a363ec6ce462c4a5139bf"
+      },
+      {
+        "path": "files/evidence/scorecards/scorecard-20260510T185924Z.json",
+        "sha256": "a8f0e19d0958120f119efa17"
+      },
+      {
+        "path": "files/evidence/scorecards/scorecard-20260510T191201Z.json",
+        "sha256": "3daec74c34655c765e055caf"
+      },
+      {
+        "path": "files/evidence/scorecards/scorecard-20260510T192724Z.json",
+        "sha256": "fd6b3026957fc0fe053039da"
+      },
+      {
+        "path": "files/experiments/experiments.json",
+        "sha256": "67daa3d60e0ceb505a33f35e"
+      },
+      {
+        "path": "files/local-jobs/jobs.json",
+        "sha256": "637aada4d3e2ed730f6ce5e2"
+      },
+      {
+        "path": "files/local-ops/automation/scheduled-ops.json",
+        "sha256": "5f95c490d69c9f8a9e745793"
+      },
+      {
+        "path": "files/local-ops/calendars/paper_ops_calendar.json",
+        "sha256": "4c3b7e62c7408bd89776f417"
+      },
+      {
+        "path": "files/local-ops/reports/governance_reminders.json",
+        "sha256": "282deb3b5126ae0d6e1ed951"
+      },
+      {
+        "path": "files/local-ops/runbooks/runbooks.json",
+        "sha256": "0abb65e0762471cc70f8ca6e"
+      },
+      {
+        "path": "files/metrics/evidence/metrics-evidence-1778515126630/files/analytics-report.json",
+        "sha256": "6577cb8be461b2426bd046ad"
+      },
+      {
+        "path": "files/metrics/evidence/metrics-evidence-1778515126630/files/metrics-manifest.json",
+        "sha256": "cce127dec51c00deb49ffe46"
+      },
+      {
+        "path": "files/metrics/evidence/metrics-evidence-1778515126630/metrics_evidence_manifest.json",
+        "sha256": "edbcc963bcc017b7042817b7"
+      },
+      {
+        "path": "files/metrics/reports/daily/2026-05-11/analytics-report.json",
+        "sha256": "6577cb8be461b2426bd046ad"
+      },
+      {
+        "path": "files/metrics-warehouse/daily/2026-05-11.json",
+        "sha256": "4cef40fff47f3b246bcdd39a"
+      },
+      {
+        "path": "files/metrics-warehouse/manifests/metrics-manifest.json",
+        "sha256": "6409349356380c43a6f973bc"
+      },
+      {
+        "path": "files/metrics-warehouse/reports/latest-metrics-report.json",
+        "sha256": "8b5283a7a9e2fe72693fd952"
+      },
+      {
+        "path": "files/models/model-1778325559324-0e0ecd/model.json",
+        "sha256": "e766a8ea0de79f0ac26cda53"
+      },
+      {
+        "path": "files/models/registry.json",
+        "sha256": "8f25a422bd5afa43b75136c7"
+      },
+      {
+        "path": "files/permission-profiles/compliance-report.json",
+        "sha256": "ae1b8359157aa53881574c3f"
+      },
+      {
+        "path": "files/permissions/approved-permission-change.json",
+        "sha256": "f5986f1cb1fb0327cf86142b"
+      },
+      {
+        "path": "files/permissions/approved-permission-change.rollback.json",
+        "sha256": "11efb85c5938292a8aac9eea"
+      },
+      {
+        "path": "files/permissions/identities/op-2bd806c97f.json",
+        "sha256": "c00c9f50c396a39aeca05637"
+      },
+      {
+        "path": "files/permissions/identities/op-e89ea0f9eb.json",
+        "sha256": "3767dd6421275ae6336408e5"
+      },
+      {
+        "path": "files/permissions/latest-permission-change.json",
+        "sha256": "f5986f1cb1fb0327cf86142b"
+      },
+      {
+        "path": "files/permissions/permission-profile-manifest.json",
+        "sha256": "bfcac3aa2145d45af458f786"
+      },
+      {
+        "path": "files/pilot-runs/1778385150497-btcusdt-operator/pilot-run.json",
+        "sha256": "49e3335d3132f700a539a4aa"
+      },
+      {
+        "path": "files/pilot-runs/1778406528859-btcusdt-smoke/latest-telemetry.json",
+        "sha256": "672750e9918d59cc91c2e1a0"
+      },
+      {
+        "path": "files/pilot-runs/1778406528859-btcusdt-smoke/pilot-run.json",
+        "sha256": "0ca8943e7c7f6a75f8fead16"
+      },
+      {
+        "path": "files/pilot-runs/1778409001250-btcusdt-smoke/latest-telemetry.json",
+        "sha256": "d275a48c62475cddf7ea5275"
+      },
+      {
+        "path": "files/pilot-runs/1778409001250-btcusdt-smoke/pilot-run.json",
+        "sha256": "cec4c13dc9a0ef871a941907"
+      },
+      {
+        "path": "files/pilot-runs/1778500209995-btcusdt-smoke/latest-telemetry.json",
+        "sha256": "d386230b3016f95f4198bdbc"
+      },
+      {
+        "path": "files/pilot-runs/1778500209995-btcusdt-smoke/pilot-run.json",
+        "sha256": "4696b0f51a0d372c01d146dc"
+      },
+      {
+        "path": "files/pilot-runs/1778500348843-btcusdt-operator/pilot-run.json",
+        "sha256": "492d493ee989d3af66856db1"
+      },
+      {
+        "path": "files/pilot-runs/1778500348845-btcusdt-operator/pilot-run.json",
+        "sha256": "d9c2019959832c5f1fac4a57"
+      },
+      {
+        "path": "files/pilot-runs/1778500471277-btcusdt-operator/latest-telemetry.json",
+        "sha256": "09589f3ffcf9d02eb479b36e"
+      },
+      {
+        "path": "files/pilot-runs/1778500471277-btcusdt-operator/pilot-run.json",
+        "sha256": "51f3fa19ed9afebea31c673b"
+      },
+      {
+        "path": "files/pilot-runs/1778500557914-btcusdt-operator/latest-telemetry.json",
+        "sha256": "2a7b108544321a94a66fa89c"
+      },
+      {
+        "path": "files/pilot-runs/1778500557914-btcusdt-operator/pilot-run.json",
+        "sha256": "9b2eb855a9b8b54ee59dc6e4"
+      },
+      {
+        "path": "files/pilot-runs/_recovered/1778385150497-btcusdt-operator-1778487745155.json",
+        "sha256": "5822c1b5b9a55527aa6667b8"
+      },
+      {
+        "path": "files/pilot-runs/runner.json",
+        "sha256": "88b047dfa2bd37a31d6d5df5"
+      },
+      {
+        "path": "files/pilot-runs/runner.lock.json",
+        "sha256": "88b047dfa2bd37a31d6d5df5"
+      },
+      {
+        "path": "files/policy-governance/ab-experiments/ab-rollout-1778512707547-7.json",
+        "sha256": "6d853c8a406593f3cf7a8876"
+      },
+      {
+        "path": "files/policy-governance/bundle-source.json",
+        "sha256": "a567e570754e4b0a6d073ceb"
+      },
+      {
+        "path": "files/policy-governance/evidence/governance-1778512722493/files/bundle-source.json",
+        "sha256": "a567e570754e4b0a6d073ceb"
+      },
+      {
+        "path": "files/policy-governance/evidence/governance-1778512722493/governance_bundle_manifest.json",
+        "sha256": "b7094934bb4b01d0b6a9f44d"
+      },
+      {
+        "path": "files/policy-governance/weekly/2026-W20/evidence_manifest.json",
+        "sha256": "8e0ea893623d7b881d11d183"
+      },
+      {
+        "path": "files/policy-governance/weekly/2026-W20/weekly_governance_report.json",
+        "sha256": "76fae903e8e204d1dd5be12c"
+      },
+      {
+        "path": "files/portfolio-policies/registry.json",
+        "sha256": "420bfe02b0b82b2dfbf13592"
+      },
+      {
+        "path": "files/public_binance/bundles/ADAUSDT-1778519617262.json",
+        "sha256": "93bbe1a888a2533cfeae4a4d"
+      },
+      {
+        "path": "files/public_binance/bundles/ADAUSDT-1778519701253.json",
+        "sha256": "07b8149831b19fceb073bb15"
+      },
+      {
+        "path": "files/public_binance/bundles/ADAUSDT-1778519822093.json",
+        "sha256": "64acf579e83a41856eaba911"
+      },
+      {
+        "path": "files/public_binance/bundles/BNBUSDT-1778519594778.json",
+        "sha256": "61e60cc443db24f2c3a38a66"
+      },
+      {
+        "path": "files/public_binance/bundles/BNBUSDT-1778519678723.json",
+        "sha256": "4ec798090282950ae5c250d0"
+      },
+      {
+        "path": "files/public_binance/bundles/BNBUSDT-1778519796640.json",
+        "sha256": "4106b394156a0644917aee56"
+      },
+      {
+        "path": "files/public_binance/bundles/BTCUSDT-1778519579687.json",
+        "sha256": "b2d427f89c1732d516a6f512"
+      },
+      {
+        "path": "files/public_binance/bundles/BTCUSDT-1778519663645.json",
+        "sha256": "49a0999ac37041f2b6c327f9"
+      },
+      {
+        "path": "files/public_binance/bundles/BTCUSDT-1778519779644.json",
+        "sha256": "e4b01af772164a8009d31cf0"
+      },
+      {
+        "path": "files/public_binance/bundles/DOGEUSDT-1778519624778.json",
+        "sha256": "879e7044c2fe6162222cf4cf"
+      },
+      {
+        "path": "files/public_binance/bundles/DOGEUSDT-1778519708819.json",
+        "sha256": "65e207f4f0f3b99691a887d9"
+      },
+      {
+        "path": "files/public_binance/bundles/DOGEUSDT-1778519830574.json",
+        "sha256": "b5b7e076bf5d26a0062baaeb"
+      },
+      {
+        "path": "files/public_binance/bundles/ETHUSDT-1778519587199.json",
+        "sha256": "9596893c13d6c21d5793a00b"
+      },
+      {
+        "path": "files/public_binance/bundles/ETHUSDT-1778519671206.json",
+        "sha256": "1c8fc6931d93e9ecc4c5c5ca"
+      },
+      {
+        "path": "files/public_binance/bundles/ETHUSDT-1778519788152.json",
+        "sha256": "3dc9bfdf1cc5650de4a78018"
+      },
+      {
+        "path": "files/public_binance/bundles/LINKUSDT-1778519632259.json",
+        "sha256": "c0a66f3912958989eca35e51"
+      },
+      {
+        "path": "files/public_binance/bundles/LINKUSDT-1778519716340.json",
+        "sha256": "26dd656e0d0cabe74a43412d"
+      },
+      {
+        "path": "files/public_binance/bundles/LINKUSDT-1778519839068.json",
+        "sha256": "d829f297582bb43477ac5e15"
+      },
+      {
+        "path": "files/public_binance/bundles/SOLUSDT-1778519602279.json",
+        "sha256": "df1562874fc9c3021c164d89"
+      },
+      {
+        "path": "files/public_binance/bundles/SOLUSDT-1778519686260.json",
+        "sha256": "2b6ef7d2e996f121e9382f47"
+      },
+      {
+        "path": "files/public_binance/bundles/SOLUSDT-1778519805120.json",
+        "sha256": "f94dc92388ba8ed90fdd573a"
+      },
+      {
+        "path": "files/public_binance/bundles/XRPUSDT-1778519609768.json",
+        "sha256": "629c0455eab736b59c664838"
+      },
+      {
+        "path": "files/public_binance/bundles/XRPUSDT-1778519693743.json",
+        "sha256": "627bb722b2842219d1ac9781"
+      },
+      {
+        "path": "files/public_binance/bundles/XRPUSDT-1778519813613.json",
+        "sha256": "505a4d773d09edb09c0286b3"
+      },
+      {
+        "path": "files/public_binance/manifests/ADAUSDT-1778519617262.json",
+        "sha256": "c372fd29e82235fc73201a70"
+      },
+      {
+        "path": "files/public_binance/manifests/ADAUSDT-1778519701253.json",
+        "sha256": "8ea439cc1048bf96e82ed784"
+      },
+      {
+        "path": "files/public_binance/manifests/ADAUSDT-1778519822093.json",
+        "sha256": "4b72a6f2a1d62e0c39d91bd8"
+      },
+      {
+        "path": "files/public_binance/manifests/BNBUSDT-1778519594778.json",
+        "sha256": "d6180055038d628de4ea5912"
+      },
+      {
+        "path": "files/public_binance/manifests/BNBUSDT-1778519678723.json",
+        "sha256": "47a627e3a41b93953c2adce4"
+      },
+      {
+        "path": "files/public_binance/manifests/BNBUSDT-1778519796640.json",
+        "sha256": "6e051d9d41cb256ddef0d788"
+      },
+      {
+        "path": "files/public_binance/manifests/BTCUSDT-1778519579687.json",
+        "sha256": "160cdf67d19f23603dd72629"
+      },
+      {
+        "path": "files/public_binance/manifests/BTCUSDT-1778519663645.json",
+        "sha256": "60f4f9e696d14287ba7626a5"
+      },
+      {
+        "path": "files/public_binance/manifests/BTCUSDT-1778519779644.json",
+        "sha256": "11a27d6e1441253f3b474f08"
+      },
+      {
+        "path": "files/public_binance/manifests/DOGEUSDT-1778519624778.json",
+        "sha256": "8f8fe797f9a1bdea1abfcd8c"
+      },
+      {
+        "path": "files/public_binance/manifests/DOGEUSDT-1778519708819.json",
+        "sha256": "0223244f0cf87a9bfc9d686d"
+      },
+      {
+        "path": "files/public_binance/manifests/DOGEUSDT-1778519830574.json",
+        "sha256": "b99ff520bf4b6e1ed3f064a3"
+      },
+      {
+        "path": "files/public_binance/manifests/ETHUSDT-1778519587199.json",
+        "sha256": "97372b8335a10cec4a8331e8"
+      },
+      {
+        "path": "files/public_binance/manifests/ETHUSDT-1778519671206.json",
+        "sha256": "fdfe6098c6c51e0b44586471"
+      },
+      {
+        "path": "files/public_binance/manifests/ETHUSDT-1778519788152.json",
+        "sha256": "980bc4877640913f52c40feb"
+      },
+      {
+        "path": "files/public_binance/manifests/LINKUSDT-1778519632259.json",
+        "sha256": "9354de94859a64e7e20dc3a1"
+      },
+      {
+        "path": "files/public_binance/manifests/LINKUSDT-1778519716340.json",
+        "sha256": "39ba01c1f1db2c77f4bd4178"
+      },
+      {
+        "path": "files/public_binance/manifests/LINKUSDT-1778519839068.json",
+        "sha256": "816c10275d54f050a926289f"
+      },
+      {
+        "path": "files/public_binance/manifests/SOLUSDT-1778519602279.json",
+        "sha256": "6f3e2768caacab44bfecb4da"
+      },
+      {
+        "path": "files/public_binance/manifests/SOLUSDT-1778519686260.json",
+        "sha256": "0447930de24c3ab3b79bfeb4"
+      },
+      {
+        "path": "files/public_binance/manifests/SOLUSDT-1778519805120.json",
+        "sha256": "e85d8acd5c0592c793d60efe"
+      },
+      {
+        "path": "files/public_binance/manifests/XRPUSDT-1778519609768.json",
+        "sha256": "73e215f62428396b35366785"
+      },
+      {
+        "path": "files/public_binance/manifests/XRPUSDT-1778519693743.json",
+        "sha256": "d927fd24e3223493e90dc6e0"
+      },
+      {
+        "path": "files/public_binance/manifests/XRPUSDT-1778519813613.json",
+        "sha256": "1955e004b8348751fe708cfe"
+      },
+      {
+        "path": "files/public_binance/reports/indicator_warmup_report.json",
+        "sha256": "a7da7871d517f1a2ac3e8637"
+      },
+      {
+        "path": "files/raw/BTCUSDT_1m_latest.json",
+        "sha256": "e017c26877decbe33e3dca0a"
+      },
+      {
+        "path": "files/reports/operator/operator-report.html",
+        "sha256": "a733a96cdbbb9f301f4512a6"
+      },
+      {
+        "path": "files/reports/operator/operator-report.md",
+        "sha256": "2d5a44fd9e8fcfd19295aa15"
+      },
+      {
+        "path": "files/sessions/1778325491657-c68027ce/summary.json",
+        "sha256": "5ec81c90e174b2e4f370f828"
+      },
+      {
+        "path": "files/sessions/1778325600312-7225244d/summary.json",
+        "sha256": "2ae6062054baecdfd350e15b"
+      },
+      {
+        "path": "files/sessions/1778326831564-51006992/summary.json",
+        "sha256": "6c310fda9b424b007bb48150"
+      },
+      {
+        "path": "files/sessions/1778326992841-621cd9c8/summary.json",
+        "sha256": "f62a2d8d90658593a8e1151b"
+      },
+      {
+        "path": "files/sessions/1778327122951-bfc58d25/summary.json",
+        "sha256": "814f0209157afa81db5d3e5c"
+      },
+      {
+        "path": "files/sessions/1778327143517-34884d1d/summary.json",
+        "sha256": "661a1ef0b105837c004eb63d"
+      },
+      {
+        "path": "files/sessions/1778327151289-b1713e54/summary.json",
+        "sha256": "691ce0cd46640bfeb3465877"
+      },
+      {
+        "path": "files/sessions/1778327161455-c021060f/summary.json",
+        "sha256": "a6ddb03e049355254108fa96"
+      },
+      {
+        "path": "files/sessions/1778327381532-cd5cab4a/summary.json",
+        "sha256": "79c01f57086caf1b05e5d54a"
+      },
+      {
+        "path": "files/sessions/1778327673403-63783448/summary.json",
+        "sha256": "d057b9993b8b98d46b410dad"
+      },
+      {
+        "path": "files/sessions/1778327676429-b3ff8a18/summary.json",
+        "sha256": "7b44fbbf3a486de05352e887"
+      },
+      {
+        "path": "files/sessions/1778327681614-57669102/summary.json",
+        "sha256": "e015718eaa840fa1f869f3ab"
+      },
+      {
+        "path": "files/sessions/1778327849256-70d7f568/summary.json",
+        "sha256": "01ee5ec4ecdda731d15a97a7"
+      },
+      {
+        "path": "files/sessions/1778327854301-5b8c62d9/summary.json",
+        "sha256": "97d4b555e586c602f7eac436"
+      },
+      {
+        "path": "files/sessions/1778327858093-b68da833/summary.json",
+        "sha256": "06f6d404b9deb4dad3d3588f"
+      },
+      {
+        "path": "files/sessions/1778348404953-7b19afca/report/config-redacted.json",
+        "sha256": "a3a77f0e7dad3d05f2e3f8e9"
+      },
+      {
+        "path": "files/sessions/1778348404953-7b19afca/report/summary.json",
+        "sha256": "278e65d1ed9941f8bf007635"
+      },
+      {
+        "path": "files/sessions/1778348404953-7b19afca/summary.json",
+        "sha256": "278e65d1ed9941f8bf007635"
+      },
+      {
+        "path": "files/sessions/1778348703586-0cb51bd3/report/config-redacted.json",
+        "sha256": "6a2bb3d6cefaefaca75bb986"
+      },
+      {
+        "path": "files/sessions/1778348703586-0cb51bd3/report/summary.json",
+        "sha256": "511642ad99b044aef8533f2c"
+      },
+      {
+        "path": "files/sessions/1778348703586-0cb51bd3/summary.json",
+        "sha256": "511642ad99b044aef8533f2c"
+      },
+      {
+        "path": "files/sessions/1778348942766-efe8716d/summary.json",
+        "sha256": "f105a05e0908f97f446523a6"
+      },
+      {
+        "path": "files/sessions/1778349114431-df666f31/report/config-redacted.json",
+        "sha256": "3318b4d0d848d2208dda48d7"
+      },
+      {
+        "path": "files/sessions/1778349114431-df666f31/report/summary.json",
+        "sha256": "c54fd041244658169bc96899"
+      },
+      {
+        "path": "files/sessions/1778349114431-df666f31/summary.json",
+        "sha256": "c54fd041244658169bc96899"
+      },
+      {
+        "path": "files/sessions/1778349149147-8e1d0b02/summary.json",
+        "sha256": "9f2cf28464017c01a31a2db6"
+      },
+      {
+        "path": "files/sessions/1778349151323-57787d9c/report/config-redacted.json",
+        "sha256": "2f80e760e6625af4fa02dbe6"
+      },
+      {
+        "path": "files/sessions/1778349151323-57787d9c/report/summary.json",
+        "sha256": "fb60c92f6c86043e1fcf45f0"
+      },
+      {
+        "path": "files/sessions/1778349151323-57787d9c/summary.json",
+        "sha256": "fb60c92f6c86043e1fcf45f0"
+      },
+      {
+        "path": "files/sessions/1778349198161-a5455c13/summary.json",
+        "sha256": "ff8fc8d4bf16ce3fbabb7dd8"
+      },
+      {
+        "path": "files/sessions/1778349199727-23202ff7/report/config-redacted.json",
+        "sha256": "2f80e760e6625af4fa02dbe6"
+      },
+      {
+        "path": "files/sessions/1778349199727-23202ff7/report/summary.json",
+        "sha256": "f06df25c0546fd496473c352"
+      },
+      {
+        "path": "files/sessions/1778349199727-23202ff7/summary.json",
+        "sha256": "f06df25c0546fd496473c352"
+      },
+      {
+        "path": "files/sessions/1778378909203-159e3a3b/summary.json",
+        "sha256": "eda8fd6a00e74c3791b3764e"
+      },
+      {
+        "path": "files/sessions/1778378967050-c11f2428/summary.json",
+        "sha256": "6740f1b4eadad1e6bd9aabc8"
+      },
+      {
+        "path": "files/sessions/1778384999619-5706ad66/summary.json",
+        "sha256": "82734fa7f0277270e3711404"
+      },
+      {
+        "path": "files/sessions/1778385012910-0dec6ab4/summary.json",
+        "sha256": "86faaf6b0b2b3c56df651646"
+      },
+      {
+        "path": "files/sessions/1778385015977-1589deac/summary.json",
+        "sha256": "aa8969d76b12c78bc7fa88b5"
+      },
+      {
+        "path": "files/sessions/1778385115057-4a6e1748/summary.json",
+        "sha256": "379823ab1d15312072d0f24f"
+      },
+      {
+        "path": "files/sessions/1778386710442-fa04669c/summary.json",
+        "sha256": "2081413485a154e4e2824486"
+      },
+      {
+        "path": "files/sessions/1778406324217-97bbd315/summary.json",
+        "sha256": "47fb2a2c50828461ef7acbed"
+      },
+      {
+        "path": "files/sessions/1778406469416-98024573/summary.json",
+        "sha256": "c469f2c37be08c133c4f9a10"
+      },
+      {
+        "path": "files/sessions/1778406528830-f327db37/summary.json",
+        "sha256": "547613c5b32e5643772a491f"
+      },
+      {
+        "path": "files/sessions/1778406599992-375f15e5/summary.json",
+        "sha256": "066b1672728ae9e5f2dd7ae1"
+      },
+      {
+        "path": "files/sessions/1778406679615-e27ee178/summary.json",
+        "sha256": "88254923900b23e1c4ea17cb"
+      },
+      {
+        "path": "files/sessions/1778408882932-ceb86f06/summary.json",
+        "sha256": "cb5c54fb1936460eb40ad255"
+      },
+      {
+        "path": "files/sessions/1778408924072-64aa4de9/summary.json",
+        "sha256": "34a185d70faf8f430e6dd380"
+      },
+      {
+        "path": "files/sessions/1778409001221-314eee3c/summary.json",
+        "sha256": "38ded64a7e4baf97a52190a7"
+      },
+      {
+        "path": "files/sessions/1778409057440-fd520bd7/summary.json",
+        "sha256": "07d719c37e39c7489c5bd5f6"
+      },
+      {
+        "path": "files/sessions/1778409091717-1cc9786b/summary.json",
+        "sha256": "68a7bb369d7dafc326746cc5"
+      },
+      {
+        "path": "files/sessions/1778474709354-6fdfd975/summary.json",
+        "sha256": "3217c8b8d2d0bc97997eec09"
+      },
+      {
+        "path": "files/sessions/1778475106043-eb85fbb2/summary.json",
+        "sha256": "42a77485de5bd5ee8dbf9a00"
+      },
+      {
+        "path": "files/sessions/1778475160433-ae476f00/summary.json",
+        "sha256": "daee01aaff0c577cefff4a41"
+      },
+      {
+        "path": "files/sessions/1778475504956-b8f71962/summary.json",
+        "sha256": "9bfe36225f7252d15f70b1a2"
+      },
+      {
+        "path": "files/sessions/1778475542551-9b1dc547/summary.json",
+        "sha256": "ca6ecffb5da4ccbb5a41afea"
+      },
+      {
+        "path": "files/sessions/1778477291934-95b0d991/summary.json",
+        "sha256": "8b14c5d40778588a11becba1"
+      },
+      {
+        "path": "files/sessions/1778477331945-0b2ef739/summary.json",
+        "sha256": "baf5a1748480867ffde74a62"
+      },
+      {
+        "path": "files/sessions/1778477450847-9b7acd6f/summary.json",
+        "sha256": "218a7f2718c0f77d014c95ac"
+      },
+      {
+        "path": "files/sessions/1778477490215-eaa6e9d6/summary.json",
+        "sha256": "033e7e33d940ca41e0e84896"
+      },
+      {
+        "path": "files/sessions/1778477501971-89f23e10/report/config-redacted.json",
+        "sha256": "64a7a2d70c9f87c47dec9ca3"
+      },
+      {
+        "path": "files/sessions/1778477501971-89f23e10/report/demo-pilot.json",
+        "sha256": "d3575ac4156dd6a797577cd2"
+      },
+      {
+        "path": "files/sessions/1778477501971-89f23e10/report/pilot-acceptance.json",
+        "sha256": "d72dd991447883fb603ea09a"
+      },
+      {
+        "path": "files/sessions/1778477501971-89f23e10/report/summary.json",
+        "sha256": "76f741627eab2e9cf3802f20"
+      },
+      {
+        "path": "files/sessions/1778477501971-89f23e10/summary.json",
+        "sha256": "8b1362df4a7037dcdc1d1135"
+      },
+      {
+        "path": "files/sessions/1778477501977-41ab58de/report/config-redacted.json",
+        "sha256": "29f60cf5e53faa15db1409af"
+      },
+      {
+        "path": "files/sessions/1778477501977-41ab58de/report/demo-pilot.json",
+        "sha256": "b7d33a715198368d2014716f"
+      },
+      {
+        "path": "files/sessions/1778477501977-41ab58de/report/pilot-acceptance.json",
+        "sha256": "5d43c466a8a9f7a4401d165a"
+      },
+      {
+        "path": "files/sessions/1778477501977-41ab58de/report/summary.json",
+        "sha256": "a6d06aacb9a1114de36c3dce"
+      },
+      {
+        "path": "files/sessions/1778477501977-41ab58de/summary.json",
+        "sha256": "bf9ca8cc8a27154b1e95299a"
+      },
+      {
+        "path": "files/sessions/1778477501982-da054061/report/config-redacted.json",
+        "sha256": "829e67e9ce4463b39bfab933"
+      },
+      {
+        "path": "files/sessions/1778477501982-da054061/report/demo-pilot.json",
+        "sha256": "abcccd32c223a8d01f4c25c3"
+      },
+      {
+        "path": "files/sessions/1778477501982-da054061/report/pilot-acceptance.json",
+        "sha256": "d2b432d8ab2bf63619112807"
+      },
+      {
+        "path": "files/sessions/1778477501982-da054061/report/summary.json",
+        "sha256": "670b9767d65f62fe9eb1fe04"
+      },
+      {
+        "path": "files/sessions/1778477501982-da054061/summary.json",
+        "sha256": "c0d13557beb48e162ad953be"
+      },
+      {
+        "path": "files/sessions/1778477866998-6c85935d/summary.json",
+        "sha256": "a8e89e34f7e14d08fdf4ebc3"
+      },
+      {
+        "path": "files/sessions/1778478915694-eab7b87b/summary.json",
+        "sha256": "83a80d03ffa6b2856aa61da1"
+      },
+      {
+        "path": "files/sessions/1778479206060-b38b8059/summary.json",
+        "sha256": "e5112c16431701c4d4dcf3a3"
+      },
+      {
+        "path": "files/sessions/1778479247261-058651d2/summary.json",
+        "sha256": "c661fa221de008c73e32a4c2"
+      },
+      {
+        "path": "files/sessions/1778479577849-83bfb84f/summary.json",
+        "sha256": "689ed76bcefebce36a77f1d1"
+      },
+      {
+        "path": "files/sessions/1778479628310-2d56f8c1/summary.json",
+        "sha256": "38caf9093685fa5c52aebac3"
+      },
+      {
+        "path": "files/sessions/1778479676046-ce56b18f/summary.json",
+        "sha256": "6cf425659d48f09ba8cee236"
+      },
+      {
+        "path": "files/sessions/1778479714802-7ef3c7be/summary.json",
+        "sha256": "dec96720cb76b5e02778d23f"
+      },
+      {
+        "path": "files/sessions/1778479714807-ef1b9645/summary.json",
+        "sha256": "81bc2dd5bc41e38c3a053418"
+      },
+      {
+        "path": "files/sessions/1778479714814-8150e6df/summary.json",
+        "sha256": "7f4000114f19db8abfe51011"
+      },
+      {
+        "path": "files/sessions/1778480293851-c6f0b7b6/summary.json",
+        "sha256": "793cd533312a86fb28a74651"
+      },
+      {
+        "path": "files/sessions/1778480337187-33d2218e/summary.json",
+        "sha256": "991862167b760c88bff9d656"
+      },
+      {
+        "path": "files/sessions/1778480358812-5dbd4f7a/summary.json",
+        "sha256": "15c10cf0c1244d6c66eba0e1"
+      },
+      {
+        "path": "files/sessions/1778480368010-7cac3460/report/config-redacted.json",
+        "sha256": "290c4a2f24d9f5e65a755c04"
+      },
+      {
+        "path": "files/sessions/1778480368010-7cac3460/report/demo-pilot.json",
+        "sha256": "65cdda912f93f30d4548084e"
+      },
+      {
+        "path": "files/sessions/1778480368010-7cac3460/report/pilot-acceptance.json",
+        "sha256": "da51b2c2e043e6c97ba7a3a0"
+      },
+      {
+        "path": "files/sessions/1778480368010-7cac3460/report/summary.json",
+        "sha256": "5620074acffefa9a9475c2f7"
+      },
+      {
+        "path": "files/sessions/1778480368010-7cac3460/summary.json",
+        "sha256": "5620074acffefa9a9475c2f7"
+      },
+      {
+        "path": "files/sessions/1778480368017-795d618b/report/config-redacted.json",
+        "sha256": "f423ce15e3c1b43cd846ffb5"
+      },
+      {
+        "path": "files/sessions/1778480368017-795d618b/report/demo-pilot.json",
+        "sha256": "a202a180a3b2af739ac87293"
+      },
+      {
+        "path": "files/sessions/1778480368017-795d618b/report/pilot-acceptance.json",
+        "sha256": "37e03fcb6db602bd05390c66"
+      },
+      {
+        "path": "files/sessions/1778480368017-795d618b/report/summary.json",
+        "sha256": "b51257438c81f262bdc0e466"
+      },
+      {
+        "path": "files/sessions/1778480368017-795d618b/summary.json",
+        "sha256": "b51257438c81f262bdc0e466"
+      },
+      {
+        "path": "files/sessions/1778480368022-cfca50d4/report/config-redacted.json",
+        "sha256": "c202140375f908b1e11ac167"
+      },
+      {
+        "path": "files/sessions/1778480368022-cfca50d4/report/demo-pilot.json",
+        "sha256": "9765edb46f7f1774e8ca69a1"
+      },
+      {
+        "path": "files/sessions/1778480368022-cfca50d4/report/pilot-acceptance.json",
+        "sha256": "fd5fcb8abab1a24dd18888fa"
+      },
+      {
+        "path": "files/sessions/1778480368022-cfca50d4/report/summary.json",
+        "sha256": "c603b194035712eab8089938"
+      },
+      {
+        "path": "files/sessions/1778480368022-cfca50d4/summary.json",
+        "sha256": "c603b194035712eab8089938"
+      },
+      {
+        "path": "files/sessions/1778487042262-ffcb8c8f/summary.json",
+        "sha256": "767510f834f2711c2429dc1f"
+      },
+      {
+        "path": "files/sessions/1778487175305-affc522d/summary.json",
+        "sha256": "02d770e0a5a3bb1653cdbb88"
+      },
+      {
+        "path": "files/sessions/1778487183280-30315ca6/summary.json",
+        "sha256": "e0732552966d6ca59dda0309"
+      },
+      {
+        "path": "files/sessions/1778487191445-8b684cb0/report/config-redacted.json",
+        "sha256": "74112e3cd7d86ffb1cc21377"
+      },
+      {
+        "path": "files/sessions/1778487191445-8b684cb0/report/demo-pilot.json",
+        "sha256": "69a576d369db239e3f9b6991"
+      },
+      {
+        "path": "files/sessions/1778487191445-8b684cb0/report/pilot-acceptance.json",
+        "sha256": "1c783f224a2f1683cb6b7521"
+      },
+      {
+        "path": "files/sessions/1778487191445-8b684cb0/report/summary.json",
+        "sha256": "9a4efd51c2136394bc9300e9"
+      },
+      {
+        "path": "files/sessions/1778487191445-8b684cb0/summary.json",
+        "sha256": "9a4efd51c2136394bc9300e9"
+      },
+      {
+        "path": "files/sessions/1778487191451-9e8d121b/report/config-redacted.json",
+        "sha256": "cd800b5c0cfc999a4b10e4eb"
+      },
+      {
+        "path": "files/sessions/1778487191451-9e8d121b/report/demo-pilot.json",
+        "sha256": "0634355c22147aff144adfbd"
+      },
+      {
+        "path": "files/sessions/1778487191451-9e8d121b/report/pilot-acceptance.json",
+        "sha256": "9d5bdd04e2cefea6adb649a7"
+      },
+      {
+        "path": "files/sessions/1778487191451-9e8d121b/report/summary.json",
+        "sha256": "cafca548c620f0aaeab3bb26"
+      },
+      {
+        "path": "files/sessions/1778487191451-9e8d121b/summary.json",
+        "sha256": "cafca548c620f0aaeab3bb26"
+      },
+      {
+        "path": "files/sessions/1778487191456-6c8d861c/report/config-redacted.json",
+        "sha256": "4e2eb88fae34ad6571810989"
+      },
+      {
+        "path": "files/sessions/1778487191456-6c8d861c/report/demo-pilot.json",
+        "sha256": "0f7269302d08ffa5af93fb4c"
+      },
+      {
+        "path": "files/sessions/1778487191456-6c8d861c/report/pilot-acceptance.json",
+        "sha256": "02b41fa809cf7a6ded09d0ea"
+      },
+      {
+        "path": "files/sessions/1778487191456-6c8d861c/report/summary.json",
+        "sha256": "1f197173610e3e93eb2a5f91"
+      },
+      {
+        "path": "files/sessions/1778487191456-6c8d861c/summary.json",
+        "sha256": "1f197173610e3e93eb2a5f91"
+      },
+      {
+        "path": "files/sessions/1778487191461-67b13a46/report/config-redacted.json",
+        "sha256": "46eedd3d719b312264d1f00d"
+      },
+      {
+        "path": "files/sessions/1778487191461-67b13a46/report/demo-pilot.json",
+        "sha256": "3dd296a4b93ce1f659f1c8ae"
+      },
+      {
+        "path": "files/sessions/1778487191461-67b13a46/report/pilot-acceptance.json",
+        "sha256": "79c9b82e7c9ad6b510e7d4bc"
+      },
+      {
+        "path": "files/sessions/1778487191461-67b13a46/report/summary.json",
+        "sha256": "8334e5b9a76a459601b2f33f"
+      },
+      {
+        "path": "files/sessions/1778487191461-67b13a46/summary.json",
+        "sha256": "8334e5b9a76a459601b2f33f"
+      },
+      {
+        "path": "files/sessions/1778487191466-555f97bd/report/config-redacted.json",
+        "sha256": "5576e8be7b82d38e5869b952"
+      },
+      {
+        "path": "files/sessions/1778487191466-555f97bd/report/demo-pilot.json",
+        "sha256": "227bbc2618eecee87fb837f7"
+      },
+      {
+        "path": "files/sessions/1778487191466-555f97bd/report/pilot-acceptance.json",
+        "sha256": "ffb4684ef6458a91341e1eb7"
+      },
+      {
+        "path": "files/sessions/1778487191466-555f97bd/report/summary.json",
+        "sha256": "717c88c4edd613f9a4c96e0b"
+      },
+      {
+        "path": "files/sessions/1778487191466-555f97bd/summary.json",
+        "sha256": "717c88c4edd613f9a4c96e0b"
+      },
+      {
+        "path": "files/sessions/1778487191471-82fee22b/report/config-redacted.json",
+        "sha256": "f2062ec2f33dbdeef14bd995"
+      },
+      {
+        "path": "files/sessions/1778487191471-82fee22b/report/demo-pilot.json",
+        "sha256": "bc88aa825a300e842ad1947b"
+      },
+      {
+        "path": "files/sessions/1778487191471-82fee22b/report/pilot-acceptance.json",
+        "sha256": "fe45c5349631f20812457e15"
+      },
+      {
+        "path": "files/sessions/1778487191471-82fee22b/report/summary.json",
+        "sha256": "384aec74f73812708580d228"
+      },
+      {
+        "path": "files/sessions/1778487191471-82fee22b/summary.json",
+        "sha256": "384aec74f73812708580d228"
+      },
+      {
+        "path": "files/sessions/1778487191476-17d77f76/report/config-redacted.json",
+        "sha256": "b4f0607da0e1e8e2201971c6"
+      },
+      {
+        "path": "files/sessions/1778487191476-17d77f76/report/demo-pilot.json",
+        "sha256": "b976598e036867e5bdeb1d01"
+      },
+      {
+        "path": "files/sessions/1778487191476-17d77f76/report/pilot-acceptance.json",
+        "sha256": "3daeea1379e67da7ab8b9a5f"
+      },
+      {
+        "path": "files/sessions/1778487191476-17d77f76/report/summary.json",
+        "sha256": "a00924d4b89284291a9dc537"
+      },
+      {
+        "path": "files/sessions/1778487191476-17d77f76/summary.json",
+        "sha256": "a00924d4b89284291a9dc537"
+      },
+      {
+        "path": "files/sessions/1778494290810-2381049b/summary.json",
+        "sha256": "7da2061ab328efc3ba1135ff"
+      },
+      {
+        "path": "files/sessions/1778494328345-4007ab73/summary.json",
+        "sha256": "b72a903e27db0eddd802a3c4"
+      },
+      {
+        "path": "files/sessions/1778494352603-a931b066/summary.json",
+        "sha256": "2e069ca646e089f624b9a26c"
+      },
+      {
+        "path": "files/sessions/1778494364459-f3c1e57e/summary.json",
+        "sha256": "deee0333bafc759e8ccfcca2"
+      },
+      {
+        "path": "files/sessions/1778494410321-31be7b9b/summary.json",
+        "sha256": "a82a118b6fdbd900e45735a2"
+      },
+      {
+        "path": "files/sessions/1778494430620-0b1a810e/summary.json",
+        "sha256": "ff8b8b17b095153e5a012bef"
+      },
+      {
+        "path": "files/sessions/1778499401269-bcd722d5/summary.json",
+        "sha256": "aed7bfd77c484ff54c23d820"
+      },
+      {
+        "path": "files/sessions/1778499432004-48e95279/summary.json",
+        "sha256": "e1d48cf00865d265d6f2d260"
+      },
+      {
+        "path": "files/sessions/1778499597989-1027abda/summary.json",
+        "sha256": "1c823649bb12c1d5f59d498d"
+      },
+      {
+        "path": "files/sessions/1778499721926-5f49861e/summary.json",
+        "sha256": "4d0549f2161344ca4d4bab8f"
+      },
+      {
+        "path": "files/sessions/1778500209544-95b01306/summary.json",
+        "sha256": "72e26aa195579d7c280e418c"
+      },
+      {
+        "path": "files/sessions/1778500281135-f111696a/summary.json",
+        "sha256": "5a55cf2d0210e2859b0a9e40"
+      },
+      {
+        "path": "files/sessions/1778500470805-ab68d6bf/summary.json",
+        "sha256": "81f351ae3d9511704f942b87"
+      },
+      {
+        "path": "files/sessions/1778500557443-2d72d8dd/summary.json",
+        "sha256": "f934af20965cc9146eb49db0"
+      },
+      {
+        "path": "files/sessions/1778500568568-d50f761e/summary.json",
+        "sha256": "650430b7d2791784771b3c51"
+      },
+      {
+        "path": "files/sessions/1778500594755-7d953dfa/summary.json",
+        "sha256": "49a8e8f9dbc71820bbf518c2"
+      },
+      {
+        "path": "files/sessions/1778500637612-92af84ac/summary.json",
+        "sha256": "584a87da0d2f36cd08a38e08"
+      },
+      {
+        "path": "files/sessions/1778500654119-fa3aba9b/report/config-redacted.json",
+        "sha256": "6c570bca2229b8a77bef50d8"
+      },
+      {
+        "path": "files/sessions/1778500654119-fa3aba9b/report/demo-pilot.json",
+        "sha256": "516fdbb1c8839346a8edb2e8"
+      },
+      {
+        "path": "files/sessions/1778500654119-fa3aba9b/report/pilot-acceptance.json",
+        "sha256": "d37c0046ce57afb26379d945"
+      },
+      {
+        "path": "files/sessions/1778500654119-fa3aba9b/report/summary.json",
+        "sha256": "2a099a17279efbd1f6c40fd4"
+      },
+      {
+        "path": "files/sessions/1778500654119-fa3aba9b/summary.json",
+        "sha256": "2a099a17279efbd1f6c40fd4"
+      },
+      {
+        "path": "files/sessions/1778500654142-874620fc/report/config-redacted.json",
+        "sha256": "7ee1875422e40fae2a6c058e"
+      },
+      {
+        "path": "files/sessions/1778500654142-874620fc/report/demo-pilot.json",
+        "sha256": "5cc4a67afe0b2a8efb8334ed"
+      },
+      {
+        "path": "files/sessions/1778500654142-874620fc/report/pilot-acceptance.json",
+        "sha256": "f242c66c325923d847faeab0"
+      },
+      {
+        "path": "files/sessions/1778500654142-874620fc/report/summary.json",
+        "sha256": "f3f24c713c6988178fd83858"
+      },
+      {
+        "path": "files/sessions/1778500654142-874620fc/summary.json",
+        "sha256": "f3f24c713c6988178fd83858"
+      },
+      {
+        "path": "files/sessions/1778500654148-eecd792d/report/config-redacted.json",
+        "sha256": "5e6ee0d35183bd45851e0384"
+      },
+      {
+        "path": "files/sessions/1778500654148-eecd792d/report/demo-pilot.json",
+        "sha256": "2abce21bc7a67e4928c8c7e3"
+      },
+      {
+        "path": "files/sessions/1778500654148-eecd792d/report/pilot-acceptance.json",
+        "sha256": "c65f1285e119d5ec08393c13"
+      },
+      {
+        "path": "files/sessions/1778500654148-eecd792d/report/summary.json",
+        "sha256": "06d7237b7ffadf8e97be7ea6"
+      },
+      {
+        "path": "files/sessions/1778500654148-eecd792d/summary.json",
+        "sha256": "06d7237b7ffadf8e97be7ea6"
+      },
+      {
+        "path": "files/sessions/1778500654153-edc5fc86/report/config-redacted.json",
+        "sha256": "0899dc304162e8d90d179fd0"
+      },
+      {
+        "path": "files/sessions/1778500654153-edc5fc86/report/demo-pilot.json",
+        "sha256": "30a648d35404d129d05bad09"
+      },
+      {
+        "path": "files/sessions/1778500654153-edc5fc86/report/pilot-acceptance.json",
+        "sha256": "5d8a9507fb1cb6022d59a410"
+      },
+      {
+        "path": "files/sessions/1778500654153-edc5fc86/report/summary.json",
+        "sha256": "d5542ca112b20c46d30983f4"
+      },
+      {
+        "path": "files/sessions/1778500654153-edc5fc86/summary.json",
+        "sha256": "d5542ca112b20c46d30983f4"
+      },
+      {
+        "path": "files/sessions/1778500654159-0cf85019/report/config-redacted.json",
+        "sha256": "fed545590ffdfe7cdc4fc28e"
+      },
+      {
+        "path": "files/sessions/1778500654159-0cf85019/report/demo-pilot.json",
+        "sha256": "52abf19ff2af0cd476c12b21"
+      },
+      {
+        "path": "files/sessions/1778500654159-0cf85019/report/pilot-acceptance.json",
+        "sha256": "28adc7bea180df9d1753785b"
+      },
+      {
+        "path": "files/sessions/1778500654159-0cf85019/report/summary.json",
+        "sha256": "91286b2aef2a840722d6dd45"
+      },
+      {
+        "path": "files/sessions/1778500654159-0cf85019/summary.json",
+        "sha256": "91286b2aef2a840722d6dd45"
+      },
+      {
+        "path": "files/sessions/1778500654165-4ac2a810/report/config-redacted.json",
+        "sha256": "83a866c13866871783874b2d"
+      },
+      {
+        "path": "files/sessions/1778500654165-4ac2a810/report/demo-pilot.json",
+        "sha256": "edcb51e2d83b63dc852ebb82"
+      },
+      {
+        "path": "files/sessions/1778500654165-4ac2a810/report/pilot-acceptance.json",
+        "sha256": "8e2813bb969b61507539fbe6"
+      },
+      {
+        "path": "files/sessions/1778500654165-4ac2a810/report/summary.json",
+        "sha256": "e43d4bc195f7f9e18912a90a"
+      },
+      {
+        "path": "files/sessions/1778500654165-4ac2a810/summary.json",
+        "sha256": "e43d4bc195f7f9e18912a90a"
+      },
+      {
+        "path": "files/sessions/1778500654171-22412784/report/config-redacted.json",
+        "sha256": "4f307821ce8fb9a12d6b88e0"
+      },
+      {
+        "path": "files/sessions/1778500654171-22412784/report/demo-pilot.json",
+        "sha256": "72e2c948ef2562ec402dfeea"
+      },
+      {
+        "path": "files/sessions/1778500654171-22412784/report/pilot-acceptance.json",
+        "sha256": "9b86936b25989118a27940cc"
+      },
+      {
+        "path": "files/sessions/1778500654171-22412784/report/summary.json",
+        "sha256": "3b6e706b65c9be095451c1a8"
+      },
+      {
+        "path": "files/sessions/1778500654171-22412784/summary.json",
+        "sha256": "3b6e706b65c9be095451c1a8"
+      },
+      {
+        "path": "files/sessions/1778500654177-ca724fee/report/config-redacted.json",
+        "sha256": "ea343e1aadc31c83bd0816e9"
+      },
+      {
+        "path": "files/sessions/1778500654177-ca724fee/report/demo-pilot.json",
+        "sha256": "fc97b3fcaa03312a52f93f72"
+      },
+      {
+        "path": "files/sessions/1778500654177-ca724fee/report/pilot-acceptance.json",
+        "sha256": "ff5958147120ec014c070942"
+      },
+      {
+        "path": "files/sessions/1778500654177-ca724fee/report/summary.json",
+        "sha256": "9b7bbb92efa6e3a5cf264867"
+      },
+      {
+        "path": "files/sessions/1778500654177-ca724fee/summary.json",
+        "sha256": "9b7bbb92efa6e3a5cf264867"
+      },
+      {
+        "path": "files/sessions/1778513345661-425240dd/summary.json",
+        "sha256": "6572316753f410c489ab76d0"
+      },
+      {
+        "path": "files/sessions/1778513355078-0b7f6352/summary.json",
+        "sha256": "c843d1ce5fe83c110fe14ba8"
+      },
+      {
+        "path": "files/sessions/1778514318100-c34f4e38/summary.json",
+        "sha256": "9f05c08c0a26b98a413e86d2"
+      },
+      {
+        "path": "files/sessions/1778515469630-e5d72371/summary.json",
+        "sha256": "c93247b784fd025ce0fd8581"
+      },
+      {
+        "path": "files/sessions/1778516424829-e97f249c/summary.json",
+        "sha256": "b946797408f30a0f7d3dc69e"
+      },
+      {
+        "path": "files/sessions/1778517922188-2beb39c9/summary.json",
+        "sha256": "2f5c97775a050a6e28c274f8"
+      },
+      {
+        "path": "files/sessions/1778518605068-78fff663/summary.json",
+        "sha256": "a70de9f73f47611519b9d128"
+      },
+      {
+        "path": "files/sessions/1778519260291-6aaedefa/summary.json",
+        "sha256": "0518ab54c284b1ae99881e4f"
+      },
+      {
+        "path": "files/sessions/1778519294186-ca0f92b4/summary.json",
+        "sha256": "af8efd8270254bc0e3d7c35d"
+      },
+      {
+        "path": "files/sessions/1778519469621-f76ac25c/summary.json",
+        "sha256": "eb190057aa147818fd38de22"
+      },
+      {
+        "path": "files/sessions/1778519500288-364df1c4/summary.json",
+        "sha256": "141ad6b200780a8f0bb9f5b0"
+      },
+      {
+        "path": "files/sessions/1778519533819-c404221d/summary.json",
+        "sha256": "7916a988ce35f0e8fa13b8b0"
+      },
+      {
+        "path": "files/sessions/1778520032142-d9b33695/summary.json",
+        "sha256": "647dff9ccd3e51913e8ac40e"
+      },
+      {
+        "path": "files/sessions/1778520048882-4a65427c/summary.json",
+        "sha256": "4bdaa22315e79b9f28e438ba"
+      },
+      {
+        "path": "files/sessions/1778520133563-cdbe0a44/summary.json",
+        "sha256": "fdd79d49979445a08743fef2"
+      },
+      {
+        "path": "files/sessions/1778520338083-eff6fcbf/summary.json",
+        "sha256": "3365244e2f68a5f679952c51"
+      },
+      {
+        "path": "files/sessions/1778520426562-9d4ea9db/summary.json",
+        "sha256": "ae105ad7b7535019491c8320"
+      },
+      {
+        "path": "files/settings/dashboard.json",
+        "sha256": "77682b2b18c6776bee3c153d"
+      },
+      {
+        "path": "files/tmp-dashboard-smoke/checks/dashboard-smoke.json",
+        "sha256": "ac99f65aecd716abf6abab3f"
+      },
+      {
+        "path": "files/tmp-dashboard-smoke-083-088/checks/dashboard-smoke.json",
+        "sha256": "86f1d7a891577f38792c6e33"
+      },
+      {
+        "path": "files/tmp-dashboard-smoke-089-096/checks/dashboard-smoke.json",
+        "sha256": "68613d6e54923f1d2a98828b"
+      },
+      {
+        "path": "files/tmp-dashboard-smoke-097-102/checks/dashboard-smoke.json",
+        "sha256": "585289c0b370856977cb5a3b"
+      },
+      {
+        "path": "files/tmp-dashboard-smoke-104-122/checks/dashboard-smoke.json",
+        "sha256": "585289c0b370856977cb5a3b"
+      },
+      {
+        "path": "files/tmp-roadmap-082-smoke/policy-governance/ab-experiments/rollout-1778497255724.json",
+        "sha256": "13d63289983bf4d10543f950"
+      },
+      {
+        "path": "files/tmp-roadmap-082-smoke/policy-governance/weekly/2026-W20/weekly_governance_report.json",
+        "sha256": "b2e95dae7d1a9bc18c14979b"
+      },
+      {
+        "path": "files/tmp-roadmap-082-smoke/portfolio-policies/registry.json",
+        "sha256": "1b2903390de02fc32a4a61ba"
+      },
+      {
+        "path": "files/tmp-roadmap-082-smoke2/portfolio-policies/registry.json",
+        "sha256": "5f01ec184e1e821376060e73"
+      },
+      {
+        "path": "files/tmp-roadmap-082-smoke3/policy-governance/ab-experiments/rollout-1778497274138.json",
+        "sha256": "5e502fa04791890cc5c669f6"
+      },
+      {
+        "path": "files/tmp-roadmap-082-smoke3/policy-governance/bundle-source.json",
+        "sha256": "03a633aa20e2afcf28de4a12"
+      },
+      {
+        "path": "files/tmp-roadmap-082-smoke3/policy-governance/evidence/governance-1778497275962/files/bundle-source.json",
+        "sha256": "03a633aa20e2afcf28de4a12"
+      },
+      {
+        "path": "files/tmp-roadmap-082-smoke3/policy-governance/evidence/governance-1778497275962/governance_bundle_manifest.json",
+        "sha256": "0f4c9279f3069dca663d4bcf"
+      },
+      {
+        "path": "files/tmp-roadmap-082-smoke3/policy-governance/weekly/2026-W20/weekly_governance_report.json",
+        "sha256": "b2e95dae7d1a9bc18c14979b"
+      },
+      {
+        "path": "files/tmp-roadmap-082-smoke3/portfolio-policies/registry.json",
+        "sha256": "b3dd7436f5c0625a521a9df6"
+      },
+      {
+        "path": "files/tmp-roadmap-083-088-smoke/action-center/latest-decision.json",
+        "sha256": "a930ba6688fb56279c2cd78d"
+      },
+      {
+        "path": "files/tmp-roadmap-083-088-smoke/checks/dashboard-smoke.json",
+        "sha256": "ac99f65aecd716abf6abab3f"
+      },
+      {
+        "path": "files/tmp-roadmap-083-088-smoke/disaster-recovery/latest-dr-drill.json",
+        "sha256": "229664c195c52368747c5d7d"
+      },
+      {
+        "path": "files/tmp-roadmap-083-088-smoke/evidence/diagnostics/baseline.json",
+        "sha256": "dfee599befc8086535cf33d5"
+      },
+      {
+        "path": "files/tmp-roadmap-083-088-smoke/local-ops/automation/scheduled-ops.json",
+        "sha256": "0d8d738d5c000a5610efd35a"
+      },
+      {
+        "path": "files/tmp-roadmap-083-088-smoke/metrics-warehouse/reports/latest-metrics-report.json",
+        "sha256": "7121bd89126968fcdd7c297d"
+      },
+      {
+        "path": "files/tmp-roadmap-083-088-smoke/ops-assistant/latest-answer.json",
+        "sha256": "36efbc02d1891ac78dcd5566"
+      },
+      {
+        "path": "files/tmp-roadmap-083-088-smoke/permission-profiles/compliance-report.json",
+        "sha256": "785e436acc6385e73e9d495e"
+      },
+      {
+        "path": "files/tmp-roadmap-smoke/action-center/latest-decision.json",
+        "sha256": "55bf1c9402a6f1e62534f9cd"
+      },
+      {
+        "path": "files/tmp-roadmap-smoke/disaster-recovery/latest-dr-drill.json",
+        "sha256": "bbae2636aad0727a2660ce90"
+      },
+      {
+        "path": "files/tmp-roadmap-smoke/evidence/diagnostics/baseline.json",
+        "sha256": "b7d2263f6a6a10d11af5493d"
+      },
+      {
+        "path": "files/tmp-roadmap-smoke/local-ops/automation/scheduled-ops.json",
+        "sha256": "623dcd721e0200c652538b6d"
+      },
+      {
+        "path": "files/tmp-roadmap-smoke/metrics-warehouse/reports/latest-metrics-report.json",
+        "sha256": "7121bd89126968fcdd7c297d"
+      },
+      {
+        "path": "files/tmp-roadmap-smoke/ops-assistant/latest-answer.json",
+        "sha256": "36efbc02d1891ac78dcd5566"
+      },
+      {
+        "path": "files/tmp-roadmap-smoke/paper-policy-rollouts/latest-policy-rollout.json",
+        "sha256": "d0a023544fe27a96043f5bc0"
+      },
+      {
+        "path": "files/tmp-roadmap-smoke/paper-policy-rollouts/paper-policy-1778497022970.json",
+        "sha256": "d0a023544fe27a96043f5bc0"
+      },
+      {
+        "path": "files/tmp-roadmap-smoke/permission-profiles/compliance-report.json",
+        "sha256": "785e436acc6385e73e9d495e"
+      },
+      {
+        "path": "no_live_proof.json",
+        "sha256": "00fcf70f20f264f475667e1a"
+      },
+      {
+        "path": "redaction_proof.json",
+        "sha256": "633391127c758ab6a1ec74b4"
+      },
+      {
+        "path": "restore_instructions.md",
+        "sha256": "5973a43f9889895e3b868ccd"
+      }
+    ],
+    "errors": [],
+    "live_trading_enabled": false
+  },
+  "preview_only": true,
+  "no_live_proof": true,
+  "live_trading_enabled": false
+}

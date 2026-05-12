@@ -1,0 +1,19 @@
+{
+  "status": "ready",
+  "files": [
+    {
+      "source": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\Roadmap docs\\090-roadmap-developer-experience-codex-task-packs-roadmap-execution-automation.md",
+      "bundle_path": "data\\roadmaps\\evidence\\090\\files\\090-roadmap-developer-experience-codex-task-packs-roadmap-execution-automation.md",
+      "sha256": "6b0d0e78ce445b4121fd162b"
+    },
+    {
+      "source": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\Voltooid docs\\090-roadmap-bot-trading-decision-explanation.md",
+      "bundle_path": "data\\roadmaps\\evidence\\090\\files\\090-roadmap-bot-trading-decision-explanation.md",
+      "sha256": "53158a1ba46570521699de7a"
+    }
+  ],
+  "file_count": 2,
+  "no_live_proof": true,
+  "release_notes_input": "roadmap execution evidence",
+  "live_trading_enabled": false
+}

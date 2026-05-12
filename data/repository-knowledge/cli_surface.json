@@ -1,0 +1,1549 @@
+{
+  "status": "ready",
+  "payload": {
+    "status": "ready",
+    "payload": {
+      "commands": [
+        {
+          "command": "ab-paper-start",
+          "safety_class": "paper_demo_runtime",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "ab-paper-status",
+          "safety_class": "paper_demo_runtime",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "ab-paper-stop",
+          "safety_class": "paper_demo_runtime",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "action-approve",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "action-audit-export",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "action-center-propose",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "action-execute",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "action-list",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "action-propose",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "action-reject",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "action-safety-test",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "action-show",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "action-verify",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "ai-ops-ask",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "ai-ops-command-proposal",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "ai-ops-context",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "ai-ops-export-session",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "ai-ops-runbook",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "ai-ops-safety-test",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "ai-ops-search",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "artifact-catalog",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "artifact-flow-graph",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "backup-create",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "backup-preflight",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "backup-profiles",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "backup-verify",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "check-all",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m pytest -q"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "clear-public-data-cache",
+          "safety_class": "destructive_confirm_required",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "cli-surface-map",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "code-graph",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "code-ownership-map",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "codex-task-packs",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "compliance-bundle-export",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "compliance-evidence-check",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "compliance-report",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "compliance-score",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "connectivity-check",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "control-center",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "dashboard",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "dashboard-browser-smoke",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "dashboard-operator-evidence",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "dashboard-smoke",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "dashboard-surface-map",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "data-growth-budget",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "data-quality",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "decision-journal",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "demo-acceptance-rehearsal",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "demo-backtest",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "demo-execution-cancel",
+          "safety_class": "demo_execution",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "demo-execution-place",
+          "safety_class": "demo_execution",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "demo-execution-preview",
+          "safety_class": "demo_execution",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "demo-execution-query",
+          "safety_class": "demo_execution",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "demo-execution-report",
+          "safety_class": "demo_execution",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "demo-execution-test-order",
+          "safety_class": "demo_execution",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "diagnostics",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "diagnostics-baseline",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "disaster-recovery-drill",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "docs-code-consistency",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "dr-evidence-bundle",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "dr-report",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "environment-doctor",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "evaluate-model",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "evidence-chain",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "evidence-continuity-check",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "evidence-manifest",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "evidence-scorecard",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "export-session-report",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "fetch-public-data",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "governance-decision",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "governance-evidence-bundle",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "governance-reminders",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "governance-simulation",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "impact-analysis",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "incident-timeline",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "install-fingerprint",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "launch-dashboard",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "list-sessions",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "local-job-create-defaults",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "local-job-list",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "local-job-run",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "local-ops-jobs",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "local-ops-snapshot",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "local-scheduler-loop",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "local-scheduler-tick",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "metrics-aggregate",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "metrics-anomalies",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "metrics-compact",
+          "safety_class": "destructive_confirm_required",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "metrics-export",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "metrics-ingest",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "metrics-latest",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "metrics-query",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "metrics-slo",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "metrics-warehouse-report",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "migration-apply",
+          "safety_class": "destructive_confirm_required",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "migration-dry-run",
+          "safety_class": "destructive_confirm_required",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "migration-plan",
+          "safety_class": "destructive_confirm_required",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "operator-command-manifest",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "operator-health-score",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "operator-identity",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "operator-quality-gate",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "operator-report",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "operator-report-diff",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "ops-assistant-query",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "paper-deployment-cycle",
+          "safety_class": "paper_demo_runtime",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "paper-ops-calendar",
+          "safety_class": "paper_demo_runtime",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "paper-policy-rollout",
+          "safety_class": "paper_demo_runtime",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "paper-portfolio-benchmark",
+          "safety_class": "paper_demo_runtime",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "paper-portfolio-ops",
+          "safety_class": "paper_demo_runtime",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "paper-portfolio-optimize",
+          "safety_class": "paper_demo_runtime",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "paper-session",
+          "safety_class": "paper_demo_runtime",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "permission-change-approve",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "permission-change-propose",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "permission-check",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "permission-drift-check",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "permission-profiles",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "permission-report",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "permission-restore-validate",
+          "safety_class": "destructive_confirm_required",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "pilot-preflight",
+          "safety_class": "paper_demo_runtime",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "pilot-report",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "pilot-runner-command",
+          "safety_class": "paper_demo_runtime",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "pilot-runner-start",
+          "safety_class": "paper_demo_runtime",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "pilot-runner-status",
+          "safety_class": "paper_demo_runtime",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "pilot-runner-stop",
+          "safety_class": "paper_demo_runtime",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "pilot-status",
+          "safety_class": "paper_demo_runtime",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "policy-promote",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "policy-register",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "policy-rollback",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "policy-rollout-plan",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "post-upgrade-validation",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "pr-template",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "pre-upgrade-backup",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "preflight",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "promote-model",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "public-data-evidence",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "public-data-status",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "redaction-self-test",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "refactor-candidates",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "register-demo-model",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "rehearsal-profiles",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "release-candidate",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "release-evidence-export",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "release-manifest-create",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "release-notes-generate",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "release-quality-gate",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "repair-plan",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "repo-inventory",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "repo-knowledge-build",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "repo-knowledge-report",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "report-index",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "restore-drill",
+          "safety_class": "destructive_confirm_required",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "restore-execute",
+          "safety_class": "destructive_confirm_required",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "restore-preview",
+          "safety_class": "destructive_confirm_required",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "retention-preview",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "roadmap-completion-gate",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "roadmap-duplicate-guard",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "roadmap-evidence-export",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "roadmap-execution-report",
+          "safety_class": "demo_execution",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "roadmap-graph",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "roadmap-index",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "roadmap-move-completed",
+          "safety_class": "destructive_confirm_required",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "roadmap-next-number",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "roadmap-quality-score",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "roadmap-release-input",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "roadmap-traceability",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "roadmap-validate",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "rollback-plan",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "run-local",
+          "safety_class": "paper_demo_runtime",
+          "required_tests": [
+            "python -m pytest -q"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "runbook-drill",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "runbook-list",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "runbook-show",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "safety-surface-map",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "scheduled-report-plan",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "schema-registry",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "security-scan",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "show-session",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "state-archive",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "state-integrity-check",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "state-inventory",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "strategy-calibrate",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "stream-paper",
+          "safety_class": "paper_demo_runtime",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "support-bundle",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "support-bundle-restore-preview",
+          "safety_class": "destructive_confirm_required",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "support-bundle-verify",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "support-bundles-verify",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "test-impact-map",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "upgrade-compatibility",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "validate-config",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "version-info",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "warmup-indicators",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "weekly-governance-report",
+          "safety_class": "artifact_generation",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "windows-scheduler-install",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        },
+        {
+          "command": "windows-scheduler-uninstall",
+          "safety_class": "read_only",
+          "required_tests": [
+            "python -m binance_spot_bot.cli check-all --skip-tests --json"
+          ],
+          "no_live_constraints": true
+        }
+      ],
+      "count": 192
+    },
+    "live_trading_enabled": false
+  },
+  "live_trading_enabled": false
+}

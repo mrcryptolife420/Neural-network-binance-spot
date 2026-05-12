@@ -1,0 +1,13 @@
+{
+  "status": "ready",
+  "files": [
+    {
+      "source": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\test-runs\\reports\\regression-risk-report.json",
+      "bundle_path": "data\\test-runs\\evidence\\latest\\files\\regression-risk-report.json",
+      "sha256": "7e856d6e229f255b1bb5e7db"
+    }
+  ],
+  "no_live_proof": true,
+  "security_redaction_proof": true,
+  "live_trading_enabled": false
+}

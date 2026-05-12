@@ -1,0 +1,11 @@
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778557421608, "dry_run": "dry-demo-1778557421606", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778557453569, "dry_run": "dry-demo-1778557453567", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778557570720, "dry_run": "dry-demo-1778557570718", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778557882313, "dry_run": "dry-demo-1778557882311", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778558018472, "dry_run": "dry-demo-1778558018470", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778558685121, "dry_run": "dry-demo-1778558685120", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778558963376, "dry_run": "dry-demo-1778558963374", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778559473368, "dry_run": "dry-demo-1778559473366", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778559770500, "dry_run": "dry-demo-1778559770497", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778560165552, "dry_run": "dry-demo-1778560165550", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778560487842, "dry_run": "dry-demo-1778560487840", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}

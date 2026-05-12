@@ -137,7 +137,7 @@ def file_sha256(path: Path) -> str:
     with path.open("rb") as handle:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
-    return digest.hexdigest()
+    return digest.hexdigest()[:24]
 
 
 def parse_binance_klines(raw_klines: list[list[Any]]) -> list[Candle]:

@@ -1,7 +1,10 @@
 # Offline Disaster Recovery Safety Contract
 
-Roadmap: 088
+Disaster recovery is local-only and offline.
 
-Backup and restore flows are offline, local, redacted, preview-first, and no-live. Forbidden files such as `.env`, `.pem`, and `.key` are excluded from safe backups.
+- Backups exclude environment files, private key files, credential files, and path traversal.
+- Restore is preview-first by default.
+- Controlled restore requires `RESTORE_OFFLINE_STATE`.
+- Backup and restore never call Binance, signed endpoints, order endpoints, or account endpoints.
+- Every backup includes no-live proof, redaction proof, manifest data, and hashes.
 
-Restore execution remains blocked unless an explicit offline restore confirmation is supplied, and preview reports are the default behavior.

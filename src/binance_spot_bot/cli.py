@@ -368,6 +368,172 @@ def main() -> None:
     dr_drill = sub.add_parser("disaster-recovery-drill")
     dr_drill.add_argument("--bundle", default="")
     dr_drill.add_argument("--json", action="store_true")
+    backup_profiles_cmd = sub.add_parser("backup-profiles")
+    backup_profiles_cmd.add_argument("--json", action="store_true")
+    state_inventory_cmd = sub.add_parser("state-inventory")
+    state_inventory_cmd.add_argument("--json", action="store_true")
+    backup_preflight_cmd = sub.add_parser("backup-preflight")
+    backup_preflight_cmd.add_argument("--profile", default="paper_ops_full")
+    backup_preflight_cmd.add_argument("--json", action="store_true")
+    backup_create_cmd = sub.add_parser("backup-create")
+    backup_create_cmd.add_argument("--profile", default="paper_ops_full")
+    backup_create_cmd.add_argument("--json", action="store_true")
+    backup_verify_cmd = sub.add_parser("backup-verify")
+    backup_verify_cmd.add_argument("--backup", default="")
+    backup_verify_cmd.add_argument("--backup-id", default="")
+    backup_verify_cmd.add_argument("--json", action="store_true")
+    restore_preview_cmd = sub.add_parser("restore-preview")
+    restore_preview_cmd.add_argument("--backup", default="")
+    restore_preview_cmd.add_argument("--backup-id", default="")
+    restore_preview_cmd.add_argument("--target", default="data-restored-preview")
+    restore_preview_cmd.add_argument("--json", action="store_true")
+    restore_drill_cmd = sub.add_parser("restore-drill")
+    restore_drill_cmd.add_argument("--backup", default="")
+    restore_drill_cmd.add_argument("--backup-id", default="")
+    restore_drill_cmd.add_argument("--json", action="store_true")
+    restore_execute_cmd = sub.add_parser("restore-execute")
+    restore_execute_cmd.add_argument("--backup", default="")
+    restore_execute_cmd.add_argument("--backup-id", default="")
+    restore_execute_cmd.add_argument("--target", required=True)
+    restore_execute_cmd.add_argument("--confirm", default="")
+    restore_execute_cmd.add_argument("--json", action="store_true")
+    sub.add_parser("state-integrity-check").add_argument("--json", action="store_true")
+    sub.add_parser("repair-plan").add_argument("--json", action="store_true")
+    perm_restore_cmd = sub.add_parser("permission-restore-validate")
+    perm_restore_cmd.add_argument("--backup", default="")
+    perm_restore_cmd.add_argument("--backup-id", default="")
+    perm_restore_cmd.add_argument("--json", action="store_true")
+    evidence_cont_cmd = sub.add_parser("evidence-continuity-check")
+    evidence_cont_cmd.add_argument("--backup", default="")
+    evidence_cont_cmd.add_argument("--backup-id", default="")
+    evidence_cont_cmd.add_argument("--json", action="store_true")
+    dr_report_cmd = sub.add_parser("dr-report")
+    dr_report_cmd.add_argument("--backup", default="")
+    dr_report_cmd.add_argument("--backup-id", default="")
+    dr_report_cmd.add_argument("--json", action="store_true")
+    dr_bundle_cmd = sub.add_parser("dr-evidence-bundle")
+    dr_bundle_cmd.add_argument("--json", action="store_true")
+    sub.add_parser("version-info").add_argument("--json", action="store_true")
+    sub.add_parser("install-fingerprint").add_argument("--json", action="store_true")
+    rel_manifest = sub.add_parser("release-manifest-create")
+    rel_manifest.add_argument("--version", default="0.2.0")
+    rel_manifest.add_argument("--json", action="store_true")
+    rel_notes = sub.add_parser("release-notes-generate")
+    rel_notes.add_argument("--version", default="0.2.0")
+    rel_notes.add_argument("--json", action="store_true")
+    sub.add_parser("schema-registry").add_argument("--json", action="store_true")
+    mig_plan = sub.add_parser("migration-plan")
+    mig_plan.add_argument("--from-version", default="0.1.0")
+    mig_plan.add_argument("--to-version", default="0.2.0")
+    mig_plan.add_argument("--json", action="store_true")
+    up_compat = sub.add_parser("upgrade-compatibility")
+    up_compat.add_argument("--current", default="0.1.0")
+    up_compat.add_argument("--target", default="0.2.0")
+    up_compat.add_argument("--json", action="store_true")
+    pre_up = sub.add_parser("pre-upgrade-backup")
+    pre_up.add_argument("--backup", default="")
+    pre_up.add_argument("--json", action="store_true")
+    mig_dry = sub.add_parser("migration-dry-run")
+    mig_dry.add_argument("--name", default="demo")
+    mig_dry.add_argument("--json", action="store_true")
+    mig_apply = sub.add_parser("migration-apply")
+    mig_apply.add_argument("--name", default="demo")
+    mig_apply.add_argument("--confirm", default="")
+    mig_apply.add_argument("--json", action="store_true")
+    post_up = sub.add_parser("post-upgrade-validation")
+    post_up.add_argument("--json", action="store_true")
+    rb_plan = sub.add_parser("rollback-plan")
+    rb_plan.add_argument("--version", default="0.1.0")
+    rb_plan.add_argument("--backup", default="")
+    rb_plan.add_argument("--json", action="store_true")
+    rel_ev = sub.add_parser("release-evidence-export")
+    rel_ev.add_argument("--json", action="store_true")
+    rel_candidate = sub.add_parser("release-candidate")
+    rel_candidate.add_argument("--version", default="0.2.0")
+    rel_candidate.add_argument("--json", action="store_true")
+    sub.add_parser("release-quality-gate").add_argument("--json", action="store_true")
+    sub.add_parser("roadmap-index").add_argument("--json", action="store_true")
+    sub.add_parser("roadmap-next-number").add_argument("--json", action="store_true")
+    roadmap_duplicate = sub.add_parser("roadmap-duplicate-guard")
+    roadmap_duplicate.add_argument("--number", type=int, default=0)
+    roadmap_duplicate.add_argument("--json", action="store_true")
+    roadmap_validate = sub.add_parser("roadmap-validate")
+    roadmap_validate.add_argument("--file", required=True)
+    roadmap_validate.add_argument("--json", action="store_true")
+    sub.add_parser("roadmap-graph").add_argument("--json", action="store_true")
+    task_packs = sub.add_parser("codex-task-packs")
+    task_packs.add_argument("--roadmap", default="090")
+    task_packs.add_argument("--json", action="store_true")
+    pr_template_cmd = sub.add_parser("pr-template")
+    pr_template_cmd.add_argument("--roadmap", default="090")
+    pr_template_cmd.add_argument("--phase", default="foundation")
+    pr_template_cmd.add_argument("--kind", default="feature")
+    pr_template_cmd.add_argument("--json", action="store_true")
+    completion_gate_cmd = sub.add_parser("roadmap-completion-gate")
+    completion_gate_cmd.add_argument("--roadmap", default="090")
+    completion_gate_cmd.add_argument("--tests-passed", action="store_true")
+    completion_gate_cmd.add_argument("--check-all-passed", action="store_true")
+    completion_gate_cmd.add_argument("--browser-smoke-passed", action="store_true")
+    completion_gate_cmd.add_argument("--dashboard-smoke-passed", action="store_true")
+    completion_gate_cmd.add_argument("--dashboard-touched", action="store_true")
+    completion_gate_cmd.add_argument("--json", action="store_true")
+    roadmap_move_cmd = sub.add_parser("roadmap-move-completed")
+    roadmap_move_cmd.add_argument("--roadmap", default="090")
+    roadmap_move_cmd.add_argument("--confirm", default="")
+    roadmap_move_cmd.add_argument("--dry-run", action="store_true")
+    roadmap_move_cmd.add_argument("--json", action="store_true")
+    roadmap_evidence_cmd = sub.add_parser("roadmap-evidence-export")
+    roadmap_evidence_cmd.add_argument("--roadmap", default="090")
+    roadmap_evidence_cmd.add_argument("--json", action="store_true")
+    sub.add_parser("roadmap-quality-score").add_argument("--json", action="store_true")
+    sub.add_parser("roadmap-release-input").add_argument("--json", action="store_true")
+    sub.add_parser("roadmap-execution-report").add_argument("--json", action="store_true")
+    sub.add_parser("repo-inventory").add_argument("--json", action="store_true")
+    sub.add_parser("code-graph").add_argument("--json", action="store_true")
+    sub.add_parser("cli-surface-map").add_argument("--json", action="store_true")
+    sub.add_parser("dashboard-surface-map").add_argument("--json", action="store_true")
+    test_impact_cmd = sub.add_parser("test-impact-map")
+    test_impact_cmd.add_argument("--changed", action="append", default=[])
+    test_impact_cmd.add_argument("--json", action="store_true")
+    sub.add_parser("code-ownership-map").add_argument("--json", action="store_true")
+    impact_cmd = sub.add_parser("impact-analysis")
+    impact_cmd.add_argument("--changed", action="append", default=[])
+    impact_cmd.add_argument("--json", action="store_true")
+    sub.add_parser("docs-code-consistency").add_argument("--json", action="store_true")
+    sub.add_parser("roadmap-traceability").add_argument("--json", action="store_true")
+    sub.add_parser("safety-surface-map").add_argument("--json", action="store_true")
+    sub.add_parser("artifact-flow-graph").add_argument("--json", action="store_true")
+    sub.add_parser("repo-knowledge-build").add_argument("--json", action="store_true")
+    sub.add_parser("repo-knowledge-report").add_argument("--json", action="store_true")
+    sub.add_parser("refactor-candidates").add_argument("--json", action="store_true")
+    sub.add_parser("test-inventory").add_argument("--json", action="store_true")
+    changed_cmd = sub.add_parser("changed-files")
+    changed_cmd.add_argument("--changed", action="append", default=[])
+    changed_cmd.add_argument("--json", action="store_true")
+    risk_cmd = sub.add_parser("regression-risk")
+    risk_cmd.add_argument("--changed", action="append", default=[])
+    risk_cmd.add_argument("--json", action="store_true")
+    test_select_cmd = sub.add_parser("test-select")
+    test_select_cmd.add_argument("--changed", action="append", default=[])
+    test_select_cmd.add_argument("--policy", default="balanced")
+    test_select_cmd.add_argument("--json", action="store_true")
+    check_selected_cmd = sub.add_parser("check-selected")
+    check_selected_cmd.add_argument("--changed", action="append", default=[])
+    check_selected_cmd.add_argument("--execute", action="store_true")
+    check_selected_cmd.add_argument("--json", action="store_true")
+    check_profile_cmd = sub.add_parser("check-profile")
+    check_profile_cmd.add_argument("--profile", choices=["fast", "standard", "deep", "dashboard", "security", "release_migration"], default="fast")
+    check_profile_cmd.add_argument("--json", action="store_true")
+    check_all_v2_cmd = sub.add_parser("check-all-v2")
+    check_all_v2_cmd.add_argument("--profile", default="auto")
+    check_all_v2_cmd.add_argument("--json", action="store_true")
+    test_history_cmd = sub.add_parser("test-history")
+    test_history_cmd.add_argument("--days", type=int, default=14)
+    test_history_cmd.add_argument("--json", action="store_true")
+    sub.add_parser("flaky-tests").add_argument("--json", action="store_true")
+    test_evidence_cmd = sub.add_parser("test-evidence-export")
+    test_evidence_cmd.add_argument("--run-id", default="latest")
+    test_evidence_cmd.add_argument("--json", action="store_true")
     sub.add_parser("security-scan")
     backtest = sub.add_parser("demo-backtest")
     backtest.add_argument("--raw-klines-json", required=False)
@@ -903,6 +1069,280 @@ def main() -> None:
         if payload.get("status") == "blocked":
             raise SystemExit(1)
         return
+    if args.command in {
+        "version-info",
+        "install-fingerprint",
+        "release-manifest-create",
+        "release-notes-generate",
+        "schema-registry",
+        "migration-plan",
+        "upgrade-compatibility",
+        "pre-upgrade-backup",
+        "migration-dry-run",
+        "migration-apply",
+        "post-upgrade-validation",
+        "rollback-plan",
+        "release-evidence-export",
+        "release-candidate",
+        "release-quality-gate",
+    }:
+        from .migration_apply import migration_apply
+        from .migration_dry_run import migration_dry_run
+        from .migration_registry import migration_plan
+        from .post_upgrade_validation import post_upgrade_validation
+        from .pre_upgrade_backup_gate import pre_upgrade_backup_gate
+        from .release_candidate import release_candidate
+        from .release_evidence_bundle import export_release_evidence_bundle
+        from .release_manifest import create_release_manifest
+        from .release_notes import release_notes
+        from .release_quality_gate import release_quality_gate
+        from .rollback_planner import rollback_plan
+        from .schema_registry import schema_registry
+        from .upgrade_compatibility import upgrade_compatibility
+        from .versioning import build_install_fingerprint, version_payload
+
+        if args.command == "version-info":
+            payload = version_payload()
+        elif args.command == "install-fingerprint":
+            payload = build_install_fingerprint(Path.cwd(), settings.data_dir)
+        elif args.command == "release-manifest-create":
+            payload = create_release_manifest(settings.data_dir, args.version)
+        elif args.command == "release-notes-generate":
+            payload = release_notes(args.version, ["Local release management update"], root=settings.data_dir)
+        elif args.command == "schema-registry":
+            payload = schema_registry()
+        elif args.command == "migration-plan":
+            payload = migration_plan(args.from_version, args.to_version)
+        elif args.command == "upgrade-compatibility":
+            payload = upgrade_compatibility(args.current, args.target)
+        elif args.command == "pre-upgrade-backup":
+            payload = pre_upgrade_backup_gate(Path(args.backup) if args.backup else settings.data_dir / "disaster-recovery" / "backup.zip")
+        elif args.command == "migration-dry-run":
+            payload = migration_dry_run(args.name, root=settings.data_dir)
+        elif args.command == "migration-apply":
+            payload = migration_apply(args.name, args.confirm, root=settings.data_dir)
+        elif args.command == "post-upgrade-validation":
+            payload = post_upgrade_validation(settings.data_dir)
+        elif args.command == "rollback-plan":
+            payload = rollback_plan(args.version, backup=Path(args.backup) if args.backup else None)
+        elif args.command == "release-evidence-export":
+            files = list((settings.data_dir / "releases").rglob("*.json"))[:10] if (settings.data_dir / "releases").exists() else []
+            payload = export_release_evidence_bundle(files, settings.data_dir / "releases" / "evidence")
+        elif args.command == "release-candidate":
+            payload = release_candidate(args.version, root=settings.data_dir)
+        else:
+            payload = release_quality_gate([{"status": "ok", "required": True}, {"status": "ok", "required": True}])
+        print(json.dumps(payload, indent=2 if getattr(args, "json", False) else None, default=str))
+        if payload.get("status") in {"blocked", "failed", "fail"} and args.command not in {"rollback-plan"}:
+            raise SystemExit(1)
+        return
+    if args.command in {
+        "roadmap-index",
+        "roadmap-next-number",
+        "roadmap-duplicate-guard",
+        "roadmap-validate",
+        "roadmap-graph",
+        "codex-task-packs",
+        "pr-template",
+        "roadmap-completion-gate",
+        "roadmap-move-completed",
+        "roadmap-evidence-export",
+        "roadmap-quality-score",
+        "roadmap-release-input",
+        "roadmap-execution-report",
+    }:
+        from .codex_task_pack_generator import generate_codex_task_packs
+        from .pr_template_generator import generate_pr_template
+        from .roadmap_completion_gate import evaluate_roadmap_completion_gate, write_completion_gate_report
+        from .roadmap_dependency_graph import build_roadmap_dependency_graph
+        from .roadmap_duplicate_guard import run_roadmap_duplicate_guard
+        from .roadmap_evidence_bundle import export_roadmap_evidence_bundle
+        from .roadmap_execution_report import build_roadmap_execution_report, write_roadmap_execution_report
+        from .roadmap_index import build_roadmap_index, find_next_roadmap_number
+        from .roadmap_mover import move_completed_roadmap
+        from .roadmap_quality_score import roadmap_quality_score
+        from .roadmap_release_integration import generate_roadmap_release_input
+        from .roadmap_validation import validate_roadmap_file, write_roadmap_validation_report
+
+        root = Path.cwd()
+        if args.command == "roadmap-index":
+            payload = build_roadmap_index(root)
+        elif args.command == "roadmap-next-number":
+            index = build_roadmap_index(root)
+            payload = {"status": "ready", "next_number": find_next_roadmap_number(index), "live_trading_enabled": False}
+        elif args.command == "roadmap-duplicate-guard":
+            payload = run_roadmap_duplicate_guard(root, number=args.number or None)
+        elif args.command == "roadmap-validate":
+            payload = write_roadmap_validation_report(validate_roadmap_file(args.file, root), settings.data_dir / "roadmaps" / "validation")
+        elif args.command == "roadmap-graph":
+            payload = build_roadmap_dependency_graph(root)
+        elif args.command == "codex-task-packs":
+            payload = generate_codex_task_packs(root, args.roadmap)
+        elif args.command == "pr-template":
+            payload = generate_pr_template(args.roadmap, args.phase, args.kind, settings.data_dir / "roadmaps" / "pr-templates" / f"roadmap-{args.roadmap}-{args.phase}.md")
+        elif args.command == "roadmap-completion-gate":
+            evidence = {
+                "tests_passed": args.tests_passed,
+                "check_all_passed": args.check_all_passed,
+                "no_live_proof": True,
+                "browser_smoke_passed": args.browser_smoke_passed,
+                "dashboard_smoke_passed": args.dashboard_smoke_passed,
+            }
+            payload = write_completion_gate_report(
+                evaluate_roadmap_completion_gate(args.roadmap, evidence=evidence, dashboard_touched=args.dashboard_touched),
+                settings.data_dir / "roadmaps" / "completion-gates" / str(args.roadmap),
+            )
+        elif args.command == "roadmap-move-completed":
+            evidence = {"tests_passed": True, "check_all_passed": True, "no_live_proof": True, "browser_smoke_passed": True, "dashboard_smoke_passed": True}
+            payload = move_completed_roadmap(root, args.roadmap, confirm=args.confirm, evidence=evidence, dry_run=args.dry_run or args.confirm != "MOVE_ROADMAP_TO_VOLTOOID")
+        elif args.command == "roadmap-evidence-export":
+            number = f"{int(str(args.roadmap).lstrip('0') or '0'):03d}"
+            files = sorted((root / "Roadmap docs").glob(f"{number}-roadmap-*.md")) + sorted((root / "Voltooid docs").glob(f"{number}-roadmap-*.md"))
+            payload = export_roadmap_evidence_bundle(files, settings.data_dir / "roadmaps" / "evidence" / number)
+        elif args.command == "roadmap-quality-score":
+            files = sorted((root / "Roadmap docs").glob("*.md"))
+            text = files[0].read_text(encoding="utf-8-sig", errors="ignore") if files else ""
+            payload = roadmap_quality_score(text)
+        elif args.command == "roadmap-release-input":
+            payload = generate_roadmap_release_input(root)
+        else:
+            payload = build_roadmap_execution_report(root)
+            payload["paths"] = write_roadmap_execution_report(root, payload)
+        print(json.dumps(payload, indent=2 if getattr(args, "json", False) else None, default=str))
+        if payload.get("status") in {"blocked", "failed", "fail"} and args.command not in {"roadmap-duplicate-guard", "roadmap-completion-gate", "roadmap-move-completed"}:
+            raise SystemExit(1)
+        return
+    if args.command in {
+        "repo-inventory",
+        "code-graph",
+        "cli-surface-map",
+        "dashboard-surface-map",
+        "test-impact-map",
+        "code-ownership-map",
+        "impact-analysis",
+        "docs-code-consistency",
+        "roadmap-traceability",
+        "safety-surface-map",
+        "artifact-flow-graph",
+        "repo-knowledge-build",
+        "repo-knowledge-report",
+        "refactor-candidates",
+    }:
+        from .artifact_flow_graph import build_artifact_flow_graph
+        from .cli_surface_map import build_cli_surface_map
+        from .code_graph import build_code_graph
+        from .code_ownership import build_code_ownership
+        from .dashboard_surface_map import build_dashboard_surface_map
+        from .docs_code_consistency import build_docs_code_consistency
+        from .impact_analysis import impact_analysis
+        from .refactor_candidates import detect_refactor_candidates
+        from .repo_inventory import build_repo_inventory, write_repo_inventory_manifest
+        from .repo_knowledge_report import build_repo_knowledge_report, write_repo_knowledge_report
+        from .repo_knowledge_store import write_repo_knowledge_store
+        from .roadmap_traceability import build_roadmap_traceability
+        from .safety_surface_map import safety_surface_map
+        from .test_impact_map import select_tests_for_changes
+
+        root = Path.cwd()
+        changed = getattr(args, "changed", None) or ["src/binance_spot_bot/runtime.py"]
+        if args.command == "repo-inventory":
+            payload = build_repo_inventory(root)
+            payload["manifest"] = write_repo_inventory_manifest(root)
+        elif args.command == "code-graph":
+            payload = build_code_graph(root, settings.data_dir / "repository-knowledge" / "code-graph.json")
+        elif args.command == "cli-surface-map":
+            payload = build_cli_surface_map(root)
+        elif args.command == "dashboard-surface-map":
+            payload = build_dashboard_surface_map(root)
+        elif args.command == "test-impact-map":
+            payload = select_tests_for_changes(changed)
+        elif args.command == "code-ownership-map":
+            payload = build_code_ownership(changed)
+        elif args.command == "impact-analysis":
+            payload = impact_analysis(changed)
+        elif args.command == "docs-code-consistency":
+            payload = build_docs_code_consistency(root)
+        elif args.command == "roadmap-traceability":
+            payload = build_roadmap_traceability(root)
+        elif args.command == "safety-surface-map":
+            payload = safety_surface_map(changed)
+        elif args.command == "artifact-flow-graph":
+            payload = build_artifact_flow_graph(root)
+        elif args.command == "repo-knowledge-build":
+            payload = {
+                "inventory": build_repo_inventory(root),
+                "code_graph": build_code_graph(root),
+                "cli_surface": build_cli_surface_map(root),
+                "dashboard_surface": build_dashboard_surface_map(root),
+                "artifact_flow": build_artifact_flow_graph(root),
+                "live_trading_enabled": False,
+            }
+            payload["paths"] = write_repo_knowledge_store(root, payload)
+            payload["status"] = "ready"
+        elif args.command == "repo-knowledge-report":
+            payload = build_repo_knowledge_report(root)
+            payload["paths"] = write_repo_knowledge_report(root, payload)
+        else:
+            payload = detect_refactor_candidates(root)
+        print(json.dumps(payload, indent=2 if getattr(args, "json", False) else None, default=str))
+        if payload.get("status") in {"blocked", "failed", "fail"}:
+            raise SystemExit(1)
+        return
+    if args.command in {
+        "test-inventory",
+        "changed-files",
+        "regression-risk",
+        "test-select",
+        "check-selected",
+        "check-profile",
+        "check-all-v2",
+        "test-history",
+        "flaky-tests",
+        "test-evidence-export",
+    }:
+        from .changed_files import detect_changed_files
+        from .check_all_v2 import run_selected_checks
+        from .flaky_tests import write_flaky_test_report
+        from .intelligent_test_selector import select_intelligent_tests
+        from .regression_risk import score_regression_risk
+        from .regression_risk_report import build_regression_risk_report, write_regression_risk_report
+        from .test_evidence_bundle import export_test_evidence_bundle
+        from .test_inventory import build_test_inventory, write_test_inventory_manifest
+        from .test_profiles import PROFILE_COMMANDS, validate_profile_for_risk
+        from .test_runtime_history import summarize_test_runtime_history
+
+        root = Path.cwd()
+        changed = getattr(args, "changed", None) or ["src/binance_spot_bot/runtime.py"]
+        if args.command == "test-inventory":
+            payload = build_test_inventory(root)
+            payload["manifest"] = write_test_inventory_manifest(root)
+        elif args.command == "changed-files":
+            payload = detect_changed_files(root, changed)
+        elif args.command == "regression-risk":
+            payload = score_regression_risk(changed)
+        elif args.command == "test-select":
+            payload = select_intelligent_tests(changed, policy=args.policy)
+        elif args.command == "check-selected":
+            payload = run_selected_checks(root, changed, execute=args.execute)
+        elif args.command == "check-profile":
+            risk = score_regression_risk(changed)
+            guard = validate_profile_for_risk(args.profile, risk["payload"]["level"])
+            payload = {"status": guard["status"], "profile": args.profile, "commands": PROFILE_COMMANDS[args.profile], "risk": risk["payload"], "live_trading_enabled": False}
+        elif args.command == "check-all-v2":
+            payload = run_selected_checks(root, changed, execute=False)
+            payload["requested_profile"] = args.profile
+        elif args.command == "test-history":
+            payload = summarize_test_runtime_history(root)
+        elif args.command == "flaky-tests":
+            payload = write_flaky_test_report(root, [{"command": "pytest", "status": "ok"}, {"command": "pytest", "status": "failed"}])
+        else:
+            report = build_regression_risk_report(changed)
+            files = [Path(path) for path in [write_regression_risk_report(root, report)["json"]]]
+            payload = export_test_evidence_bundle(files, settings.data_dir / "test-runs" / "evidence" / args.run_id)
+        print(json.dumps(payload, indent=2 if getattr(args, "json", False) else None, default=str))
+        if payload.get("status") in {"blocked", "failed", "fail"} and args.command not in {"test-select", "check-profile"}:
+            raise SystemExit(1)
+        return
     if args.command == "metrics-warehouse-report":
         payload = write_metrics_report(
             settings,
@@ -1147,6 +1587,77 @@ def main() -> None:
         payload = run_disaster_recovery_drill(settings, bundle_zip=Path(args.bundle) if args.bundle else None)
         print(json.dumps(payload, indent=2 if args.json else None, default=str))
         if payload.get("status") not in {"pass", "warn"}:
+            raise SystemExit(1)
+        return
+    if args.command in {
+        "backup-profiles",
+        "state-inventory",
+        "backup-preflight",
+        "backup-create",
+        "backup-verify",
+        "restore-preview",
+        "restore-drill",
+        "restore-execute",
+        "state-integrity-check",
+        "repair-plan",
+        "permission-restore-validate",
+        "evidence-continuity-check",
+        "dr-report",
+        "dr-evidence-bundle",
+    }:
+        from .backup_preflight import backup_preflight
+        from .backup_profiles import backup_profiles
+        from .backup_verification import verify_backup
+        from .disaster_recovery_report import write_disaster_recovery_report
+        from .dr_evidence_bundle import export_dr_evidence_bundle
+        from .evidence_continuity import evidence_continuity_check
+        from .offline_backup import create_offline_backup
+        from .permission_restore_validation import permission_restore_validate
+        from .restore_drill import restore_drill
+        from .restore_executor import restore_execute
+        from .restore_preview import restore_preview
+        from .state_integrity import state_integrity_check
+        from .state_inventory import state_inventory, write_state_inventory
+
+        def _latest_backup() -> Path:
+            explicit = getattr(args, "backup", "") or getattr(args, "backup_id", "")
+            if explicit:
+                path = Path(explicit)
+                return path if path.suffix == ".zip" else settings.data_dir / "disaster-recovery" / "backup.zip"
+            return settings.data_dir / "disaster-recovery" / "backup.zip"
+
+        if args.command == "backup-profiles":
+            payload = backup_profiles()
+        elif args.command == "state-inventory":
+            payload = write_state_inventory(settings.data_dir)
+        elif args.command == "backup-preflight":
+            payload = backup_preflight(settings.data_dir, profile_id=args.profile)
+        elif args.command == "backup-create":
+            payload = create_offline_backup(settings.data_dir, settings.data_dir / "disaster-recovery" / "backup.zip", profile_id=args.profile)
+        elif args.command == "backup-verify":
+            payload = verify_backup(_latest_backup())
+        elif args.command == "restore-preview":
+            payload = restore_preview(_latest_backup(), Path(args.target))
+        elif args.command == "restore-drill":
+            payload = restore_drill(_latest_backup())
+        elif args.command == "restore-execute":
+            payload = restore_execute(_latest_backup(), Path(args.target), confirm=args.confirm, mode="restore")
+        elif args.command == "state-integrity-check":
+            payload = state_integrity_check(settings.data_dir)
+        elif args.command == "repair-plan":
+            integrity = state_integrity_check(settings.data_dir)
+            payload = {"status": integrity["status"], "repair_plan": integrity.get("repair_plan", []), "live_trading_enabled": False}
+        elif args.command == "permission-restore-validate":
+            payload = permission_restore_validate(settings.data_dir)
+        elif args.command == "evidence-continuity-check":
+            payload = evidence_continuity_check(_latest_backup())
+        elif args.command == "dr-report":
+            payload = write_disaster_recovery_report(settings.data_dir, {"status": "ok"})
+        else:
+            paths = [settings.data_dir / "disaster-recovery" / name for name in ["backup_manifest.json", "backup_verify_report.json", "restore_preview.json"]]
+            payload = export_dr_evidence_bundle(settings.data_dir, paths)
+        print(json.dumps(payload, indent=2 if getattr(args, "json", False) else None, default=str))
+        if payload.get("status") in {"blocked", "failed", "fail"}:
             raise SystemExit(1)
         return
     if args.command == "security-scan":

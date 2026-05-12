@@ -1,0 +1,73 @@
+{
+  "status": "ready",
+  "summary": {
+    "files": 1613,
+    "modules": 423,
+    "cli_commands": 192,
+    "dashboard_panels": 54,
+    "artifact_roots": 12
+  },
+  "top_central_modules": [
+    {
+      "module": "redaction.py",
+      "count": 115
+    },
+    {
+      "module": "dev_quality_facade.py",
+      "count": 54
+    },
+    {
+      "module": "model_ops_facade.py",
+      "count": 36
+    },
+    {
+      "module": "config.py",
+      "count": 34
+    },
+    {
+      "module": "types.py",
+      "count": 32
+    },
+    {
+      "module": "action_proposals.py",
+      "count": 12
+    },
+    {
+      "module": "permission_profiles.py",
+      "count": 11
+    },
+    {
+      "module": "dashboard_v2_facade.py",
+      "count": 10
+    },
+    {
+      "module": "exchange_profiles.py",
+      "count": 9
+    },
+    {
+      "module": "binance.py",
+      "count": 9
+    }
+  ],
+  "large_modules": [
+    {
+      "id": "cli.py",
+      "module": "cli",
+      "path": "src/binance_spot_bot/cli.py",
+      "lines": 2085
+    },
+    {
+      "id": "runtime.py",
+      "module": "runtime",
+      "path": "src/binance_spot_bot/runtime.py",
+      "lines": 872
+    },
+    {
+      "id": "streamlit_app.py",
+      "module": "ui.streamlit_app",
+      "path": "src/binance_spot_bot/ui/streamlit_app.py",
+      "lines": 2377
+    }
+  ],
+  "live_trading_enabled": false
+}

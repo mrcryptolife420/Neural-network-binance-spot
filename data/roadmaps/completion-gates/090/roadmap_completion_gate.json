@@ -1,0 +1,13 @@
+{
+  "status": "ready_to_complete",
+  "roadmap": "090",
+  "blockers": [],
+  "evidence": {
+    "tests_passed": true,
+    "check_all_passed": true,
+    "no_live_proof": true,
+    "browser_smoke_passed": true,
+    "dashboard_smoke_passed": true
+  },
+  "live_trading_enabled": false
+}

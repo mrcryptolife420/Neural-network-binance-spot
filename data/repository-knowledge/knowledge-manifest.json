@@ -1,0 +1,36 @@
+{
+  "status": "ready",
+  "files": [
+    {
+      "name": "inventory",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\repository-knowledge\\inventory.json",
+      "sha256": "b965a6d51cd7667d35533838"
+    },
+    {
+      "name": "code_graph",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\repository-knowledge\\code_graph.json",
+      "sha256": "808fef393a17b48312287db8"
+    },
+    {
+      "name": "cli_surface",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\repository-knowledge\\cli_surface.json",
+      "sha256": "a056c4cf3678a5aecfaca79a"
+    },
+    {
+      "name": "dashboard_surface",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\repository-knowledge\\dashboard_surface.json",
+      "sha256": "ea9ee6685ac6740a180fb541"
+    },
+    {
+      "name": "artifact_flow",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\repository-knowledge\\artifact_flow.json",
+      "sha256": "eedd87fe3f6bec3b767aafde"
+    },
+    {
+      "name": "live_trading_enabled",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\repository-knowledge\\live_trading_enabled.json",
+      "sha256": "85c3109ee992c03088bc7f9d"
+    }
+  ],
+  "live_trading_enabled": false
+}

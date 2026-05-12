@@ -41,6 +41,8 @@ from binance_spot_bot.permission_profiles import permission_compliance_report
 from binance_spot_bot.compliance_report import write_compliance_report
 from binance_spot_bot.permission_drift import permission_drift
 from binance_spot_bot.local_operator_identity import local_operator_identity
+from binance_spot_bot.backup_profiles import backup_profiles
+from binance_spot_bot.state_integrity import state_integrity_check
 from binance_spot_bot.disaster_recovery_drills import run_disaster_recovery_drill
 from binance_spot_bot.versioning import version_payload
 from binance_spot_bot.roadmap_index import build_roadmap_index
@@ -611,38 +613,154 @@ def _render_permissions(settings: BotSettings) -> None:
 def _render_disaster_recovery(settings: BotSettings) -> None:
     st.subheader("Disaster Recovery")
     st.caption("OFFLINE DR ONLY")
+    profiles = backup_profiles()
+    integrity = state_integrity_check(settings.data_dir)
     report = run_disaster_recovery_drill(settings)
-    render_badges({"Status": report["status"], "Integrity": report["integrity"]["status"], "Live trading": "disabled"})
+    render_badges(
+        {
+            "Status": report["status"],
+            "Profiles": len(profiles["profiles"]),
+            "Integrity": integrity["status"],
+            "Backup verify": report["backup_verify"]["status"],
+            "Restore drill": report["restore_drill"]["status"],
+            "Live trading": "disabled",
+        }
+    )
+    render_table("Backup profiles", list(profiles["profiles"].values()))
+    render_table("State integrity", integrity.get("issues", []))
     with st.expander("DR evidence"):
         st.json(report)
 
 
 def _render_release_management() -> None:
     st.subheader("Release Management")
-    st.caption("LOCAL RELEASE SAFETY")
+    st.caption("LOCAL RELEASE ONLY - NO LIVE TRADING")
     payload = version_payload("local")
-    render_badges({"Version": payload["payload"]["version"], "Schema": payload["payload"]["schema_version"], "Live trading": "disabled"})
+    from binance_spot_bot.release_candidate import release_candidate
+    from binance_spot_bot.release_quality_gate import release_quality_gate
+
+    candidate = release_candidate("0.2.0")
+    gate = release_quality_gate([candidate])
+    render_badges({"Version": payload["payload"]["version"], "Schema": payload["payload"]["schema_version"], "Candidate": candidate["status"], "Gate": gate["status"], "Live trading": "disabled"})
+    with st.expander("Release candidate"):
+        st.json(candidate)
 
 
 def _render_roadmap_automation() -> None:
-    st.subheader("Roadmap Automation")
-    st.caption("EVIDENCE GATED")
+    st.subheader("Roadmap Execution")
+    st.caption("ROADMAP EXECUTION ONLY - EVIDENCE GATED - NO LIVE TRADING")
+    from binance_spot_bot.codex_task_pack_generator import generate_codex_task_packs
+    from binance_spot_bot.pr_template_generator import generate_pr_template
+    from binance_spot_bot.roadmap_completion_gate import evaluate_roadmap_completion_gate
+    from binance_spot_bot.roadmap_duplicate_guard import run_roadmap_duplicate_guard
+    from binance_spot_bot.roadmap_quality_score import roadmap_quality_score
+
     payload = build_roadmap_index(Path.cwd())
-    render_badges({"Open": payload["payload"]["open_count"], "Done": payload["payload"]["done_count"], "Live trading": "disabled"})
+    guard = run_roadmap_duplicate_guard(Path.cwd())
+    open_roadmaps = payload["payload"].get("roadmaps", [])
+    selected = next((item for item in open_roadmaps if item.get("location") == "roadmap_docs"), None)
+    roadmap_number = selected.get("number", 0) if selected else 0
+    roadmap_path = Path.cwd() / selected["path"] if selected else None
+    text = roadmap_path.read_text(encoding="utf-8-sig", errors="ignore") if roadmap_path and roadmap_path.exists() else ""
+    score = roadmap_quality_score(text)
+    gate = evaluate_roadmap_completion_gate(
+        f"{roadmap_number:03d}" if roadmap_number else "000",
+        evidence={"tests_passed": False, "check_all_passed": False, "no_live_proof": True},
+        dashboard_touched=True,
+    )
+    render_badges(
+        {
+            "Open": payload["payload"]["open_count"],
+            "Done": payload["payload"]["done_count"],
+            "Next": payload["payload"]["next_number"],
+            "Guard": guard["status"],
+            "Score": score["grade"],
+            "Gate": gate["status"],
+            "Live trading": "disabled",
+        }
+    )
+    render_table(
+        "Open roadmaps",
+        [
+            {"number": item.get("number"), "title": item.get("title"), "status": item.get("status")}
+            for item in open_roadmaps
+            if item.get("location") == "roadmap_docs"
+        ][:12],
+    )
+    with st.expander("Task pack preview"):
+        st.json(generate_codex_task_packs(Path.cwd(), roadmap_number or payload["payload"]["next_number"]))
+    with st.expander("PR template preview"):
+        st.markdown(generate_pr_template(roadmap_number or payload["payload"]["next_number"], "foundation")["markdown"])
+    with st.expander("Guard and completion JSON"):
+        st.json({"duplicate_guard": guard, "completion_gate": gate, "quality_score": score, "live_trading_enabled": False})
 
 
 def _render_repo_knowledge() -> None:
     st.subheader("Repo Knowledge")
-    st.caption("LOCAL CODE MAP")
+    st.caption("LOCAL REPOSITORY KNOWLEDGE ONLY - NO LIVE TRADING")
+    from binance_spot_bot.cli_surface_map import build_cli_surface_map
+    from binance_spot_bot.code_graph import build_code_graph
+    from binance_spot_bot.dashboard_surface_map import build_dashboard_surface_map
+    from binance_spot_bot.impact_analysis import impact_analysis
+    from binance_spot_bot.repo_knowledge_report import build_repo_knowledge_report
+
     payload = repo_inventory(Path.cwd())
-    render_badges({"Python files": payload["payload"]["python_files"], "Tests": payload["payload"]["tests"], "Live trading": "disabled"})
+    files = payload["payload"]["files"]
+    graph = build_code_graph(Path.cwd())
+    cli_map = build_cli_surface_map(Path.cwd())
+    dashboard_map = build_dashboard_surface_map(Path.cwd())
+    impact = impact_analysis(["src/binance_spot_bot/runtime.py"])
+    report = build_repo_knowledge_report(Path.cwd())
+    render_badges(
+        {
+            "Files": len(files),
+            "Python modules": len(graph["payload"]["nodes"]),
+            "CLI commands": cli_map["payload"]["count"],
+            "Dashboard panels": len(dashboard_map["payload"]["panels"]),
+            "Impact": impact["risk"]["payload"]["level"],
+            "Live trading": "disabled",
+        }
+    )
+    render_table(
+        "Safety-relevant files",
+        [
+            {"path": item["path"], "category": item["category"], "lines": item["line_count"]}
+            for item in files
+            if item["safety_relevant_guess"]
+        ][:12],
+    )
+    with st.expander("Recommended tests for runtime.py"):
+        st.json(impact["tests"])
+    with st.expander("Repository knowledge report"):
+        st.json(report)
 
 
 def _render_test_selection() -> None:
-    st.subheader("Intelligent Test Selection")
-    st.caption("LOCAL CI ACCELERATION")
-    payload = selected_tests(["src/binance_spot_bot/runtime.py"])
-    render_table("Selected Tests", [{"test": test} for test in payload["payload"]["tests"]])
+    st.subheader("Test Selection & Regression Risk")
+    st.caption("LOCAL TEST SELECTION ONLY - NO LIVE TRADING")
+    from binance_spot_bot.flaky_tests import flaky_tests
+    from binance_spot_bot.regression_risk_report import build_regression_risk_report
+    from binance_spot_bot.test_profiles import test_profiles
+    from binance_spot_bot.test_runtime_history import summarize_test_runtime_history
+
+    changed = ["src/binance_spot_bot/runtime.py"]
+    payload = selected_tests(changed)
+    report = build_regression_risk_report(changed)
+    history = summarize_test_runtime_history(Path.cwd())
+    render_badges(
+        {
+            "Profile": payload["selected_profile"],
+            "Risk": payload["risk"]["level"],
+            "Commands": len(payload["selected_commands"]),
+            "History": history["count"],
+            "Live trading": "disabled",
+        }
+    )
+    render_table("Selected commands", [{"command": command} for command in payload["selected_commands"]])
+    with st.expander("Regression risk report"):
+        st.json(report)
+    with st.expander("Profiles and flaky status"):
+        st.json({"profiles": test_profiles(), "flaky": flaky_tests([{"command": "pytest", "status": "ok"}]), "live_trading_enabled": False})
 
 
 def _render_performance() -> None:

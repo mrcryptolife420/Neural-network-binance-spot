@@ -1,0 +1,21 @@
+{
+  "bundle_id": "dr-evidence-1778556659839",
+  "files": [
+    {
+      "path": "data\\disaster-recovery\\evidence\\dr-evidence-1778556659839\\files\\backup_manifest.json",
+      "sha256": "25e4b5298b84d5f62ca0cc0d"
+    },
+    {
+      "path": "data\\disaster-recovery\\evidence\\dr-evidence-1778556659839\\files\\backup_verify_report.json",
+      "sha256": "feb0529007376c865334eaef"
+    },
+    {
+      "path": "data\\disaster-recovery\\evidence\\dr-evidence-1778556659839\\files\\restore_preview.json",
+      "sha256": "66a7a2f6b01c4985e8330d1d"
+    }
+  ],
+  "no_live_proof": true,
+  "redaction_proof": true,
+  "live_trading_enabled": false,
+  "manifest_hash": "6c143b17d8535081fbf961e5"
+}

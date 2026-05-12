@@ -1,0 +1,696 @@
+{
+  "status": "blocked",
+  "profile": {
+    "profile_id": "restore_drill_fixture",
+    "description": "Small deterministic fixture subset.",
+    "includes": [
+      {
+        "pattern": "*.json",
+        "category": "state"
+      },
+      {
+        "pattern": "reports/**",
+        "category": "state"
+      },
+      {
+        "pattern": "checks/**",
+        "category": "state"
+      }
+    ],
+    "excludes": [
+      {
+        "pattern": "*.key",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*.pem",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*credential*",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*listenKey*",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*secret*",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": ".env",
+        "reason": "secret_or_unsafe"
+      }
+    ],
+    "live_trading_enabled": false,
+    "profile_hash": "6594d33dd5da6479bfaedf0d"
+  },
+  "checks": [
+    {
+      "name": "profile",
+      "status": "ok",
+      "blocking": false
+    },
+    {
+      "name": "secret_scan",
+      "status": "blocked",
+      "blocking": true
+    },
+    {
+      "name": "forbidden_backup_files",
+      "status": "ok",
+      "blocking": false
+    },
+    {
+      "name": "no_live_proof",
+      "status": "ok",
+      "blocking": false
+    },
+    {
+      "name": "permission_drift",
+      "status": "ok",
+      "blocking": false
+    },
+    {
+      "name": "compliance_score",
+      "status": "ok",
+      "blocking": false
+    },
+    {
+      "name": "disk_space",
+      "status": "ok",
+      "blocking": false
+    }
+  ],
+  "blockers": [
+    "secret_scan"
+  ],
+  "inventory_count": 876,
+  "estimated_output_size_bytes": 132511809,
+  "secret_findings": [
+    [
+      "data\\public_binance\\manifests\\ADAUSDT-1778519617262.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ADAUSDT-1778519617262.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ADAUSDT-1778519617262.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ADAUSDT-1778519617262.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ADAUSDT-1778519617262.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ADAUSDT-1778519701253.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ADAUSDT-1778519701253.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ADAUSDT-1778519701253.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ADAUSDT-1778519701253.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ADAUSDT-1778519701253.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ADAUSDT-1778519822093.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ADAUSDT-1778519822093.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ADAUSDT-1778519822093.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ADAUSDT-1778519822093.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ADAUSDT-1778519822093.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BNBUSDT-1778519594778.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BNBUSDT-1778519594778.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BNBUSDT-1778519594778.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BNBUSDT-1778519594778.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BNBUSDT-1778519594778.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BNBUSDT-1778519678723.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BNBUSDT-1778519678723.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BNBUSDT-1778519678723.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BNBUSDT-1778519678723.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BNBUSDT-1778519678723.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BNBUSDT-1778519796640.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BNBUSDT-1778519796640.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BNBUSDT-1778519796640.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BNBUSDT-1778519796640.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BNBUSDT-1778519796640.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BTCUSDT-1778519579687.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BTCUSDT-1778519579687.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BTCUSDT-1778519579687.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BTCUSDT-1778519579687.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BTCUSDT-1778519579687.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BTCUSDT-1778519663645.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BTCUSDT-1778519663645.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BTCUSDT-1778519663645.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BTCUSDT-1778519663645.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BTCUSDT-1778519663645.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BTCUSDT-1778519779644.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BTCUSDT-1778519779644.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BTCUSDT-1778519779644.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BTCUSDT-1778519779644.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\BTCUSDT-1778519779644.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\DOGEUSDT-1778519624778.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\DOGEUSDT-1778519624778.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\DOGEUSDT-1778519624778.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\DOGEUSDT-1778519624778.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\DOGEUSDT-1778519624778.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\DOGEUSDT-1778519708819.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\DOGEUSDT-1778519708819.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\DOGEUSDT-1778519708819.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\DOGEUSDT-1778519708819.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\DOGEUSDT-1778519708819.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\DOGEUSDT-1778519830574.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\DOGEUSDT-1778519830574.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\DOGEUSDT-1778519830574.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\DOGEUSDT-1778519830574.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\DOGEUSDT-1778519830574.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ETHUSDT-1778519587199.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ETHUSDT-1778519587199.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ETHUSDT-1778519587199.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ETHUSDT-1778519587199.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ETHUSDT-1778519587199.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ETHUSDT-1778519671206.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ETHUSDT-1778519671206.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ETHUSDT-1778519671206.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ETHUSDT-1778519671206.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ETHUSDT-1778519671206.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ETHUSDT-1778519788152.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ETHUSDT-1778519788152.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ETHUSDT-1778519788152.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ETHUSDT-1778519788152.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\ETHUSDT-1778519788152.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\LINKUSDT-1778519632259.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\LINKUSDT-1778519632259.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\LINKUSDT-1778519632259.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\LINKUSDT-1778519632259.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\LINKUSDT-1778519632259.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\LINKUSDT-1778519716340.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\LINKUSDT-1778519716340.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\LINKUSDT-1778519716340.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\LINKUSDT-1778519716340.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\LINKUSDT-1778519716340.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\LINKUSDT-1778519839068.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\LINKUSDT-1778519839068.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\LINKUSDT-1778519839068.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\LINKUSDT-1778519839068.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\LINKUSDT-1778519839068.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\SOLUSDT-1778519602279.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\SOLUSDT-1778519602279.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\SOLUSDT-1778519602279.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\SOLUSDT-1778519602279.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\SOLUSDT-1778519602279.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\SOLUSDT-1778519686260.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\SOLUSDT-1778519686260.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\SOLUSDT-1778519686260.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\SOLUSDT-1778519686260.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\SOLUSDT-1778519686260.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\SOLUSDT-1778519805120.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\SOLUSDT-1778519805120.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\SOLUSDT-1778519805120.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\SOLUSDT-1778519805120.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\SOLUSDT-1778519805120.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\XRPUSDT-1778519609768.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\XRPUSDT-1778519609768.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\XRPUSDT-1778519609768.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\XRPUSDT-1778519609768.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\XRPUSDT-1778519609768.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\XRPUSDT-1778519693743.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\XRPUSDT-1778519693743.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\XRPUSDT-1778519693743.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\XRPUSDT-1778519693743.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\XRPUSDT-1778519693743.json",
+      16,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\XRPUSDT-1778519813613.json",
+      12,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\XRPUSDT-1778519813613.json",
+      13,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\XRPUSDT-1778519813613.json",
+      14,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\XRPUSDT-1778519813613.json",
+      15,
+      "possible secret"
+    ],
+    [
+      "data\\public_binance\\manifests\\XRPUSDT-1778519813613.json",
+      16,
+      "possible secret"
+    ]
+  ],
+  "forbidden_inventory": [],
+  "no_live_proof": true,
+  "live_trading_enabled": false
+}

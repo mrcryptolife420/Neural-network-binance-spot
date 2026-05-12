@@ -1,0 +1,254 @@
+{
+  "status": "ready",
+  "completed": [
+    {
+      "number": 83,
+      "title": "Indicator Signal Advisor",
+      "path": "Voltooid docs/083-roadmap-indicator-signal-advisor.md"
+    },
+    {
+      "number": 83,
+      "title": "Local Paper Operations Automation, Scheduled Reports \\& Operator Runbooks",
+      "path": "Voltooid docs/083-roadmap-local-paper-operations-automation-scheduled-reports-operator-runbooks.md"
+    },
+    {
+      "number": 84,
+      "title": "Dashboard Indicator Control Panel",
+      "path": "Voltooid docs/084-roadmap-dashboard-indicator-control-panel.md"
+    },
+    {
+      "number": 84,
+      "title": "Local Paper Ops Observability, Metrics Warehouse \\& Long-Term Analytics",
+      "path": "Voltooid docs/084-roadmap-local-paper-ops-observability-metrics-warehouse-long-term-analytics.md"
+    },
+    {
+      "number": 85,
+      "title": "Local AI Ops Assistant, Natural Language Queries \\& Safe Operator Guidance",
+      "path": "Voltooid docs/085-roadmap-local-ai-ops-assistant-natural-language-queries-safe-operator-guidance.md"
+    },
+    {
+      "number": 85,
+      "title": "Per Symbol Indicator Table",
+      "path": "Voltooid docs/085-roadmap-per-symbol-indicator-table.md"
+    },
+    {
+      "number": 86,
+      "title": "Indicator Chart Context",
+      "path": "Voltooid docs/086-roadmap-indicator-chart-context.md"
+    },
+    {
+      "number": 86,
+      "title": "Safe Human-in-the-Loop Action Center, Approval Workflows \\& Operator Decision Journal",
+      "path": "Voltooid docs/086-roadmap-safe-human-in-the-loop-action-center-approval-workflows-operator-decision-journal.md"
+    },
+    {
+      "number": 87,
+      "title": "Auto Strategy Preset Selector",
+      "path": "Voltooid docs/087-roadmap-auto-strategy-preset-selector.md"
+    },
+    {
+      "number": 87,
+      "title": "Local Permission Profiles, Operator Roles Hardening \\& Audit-Grade Compliance Reports",
+      "path": "Voltooid docs/087-roadmap-local-permission-profiles-operator-roles-hardening-audit-grade-compliance-reports.md"
+    },
+    {
+      "number": 88,
+      "title": "Market Regime Detection",
+      "path": "Voltooid docs/088-roadmap-market-regime-detection.md"
+    },
+    {
+      "number": 88,
+      "title": "Offline Disaster Recovery, Backup/Restore Drills \\& Local State Integrity",
+      "path": "Voltooid docs/088-roadmap-offline-disaster-recovery-backup-restore-drills-local-state-integrity.md"
+    },
+    {
+      "number": 89,
+      "title": "Indicator Evidence Export",
+      "path": "Voltooid docs/089-roadmap-indicator-evidence-export.md"
+    },
+    {
+      "number": 89,
+      "title": "Local Release Management, Versioned Upgrade Paths \\& Migration Safety",
+      "path": "Voltooid docs/089-roadmap-local-release-management-versioned-upgrade-paths-migration-safety.md"
+    },
+    {
+      "number": 90,
+      "title": "Bot Trading Decision Explanation",
+      "path": "Voltooid docs/090-roadmap-bot-trading-decision-explanation.md"
+    },
+    {
+      "number": 91,
+      "title": "Multi Symbol Performance Summary",
+      "path": "Voltooid docs/091-roadmap-multi-symbol-performance-summary.md"
+    },
+    {
+      "number": 92,
+      "title": "Risk Adjusted Allocation Hints",
+      "path": "Voltooid docs/092-roadmap-risk-adjusted-allocation-hints.md"
+    },
+    {
+      "number": 93,
+      "title": "Dashboard Indicator Compact Mode",
+      "path": "Voltooid docs/093-roadmap-dashboard-indicator-compact-mode.md"
+    },
+    {
+      "number": 94,
+      "title": "Indicator Backtest Lite Panel",
+      "path": "Voltooid docs/094-roadmap-indicator-backtest-lite-panel.md"
+    },
+    {
+      "number": 95,
+      "title": "Indicator Dashboard Final Validation",
+      "path": "Voltooid docs/095-roadmap-indicator-dashboard-final-validation.md"
+    }
+  ],
+  "open": [
+    {
+      "number": 90,
+      "title": "Developer Experience, Codex Task Packs \\& Roadmap Execution Automation",
+      "path": "Roadmap docs/090-roadmap-developer-experience-codex-task-packs-roadmap-execution-automation.md"
+    },
+    {
+      "number": 91,
+      "title": "Repository Knowledge Graph, Code Ownership Maps \\& Impact Analysis",
+      "path": "Roadmap docs/091-roadmap-repository-knowledge-graph-code-ownership-impact-analysis.md"
+    },
+    {
+      "number": 92,
+      "title": "Intelligent Test Selection, CI Acceleration \\& Regression Risk Scoring",
+      "path": "Roadmap docs/092-roadmap-intelligent-test-selection-ci-acceleration-regression-risk-scoring.md"
+    },
+    {
+      "number": 93,
+      "title": "Performance Profiling, Runtime Bottleneck Analysis \\& Resource Budgeting",
+      "path": "Roadmap docs/093-roadmap-performance-profiling-runtime-bottleneck-analysis-resource-budgeting.md"
+    },
+    {
+      "number": 94,
+      "title": "Dashboard Component Refactor, Lazy Loading \\& UX Performance Hardening",
+      "path": "Roadmap docs/094-roadmap-dashboard-component-refactor-lazy-loading-ux-performance-hardening.md"
+    },
+    {
+      "number": 95,
+      "title": "Runtime Core Decomposition, Event Bus \\& Snapshot Optimization",
+      "path": "Roadmap docs/095-roadmap-runtime-core-decomposition-event-bus-snapshot-optimization.md"
+    },
+    {
+      "number": 96,
+      "title": "Data Pipeline Decomposition, Feature Store Contracts \\& Indicator Compute Optimization",
+      "path": "Roadmap docs/096-roadmap-data-pipeline-decomposition-feature-store-contracts-indicator-compute-optimization.md"
+    },
+    {
+      "number": 97,
+      "title": "Model Training Pipeline V2, Experiment Tracking \\& Feature Contract-Aware Model Promotion",
+      "path": "Roadmap docs/097-roadmap-model-training-pipeline-v2-experiment-tracking-feature-contract-aware-model-promotion.md"
+    },
+    {
+      "number": 98,
+      "title": "Shadow/Paper Model Monitoring, Drift Detection \\& Automatic Candidate Downgrade",
+      "path": "Roadmap docs/098-roadmap-shadow-paper-model-monitoring-drift-detection-automatic-candidate-downgrade.md"
+    },
+    {
+      "number": 99,
+      "title": "Paper Portfolio Model Ensemble, Strategy Allocation \\& Model Rotation Governance",
+      "path": "Roadmap docs/099-roadmap-paper-portfolio-model-ensemble-strategy-allocation-model-rotation-governance.md"
+    },
+    {
+      "number": 100,
+      "title": "End-to-End Paper Trading Operating System Milestone, System Audit \\& Production-Readiness Simulation",
+      "path": "Roadmap docs/100-roadmap-end-to-end-paper-trading-operating-system-milestone-system-audit-production-readiness-simulation.md"
+    },
+    {
+      "number": 101,
+      "title": "Paper OS Stabilization Sprint, Blocker Burn-Down \\& Reliability Hardening",
+      "path": "Roadmap docs/101-roadmap-paper-os-stabilization-sprint-blocker-burn-down-reliability-hardening.md"
+    },
+    {
+      "number": 102,
+      "title": "Operator Manual, Local Paper OS UX Training \\& Support Playbooks",
+      "path": "Roadmap docs/102-roadmap-operator-manual-local-paper-os-ux-training-support-playbooks.md"
+    },
+    {
+      "number": 104,
+      "title": "Local Realtime Dashboard V2, FastAPI/WebSocket Backend \\& React Operator UI",
+      "path": "Roadmap docs/104-roadmap-local-realtime-dashboard-v2-fastapi-websocket-react-operator-ui.md"
+    },
+    {
+      "number": 105,
+      "title": "Dashboard V2 Feature Parity, Streamlit Legacy Mode \\& Advanced Page Migration",
+      "path": "Roadmap docs/105-roadmap-dashboard-v2-feature-parity-streamlit-legacy-mode-advanced-page-migration.md"
+    },
+    {
+      "number": 106,
+      "title": "Dashboard V2 Performance, Desktop Packaging \\& Streamlit Cutover Readiness",
+      "path": "Roadmap docs/106-roadmap-dashboard-v2-performance-desktop-packaging-streamlit-cutover-readiness.md"
+    },
+    {
+      "number": 107,
+      "title": "Dashboard V2 Operator Workflow Simplification, UX Backlog Execution \\& Streamlit Deprecation Plan",
+      "path": "Roadmap docs/107-roadmap-dashboard-v2-operator-workflow-simplification-ux-backlog-execution-streamlit-deprecation-plan.md"
+    },
+    {
+      "number": 108,
+      "title": "Dashboard V2 Legacy Streamlit Deprecation Execution, Final Parity Lock \\& V2-Only Operator Mode",
+      "path": "Roadmap docs/108-roadmap-dashboard-v2-legacy-streamlit-deprecation-execution-final-parity-lock-v2-only-operator-mode.md"
+    },
+    {
+      "number": 109,
+      "title": "Streamlit Removal Candidate, Legacy Cleanup \\& Dashboard V2-Only Release Hardening",
+      "path": "Roadmap docs/109-roadmap-streamlit-removal-candidate-legacy-cleanup-dashboard-v2-only-release-hardening.md"
+    },
+    {
+      "number": 110,
+      "title": "Dashboard V2 Advanced Realtime Analytics, Multi-Panel Layouts \\& Operator Customization",
+      "path": "Roadmap docs/110-roadmap-dashboard-v2-advanced-realtime-analytics-multi-panel-layouts-operator-customization.md"
+    }
+  ],
+  "dashboard_changes": [
+    2,
+    3,
+    9,
+    10,
+    11,
+    12,
+    15,
+    17,
+    18,
+    19,
+    22,
+    23,
+    24,
+    25,
+    29,
+    32,
+    42,
+    51,
+    61,
+    65,
+    73,
+    74,
+    80,
+    84,
+    93,
+    94,
+    95,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112
+  ],
+  "migration_changes": [
+    89,
+    105
+  ],
+  "validation_commands": [
+    "python -m pytest -q",
+    "python -m binance_spot_bot.cli check-all --skip-tests --json"
+  ],
+  "live_trading_enabled": false
+}

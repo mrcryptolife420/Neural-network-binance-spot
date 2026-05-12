@@ -1,0 +1,19 @@
+{
+  "status": "ok",
+  "release_id": "release-0.2.0",
+  "version": "0.2.0",
+  "summary": "Local release 0.2.0",
+  "new_features": [
+    "Local release management update"
+  ],
+  "changed_behavior": [],
+  "migration_required": false,
+  "backup_required": true,
+  "validation_checklist": [
+    "check-all --skip-tests",
+    "dashboard-smoke"
+  ],
+  "rollback_notes": "Use rollback plan and pre-upgrade backup.",
+  "no_live_statement": "Live trading remains disabled.",
+  "live_trading_enabled": false
+}

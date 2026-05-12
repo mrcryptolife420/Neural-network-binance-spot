@@ -9,11 +9,11 @@
   },
   "freshness_score": 100,
   "hashes": {
-    "bundle": "50cebdcb19e5f76d80004065270782733efb6c575f0a0ac0107e291d018269de",
-    "klines_15m": "bad136f5300c050d6d0c2d68a639243abd1229da4020023c34ae2e9fbc0bcb3a",
-    "klines_1h": "fc4e0f2eddefd05cafd658e29f856f617eae28419bc1ebc0741dea391ccb09b2",
-    "klines_1m": "315996d873ef8dd1e7b64fd9083747a5ae85c946811fdd7b48ff7ed08565b430",
-    "klines_5m": "c37414057fb0861496fac168da6deef69b727fa4c478dd573f9ecb47bfc46119"
+    "bundle": "50cebdcb19e5f76d80004065",
+    "klines_15m": "bad136f5300c050d6d0c2d68",
+    "klines_1h": "fc4e0f2eddefd05cafd658e2",
+    "klines_1m": "315996d873ef8dd1e7b64fd9",
+    "klines_5m": "c37414057fb0861496fac168"
   },
   "intervals": [
     "15m",

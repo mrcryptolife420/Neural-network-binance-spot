@@ -1,0 +1,14 @@
+{
+  "status": "ok",
+  "created_at_ms": 1778556659486,
+  "backup": {},
+  "verify": {},
+  "restore_preview": {},
+  "restore_drill": {},
+  "integrity": {},
+  "permission_restore": {},
+  "evidence_continuity": {},
+  "no_live_proof": true,
+  "redaction_proof": true,
+  "live_trading_enabled": false
+}

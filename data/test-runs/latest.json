@@ -1,0 +1,13 @@
+{
+  "profile": "standard",
+  "command": "python -m binance_spot_bot.cli check-all --skip-tests --json",
+  "status": "planned",
+  "returncode": 0,
+  "duration_ms": 0,
+  "changed_files": [
+    "src/binance_spot_bot/ui/streamlit_app.py"
+  ],
+  "risk_score": 50,
+  "timestamp_ms": 1778560487856,
+  "live_trading_enabled": false
+}

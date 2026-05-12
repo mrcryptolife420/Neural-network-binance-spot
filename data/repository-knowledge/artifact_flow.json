@@ -1,0 +1,88 @@
+{
+  "status": "ready",
+  "payload": {
+    "status": "ready",
+    "nodes": [
+      {
+        "id": "data/checks",
+        "type": "data_directory",
+        "exists": true
+      },
+      {
+        "id": "data/evidence",
+        "type": "data_directory",
+        "exists": true
+      },
+      {
+        "id": "data/reports",
+        "type": "data_directory",
+        "exists": true
+      },
+      {
+        "id": "data/support",
+        "type": "data_directory",
+        "exists": true
+      },
+      {
+        "id": "data/sessions",
+        "type": "data_directory",
+        "exists": true
+      },
+      {
+        "id": "data/pilot-runs",
+        "type": "data_directory",
+        "exists": true
+      },
+      {
+        "id": "data/roadmaps",
+        "type": "data_directory",
+        "exists": true
+      },
+      {
+        "id": "data/releases",
+        "type": "data_directory",
+        "exists": true
+      },
+      {
+        "id": "data/metrics",
+        "type": "data_directory",
+        "exists": true
+      },
+      {
+        "id": "data/backups",
+        "type": "data_directory",
+        "exists": false
+      },
+      {
+        "id": "data/action-center",
+        "type": "data_directory",
+        "exists": true
+      },
+      {
+        "id": "data/compliance",
+        "type": "data_directory",
+        "exists": true
+      }
+    ],
+    "edges": [
+      {
+        "source": "check-all",
+        "target": "data/checks",
+        "type": "writes"
+      },
+      {
+        "source": "support-bundle",
+        "target": "data/support",
+        "type": "writes"
+      },
+      {
+        "source": "roadmap-evidence-export",
+        "target": "data/roadmaps",
+        "type": "writes"
+      }
+    ],
+    "missing_producers": [],
+    "live_trading_enabled": false
+  },
+  "live_trading_enabled": false
+}

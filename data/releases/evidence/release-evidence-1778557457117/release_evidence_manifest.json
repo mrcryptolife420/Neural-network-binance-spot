@@ -1,0 +1,33 @@
+{
+  "bundle_id": "release-evidence-1778557457117",
+  "files": [
+    {
+      "path": "data\\releases\\evidence\\release-evidence-1778557457117\\files\\current-install-fingerprint.json",
+      "sha256": "d7bc2fb1d90d21d2fa8fe5e6"
+    },
+    {
+      "path": "data\\releases\\evidence\\release-evidence-1778557457117\\files\\migration-dry-run.json",
+      "sha256": "f32d44b852eb2784617f2bd2"
+    },
+    {
+      "path": "data\\releases\\evidence\\release-evidence-1778557457117\\files\\rollback-marker.json",
+      "sha256": "19b8a1e85e22042c7c644928"
+    },
+    {
+      "path": "data\\releases\\evidence\\release-evidence-1778557457117\\files\\release-notes.json",
+      "sha256": "5b65de89eb0c1360493b8d3d"
+    },
+    {
+      "path": "data\\releases\\evidence\\release-evidence-1778557457117\\files\\release-manifest.json",
+      "sha256": "8fb07eb79ad0b3e43b65f4e9"
+    },
+    {
+      "path": "data\\releases\\evidence\\release-evidence-1778557457117\\files\\release-manifest.json",
+      "sha256": "3ba42cd34e295056beeae4bb"
+    }
+  ],
+  "no_live_proof": true,
+  "redaction_proof": true,
+  "live_trading_enabled": false,
+  "manifest_hash": "c993c05a64bd3bdefbd7a6c2"
+}

@@ -1,2 +1,9 @@
-from .dev_quality_facade import safe_record
-def release_quality_gate(results: list[dict]): return safe_record("release_quality_gate", {"status": "ok" if all(r.get("status") == "ok" for r in results) else "blocked"})
+from __future__ import annotations
+
+from typing import Any
+
+
+def release_quality_gate(results: list[dict]) -> dict[str, Any]:
+    hard = [row for row in results if row.get("required", True) and row.get("status") not in {"ok", "pass", "ready", "warning"}]
+    warnings = [row for row in results if row.get("status") == "warning"]
+    return {"status": "fail" if hard else ("warn" if warnings else "ok"), "hard_blockers": hard, "warnings": warnings, "live_trading_enabled": False}
