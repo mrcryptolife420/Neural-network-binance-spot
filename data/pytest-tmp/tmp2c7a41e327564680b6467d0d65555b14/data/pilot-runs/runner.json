@@ -1,0 +1,22 @@
+{
+  "runner_id": "runner-1",
+  "run_id": "run-1",
+  "pid": 123,
+  "status": "running",
+  "started_at_ms": 1778865166868,
+  "updated_at_ms": 1778865166868,
+  "command_dir": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp2c7a41e327564680b6467d0d65555b14\\data\\pilot-runs\\run-1\\commands",
+  "telemetry_jsonl": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp2c7a41e327564680b6467d0d65555b14\\data\\pilot-runs\\run-1\\telemetry.jsonl",
+  "latest_telemetry_json": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp2c7a41e327564680b6467d0d65555b14\\data\\pilot-runs\\run-1\\latest-telemetry.json",
+  "process_command": [
+    "python",
+    "-m",
+    "binance_spot_bot.cli",
+    "pilot-runner-start"
+  ],
+  "last_tick_ms": 0,
+  "last_reconciliation_ms": 0,
+  "last_account_sync_ms": 0,
+  "last_command": "",
+  "last_error": ""
+}

@@ -1,0 +1,52 @@
+{"action": "observe", "created_at_ms": 1778847168749, "message": "runtime created", "metadata": {}, "name": "runtime_created", "severity": "info"}
+{"action": "observe", "created_at_ms": 1778847168750, "message": "runtime started", "metadata": {}, "name": "runtime_started", "severity": "info"}
+{"action": "observe", "created_at_ms": 1778847168768, "message": "insufficient base balance", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847168778, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847168787, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847168797, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847168807, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847168828, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169000, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169013, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169063, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169075, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169088, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169196, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169209, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169223, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169237, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169251, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169265, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169279, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169294, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169307, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169322, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169336, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169350, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169365, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169379, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169395, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169409, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169425, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169441, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169456, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169471, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169487, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169502, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169518, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169534, "message": "model returned HOLD", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169550, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169566, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169583, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169599, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169615, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169631, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169648, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169664, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169680, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169698, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169714, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169731, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169748, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169765, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}
+{"action": "observe", "created_at_ms": 1778847169782, "message": "max trades per day reached", "metadata": {}, "name": "risk_block", "severity": "warning"}

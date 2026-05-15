@@ -1,0 +1,1573 @@
+{
+  "status": "ok",
+  "bundles": [
+    {
+      "symbol": "BTCUSDT",
+      "filters": {
+        "symbols": [
+          {
+            "symbol": "BTCUSDT",
+            "status": "TRADING",
+            "filters": []
+          }
+        ]
+      },
+      "candles": {
+        "1M": [
+          {
+            "open_time_ms": 1700000000000,
+            "open": "100",
+            "high": "101",
+            "low": "99",
+            "close": "100.5",
+            "volume": "10",
+            "close_time_ms": 1700000059999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700000060000,
+            "open": "100.1",
+            "high": "101.1",
+            "low": "99.1",
+            "close": "100.6",
+            "volume": "10",
+            "close_time_ms": 1700000119999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700000120000,
+            "open": "100.2",
+            "high": "101.2",
+            "low": "99.2",
+            "close": "100.7",
+            "volume": "10",
+            "close_time_ms": 1700000179999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700000180000,
+            "open": "100.3",
+            "high": "101.3",
+            "low": "99.3",
+            "close": "100.8",
+            "volume": "10",
+            "close_time_ms": 1700000239999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700000240000,
+            "open": "100.4",
+            "high": "101.4",
+            "low": "99.4",
+            "close": "100.9",
+            "volume": "10",
+            "close_time_ms": 1700000299999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700000300000,
+            "open": "100.5",
+            "high": "101.5",
+            "low": "99.5",
+            "close": "101.0",
+            "volume": "10",
+            "close_time_ms": 1700000359999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700000360000,
+            "open": "100.6",
+            "high": "101.6",
+            "low": "99.6",
+            "close": "101.1",
+            "volume": "10",
+            "close_time_ms": 1700000419999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700000420000,
+            "open": "100.7",
+            "high": "101.7",
+            "low": "99.7",
+            "close": "101.2",
+            "volume": "10",
+            "close_time_ms": 1700000479999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700000480000,
+            "open": "100.8",
+            "high": "101.8",
+            "low": "99.8",
+            "close": "101.3",
+            "volume": "10",
+            "close_time_ms": 1700000539999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700000540000,
+            "open": "100.9",
+            "high": "101.9",
+            "low": "99.9",
+            "close": "101.4",
+            "volume": "10",
+            "close_time_ms": 1700000599999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700000600000,
+            "open": "101",
+            "high": "102",
+            "low": "100",
+            "close": "101.5",
+            "volume": "10",
+            "close_time_ms": 1700000659999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700000660000,
+            "open": "101.1",
+            "high": "102.1",
+            "low": "100.1",
+            "close": "101.6",
+            "volume": "10",
+            "close_time_ms": 1700000719999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700000720000,
+            "open": "101.2",
+            "high": "102.2",
+            "low": "100.2",
+            "close": "101.7",
+            "volume": "10",
+            "close_time_ms": 1700000779999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700000780000,
+            "open": "101.3",
+            "high": "102.3",
+            "low": "100.3",
+            "close": "101.8",
+            "volume": "10",
+            "close_time_ms": 1700000839999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700000840000,
+            "open": "101.4",
+            "high": "102.4",
+            "low": "100.4",
+            "close": "101.9",
+            "volume": "10",
+            "close_time_ms": 1700000899999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700000900000,
+            "open": "101.5",
+            "high": "102.5",
+            "low": "100.5",
+            "close": "102.0",
+            "volume": "10",
+            "close_time_ms": 1700000959999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700000960000,
+            "open": "101.6",
+            "high": "102.6",
+            "low": "100.6",
+            "close": "102.1",
+            "volume": "10",
+            "close_time_ms": 1700001019999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700001020000,
+            "open": "101.7",
+            "high": "102.7",
+            "low": "100.7",
+            "close": "102.2",
+            "volume": "10",
+            "close_time_ms": 1700001079999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700001080000,
+            "open": "101.8",
+            "high": "102.8",
+            "low": "100.8",
+            "close": "102.3",
+            "volume": "10",
+            "close_time_ms": 1700001139999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700001140000,
+            "open": "101.9",
+            "high": "102.9",
+            "low": "100.9",
+            "close": "102.4",
+            "volume": "10",
+            "close_time_ms": 1700001199999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700001200000,
+            "open": "102",
+            "high": "103",
+            "low": "101",
+            "close": "102.5",
+            "volume": "10",
+            "close_time_ms": 1700001259999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700001260000,
+            "open": "102.1",
+            "high": "103.1",
+            "low": "101.1",
+            "close": "102.6",
+            "volume": "10",
+            "close_time_ms": 1700001319999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700001320000,
+            "open": "102.2",
+            "high": "103.2",
+            "low": "101.2",
+            "close": "102.7",
+            "volume": "10",
+            "close_time_ms": 1700001379999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700001380000,
+            "open": "102.3",
+            "high": "103.3",
+            "low": "101.3",
+            "close": "102.8",
+            "volume": "10",
+            "close_time_ms": 1700001439999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700001440000,
+            "open": "102.4",
+            "high": "103.4",
+            "low": "101.4",
+            "close": "102.9",
+            "volume": "10",
+            "close_time_ms": 1700001499999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700001500000,
+            "open": "102.5",
+            "high": "103.5",
+            "low": "101.5",
+            "close": "103.0",
+            "volume": "10",
+            "close_time_ms": 1700001559999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700001560000,
+            "open": "102.6",
+            "high": "103.6",
+            "low": "101.6",
+            "close": "103.1",
+            "volume": "10",
+            "close_time_ms": 1700001619999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700001620000,
+            "open": "102.7",
+            "high": "103.7",
+            "low": "101.7",
+            "close": "103.2",
+            "volume": "10",
+            "close_time_ms": 1700001679999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700001680000,
+            "open": "102.8",
+            "high": "103.8",
+            "low": "101.8",
+            "close": "103.3",
+            "volume": "10",
+            "close_time_ms": 1700001739999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700001740000,
+            "open": "102.9",
+            "high": "103.9",
+            "low": "101.9",
+            "close": "103.4",
+            "volume": "10",
+            "close_time_ms": 1700001799999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700001800000,
+            "open": "103",
+            "high": "104",
+            "low": "102",
+            "close": "103.5",
+            "volume": "10",
+            "close_time_ms": 1700001859999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700001860000,
+            "open": "103.1",
+            "high": "104.1",
+            "low": "102.1",
+            "close": "103.6",
+            "volume": "10",
+            "close_time_ms": 1700001919999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700001920000,
+            "open": "103.2",
+            "high": "104.2",
+            "low": "102.2",
+            "close": "103.7",
+            "volume": "10",
+            "close_time_ms": 1700001979999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700001980000,
+            "open": "103.3",
+            "high": "104.3",
+            "low": "102.3",
+            "close": "103.8",
+            "volume": "10",
+            "close_time_ms": 1700002039999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700002040000,
+            "open": "103.4",
+            "high": "104.4",
+            "low": "102.4",
+            "close": "103.9",
+            "volume": "10",
+            "close_time_ms": 1700002099999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700002100000,
+            "open": "103.5",
+            "high": "104.5",
+            "low": "102.5",
+            "close": "104.0",
+            "volume": "10",
+            "close_time_ms": 1700002159999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700002160000,
+            "open": "103.6",
+            "high": "104.6",
+            "low": "102.6",
+            "close": "104.1",
+            "volume": "10",
+            "close_time_ms": 1700002219999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700002220000,
+            "open": "103.7",
+            "high": "104.7",
+            "low": "102.7",
+            "close": "104.2",
+            "volume": "10",
+            "close_time_ms": 1700002279999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700002280000,
+            "open": "103.8",
+            "high": "104.8",
+            "low": "102.8",
+            "close": "104.3",
+            "volume": "10",
+            "close_time_ms": 1700002339999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700002340000,
+            "open": "103.9",
+            "high": "104.9",
+            "low": "102.9",
+            "close": "104.4",
+            "volume": "10",
+            "close_time_ms": 1700002399999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700002400000,
+            "open": "104",
+            "high": "105",
+            "low": "103",
+            "close": "104.5",
+            "volume": "10",
+            "close_time_ms": 1700002459999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700002460000,
+            "open": "104.1",
+            "high": "105.1",
+            "low": "103.1",
+            "close": "104.6",
+            "volume": "10",
+            "close_time_ms": 1700002519999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700002520000,
+            "open": "104.2",
+            "high": "105.2",
+            "low": "103.2",
+            "close": "104.7",
+            "volume": "10",
+            "close_time_ms": 1700002579999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700002580000,
+            "open": "104.3",
+            "high": "105.3",
+            "low": "103.3",
+            "close": "104.8",
+            "volume": "10",
+            "close_time_ms": 1700002639999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700002640000,
+            "open": "104.4",
+            "high": "105.4",
+            "low": "103.4",
+            "close": "104.9",
+            "volume": "10",
+            "close_time_ms": 1700002699999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700002700000,
+            "open": "104.5",
+            "high": "105.5",
+            "low": "103.5",
+            "close": "105.0",
+            "volume": "10",
+            "close_time_ms": 1700002759999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700002760000,
+            "open": "104.6",
+            "high": "105.6",
+            "low": "103.6",
+            "close": "105.1",
+            "volume": "10",
+            "close_time_ms": 1700002819999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700002820000,
+            "open": "104.7",
+            "high": "105.7",
+            "low": "103.7",
+            "close": "105.2",
+            "volume": "10",
+            "close_time_ms": 1700002879999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700002880000,
+            "open": "104.8",
+            "high": "105.8",
+            "low": "103.8",
+            "close": "105.3",
+            "volume": "10",
+            "close_time_ms": 1700002939999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700002940000,
+            "open": "104.9",
+            "high": "105.9",
+            "low": "103.9",
+            "close": "105.4",
+            "volume": "10",
+            "close_time_ms": 1700002999999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700003000000,
+            "open": "105",
+            "high": "106",
+            "low": "104",
+            "close": "105.5",
+            "volume": "10",
+            "close_time_ms": 1700003059999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700003060000,
+            "open": "105.1",
+            "high": "106.1",
+            "low": "104.1",
+            "close": "105.6",
+            "volume": "10",
+            "close_time_ms": 1700003119999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700003120000,
+            "open": "105.2",
+            "high": "106.2",
+            "low": "104.2",
+            "close": "105.7",
+            "volume": "10",
+            "close_time_ms": 1700003179999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700003180000,
+            "open": "105.3",
+            "high": "106.3",
+            "low": "104.3",
+            "close": "105.8",
+            "volume": "10",
+            "close_time_ms": 1700003239999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700003240000,
+            "open": "105.4",
+            "high": "106.4",
+            "low": "104.4",
+            "close": "105.9",
+            "volume": "10",
+            "close_time_ms": 1700003299999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700003300000,
+            "open": "105.5",
+            "high": "106.5",
+            "low": "104.5",
+            "close": "106.0",
+            "volume": "10",
+            "close_time_ms": 1700003359999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700003360000,
+            "open": "105.6",
+            "high": "106.6",
+            "low": "104.6",
+            "close": "106.1",
+            "volume": "10",
+            "close_time_ms": 1700003419999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700003420000,
+            "open": "105.7",
+            "high": "106.7",
+            "low": "104.7",
+            "close": "106.2",
+            "volume": "10",
+            "close_time_ms": 1700003479999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700003480000,
+            "open": "105.8",
+            "high": "106.8",
+            "low": "104.8",
+            "close": "106.3",
+            "volume": "10",
+            "close_time_ms": 1700003539999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700003540000,
+            "open": "105.9",
+            "high": "106.9",
+            "low": "104.9",
+            "close": "106.4",
+            "volume": "10",
+            "close_time_ms": 1700003599999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700003600000,
+            "open": "106",
+            "high": "107",
+            "low": "105",
+            "close": "106.5",
+            "volume": "10",
+            "close_time_ms": 1700003659999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700003660000,
+            "open": "106.1",
+            "high": "107.1",
+            "low": "105.1",
+            "close": "106.6",
+            "volume": "10",
+            "close_time_ms": 1700003719999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700003720000,
+            "open": "106.2",
+            "high": "107.2",
+            "low": "105.2",
+            "close": "106.7",
+            "volume": "10",
+            "close_time_ms": 1700003779999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700003780000,
+            "open": "106.3",
+            "high": "107.3",
+            "low": "105.3",
+            "close": "106.8",
+            "volume": "10",
+            "close_time_ms": 1700003839999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700003840000,
+            "open": "106.4",
+            "high": "107.4",
+            "low": "105.4",
+            "close": "106.9",
+            "volume": "10",
+            "close_time_ms": 1700003899999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700003900000,
+            "open": "106.5",
+            "high": "107.5",
+            "low": "105.5",
+            "close": "107.0",
+            "volume": "10",
+            "close_time_ms": 1700003959999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700003960000,
+            "open": "106.6",
+            "high": "107.6",
+            "low": "105.6",
+            "close": "107.1",
+            "volume": "10",
+            "close_time_ms": 1700004019999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700004020000,
+            "open": "106.7",
+            "high": "107.7",
+            "low": "105.7",
+            "close": "107.2",
+            "volume": "10",
+            "close_time_ms": 1700004079999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700004080000,
+            "open": "106.8",
+            "high": "107.8",
+            "low": "105.8",
+            "close": "107.3",
+            "volume": "10",
+            "close_time_ms": 1700004139999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700004140000,
+            "open": "106.9",
+            "high": "107.9",
+            "low": "105.9",
+            "close": "107.4",
+            "volume": "10",
+            "close_time_ms": 1700004199999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700004200000,
+            "open": "107",
+            "high": "108",
+            "low": "106",
+            "close": "107.5",
+            "volume": "10",
+            "close_time_ms": 1700004259999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700004260000,
+            "open": "107.1",
+            "high": "108.1",
+            "low": "106.1",
+            "close": "107.6",
+            "volume": "10",
+            "close_time_ms": 1700004319999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700004320000,
+            "open": "107.2",
+            "high": "108.2",
+            "low": "106.2",
+            "close": "107.7",
+            "volume": "10",
+            "close_time_ms": 1700004379999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700004380000,
+            "open": "107.3",
+            "high": "108.3",
+            "low": "106.3",
+            "close": "107.8",
+            "volume": "10",
+            "close_time_ms": 1700004439999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700004440000,
+            "open": "107.4",
+            "high": "108.4",
+            "low": "106.4",
+            "close": "107.9",
+            "volume": "10",
+            "close_time_ms": 1700004499999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700004500000,
+            "open": "107.5",
+            "high": "108.5",
+            "low": "106.5",
+            "close": "108.0",
+            "volume": "10",
+            "close_time_ms": 1700004559999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700004560000,
+            "open": "107.6",
+            "high": "108.6",
+            "low": "106.6",
+            "close": "108.1",
+            "volume": "10",
+            "close_time_ms": 1700004619999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700004620000,
+            "open": "107.7",
+            "high": "108.7",
+            "low": "106.7",
+            "close": "108.2",
+            "volume": "10",
+            "close_time_ms": 1700004679999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700004680000,
+            "open": "107.8",
+            "high": "108.8",
+            "low": "106.8",
+            "close": "108.3",
+            "volume": "10",
+            "close_time_ms": 1700004739999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700004740000,
+            "open": "107.9",
+            "high": "108.9",
+            "low": "106.9",
+            "close": "108.4",
+            "volume": "10",
+            "close_time_ms": 1700004799999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700004800000,
+            "open": "108",
+            "high": "109",
+            "low": "107",
+            "close": "108.5",
+            "volume": "10",
+            "close_time_ms": 1700004859999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700004860000,
+            "open": "108.1",
+            "high": "109.1",
+            "low": "107.1",
+            "close": "108.6",
+            "volume": "10",
+            "close_time_ms": 1700004919999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700004920000,
+            "open": "108.2",
+            "high": "109.2",
+            "low": "107.2",
+            "close": "108.7",
+            "volume": "10",
+            "close_time_ms": 1700004979999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700004980000,
+            "open": "108.3",
+            "high": "109.3",
+            "low": "107.3",
+            "close": "108.8",
+            "volume": "10",
+            "close_time_ms": 1700005039999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700005040000,
+            "open": "108.4",
+            "high": "109.4",
+            "low": "107.4",
+            "close": "108.9",
+            "volume": "10",
+            "close_time_ms": 1700005099999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700005100000,
+            "open": "108.5",
+            "high": "109.5",
+            "low": "107.5",
+            "close": "109.0",
+            "volume": "10",
+            "close_time_ms": 1700005159999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700005160000,
+            "open": "108.6",
+            "high": "109.6",
+            "low": "107.6",
+            "close": "109.1",
+            "volume": "10",
+            "close_time_ms": 1700005219999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700005220000,
+            "open": "108.7",
+            "high": "109.7",
+            "low": "107.7",
+            "close": "109.2",
+            "volume": "10",
+            "close_time_ms": 1700005279999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700005280000,
+            "open": "108.8",
+            "high": "109.8",
+            "low": "107.8",
+            "close": "109.3",
+            "volume": "10",
+            "close_time_ms": 1700005339999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700005340000,
+            "open": "108.9",
+            "high": "109.9",
+            "low": "107.9",
+            "close": "109.4",
+            "volume": "10",
+            "close_time_ms": 1700005399999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700005400000,
+            "open": "109",
+            "high": "110",
+            "low": "108",
+            "close": "109.5",
+            "volume": "10",
+            "close_time_ms": 1700005459999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700005460000,
+            "open": "109.1",
+            "high": "110.1",
+            "low": "108.1",
+            "close": "109.6",
+            "volume": "10",
+            "close_time_ms": 1700005519999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700005520000,
+            "open": "109.2",
+            "high": "110.2",
+            "low": "108.2",
+            "close": "109.7",
+            "volume": "10",
+            "close_time_ms": 1700005579999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700005580000,
+            "open": "109.3",
+            "high": "110.3",
+            "low": "108.3",
+            "close": "109.8",
+            "volume": "10",
+            "close_time_ms": 1700005639999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700005640000,
+            "open": "109.4",
+            "high": "110.4",
+            "low": "108.4",
+            "close": "109.9",
+            "volume": "10",
+            "close_time_ms": 1700005699999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700005700000,
+            "open": "109.5",
+            "high": "110.5",
+            "low": "108.5",
+            "close": "110.0",
+            "volume": "10",
+            "close_time_ms": 1700005759999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700005760000,
+            "open": "109.6",
+            "high": "110.6",
+            "low": "108.6",
+            "close": "110.1",
+            "volume": "10",
+            "close_time_ms": 1700005819999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700005820000,
+            "open": "109.7",
+            "high": "110.7",
+            "low": "108.7",
+            "close": "110.2",
+            "volume": "10",
+            "close_time_ms": 1700005879999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700005880000,
+            "open": "109.8",
+            "high": "110.8",
+            "low": "108.8",
+            "close": "110.3",
+            "volume": "10",
+            "close_time_ms": 1700005939999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700005940000,
+            "open": "109.9",
+            "high": "110.9",
+            "low": "108.9",
+            "close": "110.4",
+            "volume": "10",
+            "close_time_ms": 1700005999999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700006000000,
+            "open": "110",
+            "high": "111",
+            "low": "109",
+            "close": "110.5",
+            "volume": "10",
+            "close_time_ms": 1700006059999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700006060000,
+            "open": "110.1",
+            "high": "111.1",
+            "low": "109.1",
+            "close": "110.6",
+            "volume": "10",
+            "close_time_ms": 1700006119999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700006120000,
+            "open": "110.2",
+            "high": "111.2",
+            "low": "109.2",
+            "close": "110.7",
+            "volume": "10",
+            "close_time_ms": 1700006179999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700006180000,
+            "open": "110.3",
+            "high": "111.3",
+            "low": "109.3",
+            "close": "110.8",
+            "volume": "10",
+            "close_time_ms": 1700006239999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700006240000,
+            "open": "110.4",
+            "high": "111.4",
+            "low": "109.4",
+            "close": "110.9",
+            "volume": "10",
+            "close_time_ms": 1700006299999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700006300000,
+            "open": "110.5",
+            "high": "111.5",
+            "low": "109.5",
+            "close": "111.0",
+            "volume": "10",
+            "close_time_ms": 1700006359999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700006360000,
+            "open": "110.6",
+            "high": "111.6",
+            "low": "109.6",
+            "close": "111.1",
+            "volume": "10",
+            "close_time_ms": 1700006419999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700006420000,
+            "open": "110.7",
+            "high": "111.7",
+            "low": "109.7",
+            "close": "111.2",
+            "volume": "10",
+            "close_time_ms": 1700006479999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700006480000,
+            "open": "110.8",
+            "high": "111.8",
+            "low": "109.8",
+            "close": "111.3",
+            "volume": "10",
+            "close_time_ms": 1700006539999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700006540000,
+            "open": "110.9",
+            "high": "111.9",
+            "low": "109.9",
+            "close": "111.4",
+            "volume": "10",
+            "close_time_ms": 1700006599999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700006600000,
+            "open": "111",
+            "high": "112",
+            "low": "110",
+            "close": "111.5",
+            "volume": "10",
+            "close_time_ms": 1700006659999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700006660000,
+            "open": "111.1",
+            "high": "112.1",
+            "low": "110.1",
+            "close": "111.6",
+            "volume": "10",
+            "close_time_ms": 1700006719999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700006720000,
+            "open": "111.2",
+            "high": "112.2",
+            "low": "110.2",
+            "close": "111.7",
+            "volume": "10",
+            "close_time_ms": 1700006779999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700006780000,
+            "open": "111.3",
+            "high": "112.3",
+            "low": "110.3",
+            "close": "111.8",
+            "volume": "10",
+            "close_time_ms": 1700006839999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700006840000,
+            "open": "111.4",
+            "high": "112.4",
+            "low": "110.4",
+            "close": "111.9",
+            "volume": "10",
+            "close_time_ms": 1700006899999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700006900000,
+            "open": "111.5",
+            "high": "112.5",
+            "low": "110.5",
+            "close": "112.0",
+            "volume": "10",
+            "close_time_ms": 1700006959999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700006960000,
+            "open": "111.6",
+            "high": "112.6",
+            "low": "110.6",
+            "close": "112.1",
+            "volume": "10",
+            "close_time_ms": 1700007019999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700007020000,
+            "open": "111.7",
+            "high": "112.7",
+            "low": "110.7",
+            "close": "112.2",
+            "volume": "10",
+            "close_time_ms": 1700007079999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700007080000,
+            "open": "111.8",
+            "high": "112.8",
+            "low": "110.8",
+            "close": "112.3",
+            "volume": "10",
+            "close_time_ms": 1700007139999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700007140000,
+            "open": "111.9",
+            "high": "112.9",
+            "low": "110.9",
+            "close": "112.4",
+            "volume": "10",
+            "close_time_ms": 1700007199999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700007200000,
+            "open": "112",
+            "high": "113",
+            "low": "111",
+            "close": "112.5",
+            "volume": "10",
+            "close_time_ms": 1700007259999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700007260000,
+            "open": "112.1",
+            "high": "113.1",
+            "low": "111.1",
+            "close": "112.6",
+            "volume": "10",
+            "close_time_ms": 1700007319999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700007320000,
+            "open": "112.2",
+            "high": "113.2",
+            "low": "111.2",
+            "close": "112.7",
+            "volume": "10",
+            "close_time_ms": 1700007379999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700007380000,
+            "open": "112.3",
+            "high": "113.3",
+            "low": "111.3",
+            "close": "112.8",
+            "volume": "10",
+            "close_time_ms": 1700007439999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700007440000,
+            "open": "112.4",
+            "high": "113.4",
+            "low": "111.4",
+            "close": "112.9",
+            "volume": "10",
+            "close_time_ms": 1700007499999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700007500000,
+            "open": "112.5",
+            "high": "113.5",
+            "low": "111.5",
+            "close": "113.0",
+            "volume": "10",
+            "close_time_ms": 1700007559999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700007560000,
+            "open": "112.6",
+            "high": "113.6",
+            "low": "111.6",
+            "close": "113.1",
+            "volume": "10",
+            "close_time_ms": 1700007619999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700007620000,
+            "open": "112.7",
+            "high": "113.7",
+            "low": "111.7",
+            "close": "113.2",
+            "volume": "10",
+            "close_time_ms": 1700007679999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700007680000,
+            "open": "112.8",
+            "high": "113.8",
+            "low": "111.8",
+            "close": "113.3",
+            "volume": "10",
+            "close_time_ms": 1700007739999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          },
+          {
+            "open_time_ms": 1700007740000,
+            "open": "112.9",
+            "high": "113.9",
+            "low": "111.9",
+            "close": "113.4",
+            "volume": "10",
+            "close_time_ms": 1700007799999,
+            "quote_volume": "1000",
+            "trade_count": 25
+          }
+        ]
+      },
+      "order_book": {
+        "bids": [
+          [
+            "100",
+            "2"
+          ],
+          [
+            "99",
+            "2"
+          ]
+        ],
+        "asks": [
+          [
+            "101",
+            "2"
+          ],
+          [
+            "102",
+            "2"
+          ]
+        ]
+      },
+      "ticker_24h": {
+        "symbol": "BTCUSDT",
+        "priceChangePercent": "1.5",
+        "quoteVolume": "200000",
+        "count": 1000
+      },
+      "rolling_ticker": {
+        "symbol": "BTCUSDT",
+        "priceChangePercent": "0.5"
+      },
+      "recent_trades": [
+        {
+          "price": "100",
+          "qty": "0.2"
+        },
+        {
+          "price": "101",
+          "qty": "0.4"
+        }
+      ],
+      "fetched_at_ms": 1778847048251,
+      "source": "public-rest",
+      "warnings": [],
+      "freshness_score": 100,
+      "quality": {
+        "status": "warning",
+        "candles": {
+          "1M": {
+            "status": "warning",
+            "score": 90,
+            "blockers": [],
+            "warnings": [
+              {
+                "check": "stale_latest_candle",
+                "reason": "78839248253ms old"
+              }
+            ],
+            "latest_age_ms": 78839248253
+          }
+        },
+        "liquidity": {
+          "status": "warning",
+          "best_bid": "100",
+          "best_ask": "101",
+          "spread_bps": 99.502488,
+          "bid_liquidity_top_5": "398",
+          "ask_liquidity_top_5": "406",
+          "bid_liquidity_top_20": "398",
+          "ask_liquidity_top_20": "406",
+          "order_book_imbalance": -0.00995,
+          "estimated_slippage_bps": {
+            "10": "0.0000",
+            "25": "0.0000",
+            "50": "0.0000",
+            "100": "0.0000"
+          },
+          "thin_book_warning": false,
+          "score": 0
+        },
+        "market_context": {
+          "status": "healthy",
+          "price_change_percent_24h": 1.5,
+          "quote_volume_24h": "200000",
+          "trade_count_24h": 1000,
+          "weighted_avg_price": "",
+          "rolling_change": 0.5,
+          "volume_score": 2.0
+        },
+        "flow": {
+          "status": "healthy",
+          "recent_trade_count": 2,
+          "average_trade_size_quote": "30.2",
+          "large_trade_count": 0,
+          "trade_burst_score": 2,
+          "confidence_adjustment": 0.001
+        }
+      }
+    }
+  ],
+  "manifests": [
+    "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmpa8bf4a0bf6904d7c966661c4b394a5d7\\data\\public_binance\\manifests\\BTCUSDT-1778847048251.json"
+  ],
+  "warnings": [],
+  "live_trading_enabled": false,
+  "public_endpoints": [
+    "/api/v3/aggTrades",
+    "/api/v3/avgPrice",
+    "/api/v3/depth",
+    "/api/v3/exchangeInfo",
+    "/api/v3/klines",
+    "/api/v3/ticker",
+    "/api/v3/ticker/24hr",
+    "/api/v3/ticker/bookTicker",
+    "/api/v3/trades",
+    "/api/v3/uiKlines"
+  ],
+  "forbidden_endpoints": [
+    "/api/v3/account",
+    "/api/v3/openOrders",
+    "/api/v3/order",
+    "/api/v3/userDataStream"
+  ]
+}

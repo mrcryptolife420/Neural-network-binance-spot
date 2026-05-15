@@ -1,0 +1,31 @@
+{
+  "bundle_id": "governance-1778848019709",
+  "summary": {
+    "decision": {
+      "decision": "promote_challenger",
+      "reasons": [
+        "challenger_leads",
+        "operator_confirmed",
+        "paper_only"
+      ],
+      "operator_confirmed": true,
+      "evidence_refs": [],
+      "live_trading_enabled": false
+    }
+  },
+  "files": [
+    {
+      "file": "ab-rollout-1778848019703-7.json",
+      "sha256": "8b0527ad0ca9ed92...25a2c9c987fd15fd",
+      "sha256_parts": [
+        "8b0527ad0ca9ed92",
+        "ce19cccdd7716051",
+        "28b245cb21cfa15f",
+        "25a2c9c987fd15fd"
+      ],
+      "bytes": 1632
+    }
+  ],
+  "verification": "sha256",
+  "live_trading_enabled": false
+}

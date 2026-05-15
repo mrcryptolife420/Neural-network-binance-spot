@@ -1,0 +1,74 @@
+{
+  "status": "ok",
+  "run_id": "1778860575820",
+  "streamlit_removed": false,
+  "files": [
+    {
+      "name": "final_parity_lock",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_108_dashboard_v2_streamlit_deprecation_acceptance.py_test_deprecation_evidence_bundle_is_secret_free-0d21905f1c084bdf8c5ec4f888249c4f\\data\\dashboard-v2\\deprecation\\evidence\\1778860575820\\files\\final_parity_lock.json",
+      "sha256_16": "53f417d4231bda26"
+    },
+    {
+      "name": "streamlit_only_inventory",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_108_dashboard_v2_streamlit_deprecation_acceptance.py_test_deprecation_evidence_bundle_is_secret_free-0d21905f1c084bdf8c5ec4f888249c4f\\data\\dashboard-v2\\deprecation\\evidence\\1778860575820\\files\\streamlit_only_inventory.json",
+      "sha256_16": "18b2525866f6a4a3"
+    },
+    {
+      "name": "critical_workflow_lock",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_108_dashboard_v2_streamlit_deprecation_acceptance.py_test_deprecation_evidence_bundle_is_secret_free-0d21905f1c084bdf8c5ec4f888249c4f\\data\\dashboard-v2\\deprecation\\evidence\\1778860575820\\files\\critical_workflow_lock.json",
+      "sha256_16": "29de5d515d3a2a13"
+    },
+    {
+      "name": "cli_router",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_108_dashboard_v2_streamlit_deprecation_acceptance.py_test_deprecation_evidence_bundle_is_secret_free-0d21905f1c084bdf8c5ec4f888249c4f\\data\\dashboard-v2\\deprecation\\evidence\\1778860575820\\files\\cli_router.json",
+      "sha256_16": "034268c73a2a3a05"
+    },
+    {
+      "name": "operator_mode",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_108_dashboard_v2_streamlit_deprecation_acceptance.py_test_deprecation_evidence_bundle_is_secret_free-0d21905f1c084bdf8c5ec4f888249c4f\\data\\dashboard-v2\\deprecation\\evidence\\1778860575820\\files\\operator_mode.json",
+      "sha256_16": "08b356def6c4e265"
+    },
+    {
+      "name": "legacy_compat",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_108_dashboard_v2_streamlit_deprecation_acceptance.py_test_deprecation_evidence_bundle_is_secret_free-0d21905f1c084bdf8c5ec4f888249c4f\\data\\dashboard-v2\\deprecation\\evidence\\1778860575820\\files\\legacy_compat.json",
+      "sha256_16": "3c8b1a3e3e7e4df0"
+    },
+    {
+      "name": "streamlit_change_freeze",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_108_dashboard_v2_streamlit_deprecation_acceptance.py_test_deprecation_evidence_bundle_is_secret_free-0d21905f1c084bdf8c5ec4f888249c4f\\data\\dashboard-v2\\deprecation\\evidence\\1778860575820\\files\\streamlit_change_freeze.json",
+      "sha256_16": "5641e9a809453dbf"
+    },
+    {
+      "name": "docs_v2_first",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_108_dashboard_v2_streamlit_deprecation_acceptance.py_test_deprecation_evidence_bundle_is_secret_free-0d21905f1c084bdf8c5ec4f888249c4f\\data\\dashboard-v2\\deprecation\\evidence\\1778860575820\\files\\docs_v2_first.json",
+      "sha256_16": "350b113b8e2e5066"
+    },
+    {
+      "name": "uat_v2_first",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_108_dashboard_v2_streamlit_deprecation_acceptance.py_test_deprecation_evidence_bundle_is_secret_free-0d21905f1c084bdf8c5ec4f888249c4f\\data\\dashboard-v2\\deprecation\\evidence\\1778860575820\\files\\uat_v2_first.json",
+      "sha256_16": "3d37a3728cf71c64"
+    },
+    {
+      "name": "deprecation_gate",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_108_dashboard_v2_streamlit_deprecation_acceptance.py_test_deprecation_evidence_bundle_is_secret_free-0d21905f1c084bdf8c5ec4f888249c4f\\data\\dashboard-v2\\deprecation\\evidence\\1778860575820\\files\\deprecation_gate.json",
+      "sha256_16": "cedbc10f6403f47b"
+    },
+    {
+      "name": "v2_only_smoke",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_108_dashboard_v2_streamlit_deprecation_acceptance.py_test_deprecation_evidence_bundle_is_secret_free-0d21905f1c084bdf8c5ec4f888249c4f\\data\\dashboard-v2\\deprecation\\evidence\\1778860575820\\files\\v2_only_smoke.json",
+      "sha256_16": "05fd414a6884d018"
+    },
+    {
+      "name": "fallback_drill",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_108_dashboard_v2_streamlit_deprecation_acceptance.py_test_deprecation_evidence_bundle_is_secret_free-0d21905f1c084bdf8c5ec4f888249c4f\\data\\dashboard-v2\\deprecation\\evidence\\1778860575820\\files\\fallback_drill.json",
+      "sha256_16": "e7ec280b483db1a8"
+    },
+    {
+      "name": "no_live_proof",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_108_dashboard_v2_streamlit_deprecation_acceptance.py_test_deprecation_evidence_bundle_is_secret_free-0d21905f1c084bdf8c5ec4f888249c4f\\data\\dashboard-v2\\deprecation\\evidence\\1778860575820\\files\\no_live_proof.json",
+      "sha256_16": "cc322fdd9204a8a1"
+    }
+  ],
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

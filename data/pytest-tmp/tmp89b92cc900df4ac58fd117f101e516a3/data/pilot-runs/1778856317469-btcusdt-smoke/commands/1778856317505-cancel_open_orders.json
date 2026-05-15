@@ -1,0 +1,11 @@
+{
+  "command_id": "1778856317505-cancel_open_orders",
+  "type": "cancel_open_orders",
+  "created_at_ms": 1778856317505,
+  "status": "processed",
+  "payload": {},
+  "processed_at_ms": 1778856317535,
+  "result": {
+    "cancel_status": []
+  }
+}

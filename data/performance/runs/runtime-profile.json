@@ -1,0 +1,53 @@
+{
+  "run_id": "runtime-profile",
+  "category": "runtime",
+  "spans": [
+    {
+      "span_id": "2ff368e3-cdc",
+      "name": "step_0",
+      "category": "runtime",
+      "started_at_ms": 889361.7095,
+      "parent_span_id": "",
+      "duration_ms": 0.010400000028312206,
+      "status": "ok",
+      "labels": {
+        "step": "step_0"
+      },
+      "error_type": "",
+      "redacted": true,
+      "live_trading_enabled": false
+    },
+    {
+      "span_id": "05f651a9-0ca",
+      "name": "step_1",
+      "category": "runtime",
+      "started_at_ms": 889361.7368000001,
+      "parent_span_id": "",
+      "duration_ms": 0.003399999928660691,
+      "status": "ok",
+      "labels": {
+        "step": "step_1"
+      },
+      "error_type": "",
+      "redacted": true,
+      "live_trading_enabled": false
+    },
+    {
+      "span_id": "50b99624-e18",
+      "name": "step_2",
+      "category": "runtime",
+      "started_at_ms": 889361.7472,
+      "parent_span_id": "",
+      "duration_ms": 0.0018000000854954123,
+      "status": "ok",
+      "labels": {
+        "step": "step_2"
+      },
+      "error_type": "",
+      "redacted": true,
+      "live_trading_enabled": false
+    }
+  ],
+  "metrics": [],
+  "live_trading_enabled": false
+}

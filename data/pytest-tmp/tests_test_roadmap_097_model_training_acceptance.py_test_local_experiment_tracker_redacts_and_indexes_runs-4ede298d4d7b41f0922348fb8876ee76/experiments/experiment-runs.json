@@ -1,0 +1,18 @@
+[
+  {
+    "artifacts": {
+      "model": "model.json"
+    },
+    "config": {
+      "api_secret": "[REDACTED]"
+    },
+    "created_at_ms": 1778849296344,
+    "experiment_name": "demo",
+    "live_trading_enabled": false,
+    "metrics": {
+      "score": 0.7
+    },
+    "run_id": "train-1778849296344-3b206145",
+    "status": "completed"
+  }
+]

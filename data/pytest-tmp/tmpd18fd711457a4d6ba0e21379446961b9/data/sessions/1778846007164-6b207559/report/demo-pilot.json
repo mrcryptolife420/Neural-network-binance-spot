@@ -1,0 +1,210 @@
+{
+  "session": {
+    "session_id": "1778846007164-6b207559",
+    "mode": "demo",
+    "symbol": "BTCUSDT",
+    "interval": "1m",
+    "status": "stopped",
+    "pnl": "0",
+    "max_drawdown": "0"
+  },
+  "demo_pilot": {
+    "config": {
+      "pilot_name": "smoke",
+      "duration_minutes": 15,
+      "max_demo_orders": 5,
+      "max_rejects": 2,
+      "max_api_errors": 3,
+      "max_reconciliation_failures": 1,
+      "cancel_open_orders_on_stop": true,
+      "reconciliation_interval_seconds": 30,
+      "account_sync_interval_seconds": 60,
+      "pause_on_connection_degraded": true,
+      "require_clean_start": false
+    },
+    "counters": {
+      "orders": 0,
+      "rejects": 0,
+      "api_errors": 0,
+      "reconciliation_failures": 0,
+      "started_at_ms": 1778846007163,
+      "elapsed_seconds": 0
+    },
+    "should_pause": false,
+    "pause_reason": "",
+    "status": "armed",
+    "last_reconciliation_check_ms": 1778846007167,
+    "last_demo_account_sync_ms": 1778846007179
+  },
+  "connection": {},
+  "account": {},
+  "reconciliation": {
+    "status": "needs_operator_action",
+    "known_orders": 0,
+    "open_orders": 1,
+    "orphan_orders": 1,
+    "failures": 0,
+    "events": [
+      {
+        "type": "ORPHAN_OPEN",
+        "client_order_id": "known-1",
+        "status": "NEW"
+      }
+    ],
+    "checked_at_ms": 1778846007167,
+    "needs_operator_action": true
+  },
+  "operator_checklist": [
+    {
+      "check": "Profile",
+      "status": "fail",
+      "detail": "unknown",
+      "blocking": true
+    },
+    {
+      "check": "Credentials",
+      "status": "fail",
+      "detail": "not loaded",
+      "blocking": true
+    },
+    {
+      "check": "Connection",
+      "status": "fail",
+      "detail": "not tested",
+      "blocking": true
+    },
+    {
+      "check": "Server time",
+      "status": "warn",
+      "detail": "test connection first",
+      "blocking": false
+    },
+    {
+      "check": "Account canTrade",
+      "status": "fail",
+      "detail": "not synced",
+      "blocking": true
+    },
+    {
+      "check": "Clean start",
+      "status": "fail",
+      "detail": "needs_operator_action",
+      "blocking": true
+    },
+    {
+      "check": "No orphan orders",
+      "status": "fail",
+      "detail": "1 orphan orders",
+      "blocking": true
+    },
+    {
+      "check": "Risk limits",
+      "status": "fail",
+      "detail": "missing limits",
+      "blocking": true
+    },
+    {
+      "check": "Pilot preset",
+      "status": "pass",
+      "detail": "smoke",
+      "blocking": false
+    },
+    {
+      "check": "Armed",
+      "status": "warn",
+      "detail": "explicit arm required",
+      "blocking": false
+    }
+  ],
+  "pipeline": [
+    {
+      "step": "Signal",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "-",
+      "reference": "-"
+    },
+    {
+      "step": "Risk",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "-",
+      "reference": "-"
+    },
+    {
+      "step": "Intent",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "-",
+      "reference": "-"
+    },
+    {
+      "step": "Test order",
+      "status": "needs_operator_action",
+      "timestamp_ms": "-",
+      "detail": "needs_operator_action",
+      "reference": "-"
+    },
+    {
+      "step": "Demo order",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "needs_operator_action",
+      "reference": "-"
+    },
+    {
+      "step": "Reconciliation",
+      "status": "needs_operator_action",
+      "timestamp_ms": "1778846007167",
+      "detail": "needs_operator_action",
+      "reference": "1"
+    },
+    {
+      "step": "Fill/Cancel/Reject",
+      "status": "needs_operator_action",
+      "timestamp_ms": "-",
+      "detail": "operator action required",
+      "reference": "needs_operator_action"
+    }
+  ],
+  "cancel_on_stop_status": [
+    {
+      "status": "cancelled",
+      "response": {
+        "symbol": "BTCUSDT",
+        "orderId": 99,
+        "status": "CANCELED"
+      }
+    }
+  ],
+  "orders": [
+    {
+      "checked_at_ms": 1778846007167,
+      "events": [
+        {
+          "client_order_id": "known-1",
+          "status": "NEW",
+          "type": "ORPHAN_OPEN"
+        }
+      ],
+      "failures": 0,
+      "known_orders": 0,
+      "needs_operator_action": true,
+      "open_orders": 1,
+      "orphan_orders": 1,
+      "status": "needs_operator_action",
+      "type": "reconciliation"
+    }
+  ],
+  "alerts": [
+    {
+      "action": "observe",
+      "created_at_ms": 1778846007165,
+      "message": "runtime created",
+      "metadata": {},
+      "name": "runtime_created",
+      "severity": "info"
+    }
+  ],
+  "latest_snapshot": {}
+}

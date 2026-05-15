@@ -18,7 +18,14 @@ def scan_for_secrets(root: Path) -> list[tuple[Path, int, str]]:
     findings: list[tuple[Path, int, str]] = []
     ignored_parts = {".git", "__pycache__", ".pytest_cache", ".lean-ctx"}
     for path in root.rglob("*"):
-        if not path.is_file() or any(part in ignored_parts for part in path.parts):
+        relative_parts = path.relative_to(root).parts
+        if (
+            not path.is_file()
+            or any(part in ignored_parts for part in relative_parts)
+            or relative_parts[:2] == ("data", "pytest-tmp")
+            or relative_parts[:2] == (".tmp", "check-all-temp")
+            or path.name in {"package-lock.json", "npm-shrinkwrap.json"}
+        ):
             continue
         if path.suffix.lower() not in {"", ".py", ".md", ".toml", ".txt", ".example", ".json", ".ps1", ".cmd"}:
             continue

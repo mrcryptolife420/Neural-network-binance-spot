@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SpotBot//Local Paper Ops//EN
+BEGIN:VEVENT
+UID:daily-paper-deployment@spotbot.local
+SUMMARY:Daily paper deployment
+END:VEVENT
+BEGIN:VEVENT
+UID:daily-data-quality@spotbot.local
+SUMMARY:Daily data quality
+END:VEVENT
+BEGIN:VEVENT
+UID:daily-local-ops@spotbot.local
+SUMMARY:Daily local ops snapshot
+END:VEVENT
+BEGIN:VEVENT
+UID:weekly-governance@spotbot.local
+SUMMARY:Weekly governance
+END:VEVENT
+BEGIN:VEVENT
+UID:weekly-support-verify@spotbot.local
+SUMMARY:Weekly support verify
+END:VEVENT
+BEGIN:VEVENT
+UID:weekly-data-growth@spotbot.local
+SUMMARY:Weekly data growth
+END:VEVENT
+END:VCALENDAR

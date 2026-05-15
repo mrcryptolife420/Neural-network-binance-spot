@@ -1,0 +1,57 @@
+{
+  "status": "ok",
+  "entries": [
+    {
+      "kind": "action",
+      "label": "Start demo bot",
+      "command": "python -m binance_spot_bot.cli dashboard-v2-start-wizard-smoke --json",
+      "safety": "local demo/paper only"
+    },
+    {
+      "kind": "action",
+      "label": "Start paper session",
+      "command": "python -m binance_spot_bot.cli paper-simulation",
+      "safety": "local demo/paper only"
+    },
+    {
+      "kind": "action",
+      "label": "Connect demo profile",
+      "command": "python -m binance_spot_bot.cli connectivity-check",
+      "safety": "local demo/paper only"
+    },
+    {
+      "kind": "action",
+      "label": "Preview demo order",
+      "command": "python -m binance_spot_bot.cli demo-execution-preview",
+      "safety": "local demo/paper only"
+    },
+    {
+      "kind": "action",
+      "label": "Export support bundle",
+      "command": "python -m binance_spot_bot.cli support-bundle --json",
+      "safety": "local demo/paper only"
+    },
+    {
+      "kind": "action",
+      "label": "Export operator evidence",
+      "command": "python -m binance_spot_bot.cli dashboard-v2-workflow-evidence-export --json",
+      "safety": "local demo/paper only"
+    },
+    {
+      "kind": "action",
+      "label": "Run dashboard smoke",
+      "command": "python -m binance_spot_bot.cli dashboard-smoke --seconds 1",
+      "safety": "local demo/paper only"
+    },
+    {
+      "kind": "action",
+      "label": "Review no-live proof",
+      "command": "python -m binance_spot_bot.cli dashboard-v2-no-live-proof --json",
+      "safety": "local demo/paper only"
+    }
+  ],
+  "forbidden_actions": [],
+  "copy_command_supported": true,
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

@@ -1,0 +1,75 @@
+{
+  "status": "ok",
+  "json": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_106_dashboard_v2_cutover_acceptance.py_test_support_cutover_evidence_and_fallback_snapshot-2b670a73d1c94afbaf25f80da1fca365\\data\\dashboard-v2\\cutover\\readiness.json",
+  "markdown": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_106_dashboard_v2_cutover_acceptance.py_test_support_cutover_evidence_and_fallback_snapshot-2b670a73d1c94afbaf25f80da1fca365\\data\\dashboard-v2\\cutover\\readiness.md",
+  "report": {
+    "status": "ok",
+    "grade": "A",
+    "score": 110,
+    "categories": [
+      {
+        "name": "feature_parity",
+        "status": "ok",
+        "points": 15,
+        "detail": ""
+      },
+      {
+        "name": "api_smoke",
+        "status": "ok",
+        "points": 10,
+        "detail": ""
+      },
+      {
+        "name": "browser_smoke",
+        "status": "ok",
+        "points": 10,
+        "detail": ""
+      },
+      {
+        "name": "performance_budgets",
+        "status": "ok",
+        "points": 10,
+        "detail": ""
+      },
+      {
+        "name": "websocket_stability",
+        "status": "ok",
+        "points": 10,
+        "detail": ""
+      },
+      {
+        "name": "static_build_offline_assets",
+        "status": "ok",
+        "points": 10,
+        "detail": ""
+      },
+      {
+        "name": "support_bundle_integration",
+        "status": "ok",
+        "points": 10,
+        "detail": ""
+      },
+      {
+        "name": "operator_uat_acceptance",
+        "status": "ok",
+        "points": 10,
+        "detail": "local acceptance scaffold available"
+      },
+      {
+        "name": "streamlit_fallback_available",
+        "status": "ok",
+        "points": 10,
+        "detail": ""
+      },
+      {
+        "name": "no_live_proof",
+        "status": "ok",
+        "points": 15,
+        "detail": ""
+      }
+    ],
+    "hard_blockers": [],
+    "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+    "live_trading_enabled": false
+  }
+}

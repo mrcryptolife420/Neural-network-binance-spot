@@ -1,0 +1,13 @@
+{
+  "status": "ready",
+  "summary": {
+    "files": 9,
+    "modules": 5,
+    "cli_commands": 2,
+    "dashboard_panels": 1,
+    "artifact_roots": 12
+  },
+  "top_central_modules": [],
+  "large_modules": [],
+  "live_trading_enabled": false
+}

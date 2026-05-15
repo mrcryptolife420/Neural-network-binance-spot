@@ -1,0 +1,30 @@
+{
+  "created_at_ms": 1778846770396,
+  "symbols": [
+    "BTCUSDT"
+  ],
+  "validation": {
+    "status": "ok",
+    "live_trading_enabled": false
+  },
+  "allocation": [
+    {
+      "symbol": "BTCUSDT",
+      "quote_budget": "100.00"
+    }
+  ],
+  "rows": [
+    {
+      "symbol": "BTCUSDT",
+      "status": "running",
+      "fills": 0,
+      "open_orders": 0,
+      "equity": "1000"
+    }
+  ],
+  "summary": {
+    "active_bots": 1,
+    "live_trading_enabled": false
+  },
+  "live_trading_enabled": false
+}

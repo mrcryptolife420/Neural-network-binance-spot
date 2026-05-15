@@ -1,0 +1,12 @@
+{
+  "status": "ok",
+  "created_at_ms": 1778852204888,
+  "files": [
+    {
+      "path": "files\\report.json",
+      "sha256": "bfb3caa43a86ef3282fdb370cbc172d3"
+    }
+  ],
+  "roadmap100_bundle_linked": false,
+  "live_trading_enabled": false
+}

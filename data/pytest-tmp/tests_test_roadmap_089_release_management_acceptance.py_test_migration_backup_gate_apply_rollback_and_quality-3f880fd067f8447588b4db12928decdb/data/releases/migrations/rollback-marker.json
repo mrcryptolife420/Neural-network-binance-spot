@@ -1,0 +1,5 @@
+{
+  "migration": "demo",
+  "restore": "pre-upgrade backup",
+  "live_trading_enabled": false
+}

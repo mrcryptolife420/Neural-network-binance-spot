@@ -1,0 +1,67 @@
+{
+  "status": "ready",
+  "nodes": [
+    {
+      "id": "roadmap:089",
+      "type": "roadmap",
+      "label": "Release",
+      "path": "Voltooid docs/089-roadmap-release.md"
+    },
+    {
+      "id": "roadmap:090",
+      "type": "roadmap",
+      "label": "Execution",
+      "path": "Roadmap docs/090-roadmap-execution.md"
+    },
+    {
+      "id": "module:src/binance_spot_bot/roadmap_index.py",
+      "type": "module",
+      "path": "src/binance_spot_bot/roadmap_index.py"
+    },
+    {
+      "id": "test:tests/test_roadmap_090_roadmap_execution_acceptance.py",
+      "type": "test",
+      "path": "tests/test_roadmap_090_roadmap_execution_acceptance.py"
+    },
+    {
+      "id": "doc:docs/roadmap-execution-cli.md",
+      "type": "doc",
+      "path": "docs/roadmap-execution-cli.md"
+    }
+  ],
+  "edges": [
+    {
+      "source": "roadmap:089",
+      "target": "roadmap:090",
+      "type": "follows_on"
+    },
+    {
+      "source": "roadmap:090",
+      "target": "module:src/binance_spot_bot/roadmap_index.py",
+      "type": "implements"
+    },
+    {
+      "source": "test:tests/test_roadmap_090_roadmap_execution_acceptance.py",
+      "target": "roadmap:090",
+      "type": "validates"
+    },
+    {
+      "source": "doc:docs/roadmap-execution-cli.md",
+      "target": "roadmap:090",
+      "type": "documents"
+    }
+  ],
+  "summary": {
+    "roadmaps": 2,
+    "modules": 1,
+    "tests": 1,
+    "docs": 1,
+    "missing_tests": [
+      "tests/test_roadmap_090_roadmap_execution_acceptance.py"
+    ],
+    "unlinked_docs": [
+      "docs/roadmap-execution-cli.md"
+    ]
+  },
+  "live_trading_enabled": false
+}

@@ -1,0 +1,14 @@
+{
+  "items": [
+    {
+      "proposal_id": "act-1778849856858-653c45b160",
+      "title": "Diagnostics",
+      "status": "completed",
+      "safety_class": "read_only",
+      "updated_at_ms": 1778849856925
+    }
+  ],
+  "count": 1,
+  "live_trading_enabled": false,
+  "manifest_hash": "b02b4bb1e9c663e11fbdd4b3"
+}

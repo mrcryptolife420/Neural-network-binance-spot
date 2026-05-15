@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "blockers": [],
+  "warnings": [],
+  "artifacts": {
+    "launch_evidence": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_027_evidence_scorecard.py_test_clean_sample_artifacts_pass-38969da05b2d44408ed6c8d88307f404\\data\\checks\\dashboard\\launch-evidence.json",
+    "browser_smoke": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_027_evidence_scorecard.py_test_clean_sample_artifacts_pass-38969da05b2d44408ed6c8d88307f404\\data\\checks\\dashboard\\browser-smoke.json",
+    "operator_evidence": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_027_evidence_scorecard.py_test_clean_sample_artifacts_pass-38969da05b2d44408ed6c8d88307f404\\data\\evidence\\dashboard\\operator-evidence-1.json",
+    "demo_execution": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_027_evidence_scorecard.py_test_clean_sample_artifacts_pass-38969da05b2d44408ed6c8d88307f404\\data\\evidence\\demo-execution\\demo_execution_drill.json",
+    "pilot_start_idempotency": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_027_evidence_scorecard.py_test_clean_sample_artifacts_pass-38969da05b2d44408ed6c8d88307f404\\data\\evidence\\pilot-start-idempotency.json",
+    "operator_diagnostics": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_027_evidence_scorecard.py_test_clean_sample_artifacts_pass-38969da05b2d44408ed6c8d88307f404\\data\\evidence\\diagnostics\\latest-diagnostics.json"
+  },
+  "next_safe_action": "Evidence gates pass; continue demo/paper operations only.",
+  "live_trading_enabled": false,
+  "generated_at": "2026-05-15T13:58:33.339100+00:00"
+}

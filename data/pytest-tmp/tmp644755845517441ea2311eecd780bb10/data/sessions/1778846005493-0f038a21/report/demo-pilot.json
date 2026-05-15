@@ -1,0 +1,1705 @@
+{
+  "session": {
+    "session_id": "1778846005493-0f038a21",
+    "mode": "demo",
+    "symbol": "BTCUSDT",
+    "interval": "1m",
+    "status": "stopped",
+    "pnl": "0.162765016096573875124875",
+    "max_drawdown": "2.0044837638154451248751250"
+  },
+  "demo_pilot": {
+    "config": {
+      "account_sync_interval_seconds": 60,
+      "cancel_open_orders_on_stop": true,
+      "duration_minutes": 15,
+      "max_api_errors": 3,
+      "max_demo_orders": 5,
+      "max_reconciliation_failures": 1,
+      "max_rejects": 2,
+      "pause_on_connection_degraded": true,
+      "pilot_name": "smoke",
+      "reconciliation_interval_seconds": 30,
+      "require_clean_start": true
+    },
+    "counters": {
+      "api_errors": 0,
+      "elapsed_seconds": 1,
+      "orders": 0,
+      "reconciliation_failures": 0,
+      "rejects": 0,
+      "started_at_ms": 1778846005492
+    },
+    "last_demo_account_sync_ms": 0,
+    "last_reconciliation_check_ms": 0,
+    "pause_reason": "",
+    "should_pause": false,
+    "status": "not-armed"
+  },
+  "connection": {},
+  "account": {},
+  "reconciliation": {
+    "needs_operator_action": false,
+    "status": "not-run"
+  },
+  "operator_checklist": [
+    {
+      "check": "Profile",
+      "status": "fail",
+      "detail": "unknown",
+      "blocking": true
+    },
+    {
+      "check": "Credentials",
+      "status": "fail",
+      "detail": "not loaded",
+      "blocking": true
+    },
+    {
+      "check": "Connection",
+      "status": "fail",
+      "detail": "not tested",
+      "blocking": true
+    },
+    {
+      "check": "Server time",
+      "status": "warn",
+      "detail": "test connection first",
+      "blocking": false
+    },
+    {
+      "check": "Account canTrade",
+      "status": "fail",
+      "detail": "not synced",
+      "blocking": true
+    },
+    {
+      "check": "Clean start",
+      "status": "pass",
+      "detail": "not-run",
+      "blocking": true
+    },
+    {
+      "check": "No orphan orders",
+      "status": "pass",
+      "detail": "0 orphan orders",
+      "blocking": true
+    },
+    {
+      "check": "Risk limits",
+      "status": "fail",
+      "detail": "missing limits",
+      "blocking": true
+    },
+    {
+      "check": "Pilot preset",
+      "status": "pass",
+      "detail": "smoke",
+      "blocking": false
+    },
+    {
+      "check": "Armed",
+      "status": "warn",
+      "detail": "explicit arm required",
+      "blocking": false
+    }
+  ],
+  "pipeline": [
+    {
+      "step": "Signal",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "-",
+      "reference": "-"
+    },
+    {
+      "step": "Risk",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "-",
+      "reference": "-"
+    },
+    {
+      "step": "Intent",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "-",
+      "reference": "-"
+    },
+    {
+      "step": "Test order",
+      "status": "blocked",
+      "timestamp_ms": "-",
+      "detail": "BLOCKED",
+      "reference": "-"
+    },
+    {
+      "step": "Demo order",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "BLOCKED",
+      "reference": "-"
+    },
+    {
+      "step": "Reconciliation",
+      "status": "not-run",
+      "timestamp_ms": "-",
+      "detail": "not-run",
+      "reference": "0"
+    },
+    {
+      "step": "Fill/Cancel/Reject",
+      "status": "blocked",
+      "timestamp_ms": "-",
+      "detail": "BLOCKED",
+      "reference": "BLOCKED"
+    }
+  ],
+  "cancel_on_stop_status": [],
+  "orders": [
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "insufficient base balance"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 359999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 419999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 479999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 539999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 599999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-b964f1f857e64f6c84a1c4b8",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.10019",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.10019",
+        "paper": true,
+        "price": "99.8092",
+        "side": "BUY",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 659999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 719999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-5ad653f38bec4c6e8112ee0a",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.10013",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.10013",
+        "paper": true,
+        "price": "99.8697",
+        "side": "BUY",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 779999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-bafcf487196044dab306d602",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.10002",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.10002",
+        "paper": true,
+        "price": "99.9799",
+        "side": "BUY",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 839999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-8526332fb93f446cbd95351a",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09983",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09983",
+        "paper": true,
+        "price": "100.1659",
+        "side": "BUY",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 899999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-803ab85e7a97401e94878b93",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09972",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09972",
+        "paper": true,
+        "price": "100.2723",
+        "side": "BUY",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 959999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-de349a1395ab4ab1bde32aba",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09956",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09956",
+        "paper": true,
+        "price": "100.4332",
+        "side": "BUY",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 1019999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-ff45d42579d545deb0d2f2dc",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09962",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09962",
+        "paper": true,
+        "price": "100.3717",
+        "side": "BUY",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 1079999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-88abcc2a1de64dbda7204162",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09968",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09968",
+        "paper": true,
+        "price": "100.3191",
+        "side": "BUY",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 1139999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-94b97317ca5c49009be15441",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09955",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09955",
+        "paper": true,
+        "price": "100.4483",
+        "side": "BUY",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 1199999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-c18795e828504543941ca9e5",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09935",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09935",
+        "paper": true,
+        "price": "100.6471",
+        "side": "BUY",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 1259999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-b88e98a5477f4e78bce89ded",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09926",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09926",
+        "paper": true,
+        "price": "100.7389",
+        "side": "BUY",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 1319999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-5e3b5f2a690d4b93a5fdb158",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09909",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09909",
+        "paper": true,
+        "price": "100.9127",
+        "side": "BUY",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 1379999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-d34aba3dc5be4122b727dad2",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09899",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09899",
+        "paper": true,
+        "price": "101.0160",
+        "side": "BUY",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 1439999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-f6b8cdc888a545af95e3e705",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09890",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09890",
+        "paper": true,
+        "price": "101.1056",
+        "side": "BUY",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 1499999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-cb2298ebf51c45939460400f",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09895",
+        "quote_order_qty": null,
+        "side": "BUY",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09895",
+        "paper": true,
+        "price": "101.0566",
+        "side": "BUY",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 1559999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 1619999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 1679999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-86438ab84cfb4ed4a50364e8",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09935",
+        "quote_order_qty": null,
+        "side": "SELL",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09935",
+        "paper": true,
+        "price": "100.6472",
+        "side": "SELL",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 1739999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-13745825277a4c32a725298b",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09923",
+        "quote_order_qty": null,
+        "side": "SELL",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09923",
+        "paper": true,
+        "price": "100.7745",
+        "side": "SELL",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 1799999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-192fa8bf190043f2abff6de3",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09922",
+        "quote_order_qty": null,
+        "side": "SELL",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09922",
+        "paper": true,
+        "price": "100.7771",
+        "side": "SELL",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 1859999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 1919999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 1979999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 2039999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-6089c0786da945408a21295a",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09951",
+        "quote_order_qty": null,
+        "side": "SELL",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09951",
+        "paper": true,
+        "price": "100.4919",
+        "side": "SELL",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 2099999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-6bb52efe8e7d4d71b97b306f",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09964",
+        "quote_order_qty": null,
+        "side": "SELL",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09964",
+        "paper": true,
+        "price": "100.3521",
+        "side": "SELL",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 2159999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-21e169327edb4f5ca5e3b2c3",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09975",
+        "quote_order_qty": null,
+        "side": "SELL",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09975",
+        "paper": true,
+        "price": "100.2445",
+        "side": "SELL",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 2219999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-fa6cd0f76e2e49abae79ade4",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09975",
+        "quote_order_qty": null,
+        "side": "SELL",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09975",
+        "paper": true,
+        "price": "100.2471",
+        "side": "SELL",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 2279999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-c6911a63c37a47bb826d7ccf",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09976",
+        "quote_order_qty": null,
+        "side": "SELL",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09976",
+        "paper": true,
+        "price": "100.2399",
+        "side": "SELL",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 2339999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-8e3e3d04699945c88c90c034",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09973",
+        "quote_order_qty": null,
+        "side": "SELL",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09973",
+        "paper": true,
+        "price": "100.2664",
+        "side": "SELL",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 2399999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": {
+        "client_order_id": "spotbot-50775ef61d754155aecff309",
+        "order_type": "MARKET",
+        "price": null,
+        "quantity": "0.09984",
+        "quote_order_qty": null,
+        "side": "SELL",
+        "symbol": "BTCUSDT"
+      },
+      "response": {
+        "executedQty": "0.09984",
+        "paper": true,
+        "price": "100.1506",
+        "side": "SELL",
+        "status": "FILLED",
+        "symbol": "BTCUSDT"
+      },
+      "status": "FILLED",
+      "timestamp_ms": 2459999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 2519999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 2579999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 2639999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 2699999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 2759999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 2819999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 2879999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 2939999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 2999999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 3059999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 3119999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 3179999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 3239999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 3299999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 3359999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 3419999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 3479999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 3539999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 3599999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 3659999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 3719999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 3779999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 3839999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "model returned HOLD"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 3899999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 3959999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 4019999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 4079999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 4139999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 4199999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 4259999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 4319999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 4379999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 4439999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 4499999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 4559999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 4619999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 4679999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 4739999
+    },
+    {
+      "demo_trading_armed": false,
+      "mode": "paper",
+      "order_request": null,
+      "response": {
+        "reason": "max trades per day reached"
+      },
+      "status": "BLOCKED",
+      "timestamp_ms": 4799999
+    }
+  ],
+  "alerts": [
+    {
+      "action": "observe",
+      "created_at_ms": 1778846005494,
+      "message": "runtime created",
+      "metadata": {},
+      "name": "runtime_created",
+      "severity": "info"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846005495,
+      "message": "runtime started",
+      "metadata": {},
+      "name": "runtime_started",
+      "severity": "info"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846005515,
+      "message": "insufficient base balance",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846005525,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846005537,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846005547,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846005558,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846005579,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846005753,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846005765,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846005815,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846005828,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846005841,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846005947,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846005960,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846005974,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846005988,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006002,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006017,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006031,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006046,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006061,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006075,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006089,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006104,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006119,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006133,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006149,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006164,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006182,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006197,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006215,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006232,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006249,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006270,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006287,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006303,
+      "message": "model returned HOLD",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006319,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006334,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006351,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006367,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006383,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006400,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006416,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006433,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006449,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006465,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006482,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006498,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006515,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006533,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    },
+    {
+      "action": "observe",
+      "created_at_ms": 1778846006550,
+      "message": "max trades per day reached",
+      "metadata": {},
+      "name": "risk_block",
+      "severity": "warning"
+    }
+  ],
+  "latest_snapshot": {
+    "alerts": 52,
+    "blocks": {
+      "insufficient base balance": 1,
+      "max trades per day reached": 32,
+      "model returned HOLD": 17
+    },
+    "critical_alerts": 0,
+    "demo_pilot": {
+      "config": {
+        "account_sync_interval_seconds": 60,
+        "cancel_open_orders_on_stop": true,
+        "duration_minutes": 15,
+        "max_api_errors": 3,
+        "max_demo_orders": 5,
+        "max_reconciliation_failures": 1,
+        "max_rejects": 2,
+        "pause_on_connection_degraded": true,
+        "pilot_name": "smoke",
+        "reconciliation_interval_seconds": 30,
+        "require_clean_start": true
+      },
+      "counters": {
+        "api_errors": 0,
+        "elapsed_seconds": 1,
+        "orders": 0,
+        "reconciliation_failures": 0,
+        "rejects": 0,
+        "started_at_ms": 1778846005492
+      },
+      "last_demo_account_sync_ms": 0,
+      "last_reconciliation_check_ms": 0,
+      "pause_reason": "",
+      "should_pause": false,
+      "status": "not-armed"
+    },
+    "equity": "1000.162765016096573875124875",
+    "fees_paid": "0.2500376367899885624375624378",
+    "message": "tick processed",
+    "model_version": "rule-baseline-0.1",
+    "position": "0.49706",
+    "quote": "949.5022606980965738751248750",
+    "realized_pnl": "-0.3556918295847869573554977458",
+    "reconciliation": {
+      "needs_operator_action": false,
+      "status": "not-run"
+    },
+    "source": "demo",
+    "status": "running",
+    "timestamp_ms": 4799999
+  }
+}

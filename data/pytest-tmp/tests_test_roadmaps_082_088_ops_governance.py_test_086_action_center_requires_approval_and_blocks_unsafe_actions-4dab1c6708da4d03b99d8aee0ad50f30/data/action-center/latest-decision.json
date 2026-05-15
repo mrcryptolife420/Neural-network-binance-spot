@@ -1,0 +1,17 @@
+{
+  "decision_id": "dec-1778851569766",
+  "proposal_id": "act-1778851569741-a948acb900",
+  "operator_id_local": "operator",
+  "decision": "approve",
+  "reason_text": "",
+  "reason_codes": [],
+  "evidence_links": [],
+  "risk_acknowledgement": "safe_generate_artifact",
+  "confirm_phrase_used": "",
+  "previous_status": "proposed",
+  "next_status": "approved",
+  "created_at_ms": 1778851569766,
+  "redacted": true,
+  "live_trading_enabled": false,
+  "decision_hash": "275cdc1bb3262de50b31d5de"
+}

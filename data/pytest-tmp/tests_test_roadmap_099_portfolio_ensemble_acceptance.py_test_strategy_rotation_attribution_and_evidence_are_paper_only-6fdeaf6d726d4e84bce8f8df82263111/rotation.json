@@ -1,0 +1,14 @@
+{
+  "api_secret": "[REDACTED]",
+  "live_trading_enabled": false,
+  "rotation": {
+    "action": "rotate",
+    "live_trading_enabled": false,
+    "scores": {
+      "mean_reversion": 0.4,
+      "trend": 0.8
+    },
+    "selected": "trend",
+    "status": "ok"
+  }
+}

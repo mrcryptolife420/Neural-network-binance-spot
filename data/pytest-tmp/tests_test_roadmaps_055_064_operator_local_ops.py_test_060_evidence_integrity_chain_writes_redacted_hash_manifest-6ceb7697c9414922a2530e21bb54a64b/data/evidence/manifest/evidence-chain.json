@@ -1,0 +1,12 @@
+{
+  "status": "ok",
+  "chain": [
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_055_064_operator_local_ops.py_test_060_evidence_integrity_chain_writes_redacted_hash_manifest-6ceb7697c9414922a2530e21bb54a64b\\data\\checks\\check-all.json",
+      "sha256": "a61c209c-612d7ff0-9e1b7a02-8eafe0b4-9643e749-0c9211a9-439f312d-ff2df0fc",
+      "previous": "00000000-00000000-00000000-00000000-00000000-00000000-00000000-00000000"
+    }
+  ],
+  "count": 1,
+  "live_trading_enabled": false
+}

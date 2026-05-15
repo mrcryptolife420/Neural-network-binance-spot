@@ -1,0 +1,76 @@
+{
+  "release_id": "release-1.2.3-1778865685638",
+  "version": "1.2.3",
+  "previous_version": "",
+  "release_type": "local_dev_snapshot",
+  "changes": [
+    {
+      "area": "release",
+      "description": "Local release manifest generated"
+    }
+  ],
+  "compatibility": {
+    "minimum_python": "3.12",
+    "status": "compatible",
+    "reasons": []
+  },
+  "migration": {
+    "migration_required": false,
+    "pre_upgrade_backup_required": true,
+    "migration_ids": []
+  },
+  "validation": [
+    {
+      "command": "check-all --skip-tests",
+      "required": true
+    },
+    {
+      "command": "dashboard-smoke --seconds 1",
+      "required": true
+    }
+  ],
+  "artifacts": [],
+  "created_at_ms": 1778865685638,
+  "no_live_statement": "Release tooling is local-only; live trading remains disabled.",
+  "live_trading_enabled": false,
+  "manifest_hash": "e08560cf1880ca6b974a2e42",
+  "install_fingerprint": {
+    "version": "0.1.0",
+    "python_version": "3.14.5",
+    "platform_name": "Windows-11-10.0.26200-SP0",
+    "git_available": true,
+    "git_commit": "9483da579a8cb660",
+    "git_dirty": true,
+    "data_dir_hash": "d16e4a1a6f2d72ec33529e0b",
+    "components": [
+      {
+        "name": "config_schema",
+        "version": "1",
+        "status": "ok"
+      },
+      {
+        "name": "data_schema",
+        "version": "1",
+        "status": "ok"
+      },
+      {
+        "name": "metrics_schema",
+        "version": "1",
+        "status": "ok"
+      },
+      {
+        "name": "permission_schema",
+        "version": "1",
+        "status": "ok"
+      },
+      {
+        "name": "backup_schema",
+        "version": "1",
+        "status": "ok"
+      }
+    ],
+    "created_at_ms": 1778865685844,
+    "live_trading_enabled": false,
+    "fingerprint_hash": "b90ecff9c4494b34254f28a2"
+  }
+}

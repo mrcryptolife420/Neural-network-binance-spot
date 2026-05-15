@@ -1,0 +1,1222 @@
+{
+  "status": "ready",
+  "subsystems": [
+    {
+      "name": "config/preflight/security",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/config.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/preflight.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/security.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "validate-config",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        },
+        {
+          "command": "preflight",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        },
+        {
+          "command": "redaction-self-test",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "config/preflight/security"
+      ],
+      "tests": [
+        "tests\\test_control_center_004.py",
+        "tests\\test_roadmap_087_permissions_compliance_acceptance.py"
+      ],
+      "docs": [],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/config-preflight-security.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Voltooid docs\\001-roadmap-binance-spot-ai-trading-bot.md",
+        "Voltooid docs\\004-roadmap-windows-one-click-secure-control-center.md",
+        "Voltooid docs\\087-roadmap-auto-strategy-preset-selector.md",
+        "Voltooid docs\\087-roadmap-local-permission-profiles-operator-roles-hardening-audit-grade-compliance-reports.md"
+      ],
+      "capabilities": [
+        {
+          "name": "config/preflight/security",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    },
+    {
+      "name": "data pipeline",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/binance_data_ingestion.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/data_store_v2.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/data_quality_v2.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/incremental_features.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "fetch-public-data",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        },
+        {
+          "command": "public-data-status",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        },
+        {
+          "command": "warmup-indicators",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "data pipeline"
+      ],
+      "tests": [
+        "tests\\test_roadmap_076_public_data_ingestion.py",
+        "tests\\test_roadmap_096_data_pipeline_acceptance.py",
+        "tests\\test_roadmaps_076_102_paper_os.py",
+        "tests\\test_roadmaps_089_096_full_surface.py"
+      ],
+      "docs": [],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/data-pipeline.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Voltooid docs\\076-roadmap-binance-public-data-ingestion-indicator-warmup-feature-expansion.md",
+        "Voltooid docs\\076-roadmap-multi-demo-runner-does-not-stop-on-replay-end.md",
+        "Voltooid docs\\096-roadmap-data-pipeline-decomposition-feature-store-contracts-indicator-compute-optimization.md"
+      ],
+      "capabilities": [
+        {
+          "name": "data pipeline",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    },
+    {
+      "name": "feature/indicator/label store",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/features.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/indicator_compute.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/indicator_registry.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/label_store.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/feature_store_contracts.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "warmup-indicators",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "feature/indicator/label store"
+      ],
+      "tests": [
+        "tests\\test_roadmap_016_model_governance.py",
+        "tests\\test_roadmap_077_strategy_calibration.py",
+        "tests\\test_roadmap_096_data_pipeline_acceptance.py",
+        "tests\\test_roadmaps_089_096_full_surface.py"
+      ],
+      "docs": [],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/feature-indicator-label-store.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Voltooid docs\\016-roadmap-model-research-walkforward-dataset-governance.md",
+        "Voltooid docs\\077-roadmap-data-driven-strategy-confidence-backtest-dataset-builder-indicator-calibration.md",
+        "Voltooid docs\\077-roadmap-demo-session-order-cap-open-order-cap-separation.md",
+        "Voltooid docs\\096-roadmap-data-pipeline-decomposition-feature-store-contracts-indicator-compute-optimization.md"
+      ],
+      "capabilities": [
+        {
+          "name": "feature/indicator/label store",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    },
+    {
+      "name": "evaluation/backtest",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/evaluation.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/backtest.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/paper_experiment_split.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "strategy-calibrate",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "evaluation/backtest"
+      ],
+      "tests": [
+        "tests\\test_roadmap_016_model_governance.py",
+        "tests\\test_roadmap_077_strategy_calibration.py"
+      ],
+      "docs": [],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/evaluation-backtest.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Voltooid docs\\016-roadmap-model-research-walkforward-dataset-governance.md",
+        "Voltooid docs\\077-roadmap-data-driven-strategy-confidence-backtest-dataset-builder-indicator-calibration.md",
+        "Voltooid docs\\077-roadmap-demo-session-order-cap-open-order-cap-separation.md"
+      ],
+      "capabilities": [
+        {
+          "name": "evaluation/backtest",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    },
+    {
+      "name": "model training/registry/promotion",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/training_pipeline.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/model_training.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/model_registry.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/model_promotion_gate.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "model-register",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        },
+        {
+          "command": "model-promote",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "model training/registry/promotion"
+      ],
+      "tests": [
+        "tests\\test_roadmap_097_model_training_acceptance.py",
+        "tests\\test_roadmaps_097_102_full_surface.py"
+      ],
+      "docs": [
+        "docs/model-training-pipeline-v2.md"
+      ],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/model-training-registry-promotion.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Voltooid docs\\097-roadmap-model-training-pipeline-v2-experiment-tracking-feature-contract-aware-model-promotion.md"
+      ],
+      "capabilities": [
+        {
+          "name": "model training/registry/promotion",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    },
+    {
+      "name": "model monitoring/drift/downgrade",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/model_monitoring_pipeline.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/feature_drift.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/prediction_drift.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/model_downgrade_policy.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "model-monitoring-report",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "model monitoring/drift/downgrade"
+      ],
+      "tests": [
+        "tests\\test_roadmap_098_model_monitoring_acceptance.py"
+      ],
+      "docs": [
+        "docs/shadow-paper-model-monitoring.md"
+      ],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/model-monitoring-drift-downgrade.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Voltooid docs\\098-roadmap-shadow-paper-model-monitoring-drift-detection-automatic-candidate-downgrade.md"
+      ],
+      "capabilities": [
+        {
+          "name": "model monitoring/drift/downgrade",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    },
+    {
+      "name": "runtime/paper/demo/testnet-readiness",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/runtime.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/runtime_event_bus.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/runtime_snapshot_builder.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/paper.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/demo_spot.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "run-local",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        },
+        {
+          "command": "dashboard",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        },
+        {
+          "command": "dashboard-smoke",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "runtime/paper/demo/testnet-readiness"
+      ],
+      "tests": [
+        "tests\\test_roadmap_017_demo_spot_control_center.py",
+        "tests\\test_roadmap_095_runtime_core_acceptance.py"
+      ],
+      "docs": [],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/runtime-paper-demo-testnet-readiness.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Voltooid docs\\002-roadmap-local-visual-paper-bot-dashboard.md",
+        "Voltooid docs\\017-roadmap-connected-demo-spot-dashboard-one-click-windows.md",
+        "Voltooid docs\\095-roadmap-indicator-dashboard-final-validation.md",
+        "Voltooid docs\\095-roadmap-runtime-core-decomposition-event-bus-snapshot-optimization.md"
+      ],
+      "capabilities": [
+        {
+          "name": "runtime/paper/demo/testnet-readiness",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    },
+    {
+      "name": "paper accounting/risk/execution",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/paper_accounting.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/risk.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/execution.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/demo_execution_sandbox.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "demo-execution-preview",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        },
+        {
+          "command": "demo-execution-test-order",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "paper accounting/risk/execution"
+      ],
+      "tests": [
+        "tests\\test_roadmap_026_demo_execution_cli.py",
+        "tests\\test_roadmap_026_demo_execution_dashboard.py",
+        "tests\\test_roadmap_026_demo_execution_sandbox.py",
+        "tests\\test_roadmap_078_paper_deployment.py"
+      ],
+      "docs": [],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/paper-accounting-risk-execution.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Voltooid docs\\026-roadmap-demo-spot-execution-sandbox-order-lifecycle-drill.md",
+        "Voltooid docs\\078-roadmap-paper-strategy-deployment-continuous-evaluation-auto-rollback.md",
+        "Voltooid docs\\078-roadmap-readable-live-candle-chart.md"
+      ],
+      "capabilities": [
+        {
+          "name": "paper accounting/risk/execution",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    },
+    {
+      "name": "portfolio ensemble/allocation/rotation",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/ensemble_prediction.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/allocation_policy.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/rotation_governance.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/portfolio_rotation_evidence.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "paper-portfolio-ops",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        },
+        {
+          "command": "paper-portfolio-optimize",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "portfolio ensemble/allocation/rotation"
+      ],
+      "tests": [
+        "tests\\test_roadmap_079_paper_portfolio_ops.py",
+        "tests\\test_roadmap_099_portfolio_ensemble_acceptance.py"
+      ],
+      "docs": [],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/portfolio-ensemble-allocation-rotation.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Voltooid docs\\079-roadmap-multi-symbol-visual-overview.md",
+        "Voltooid docs\\079-roadmap-paper-portfolio-operations-capital-allocation-strategy-rotation.md",
+        "Voltooid docs\\099-roadmap-paper-portfolio-model-ensemble-strategy-allocation-model-rotation-governance.md"
+      ],
+      "capabilities": [
+        {
+          "name": "portfolio ensemble/allocation/rotation",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    },
+    {
+      "name": "dashboard",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/ui/streamlit_app.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/ui/page_registry.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/dashboard_smoke_v2.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "dashboard",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        },
+        {
+          "command": "dashboard-smoke",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        },
+        {
+          "command": "dashboard-browser-smoke",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "dashboard"
+      ],
+      "tests": [
+        "tests\\test_roadmap_019_dashboard_ux.py",
+        "tests\\test_roadmap_094_dashboard_refactor_acceptance.py"
+      ],
+      "docs": [],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/dashboard.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Voltooid docs\\019-roadmap-dashboard-ux-demo-pilot-live-ops-polish.md",
+        "Voltooid docs\\094-roadmap-dashboard-component-refactor-lazy-loading-ux-performance-hardening.md",
+        "Voltooid docs\\094-roadmap-indicator-backtest-lite-panel.md"
+      ],
+      "capabilities": [
+        {
+          "name": "dashboard",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    },
+    {
+      "name": "operator evidence/support bundles",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/operator_ops.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/support_bundle.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/evidence_scorecard.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "operator-report",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        },
+        {
+          "command": "support-bundle",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        },
+        {
+          "command": "evidence-scorecard",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "operator evidence/support bundles"
+      ],
+      "tests": [
+        "tests\\test_roadmap_083_local_ops_acceptance.py",
+        "tests\\test_roadmaps_076_102_paper_os.py",
+        "tests\\test_roadmaps_083_088_full_surface.py",
+        "tests\\test_roadmaps_097_102_full_surface.py"
+      ],
+      "docs": [],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/operator-evidence-support-bundles.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Roadmap docs\\102-roadmap-operator-manual-local-paper-os-ux-training-support-playbooks.md",
+        "Voltooid docs\\083-roadmap-indicator-signal-advisor.md",
+        "Voltooid docs\\083-roadmap-local-paper-operations-automation-scheduled-reports-operator-runbooks.md"
+      ],
+      "capabilities": [
+        {
+          "name": "operator evidence/support bundles",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    },
+    {
+      "name": "backup/restore/disaster recovery",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/backup_restore.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/disaster_recovery_drills.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/restore_preview.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "state-archive",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        },
+        {
+          "command": "support-bundle-restore-preview",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "backup/restore/disaster recovery"
+      ],
+      "tests": [
+        "tests\\test_roadmap_088_disaster_recovery_acceptance.py",
+        "tests\\test_roadmaps_082_088_ops_governance.py",
+        "tests\\test_roadmaps_083_088_full_surface.py"
+      ],
+      "docs": [],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/backup-restore-disaster-recovery.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Voltooid docs\\088-roadmap-market-regime-detection.md",
+        "Voltooid docs\\088-roadmap-offline-disaster-recovery-backup-restore-drills-local-state-integrity.md"
+      ],
+      "capabilities": [
+        {
+          "name": "backup/restore/disaster recovery",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    },
+    {
+      "name": "release/migration",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/release_candidate.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/migration_dry_run.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/safe_update_rollback.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "check-all",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "release/migration"
+      ],
+      "tests": [
+        "tests\\test_roadmap_089_release_management_acceptance.py",
+        "tests\\test_roadmaps_089_096_full_surface.py"
+      ],
+      "docs": [],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/release-migration.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Voltooid docs\\089-roadmap-indicator-evidence-export.md",
+        "Voltooid docs\\089-roadmap-local-release-management-versioned-upgrade-paths-migration-safety.md"
+      ],
+      "capabilities": [
+        {
+          "name": "release/migration",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    },
+    {
+      "name": "roadmap execution/Codex task packs",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/roadmap_execution_report.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/roadmap_mover.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/codex_task_packs.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "check-all",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "roadmap execution/Codex task packs"
+      ],
+      "tests": [
+        "tests\\test_roadmap_090_roadmap_execution_acceptance.py"
+      ],
+      "docs": [],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/roadmap-execution-Codex-task-packs.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Voltooid docs\\090-roadmap-bot-trading-decision-explanation.md",
+        "Voltooid docs\\090-roadmap-developer-experience-codex-task-packs-roadmap-execution-automation.md"
+      ],
+      "capabilities": [
+        {
+          "name": "roadmap execution/Codex task packs",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    },
+    {
+      "name": "repository knowledge graph",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/repo_knowledge_store.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/repo_knowledge_report.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/impact_analysis.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "check-all",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "repository knowledge graph"
+      ],
+      "tests": [
+        "tests\\test_roadmap_091_repo_knowledge_acceptance.py"
+      ],
+      "docs": [
+        "docs/repository-knowledge-graph.md"
+      ],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/repository-knowledge-graph.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Voltooid docs\\091-roadmap-multi-symbol-performance-summary.md",
+        "Voltooid docs\\091-roadmap-repository-knowledge-graph-code-ownership-impact-analysis.md"
+      ],
+      "capabilities": [
+        {
+          "name": "repository knowledge graph",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    },
+    {
+      "name": "test selection/check-all",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/check_all.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/intelligent_test_selector.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/test_inventory.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "check-all",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "test selection/check-all"
+      ],
+      "tests": [
+        "tests\\test_roadmap_092_intelligent_test_selection_acceptance.py"
+      ],
+      "docs": [],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/test-selection-check-all.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Voltooid docs\\092-roadmap-intelligent-test-selection-ci-acceleration-regression-risk-scoring.md",
+        "Voltooid docs\\092-roadmap-risk-adjusted-allocation-hints.md"
+      ],
+      "capabilities": [
+        {
+          "name": "test selection/check-all",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    },
+    {
+      "name": "performance profiling",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/profiling_core.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/performance_budget.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/runtime_profiler.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/dashboard_profiler.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "check-all",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "performance profiling"
+      ],
+      "tests": [
+        "tests\\test_roadmap_093_performance_profiling_acceptance.py"
+      ],
+      "docs": [],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/performance-profiling.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Voltooid docs\\093-roadmap-dashboard-indicator-compact-mode.md",
+        "Voltooid docs\\093-roadmap-performance-profiling-runtime-bottleneck-analysis-resource-budgeting.md"
+      ],
+      "capabilities": [
+        {
+          "name": "performance profiling",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    },
+    {
+      "name": "permissions/compliance",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/permission_profiles.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/compliance_report.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/operator_roles.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "operator-quality-gate",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "permissions/compliance"
+      ],
+      "tests": [
+        "tests\\test_roadmap_087_permissions_compliance_acceptance.py"
+      ],
+      "docs": [],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/permissions-compliance.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Voltooid docs\\087-roadmap-auto-strategy-preset-selector.md",
+        "Voltooid docs\\087-roadmap-local-permission-profiles-operator-roles-hardening-audit-grade-compliance-reports.md"
+      ],
+      "capabilities": [
+        {
+          "name": "permissions/compliance",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    },
+    {
+      "name": "AI ops/action center",
+      "status": "implemented",
+      "modules": [
+        {
+          "path": "src/binance_spot_bot/ops_assistant.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/action_center.py",
+          "exists": true
+        },
+        {
+          "path": "src/binance_spot_bot/approval_workflow.py",
+          "exists": true
+        }
+      ],
+      "cli_commands": [
+        {
+          "command": "operator-report",
+          "safe_env_required": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "dashboard_pages": [
+        "AI ops/action center"
+      ],
+      "tests": [
+        "tests\\test_roadmap_085_ai_ops_acceptance.py",
+        "tests\\test_roadmap_086_action_center_acceptance.py"
+      ],
+      "docs": [],
+      "evidence_artifacts": [
+        {
+          "path": "data/milestone/AI-ops-action-center.json",
+          "exists": false,
+          "secret_free_expected": true
+        }
+      ],
+      "roadmaps": [
+        "Voltooid docs\\085-roadmap-local-ai-ops-assistant-natural-language-queries-safe-operator-guidance.md",
+        "Voltooid docs\\085-roadmap-per-symbol-indicator-table.md",
+        "Voltooid docs\\086-roadmap-indicator-chart-context.md",
+        "Voltooid docs\\086-roadmap-safe-human-in-the-loop-action-center-approval-workflows-operator-decision-journal.md"
+      ],
+      "capabilities": [
+        {
+          "name": "AI ops/action center",
+          "status": "implemented",
+          "notes": ""
+        }
+      ],
+      "safety_level": "paper_only",
+      "readiness_score": 100,
+      "readiness_notes": [
+        "all referenced modules present"
+      ],
+      "live_trading_enabled": false
+    }
+  ],
+  "no_live_statement": "Paper OS milestone inventory is read-only and never enables live trading.",
+  "live_trading_enabled": false,
+  "signed_endpoints_used": false
+}

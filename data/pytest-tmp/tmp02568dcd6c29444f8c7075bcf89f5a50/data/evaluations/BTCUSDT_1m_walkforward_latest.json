@@ -1,0 +1,237 @@
+{
+  "symbol": "BTCUSDT",
+  "interval": "1m",
+  "folds": [
+    {
+      "fold": 1,
+      "train_range": {
+        "start": 359999,
+        "end": 3359999,
+        "count": 51
+      },
+      "validation_range": {
+        "start": 3539999,
+        "end": 4979999,
+        "count": 25
+      },
+      "test_range": {
+        "start": 5159999,
+        "end": 6599999,
+        "count": 25
+      },
+      "gap": 2,
+      "leakage": {
+        "status": "pass",
+        "passed": true,
+        "issues": [],
+        "gap_count": 0,
+        "duplicate_count": 0
+      },
+      "baseline": {
+        "trades": 1,
+        "blocked": 24,
+        "final_equity": "999.8412273128706296434269623",
+        "pnl": "-0.1587726871293703565730377",
+        "net_return": "-0.0001587726871293703565730377",
+        "max_drawdown": "0.1725614344107498084844855",
+        "turnover": 1
+      },
+      "candidate": {
+        "trades": 5,
+        "blocked": 20,
+        "final_equity": "999.7866002933625779979766320",
+        "pnl": "-0.2133997066374220020233680",
+        "net_return": "-0.000213399706637422002023368",
+        "max_drawdown": "0.1938244494685558853229371",
+        "turnover": 5
+      },
+      "confidence_buckets": {
+        "0.00-0.25": 14,
+        "0.25-0.50": 11,
+        "0.50-0.75": 0,
+        "0.75-1.00": 0
+      }
+    },
+    {
+      "fold": 2,
+      "train_range": {
+        "start": 359999,
+        "end": 4859999,
+        "count": 76
+      },
+      "validation_range": {
+        "start": 5039999,
+        "end": 6479999,
+        "count": 25
+      },
+      "test_range": {
+        "start": 6659999,
+        "end": 8099999,
+        "count": 25
+      },
+      "gap": 2,
+      "leakage": {
+        "status": "pass",
+        "passed": true,
+        "issues": [],
+        "gap_count": 0,
+        "duplicate_count": 0
+      },
+      "baseline": {
+        "trades": 8,
+        "blocked": 17,
+        "final_equity": "1000.013900029817096120206984",
+        "pnl": "0.013900029817096120206984",
+        "net_return": "0.000013900029817096120206984",
+        "max_drawdown": "0.091650897007892033027462",
+        "turnover": 8
+      },
+      "candidate": {
+        "trades": 21,
+        "blocked": 4,
+        "final_equity": "1000.886415290901072118100658",
+        "pnl": "0.886415290901072118100658",
+        "net_return": "0.000886415290901072118100658",
+        "max_drawdown": "0.5993455712437077207405346",
+        "turnover": 21
+      },
+      "confidence_buckets": {
+        "0.00-0.25": 8,
+        "0.25-0.50": 15,
+        "0.50-0.75": 2,
+        "0.75-1.00": 0
+      }
+    },
+    {
+      "fold": 3,
+      "train_range": {
+        "start": 359999,
+        "end": 6359999,
+        "count": 101
+      },
+      "validation_range": {
+        "start": 6539999,
+        "end": 7979999,
+        "count": 25
+      },
+      "test_range": {
+        "start": 8159999,
+        "end": 9599999,
+        "count": 25
+      },
+      "gap": 2,
+      "leakage": {
+        "status": "pass",
+        "passed": true,
+        "issues": [],
+        "gap_count": 0,
+        "duplicate_count": 0
+      },
+      "baseline": {
+        "trades": 4,
+        "blocked": 21,
+        "final_equity": "999.7995024080945686211401382",
+        "pnl": "-0.2004975919054313788598618",
+        "net_return": "-0.0002004975919054313788598618",
+        "max_drawdown": "0.2004975919054313788598618",
+        "turnover": 4
+      },
+      "candidate": {
+        "trades": 2,
+        "blocked": 23,
+        "final_equity": "999.8335488474767739718201541",
+        "pnl": "-0.1664511525232260281798459",
+        "net_return": "-0.0001664511525232260281798459",
+        "max_drawdown": "0.1694773362559713303089601",
+        "turnover": 2
+      },
+      "confidence_buckets": {
+        "0.00-0.25": 23,
+        "0.25-0.50": 2,
+        "0.50-0.75": 0,
+        "0.75-1.00": 0
+      }
+    }
+  ],
+  "gap": 2,
+  "mode": "walk_forward",
+  "costs": {
+    "fee_bps": "10",
+    "slippage_bps": "5",
+    "spread_bps": "0"
+  },
+  "manifest": {
+    "dataset_id": "walkforward-demo",
+    "created_at_ms": 1778853504904,
+    "source": "demo",
+    "symbols": [
+      "BTCUSDT"
+    ],
+    "interval": "1m",
+    "raw_data_range": {
+      "start": 0,
+      "end": 9599999,
+      "count": 160
+    },
+    "feature_range": {
+      "start": 359999,
+      "end": 9599999,
+      "count": 155
+    },
+    "label_range": {
+      "start": 359999,
+      "end": 9479999,
+      "count": 153
+    },
+    "train_range": {
+      "start": 359999,
+      "end": 3359999,
+      "count": 51
+    },
+    "validation_range": {
+      "start": 3539999,
+      "end": 4979999,
+      "count": 25
+    },
+    "test_range": {
+      "start": 5159999,
+      "end": 9599999,
+      "count": 75
+    },
+    "feature_set_version": "features-v1",
+    "feature_schema_hash": "3e8b2d28093cfcf0",
+    "label_name": "future_return_up",
+    "label_horizon": 2,
+    "fee_bps": "10",
+    "slippage_bps": "5",
+    "spread_bps": "0",
+    "data_quality_summary": {
+      "status": "pass",
+      "passed": true,
+      "issues": [],
+      "gap_count": 0,
+      "duplicate_count": 0
+    },
+    "row_count": 155,
+    "gap_count": 0,
+    "duplicate_count": 0,
+    "checksum": "583caea6ca2a2c3f3b16fd17cfb89bf9"
+  },
+  "leakage": {
+    "status": "pass",
+    "passed": true,
+    "issues": [],
+    "gap_count": 0,
+    "duplicate_count": 0
+  },
+  "baseline_summary": {
+    "folds": 3,
+    "pnl": "-0.3453702492177056152259155"
+  },
+  "candidate_summary": {
+    "folds": 3,
+    "pnl": "0.5065644317404240878974441",
+    "beats_baseline": true
+  },
+  "shuffled": false
+}

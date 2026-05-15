@@ -1,0 +1,9 @@
+{"fee": "0.010009883631748", "model_version": "rule-baseline-0.1", "notional": "10.009883631748", "price": "99.9090092", "quantity": "0.10019", "realized_pnl": "0", "side": "BUY", "timestamp_ms": 659999}
+{"fee": "0.010009953014061", "model_version": "rule-baseline-0.1", "notional": "10.009953014061", "price": "99.9695697", "quantity": "0.10013", "realized_pnl": "0", "side": "BUY", "timestamp_ms": 779999}
+{"fee": "0.010009989587598", "model_version": "rule-baseline-0.1", "notional": "10.009989587598", "price": "100.0798799", "quantity": "0.10002", "realized_pnl": "0", "side": "BUY", "timestamp_ms": 839999}
+{"fee": "0.010009561358797", "model_version": "rule-baseline-0.1", "notional": "10.009561358797", "price": "100.2660659", "quantity": "0.09983", "realized_pnl": "0", "side": "BUY", "timestamp_ms": 899999}
+{"fee": "0.010009152909756", "model_version": "rule-baseline-0.1", "notional": "10.009152909756", "price": "100.3725723", "quantity": "0.09972", "realized_pnl": "0", "side": "BUY", "timestamp_ms": 959999}
+{"fee": "0.010009128521392", "model_version": "rule-baseline-0.1", "notional": "10.009128521392", "price": "100.5336332", "quantity": "0.09956", "realized_pnl": "0", "side": "BUY", "timestamp_ms": 1019999}
+{"fee": "0.010009027782754", "model_version": "rule-baseline-0.1", "notional": "10.009027782754", "price": "100.4720717", "quantity": "0.09962", "realized_pnl": "0", "side": "BUY", "timestamp_ms": 1079999}
+{"fee": "0.010009807695888", "model_version": "rule-baseline-0.1", "notional": "10.009807695888", "price": "100.4194191", "quantity": "0.09968", "realized_pnl": "0", "side": "BUY", "timestamp_ms": 1139999}
+{"fee": "0.010009627893265", "model_version": "rule-baseline-0.1", "notional": "10.009627893265", "price": "100.5487483", "quantity": "0.09955", "realized_pnl": "0", "side": "BUY", "timestamp_ms": 1199999}

@@ -1,0 +1,16 @@
+{
+  "status": "ok",
+  "created_at_ms": 1778851025891,
+  "files": [
+    {
+      "path": "files\\no_live_proof_pack.json",
+      "sha256": "[REDACTED]"
+    },
+    {
+      "path": "files\\system_inventory.json",
+      "sha256": "[REDACTED]"
+    }
+  ],
+  "live_trading_enabled": false,
+  "signed_endpoints_used": false
+}

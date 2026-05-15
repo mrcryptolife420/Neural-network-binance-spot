@@ -1,0 +1,79 @@
+{
+  "status": "ok",
+  "checks": [
+    {
+      "name": "environment_live_disabled",
+      "status": "ok",
+      "evidence": "LIVE_TRADING_ENABLED=false required by milestone profiles"
+    },
+    {
+      "name": "runtime_live_mode_absent",
+      "status": "ok",
+      "evidence": "UI_MODES audited"
+    },
+    {
+      "name": "signed_endpoints_unused",
+      "status": "ok",
+      "evidence": "milestone runner does not execute account/order commands"
+    },
+    {
+      "name": "support_bundles_redacted",
+      "status": "ok",
+      "evidence": "redaction helper applied to reports"
+    },
+    {
+      "name": "model_portfolio_scopes_paper_only",
+      "status": "ok",
+      "evidence": "promotion/allocation proof remains paper/shadow/demo only"
+    }
+  ],
+  "invariants": {
+    "status": "ok",
+    "invariants": [
+      {
+        "name": "live mode not selectable",
+        "status": "pass",
+        "evidence": "selectable_modes=['demo', 'paper', 'testnet-readiness']",
+        "hard_blocker": true
+      },
+      {
+        "name": "ui modes are demo paper testnet-readiness only",
+        "status": "pass",
+        "evidence": "selectable_modes=['demo', 'paper', 'testnet-readiness']",
+        "hard_blocker": true
+      },
+      {
+        "name": "check-all safe env present",
+        "status": "pass",
+        "evidence": "check-all/cli source inspected",
+        "hard_blocker": false
+      },
+      {
+        "name": "milestone runner forbids live/order/account commands",
+        "status": "pass",
+        "evidence": "milestone runner allowlist inspected",
+        "hard_blocker": false
+      },
+      {
+        "name": "dashboard states no-live milestone",
+        "status": "pass",
+        "evidence": "dashboard source inspected",
+        "hard_blocker": false
+      },
+      {
+        "name": "reports force live_trading_enabled false",
+        "status": "pass",
+        "evidence": "all milestone reports include live_trading_enabled=False",
+        "hard_blocker": false
+      }
+    ],
+    "hard_failures": [],
+    "warnings": [],
+    "live_trading_enabled": false,
+    "signed_endpoints_used": false
+  },
+  "live_trading_enabled": false,
+  "signed_endpoints_used": false,
+  "account_endpoints_required": false,
+  "secret_free": true
+}

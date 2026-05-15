@@ -1,0 +1,15 @@
+{
+  "deployment_id": "paper-adaptive-indicator-1778860274142",
+  "strategy_id": "adaptive-indicator",
+  "model_alias": "candidate",
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT"
+  ],
+  "risk_preset": "balanced",
+  "version_lock": "adaptive-indicator:candidate:balanced",
+  "status": "planned",
+  "rollback_preset": "conservative",
+  "created_at_ms": 1778860274142,
+  "live_trading_enabled": false
+}

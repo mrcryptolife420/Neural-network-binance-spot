@@ -1,0 +1,27 @@
+{
+  "status": "warn",
+  "metrics": {
+    "equity": {
+      "avg": 1000.5,
+      "min": 1000.0,
+      "max": 1001.0,
+      "count": 2
+    },
+    "pnl_quote": {
+      "avg": 0.375,
+      "min": -0.5,
+      "max": 1.25,
+      "count": 4
+    }
+  },
+  "anomalies": [
+    {
+      "metric": "pnl_quote",
+      "reason": "negative_equity_or_pnl",
+      "value": -0.5,
+      "recommended_action": "review_operator_report"
+    }
+  ],
+  "rows": 2,
+  "live_trading_enabled": false
+}

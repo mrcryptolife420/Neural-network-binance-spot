@@ -1,0 +1,10 @@
+{
+  "status": "ok",
+  "v2_failure_simulated": true,
+  "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit",
+  "streamlit_import": "verified",
+  "legacy_launch_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit",
+  "docs_link": "docs/dashboard-v2/streamlit-fallback-policy.md",
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

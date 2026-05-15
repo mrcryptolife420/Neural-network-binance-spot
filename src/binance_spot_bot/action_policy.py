@@ -44,7 +44,16 @@ class ActionPolicy:
             reasons.append("forbidden_live_order_or_account_action")
         if INJECTION_RE.search(command_text):
             reasons.append("shell_injection_token")
-        if SECRET_RE.search(command_text) or SECRET_RE.search(str(proposal.to_dict())):
+        secret_scan_text = " ".join(
+            [
+                proposal.title,
+                proposal.description,
+                proposal.command.command,
+                " ".join(proposal.command.args),
+                " ".join(item.description for item in proposal.required_evidence),
+            ]
+        )
+        if SECRET_RE.search(command_text) or SECRET_RE.search(secret_scan_text):
             reasons.append("secret_like_action_payload")
         if proposal.live_trading_enabled:
             reasons.append("live_trading_enabled_true")

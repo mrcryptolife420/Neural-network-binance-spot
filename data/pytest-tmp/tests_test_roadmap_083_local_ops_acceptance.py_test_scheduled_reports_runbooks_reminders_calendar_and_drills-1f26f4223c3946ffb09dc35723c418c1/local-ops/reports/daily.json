@@ -1,0 +1,213 @@
+{
+  "status": "ready",
+  "jobs": [
+    {
+      "job_id": "daily-paper-deployment",
+      "name": "Daily paper deployment",
+      "description": "Daily paper deployment report.",
+      "command": "paper-deployment-cycle",
+      "args": [
+        "--json"
+      ],
+      "schedule": {
+        "schedule_type": "daily",
+        "config": {
+          "time": "18:00"
+        }
+      },
+      "enabled": true,
+      "category": "report",
+      "allowlist_policy": "default",
+      "max_runtime_seconds": 60,
+      "retry_policy": {
+        "max_retries": 0,
+        "backoff_seconds": 0
+      },
+      "failure_policy": {
+        "action": "record_only",
+        "max_failures": 3,
+        "create_support_bundle": false,
+        "create_incident_timeline": false,
+        "disable_after_failures": false
+      },
+      "output_dir": "data/local-ops/jobs",
+      "created_at_ms": 1778861252132,
+      "updated_at_ms": 1778861252132,
+      "live_trading_enabled": false
+    },
+    {
+      "job_id": "daily-data-quality",
+      "name": "Daily data quality",
+      "description": "Daily data quality report.",
+      "command": "data-quality",
+      "args": [
+        "--json"
+      ],
+      "schedule": {
+        "schedule_type": "daily",
+        "config": {
+          "time": "18:05"
+        }
+      },
+      "enabled": true,
+      "category": "report",
+      "allowlist_policy": "default",
+      "max_runtime_seconds": 60,
+      "retry_policy": {
+        "max_retries": 0,
+        "backoff_seconds": 0
+      },
+      "failure_policy": {
+        "action": "record_only",
+        "max_failures": 3,
+        "create_support_bundle": false,
+        "create_incident_timeline": false,
+        "disable_after_failures": false
+      },
+      "output_dir": "data/local-ops/jobs",
+      "created_at_ms": 1778861252132,
+      "updated_at_ms": 1778861252132,
+      "live_trading_enabled": false
+    },
+    {
+      "job_id": "daily-local-ops",
+      "name": "Daily local ops snapshot",
+      "description": "Daily local ops snapshot.",
+      "command": "local-ops-snapshot",
+      "args": [
+        "--json"
+      ],
+      "schedule": {
+        "schedule_type": "daily",
+        "config": {
+          "time": "18:10"
+        }
+      },
+      "enabled": true,
+      "category": "report",
+      "allowlist_policy": "default",
+      "max_runtime_seconds": 60,
+      "retry_policy": {
+        "max_retries": 0,
+        "backoff_seconds": 0
+      },
+      "failure_policy": {
+        "action": "record_only",
+        "max_failures": 3,
+        "create_support_bundle": false,
+        "create_incident_timeline": false,
+        "disable_after_failures": false
+      },
+      "output_dir": "data/local-ops/jobs",
+      "created_at_ms": 1778861252132,
+      "updated_at_ms": 1778861252132,
+      "live_trading_enabled": false
+    },
+    {
+      "job_id": "weekly-governance",
+      "name": "Weekly governance",
+      "description": "Weekly governance report.",
+      "command": "weekly-governance-report",
+      "args": [
+        "--json"
+      ],
+      "schedule": {
+        "schedule_type": "weekly",
+        "config": {
+          "weekday": "monday",
+          "time": "09:00"
+        }
+      },
+      "enabled": true,
+      "category": "governance",
+      "allowlist_policy": "default",
+      "max_runtime_seconds": 60,
+      "retry_policy": {
+        "max_retries": 0,
+        "backoff_seconds": 0
+      },
+      "failure_policy": {
+        "action": "record_only",
+        "max_failures": 3,
+        "create_support_bundle": false,
+        "create_incident_timeline": false,
+        "disable_after_failures": false
+      },
+      "output_dir": "data/local-ops/jobs",
+      "created_at_ms": 1778861252132,
+      "updated_at_ms": 1778861252132,
+      "live_trading_enabled": false
+    },
+    {
+      "job_id": "weekly-support-verify",
+      "name": "Weekly support verify",
+      "description": "Weekly support bundle verification.",
+      "command": "support-bundles-verify",
+      "args": [
+        "--json"
+      ],
+      "schedule": {
+        "schedule_type": "weekly",
+        "config": {
+          "weekday": "friday",
+          "time": "16:00"
+        }
+      },
+      "enabled": true,
+      "category": "diagnostics",
+      "allowlist_policy": "default",
+      "max_runtime_seconds": 60,
+      "retry_policy": {
+        "max_retries": 0,
+        "backoff_seconds": 0
+      },
+      "failure_policy": {
+        "action": "record_only",
+        "max_failures": 3,
+        "create_support_bundle": false,
+        "create_incident_timeline": false,
+        "disable_after_failures": false
+      },
+      "output_dir": "data/local-ops/jobs",
+      "created_at_ms": 1778861252132,
+      "updated_at_ms": 1778861252132,
+      "live_trading_enabled": false
+    },
+    {
+      "job_id": "weekly-data-growth",
+      "name": "Weekly data growth",
+      "description": "Weekly data growth budget.",
+      "command": "data-growth-budget",
+      "args": [
+        "--json"
+      ],
+      "schedule": {
+        "schedule_type": "weekly",
+        "config": {
+          "weekday": "friday",
+          "time": "16:10"
+        }
+      },
+      "enabled": true,
+      "category": "cleanup",
+      "allowlist_policy": "default",
+      "max_runtime_seconds": 60,
+      "retry_policy": {
+        "max_retries": 0,
+        "backoff_seconds": 0
+      },
+      "failure_policy": {
+        "action": "record_only",
+        "max_failures": 3,
+        "create_support_bundle": false,
+        "create_incident_timeline": false,
+        "disable_after_failures": false
+      },
+      "output_dir": "data/local-ops/jobs",
+      "created_at_ms": 1778861252132,
+      "updated_at_ms": 1778861252132,
+      "live_trading_enabled": false
+    }
+  ],
+  "live_trading_enabled": false
+}

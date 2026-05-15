@@ -1,0 +1,72 @@
+{
+  "status": "review",
+  "nodes": [
+    {
+      "id": "roadmap-100",
+      "type": "roadmap",
+      "path": "Roadmap docs/100-roadmap-end-to-end-paper-trading-operating-system-milestone-system-audit-production-readiness-simulation.md",
+      "exists": true
+    },
+    {
+      "id": "system-inventory",
+      "type": "report",
+      "path": "data/milestone/system-inventory/system_inventory.json",
+      "exists": true
+    },
+    {
+      "id": "safety-invariants",
+      "type": "report",
+      "path": "data/milestone/safety-invariants/system_safety_invariants.json",
+      "exists": false
+    },
+    {
+      "id": "no-live-proof",
+      "type": "proof",
+      "path": "data/milestone/no-live/no_live_proof_pack.json",
+      "exists": true
+    },
+    {
+      "id": "paper-simulation",
+      "type": "paper_session",
+      "path": "data/milestone/paper-os-simulation/paper_os_simulation.json",
+      "exists": true
+    },
+    {
+      "id": "readiness-simulation",
+      "type": "gate",
+      "path": "data/milestone/readiness/production_readiness_simulation.json",
+      "exists": true
+    }
+  ],
+  "edges": [
+    {
+      "from": "roadmap-100",
+      "to": "system-inventory",
+      "relation": "requires"
+    },
+    {
+      "from": "system-inventory",
+      "to": "safety-invariants",
+      "relation": "feeds"
+    },
+    {
+      "from": "safety-invariants",
+      "to": "no-live-proof",
+      "relation": "proves_no_live"
+    },
+    {
+      "from": "no-live-proof",
+      "to": "readiness-simulation",
+      "relation": "blocks_milestone"
+    },
+    {
+      "from": "paper-simulation",
+      "to": "readiness-simulation",
+      "relation": "feeds"
+    }
+  ],
+  "missing_evidence": [
+    "safety-invariants"
+  ],
+  "live_trading_enabled": false
+}

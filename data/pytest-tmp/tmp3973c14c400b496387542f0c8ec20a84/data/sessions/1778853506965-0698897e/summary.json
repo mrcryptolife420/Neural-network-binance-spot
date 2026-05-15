@@ -1,0 +1,63 @@
+{
+  "session_id": "1778853506965-0698897e",
+  "mode": "demo",
+  "symbol": "BTCUSDT",
+  "interval": "1m",
+  "started_at_ms": 1778853506965,
+  "ended_at_ms": 1778853508139,
+  "pnl": "0.162765016096573875124875",
+  "max_drawdown": "2.0044837638154451248751250",
+  "trades": 25,
+  "blocks": 50,
+  "model_version": "rule-baseline-0.1",
+  "status": "stopped",
+  "metadata": {
+    "source": "demo",
+    "model_alias": "",
+    "demo_trading_armed": false,
+    "exchange_profile": "local-demo",
+    "demo_pilot": {
+      "config": {
+        "pilot_name": "smoke",
+        "duration_minutes": 15,
+        "max_demo_orders": 5,
+        "max_rejects": 2,
+        "max_api_errors": 3,
+        "max_reconciliation_failures": 1,
+        "cancel_open_orders_on_stop": true,
+        "reconciliation_interval_seconds": 30,
+        "account_sync_interval_seconds": 60,
+        "pause_on_connection_degraded": true,
+        "require_clean_start": true
+      },
+      "counters": {
+        "orders": 0,
+        "rejects": 0,
+        "api_errors": 0,
+        "reconciliation_failures": 0,
+        "started_at_ms": 1778853506965,
+        "elapsed_seconds": 1
+      },
+      "should_pause": false,
+      "pause_reason": "",
+      "status": "not-armed",
+      "last_reconciliation_check_ms": 0,
+      "last_demo_account_sync_ms": 0
+    },
+    "pilot_run": {},
+    "alerts_count": 52,
+    "critical_alerts_count": 0,
+    "realized_pnl": "-0.3556918295847869573554977458",
+    "fees_paid": "0.2500376367899885624375624378",
+    "slippage_bps": "10",
+    "readiness_blockers": [
+      "session report missing"
+    ],
+    "reconciliation": {
+      "status": "not-run",
+      "needs_operator_action": false
+    },
+    "cancel_on_stop_status": [],
+    "pilot_start_gate": {}
+  }
+}

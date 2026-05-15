@@ -1,0 +1,68 @@
+{
+  "run_id": "dashboard-profile",
+  "category": "dashboard",
+  "spans": [
+    {
+      "span_id": "d58d8ac2-8ce",
+      "name": "overview",
+      "category": "dashboard",
+      "started_at_ms": 892780.3805999999,
+      "parent_span_id": "",
+      "duration_ms": 0.006700000143609941,
+      "status": "ok",
+      "labels": {
+        "panel": "overview"
+      },
+      "error_type": "",
+      "redacted": true,
+      "live_trading_enabled": false
+    },
+    {
+      "span_id": "4036d60f-651",
+      "name": "demo_spot_trading",
+      "category": "dashboard",
+      "started_at_ms": 892780.4023,
+      "parent_span_id": "",
+      "duration_ms": 0.0035000001080334187,
+      "status": "ok",
+      "labels": {
+        "panel": "demo_spot_trading"
+      },
+      "error_type": "",
+      "redacted": true,
+      "live_trading_enabled": false
+    },
+    {
+      "span_id": "14f87cce-a19",
+      "name": "test_selection",
+      "category": "dashboard",
+      "started_at_ms": 892780.4137,
+      "parent_span_id": "",
+      "duration_ms": 0.0017999999690800905,
+      "status": "ok",
+      "labels": {
+        "panel": "test_selection"
+      },
+      "error_type": "",
+      "redacted": true,
+      "live_trading_enabled": false
+    },
+    {
+      "span_id": "0e5b24fa-88b",
+      "name": "performance",
+      "category": "dashboard",
+      "started_at_ms": 892780.4211,
+      "parent_span_id": "",
+      "duration_ms": 0.0013000000035390258,
+      "status": "ok",
+      "labels": {
+        "panel": "performance"
+      },
+      "error_type": "",
+      "redacted": true,
+      "live_trading_enabled": false
+    }
+  ],
+  "metrics": [],
+  "live_trading_enabled": false
+}

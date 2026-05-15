@@ -1,0 +1,43 @@
+{
+  "rollout_id": "rollout-1778865680434",
+  "event": "created",
+  "plan": {
+    "rollout_id": "rollout-1778865680434",
+    "champion_policy_id": "champion",
+    "challenger_policy_id": "challenger",
+    "rollout_stage": "25pct",
+    "alloc_split": {
+      "champion": "75",
+      "challenger": "25"
+    },
+    "symbols": [
+      "BNBUSDT",
+      "BTCUSDT",
+      "ETHUSDT"
+    ],
+    "max_duration_minutes": 60,
+    "min_sample_count": 30,
+    "stopping_rules": [
+      "max_drawdown",
+      "underperform_champion",
+      "data_quality",
+      "policy_violation",
+      "excess_turnover"
+    ],
+    "success_rules": [
+      "better_score",
+      "drawdown_ok",
+      "samples_ok",
+      "no_policy_violations"
+    ],
+    "rollback_target": "prev_champion",
+    "operator_confirmation": "PAPER_POLICY_ROLLOUT",
+    "created_at_ms": 1778865680434,
+    "live_trading_enabled": false
+  },
+  "payload": {
+    "operator": "local"
+  },
+  "created_at_ms": 1778865680439,
+  "live_trading_enabled": false
+}

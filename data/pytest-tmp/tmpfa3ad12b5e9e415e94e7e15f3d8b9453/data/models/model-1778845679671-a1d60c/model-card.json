@@ -1,0 +1,39 @@
+{
+  "baseline_comparison": {
+    "candidate_beats_baseline": true
+  },
+  "created_at_ms": 1778845679672,
+  "dataset_id": "demo-replay",
+  "feature_schema_hash": "3e8b2d28093cfcf0",
+  "forbidden_use": "live trading without a later roadmap, readiness gate, and manual approval",
+  "intended_use": "offline evaluation, paper trading, and shadow-only research",
+  "known_limitations": [
+    "paper/shadow validation only",
+    "not financial advice",
+    "not live-trading approved"
+  ],
+  "model_id": "model-1778845679671-a1d60c",
+  "operator_notes": "",
+  "ranges": {
+    "test": "7259999-9599999",
+    "train": "359999-4979999",
+    "validation": "chronological-demo-validation"
+  },
+  "role": "candidate",
+  "status": "candidate",
+  "training_config": {
+    "feature_set_version": "features-v1",
+    "model_type": "tiny-neural-signal"
+  },
+  "walk_forward_summary": {
+    "candidate_beats_baseline": true,
+    "epochs": 10,
+    "label_rows": 153,
+    "leakage_pass": true,
+    "max_allowed_drawdown_quote": 100,
+    "max_drawdown_quote": 0.5993455712437077,
+    "min_trade_count": 1,
+    "trade_count": 28,
+    "train_rows": 155
+  }
+}

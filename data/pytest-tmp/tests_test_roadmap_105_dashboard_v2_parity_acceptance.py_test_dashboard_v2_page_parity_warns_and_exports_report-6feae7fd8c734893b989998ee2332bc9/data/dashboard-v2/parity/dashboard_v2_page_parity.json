@@ -1,0 +1,874 @@
+{
+  "status": "ok",
+  "items": [
+    {
+      "page_key": "overview",
+      "title": "Overview",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/",
+        "component": "OverviewPage",
+        "exists": true
+      },
+      "migration_status": "migrated",
+      "required_api_endpoints": [
+        "/api/runtime/snapshot"
+      ],
+      "required_ws_topics": [
+        "runtime.snapshot"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": true,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "route available as migrated page",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "demo_spot_trading",
+      "title": "Demo Spot Trading",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/demo-spot-trading",
+        "component": "DemoSpotTradingPage",
+        "exists": true
+      },
+      "migration_status": "migrated",
+      "required_api_endpoints": [
+        "/api/runtime/snapshot"
+      ],
+      "required_ws_topics": [
+        "runtime.snapshot"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": true,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "route available as migrated page",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "credentials_profile",
+      "title": "Credentials & Profile",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/credentials-profile",
+        "component": "CredentialsProfilePage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "bot_controls",
+      "title": "Bot Controls",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/bot-controls",
+        "component": "BotControlsPage",
+        "exists": true
+      },
+      "migration_status": "partial",
+      "required_api_endpoints": [
+        "/api/runtime/snapshot"
+      ],
+      "required_ws_topics": [
+        "runtime.snapshot"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": true,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "risk_controls",
+      "title": "Risk Controls",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/risk-controls",
+        "component": "RiskControlsPage",
+        "exists": true
+      },
+      "migration_status": "partial",
+      "required_api_endpoints": [
+        "/api/runtime/snapshot"
+      ],
+      "required_ws_topics": [
+        "runtime.snapshot"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": true,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "strategy_model",
+      "title": "Strategy & Model",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/strategy-model",
+        "component": "StrategyModelPage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "market_data",
+      "title": "Market Data",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/market-data",
+        "component": "MarketDataPage",
+        "exists": true
+      },
+      "migration_status": "partial",
+      "required_api_endpoints": [
+        "/api/runtime/snapshot"
+      ],
+      "required_ws_topics": [
+        "runtime.snapshot"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": true,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "orders_account",
+      "title": "Orders & Account",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/orders-account",
+        "component": "OrdersAccountPage",
+        "exists": true
+      },
+      "migration_status": "partial",
+      "required_api_endpoints": [
+        "/api/runtime/snapshot"
+      ],
+      "required_ws_topics": [
+        "runtime.snapshot"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": true,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "sessions",
+      "title": "Sessions",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/sessions",
+        "component": "SessionsPage",
+        "exists": true
+      },
+      "migration_status": "migrated",
+      "required_api_endpoints": [
+        "/api/runtime/snapshot"
+      ],
+      "required_ws_topics": [
+        "runtime.snapshot"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": true,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "route available as migrated page",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "evaluation",
+      "title": "Evaluation",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/evaluation",
+        "component": "EvaluationPage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "strategy_lab",
+      "title": "Strategy Lab",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/strategy-lab",
+        "component": "StrategyLabPage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "research",
+      "title": "Research",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/research",
+        "component": "ResearchPage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "portfolio",
+      "title": "Portfolio",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/portfolio",
+        "component": "PortfolioPage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "readiness",
+      "title": "Readiness",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/readiness",
+        "component": "ReadinessPage",
+        "exists": true
+      },
+      "migration_status": "migrated",
+      "required_api_endpoints": [
+        "/api/runtime/snapshot"
+      ],
+      "required_ws_topics": [
+        "runtime.snapshot"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": true,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "route available as migrated page",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "logs_security",
+      "title": "Logs & Security",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/logs-security",
+        "component": "LogsSecurityPage",
+        "exists": true
+      },
+      "migration_status": "migrated",
+      "required_api_endpoints": [
+        "/api/runtime/snapshot"
+      ],
+      "required_ws_topics": [
+        "runtime.snapshot"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": true,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "route available as migrated page",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "demo_pilot",
+      "title": "Demo Pilot",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/demo-pilot",
+        "component": "DemoPilotPage",
+        "exists": true
+      },
+      "migration_status": "migrated",
+      "required_api_endpoints": [
+        "/api/runtime/snapshot"
+      ],
+      "required_ws_topics": [
+        "runtime.snapshot"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": true,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "route available as migrated page",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "policy_governance",
+      "title": "Policy Governance",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/policy-governance",
+        "component": "PolicyGovernancePage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "ops_automation",
+      "title": "Ops Automation",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/ops-automation",
+        "component": "OpsAutomationPage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "observability",
+      "title": "Observability",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/observability",
+        "component": "ObservabilityPage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "ai_ops_assistant",
+      "title": "AI Ops Assistant",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/ai-ops-assistant",
+        "component": "AiOpsAssistantPage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "action_center",
+      "title": "Action Center",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/action-center",
+        "component": "ActionCenterPage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "permissions",
+      "title": "Permissions",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/permissions",
+        "component": "PermissionsPage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "disaster_recovery",
+      "title": "Disaster Recovery",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/disaster-recovery",
+        "component": "DisasterRecoveryPage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "release_management",
+      "title": "Release Management",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/release-management",
+        "component": "ReleaseManagementPage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "roadmap_automation",
+      "title": "Roadmap Automation",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/roadmap-automation",
+        "component": "RoadmapAutomationPage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "repo_knowledge",
+      "title": "Repo Knowledge",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/repo-knowledge",
+        "component": "RepoKnowledgePage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "test_selection",
+      "title": "Test Selection",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/test-selection",
+        "component": "TestSelectionPage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "performance",
+      "title": "Performance",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/performance",
+        "component": "PerformancePage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "runtime_core",
+      "title": "Runtime Core",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/runtime-core",
+        "component": "RuntimeCorePage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "data_pipeline",
+      "title": "Data Pipeline",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/data-pipeline",
+        "component": "DataPipelinePage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "model_training",
+      "title": "Model Training",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/model-training",
+        "component": "ModelTrainingPage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "model_monitoring",
+      "title": "Model Monitoring",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/model-monitoring",
+        "component": "ModelMonitoringPage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "portfolio_ensemble",
+      "title": "Portfolio Ensemble",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/portfolio-ensemble",
+        "component": "PortfolioEnsemblePage",
+        "exists": true
+      },
+      "migration_status": "legacy_placeholder",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "legacy placeholder keeps Streamlit fallback available",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "paper_os_audit",
+      "title": "Paper OS Audit",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/paper-os-audit",
+        "component": "PaperOsAuditPage",
+        "exists": true
+      },
+      "migration_status": "migrated",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "route available as migrated page",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "stabilization",
+      "title": "Stabilization",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/stabilization",
+        "component": "StabilizationPage",
+        "exists": true
+      },
+      "migration_status": "migrated",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "route available as migrated page",
+      "live_trading_enabled": false
+    },
+    {
+      "page_key": "operator_training",
+      "title": "Operator Training",
+      "streamlit_available": true,
+      "v2_route": {
+        "path": "/operator-training",
+        "component": "OperatorTrainingPage",
+        "exists": true
+      },
+      "migration_status": "migrated",
+      "required_api_endpoints": [
+        "/api/pages"
+      ],
+      "required_ws_topics": [
+        "system.health"
+      ],
+      "tests": [
+        "tests/test_roadmap_105_dashboard_v2_parity_acceptance.py"
+      ],
+      "browser_smoke_required": false,
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "notes": "route available as migrated page",
+      "live_trading_enabled": false
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "parity_percent": 36,
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

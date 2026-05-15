@@ -1,0 +1,24 @@
+{
+  "status": "ok",
+  "json": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_107_dashboard_v2_workflow_ux_acceptance.py_test_streamlit_fallback_deprecation_and_workflow_evidence-efae25ef86ce49708f7d2ef948fccd38\\data\\dashboard-v2\\ux\\ux-backlog.json",
+  "markdown": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_107_dashboard_v2_workflow_ux_acceptance.py_test_streamlit_fallback_deprecation_and_workflow_evidence-efae25ef86ce49708f7d2ef948fccd38\\data\\dashboard-v2\\ux\\ux-backlog.md",
+  "report": {
+    "status": "ok",
+    "backlog": {
+      "status": "ok",
+      "items": [],
+      "warnings": [
+        "missing optional artifact: data/dashboard-v2/uat/feedback.json",
+        "missing optional artifact: data/dashboard-v2/cutover/readiness.json",
+        "missing optional artifact: data/dashboard-v2/browser-smoke/matrix.json",
+        "missing optional artifact: data/dashboard-v2/performance/budget.json",
+        "missing optional artifact: data/docs/consistency.json"
+      ],
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "live_trading_enabled": false
+    },
+    "generated_at_ms": 1778864009178,
+    "live_trading_enabled": false
+  },
+  "live_trading_enabled": false
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Demo C",
+  "data_dir": "data/demo-a",
+  "exchange_profile": "local-demo",
+  "symbols": [
+    "BTCUSDT"
+  ],
+  "risk_preset": "balanced",
+  "theme": "system",
+  "language": "nl",
+  "layout": {},
+  "notes": "",
+  "schema_version": 1,
+  "created_at_ms": 1778857058550,
+  "last_opened_at_ms": 1778857058558,
+  "archived": true
+}

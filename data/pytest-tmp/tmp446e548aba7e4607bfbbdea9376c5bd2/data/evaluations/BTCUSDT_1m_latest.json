@@ -1,0 +1,89 @@
+{
+  "symbol": "BTCUSDT",
+  "interval": "1m",
+  "folds": [
+    {
+      "fold": 1,
+      "train_range": {
+        "start": 359999,
+        "end": 2639999,
+        "count": 39
+      },
+      "test_range": {
+        "start": 2819999,
+        "end": 5039999,
+        "count": 38
+      },
+      "gap": 2,
+      "signal_distribution": {
+        "BUY": 26,
+        "SELL": 6,
+        "HOLD": 6
+      },
+      "pnl": "3.788280701844295097880611",
+      "max_drawdown": "0.185156461840008647973646",
+      "turnover": 26,
+      "block_reasons": {
+        "blocked": 12
+      }
+    },
+    {
+      "fold": 2,
+      "train_range": {
+        "start": 359999,
+        "end": 4919999,
+        "count": 77
+      },
+      "test_range": {
+        "start": 5099999,
+        "end": 7319999,
+        "count": 38
+      },
+      "gap": 2,
+      "signal_distribution": {
+        "BUY": 2,
+        "SELL": 17,
+        "HOLD": 19
+      },
+      "pnl": "-0.0975327300690588286167864",
+      "max_drawdown": "0.0975327300690588286167864",
+      "turnover": 3,
+      "block_reasons": {
+        "blocked": 35
+      }
+    },
+    {
+      "fold": 3,
+      "train_range": {
+        "start": 359999,
+        "end": 7199999,
+        "count": 115
+      },
+      "test_range": {
+        "start": 7379999,
+        "end": 9599999,
+        "count": 38
+      },
+      "gap": 2,
+      "signal_distribution": {
+        "BUY": 11,
+        "SELL": 12,
+        "HOLD": 15
+      },
+      "pnl": "-0.3231851079310086195135604",
+      "max_drawdown": "0.4756474286111864637196194",
+      "turnover": 13,
+      "block_reasons": {
+        "blocked": 25
+      }
+    }
+  ],
+  "gap": 2,
+  "mode": "rule_baseline",
+  "costs": null,
+  "manifest": null,
+  "leakage": null,
+  "baseline_summary": null,
+  "candidate_summary": null,
+  "shuffled": false
+}

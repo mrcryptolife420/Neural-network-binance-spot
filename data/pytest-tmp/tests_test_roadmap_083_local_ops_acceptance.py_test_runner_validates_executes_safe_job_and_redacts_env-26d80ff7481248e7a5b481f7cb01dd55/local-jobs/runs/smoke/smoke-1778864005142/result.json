@@ -1,0 +1,24 @@
+{
+  "run_id": "smoke-1778864005142",
+  "job_id": "smoke",
+  "status": "ok",
+  "started_at_ms": 1778864005142,
+  "finished_at_ms": 1778864005729,
+  "returncode": 0,
+  "stdout_path": "",
+  "stderr_path": "",
+  "result_path": "",
+  "artifacts": [],
+  "live_trading_enabled": false,
+  "result": {
+    "job_id": "smoke",
+    "run_id": "smoke-1778864005142",
+    "status": "ok",
+    "returncode": 0,
+    "stdout_tail": "{\n  \"status\": \"ok\",\n  \"checked\": 4,\n  \"leaked\": [],\n  \"live_trading_enabled\": false\n}\n",
+    "stderr_tail": "",
+    "artifacts": [],
+    "failure_action": "none",
+    "live_trading_enabled": false
+  }
+}

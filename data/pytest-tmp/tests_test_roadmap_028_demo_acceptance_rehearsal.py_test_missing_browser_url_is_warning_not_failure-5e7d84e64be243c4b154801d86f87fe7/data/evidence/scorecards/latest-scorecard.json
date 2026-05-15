@@ -1,0 +1,28 @@
+{
+  "status": "warn",
+  "blockers": [],
+  "warnings": [
+    {
+      "severity": "warning",
+      "name": "browser_smoke.missing",
+      "message": "artifact missing",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-5e7d84e64be243c4b154801d86f87fe7\\data\\checks\\dashboard\\browser-smoke.json"
+    },
+    {
+      "severity": "warning",
+      "name": "operator_diagnostics.warn",
+      "message": "operator diagnostics has warnings",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-5e7d84e64be243c4b154801d86f87fe7\\data\\evidence\\diagnostics\\latest-diagnostics.json"
+    }
+  ],
+  "artifacts": {
+    "launch_evidence": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-5e7d84e64be243c4b154801d86f87fe7\\data\\checks\\dashboard\\launch-evidence.json",
+    "operator_evidence": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-5e7d84e64be243c4b154801d86f87fe7\\data\\evidence\\dashboard\\operator-evidence-2026-05-15T121428.436011Z0000.json",
+    "demo_execution": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-5e7d84e64be243c4b154801d86f87fe7\\data\\evidence\\demo-execution\\demo_execution_drill.json",
+    "pilot_start_idempotency": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-5e7d84e64be243c4b154801d86f87fe7\\data\\evidence\\pilot-start-idempotency.json",
+    "operator_diagnostics": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-5e7d84e64be243c4b154801d86f87fe7\\data\\evidence\\diagnostics\\latest-diagnostics.json"
+  },
+  "next_safe_action": "Collect or refresh evidence: artifact missing",
+  "live_trading_enabled": false,
+  "generated_at": "2026-05-15T12:14:28.446400+00:00"
+}

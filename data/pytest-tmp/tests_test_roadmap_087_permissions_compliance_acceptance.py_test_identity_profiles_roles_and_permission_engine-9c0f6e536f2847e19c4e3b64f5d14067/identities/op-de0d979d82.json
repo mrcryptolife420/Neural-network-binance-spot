@@ -1,0 +1,32 @@
+{
+  "operator_id": "op-de0d979d82",
+  "display_name": "maint",
+  "local_machine_id_hash": "4bf26035962b5100",
+  "role_ids": [
+    "maintainer"
+  ],
+  "profile_hash": "2f15c3d66d688dadbf53480a",
+  "created_at_ms": 1778858913433,
+  "updated_at_ms": 1778858913433,
+  "last_seen_ms": 1778858913433,
+  "disabled": false,
+  "notes": "",
+  "live_trading_enabled": false,
+  "role": "maintainer",
+  "permissions": [
+    "approve_confirm_required",
+    "approve_destructive_local",
+    "approve_read_only",
+    "approve_safe_artifact",
+    "create_action_proposal",
+    "execute_approved_action",
+    "manage_retention",
+    "manage_runbooks",
+    "manage_scheduler",
+    "verify_action",
+    "view_dashboard",
+    "view_evidence",
+    "view_metrics",
+    "view_reports"
+  ]
+}

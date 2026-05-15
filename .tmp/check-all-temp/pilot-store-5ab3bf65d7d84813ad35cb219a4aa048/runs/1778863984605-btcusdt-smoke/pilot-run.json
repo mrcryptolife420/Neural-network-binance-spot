@@ -1,0 +1,25 @@
+{
+  "run_id": "1778863984605-btcusdt-smoke",
+  "state": "blocked",
+  "profile": "binance-demo-spot",
+  "symbol": "BTCUSDT",
+  "preset": "smoke",
+  "started_at_ms": 1778863984605,
+  "updated_at_ms": 1778863984605,
+  "completed_at_ms": null,
+  "blockers": [
+    {
+      "reason": "[REDACTED]"
+    }
+  ],
+  "transitions": [
+    {
+      "from": "idle",
+      "to": "blocked",
+      "timestamp_ms": 1778863984605,
+      "reason": "run created"
+    }
+  ],
+  "checkpoints": [],
+  "report_paths": {}
+}

@@ -1,0 +1,22 @@
+{
+  "runner_id": "runner-1",
+  "run_id": "1778848282699-btcusdt-smoke",
+  "pid": 123,
+  "status": "stopping",
+  "started_at_ms": 1778848282731,
+  "updated_at_ms": 1778848282856,
+  "command_dir": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp9acc05608e304f88b941961ab3172f61\\data\\pilot-runs\\1778848282699-btcusdt-smoke\\commands",
+  "telemetry_jsonl": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp9acc05608e304f88b941961ab3172f61\\data\\pilot-runs\\1778848282699-btcusdt-smoke\\telemetry.jsonl",
+  "latest_telemetry_json": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp9acc05608e304f88b941961ab3172f61\\data\\pilot-runs\\1778848282699-btcusdt-smoke\\latest-telemetry.json",
+  "process_command": [
+    "python",
+    "-m",
+    "binance_spot_bot.cli",
+    "pilot-runner-start"
+  ],
+  "last_tick_ms": 0,
+  "last_reconciliation_ms": 0,
+  "last_account_sync_ms": 0,
+  "last_command": "stop",
+  "last_error": ""
+}

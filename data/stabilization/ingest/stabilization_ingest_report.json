@@ -1,0 +1,74 @@
+{
+  "status": "review",
+  "findings": [
+    {
+      "finding_id": "failed_artifact-762850",
+      "source": {
+        "name": "production_readiness",
+        "path": "data/milestone/readiness/production_readiness_simulation.json",
+        "exists": true
+      },
+      "category": "failed_artifact",
+      "severity": "P1",
+      "title": "production_readiness is blocked",
+      "description": "Roadmap 100 artifact reports a blocking status.",
+      "evidence_path": "data/milestone/readiness/production_readiness_simulation.json",
+      "command": "",
+      "subsystem": "paper_os",
+      "roadmap": "101",
+      "live_trading_enabled": false
+    },
+    {
+      "finding_id": "missing_evidence-954819",
+      "source": {
+        "name": "safety_invariants",
+        "path": "data/milestone/safety-invariants/system_safety_invariants.json",
+        "exists": false
+      },
+      "category": "missing_evidence",
+      "severity": "P1",
+      "title": "Missing safety_invariants",
+      "description": "Expected Roadmap 100 artifact is missing: data/milestone/safety-invariants/system_safety_invariants.json",
+      "evidence_path": "data/milestone/safety-invariants/system_safety_invariants.json",
+      "command": "",
+      "subsystem": "paper_os",
+      "roadmap": "101",
+      "live_trading_enabled": false
+    }
+  ],
+  "sources": [
+    {
+      "name": "system_audit",
+      "path": "data/milestone/reports/system_audit_report.json",
+      "exists": true
+    },
+    {
+      "name": "production_readiness",
+      "path": "data/milestone/readiness/production_readiness_simulation.json",
+      "exists": true
+    },
+    {
+      "name": "safety_invariants",
+      "path": "data/milestone/safety-invariants/system_safety_invariants.json",
+      "exists": false
+    },
+    {
+      "name": "no_live_proof",
+      "path": "data/milestone/no-live/no_live_proof_pack.json",
+      "exists": true
+    },
+    {
+      "name": "paper_simulation",
+      "path": "data/milestone/paper-os-simulation/paper_os_simulation.json",
+      "exists": true
+    },
+    {
+      "name": "roadmap_traceability",
+      "path": "data/milestone/roadmap-traceability/roadmap_traceability_001_100.json",
+      "exists": true
+    }
+  ],
+  "no_live_statement": "Paper OS stabilization is local, paper-only, and never enables live trading.",
+  "live_trading_enabled": false,
+  "created_at_ms": 1778852214001
+}

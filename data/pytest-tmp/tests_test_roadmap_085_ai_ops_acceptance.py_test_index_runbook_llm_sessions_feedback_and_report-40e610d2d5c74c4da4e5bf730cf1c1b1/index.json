@@ -1,0 +1,19 @@
+{
+  "status": "ready",
+  "items": [
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_085_ai_ops_acceptance.py_test_index_runbook_llm_sessions_feedback_and_report-40e610d2d5c74c4da4e5bf730cf1c1b1\\doc.md",
+      "title": "doc",
+      "terms": [
+        "browser-smoke-failed",
+        "dashboard",
+        "failed",
+        "runbook.",
+        "smoke",
+        "use"
+      ],
+      "snippet": "# Dashboard smoke failed\nUse browser-smoke-failed runbook."
+    }
+  ],
+  "live_trading_enabled": false
+}

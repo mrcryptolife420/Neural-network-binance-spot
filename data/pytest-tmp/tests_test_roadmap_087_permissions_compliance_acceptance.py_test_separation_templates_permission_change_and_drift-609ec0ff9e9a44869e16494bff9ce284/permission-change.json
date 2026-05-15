@@ -1,0 +1,16 @@
+{
+  "status": "approval_required",
+  "change_id": "perm-1778851567039",
+  "role": "operator",
+  "diff": {
+    "proposed": {
+      "scope": "view_reports"
+    }
+  },
+  "validation": {
+    "allowed": true,
+    "forbidden_scopes": []
+  },
+  "confirm_phrase": "PERMISSION_CHANGE",
+  "live_trading_enabled": false
+}

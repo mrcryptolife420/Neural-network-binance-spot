@@ -1,3 +1,7 @@
 from __future__ import annotations
 
-__all__ = ["demo_pilot", "demo_spot_trading", "overview"]
+from typing import Any
+
+
+def render_page(*_args: Any, **_kwargs: Any) -> dict[str, object]:
+    return {"status": "registered", "live_trading_enabled": False}

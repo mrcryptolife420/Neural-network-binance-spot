@@ -1,0 +1,70 @@
+{
+  "backup_id": "backup-1778864011456",
+  "profile": {
+    "profile_id": "restore_drill_fixture",
+    "description": "Small deterministic fixture subset.",
+    "includes": [
+      {
+        "pattern": "*.json",
+        "category": "state"
+      },
+      {
+        "pattern": "reports/**",
+        "category": "state"
+      },
+      {
+        "pattern": "checks/**",
+        "category": "state"
+      }
+    ],
+    "excludes": [
+      {
+        "pattern": "*.key",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*.pem",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*credential*",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*listenKey*",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*secret*",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": ".env",
+        "reason": "secret_or_unsafe"
+      }
+    ],
+    "live_trading_enabled": false,
+    "profile_hash": "6594d33dd5da6479bfaedf0d"
+  },
+  "files": [
+    {
+      "path": "disaster-recovery/backup_preflight_report.json",
+      "archive_path": "files/disaster-recovery/backup_preflight_report.json",
+      "sha256": "4c6c6a3c728fed27894c8655",
+      "size_bytes": 1851
+    },
+    {
+      "path": "sample.json",
+      "archive_path": "files/sample.json",
+      "sha256": "6bc0da1f42f96fc37b8bd7ed",
+      "size_bytes": 12
+    }
+  ],
+  "created_at_ms": 1778864011469,
+  "source_fingerprint": "4c29c28bd6282c1fb26782b2",
+  "zip_sha256": "0871c8cf7b95c3f7fdb15fca",
+  "no_live_proof": true,
+  "redaction_proof": true,
+  "live_trading_enabled": false,
+  "manifest_hash": "4c40d553f8ef87c6fce885a5"
+}

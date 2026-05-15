@@ -1,0 +1,232 @@
+{
+  "session": {
+    "session_id": "1778866526258-cac989ae",
+    "mode": "demo",
+    "symbol": "BTCUSDT",
+    "interval": "1m",
+    "status": "running",
+    "pnl": "0",
+    "max_drawdown": "0"
+  },
+  "demo_pilot": {
+    "config": {
+      "max_demo_orders": 5,
+      "pilot_name": "smoke"
+    },
+    "counters": {
+      "orders": 1,
+      "rejects": 0
+    }
+  },
+  "connection": {
+    "armed": true,
+    "authenticated": true,
+    "base_url": "https://demo-api.binance.com/api",
+    "connected": true,
+    "gate": {
+      "checks": {
+        "demo_base_url": true
+      },
+      "reason": "allowed"
+    },
+    "profile": "binance-demo-spot"
+  },
+  "account": {
+    "balances": [],
+    "can_trade": true,
+    "status": "ok"
+  },
+  "reconciliation": {
+    "failures": 0,
+    "needs_operator_action": false,
+    "orphan_orders": 0,
+    "status": "ok"
+  },
+  "operator_checklist": [
+    {
+      "check": "Profile",
+      "status": "pass",
+      "detail": "binance-demo-spot",
+      "blocking": true
+    },
+    {
+      "check": "Credentials",
+      "status": "pass",
+      "detail": "Credentials loaded for signed checks",
+      "blocking": true
+    },
+    {
+      "check": "Connection",
+      "status": "pass",
+      "detail": "allowed",
+      "blocking": true
+    },
+    {
+      "check": "Server time",
+      "status": "pass",
+      "detail": "demo base URL/gate reachable",
+      "blocking": false
+    },
+    {
+      "check": "Account canTrade",
+      "status": "pass",
+      "detail": "ok",
+      "blocking": true
+    },
+    {
+      "check": "Clean start",
+      "status": "pass",
+      "detail": "ok",
+      "blocking": true
+    },
+    {
+      "check": "No orphan orders",
+      "status": "pass",
+      "detail": "0 orphan orders",
+      "blocking": true
+    },
+    {
+      "check": "Risk limits",
+      "status": "pass",
+      "detail": "configured",
+      "blocking": true
+    },
+    {
+      "check": "Pilot preset",
+      "status": "pass",
+      "detail": "smoke",
+      "blocking": false
+    },
+    {
+      "check": "Armed",
+      "status": "pass",
+      "detail": "armed",
+      "blocking": false
+    }
+  ],
+  "pipeline": [
+    {
+      "step": "Signal",
+      "status": "ready",
+      "timestamp_ms": "-",
+      "detail": "baseline",
+      "reference": "BUY"
+    },
+    {
+      "step": "Risk",
+      "status": "allowed",
+      "timestamp_ms": "-",
+      "detail": "risk ok",
+      "reference": "ALLOW"
+    },
+    {
+      "step": "Intent",
+      "status": "ready",
+      "timestamp_ms": "-",
+      "detail": "BUY",
+      "reference": "10"
+    },
+    {
+      "step": "Test order",
+      "status": "accepted",
+      "timestamp_ms": "-",
+      "detail": "ACCEPTED",
+      "reference": "demo-1"
+    },
+    {
+      "step": "Demo order",
+      "status": "sent",
+      "timestamp_ms": "-",
+      "detail": "NEW",
+      "reference": "1001"
+    },
+    {
+      "step": "Reconciliation",
+      "status": "ok",
+      "timestamp_ms": "-",
+      "detail": "ok",
+      "reference": "0"
+    },
+    {
+      "step": "Fill/Cancel/Reject",
+      "status": "ok",
+      "timestamp_ms": "-",
+      "detail": "ok",
+      "reference": "ok"
+    }
+  ],
+  "cancel_on_stop_status": [],
+  "orders": [],
+  "alerts": [],
+  "latest_snapshot": {
+    "credential_status": {
+      "capability": "Credentials loaded for signed checks",
+      "has_api_key": true,
+      "has_api_secret": true,
+      "profile": "binance-demo-spot"
+    },
+    "demo_account": {
+      "balances": [],
+      "can_trade": true,
+      "status": "ok"
+    },
+    "demo_connection": {
+      "armed": true,
+      "authenticated": true,
+      "base_url": "https://demo-api.binance.com/api",
+      "connected": true,
+      "gate": {
+        "checks": {
+          "demo_base_url": true
+        },
+        "reason": "allowed"
+      },
+      "profile": "binance-demo-spot"
+    },
+    "demo_pilot": {
+      "config": {
+        "max_demo_orders": 5,
+        "pilot_name": "smoke"
+      },
+      "counters": {
+        "orders": 1,
+        "rejects": 0
+      }
+    },
+    "exchange_profile": {
+      "name": "binance-demo-spot"
+    },
+    "latest_execution_result": {
+      "order_request": {
+        "client_order_id": "demo-1"
+      },
+      "response": {
+        "orderId": 1001,
+        "status": "NEW"
+      },
+      "status": "ACCEPTED"
+    },
+    "latest_risk_decision": {
+      "decision": "ALLOW",
+      "intent": {
+        "quote_size": "10",
+        "side": "BUY"
+      },
+      "reason": "risk ok"
+    },
+    "latest_signal": {
+      "model_version": "baseline",
+      "signal": "BUY"
+    },
+    "reconciliation": {
+      "failures": 0,
+      "needs_operator_action": false,
+      "orphan_orders": 0,
+      "status": "ok"
+    },
+    "resume_required": false,
+    "testnet_prechecks": {
+      "risk_limits_set": true
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "status": "ready",
+  "candidates": [
+    {
+      "command": "pytest",
+      "reason": "mixed_pass_fail"
+    }
+  ],
+  "live_trading_enabled": false
+}

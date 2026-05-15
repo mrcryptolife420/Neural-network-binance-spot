@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "proposal_id": "act-1778857460822-c1c8112b0c",
+      "title": "Metrics Compact",
+      "status": "approved",
+      "safety_class": "destructive_confirm_required",
+      "updated_at_ms": 1778857460861
+    },
+    {
+      "proposal_id": "act-1778857460813-bca9e07f54",
+      "title": "Withdraw",
+      "status": "blocked",
+      "safety_class": "forbidden",
+      "updated_at_ms": 1778857460813
+    },
+    {
+      "proposal_id": "act-1778857460805-bf34574407",
+      "title": "Metrics Compact",
+      "status": "blocked",
+      "safety_class": "destructive_confirm_required",
+      "updated_at_ms": 1778857460805
+    }
+  ],
+  "count": 3,
+  "live_trading_enabled": false,
+  "manifest_hash": "34e19b95ab2e65b2377cf4ee"
+}

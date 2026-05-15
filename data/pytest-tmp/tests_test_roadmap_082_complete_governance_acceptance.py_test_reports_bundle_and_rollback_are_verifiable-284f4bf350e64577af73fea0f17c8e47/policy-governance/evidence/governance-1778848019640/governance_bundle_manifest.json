@@ -1,0 +1,42 @@
+{
+  "bundle_id": "governance-1778848019640",
+  "summary": {
+    "decision": {
+      "decision": "promote_challenger",
+      "reasons": [
+        "challenger_leads",
+        "operator_confirmed",
+        "paper_only"
+      ],
+      "operator_confirmed": true,
+      "evidence_refs": [],
+      "live_trading_enabled": false
+    }
+  },
+  "files": [
+    {
+      "file": "ab-rollout-1778848019634-11.json",
+      "sha256": "667ef307ba665d91...bdb9441be2effaa4",
+      "sha256_parts": [
+        "667ef307ba665d91",
+        "bcadb2190f05b32e",
+        "2a9c4da3ba873116",
+        "bdb9441be2effaa4"
+      ],
+      "bytes": 1674
+    },
+    {
+      "file": "weekly_governance_report.json",
+      "sha256": "8959c0297ff7d918...1fdae888a8e75bd2",
+      "sha256_parts": [
+        "8959c0297ff7d918",
+        "1da2843b61c36b5b",
+        "78d1e7c078518077",
+        "1fdae888a8e75bd2"
+      ],
+      "bytes": 2607
+    }
+  ],
+  "verification": "sha256",
+  "live_trading_enabled": false
+}

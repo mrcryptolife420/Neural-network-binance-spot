@@ -1,0 +1,20 @@
+{
+  "status": "ok",
+  "items": [
+    {
+      "path": "sample.json",
+      "category": "state",
+      "suffix": ".json",
+      "size_bytes": 43,
+      "modified_at": 1778849857742,
+      "sha256": "b74a85e010ec63393ba3744c",
+      "redacted": true,
+      "required": false,
+      "stale": false,
+      "include_eligible": true,
+      "restore_priority": 50
+    }
+  ],
+  "warnings": [],
+  "live_trading_enabled": false
+}

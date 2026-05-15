@@ -1,0 +1,48 @@
+{
+  "proposal": {
+    "proposal_id": "act-1778849294862-58c9f56de7",
+    "title": "Diagnostics",
+    "description": "",
+    "command": {
+      "command": "diagnostics",
+      "args": [
+        "--json"
+      ],
+      "timeout_seconds": 60
+    },
+    "source": "operator_manual",
+    "category": "diagnostics",
+    "safety_class": "read_only",
+    "expected_outputs": [],
+    "required_evidence": [],
+    "preconditions": [],
+    "confirm_phrase": "",
+    "forbidden_reasons": [],
+    "related_runbook_id": "",
+    "related_incident_id": "",
+    "related_evidence_ids": [],
+    "status": "proposed",
+    "created_at_ms": 1778849294862,
+    "expires_at_ms": 0,
+    "no_auto_execute": true,
+    "live_trading_enabled": false,
+    "proposal_hash": "28695c3f189474c8693d80cd"
+  },
+  "status": "completed",
+  "decisions": [
+    "dec-1778849294880"
+  ],
+  "executions": [
+    "exec-act-1778849294862-58c9f56de7-1778849294900"
+  ],
+  "verifications": [
+    "ver-act-1778849294862-58c9f56de7-1778849294921"
+  ],
+  "updated_at_ms": 1778849294931,
+  "live_trading_enabled": false,
+  "last_event": {
+    "kind": "status",
+    "reason": "",
+    "status": "completed"
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "run_id": "",
+  "final_acceptance": "accepted",
+  "session": {
+    "session_id": "1778853508816-03e1f2a4",
+    "mode": "demo",
+    "symbol": "BTCUSDT",
+    "interval": "1m",
+    "status": "stopped",
+    "pnl": "0",
+    "max_drawdown": "0"
+  },
+  "pilot_run": {},
+  "state_transitions": [],
+  "runner": {},
+  "start_gate": {},
+  "stop_gate": {
+    "cancel_status": [
+      {
+        "status": "cancelled",
+        "response": {
+          "symbol": "BTCUSDT",
+          "orderId": 99,
+          "status": "CANCELED"
+        }
+      }
+    ],
+    "final_state": "completed",
+    "acceptance": {
+      "no_open_orders": true,
+      "no_orphan_orders": true,
+      "reconciliation_ok": false,
+      "resume_required": false
+    }
+  },
+  "operator_checklist": [
+    {
+      "check": "Profile",
+      "status": "fail",
+      "detail": "unknown",
+      "blocking": true
+    },
+    {
+      "check": "Credentials",
+      "status": "fail",
+      "detail": "not loaded",
+      "blocking": true
+    },
+    {
+      "check": "Connection",
+      "status": "fail",
+      "detail": "not tested",
+      "blocking": true
+    },
+    {
+      "check": "Server time",
+      "status": "warn",
+      "detail": "test connection first",
+      "blocking": false
+    },
+    {
+      "check": "Account canTrade",
+      "status": "fail",
+      "detail": "not synced",
+      "blocking": true
+    },
+    {
+      "check": "Clean start",
+      "status": "pass",
+      "detail": "not-run",
+      "blocking": true
+    },
+    {
+      "check": "No orphan orders",
+      "status": "pass",
+      "detail": "0 orphan orders",
+      "blocking": true
+    },
+    {
+      "check": "Risk limits",
+      "status": "fail",
+      "detail": "missing limits",
+      "blocking": true
+    },
+    {
+      "check": "Pilot preset",
+      "status": "warn",
+      "detail": "not selected",
+      "blocking": false
+    },
+    {
+      "check": "Armed",
+      "status": "warn",
+      "detail": "explicit arm required",
+      "blocking": false
+    }
+  ],
+  "pipeline": [
+    {
+      "step": "Signal",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "-",
+      "reference": "-"
+    },
+    {
+      "step": "Risk",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "-",
+      "reference": "-"
+    },
+    {
+      "step": "Intent",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "-",
+      "reference": "-"
+    },
+    {
+      "step": "Test order",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "-",
+      "reference": "-"
+    },
+    {
+      "step": "Demo order",
+      "status": "idle",
+      "timestamp_ms": "-",
+      "detail": "-",
+      "reference": "-"
+    },
+    {
+      "step": "Reconciliation",
+      "status": "not-run",
+      "timestamp_ms": "-",
+      "detail": "not-run",
+      "reference": "0"
+    },
+    {
+      "step": "Fill/Cancel/Reject",
+      "status": "not-run",
+      "timestamp_ms": "-",
+      "detail": "-",
+      "reference": "not-run"
+    }
+  ],
+  "account_before_after": {
+    "latest_account": {},
+    "paper_account": {}
+  },
+  "order_lifecycle": [],
+  "reconciliation": {
+    "status": "needs_operator_action",
+    "known_orders": 0,
+    "open_orders": 1,
+    "orphan_orders": 1,
+    "failures": 0,
+    "events": [
+      {
+        "type": "ORPHAN_OPEN",
+        "client_order_id": "known-1",
+        "status": "NEW"
+      }
+    ],
+    "checked_at_ms": 1778853508819,
+    "needs_operator_action": true
+  },
+  "orders": [
+    {
+      "checked_at_ms": 1778853508819,
+      "events": [
+        {
+          "client_order_id": "known-1",
+          "status": "NEW",
+          "type": "ORPHAN_OPEN"
+        }
+      ],
+      "failures": 0,
+      "known_orders": 0,
+      "needs_operator_action": true,
+      "open_orders": 1,
+      "orphan_orders": 1,
+      "status": "needs_operator_action",
+      "type": "reconciliation"
+    }
+  ],
+  "alerts": [
+    {
+      "action": "observe",
+      "created_at_ms": 1778853508817,
+      "message": "runtime created",
+      "metadata": {},
+      "name": "runtime_created",
+      "severity": "info"
+    }
+  ]
+}

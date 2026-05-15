@@ -1,0 +1,19 @@
+{
+  "status": "ok",
+  "created_at_ms": 1778853380154,
+  "files": [
+    {
+      "path": "files\\operator_docs_index.json",
+      "sha256": "b8393b2ecf0a090429e28267915b234d"
+    },
+    {
+      "path": "files\\operator_training_evidence_manifest.json",
+      "sha256": "9b96641cc262246cce0c325f4dbe463e"
+    },
+    {
+      "path": "files\\operator_docs_index.json",
+      "sha256": "b8393b2ecf0a090429e28267915b234d"
+    }
+  ],
+  "live_trading_enabled": false
+}

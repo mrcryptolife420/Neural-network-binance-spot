@@ -1,0 +1,83 @@
+{
+  "status": "ok",
+  "run_id": "1778865000081",
+  "files": [
+    {
+      "name": "ux_backlog",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_107_dashboard_v2_workflow_ux_acceptance.py_test_streamlit_fallback_deprecation_and_workflow_evidence-60fe909b25db439196bb22665320a8e3\\data\\dashboard-v2\\workflow-evidence\\1778865000081\\files\\ux_backlog.json",
+      "sha256_16": "3933ba107443a7c3"
+    },
+    {
+      "name": "journey_map",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_107_dashboard_v2_workflow_ux_acceptance.py_test_streamlit_fallback_deprecation_and_workflow_evidence-60fe909b25db439196bb22665320a8e3\\data\\dashboard-v2\\workflow-evidence\\1778865000081\\files\\journey_map.json",
+      "sha256_16": "7ef7b75387a374f3"
+    },
+    {
+      "name": "guided_actions",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_107_dashboard_v2_workflow_ux_acceptance.py_test_streamlit_fallback_deprecation_and_workflow_evidence-60fe909b25db439196bb22665320a8e3\\data\\dashboard-v2\\workflow-evidence\\1778865000081\\files\\guided_actions.json",
+      "sha256_16": "2321ce24fa2aaf06"
+    },
+    {
+      "name": "start_wizard",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_107_dashboard_v2_workflow_ux_acceptance.py_test_streamlit_fallback_deprecation_and_workflow_evidence-60fe909b25db439196bb22665320a8e3\\data\\dashboard-v2\\workflow-evidence\\1778865000081\\files\\start_wizard.json",
+      "sha256_16": "4692c85352b09013"
+    },
+    {
+      "name": "demo_spot_flow",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_107_dashboard_v2_workflow_ux_acceptance.py_test_streamlit_fallback_deprecation_and_workflow_evidence-60fe909b25db439196bb22665320a8e3\\data\\dashboard-v2\\workflow-evidence\\1778865000081\\files\\demo_spot_flow.json",
+      "sha256_16": "57f309824f481f17"
+    },
+    {
+      "name": "paper_session_flow",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_107_dashboard_v2_workflow_ux_acceptance.py_test_streamlit_fallback_deprecation_and_workflow_evidence-60fe909b25db439196bb22665320a8e3\\data\\dashboard-v2\\workflow-evidence\\1778865000081\\files\\paper_session_flow.json",
+      "sha256_16": "6ef2307402a52a7b"
+    },
+    {
+      "name": "actionable_issues",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_107_dashboard_v2_workflow_ux_acceptance.py_test_streamlit_fallback_deprecation_and_workflow_evidence-60fe909b25db439196bb22665320a8e3\\data\\dashboard-v2\\workflow-evidence\\1778865000081\\files\\actionable_issues.json",
+      "sha256_16": "185141d1121383e2"
+    },
+    {
+      "name": "navigation_map",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_107_dashboard_v2_workflow_ux_acceptance.py_test_streamlit_fallback_deprecation_and_workflow_evidence-60fe909b25db439196bb22665320a8e3\\data\\dashboard-v2\\workflow-evidence\\1778865000081\\files\\navigation_map.json",
+      "sha256_16": "77ea35464748fbfa"
+    },
+    {
+      "name": "command_palette",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_107_dashboard_v2_workflow_ux_acceptance.py_test_streamlit_fallback_deprecation_and_workflow_evidence-60fe909b25db439196bb22665320a8e3\\data\\dashboard-v2\\workflow-evidence\\1778865000081\\files\\command_palette.json",
+      "sha256_16": "bfbe4328f4064d5d"
+    },
+    {
+      "name": "status_language",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_107_dashboard_v2_workflow_ux_acceptance.py_test_streamlit_fallback_deprecation_and_workflow_evidence-60fe909b25db439196bb22665320a8e3\\data\\dashboard-v2\\workflow-evidence\\1778865000081\\files\\status_language.json",
+      "sha256_16": "372edb9cf5093105"
+    },
+    {
+      "name": "onboarding",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_107_dashboard_v2_workflow_ux_acceptance.py_test_streamlit_fallback_deprecation_and_workflow_evidence-60fe909b25db439196bb22665320a8e3\\data\\dashboard-v2\\workflow-evidence\\1778865000081\\files\\onboarding.json",
+      "sha256_16": "2858fd45cf3d871b"
+    },
+    {
+      "name": "ux_metrics",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_107_dashboard_v2_workflow_ux_acceptance.py_test_streamlit_fallback_deprecation_and_workflow_evidence-60fe909b25db439196bb22665320a8e3\\data\\dashboard-v2\\workflow-evidence\\1778865000081\\files\\ux_metrics.json",
+      "sha256_16": "21b1d1192f676e86"
+    },
+    {
+      "name": "uat_feedback_execution",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_107_dashboard_v2_workflow_ux_acceptance.py_test_streamlit_fallback_deprecation_and_workflow_evidence-60fe909b25db439196bb22665320a8e3\\data\\dashboard-v2\\workflow-evidence\\1778865000081\\files\\uat_feedback_execution.json",
+      "sha256_16": "88b8194b8ccd71cc"
+    },
+    {
+      "name": "streamlit_deprecation_readiness",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_107_dashboard_v2_workflow_ux_acceptance.py_test_streamlit_fallback_deprecation_and_workflow_evidence-60fe909b25db439196bb22665320a8e3\\data\\dashboard-v2\\workflow-evidence\\1778865000081\\files\\streamlit_deprecation_readiness.json",
+      "sha256_16": "964e4ec51e9a3661"
+    },
+    {
+      "name": "no_live_proof",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_107_dashboard_v2_workflow_ux_acceptance.py_test_streamlit_fallback_deprecation_and_workflow_evidence-60fe909b25db439196bb22665320a8e3\\data\\dashboard-v2\\workflow-evidence\\1778865000081\\files\\no_live_proof.json",
+      "sha256_16": "cc322fdd9204a8a1"
+    }
+  ],
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

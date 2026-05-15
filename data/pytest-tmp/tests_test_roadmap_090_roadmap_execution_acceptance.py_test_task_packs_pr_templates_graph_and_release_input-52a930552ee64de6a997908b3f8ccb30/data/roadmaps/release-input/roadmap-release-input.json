@@ -1,0 +1,24 @@
+{
+  "status": "ready",
+  "completed": [
+    {
+      "number": 89,
+      "title": "Release",
+      "path": "Voltooid docs/089-roadmap-release.md"
+    }
+  ],
+  "open": [
+    {
+      "number": 90,
+      "title": "Execution",
+      "path": "Roadmap docs/090-roadmap-execution.md"
+    }
+  ],
+  "dashboard_changes": [],
+  "migration_changes": [],
+  "validation_commands": [
+    "python -m pytest -q",
+    "python -m binance_spot_bot.cli check-all --skip-tests --json"
+  ],
+  "live_trading_enabled": false
+}

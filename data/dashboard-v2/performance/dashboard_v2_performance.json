@@ -1,0 +1,159 @@
+{
+  "status": "ok",
+  "metrics": {
+    "backend_startup_ms": null,
+    "api_health_ms": null,
+    "api_config_ms": null,
+    "api_pages_ms": null,
+    "api_snapshot_ms": null,
+    "websocket_connect_ms": null,
+    "websocket_heartbeat_ms": null,
+    "snapshot_serialization_ms": null,
+    "snapshot_payload_bytes": null,
+    "frontend_initial_load_ms": null,
+    "route_navigation_ms": null,
+    "chart_update_ms": null,
+    "memory_best_effort_mb": null,
+    "cpu_best_effort_pct": null
+  },
+  "budgets": {
+    "snapshot_payload_bytes": 500000,
+    "api_snapshot_ms": 500,
+    "chart_update_ms": 120
+  },
+  "baseline": {
+    "status": "warn",
+    "json": "data\\dashboard-v2\\performance\\baseline.json",
+    "markdown": "data\\dashboard-v2\\performance\\baseline.md",
+    "report": {
+      "status": "warn",
+      "baseline": {
+        "samples": [
+          {
+            "name": "backend_startup_ms",
+            "value": null,
+            "unit": "ms",
+            "status": "unknown",
+            "note": "optional sample missing"
+          },
+          {
+            "name": "api_health_ms",
+            "value": null,
+            "unit": "ms",
+            "status": "unknown",
+            "note": "optional sample missing"
+          },
+          {
+            "name": "api_config_ms",
+            "value": null,
+            "unit": "ms",
+            "status": "unknown",
+            "note": "optional sample missing"
+          },
+          {
+            "name": "api_pages_ms",
+            "value": null,
+            "unit": "ms",
+            "status": "unknown",
+            "note": "optional sample missing"
+          },
+          {
+            "name": "api_snapshot_ms",
+            "value": null,
+            "unit": "ms",
+            "status": "unknown",
+            "note": "optional sample missing"
+          },
+          {
+            "name": "websocket_connect_ms",
+            "value": null,
+            "unit": "ms",
+            "status": "unknown",
+            "note": "optional sample missing"
+          },
+          {
+            "name": "websocket_heartbeat_ms",
+            "value": null,
+            "unit": "ms",
+            "status": "unknown",
+            "note": "optional sample missing"
+          },
+          {
+            "name": "snapshot_serialization_ms",
+            "value": null,
+            "unit": "ms",
+            "status": "unknown",
+            "note": "optional sample missing"
+          },
+          {
+            "name": "snapshot_payload_bytes",
+            "value": null,
+            "unit": "bytes",
+            "status": "unknown",
+            "note": "optional sample missing"
+          },
+          {
+            "name": "frontend_initial_load_ms",
+            "value": null,
+            "unit": "ms",
+            "status": "unknown",
+            "note": "optional sample missing"
+          },
+          {
+            "name": "route_navigation_ms",
+            "value": null,
+            "unit": "ms",
+            "status": "unknown",
+            "note": "optional sample missing"
+          },
+          {
+            "name": "chart_update_ms",
+            "value": null,
+            "unit": "ms",
+            "status": "unknown",
+            "note": "optional sample missing"
+          },
+          {
+            "name": "memory_best_effort_mb",
+            "value": null,
+            "unit": "mb",
+            "status": "unknown",
+            "note": "optional sample missing"
+          },
+          {
+            "name": "cpu_best_effort_pct",
+            "value": null,
+            "unit": "pct",
+            "status": "unknown",
+            "note": "optional sample missing"
+          }
+        ],
+        "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+        "live_trading_enabled": false,
+        "generated_at_ms": 1778867142602,
+        "warnings": [
+          "backend_startup_ms: optional sample missing",
+          "api_health_ms: optional sample missing",
+          "api_config_ms: optional sample missing",
+          "api_pages_ms: optional sample missing",
+          "api_snapshot_ms: optional sample missing",
+          "websocket_connect_ms: optional sample missing",
+          "websocket_heartbeat_ms: optional sample missing",
+          "snapshot_serialization_ms: optional sample missing",
+          "snapshot_payload_bytes: optional sample missing",
+          "frontend_initial_load_ms: optional sample missing",
+          "route_navigation_ms: optional sample missing",
+          "chart_update_ms: optional sample missing",
+          "memory_best_effort_mb: optional sample missing",
+          "cpu_best_effort_pct: optional sample missing"
+        ]
+      },
+      "browser_console_errors": 0,
+      "recommendations": [
+        "Collect missing optional browser/static metrics"
+      ]
+    }
+  },
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

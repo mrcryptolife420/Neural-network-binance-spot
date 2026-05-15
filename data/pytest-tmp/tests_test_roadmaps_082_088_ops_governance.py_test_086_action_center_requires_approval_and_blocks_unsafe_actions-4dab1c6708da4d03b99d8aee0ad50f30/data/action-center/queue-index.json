@@ -1,0 +1,14 @@
+{
+  "items": [
+    {
+      "proposal_id": "act-1778851569741-a948acb900",
+      "title": "export_report",
+      "status": "approved",
+      "safety_class": "safe_generate_artifact",
+      "updated_at_ms": 1778851569769
+    }
+  ],
+  "count": 1,
+  "live_trading_enabled": false,
+  "manifest_hash": "8ab0c41f0821b3c6675ecccb"
+}

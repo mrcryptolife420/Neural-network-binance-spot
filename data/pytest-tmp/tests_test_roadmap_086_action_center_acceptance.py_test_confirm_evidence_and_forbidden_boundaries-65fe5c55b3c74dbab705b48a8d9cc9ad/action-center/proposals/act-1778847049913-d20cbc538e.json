@@ -1,0 +1,39 @@
+{
+  "proposal": {
+    "proposal_id": "act-1778847049913-d20cbc538e",
+    "title": "Withdraw",
+    "description": "",
+    "command": {
+      "command": "withdraw",
+      "args": [
+        "funds"
+      ],
+      "timeout_seconds": 60
+    },
+    "source": "operator_manual",
+    "category": "diagnostics",
+    "safety_class": "forbidden",
+    "expected_outputs": [],
+    "required_evidence": [],
+    "preconditions": [],
+    "confirm_phrase": "",
+    "forbidden_reasons": [
+      "forbidden_safety_class"
+    ],
+    "related_runbook_id": "",
+    "related_incident_id": "",
+    "related_evidence_ids": [],
+    "status": "blocked_unsafe_action",
+    "created_at_ms": 1778847049913,
+    "expires_at_ms": 0,
+    "no_auto_execute": true,
+    "live_trading_enabled": false,
+    "proposal_hash": "d23f018866cea53a161f76d8"
+  },
+  "status": "blocked",
+  "decisions": [],
+  "executions": [],
+  "verifications": [],
+  "updated_at_ms": 1778847049913,
+  "live_trading_enabled": false
+}

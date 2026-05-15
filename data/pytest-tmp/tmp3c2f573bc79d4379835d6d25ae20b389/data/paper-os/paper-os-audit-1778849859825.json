@@ -1,0 +1,70 @@
+{
+  "status": "pass",
+  "blockers": [],
+  "roadmaps": {
+    "status": "ready",
+    "open_roadmaps": 1,
+    "priorities": [
+      {
+        "number": 76,
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp3c2f573bc79d4379835d6d25ae20b389\\Roadmap docs\\076-roadmap.md",
+        "group": "data_strategy_foundation",
+        "priority": 86,
+        "reason": "basis voor alle latere strategy, model en dashboard evidence"
+      }
+    ],
+    "completion_gate": [
+      "tests_pass",
+      "evidence_written",
+      "moved_to_voltooid_docs"
+    ]
+  },
+  "knowledge_graph": {
+    "status": "ready",
+    "nodes": {
+      "src": 1,
+      "tests": 1,
+      "docs": 0
+    },
+    "hotspots": [
+      "runtime.py"
+    ],
+    "duplicate_work_guard": "reuse_existing_modules_before_new_files"
+  },
+  "ops": {
+    "status": "ready",
+    "jobs": [
+      {
+        "name": "daily_paper_report",
+        "cadence": "daily",
+        "safe": true
+      },
+      {
+        "name": "evidence_scorecard",
+        "cadence": "daily",
+        "safe": true
+      },
+      {
+        "name": "support_bundle_preview",
+        "cadence": "weekly",
+        "safe": true
+      },
+      {
+        "name": "roadmap_completion_gate",
+        "cadence": "on_change",
+        "safe": true
+      }
+    ],
+    "execution": "local_only"
+  },
+  "no_live_contract": {
+    "live_trading": "disabled",
+    "signed_order_endpoints": "blocked",
+    "withdrawals": "blocked",
+    "allowed_modes": [
+      "demo",
+      "paper",
+      "testnet-readiness"
+    ]
+  }
+}

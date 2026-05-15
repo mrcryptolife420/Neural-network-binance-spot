@@ -1,0 +1,19 @@
+{
+  "dataset": {
+    "symbol": "BTCUSDT",
+    "interval": "1m",
+    "train_start_ms": 1,
+    "train_end_ms": 2,
+    "validation_end_ms": 3,
+    "test_end_ms": 4
+  },
+  "candidate": {
+    "alias": "candidate",
+    "dataset_id": "dataset",
+    "baseline_metric": "sharpe",
+    "champion_auto_promote": false
+  },
+  "metrics": {
+    "status": "planned"
+  }
+}

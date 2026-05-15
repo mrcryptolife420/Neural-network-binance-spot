@@ -1,0 +1,18 @@
+{
+  "status": "ok",
+  "backlog": {
+    "status": "ok",
+    "items": [],
+    "warnings": [
+      "missing optional artifact: data/dashboard-v2/uat/feedback.json",
+      "missing optional artifact: data/dashboard-v2/cutover/readiness.json",
+      "missing optional artifact: data/dashboard-v2/browser-smoke/matrix.json",
+      "missing optional artifact: data/dashboard-v2/performance/budget.json",
+      "missing optional artifact: data/docs/consistency.json"
+    ],
+    "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+    "live_trading_enabled": false
+  },
+  "generated_at_ms": 1778859561071,
+  "live_trading_enabled": false
+}

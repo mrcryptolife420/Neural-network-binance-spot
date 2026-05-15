@@ -1,0 +1,39 @@
+{
+  "status": "ready",
+  "url": "http://127.0.0.1:8800",
+  "host": "127.0.0.1",
+  "port": 8800,
+  "no_browser": true,
+  "safe_env": {
+    "LIVE_TRADING_ENABLED": "false",
+    "KILL_SWITCH": "true"
+  },
+  "static_build": {
+    "status": "ok",
+    "build_dir": "src\\binance_spot_bot\\dashboard_v2\\static",
+    "index_exists": true,
+    "manifest_exists": true,
+    "asset_count": 4,
+    "external_refs": [],
+    "warnings": [],
+    "hard_blockers": [],
+    "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+    "live_trading_enabled": false,
+    "manifest": {
+      "index.html": {
+        "file": "assets/index-DQf5xibD.js",
+        "name": "index",
+        "src": "index.html",
+        "isEntry": true,
+        "css": [
+          "assets/index-CsabaHAz.css"
+        ]
+      }
+    }
+  },
+  "startup_health_wait": true,
+  "session_file": "data\\dashboard-v2\\launcher\\last-launch.json",
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false,
+  "created_at_ms": 1778867142953
+}

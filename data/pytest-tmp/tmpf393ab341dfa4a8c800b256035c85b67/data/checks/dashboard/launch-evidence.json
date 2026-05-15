@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-15T15:59:08.531599+00:00",
+  "status": "planned",
+  "url": "http://127.0.0.1:8840",
+  "port": 8840,
+  "pid": null,
+  "log_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmpf393ab341dfa4a8c800b256035c85b67\\data\\logs\\control-center.log",
+  "error_log_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmpf393ab341dfa4a8c800b256035c85b67\\data\\logs\\control-center.err.log",
+  "live_trading_enabled": false,
+  "kill_switch": true,
+  "preflight_status": "not_run"
+}

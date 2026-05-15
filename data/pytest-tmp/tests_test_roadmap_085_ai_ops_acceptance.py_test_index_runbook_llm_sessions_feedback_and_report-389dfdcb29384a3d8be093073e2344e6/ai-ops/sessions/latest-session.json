@@ -1,0 +1,113 @@
+{
+  "question": "toon bot status",
+  "answer": {
+    "status": "answered",
+    "summary": "Lokale context bevat 5 bron(nen). Intent: health_summary. Ontbrekende context: missing:dashboard_smoke, missing:metrics_manifest, missing:governance_reminders.",
+    "answer": "Lokale context bevat 5 bron(nen). Intent: health_summary. Ontbrekende context: missing:dashboard_smoke, missing:metrics_manifest, missing:governance_reminders.",
+    "intent": {
+      "intent": "health_summary",
+      "confidence": 0.82,
+      "reason": "matched keywords for health_summary",
+      "forbidden": false,
+      "live_trading_enabled": false
+    },
+    "evidence": [
+      "dashboard_smoke",
+      "metrics_manifest",
+      "governance_reminders",
+      "report_index",
+      "support_bundle"
+    ],
+    "root_cause_hypothesis": "Based on local redacted artifacts only; inspect listed sources for exact details.",
+    "recommended_next_safe_action": "morning-check",
+    "recommended_runbook": {
+      "status": "ready",
+      "runbook": "morning-check",
+      "matching_reason": "matched local question to morning-check",
+      "first_steps": [
+        "Run health score",
+        "Review local ops snapshot"
+      ],
+      "expected_artifacts": [
+        "local report",
+        "support bundle or evidence manifest"
+      ],
+      "urgency": "info",
+      "safe_commands": [
+        "operator-health-score --json",
+        "local-ops-snapshot --json"
+      ],
+      "sources": [
+        "operator_runbooks"
+      ],
+      "live_trading_enabled": false
+    },
+    "command_proposal": {
+      "status": "ready",
+      "command": "python -m binance_spot_bot.cli operator-health-score --json",
+      "args": [
+        "--json"
+      ],
+      "safety_class": "review_required",
+      "reason": "intent:health_summary",
+      "expected_output": "local redacted JSON/report output",
+      "requires_confirmation": false,
+      "confirm_phrase": "",
+      "forbidden_if": [],
+      "related_runbook": "morning-check",
+      "no_auto_execute": true,
+      "live_trading_enabled": false
+    },
+    "confidence": 0.82,
+    "missing_context": [
+      "missing:dashboard_smoke",
+      "missing:metrics_manifest",
+      "missing:governance_reminders",
+      "missing:report_index",
+      "missing:support_bundle"
+    ],
+    "sources": [
+      "dashboard_smoke",
+      "metrics_manifest",
+      "governance_reminders",
+      "report_index",
+      "support_bundle"
+    ],
+    "safety_note": "AI OPS ASSISTANT - READ ONLY. Command proposals are not executed.",
+    "live_trading_enabled": false,
+    "mode": "rules_only",
+    "tools_enabled": false
+  },
+  "sources": [
+    "dashboard_smoke",
+    "metrics_manifest",
+    "governance_reminders",
+    "report_index",
+    "support_bundle"
+  ],
+  "safety_decisions": {
+    "intent": "health_summary",
+    "confidence": 0.82,
+    "reason": "matched keywords for health_summary",
+    "forbidden": false,
+    "live_trading_enabled": false
+  },
+  "command_proposals": {
+    "status": "ready",
+    "command": "python -m binance_spot_bot.cli operator-health-score --json",
+    "args": [
+      "--json"
+    ],
+    "safety_class": "review_required",
+    "reason": "intent:health_summary",
+    "expected_output": "local redacted JSON/report output",
+    "requires_confirmation": false,
+    "confirm_phrase": "",
+    "forbidden_if": [],
+    "related_runbook": "morning-check",
+    "no_auto_execute": true,
+    "live_trading_enabled": false
+  },
+  "timestamp_ms": 1778853864250,
+  "live_trading_enabled": false
+}

@@ -1,0 +1,8 @@
+{
+  "command": "pytest",
+  "status": "ok",
+  "returncode": 0,
+  "duration_ms": 12,
+  "timestamp_ms": 1778851568102,
+  "live_trading_enabled": false
+}

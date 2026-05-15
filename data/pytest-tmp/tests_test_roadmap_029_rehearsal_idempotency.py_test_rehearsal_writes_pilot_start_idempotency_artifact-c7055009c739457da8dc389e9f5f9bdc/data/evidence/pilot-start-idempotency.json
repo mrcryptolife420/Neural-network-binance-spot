@@ -1,0 +1,9 @@
+{
+  "status": "ok",
+  "first_run_id": "1778865593653-btcusdt-smoke",
+  "second_run_id": "1778865593653-btcusdt-smoke",
+  "same_run_id": true,
+  "state": "running",
+  "invalid_running_to_ready_transition": false,
+  "live_trading_enabled": false
+}

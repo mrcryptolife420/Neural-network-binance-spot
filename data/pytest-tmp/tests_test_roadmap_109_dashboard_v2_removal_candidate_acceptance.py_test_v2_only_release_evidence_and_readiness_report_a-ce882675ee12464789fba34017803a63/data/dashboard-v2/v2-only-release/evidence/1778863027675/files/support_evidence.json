@@ -1,0 +1,9 @@
+{
+  "status": "ok",
+  "streamlit_required": false,
+  "support_bundle": "ok",
+  "evidence_manifest": "ok",
+  "redaction_self_test": "ok",
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

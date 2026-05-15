@@ -1,0 +1,10 @@
+{
+  "action": "preview",
+  "status": "BLOCKED",
+  "reason": "order notional below NOTIONAL minNotional",
+  "preview": null,
+  "response": null,
+  "lifecycle": null,
+  "evidence_path": "",
+  "live_trading_enabled": false
+}

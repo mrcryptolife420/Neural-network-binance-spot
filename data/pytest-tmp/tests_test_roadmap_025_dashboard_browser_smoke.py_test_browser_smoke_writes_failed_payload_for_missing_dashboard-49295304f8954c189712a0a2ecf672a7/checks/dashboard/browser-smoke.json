@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-05-15T13:01:21.865235+00:00",
+  "status": "failed",
+  "url": "http://127.0.0.1:9",
+  "browser_mode": "playwright",
+  "seconds": 1,
+  "checks": [
+    {
+      "name": "browser:playwright",
+      "status": "failed",
+      "message": "Page.goto: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/\nCall log:\n  - navigating to \"http://127.0.0.1:9/\", waiting until \"networkidle\"\n"
+    }
+  ],
+  "screenshots": {},
+  "live_trading_enabled": false
+}

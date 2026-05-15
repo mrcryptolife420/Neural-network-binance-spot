@@ -1,0 +1,16 @@
+{
+  "timestamp_ms": 1778846774361,
+  "runner_status": "stopping",
+  "last_command": "unknown",
+  "command": {
+    "command_id": "1778846774233-unknown",
+    "type": "unknown",
+    "created_at_ms": 1778846774233,
+    "status": "ignored",
+    "payload": {},
+    "processed_at_ms": 1778846774359,
+    "result": {
+      "reason": "unsupported command"
+    }
+  }
+}

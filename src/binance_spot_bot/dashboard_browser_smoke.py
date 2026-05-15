@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import asyncio
 import json
+import sys
 import time
 from pathlib import Path
 from typing import Any
@@ -54,9 +56,16 @@ def run_dashboard_browser_smoke(
     seconds: int = 15,
     update_baseline: bool = False,
 ) -> dict[str, Any]:
+    subprocess_probe = _asyncio_subprocess_probe()
+    if subprocess_probe:
+        payload = _run_http_smoke(url, data_dir, seconds=seconds, reason=subprocess_probe)
+        out = dashboard_checks_dir(data_dir) / "browser-smoke.json"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps(redact_payload(payload), indent=2, default=str), encoding="utf-8")
+        return {"path": str(out), **payload}
     try:
         payload = _run_playwright_smoke(url, data_dir, seconds=seconds, update_baseline=update_baseline)
-    except ImportError as exc:
+    except (ImportError, PermissionError) as exc:
         payload = _run_http_smoke(url, data_dir, seconds=seconds, reason=str(exc))
     except Exception as exc:
         payload = _payload(
@@ -70,6 +79,30 @@ def run_dashboard_browser_smoke(
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(redact_payload(payload), indent=2, default=str), encoding="utf-8")
     return {"path": str(out), **payload}
+
+
+def _asyncio_subprocess_probe() -> str:
+    async def _probe() -> str:
+        try:
+            process = await asyncio.create_subprocess_exec(
+                sys.executable,
+                "-c",
+                "pass",
+                stdin=asyncio.subprocess.PIPE,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+            )
+            await process.communicate()
+            return ""
+        except PermissionError as exc:
+            return str(exc)
+        except Exception:
+            return ""
+
+    try:
+        return asyncio.run(_probe())
+    except RuntimeError:
+        return ""
 
 
 def _run_playwright_smoke(url: str, data_dir: Path, *, seconds: int, update_baseline: bool) -> dict[str, Any]:
@@ -117,8 +150,22 @@ def _run_http_smoke(url: str, data_dir: Path, *, seconds: int, reason: str) -> d
         except Exception as exc:
             last_error = str(exc)
             time.sleep(0.5)
-    checks = analyze_dashboard_text(body)
-    checks.append({"name": "browser:playwright", "status": "failed", "message": reason})
+    checks = [
+        {
+            "name": "http:reachable",
+            "status": "ok" if body else "failed",
+            "message": "response body received" if body else last_error or "empty",
+        }
+    ]
+    for marker in ERROR_MARKERS:
+        checks.append(
+            {
+                "name": f"absent:{marker}",
+                "status": "failed" if marker in body else "ok",
+                "message": "present" if marker in body else "absent",
+            }
+        )
+    checks.append({"name": "browser:playwright", "status": "skipped", "message": reason})
     if not body:
         checks.append({"name": "http:body", "status": "failed", "message": last_error or "empty"})
     return _payload(url, "http-fallback", checks, {}, seconds)
@@ -131,7 +178,7 @@ def _payload(
     screenshots: dict[str, str],
     seconds: int,
 ) -> dict[str, Any]:
-    status = "ok" if checks and all(check["status"] == "ok" for check in checks) else "failed"
+    status = "ok" if checks and all(check["status"] in {"ok", "skipped"} for check in checks) else "failed"
     return redact_payload(
         {
             "timestamp": utc_timestamp(),

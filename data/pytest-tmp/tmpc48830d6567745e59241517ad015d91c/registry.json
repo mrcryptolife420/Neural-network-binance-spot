@@ -1,0 +1,30 @@
+{
+  "aliases": {
+    "candidate": "model-1778865163058-9b15e7"
+  },
+  "models": [
+    {
+      "alias": "candidate",
+      "artifact_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmpc48830d6567745e59241517ad015d91c\\model-1778865163058-9b15e7\\model.json",
+      "created_at_ms": 1778865163059,
+      "dataset_id": "demo",
+      "feature_schema_hash": "unknown",
+      "feature_set_version": "features-v1",
+      "manifest_path": "",
+      "metrics": {
+        "rows": 55
+      },
+      "model_card_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmpc48830d6567745e59241517ad015d91c\\model-1778865163058-9b15e7\\model-card.json",
+      "model_id": "model-1778865163058-9b15e7",
+      "model_type": "tiny-neural-signal",
+      "previous_champion_id": "",
+      "promotion_decision": {},
+      "role": "candidate",
+      "status": "candidate",
+      "test_range": "demo-test",
+      "train_range": "demo-train",
+      "validation_range": "demo-validation",
+      "walkforward_report_path": ""
+    }
+  ]
+}

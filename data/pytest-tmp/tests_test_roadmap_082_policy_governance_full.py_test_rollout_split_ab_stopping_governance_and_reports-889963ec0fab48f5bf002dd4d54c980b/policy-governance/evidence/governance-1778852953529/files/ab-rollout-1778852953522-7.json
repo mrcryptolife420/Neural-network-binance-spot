@@ -1,0 +1,66 @@
+{
+  "status": "evaluated",
+  "experiment_id": "ab-rollout-1778852953522-7",
+  "experiment_type": "champion_challenger",
+  "rollout_id": "rollout-1778852953522",
+  "seed": 7,
+  "metrics": {
+    "champion": {
+      "observations": 1,
+      "pnl": 1.0,
+      "net_pnl": 1.0,
+      "drawdown": 1.0,
+      "risk_adjusted_ret": 0.5,
+      "trade_count": 1,
+      "blocked_rate": 0.0,
+      "conflict_rate": 0.0,
+      "data_quality_warnings": 0,
+      "liquidity_penalty": 0.0,
+      "turnover": 0.0,
+      "rotation_churn": 0.0,
+      "watchdog_alerts": 0,
+      "policy_violations": 0,
+      "last_updated_ms": 1778852953522
+    },
+    "challenger": {
+      "observations": 1,
+      "pnl": 3.0,
+      "net_pnl": 3.0,
+      "drawdown": 1.0,
+      "risk_adjusted_ret": 1.5,
+      "trade_count": 1,
+      "blocked_rate": 0.0,
+      "conflict_rate": 0.0,
+      "data_quality_warnings": 0,
+      "liquidity_penalty": 0.0,
+      "turnover": 0.0,
+      "rotation_churn": 0.0,
+      "watchdog_alerts": 0,
+      "policy_violations": 0,
+      "last_updated_ms": 1778852953522
+    }
+  },
+  "decision": "challenger_leads",
+  "rows": [
+    {
+      "symbol": "BTCUSDT",
+      "variant": "champion",
+      "pnl": "1",
+      "drawdown": "1",
+      "signed_endpoint_used": false
+    },
+    {
+      "symbol": "ETHUSDT",
+      "variant": "challenger",
+      "pnl": "3",
+      "drawdown": "1",
+      "signed_endpoint_used": false
+    }
+  ],
+  "guardrails": {
+    "paper_only": true,
+    "signed_endpoint_used": false,
+    "account_endpoint_used": false
+  },
+  "live_trading_enabled": false
+}

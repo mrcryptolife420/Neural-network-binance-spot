@@ -1,0 +1,91 @@
+{
+  "status": "blocked",
+  "reason": "live trading remains gated; this is a production-readiness simulation only",
+  "paper_os_status": "ok",
+  "score": {
+    "status": "ok",
+    "score": 100,
+    "grade": "A",
+    "category_scores": {
+      "safety": 20,
+      "tests": 12,
+      "runtime": 12,
+      "dashboard": 10,
+      "evidence": 10,
+      "traceability": 10,
+      "backup_release": 8,
+      "performance": 8,
+      "docs": 5,
+      "operator_signoff": 5
+    },
+    "hard_failures": [],
+    "recommendations": [
+      "maintain paper-only operating discipline"
+    ],
+    "live_trading_enabled": false
+  },
+  "checks": [
+    {
+      "name": "no_live_proof",
+      "category": "safety",
+      "status": "ok",
+      "hard_fail": true
+    },
+    {
+      "name": "safety_invariants",
+      "category": "safety",
+      "status": "ok",
+      "hard_fail": true
+    },
+    {
+      "name": "test_surface",
+      "category": "tests",
+      "status": "ok"
+    },
+    {
+      "name": "paper_simulation",
+      "category": "runtime",
+      "status": "ok"
+    },
+    {
+      "name": "dashboard_smoke",
+      "category": "dashboard",
+      "status": "ok"
+    },
+    {
+      "name": "evidence_bundle",
+      "category": "evidence",
+      "status": "ok"
+    },
+    {
+      "name": "roadmap_traceability",
+      "category": "traceability",
+      "status": "ok"
+    },
+    {
+      "name": "backup_release_preview",
+      "category": "backup_release",
+      "status": "ok"
+    },
+    {
+      "name": "performance_budget",
+      "category": "performance",
+      "status": "ok"
+    },
+    {
+      "name": "operator_docs",
+      "category": "docs",
+      "status": "ok"
+    },
+    {
+      "name": "operator_signoff",
+      "category": "operator_signoff",
+      "status": "ok"
+    }
+  ],
+  "hard_blockers": [
+    "live trading approval is outside Roadmap 100 scope"
+  ],
+  "live_trading_enabled": false,
+  "signed_endpoints_used": false
+}

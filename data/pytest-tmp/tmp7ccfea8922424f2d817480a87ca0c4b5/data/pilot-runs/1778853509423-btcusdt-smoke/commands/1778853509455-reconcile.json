@@ -1,0 +1,18 @@
+{
+  "command_id": "1778853509455-reconcile",
+  "type": "reconcile",
+  "created_at_ms": 1778853509455,
+  "status": "processed",
+  "payload": {},
+  "processed_at_ms": 1778853509483,
+  "result": {
+    "status": "ok",
+    "known_orders": 0,
+    "open_orders": 0,
+    "orphan_orders": 0,
+    "failures": 0,
+    "events": [],
+    "checked_at_ms": 1778853509482,
+    "needs_operator_action": false
+  }
+}

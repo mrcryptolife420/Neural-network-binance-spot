@@ -1,0 +1,32 @@
+{
+  "status": "ready",
+  "payload": {
+    "tests": [
+      {
+        "path": "tests/test_runtime.py",
+        "sha256": "62ba6c618d859a6f05667b76",
+        "line_count": 8,
+        "test_count": 2,
+        "imported_source_modules": [
+          "binance_spot_bot.runtime"
+        ],
+        "likely_domain": "runtime",
+        "safety_relevance": true,
+        "estimated_profile": "deep",
+        "recommended_command": "python -m pytest tests/test_runtime.py -q",
+        "tests": [
+          {
+            "name": "TestRuntime",
+            "kind": "unittest_class"
+          },
+          {
+            "name": "test_runtime_smoke",
+            "kind": "pytest_function"
+          }
+        ]
+      }
+    ],
+    "count": 1
+  },
+  "live_trading_enabled": false
+}

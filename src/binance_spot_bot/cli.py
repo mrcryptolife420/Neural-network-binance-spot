@@ -534,6 +534,27 @@ def main() -> None:
     test_evidence_cmd = sub.add_parser("test-evidence-export")
     test_evidence_cmd.add_argument("--run-id", default="latest")
     test_evidence_cmd.add_argument("--json", action="store_true")
+    perf_runtime = sub.add_parser("perf-profile-runtime")
+    perf_runtime.add_argument("--steps", type=int, default=10)
+    perf_runtime.add_argument("--mode", default="demo")
+    perf_runtime.add_argument("--json", action="store_true")
+    perf_cli = sub.add_parser("perf-profile-cli")
+    perf_cli.add_argument("--profile-command", default="diagnostics")
+    perf_cli.add_argument("--json", action="store_true")
+    sub.add_parser("perf-profile-dashboard-import").add_argument("--json", action="store_true")
+    sub.add_parser("perf-profile-dashboard-smoke").add_argument("--json", action="store_true")
+    sub.add_parser("perf-profile-check-all").add_argument("--json", action="store_true")
+    perf_budget = sub.add_parser("perf-budget-check")
+    perf_budget.add_argument("--profile", default="balanced_default")
+    perf_budget.add_argument("--json", action="store_true")
+    sub.add_parser("perf-regression-check").add_argument("--json", action="store_true")
+    perf_history = sub.add_parser("perf-history")
+    perf_history.add_argument("--days", type=int, default=14)
+    perf_history.add_argument("--json", action="store_true")
+    sub.add_parser("perf-report").add_argument("--json", action="store_true")
+    perf_evidence = sub.add_parser("perf-evidence-export")
+    perf_evidence.add_argument("--run-id", default="latest")
+    perf_evidence.add_argument("--json", action="store_true")
     sub.add_parser("security-scan")
     backtest = sub.add_parser("demo-backtest")
     backtest.add_argument("--raw-klines-json", required=False)
@@ -656,8 +677,1319 @@ def main() -> None:
     dashboard.add_argument("--symbol", default="BTCUSDT")
     dashboard.add_argument("--interval", default="1m")
     dashboard.add_argument("--source", choices=["auto", "demo", "rest", "websocket"], default="auto")
+    dashboard.add_argument("--legacy-streamlit", action="store_true")
+    dashboard.add_argument("--v2", action="store_true")
+    dashboard.add_argument("--auto", action="store_true")
+    dashboard.add_argument("--fallback-if-v2-fails", action="store_true")
+    system_inventory_parser = sub.add_parser("system-inventory")
+    system_inventory_parser.add_argument("--json", action="store_true")
+    traceability_parser = sub.add_parser("roadmap-traceability-audit")
+    traceability_parser.add_argument("--range", default="001-100")
+    traceability_parser.add_argument("--json", action="store_true")
+    safety_parser = sub.add_parser("system-safety-invariants")
+    safety_parser.add_argument("--json", action="store_true")
+    profile_list_parser = sub.add_parser("milestone-profile-list")
+    profile_list_parser.add_argument("--json", action="store_true")
+    milestone_run = sub.add_parser("milestone-run")
+    milestone_run.add_argument("--profile", default="fast_milestone")
+    milestone_run.add_argument("--confirm", default="")
+    milestone_run.add_argument("--json", action="store_true")
+    paper_os_sim = sub.add_parser("paper-os-simulation")
+    paper_os_sim.add_argument("--profile", default="standard")
+    paper_os_sim.add_argument("--json", action="store_true")
+    prod_ready = sub.add_parser("production-readiness-simulation")
+    prod_ready.add_argument("--json", action="store_true")
+    evidence_graph = sub.add_parser("milestone-evidence-graph")
+    evidence_graph.add_argument("--json", action="store_true")
+    no_live = sub.add_parser("no-live-proof-pack")
+    no_live.add_argument("--json", action="store_true")
+    audit_report = sub.add_parser("system-audit-report")
+    audit_report.add_argument("--json", action="store_true")
+    bundle_export = sub.add_parser("milestone-bundle-export")
+    bundle_export.add_argument("--json", action="store_true")
+    bundle_verify = sub.add_parser("milestone-bundle-verify")
+    bundle_verify.add_argument("--bundle", required=True)
+    bundle_verify.add_argument("--json", action="store_true")
+    signoff_draft = sub.add_parser("operator-signoff-draft")
+    signoff_draft.add_argument("--json", action="store_true")
+    signoff_approve = sub.add_parser("operator-signoff-approve-paper")
+    signoff_approve.add_argument("--confirm", default="")
+    signoff_approve.add_argument("--json", action="store_true")
+    stab_ingest = sub.add_parser("stabilization-ingest-roadmap100")
+    stab_ingest.add_argument("--bundle", default="")
+    stab_ingest.add_argument("--json", action="store_true")
+    stab_backlog = sub.add_parser("stabilization-backlog")
+    stab_backlog.add_argument("--json", action="store_true")
+    stab_classify = sub.add_parser("stabilization-classify")
+    stab_classify.add_argument("--item", default="manual stabilization item")
+    stab_classify.add_argument("--json", action="store_true")
+    stab_workplan = sub.add_parser("stabilization-workplan")
+    stab_workplan.add_argument("--priority", default="")
+    stab_workplan.add_argument("--json", action="store_true")
+    check_reliability_parser = sub.add_parser("check-reliability")
+    check_reliability_parser.add_argument("--json", action="store_true")
+    flaky_burndown = sub.add_parser("flaky-check-burndown")
+    flaky_burndown.add_argument("--json", action="store_true")
+    slow_check = sub.add_parser("slow-check-report")
+    slow_check.add_argument("--json", action="store_true")
+    dashboard_stabilize = sub.add_parser("dashboard-smoke-stabilize")
+    dashboard_stabilize.add_argument("--json", action="store_true")
+    paper_stabilize = sub.add_parser("paper-simulation-stabilize")
+    paper_stabilize.add_argument("--profile", default="smoke_no_fill")
+    paper_stabilize.add_argument("--json", action="store_true")
+    evidence_gap = sub.add_parser("evidence-gap-check")
+    evidence_gap.add_argument("--json", action="store_true")
+    secret_verify = sub.add_parser("stabilization-secret-verify")
+    secret_verify.add_argument("--json", action="store_true")
+    waiver_create = sub.add_parser("stabilization-waiver-create")
+    waiver_create.add_argument("--item", required=True)
+    waiver_create.add_argument("--priority", default="P2")
+    waiver_create.add_argument("--reason", required=True)
+    waiver_create.add_argument("--expires-days", type=int, default=7)
+    waiver_create.add_argument("--json", action="store_true")
+    stab_gate = sub.add_parser("stabilization-gate")
+    stab_gate.add_argument("--profile", default="standard")
+    stab_gate.add_argument("--json", action="store_true")
+    stab_report = sub.add_parser("stabilization-report")
+    stab_report.add_argument("--json", action="store_true")
+    stab_export = sub.add_parser("stabilization-evidence-export")
+    stab_export.add_argument("--json", action="store_true")
+    op_docs_index = sub.add_parser("operator-docs-index")
+    op_docs_index.add_argument("--json", action="store_true")
+    op_docs_validate = sub.add_parser("operator-docs-validate")
+    op_docs_validate.add_argument("--json", action="store_true")
+    op_cli_cookbook = sub.add_parser("operator-cli-cookbook")
+    op_cli_cookbook.add_argument("--json", action="store_true")
+    dash_walk = sub.add_parser("dashboard-walkthroughs")
+    dash_walk.add_argument("--json", action="store_true")
+    train_scenarios = sub.add_parser("training-scenarios")
+    train_scenarios.add_argument("--json", action="store_true")
+    train_run = sub.add_parser("training-scenario-run")
+    train_run.add_argument("--scenario", required=True)
+    train_run.add_argument("--json", action="store_true")
+    trouble = sub.add_parser("troubleshooting-playbooks")
+    trouble.add_argument("--json", action="store_true")
+    support_interpret = sub.add_parser("support-bundle-interpret")
+    support_interpret.add_argument("--bundle", required=True)
+    support_interpret.add_argument("--json", action="store_true")
+    evidence_interpret = sub.add_parser("evidence-interpret")
+    evidence_interpret.add_argument("--path", required=True)
+    evidence_interpret.add_argument("--json", action="store_true")
+    glossary = sub.add_parser("operator-glossary")
+    glossary.add_argument("--term", default="")
+    glossary.add_argument("--json", action="store_true")
+    no_live_train = sub.add_parser("no-live-training")
+    no_live_train.add_argument("--json", action="store_true")
+    cert_draft = sub.add_parser("operator-certification-draft")
+    cert_draft.add_argument("--level", default="paper-operator")
+    cert_draft.add_argument("--json", action="store_true")
+    cert_complete = sub.add_parser("operator-certification-complete")
+    cert_complete.add_argument("--level", default="paper-operator")
+    cert_complete.add_argument("--confirm", default="")
+    cert_complete.add_argument("--json", action="store_true")
+    training_export = sub.add_parser("operator-training-evidence-export")
+    training_export.add_argument("--json", action="store_true")
+    dashboard_v2 = sub.add_parser("dashboard-v2")
+    dashboard_v2.add_argument("--host", default="127.0.0.1")
+    dashboard_v2.add_argument("--port", type=int, default=8800)
+    dashboard_v2.add_argument("--no-browser", action="store_true")
+    dashboard_v2.add_argument("--find-free-port", action="store_true")
+    dashboard_v2.add_argument("--operator-mode", action="store_true")
+    dashboard_v2.add_argument("--json", action="store_true")
+    dashboard_v2_build = sub.add_parser("dashboard-v2-build-info")
+    dashboard_v2_build.add_argument("--json", action="store_true")
+    dashboard_v2_routes = sub.add_parser("dashboard-v2-route-list")
+    dashboard_v2_routes.add_argument("--json", action="store_true")
+    dashboard_v2_api_smoke = sub.add_parser("dashboard-v2-api-smoke")
+    dashboard_v2_api_smoke.add_argument("--json", action="store_true")
+    dashboard_v2_smoke_parser = sub.add_parser("dashboard-v2-smoke")
+    dashboard_v2_smoke_parser.add_argument("--json", action="store_true")
+    dashboard_v2_browser_smoke = sub.add_parser("dashboard-v2-browser-smoke")
+    dashboard_v2_browser_smoke.add_argument("--url", default="http://127.0.0.1:8800")
+    dashboard_v2_browser_smoke.add_argument("--json", action="store_true")
+    dashboard_v2_parity = sub.add_parser("dashboard-v2-page-parity")
+    dashboard_v2_parity.add_argument("--json", action="store_true")
+    dashboard_v2_no_live = sub.add_parser("dashboard-v2-no-live-proof")
+    dashboard_v2_no_live.add_argument("--json", action="store_true")
+    dashboard_v2_perf = sub.add_parser("dashboard-v2-performance")
+    dashboard_v2_perf.add_argument("--json", action="store_true")
+    dashboard_v2_baseline = sub.add_parser("dashboard-v2-performance-baseline")
+    dashboard_v2_baseline.add_argument("--json", action="store_true")
+    dashboard_v2_budget = sub.add_parser("dashboard-v2-performance-budget")
+    dashboard_v2_budget.add_argument("--json", action="store_true")
+    dashboard_v2_payload = sub.add_parser("dashboard-v2-payload-profile-report")
+    dashboard_v2_payload.add_argument("--profile", default="")
+    dashboard_v2_payload.add_argument("--json", action="store_true")
+    dashboard_v2_ws = sub.add_parser("dashboard-v2-ws-stability-smoke")
+    dashboard_v2_ws.add_argument("--json", action="store_true")
+    dashboard_v2_static = sub.add_parser("dashboard-v2-static-verify")
+    dashboard_v2_static.add_argument("--json", action="store_true")
+    dashboard_v2_launcher = sub.add_parser("dashboard-v2-launcher-report")
+    dashboard_v2_launcher.add_argument("--host", default="127.0.0.1")
+    dashboard_v2_launcher.add_argument("--port", type=int, default=8800)
+    dashboard_v2_launcher.add_argument("--no-browser", action="store_true")
+    dashboard_v2_launcher.add_argument("--find-free-port", action="store_true")
+    dashboard_v2_launcher.add_argument("--json", action="store_true")
+    dashboard_v2_shortcut = sub.add_parser("dashboard-v2-create-shortcut")
+    dashboard_v2_shortcut.add_argument("--json", action="store_true")
+    dashboard_v2_shortcut_info = sub.add_parser("dashboard-v2-shortcut-info")
+    dashboard_v2_shortcut_info.add_argument("--json", action="store_true")
+    dashboard_v2_error = sub.add_parser("dashboard-v2-error-report")
+    dashboard_v2_error.add_argument("--message", default="dashboard-v2 error")
+    dashboard_v2_error.add_argument("--route", default="/")
+    dashboard_v2_error.add_argument("--json", action="store_true")
+    dashboard_v2_support = sub.add_parser("dashboard-v2-support-diagnostics")
+    dashboard_v2_support.add_argument("--json", action="store_true")
+    dashboard_v2_browser_matrix = sub.add_parser("dashboard-v2-browser-smoke-matrix")
+    dashboard_v2_browser_matrix.add_argument("--url", default="http://127.0.0.1:8800")
+    dashboard_v2_browser_matrix.add_argument("--json", action="store_true")
+    dashboard_v2_cutover = sub.add_parser("dashboard-v2-cutover-readiness")
+    dashboard_v2_cutover.add_argument("--json", action="store_true")
+    dashboard_v2_evidence = sub.add_parser("dashboard-v2-evidence-export")
+    dashboard_v2_evidence.add_argument("--json", action="store_true")
+    dashboard_v2_ux = sub.add_parser("dashboard-v2-ux-backlog")
+    dashboard_v2_ux.add_argument("--json", action="store_true")
+    dashboard_v2_journey = sub.add_parser("dashboard-v2-journey-map")
+    dashboard_v2_journey.add_argument("--json", action="store_true")
+    dashboard_v2_guided = sub.add_parser("dashboard-v2-guided-actions")
+    dashboard_v2_guided.add_argument("--json", action="store_true")
+    dashboard_v2_start_wizard = sub.add_parser("dashboard-v2-start-wizard-smoke")
+    dashboard_v2_start_wizard.add_argument("--mode", default="demo")
+    dashboard_v2_start_wizard.add_argument("--json", action="store_true")
+    dashboard_v2_demo_flow = sub.add_parser("dashboard-v2-demo-spot-flow-smoke")
+    dashboard_v2_demo_flow.add_argument("--confirm", action="store_true")
+    dashboard_v2_demo_flow.add_argument("--json", action="store_true")
+    dashboard_v2_paper_flow = sub.add_parser("dashboard-v2-paper-session-flow-smoke")
+    dashboard_v2_paper_flow.add_argument("--json", action="store_true")
+    dashboard_v2_issues = sub.add_parser("dashboard-v2-actionable-issues")
+    dashboard_v2_issues.add_argument("--json", action="store_true")
+    dashboard_v2_nav = sub.add_parser("dashboard-v2-navigation-map")
+    dashboard_v2_nav.add_argument("--json", action="store_true")
+    dashboard_v2_palette = sub.add_parser("dashboard-v2-command-palette-smoke")
+    dashboard_v2_palette.add_argument("--query", default="")
+    dashboard_v2_palette.add_argument("--json", action="store_true")
+    dashboard_v2_metrics = sub.add_parser("dashboard-v2-ux-metrics")
+    dashboard_v2_metrics.add_argument("--json", action="store_true")
+    dashboard_v2_uat_exec = sub.add_parser("dashboard-v2-uat-feedback-execution")
+    dashboard_v2_uat_exec.add_argument("--json", action="store_true")
+    dashboard_v2_fallback = sub.add_parser("dashboard-v2-streamlit-fallback-info")
+    dashboard_v2_fallback.add_argument("--json", action="store_true")
+    dashboard_v2_deprecation = sub.add_parser("dashboard-v2-streamlit-deprecation-readiness")
+    dashboard_v2_deprecation.add_argument("--json", action="store_true")
+    dashboard_v2_workflow_evidence = sub.add_parser("dashboard-v2-workflow-evidence-export")
+    dashboard_v2_workflow_evidence.add_argument("--json", action="store_true")
+    dashboard_v2_final_parity = sub.add_parser("dashboard-v2-final-parity-lock")
+    dashboard_v2_final_parity.add_argument("--json", action="store_true")
+    dashboard_v2_streamlit_inventory = sub.add_parser("dashboard-v2-streamlit-only-inventory")
+    dashboard_v2_streamlit_inventory.add_argument("--json", action="store_true")
+    dashboard_v2_workflow_lock = sub.add_parser("dashboard-v2-critical-workflow-lock")
+    dashboard_v2_workflow_lock.add_argument("--json", action="store_true")
+    dashboard_v2_cli_router = sub.add_parser("dashboard-v2-cli-router-report")
+    dashboard_v2_cli_router.add_argument("--json", action="store_true")
+    dashboard_v2_operator_mode = sub.add_parser("dashboard-v2-operator-mode-smoke")
+    dashboard_v2_operator_mode.add_argument("--json", action="store_true")
+    dashboard_v2_legacy_compat = sub.add_parser("dashboard-v2-legacy-compat-map")
+    dashboard_v2_legacy_compat.add_argument("--json", action="store_true")
+    dashboard_v2_freeze = sub.add_parser("dashboard-v2-streamlit-change-freeze")
+    dashboard_v2_freeze.add_argument("--json", action="store_true")
+    dashboard_v2_docs_first = sub.add_parser("dashboard-v2-docs-v2-first-check")
+    dashboard_v2_docs_first.add_argument("--json", action="store_true")
+    dashboard_v2_uat_first = sub.add_parser("dashboard-v2-uat-v2-first-check")
+    dashboard_v2_uat_first.add_argument("--json", action="store_true")
+    dashboard_v2_dep_gate = sub.add_parser("dashboard-v2-deprecation-gate")
+    dashboard_v2_dep_gate.add_argument("--json", action="store_true")
+    dashboard_v2_only = sub.add_parser("dashboard-v2-only-smoke")
+    dashboard_v2_only.add_argument("--json", action="store_true")
+    dashboard_v2_fallback_drill = sub.add_parser("dashboard-v2-fallback-drill")
+    dashboard_v2_fallback_drill.add_argument("--json", action="store_true")
+    dashboard_v2_dep_evidence = sub.add_parser("dashboard-v2-deprecation-evidence-export")
+    dashboard_v2_dep_evidence.add_argument("--json", action="store_true")
+    rem_gate = sub.add_parser("dashboard-v2-removal-readiness-gate")
+    rem_gate.add_argument("--json", action="store_true")
+    dep_iso = sub.add_parser("dashboard-v2-dependency-isolation")
+    dep_iso.add_argument("--json", action="store_true")
+    legacy_archive_create = sub.add_parser("dashboard-v2-legacy-archive-create")
+    legacy_archive_create.add_argument("--json", action="store_true")
+    legacy_archive_verify = sub.add_parser("dashboard-v2-legacy-archive-verify")
+    legacy_archive_verify.add_argument("--archive", required=True)
+    legacy_archive_verify.add_argument("--json", action="store_true")
+    streamlit_iso = sub.add_parser("dashboard-v2-streamlit-isolation-plan")
+    streamlit_iso.add_argument("--json", action="store_true")
+    component_cleanup = sub.add_parser("dashboard-v2-component-cleanup-report")
+    component_cleanup.add_argument("--json", action="store_true")
+    v2_check_all = sub.add_parser("dashboard-v2-check-all")
+    v2_check_all.add_argument("--profile", default="v2-only")
+    v2_check_all.add_argument("--json", action="store_true")
+    v2_support_evidence = sub.add_parser("dashboard-v2-support-evidence-smoke")
+    v2_support_evidence.add_argument("--json", action="store_true")
+    v2_release = sub.add_parser("dashboard-v2-release-simulation")
+    v2_release.add_argument("--json", action="store_true")
+    docs_v2_lock = sub.add_parser("dashboard-v2-docs-v2-only-lock")
+    docs_v2_lock.add_argument("--json", action="store_true")
+    legacy_test_cleanup = sub.add_parser("dashboard-v2-legacy-test-cleanup-report")
+    legacy_test_cleanup.add_argument("--json", action="store_true")
+    runtime_coupling = sub.add_parser("dashboard-v2-runtime-state-coupling-audit")
+    runtime_coupling.add_argument("--json", action="store_true")
+    removal_plan = sub.add_parser("dashboard-v2-removal-patch-plan")
+    removal_plan.add_argument("--json", action="store_true")
+    removal_exec = sub.add_parser("dashboard-v2-streamlit-removal-execute")
+    removal_exec.add_argument("--confirm", default="")
+    removal_exec.add_argument("--dry-run", action="store_true")
+    removal_exec.add_argument("--json", action="store_true")
+    post_remove = sub.add_parser("dashboard-v2-post-removal-verify")
+    post_remove.add_argument("--json", action="store_true")
+    rollback_drill = sub.add_parser("dashboard-v2-removal-rollback-drill")
+    rollback_drill.add_argument("--json", action="store_true")
+    v2_release_evidence = sub.add_parser("dashboard-v2-only-release-evidence-export")
+    v2_release_evidence.add_argument("--json", action="store_true")
+    workspace_list = sub.add_parser("dashboard-v2-workspaces")
+    workspace_list.add_argument("--json", action="store_true")
+    workspace_validate = sub.add_parser("dashboard-v2-workspace-validate")
+    workspace_validate.add_argument("--workspace", required=True)
+    workspace_validate.add_argument("--json", action="store_true")
+    workspace_create = sub.add_parser("dashboard-v2-workspace-create")
+    workspace_create.add_argument("--preset", default="operator_overview")
+    workspace_create.add_argument("--name", default="Operator Workspace")
+    workspace_create.add_argument("--json", action="store_true")
+    workspace_clone = sub.add_parser("dashboard-v2-workspace-clone")
+    workspace_clone.add_argument("--workspace", required=True)
+    workspace_clone.add_argument("--json", action="store_true")
+    workspace_export = sub.add_parser("dashboard-v2-workspace-export")
+    workspace_export.add_argument("--workspace", required=True)
+    workspace_export.add_argument("--json", action="store_true")
+    workspace_import = sub.add_parser("dashboard-v2-workspace-import")
+    workspace_import.add_argument("--path", required=True)
+    workspace_import.add_argument("--dry-run", action="store_true")
+    workspace_import.add_argument("--json", action="store_true")
+    widget_registry_cmd = sub.add_parser("dashboard-v2-widget-registry")
+    widget_registry_cmd.add_argument("--json", action="store_true")
+    workspace_presets_cmd = sub.add_parser("dashboard-v2-workspace-presets")
+    workspace_presets_cmd.add_argument("--json", action="store_true")
+    watchlists_cmd = sub.add_parser("dashboard-v2-watchlists")
+    watchlists_cmd.add_argument("--json", action="store_true")
+    watchlist_create = sub.add_parser("dashboard-v2-watchlist-create")
+    watchlist_create.add_argument("--name", default="Majors")
+    watchlist_create.add_argument("--symbols", default="BTCUSDT,ETHUSDT,BNBUSDT")
+    watchlist_create.add_argument("--json", action="store_true")
+    preferences_cmd = sub.add_parser("dashboard-v2-operator-preferences")
+    preferences_cmd.add_argument("--json", action="store_true")
+    analytics_query_cmd = sub.add_parser("dashboard-v2-analytics-query")
+    analytics_query_cmd.add_argument("--scope", default="runtime_snapshot")
+    analytics_query_cmd.add_argument("--tail", type=int, default=250)
+    analytics_query_cmd.add_argument("--json", action="store_true")
+    workspace_perf = sub.add_parser("dashboard-v2-workspace-performance")
+    workspace_perf.add_argument("--workspace", required=True)
+    workspace_perf.add_argument("--json", action="store_true")
+    workspace_evidence = sub.add_parser("dashboard-v2-workspace-evidence-export")
+    workspace_evidence.add_argument("--workspace", required=True)
+    workspace_evidence.add_argument("--json", action="store_true")
+    extension_packs = sub.add_parser("dashboard-v2-extension-packs")
+    extension_packs.add_argument("--json", action="store_true")
+    extension_pack_validate = sub.add_parser("dashboard-v2-extension-pack-validate")
+    extension_pack_validate.add_argument("--path", required=True)
+    extension_pack_validate.add_argument("--json", action="store_true")
+    extension_pack_preview = sub.add_parser("dashboard-v2-extension-pack-preview")
+    extension_pack_preview.add_argument("--path", required=True)
+    extension_pack_preview.add_argument("--json", action="store_true")
+    extension_pack_install = sub.add_parser("dashboard-v2-extension-pack-install")
+    extension_pack_install.add_argument("--path", required=True)
+    extension_pack_install.add_argument("--confirm", default="")
+    extension_pack_install.add_argument("--json", action="store_true")
+    extension_pack_uninstall = sub.add_parser("dashboard-v2-extension-pack-uninstall")
+    extension_pack_uninstall.add_argument("--pack-id", required=True)
+    extension_pack_uninstall.add_argument("--confirm", default="")
+    extension_pack_uninstall.add_argument("--json", action="store_true")
+    extension_pack_enable = sub.add_parser("dashboard-v2-extension-pack-enable")
+    extension_pack_enable.add_argument("--pack-id", required=True)
+    extension_pack_enable.add_argument("--json", action="store_true")
+    extension_pack_disable = sub.add_parser("dashboard-v2-extension-pack-disable")
+    extension_pack_disable.add_argument("--pack-id", required=True)
+    extension_pack_disable.add_argument("--json", action="store_true")
+    extension_pack_export = sub.add_parser("dashboard-v2-extension-pack-export")
+    extension_pack_export.add_argument("--pack-id", required=True)
+    extension_pack_export.add_argument("--json", action="store_true")
+    extension_pack_compat = sub.add_parser("dashboard-v2-extension-pack-compatibility")
+    extension_pack_compat.add_argument("--pack-id", required=True)
+    extension_pack_compat.add_argument("--json", action="store_true")
+    template_packs_cmd = sub.add_parser("dashboard-v2-template-packs")
+    template_packs_cmd.add_argument("--json", action="store_true")
+    analytics_presets_cmd = sub.add_parser("dashboard-v2-analytics-presets")
+    analytics_presets_cmd.add_argument("--json", action="store_true")
+    workflow_packs_cmd = sub.add_parser("dashboard-v2-workflow-packs")
+    workflow_packs_cmd.add_argument("--json", action="store_true")
+    pack_recommend = sub.add_parser("dashboard-v2-pack-recommendations")
+    pack_recommend.add_argument("--workflow", default="paper-session")
+    pack_recommend.add_argument("--json", action="store_true")
+    extension_pack_evidence = sub.add_parser("dashboard-v2-extension-pack-evidence-export")
+    extension_pack_evidence.add_argument("--json", action="store_true")
+    mi_policy = sub.add_parser("market-intelligence-policy")
+    mi_policy.add_argument("--json", action="store_true")
+    symbol_refresh = sub.add_parser("symbol-universe-refresh")
+    symbol_refresh.add_argument("--quote", default="USDT")
+    symbol_refresh.add_argument("--json", action="store_true")
+    symbol_report = sub.add_parser("symbol-universe-report")
+    symbol_report.add_argument("--json", action="store_true")
+    market_cache = sub.add_parser("market-snapshot-cache-report")
+    market_cache.add_argument("--json", action="store_true")
+    scanner_plan = sub.add_parser("scanner-rate-limit-plan")
+    scanner_plan.add_argument("--preset", default="majors_overview")
+    scanner_plan.add_argument("--json", action="store_true")
+    scan_preview = sub.add_parser("watchlist-scan-preview")
+    scan_preview.add_argument("--preset", default="majors_overview")
+    scan_preview.add_argument("--json", action="store_true")
+    scan_run = sub.add_parser("watchlist-scan-run")
+    scan_run.add_argument("--preset", default="majors_overview")
+    scan_run.add_argument("--confirm", default="")
+    scan_run.add_argument("--json", action="store_true")
+    rankings_cmd = sub.add_parser("market-rankings")
+    rankings_cmd.add_argument("--run-id", default="latest")
+    rankings_cmd.add_argument("--json", action="store_true")
+    scanner_presets_cmd = sub.add_parser("market-scanner-presets")
+    scanner_presets_cmd.add_argument("--json", action="store_true")
+    paper_preview_cmd = sub.add_parser("multi-symbol-paper-analytics-preview")
+    paper_preview_cmd.add_argument("--watchlist", default="majors")
+    paper_preview_cmd.add_argument("--json", action="store_true")
+    paper_run_cmd = sub.add_parser("multi-symbol-paper-analytics-run")
+    paper_run_cmd.add_argument("--watchlist", default="majors")
+    paper_run_cmd.add_argument("--confirm", default="")
+    paper_run_cmd.add_argument("--json", action="store_true")
+    mi_evidence_cmd = sub.add_parser("market-intelligence-evidence-export")
+    mi_evidence_cmd.add_argument("--json", action="store_true")
+    mi_smoke = sub.add_parser("dashboard-v2-market-intelligence-smoke")
+    mi_smoke.add_argument("--json", action="store_true")
+    dashboard_legacy = sub.add_parser("dashboard-legacy")
+    dashboard_legacy.add_argument("--json", action="store_true")
+    dashboard_choice_parser = sub.add_parser("dashboard-choice")
+    dashboard_choice_parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
     settings = BotSettings.from_env()
+    if args.command == "system-inventory":
+        from .system_inventory import system_inventory, write_system_inventory_report
+
+        payload = system_inventory(Path.cwd())
+        write_system_inventory_report(Path.cwd())
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "roadmap-traceability-audit":
+        from .roadmap_milestone_traceability import build_roadmap_milestone_traceability, write_roadmap_milestone_traceability
+
+        start, end = [int(part) for part in args.range.split("-", 1)]
+        payload = build_roadmap_milestone_traceability(Path.cwd(), start, end)
+        write_roadmap_milestone_traceability(Path.cwd())
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "system-safety-invariants":
+        from .system_safety_invariants import audit_system_safety_invariants
+
+        payload = audit_system_safety_invariants(Path.cwd())
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "milestone-profile-list":
+        from .milestone_profiles import milestone_profiles
+
+        print(json.dumps(milestone_profiles(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "milestone-run":
+        from .milestone_runner import run_milestone_profile
+
+        payload = run_milestone_profile(args.profile, confirm=args.confirm, root=Path.cwd())
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "paper-os-simulation":
+        from .paper_os_simulation import build_paper_os_simulation, write_paper_os_simulation
+
+        payload = build_paper_os_simulation(Path.cwd())
+        write_paper_os_simulation(Path.cwd())
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "production-readiness-simulation":
+        from .production_readiness_simulation import build_production_readiness_simulation, write_production_readiness_simulation
+
+        payload = build_production_readiness_simulation(Path.cwd())
+        write_production_readiness_simulation(Path.cwd())
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "milestone-evidence-graph":
+        from .milestone_evidence_graph import build_milestone_evidence_graph, write_milestone_evidence_graph
+
+        payload = build_milestone_evidence_graph(Path.cwd())
+        write_milestone_evidence_graph(Path.cwd())
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "no-live-proof-pack":
+        from .no_live_proof_pack import build_no_live_proof_pack, write_no_live_proof_pack
+
+        payload = build_no_live_proof_pack(Path.cwd())
+        write_no_live_proof_pack(Path.cwd())
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "system-audit-report":
+        from .system_audit_report import build_system_audit_report, write_system_audit_report
+
+        payload = build_system_audit_report(Path.cwd())
+        write_system_audit_report(Path.cwd(), payload)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "milestone-bundle-export":
+        from .milestone_bundle import export_current_milestone_bundle
+
+        payload = export_current_milestone_bundle(Path.cwd())
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "milestone-bundle-verify":
+        from .milestone_verification import verify_milestone_bundle
+
+        payload = verify_milestone_bundle(Path(args.bundle))
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") != "ok":
+            raise SystemExit(1)
+        return
+    if args.command == "operator-signoff-draft":
+        from .operator_signoff import operator_signoff_draft
+
+        print(json.dumps(operator_signoff_draft(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "operator-signoff-approve-paper":
+        from .operator_signoff import approve_operator_signoff
+
+        payload = approve_operator_signoff(args.confirm)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "stabilization-ingest-roadmap100":
+        from .stabilization_audit_ingest import ingest_roadmap100_bundle, ingest_roadmap100_reports, write_stabilization_ingest_report
+
+        payload = ingest_roadmap100_bundle(args.bundle) if args.bundle else ingest_roadmap100_reports(Path.cwd())
+        write_stabilization_ingest_report(Path.cwd(), payload)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "stabilization-backlog":
+        from .stabilization_audit_ingest import ingest_roadmap100_reports
+        from .stabilization_backlog import build_stabilization_backlog, write_stabilization_backlog
+
+        payload = build_stabilization_backlog(ingest_roadmap100_reports(Path.cwd()).get("findings", []))
+        write_stabilization_backlog(Path.cwd(), payload)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "stabilization-classify":
+        from .stabilization_classifier import stabilization_classifier
+
+        print(json.dumps(stabilization_classifier(args.item), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "stabilization-workplan":
+        from .stabilization_audit_ingest import ingest_roadmap100_reports
+        from .stabilization_backlog import build_stabilization_backlog
+        from .stabilization_workplan import build_stabilization_workplans, write_stabilization_workplans
+
+        backlog = build_stabilization_backlog(ingest_roadmap100_reports(Path.cwd()).get("findings", []))
+        payload = build_stabilization_workplans(backlog, priority=args.priority or None)
+        write_stabilization_workplans(Path.cwd(), payload)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "check-reliability":
+        from .check_reliability import check_reliability
+
+        payload = check_reliability([{"name": "check-all", "status": "ok", "duration_ms": 1000}])
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "flaky-check-burndown":
+        from .flaky_check_burndown import flaky_check_burndown
+
+        payload = flaky_check_burndown([])
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "slow-check-report":
+        from .slow_check_hardening import detect_slow_checks
+
+        payload = detect_slow_checks([{"name": "check-all", "duration_ms": 1000}])
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-smoke-stabilize":
+        from .dashboard_smoke_stabilizer import stabilize_dashboard_smoke
+
+        payload = stabilize_dashboard_smoke([])
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "paper-simulation-stabilize":
+        from .paper_simulation_stabilizer import stabilize_paper_simulation
+
+        payload = stabilize_paper_simulation(args.profile)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "evidence-gap-check":
+        from .evidence_gap_detector import detect_evidence_gaps_in_dir
+
+        payload = detect_evidence_gaps_in_dir(Path.cwd())
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "stabilization-secret-verify":
+        from .stabilization_secret_verify import verify_stabilization_secrets
+
+        payload = verify_stabilization_secrets(list((Path.cwd() / "data" / "stabilization").rglob("*.json")) if (Path.cwd() / "data" / "stabilization").exists() else [])
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "stabilization-waiver-create":
+        from .stabilization_waivers import create_stabilization_waiver
+
+        payload = create_stabilization_waiver(args.item, priority=args.priority, reason=args.reason, expires_days=args.expires_days)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "stabilization-gate":
+        from .stabilization_audit_ingest import ingest_roadmap100_reports
+        from .stabilization_backlog import build_stabilization_backlog
+        from .stabilization_gate import evaluate_stabilization_gate
+
+        backlog = build_stabilization_backlog(ingest_roadmap100_reports(Path.cwd()).get("findings", []))
+        payload = evaluate_stabilization_gate(backlog, profile=args.profile)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "stabilization-report":
+        from .stabilization_audit_ingest import ingest_roadmap100_reports
+        from .stabilization_backlog import build_stabilization_backlog
+        from .stabilization_gate import evaluate_stabilization_gate
+        from .stabilization_report import build_stabilization_report, write_stabilization_report
+
+        ingest = ingest_roadmap100_reports(Path.cwd())
+        backlog = build_stabilization_backlog(ingest.get("findings", []))
+        gate = evaluate_stabilization_gate(backlog)
+        payload = build_stabilization_report(ingest, backlog, gate)
+        write_stabilization_report(Path.cwd(), payload)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "stabilization-evidence-export":
+        from .stabilization_evidence_bundle import export_stabilization_evidence_bundle
+
+        files = list((Path.cwd() / "data" / "stabilization").rglob("*.json")) if (Path.cwd() / "data" / "stabilization").exists() else []
+        payload = export_stabilization_evidence_bundle(files, Path.cwd() / "data" / "stabilization" / "evidence" / str(int(time.time() * 1000)))
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "operator-docs-index":
+        from .operator_docs_index import operator_docs_index, write_operator_docs_index
+
+        payload = operator_docs_index()
+        write_operator_docs_index(Path.cwd())
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "operator-docs-validate":
+        from .operator_docs_index import build_operator_docs_index, validate_operator_docs_index
+
+        payload = validate_operator_docs_index(build_operator_docs_index(Path.cwd()))
+        print(json.dumps(payload.__dict__, indent=2 if args.json else None, default=str))
+        if payload.status == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "operator-cli-cookbook":
+        from .operator_cli_cookbook import operator_cli_cookbook
+
+        print(json.dumps(operator_cli_cookbook(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-walkthroughs":
+        from .dashboard_walkthroughs import dashboard_walkthroughs
+
+        print(json.dumps(dashboard_walkthroughs(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "training-scenarios":
+        from .training_scenarios import training_scenarios
+
+        print(json.dumps(training_scenarios(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "training-scenario-run":
+        from .training_scenarios import run_training_scenario
+
+        payload = run_training_scenario(args.scenario)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "troubleshooting-playbooks":
+        from .troubleshooting_playbooks import troubleshooting_playbooks
+
+        print(json.dumps(troubleshooting_playbooks(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "support-bundle-interpret":
+        from .support_bundle_interpreter import interpret_support_bundle_manifest
+
+        print(json.dumps(interpret_support_bundle_manifest(Path(args.bundle)), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "evidence-interpret":
+        from .evidence_interpreter import evidence_interpreter
+
+        payload = evidence_interpreter([Path(args.path).name if Path(args.path).exists() else "missing:" + args.path])
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "operator-glossary":
+        from .operator_glossary import explain_operator_term, operator_glossary
+
+        payload = explain_operator_term(args.term) if args.term else operator_glossary()
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "no-live-training":
+        from .no_live_training import no_live_training_lesson
+
+        print(json.dumps(no_live_training_lesson(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "operator-certification-draft":
+        from .operator_certification import certification_draft
+
+        print(json.dumps(certification_draft(args.level), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "operator-certification-complete":
+        from .operator_certification import complete_certification
+
+        payload = complete_certification(args.level, args.confirm)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "operator-training-evidence-export":
+        from .operator_training_evidence import export_operator_training_evidence
+
+        files = list((Path.cwd() / "data" / "operator-training").rglob("*.json")) if (Path.cwd() / "data" / "operator-training").exists() else []
+        payload = export_operator_training_evidence(files, Path.cwd() / "data" / "operator-training" / "evidence" / str(int(time.time() * 1000)))
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2":
+        if args.operator_mode:
+            from .dashboard_v2.operator_mode import dashboard_v2_operator_mode_smoke
+
+            print(json.dumps(dashboard_v2_operator_mode_smoke(), indent=2 if args.json else None, default=str))
+            return
+        from .dashboard_v2.launcher import dashboard_v2_launcher_report
+
+        payload = dashboard_v2_launcher_report(
+            Path.cwd(),
+            host=args.host,
+            port=args.port,
+            no_browser=args.no_browser,
+            find_free_port=args.find_free_port,
+        )
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-build-info":
+        from .dashboard_v2.static import dashboard_v2_static_status
+
+        print(json.dumps(dashboard_v2_static_status(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-route-list":
+        from .dashboard_v2.smoke import dashboard_v2_route_list
+
+        print(json.dumps(dashboard_v2_route_list(), indent=2 if args.json else None, default=str))
+        return
+    if args.command in {"dashboard-v2-api-smoke", "dashboard-v2-smoke"}:
+        from .dashboard_v2.smoke import dashboard_v2_smoke
+
+        payload = dashboard_v2_smoke(Path.cwd())
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-browser-smoke":
+        from .dashboard_v2.browser_smoke import dashboard_v2_browser_smoke_matrix
+
+        payload = dashboard_v2_browser_smoke_matrix(args.url)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-page-parity":
+        from .dashboard_v2.smoke import dashboard_v2_page_parity
+
+        print(json.dumps(dashboard_v2_page_parity(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-no-live-proof":
+        from .dashboard_v2.schemas import dashboard_v2_no_live_statement
+
+        print(json.dumps({"status": "ok", "no_live_statement": dashboard_v2_no_live_statement(), "live_trading_enabled": False}, indent=2 if args.json else None))
+        return
+    if args.command == "dashboard-v2-performance":
+        from .dashboard_v2.performance import dashboard_v2_performance_report
+
+        print(json.dumps(dashboard_v2_performance_report(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-performance-baseline":
+        from .dashboard_v2.performance_baseline import write_dashboard_v2_performance_report
+
+        print(json.dumps(write_dashboard_v2_performance_report(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-performance-budget":
+        from .dashboard_v2.performance_budgets import write_dashboard_v2_budget_report
+
+        payload = write_dashboard_v2_budget_report(Path.cwd())
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-payload-profile-report":
+        from .dashboard_v2.payload_profiles import apply_payload_profile, dashboard_v2_payload_profile_report
+
+        payload = dashboard_v2_payload_profile_report()
+        if args.profile:
+            payload = apply_payload_profile({"candles": list(range(120)), "signals": list(range(60)), "fills": list(range(40)), "equity": list(range(80))}, args.profile)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-ws-stability-smoke":
+        from .dashboard_v2.ws_stability import dashboard_v2_ws_stability_smoke
+
+        print(json.dumps(dashboard_v2_ws_stability_smoke(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-static-verify":
+        from .dashboard_v2.static_build import verify_dashboard_v2_static_build
+
+        print(json.dumps(verify_dashboard_v2_static_build(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-launcher-report":
+        from .dashboard_v2.launcher import dashboard_v2_launcher_report
+
+        print(
+            json.dumps(
+                dashboard_v2_launcher_report(
+                    Path.cwd(),
+                    host=args.host,
+                    port=args.port,
+                    no_browser=args.no_browser,
+                    find_free_port=args.find_free_port,
+                ),
+                indent=2 if args.json else None,
+                default=str,
+            )
+        )
+        return
+    if args.command == "dashboard-v2-create-shortcut":
+        from .dashboard_v2.desktop_shortcut import create_dashboard_v2_shortcut
+
+        print(json.dumps(create_dashboard_v2_shortcut(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-shortcut-info":
+        from .dashboard_v2.desktop_shortcut import dashboard_v2_shortcut_info
+
+        print(json.dumps(dashboard_v2_shortcut_info(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-error-report":
+        from .dashboard_v2.error_reports import create_dashboard_v2_error_report
+
+        print(json.dumps(create_dashboard_v2_error_report(Path.cwd(), message=args.message, route=args.route), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-support-diagnostics":
+        from .dashboard_v2.support_diagnostics import dashboard_v2_support_diagnostics
+
+        print(json.dumps(dashboard_v2_support_diagnostics(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-browser-smoke-matrix":
+        from .dashboard_v2.browser_smoke import dashboard_v2_browser_smoke_matrix
+
+        print(json.dumps(dashboard_v2_browser_smoke_matrix(args.url), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-cutover-readiness":
+        from .dashboard_v2.cutover_readiness import write_dashboard_v2_cutover_readiness
+
+        payload = write_dashboard_v2_cutover_readiness(Path.cwd())
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-evidence-export":
+        from .dashboard_v2.evidence_bundle import export_dashboard_v2_evidence_bundle
+
+        print(json.dumps(export_dashboard_v2_evidence_bundle(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-ux-backlog":
+        from .dashboard_v2.ux_backlog_ingest import write_dashboard_v2_ux_backlog
+
+        print(json.dumps(write_dashboard_v2_ux_backlog(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-journey-map":
+        from .dashboard_v2.operator_journey_map import write_dashboard_v2_operator_journey_map
+
+        print(json.dumps(write_dashboard_v2_operator_journey_map(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-guided-actions":
+        from .dashboard_v2.guided_actions import dashboard_v2_guided_actions
+
+        print(json.dumps(dashboard_v2_guided_actions(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-start-wizard-smoke":
+        from .dashboard_v2.start_wizard import dashboard_v2_start_wizard_smoke
+
+        payload = dashboard_v2_start_wizard_smoke(args.mode)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-demo-spot-flow-smoke":
+        from .dashboard_v2.demo_spot_flow import dashboard_v2_demo_spot_flow_smoke
+
+        print(json.dumps(dashboard_v2_demo_spot_flow_smoke(confirm=args.confirm), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-paper-session-flow-smoke":
+        from .dashboard_v2.paper_session_flow import dashboard_v2_paper_session_flow_smoke
+
+        print(json.dumps(dashboard_v2_paper_session_flow_smoke(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-actionable-issues":
+        from .dashboard_v2.actionable_issues import dashboard_v2_actionable_issues
+
+        print(json.dumps(dashboard_v2_actionable_issues(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-navigation-map":
+        from .dashboard_v2.navigation_map import dashboard_v2_navigation_map
+
+        print(json.dumps(dashboard_v2_navigation_map(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-command-palette-smoke":
+        from .dashboard_v2.command_palette import dashboard_v2_command_palette_smoke
+
+        payload = dashboard_v2_command_palette_smoke(args.query)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-ux-metrics":
+        from .dashboard_v2.ux_metrics import dashboard_v2_ux_metrics
+
+        print(json.dumps(dashboard_v2_ux_metrics(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-uat-feedback-execution":
+        from .dashboard_v2.uat_feedback_execution import dashboard_v2_uat_feedback_execution
+
+        payload = dashboard_v2_uat_feedback_execution()
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-streamlit-fallback-info":
+        from .dashboard_v2.streamlit_deprecation_readiness import dashboard_v2_streamlit_fallback_info
+
+        print(json.dumps(dashboard_v2_streamlit_fallback_info(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-streamlit-deprecation-readiness":
+        from .dashboard_v2.streamlit_deprecation_readiness import write_dashboard_v2_streamlit_deprecation_readiness
+
+        payload = write_dashboard_v2_streamlit_deprecation_readiness(Path.cwd())
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-workflow-evidence-export":
+        from .dashboard_v2.workflow_evidence_bundle import export_dashboard_v2_workflow_evidence_bundle
+
+        print(json.dumps(export_dashboard_v2_workflow_evidence_bundle(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-final-parity-lock":
+        from .dashboard_v2.final_parity_lock import write_dashboard_final_parity_lock
+
+        payload = write_dashboard_final_parity_lock(Path.cwd())
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-streamlit-only-inventory":
+        from .dashboard_v2.streamlit_only_inventory import write_dashboard_v2_streamlit_only_inventory
+
+        print(json.dumps(write_dashboard_v2_streamlit_only_inventory(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-critical-workflow-lock":
+        from .dashboard_v2.critical_workflow_lock import dashboard_v2_critical_workflow_lock
+
+        print(json.dumps(dashboard_v2_critical_workflow_lock(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-cli-router-report":
+        from .dashboard_v2.cli_router import dashboard_v2_cli_router_report
+
+        print(json.dumps(dashboard_v2_cli_router_report(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-operator-mode-smoke":
+        from .dashboard_v2.operator_mode import dashboard_v2_operator_mode_smoke
+
+        print(json.dumps(dashboard_v2_operator_mode_smoke(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-legacy-compat-map":
+        from .dashboard_v2.legacy_compat import dashboard_v2_legacy_compat_map
+
+        print(json.dumps(dashboard_v2_legacy_compat_map(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-streamlit-change-freeze":
+        from .dashboard_v2.streamlit_change_freeze import dashboard_v2_streamlit_change_freeze
+
+        print(json.dumps(dashboard_v2_streamlit_change_freeze(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-docs-v2-first-check":
+        from .dashboard_v2.v2_first_checks import dashboard_v2_docs_v2_first_check
+
+        print(json.dumps(dashboard_v2_docs_v2_first_check(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-uat-v2-first-check":
+        from .dashboard_v2.v2_first_checks import dashboard_v2_uat_v2_first_check
+
+        print(json.dumps(dashboard_v2_uat_v2_first_check(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-deprecation-gate":
+        from .dashboard_v2.deprecation_gate import dashboard_v2_deprecation_gate
+
+        payload = dashboard_v2_deprecation_gate()
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-only-smoke":
+        from .dashboard_v2.v2_only_smoke import dashboard_v2_only_smoke
+
+        print(json.dumps(dashboard_v2_only_smoke(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-fallback-drill":
+        from .dashboard_v2.fallback_drill import dashboard_v2_fallback_drill
+
+        print(json.dumps(dashboard_v2_fallback_drill(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-deprecation-evidence-export":
+        from .dashboard_v2.deprecation_evidence_bundle import export_dashboard_v2_deprecation_evidence_bundle
+
+        print(json.dumps(export_dashboard_v2_deprecation_evidence_bundle(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-removal-readiness-gate":
+        from .dashboard_v2.removal_readiness_gate import write_streamlit_removal_readiness_report
+
+        payload = write_streamlit_removal_readiness_report(Path.cwd())
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-dependency-isolation":
+        from .dashboard_v2.dependency_isolation import write_dashboard_v2_dependency_isolation
+
+        print(json.dumps(write_dashboard_v2_dependency_isolation(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-legacy-archive-create":
+        from .dashboard_v2.legacy_archive import create_dashboard_v2_legacy_archive
+
+        print(json.dumps(create_dashboard_v2_legacy_archive(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-legacy-archive-verify":
+        from .dashboard_v2.legacy_archive import verify_dashboard_v2_legacy_archive
+
+        payload = verify_dashboard_v2_legacy_archive(Path(args.archive))
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-streamlit-isolation-plan":
+        from .dashboard_v2.release_hardening import dashboard_v2_streamlit_isolation_plan
+
+        print(json.dumps(dashboard_v2_streamlit_isolation_plan(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-component-cleanup-report":
+        from .dashboard_v2.release_hardening import dashboard_v2_component_cleanup_report
+
+        print(json.dumps(dashboard_v2_component_cleanup_report(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-check-all":
+        from .dashboard_v2.release_hardening import dashboard_v2_check_all_profile
+
+        print(json.dumps(dashboard_v2_check_all_profile(args.profile), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-support-evidence-smoke":
+        from .dashboard_v2.release_hardening import dashboard_v2_support_evidence_smoke
+
+        print(json.dumps(dashboard_v2_support_evidence_smoke(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-release-simulation":
+        from .dashboard_v2.release_hardening import dashboard_v2_release_simulation
+
+        print(json.dumps(dashboard_v2_release_simulation(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-docs-v2-only-lock":
+        from .dashboard_v2.release_hardening import dashboard_v2_docs_v2_only_lock
+
+        print(json.dumps(dashboard_v2_docs_v2_only_lock(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-legacy-test-cleanup-report":
+        from .dashboard_v2.release_hardening import dashboard_v2_legacy_test_cleanup_report
+
+        print(json.dumps(dashboard_v2_legacy_test_cleanup_report(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-runtime-state-coupling-audit":
+        from .dashboard_v2.release_hardening import dashboard_v2_runtime_state_coupling_audit
+
+        print(json.dumps(dashboard_v2_runtime_state_coupling_audit(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-removal-patch-plan":
+        from .dashboard_v2.release_hardening import dashboard_v2_removal_patch_plan
+
+        print(json.dumps(dashboard_v2_removal_patch_plan(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-streamlit-removal-execute":
+        from .dashboard_v2.release_hardening import dashboard_v2_streamlit_removal_execute
+
+        payload = dashboard_v2_streamlit_removal_execute(Path.cwd(), confirm=args.confirm, dry_run=args.dry_run or not args.confirm)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-post-removal-verify":
+        from .dashboard_v2.release_hardening import dashboard_v2_post_removal_verify
+
+        print(json.dumps(dashboard_v2_post_removal_verify(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-removal-rollback-drill":
+        from .dashboard_v2.release_hardening import dashboard_v2_removal_rollback_drill
+
+        print(json.dumps(dashboard_v2_removal_rollback_drill(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-only-release-evidence-export":
+        from .dashboard_v2.release_hardening import export_dashboard_v2_only_release_evidence
+
+        print(json.dumps(export_dashboard_v2_only_release_evidence(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-workspaces":
+        from .dashboard_v2.workspace_store import default_workspace_store
+
+        print(json.dumps(default_workspace_store(Path.cwd()).list(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-workspace-validate":
+        from .dashboard_v2.workspace_schema import validate_dashboard_workspace
+        from .dashboard_v2.workspace_store import default_workspace_store
+
+        workspace = default_workspace_store(Path.cwd()).load(args.workspace)
+        payload = validate_dashboard_workspace(workspace).to_dict()
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-workspace-create":
+        from .dashboard_v2.workspace_presets import build_workspace_preset
+        from .dashboard_v2.workspace_store import default_workspace_store
+
+        workspace = build_workspace_preset(args.preset, name=args.name)
+        print(json.dumps(default_workspace_store(Path.cwd()).save(workspace), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-workspace-clone":
+        from .dashboard_v2.workspace_store import default_workspace_store
+
+        print(json.dumps(default_workspace_store(Path.cwd()).clone(args.workspace), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-workspace-export":
+        from .dashboard_v2.workspace_store import default_workspace_store
+
+        print(json.dumps(default_workspace_store(Path.cwd()).export(args.workspace), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-workspace-import":
+        from .dashboard_v2.workspace_store import default_workspace_store
+
+        payload = default_workspace_store(Path.cwd()).import_workspace(Path(args.path), dry_run=args.dry_run)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-widget-registry":
+        from .dashboard_v2.widget_registry import widget_registry_payload
+
+        print(json.dumps(widget_registry_payload(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-workspace-presets":
+        from .dashboard_v2.workspace_presets import workspace_presets_payload
+
+        print(json.dumps(workspace_presets_payload(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-watchlists":
+        from .dashboard_v2.watchlists import default_watchlist_store
+
+        print(json.dumps(default_watchlist_store(Path.cwd()).list(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-watchlist-create":
+        from .dashboard_v2.watchlists import default_watchlist_store
+
+        print(json.dumps(default_watchlist_store(Path.cwd()).create(args.name, _csv_arg(args.symbols)), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-operator-preferences":
+        from .dashboard_v2.operator_preferences import operator_preferences_payload
+
+        print(json.dumps(operator_preferences_payload(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-analytics-query":
+        from .dashboard_v2.analytics_query import analytics_query
+
+        payload = analytics_query(scope=args.scope, tail=args.tail)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-workspace-performance":
+        from .dashboard_v2.workspace_performance import evaluate_workspace_performance
+        from .dashboard_v2.workspace_store import default_workspace_store
+
+        workspace = default_workspace_store(Path.cwd()).load(args.workspace)
+        payload = evaluate_workspace_performance(workspace)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-workspace-evidence-export":
+        from .dashboard_v2.workspace_evidence_bundle import export_workspace_evidence_bundle
+
+        print(json.dumps(export_workspace_evidence_bundle(Path.cwd(), args.workspace), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-extension-packs":
+        from .dashboard_v2.extension_pack_registry import default_extension_pack_registry
+
+        print(json.dumps(default_extension_pack_registry(Path.cwd()).available(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-extension-pack-validate":
+        from .dashboard_v2.extension_pack_schema import load_dashboard_extension_pack, validate_dashboard_extension_pack
+
+        payload = validate_dashboard_extension_pack(load_dashboard_extension_pack(Path(args.path))).to_dict()
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-extension-pack-preview":
+        from .dashboard_v2.pack_install_preview import preview_pack_file
+
+        payload = preview_pack_file(Path(args.path))
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-extension-pack-install":
+        from .dashboard_v2.extension_pack_registry import default_extension_pack_registry
+
+        payload = default_extension_pack_registry(Path.cwd()).install_file(Path(args.path), confirm=args.confirm, enabled=False)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-extension-pack-uninstall":
+        from .dashboard_v2.extension_pack_registry import default_extension_pack_registry
+
+        payload = default_extension_pack_registry(Path.cwd()).uninstall(args.pack_id, confirm=args.confirm)
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") == "blocked":
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-extension-pack-enable":
+        from .dashboard_v2.extension_pack_registry import default_extension_pack_registry
+
+        print(json.dumps(default_extension_pack_registry(Path.cwd()).set_enabled(args.pack_id, True), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-extension-pack-disable":
+        from .dashboard_v2.extension_pack_registry import default_extension_pack_registry
+
+        print(json.dumps(default_extension_pack_registry(Path.cwd()).set_enabled(args.pack_id, False), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-extension-pack-export":
+        from .dashboard_v2.extension_pack_registry import default_extension_pack_registry
+
+        print(json.dumps(default_extension_pack_registry(Path.cwd()).export(args.pack_id), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-extension-pack-compatibility":
+        from .dashboard_v2.extension_pack_registry import default_extension_pack_registry
+        from .dashboard_v2.pack_compatibility import evaluate_pack_compatibility
+
+        payload = evaluate_pack_compatibility(default_extension_pack_registry(Path.cwd()).load_pack(args.pack_id))
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        if payload.get("status") in {"blocked_unsafe", "incompatible"}:
+            raise SystemExit(1)
+        return
+    if args.command == "dashboard-v2-template-packs":
+        from .dashboard_v2.workspace_template_packs import template_packs_payload
+
+        print(json.dumps(template_packs_payload(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-analytics-presets":
+        from .dashboard_v2.analytics_preset_packs import analytics_presets_payload
+
+        print(json.dumps(analytics_presets_payload(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-workflow-packs":
+        from .dashboard_v2.workflow_packs import workflow_packs_payload
+
+        print(json.dumps(workflow_packs_payload(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-pack-recommendations":
+        from .dashboard_v2.pack_recommendations import write_pack_recommendations
+
+        print(json.dumps(write_pack_recommendations(Path.cwd(), args.workflow), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-extension-pack-evidence-export":
+        from .dashboard_v2.extension_pack_evidence import export_extension_pack_evidence
+
+        print(json.dumps(export_extension_pack_evidence(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "market-intelligence-policy":
+        from .market_intelligence.public_endpoint_policy import write_public_endpoint_policy_report
+
+        print(json.dumps(write_public_endpoint_policy_report(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command in {"symbol-universe-refresh", "symbol-universe-report"}:
+        from .market_intelligence.symbol_universe import write_symbol_universe_report
+
+        print(json.dumps(write_symbol_universe_report(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "market-snapshot-cache-report":
+        from .market_intelligence.market_snapshot_cache import default_market_snapshot_cache
+
+        payload = default_market_snapshot_cache(Path.cwd()).seed_demo(["BTCUSDT", "ETHUSDT", "BNBUSDT"])
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "scanner-rate-limit-plan":
+        from .market_intelligence.rate_limit_budget import scanner_rate_limit_plan
+        from .market_intelligence.scanner_presets import get_scanner_preset
+
+        preset = get_scanner_preset(args.preset)
+        print(json.dumps(scanner_rate_limit_plan(preset.symbols), indent=2 if args.json else None, default=str))
+        return
+    if args.command in {"watchlist-scan-preview", "watchlist-scan-run"}:
+        from .market_intelligence.scanner_presets import get_scanner_preset
+        from .market_intelligence.watchlist_scanner import run_watchlist_scan
+
+        if args.command == "watchlist-scan-run" and args.confirm != "RUN_PUBLIC_MARKET_SCAN":
+            print(json.dumps({"status": "blocked", "blockers": ["scan requires confirm RUN_PUBLIC_MARKET_SCAN"], "live_trading_enabled": False}, indent=2 if args.json else None))
+            raise SystemExit(1)
+        preset = get_scanner_preset(args.preset)
+        print(json.dumps(run_watchlist_scan(preset.symbols, root=Path.cwd(), preset=args.preset), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "market-rankings":
+        from .market_intelligence.scanner_presets import get_scanner_preset
+        from .market_intelligence.symbol_ranking import rank_symbols
+        from .market_intelligence.watchlist_scanner import run_watchlist_scan
+
+        preset = get_scanner_preset("majors_overview")
+        scan = run_watchlist_scan(preset.symbols, root=Path.cwd(), preset=preset.preset_id)
+        print(json.dumps(rank_symbols(list(scan.get("metrics", [])), preset.ranking_dimension), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "market-scanner-presets":
+        from .market_intelligence.scanner_presets import scanner_presets_payload
+
+        print(json.dumps(scanner_presets_payload(), indent=2 if args.json else None, default=str))
+        return
+    if args.command in {"multi-symbol-paper-analytics-preview", "multi-symbol-paper-analytics-run"}:
+        from .market_intelligence.multi_symbol_paper_analytics import run_multi_symbol_paper_analytics
+
+        if args.command == "multi-symbol-paper-analytics-run" and args.confirm != "RUN_PAPER_ANALYTICS_ONLY":
+            print(json.dumps({"status": "blocked", "blockers": ["paper analytics requires confirm RUN_PAPER_ANALYTICS_ONLY"], "live_trading_enabled": False}, indent=2 if args.json else None))
+            raise SystemExit(1)
+        print(json.dumps(run_multi_symbol_paper_analytics(["BTCUSDT", "ETHUSDT", "BNBUSDT"], root=Path.cwd(), confirm=args.confirm), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "market-intelligence-evidence-export":
+        from .market_intelligence.scanner_evidence_bundle import export_market_intelligence_evidence
+
+        print(json.dumps(export_market_intelligence_evidence(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-market-intelligence-smoke":
+        from .market_intelligence.public_endpoint_policy import public_endpoint_policy_report_to_dict, build_public_endpoint_policy_report
+        from .market_intelligence.scanner_presets import scanner_presets_payload
+
+        print(json.dumps({"status": "ok", "policy": public_endpoint_policy_report_to_dict(build_public_endpoint_policy_report()), "presets": scanner_presets_payload(), "live_trading_enabled": False}, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-legacy":
+        from .dashboard_v2.legacy import streamlit_legacy_status
+
+        print(json.dumps(streamlit_legacy_status(), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-choice":
+        from .dashboard_v2.legacy import dashboard_choice
+
+        print(json.dumps(dashboard_choice(), indent=2 if args.json else None, default=str))
+        return
     if args.command == "validate-config":
         settings.validate_startup()
         print(json.dumps({"status": "ok", "mode": settings.trading_mode.value}))
@@ -1341,6 +2673,64 @@ def main() -> None:
             payload = export_test_evidence_bundle(files, settings.data_dir / "test-runs" / "evidence" / args.run_id)
         print(json.dumps(payload, indent=2 if getattr(args, "json", False) else None, default=str))
         if payload.get("status") in {"blocked", "failed", "fail"} and args.command not in {"test-select", "check-profile"}:
+            raise SystemExit(1)
+        return
+    if args.command in {
+        "perf-profile-runtime",
+        "perf-profile-cli",
+        "perf-profile-dashboard-import",
+        "perf-profile-dashboard-smoke",
+        "perf-profile-check-all",
+        "perf-budget-check",
+        "perf-regression-check",
+        "perf-history",
+        "perf-report",
+        "perf-evidence-export",
+    }:
+        from .cli_profiler import profile_cli_command
+        from .dashboard_profiler import profile_dashboard_panels
+        from .data_performance import analyze_data_performance
+        from .performance_budget import evaluate_performance_budget, load_performance_budgets
+        from .performance_evidence_bundle import export_performance_evidence_bundle
+        from .performance_recommendations import performance_recommendations
+        from .performance_regression import detect_performance_regression
+        from .performance_store import save_profile_run
+        from .profiling_core import ProfileRun, summarize_profile_run, write_profile_run
+        from .resource_monitor import resource_snapshot
+        from .runtime_profiler import profile_runtime_steps
+
+        root = Path.cwd()
+        if args.command == "perf-profile-runtime":
+            payload = profile_runtime_steps(steps=[f"step_{idx}" for idx in range(args.steps)])
+            payload["store"] = save_profile_run(root, payload["run"])
+        elif args.command == "perf-profile-cli":
+            payload = profile_cli_command(root, f"python -m binance_spot_bot.cli {args.profile_command}", execute=False)
+            payload["store"] = save_profile_run(root, payload["run"])
+        elif args.command in {"perf-profile-dashboard-import", "perf-profile-dashboard-smoke"}:
+            payload = profile_dashboard_panels(["overview", "demo_spot_trading", "test_selection", "performance"])
+            payload["store"] = save_profile_run(root, payload["run"])
+        elif args.command == "perf-profile-check-all":
+            payload = profile_cli_command(root, "python -m binance_spot_bot.cli check-all --skip-tests --json", execute=False)
+        elif args.command == "perf-budget-check":
+            budgets = load_performance_budgets()
+            payload = evaluate_performance_budget("cli_command_ms", 1000.0, budgets["budgets"])
+        elif args.command == "perf-regression-check":
+            payload = detect_performance_regression("cli_command_ms", 1000.0, 1300.0, 1500.0)
+        elif args.command == "perf-history":
+            latest = root / "data" / "performance" / "latest.json"
+            payload = {"status": "ready", "days": args.days, "latest_exists": latest.exists(), "live_trading_enabled": False}
+        elif args.command == "perf-report":
+            run = ProfileRun("perf-report", "report").to_dict()
+            summary = summarize_profile_run(run)
+            payload = {"status": "ready", "summary": summary, "resources": resource_snapshot(root), "data": analyze_data_performance(root), "recommendations": performance_recommendations(summary), "live_trading_enabled": False}
+            report_path = root / "data" / "performance" / "reports"
+            payload["paths"] = write_profile_run(run, report_path)
+        else:
+            latest = root / "data" / "performance" / "latest.json"
+            files = [latest] if latest.exists() else []
+            payload = export_performance_evidence_bundle(files, settings.data_dir / "performance" / "evidence" / args.run_id)
+        print(json.dumps(payload, indent=2 if getattr(args, "json", False) else None, default=str))
+        if payload.get("status") in {"blocked", "failed", "fail"}:
             raise SystemExit(1)
         return
     if args.command == "metrics-warehouse-report":
@@ -2071,6 +3461,12 @@ def main() -> None:
             raise SystemExit(1)
         return
     if args.command == "dashboard":
+        if args.v2 or args.auto or args.fallback_if_v2_fails or not args.legacy_streamlit:
+            from .dashboard_v2.cli_router import dashboard_v2_cli_router_report
+
+            mode = "v2" if args.v2 else "auto"
+            print(json.dumps(dashboard_v2_cli_router_report(mode, fallback_if_v2_fails=args.fallback_if_v2_fails), default=str))
+            return
         command = [
             sys.executable,
             "-m",

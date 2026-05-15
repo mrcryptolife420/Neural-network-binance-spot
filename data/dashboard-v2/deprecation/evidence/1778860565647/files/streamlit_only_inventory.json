@@ -1,0 +1,176 @@
+{
+  "status": "ok",
+  "json": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\dashboard-v2\\deprecation\\streamlit-only-inventory.json",
+  "markdown": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\dashboard-v2\\deprecation\\streamlit-only-inventory.md",
+  "report": {
+    "status": "ok",
+    "render_functions": [
+      {
+        "name": "_render_action_center",
+        "critical": false
+      },
+      {
+        "name": "_render_ai_ops_assistant",
+        "critical": false
+      },
+      {
+        "name": "_render_bot_controls",
+        "critical": false
+      },
+      {
+        "name": "_render_credentials",
+        "critical": false
+      },
+      {
+        "name": "_render_data_pipeline",
+        "critical": false
+      },
+      {
+        "name": "_render_demo_execution_drill",
+        "critical": true
+      },
+      {
+        "name": "_render_demo_pilot",
+        "critical": true
+      },
+      {
+        "name": "_render_demo_spot_trading",
+        "critical": true
+      },
+      {
+        "name": "_render_disaster_recovery",
+        "critical": false
+      },
+      {
+        "name": "_render_evaluation",
+        "critical": false
+      },
+      {
+        "name": "_render_logs_security",
+        "critical": false
+      },
+      {
+        "name": "_render_market",
+        "critical": false
+      },
+      {
+        "name": "_render_model_monitoring",
+        "critical": false
+      },
+      {
+        "name": "_render_model_training",
+        "critical": false
+      },
+      {
+        "name": "_render_observability",
+        "critical": false
+      },
+      {
+        "name": "_render_operator_training",
+        "critical": false
+      },
+      {
+        "name": "_render_ops_automation",
+        "critical": false
+      },
+      {
+        "name": "_render_orders",
+        "critical": false
+      },
+      {
+        "name": "_render_overview",
+        "critical": false
+      },
+      {
+        "name": "_render_paper_os_audit",
+        "critical": true
+      },
+      {
+        "name": "_render_performance",
+        "critical": false
+      },
+      {
+        "name": "_render_permissions",
+        "critical": false
+      },
+      {
+        "name": "_render_policy_governance",
+        "critical": false
+      },
+      {
+        "name": "_render_portfolio",
+        "critical": false
+      },
+      {
+        "name": "_render_portfolio_ensemble",
+        "critical": false
+      },
+      {
+        "name": "_render_readiness",
+        "critical": false
+      },
+      {
+        "name": "_render_release_management",
+        "critical": false
+      },
+      {
+        "name": "_render_repo_knowledge",
+        "critical": false
+      },
+      {
+        "name": "_render_research",
+        "critical": false
+      },
+      {
+        "name": "_render_roadmap_automation",
+        "critical": false
+      },
+      {
+        "name": "_render_runtime_core",
+        "critical": false
+      },
+      {
+        "name": "_render_sessions",
+        "critical": false
+      },
+      {
+        "name": "_render_simple_demo_dashboard",
+        "critical": true
+      },
+      {
+        "name": "_render_simple_live_content",
+        "critical": false
+      },
+      {
+        "name": "_render_simple_live_fragment",
+        "critical": false
+      },
+      {
+        "name": "_render_stabilization",
+        "critical": false
+      },
+      {
+        "name": "_render_status_header",
+        "critical": false
+      },
+      {
+        "name": "_render_strategy",
+        "critical": false
+      },
+      {
+        "name": "_render_strategy_lab",
+        "critical": false
+      },
+      {
+        "name": "_render_test_selection",
+        "critical": false
+      }
+    ],
+    "streamlit_only_pages": [],
+    "streamlit_only_actions": [],
+    "report_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\src\\binance_spot_bot\\ui\\streamlit_app.py",
+    "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+    "live_trading_enabled": false
+  },
+  "live_trading_enabled": false
+}

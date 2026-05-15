@@ -1,0 +1,14 @@
+{
+  "status": "ok",
+  "decision": "remove_after_gate",
+  "files_to_move": [
+    "src/binance_spot_bot/ui/streamlit_app.py"
+  ],
+  "files_to_delete_later": [],
+  "validation_commands": [
+    "python -m pytest -q",
+    "python -m binance_spot_bot.cli check-all --skip-tests --json"
+  ],
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

@@ -1,0 +1,5 @@
+source,target,type
+roadmap:089,roadmap:090,follows_on
+roadmap:090,module:src/binance_spot_bot/roadmap_index.py,implements
+test:tests/test_roadmap_090_roadmap_execution_acceptance.py,roadmap:090,validates
+doc:docs/roadmap-execution-cli.md,roadmap:090,documents

@@ -1,0 +1,24 @@
+{
+  "command_id": "1778845684023-stop",
+  "type": "stop",
+  "created_at_ms": 1778845684023,
+  "status": "processed",
+  "payload": {},
+  "processed_at_ms": 1778845684143,
+  "result": {
+    "status": "stopped",
+    "report_paths": {
+      "summary_json": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp1135cc7d9b0040f8af83453035cc3904\\data\\sessions\\1778845683975-ce7a4a73\\report\\summary.json",
+      "summary_md": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp1135cc7d9b0040f8af83453035cc3904\\data\\sessions\\1778845683975-ce7a4a73\\report\\summary.md",
+      "fills_csv": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp1135cc7d9b0040f8af83453035cc3904\\data\\sessions\\1778845683975-ce7a4a73\\report\\fills.csv",
+      "equity_csv": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp1135cc7d9b0040f8af83453035cc3904\\data\\sessions\\1778845683975-ce7a4a73\\report\\equity.csv",
+      "alerts_jsonl": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp1135cc7d9b0040f8af83453035cc3904\\data\\sessions\\1778845683975-ce7a4a73\\report\\alerts.jsonl",
+      "orders_jsonl": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp1135cc7d9b0040f8af83453035cc3904\\data\\sessions\\1778845683975-ce7a4a73\\report\\orders.jsonl",
+      "config_redacted_json": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp1135cc7d9b0040f8af83453035cc3904\\data\\sessions\\1778845683975-ce7a4a73\\report\\config-redacted.json",
+      "demo_pilot_json": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp1135cc7d9b0040f8af83453035cc3904\\data\\sessions\\1778845683975-ce7a4a73\\report\\demo-pilot.json",
+      "demo_pilot_md": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp1135cc7d9b0040f8af83453035cc3904\\data\\sessions\\1778845683975-ce7a4a73\\report\\demo-pilot.md",
+      "pilot_acceptance_json": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp1135cc7d9b0040f8af83453035cc3904\\data\\sessions\\1778845683975-ce7a4a73\\report\\pilot-acceptance.json",
+      "pilot_acceptance_md": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp1135cc7d9b0040f8af83453035cc3904\\data\\sessions\\1778845683975-ce7a4a73\\report\\pilot-acceptance.md"
+    }
+  }
+}

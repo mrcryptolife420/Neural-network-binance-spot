@@ -1,0 +1,11 @@
+{
+  "status": "ok",
+  "created_at_ms": 1778853355763,
+  "files": [
+    {
+      "path": "files\\operator_docs_index.json",
+      "sha256": "b8393b2ecf0a090429e28267915b234d"
+    }
+  ],
+  "live_trading_enabled": false
+}

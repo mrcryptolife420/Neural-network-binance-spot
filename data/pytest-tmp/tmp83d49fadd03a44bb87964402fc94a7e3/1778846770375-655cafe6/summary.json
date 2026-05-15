@@ -1,0 +1,15 @@
+{
+  "session_id": "1778846770375-655cafe6",
+  "mode": "demo",
+  "symbol": "BTCUSDT",
+  "interval": "1m",
+  "started_at_ms": 1778846770375,
+  "ended_at_ms": 1778846770383,
+  "pnl": "1",
+  "max_drawdown": "0.5",
+  "trades": 1,
+  "blocks": 2,
+  "model_version": "m1",
+  "status": "completed",
+  "metadata": {}
+}

@@ -1,0 +1,166 @@
+{
+  "status": "ok",
+  "checks": [
+    {
+      "name": "config_validation",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "{\"status\": \"ok\", \"mode\": \"disabled\"}",
+      "stderr_tail": ""
+    },
+    {
+      "name": "preflight",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "{\"status\": \"ok\", \"checks\": [{\"name\": \"config\", \"status\": \"ok\", \"message\": \"configuration validates\", \"blocking\": false}, {\"name\": \"live_disabled\", \"status\": \"ok\", \"message\": \"live trading disabled\", \"blocking\": false}, {\"name\": \"data_dirs\", \"status\": \"ok\", \"message\": \"data dir ready: C:\\\\Users\\\\highlife\\\\Desktop\\\\Neural network binance spot\\\\data\\\\pytest-tmp\\\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-b77f73c008b3439389c9dc3412aab6b7\\\\data\", \"blocking\": false}, {\"name\": \"dependency_streamlit\", \"status\": \"ok\", \"message\": \"streamlit available\", \"blocking\": false}, {\"name\": \"credentials\", \"status\": \"ok\", \"message\": \"local demo does not require credentials\", \"blocking\": false}, {\"name\": \"secret_scan\", \"status\": \"ok\", \"message\": \"no secret artifacts found\", \"blocking\": false}]}",
+      "stderr_tail": ""
+    },
+    {
+      "name": "security_scan",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "{\"findings\": []}",
+      "stderr_tail": ""
+    },
+    {
+      "name": "dashboard_import",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "name": "diagnostics_cli",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "      \"source\": \"check_all.missing\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"action\": \"Run rehearsal or check-all\",\n      \"source\": \"demo_execution.missing\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"action\": \"Run rehearsal or check-all\",\n      \"source\": \"pilot_start_idempotency.missing\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"action\": \"Run rehearsal or check-all\",\n      \"source\": \"operator_evidence.missing\"\n    }\n  ],\n  \"generated_at_ms\": 1778860255884\n}",
+      "stderr_tail": ""
+    },
+    {
+      "name": "support_bundle_cli",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "{\n  \"bundle\": \"C:\\\\Users\\\\highlife\\\\Desktop\\\\Neural network binance spot\\\\data\\\\pytest-tmp\\\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-b77f73c008b3439389c9dc3412aab6b7\\\\data\\\\support\\\\support-bundle.zip\",\n  \"manifest\": \"manifest.json\",\n  \"files\": 4,\n  \"live_trading_enabled\": false\n}",
+      "stderr_tail": ""
+    },
+    {
+      "name": "operator_quality_gate_cli",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "  \"report\": {\n    \"markdown\": \"C:\\\\Users\\\\highlife\\\\Desktop\\\\Neural network binance spot\\\\data\\\\pytest-tmp\\\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-b77f73c008b3439389c9dc3412aab6b7\\\\data\\\\reports\\\\operator\\\\operator-report.md\",\n    \"html\": \"C:\\\\Users\\\\highlife\\\\Desktop\\\\Neural network binance spot\\\\data\\\\pytest-tmp\\\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-b77f73c008b3439389c9dc3412aab6b7\\\\data\\\\reports\\\\operator\\\\operator-report.html\",\n    \"live_trading_enabled\": \"false\"\n  },\n  \"support_bundle\": {\n    \"bundle\": \"C:\\\\Users\\\\highlife\\\\Desktop\\\\Neural network binance spot\\\\data\\\\pytest-tmp\\\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-b77f73c008b3439389c9dc3412aab6b7\\\\data\\\\support\\\\quality-gate-support.zip\",\n    \"manifest\": \"manifest.json\",\n    \"files\": 4,\n    \"live_trading_enabled\": false\n  },\n  \"support_bundle_verify\": {\n    \"status\": \"ok\",\n    \"bundle\": \"C:\\\\Users\\\\highlife\\\\Desktop\\\\Neural network binance spot\\\\data\\\\pytest-tmp\\\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-b77f73c008b3439389c9dc3412aab6b7\\\\data\\\\support\\\\quality-gate-support.zip\",\n    \"errors\": [],\n    \"files\": 4,\n    \"live_trading_enabled\": false\n  },\n  \"live_trading_enabled\": false\n}",
+      "stderr_tail": ""
+    },
+    {
+      "name": "local_ops_snapshot_cli",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "      {\n        \"command\": \"data-growth-budget\",\n        \"purpose\": \"Summarize local data growth budget.\",\n        \"live_trading\": false\n      },\n      {\n        \"command\": \"rehearsal-profiles\",\n        \"purpose\": \"List fast, standard, and deep rehearsals.\",\n        \"live_trading\": false\n      },\n      {\n        \"command\": \"demo-acceptance-rehearsal\",\n        \"purpose\": \"Run demo acceptance rehearsal.\",\n        \"live_trading\": false\n      }\n    ],\n    \"live_trading_enabled\": false\n  },\n  \"live_trading_enabled\": false\n}",
+      "stderr_tail": ""
+    },
+    {
+      "name": "pilot_orchestrator_import",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "name": "pilot_runner_import",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "name": "pilot_store_smoke",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "name": "pilot_runner_status_smoke",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "name": "cli_smoke",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "{\"port\": 8700, \"url\": \"http://127.0.0.1:8700\", \"live_trading_enabled\": false}",
+      "stderr_tail": ""
+    },
+    {
+      "name": "dashboard_v2_import",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "name": "dashboard_v2_api_smoke",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "    \"live_trading_enabled\": false\n  },\n  \"websocket_heartbeat\": {\n    \"topic\": \"system.health\",\n    \"payload\": {\n      \"status\": \"ok\"\n    },\n    \"ts_ms\": 1778860265395,\n    \"no_live_statement\": \"LOCAL REALTIME DASHBOARD - NO LIVE TRADING\",\n    \"live_trading_enabled\": false\n  },\n  \"static\": {\n    \"status\": \"ok\",\n    \"path\": \"C:\\\\Users\\\\highlife\\\\Desktop\\\\Neural network binance spot\\\\src\\\\binance_spot_bot\\\\dashboard_v2\\\\static\",\n    \"live_trading_enabled\": false\n  },\n  \"no_live_statement\": \"LOCAL REALTIME DASHBOARD - NO LIVE TRADING\",\n  \"blockers\": [],\n  \"live_trading_enabled\": false\n}",
+      "stderr_tail": ""
+    },
+    {
+      "name": "dashboard_v2_page_parity",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "    {\n      \"key\": \"paper_os_audit\",\n      \"title\": \"Paper OS Audit\",\n      \"route\": \"/paper-os-audit\",\n      \"live_trading_enabled\": false\n    },\n    {\n      \"key\": \"stabilization\",\n      \"title\": \"Stabilization\",\n      \"route\": \"/stabilization\",\n      \"live_trading_enabled\": false\n    },\n    {\n      \"key\": \"operator_training\",\n      \"title\": \"Operator Training\",\n      \"route\": \"/operator-training\",\n      \"live_trading_enabled\": false\n    }\n  ]\n}",
+      "stderr_tail": ""
+    },
+    {
+      "name": "dashboard_v2_performance_budget",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "      {\n        \"metric\": \"cpu_best_effort_pct\",\n        \"status\": \"unknown\",\n        \"value\": null,\n        \"budget\": null,\n        \"recommendation\": \"collect metric before cutover\"\n      },\n      {\n        \"metric\": \"browser_console_errors\",\n        \"status\": \"pass\",\n        \"value\": 0,\n        \"budget\": 0,\n        \"recommendation\": \"\"\n      }\n    ],\n    \"hard_blockers\": [],\n    \"no_live_statement\": \"LOCAL REALTIME DASHBOARD - NO LIVE TRADING\",\n    \"live_trading_enabled\": false\n  }\n}",
+      "stderr_tail": ""
+    },
+    {
+      "name": "dashboard_v2_cutover_readiness",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "        \"detail\": \"local acceptance scaffold available\"\n      },\n      {\n        \"name\": \"streamlit_fallback_available\",\n        \"status\": \"ok\",\n        \"points\": 10,\n        \"detail\": \"\"\n      },\n      {\n        \"name\": \"no_live_proof\",\n        \"status\": \"ok\",\n        \"points\": 15,\n        \"detail\": \"\"\n      }\n    ],\n    \"hard_blockers\": [],\n    \"no_live_statement\": \"LOCAL REALTIME DASHBOARD - NO LIVE TRADING\",\n    \"live_trading_enabled\": false\n  }\n}",
+      "stderr_tail": ""
+    },
+    {
+      "name": "dashboard_v2_ux_backlog",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "          \"sources\": [\n            \"performance\"\n          ],\n          \"count\": 1,\n          \"status\": \"open\"\n        }\n      ],\n      \"warnings\": [\n        \"missing optional artifact: data/dashboard-v2/uat/feedback.json\",\n        \"missing optional artifact: data/dashboard-v2/browser-smoke/matrix.json\",\n        \"missing optional artifact: data/docs/consistency.json\"\n      ],\n      \"no_live_statement\": \"LOCAL REALTIME DASHBOARD - NO LIVE TRADING\",\n      \"live_trading_enabled\": false\n    },\n    \"generated_at_ms\": 1778860269573,\n    \"live_trading_enabled\": false\n  },\n  \"live_trading_enabled\": false\n}",
+      "stderr_tail": ""
+    },
+    {
+      "name": "dashboard_v2_streamlit_deprecation",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "  \"status\": \"ok\",\n  \"path\": \"C:\\\\Users\\\\highlife\\\\Desktop\\\\Neural network binance spot\\\\data\\\\dashboard-v2\\\\ux\\\\streamlit-deprecation-readiness.json\",\n  \"report\": {\n    \"status\": \"ok\",\n    \"grade\": \"deprecation_candidate\",\n    \"streamlit_removed\": false,\n    \"remaining_blockers\": [],\n    \"fallback\": {\n      \"status\": \"ok\",\n      \"fallback_available\": true,\n      \"command\": \"python -m binance_spot_bot.cli dashboard --legacy-streamlit\",\n      \"policy\": \"docs/dashboard-v2/streamlit-fallback-policy.md\",\n      \"no_live_statement\": \"LOCAL REALTIME DASHBOARD - NO LIVE TRADING\",\n      \"live_trading_enabled\": false\n    },\n    \"no_live_statement\": \"LOCAL REALTIME DASHBOARD - NO LIVE TRADING\",\n    \"live_trading_enabled\": false\n  },\n  \"live_trading_enabled\": false\n}",
+      "stderr_tail": ""
+    },
+    {
+      "name": "no_live_ui",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "name": "no_secret_artifacts",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "{\"findings\": []}",
+      "stderr_tail": ""
+    },
+    {
+      "name": "ruff",
+      "status": "ok",
+      "returncode": 0,
+      "stdout_tail": "ruff not installed; optional check skipped",
+      "stderr_tail": ""
+    }
+  ]
+}

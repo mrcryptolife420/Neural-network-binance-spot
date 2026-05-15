@@ -1,0 +1,116 @@
+{
+  "status": "ok",
+  "journeys": [
+    {
+      "key": "beginner",
+      "title": "Beginner",
+      "primary_route": "/",
+      "fallback_route": "/streamlit-legacy",
+      "steps": [
+        {
+          "key": "open",
+          "label": "Open dashboard",
+          "route": "/",
+          "fallback_route": "/streamlit-legacy",
+          "no_live_step": false
+        },
+        {
+          "key": "no_live",
+          "label": "Verify no-live",
+          "route": "/",
+          "fallback_route": "/streamlit-legacy",
+          "no_live_step": true
+        },
+        {
+          "key": "demo",
+          "label": "Run demo smoke",
+          "route": "/start",
+          "fallback_route": "/streamlit-legacy",
+          "no_live_step": false
+        },
+        {
+          "key": "evidence",
+          "label": "Export evidence",
+          "route": "/evidence",
+          "fallback_route": "/streamlit-legacy",
+          "no_live_step": false
+        }
+      ]
+    },
+    {
+      "key": "paper_operator",
+      "title": "Paper Operator",
+      "primary_route": "/paper-session-workflow",
+      "fallback_route": "/streamlit-legacy",
+      "steps": [
+        {
+          "key": "no_live",
+          "label": "Verify no-live",
+          "route": "/",
+          "fallback_route": "/streamlit-legacy",
+          "no_live_step": true
+        },
+        {
+          "key": "configure",
+          "label": "Configure symbol and risk",
+          "route": "/start",
+          "fallback_route": "/streamlit-legacy",
+          "no_live_step": false
+        },
+        {
+          "key": "monitor",
+          "label": "Monitor session",
+          "route": "/paper-session-workflow",
+          "fallback_route": "/streamlit-legacy",
+          "no_live_step": false
+        },
+        {
+          "key": "review",
+          "label": "Review report",
+          "route": "/sessions",
+          "fallback_route": "/streamlit-legacy",
+          "no_live_step": false
+        }
+      ]
+    },
+    {
+      "key": "demo_spot_operator",
+      "title": "Demo Spot Operator",
+      "primary_route": "/demo-spot-guided",
+      "fallback_route": "/streamlit-legacy",
+      "steps": [
+        {
+          "key": "no_live",
+          "label": "Verify demo only",
+          "route": "/",
+          "fallback_route": "/streamlit-legacy",
+          "no_live_step": true
+        },
+        {
+          "key": "profile",
+          "label": "Check demo profile",
+          "route": "/demo-spot-guided",
+          "fallback_route": "/streamlit-legacy",
+          "no_live_step": false
+        },
+        {
+          "key": "preview",
+          "label": "Preview demo order",
+          "route": "/demo-spot-guided",
+          "fallback_route": "/streamlit-legacy",
+          "no_live_step": false
+        },
+        {
+          "key": "reconcile",
+          "label": "Reconcile demo order",
+          "route": "/orders-account",
+          "fallback_route": "/streamlit-legacy",
+          "no_live_step": false
+        }
+      ]
+    }
+  ],
+  "missing_pages": [],
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

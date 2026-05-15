@@ -1,0 +1,1 @@
+{"name": "paper.pnl", "value": -2.0, "source": "test", "category": "paper_performance", "unit": "quote", "status": "ok", "severity": "info", "labels": {}, "artifact_path": "", "evidence_id": "", "timestamp_ms": 1778848020366, "event_id": "test-paper.pnl-1778848020366", "schema_version": "1.0", "redacted": true, "live_trading_enabled": false}

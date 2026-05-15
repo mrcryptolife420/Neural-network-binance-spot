@@ -1,0 +1,11 @@
+[
+  {
+    "record_id": "ev-1778866522603",
+    "kind": "session-report",
+    "payload": {
+      "summary": "ok"
+    },
+    "sha256": "[REDACTED]",
+    "created_at_ms": 1778866522603
+  }
+]

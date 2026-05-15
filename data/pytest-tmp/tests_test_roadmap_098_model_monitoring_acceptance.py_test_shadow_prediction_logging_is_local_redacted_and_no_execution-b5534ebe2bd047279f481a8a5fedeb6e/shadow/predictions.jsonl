@@ -1,0 +1,1 @@
+{"features": {"api_secret": "[REDACTED]"}, "live_trading_enabled": false, "model_alias": "candidate", "prediction": {"confidence": 0.7, "signal": "BUY"}, "symbol": "BTCUSDT", "timestamp_ms": 1778860277202}

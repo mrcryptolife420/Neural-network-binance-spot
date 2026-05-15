@@ -1,0 +1,1098 @@
+{
+  "status": "ok",
+  "widgets": [
+    {
+      "widget_type": "no_live_banner",
+      "title": "No Live Banner",
+      "category": "safety",
+      "data_sources": [
+        "no_live_proof"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 1,
+      "locked": true,
+      "can_export": false,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "stop_button",
+      "title": "Stop Button",
+      "category": "safety",
+      "data_sources": [
+        "runtime_controls"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 1,
+      "locked": true,
+      "can_export": true,
+      "action_policy": "safe_local_stop",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "runtime_status",
+      "title": "Runtime Status",
+      "category": "runtime",
+      "data_sources": [
+        "runtime_snapshot"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "mode_source_symbol",
+      "title": "Mode Source Symbol",
+      "category": "runtime",
+      "data_sources": [
+        "runtime_snapshot"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "websocket_status",
+      "title": "WebSocket Status",
+      "category": "runtime",
+      "data_sources": [
+        "websocket"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "candle_chart",
+      "title": "Candle Chart",
+      "category": "chart",
+      "data_sources": [
+        "candles"
+      ],
+      "default_size": [
+        6,
+        4
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 6,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "equity_chart",
+      "title": "Equity Curve",
+      "category": "chart",
+      "data_sources": [
+        "equity_points"
+      ],
+      "default_size": [
+        6,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 4,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "signal_markers",
+      "title": "Signal Markers",
+      "category": "market",
+      "data_sources": [
+        "signals"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "fill_markers",
+      "title": "Fill Markers",
+      "category": "paper",
+      "data_sources": [
+        "fills"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "paper_account",
+      "title": "Paper Account",
+      "category": "paper",
+      "data_sources": [
+        "paper_account"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "risk_decision",
+      "title": "Risk Decision",
+      "category": "risk",
+      "data_sources": [
+        "risk_blocks"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "risk_block_summary",
+      "title": "Risk Block Summary",
+      "category": "risk",
+      "data_sources": [
+        "risk_blocks"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "alerts_inbox",
+      "title": "Alerts Inbox",
+      "category": "operator",
+      "data_sources": [
+        "alerts"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "demo_connection",
+      "title": "Demo Connection",
+      "category": "demo",
+      "data_sources": [
+        "demo_connection"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "demo_order_status",
+      "title": "Demo Order Status",
+      "category": "demo",
+      "data_sources": [
+        "open_demo_orders"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "reconciliation",
+      "title": "Reconciliation",
+      "category": "demo",
+      "data_sources": [
+        "reconciliation"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "session_summary",
+      "title": "Session Summary",
+      "category": "operator",
+      "data_sources": [
+        "sessions"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "active_model",
+      "title": "Active Model",
+      "category": "model",
+      "data_sources": [
+        "model_status"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "model_health",
+      "title": "Model Health",
+      "category": "model",
+      "data_sources": [
+        "model_status"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "prediction_drift",
+      "title": "Prediction Drift",
+      "category": "model",
+      "data_sources": [
+        "model_status"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "portfolio_allocation",
+      "title": "Portfolio Allocation",
+      "category": "portfolio",
+      "data_sources": [
+        "portfolio_status"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "risk_budget",
+      "title": "Risk Budget",
+      "category": "portfolio",
+      "data_sources": [
+        "portfolio_status"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "attribution",
+      "title": "Attribution",
+      "category": "portfolio",
+      "data_sources": [
+        "portfolio_status"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "rotation_status",
+      "title": "Rotation Status",
+      "category": "portfolio",
+      "data_sources": [
+        "portfolio_status"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "top_of_book",
+      "title": "Top Of Book",
+      "category": "market",
+      "data_sources": [
+        "runtime_snapshot"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "spread",
+      "title": "Spread",
+      "category": "market",
+      "data_sources": [
+        "runtime_snapshot"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "volume",
+      "title": "Volume",
+      "category": "market",
+      "data_sources": [
+        "candles"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "data_quality",
+      "title": "Data Quality",
+      "category": "market",
+      "data_sources": [
+        "runtime_snapshot"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "watchlist",
+      "title": "Watchlist",
+      "category": "operator",
+      "data_sources": [
+        "watchlists"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "session_report",
+      "title": "Session Report",
+      "category": "evidence",
+      "data_sources": [
+        "operator_evidence"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "evidence_manifest",
+      "title": "Evidence Manifest",
+      "category": "evidence",
+      "data_sources": [
+        "operator_evidence"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "support_bundle_status",
+      "title": "Support Bundle",
+      "category": "support",
+      "data_sources": [
+        "support_status"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "local_ops_snapshot",
+      "title": "Local Ops Snapshot",
+      "category": "support",
+      "data_sources": [
+        "operator_evidence"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "operator_quality_gate",
+      "title": "Operator Quality Gate",
+      "category": "operator",
+      "data_sources": [
+        "operator_evidence"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "performance_budget_status",
+      "title": "Performance Budget",
+      "category": "performance",
+      "data_sources": [
+        "performance_metrics"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "monitoring_alerts",
+      "title": "Monitoring Alerts",
+      "category": "logs",
+      "data_sources": [
+        "alerts"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    },
+    {
+      "widget_type": "signal_confidence",
+      "title": "Signal Confidence",
+      "category": "advanced",
+      "data_sources": [
+        "signals"
+      ],
+      "default_size": [
+        4,
+        3
+      ],
+      "min_size": [
+        2,
+        2
+      ],
+      "max_instances": 8,
+      "locked": false,
+      "can_export": true,
+      "action_policy": "read_only",
+      "safe_modes": [
+        "demo",
+        "paper",
+        "testnet-readiness"
+      ],
+      "required_permissions": [
+        "local_dashboard"
+      ],
+      "secret_safe": true
+    }
+  ],
+  "categories": [
+    "advanced",
+    "chart",
+    "demo",
+    "evidence",
+    "logs",
+    "market",
+    "model",
+    "operator",
+    "paper",
+    "performance",
+    "portfolio",
+    "risk",
+    "runtime",
+    "safety",
+    "support"
+  ],
+  "blockers": [],
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

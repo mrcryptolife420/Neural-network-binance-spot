@@ -1,0 +1,13 @@
+{
+  "command_id": "1778848282640-reconcile",
+  "type": "reconcile",
+  "created_at_ms": 1778848282640,
+  "status": "processed",
+  "payload": {
+    "api_secret": "[REDACTED]"
+  },
+  "processed_at_ms": 1778848282641,
+  "result": {
+    "ok": true
+  }
+}

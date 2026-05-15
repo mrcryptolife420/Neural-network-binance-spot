@@ -1,0 +1,274 @@
+{
+  "manifest": {
+    "pack_id": "support_evidence_desk",
+    "name": "Support & Evidence Desk",
+    "description": "Local pluginless Dashboard V2 pack for Support & Evidence Desk.",
+    "version": "1.0",
+    "pack_type": "support_evidence_pack",
+    "schema_version": 2,
+    "author": "local",
+    "created_at_ms": 1778866203654,
+    "compatible_workspace_schema_versions": [
+      2
+    ],
+    "required_widget_types": [
+      "evidence_manifest",
+      "local_ops_snapshot",
+      "no_live_banner",
+      "operator_quality_gate",
+      "stop_button",
+      "support_bundle_status"
+    ],
+    "required_dashboard_v2_features": [
+      "workspaces",
+      "widget_registry"
+    ],
+    "mode_scope": "all_safe_modes",
+    "operator_level": "operator",
+    "tags": [
+      "support_evidence",
+      "local-only",
+      "no-live"
+    ],
+    "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+    "live_trading_enabled": false,
+    "content_hash": "58e729e3c8b2da5a"
+  },
+  "content": {
+    "workspace_templates": [
+      {
+        "workspace_id": "support-evidence-desk",
+        "name": "Support & Evidence Desk",
+        "description": "Dashboard V2 local-only preset: support_evidence",
+        "version": "2.0",
+        "operator_level": "operator",
+        "mode_scope": "all_safe_modes",
+        "layout": {
+          "grid": {
+            "columns": 12,
+            "row_height": 90,
+            "gap": 12
+          },
+          "panels": [
+            {
+              "panel_id": "panel_1",
+              "title": "No Live Banner",
+              "x": 0,
+              "y": 0,
+              "w": 4,
+              "h": 3,
+              "widget_id": "no_live_banner_1",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": true,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "no_live_proof"
+            },
+            {
+              "panel_id": "panel_2",
+              "title": "Stop Button",
+              "x": 6,
+              "y": 0,
+              "w": 4,
+              "h": 3,
+              "widget_id": "stop_button_2",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": true,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "runtime_controls"
+            },
+            {
+              "panel_id": "panel_3",
+              "title": "Support Bundle",
+              "x": 0,
+              "y": 4,
+              "w": 4,
+              "h": 3,
+              "widget_id": "support_bundle_status_3",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "support_status"
+            },
+            {
+              "panel_id": "panel_4",
+              "title": "Evidence Manifest",
+              "x": 6,
+              "y": 4,
+              "w": 4,
+              "h": 3,
+              "widget_id": "evidence_manifest_4",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "operator_evidence"
+            },
+            {
+              "panel_id": "panel_5",
+              "title": "Local Ops Snapshot",
+              "x": 0,
+              "y": 8,
+              "w": 4,
+              "h": 3,
+              "widget_id": "local_ops_snapshot_5",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "operator_evidence"
+            },
+            {
+              "panel_id": "panel_6",
+              "title": "Operator Quality Gate",
+              "x": 6,
+              "y": 8,
+              "w": 4,
+              "h": 3,
+              "widget_id": "operator_quality_gate_6",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "operator_evidence"
+            }
+          ],
+          "widgets": [
+            {
+              "widget_id": "no_live_banner_1",
+              "widget_type": "no_live_banner",
+              "title": "No Live Banner",
+              "settings": {},
+              "locked": true,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "no_live_proof"
+              ]
+            },
+            {
+              "widget_id": "stop_button_2",
+              "widget_type": "stop_button",
+              "title": "Stop Button",
+              "settings": {},
+              "locked": true,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "runtime_controls"
+              ]
+            },
+            {
+              "widget_id": "support_bundle_status_3",
+              "widget_type": "support_bundle_status",
+              "title": "Support Bundle",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "support_status"
+              ]
+            },
+            {
+              "widget_id": "evidence_manifest_4",
+              "widget_type": "evidence_manifest",
+              "title": "Evidence Manifest",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "operator_evidence"
+              ]
+            },
+            {
+              "widget_id": "local_ops_snapshot_5",
+              "widget_type": "local_ops_snapshot",
+              "title": "Local Ops Snapshot",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "operator_evidence"
+              ]
+            },
+            {
+              "widget_id": "operator_quality_gate_6",
+              "widget_type": "operator_quality_gate",
+              "title": "Operator Quality Gate",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "operator_evidence"
+              ]
+            }
+          ]
+        },
+        "safety_widgets_locked": true,
+        "live_trading_enabled": false,
+        "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+        "metadata": {
+          "created_at_ms": 1778866203654,
+          "updated_at_ms": 1778866203654,
+          "owner": "local-operator",
+          "schema_version": 2
+        }
+      }
+    ],
+    "widget_presets": [],
+    "analytics_presets": [],
+    "watchlists": [],
+    "workflow_steps": [],
+    "docs": "# Support & Evidence Desk\n\nLOCAL REALTIME DASHBOARD - NO LIVE TRADING\n",
+    "evidence_expectations": {
+      "workspace_validation": true,
+      "no_live_proof": true
+    }
+  },
+  "dependencies": [],
+  "compatibility": {
+    "workspace_schema_versions": [
+      2
+    ],
+    "dashboard_v2_features": [
+      "workspaces",
+      "widget_registry",
+      "analytics_query"
+    ],
+    "safe_modes": [
+      "demo",
+      "paper",
+      "testnet-readiness"
+    ]
+  }
+}

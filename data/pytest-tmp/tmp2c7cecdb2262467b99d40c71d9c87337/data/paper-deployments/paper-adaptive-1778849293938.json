@@ -1,0 +1,14 @@
+{
+  "deployment_id": "paper-adaptive-1778849293938",
+  "strategy_id": "adaptive",
+  "model_alias": "candidate-a",
+  "symbols": [
+    "BTCUSDT"
+  ],
+  "risk_preset": "balanced",
+  "version_lock": "adaptive:candidate-a:balanced",
+  "status": "planned",
+  "rollback_preset": "conservative",
+  "created_at_ms": 1778849293938,
+  "live_trading_enabled": false
+}

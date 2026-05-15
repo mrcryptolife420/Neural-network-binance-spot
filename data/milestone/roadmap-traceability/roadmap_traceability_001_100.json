@@ -1,0 +1,1438 @@
+{
+  "status": "review",
+  "range": "001-100",
+  "roadmaps": {
+    "100": [
+      {
+        "number": "100",
+        "status": "open",
+        "path": "Roadmap docs\\100-roadmap-end-to-end-paper-trading-operating-system-milestone-system-audit-production-readiness-simulation.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_100_paper_os_milestone_acceptance.py"
+        ],
+        "docs": [
+          "docs\\roadmap-001-100-traceability-audit.md"
+        ]
+      }
+    ],
+    "001": [
+      {
+        "number": "001",
+        "status": "completed",
+        "path": "Voltooid docs\\001-roadmap-binance-spot-ai-trading-bot.md",
+        "has_definition_of_done": true,
+        "tests": [],
+        "docs": [
+          "docs\\roadmap-001-100-traceability-audit.md"
+        ]
+      }
+    ],
+    "002": [
+      {
+        "number": "002",
+        "status": "completed",
+        "path": "Voltooid docs\\002-roadmap-local-visual-paper-bot-dashboard.md",
+        "has_definition_of_done": true,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "003": [
+      {
+        "number": "003",
+        "status": "completed",
+        "path": "Voltooid docs\\003-roadmap-realtime-market-data-modelops-dashboard.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "004": [
+      {
+        "number": "004",
+        "status": "completed",
+        "path": "Voltooid docs\\004-roadmap-windows-one-click-secure-control-center.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_control_center_004.py"
+        ],
+        "docs": []
+      }
+    ],
+    "005": [
+      {
+        "number": "005",
+        "status": "completed",
+        "path": "Voltooid docs\\005-roadmap-long-paper-testnet-alerts-scanner-packaging.md",
+        "has_definition_of_done": true,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "006": [
+      {
+        "number": "006",
+        "status": "completed",
+        "path": "Voltooid docs\\006-roadmap-multi-symbol-portfolio-testnet-endurance-mlops.md",
+        "has_definition_of_done": true,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "007": [
+      {
+        "number": "007",
+        "status": "completed",
+        "path": "Voltooid docs\\007-roadmap-live-readiness-audit-shadow-chaos-release-governance.md",
+        "has_definition_of_done": true,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "008": [
+      {
+        "number": "008",
+        "status": "completed",
+        "path": "Voltooid docs\\008-roadmap-strict-live-readiness-pilot-design.md",
+        "has_definition_of_done": true,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "009": [
+      {
+        "number": "009",
+        "status": "completed",
+        "path": "Voltooid docs\\009-roadmap-unified-dashboard-launcher-binance-spot-demo-trading-control-center.md",
+        "has_definition_of_done": true,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "010": [
+      {
+        "number": "010",
+        "status": "completed",
+        "path": "Voltooid docs\\010-roadmap-dashboard-strategy-lab-signal-debugging-replay-sandbox.md",
+        "has_definition_of_done": true,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "011": [
+      {
+        "number": "011",
+        "status": "completed",
+        "path": "Voltooid docs\\011-roadmap-safe-dashboard-copilot-strategy-templates-dataset-builder-ui.md",
+        "has_definition_of_done": true,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "012": [
+      {
+        "number": "012",
+        "status": "completed",
+        "path": "Voltooid docs\\012-roadmap-advanced-scanner-experiment-database-notebook-exports-dashboard-performance.md",
+        "has_definition_of_done": true,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "013": [
+      {
+        "number": "013",
+        "status": "completed",
+        "path": "Voltooid docs\\013-roadmap-testing-cicd-release-signing-plugin-sandboxing-installer-ux.md",
+        "has_definition_of_done": true,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "014": [
+      {
+        "number": "014",
+        "status": "completed",
+        "path": "Voltooid docs\\014-roadmap-windows-app-ux-workspace-profiles-backup-restore-accessibility-onboarding.md",
+        "has_definition_of_done": true,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "015": [
+      {
+        "number": "015",
+        "status": "completed",
+        "path": "Voltooid docs\\015-roadmap-operational-hardening-dashboard-polish-long-paper-ops.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_015_ops.py"
+        ],
+        "docs": []
+      }
+    ],
+    "016": [
+      {
+        "number": "016",
+        "status": "completed",
+        "path": "Voltooid docs\\016-roadmap-model-research-walkforward-dataset-governance.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_016_model_governance.py"
+        ],
+        "docs": []
+      }
+    ],
+    "017": [
+      {
+        "number": "017",
+        "status": "completed",
+        "path": "Voltooid docs\\017-roadmap-connected-demo-spot-dashboard-one-click-windows.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_017_demo_spot_control_center.py"
+        ],
+        "docs": []
+      }
+    ],
+    "018": [
+      {
+        "number": "018",
+        "status": "completed",
+        "path": "Voltooid docs\\018-roadmap-demo-spot-endurance-reconciliation-operator-dashboard.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_018_demo_pilot_reconciliation.py"
+        ],
+        "docs": []
+      }
+    ],
+    "019": [
+      {
+        "number": "019",
+        "status": "completed",
+        "path": "Voltooid docs\\019-roadmap-dashboard-ux-demo-pilot-live-ops-polish.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_019_dashboard_ux.py"
+        ],
+        "docs": []
+      }
+    ],
+    "020": [
+      {
+        "number": "020",
+        "status": "completed",
+        "path": "Voltooid docs\\020-roadmap-end-to-end-demo-spot-pilot-acceptance-gate.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmap_020_pilot_acceptance_gate.py"
+        ],
+        "docs": []
+      }
+    ],
+    "021": [
+      {
+        "number": "021",
+        "status": "completed",
+        "path": "Voltooid docs\\021-roadmap-persistent-demo-spot-pilot-runner-telemetry.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmap_021_pilot_runner.py"
+        ],
+        "docs": []
+      }
+    ],
+    "022": [
+      {
+        "number": "022",
+        "status": "completed",
+        "path": "Voltooid docs\\022-roadmap-runner-dashboard-live-telemetry-ux-hardening.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_022_runner_dashboard_telemetry.py"
+        ],
+        "docs": []
+      }
+    ],
+    "023": [
+      {
+        "number": "023",
+        "status": "completed",
+        "path": "Voltooid docs\\023-roadmap-streamlit-dashboard-stability-plotly-key-fix-ui-regression-tests.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_023_dashboard_stability.py"
+        ],
+        "docs": []
+      }
+    ],
+    "024": [
+      {
+        "number": "024",
+        "status": "completed",
+        "path": "Voltooid docs\\024-roadmap-dashboard-component-architecture-visual-regression-suite.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_024_dashboard_architecture.py"
+        ],
+        "docs": []
+      }
+    ],
+    "025": [
+      {
+        "number": "025",
+        "status": "completed",
+        "path": "Voltooid docs\\025-roadmap-operator-grade-visual-e2e-demo-dashboard-validation.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_025_dashboard_browser_smoke.py",
+          "tests\\test_roadmap_025_operator_evidence.py"
+        ],
+        "docs": []
+      }
+    ],
+    "026": [
+      {
+        "number": "026",
+        "status": "completed",
+        "path": "Voltooid docs\\026-roadmap-demo-spot-execution-sandbox-order-lifecycle-drill.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_026_demo_execution_cli.py",
+          "tests\\test_roadmap_026_demo_execution_dashboard.py",
+          "tests\\test_roadmap_026_demo_execution_sandbox.py"
+        ],
+        "docs": [
+          "docs\\roadmap-082-122-correctie-audit-2026-05-11.md"
+        ]
+      }
+    ],
+    "027": [
+      {
+        "number": "027",
+        "status": "completed",
+        "path": "Voltooid docs\\027-roadmap-demo-pilot-quality-gates-evidence-scorecards.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_027_evidence_scorecard.py",
+          "tests\\test_roadmap_027_scorecard_cli_dashboard.py"
+        ],
+        "docs": []
+      }
+    ],
+    "028": [
+      {
+        "number": "028",
+        "status": "completed",
+        "path": "Voltooid docs\\028-roadmap-one-click-demo-acceptance-rehearsal-evidence-trends.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_028_demo_acceptance_rehearsal.py",
+          "tests\\test_roadmap_028_rehearsal_cli_dashboard.py"
+        ],
+        "docs": []
+      }
+    ],
+    "029": [
+      {
+        "number": "029",
+        "status": "completed",
+        "path": "Voltooid docs\\029-roadmap-demo-pilot-state-machine-start-recovery-dashboard-guardrails.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_029_dashboard_start_guardrails.py",
+          "tests\\test_roadmap_029_pilot_state_machine.py",
+          "tests\\test_roadmap_029_rehearsal_idempotency.py"
+        ],
+        "docs": []
+      }
+    ],
+    "030": [
+      {
+        "number": "030",
+        "status": "completed",
+        "path": "Voltooid docs\\030-roadmap-operator-recovery-diagnostics-support-bundle-state-hygiene.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_030_operator_diagnostics.py"
+        ],
+        "docs": []
+      }
+    ],
+    "031": [
+      {
+        "number": "031",
+        "status": "completed",
+        "path": "Voltooid docs\\031-roadmap-diagnostics-artifact-inventory-freshness-policy.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_031_artifact_inventory.py"
+        ],
+        "docs": []
+      }
+    ],
+    "032": [
+      {
+        "number": "032",
+        "status": "completed",
+        "path": "Voltooid docs\\032-roadmap-dashboard-recovery-diagnostics-ux-action-center.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_032_dashboard_diagnostics_ux.py"
+        ],
+        "docs": []
+      }
+    ],
+    "033": [
+      {
+        "number": "033",
+        "status": "completed",
+        "path": "Voltooid docs\\033-roadmap-support-bundle-manifest-checksums-redaction-hardening.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_033_support_bundle_hardening.py"
+        ],
+        "docs": []
+      }
+    ],
+    "034": [
+      {
+        "number": "034",
+        "status": "completed",
+        "path": "Voltooid docs\\034-roadmap-cli-strict-diagnostics-windows-launch-preflight.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_034_cli_diagnostics.py"
+        ],
+        "docs": []
+      }
+    ],
+    "035": [
+      {
+        "number": "035",
+        "status": "completed",
+        "path": "Voltooid docs\\035-roadmap-rehearsal-scorecard-diagnostics-gate-integration.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_035_rehearsal_scorecard_diagnostics.py"
+        ],
+        "docs": []
+      }
+    ],
+    "036": [
+      {
+        "number": "036",
+        "status": "completed",
+        "path": "Voltooid docs\\036-roadmap-operator-docs-state-hygiene-final-validation.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_036_docs_state_hygiene.py"
+        ],
+        "docs": []
+      }
+    ],
+    "037": [
+      {
+        "number": "037",
+        "status": "completed",
+        "path": "Voltooid docs\\037-roadmap-diagnostics-trend-history-operator-health-metrics.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_037_diagnostics_trends.py"
+        ],
+        "docs": []
+      }
+    ],
+    "038": [
+      {
+        "number": "038",
+        "status": "completed",
+        "path": "Voltooid docs\\038-roadmap-state-retention-cleanup-preview-safe-archive.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_038_retention_archive.py"
+        ],
+        "docs": []
+      }
+    ],
+    "039": [
+      {
+        "number": "039",
+        "status": "completed",
+        "path": "Voltooid docs\\039-roadmap-support-bundle-verify-and-import-summary.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_039_support_bundle_verify.py"
+        ],
+        "docs": []
+      }
+    ],
+    "040": [
+      {
+        "number": "040",
+        "status": "completed",
+        "path": "Voltooid docs\\040-roadmap-operator-incident-timeline-from-evidence.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_040_incident_timeline.py"
+        ],
+        "docs": []
+      }
+    ],
+    "041": [
+      {
+        "number": "041",
+        "status": "completed",
+        "path": "Voltooid docs\\041-roadmap-local-operator-report-html-markdown-export.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_041_operator_report.py"
+        ],
+        "docs": []
+      }
+    ],
+    "042": [
+      {
+        "number": "042",
+        "status": "completed",
+        "path": "Voltooid docs\\042-roadmap-dashboard-diagnostics-trends-retention-report-polish.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_042_dashboard_ops_polish.py"
+        ],
+        "docs": []
+      }
+    ],
+    "043": [
+      {
+        "number": "043",
+        "status": "completed",
+        "path": "Voltooid docs\\043-roadmap-cli-local-quality-gate-diagnostics-report-bundle.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_043_operator_quality_gate.py"
+        ],
+        "docs": []
+      }
+    ],
+    "044": [
+      {
+        "number": "044",
+        "status": "completed",
+        "path": "Voltooid docs\\044-roadmap-operator-grade-local-ops-final-validation.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_044_final_ops_docs.py"
+        ],
+        "docs": []
+      }
+    ],
+    "045": [
+      {
+        "number": "045",
+        "status": "completed",
+        "path": "Voltooid docs\\045-roadmap-local-artifact-catalog-search-inventory.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_045_artifact_catalog.py"
+        ],
+        "docs": []
+      }
+    ],
+    "046": [
+      {
+        "number": "046",
+        "status": "completed",
+        "path": "Voltooid docs\\046-roadmap-diagnostics-baseline-compare-drift-detection.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_046_diagnostics_baseline.py"
+        ],
+        "docs": []
+      }
+    ],
+    "047": [
+      {
+        "number": "047",
+        "status": "completed",
+        "path": "Voltooid docs\\047-roadmap-operator-report-index-compare-history.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_047_report_index.py"
+        ],
+        "docs": []
+      }
+    ],
+    "048": [
+      {
+        "number": "048",
+        "status": "completed",
+        "path": "Voltooid docs\\048-roadmap-support-bundle-verification-matrix.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_048_bundle_matrix.py"
+        ],
+        "docs": []
+      }
+    ],
+    "049": [
+      {
+        "number": "049",
+        "status": "completed",
+        "path": "Voltooid docs\\049-roadmap-redaction-self-test-security-evidence.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_049_redaction_self_test.py"
+        ],
+        "docs": []
+      }
+    ],
+    "050": [
+      {
+        "number": "050",
+        "status": "completed",
+        "path": "Voltooid docs\\050-roadmap-local-ops-snapshot-single-pane-api.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_050_local_ops_snapshot.py"
+        ],
+        "docs": []
+      }
+    ],
+    "051": [
+      {
+        "number": "051",
+        "status": "completed",
+        "path": "Voltooid docs\\051-roadmap-dashboard-local-ops-single-pane-polish.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_051_dashboard_local_ops.py"
+        ],
+        "docs": []
+      }
+    ],
+    "052": [
+      {
+        "number": "052",
+        "status": "completed",
+        "path": "Voltooid docs\\052-roadmap-operator-command-manifest-cli-discoverability.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_052_command_manifest.py"
+        ],
+        "docs": []
+      }
+    ],
+    "053": [
+      {
+        "number": "053",
+        "status": "completed",
+        "path": "Voltooid docs\\053-roadmap-evidence-manifest-export-quality-summary.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_053_evidence_manifest.py"
+        ],
+        "docs": []
+      }
+    ],
+    "054": [
+      {
+        "number": "054",
+        "status": "completed",
+        "path": "Voltooid docs\\054-roadmap-local-ops-extension-final-validation.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_054_local_ops_cli.py"
+        ],
+        "docs": []
+      }
+    ],
+    "055": [
+      {
+        "number": "055",
+        "status": "completed",
+        "path": "Voltooid docs\\055-roadmap-operator-health-score-action-priority-engine.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmaps_055_064_operator_local_ops.py"
+        ],
+        "docs": []
+      }
+    ],
+    "056": [
+      {
+        "number": "056",
+        "status": "completed",
+        "path": "Voltooid docs\\056-roadmap-artifact-catalog-filters-staleness-groups.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "057": [
+      {
+        "number": "057",
+        "status": "completed",
+        "path": "Voltooid docs\\057-roadmap-rehearsal-profiles-fast-standard-deep.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "058": [
+      {
+        "number": "058",
+        "status": "completed",
+        "path": "Voltooid docs\\058-roadmap-operator-report-diff-last-two-runs.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "059": [
+      {
+        "number": "059",
+        "status": "completed",
+        "path": "Voltooid docs\\059-roadmap-support-bundle-restore-preview-safety.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "060": [
+      {
+        "number": "060",
+        "status": "completed",
+        "path": "Voltooid docs\\060-roadmap-evidence-integrity-chain-hashes.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "061": [
+      {
+        "number": "061",
+        "status": "completed",
+        "path": "Voltooid docs\\061-roadmap-dashboard-command-palette-local-ops.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "062": [
+      {
+        "number": "062",
+        "status": "completed",
+        "path": "Voltooid docs\\062-roadmap-environment-doctor-python-deps-paths.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "063": [
+      {
+        "number": "063",
+        "status": "completed",
+        "path": "Voltooid docs\\063-roadmap-data-growth-budget-forecast.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "064": [
+      {
+        "number": "064",
+        "status": "completed",
+        "path": "Voltooid docs\\064-roadmap-operator-local-ops-2026-05-11-final-validation.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmaps_055_064_operator_local_ops.py"
+        ],
+        "docs": []
+      }
+    ],
+    "065": [
+      {
+        "number": "065",
+        "status": "completed",
+        "path": "Voltooid docs\\065-roadmap-simple-dashboard-multi-crypto-demo-trading.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "066": [
+      {
+        "number": "066",
+        "status": "completed",
+        "path": "Voltooid docs\\066-roadmap-simple-demo-watchlist-presets.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "067": [
+      {
+        "number": "067",
+        "status": "completed",
+        "path": "Voltooid docs\\067-roadmap-multi-symbol-validation-guardrails.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "068": [
+      {
+        "number": "068",
+        "status": "completed",
+        "path": "Voltooid docs\\068-roadmap-multi-symbol-budget-allocation.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "069": [
+      {
+        "number": "069",
+        "status": "completed",
+        "path": "Voltooid docs\\069-roadmap-multi-symbol-risk-limit-summary.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "070": [
+      {
+        "number": "070",
+        "status": "completed",
+        "path": "Voltooid docs\\070-roadmap-multi-symbol-evidence-export.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "071": [
+      {
+        "number": "071",
+        "status": "completed",
+        "path": "Voltooid docs\\071-roadmap-per-symbol-demo-control-actions.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "072": [
+      {
+        "number": "072",
+        "status": "completed",
+        "path": "Voltooid docs\\072-roadmap-multi-symbol-aggregate-status.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "073": [
+      {
+        "number": "073",
+        "status": "completed",
+        "path": "Voltooid docs\\073-roadmap-simple-dashboard-next-action-guidance.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "074": [
+      {
+        "number": "074",
+        "status": "completed",
+        "path": "Voltooid docs\\074-roadmap-dashboard-multi-symbol-smoke-markers.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "075": [
+      {
+        "number": "075",
+        "status": "completed",
+        "path": "Voltooid docs\\075-roadmap-simple-demo-multi-symbol-final-validation.md",
+        "has_definition_of_done": false,
+        "tests": [],
+        "docs": []
+      }
+    ],
+    "076": [
+      {
+        "number": "076",
+        "status": "completed",
+        "path": "Voltooid docs\\076-roadmap-binance-public-data-ingestion-indicator-warmup-feature-expansion.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmaps_076_102_paper_os.py",
+          "tests\\test_roadmap_076_public_data_ingestion.py"
+        ],
+        "docs": [
+          "docs\\roadmap-076-102-correctie-audit.md",
+          "docs\\roadmap-076-102-execution-evidence.md"
+        ]
+      },
+      {
+        "number": "076",
+        "status": "completed",
+        "path": "Voltooid docs\\076-roadmap-multi-demo-runner-does-not-stop-on-replay-end.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmaps_076_102_paper_os.py",
+          "tests\\test_roadmap_076_public_data_ingestion.py"
+        ],
+        "docs": [
+          "docs\\roadmap-076-102-correctie-audit.md",
+          "docs\\roadmap-076-102-execution-evidence.md"
+        ]
+      }
+    ],
+    "077": [
+      {
+        "number": "077",
+        "status": "completed",
+        "path": "Voltooid docs\\077-roadmap-data-driven-strategy-confidence-backtest-dataset-builder-indicator-calibration.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_077_strategy_calibration.py"
+        ],
+        "docs": []
+      },
+      {
+        "number": "077",
+        "status": "completed",
+        "path": "Voltooid docs\\077-roadmap-demo-session-order-cap-open-order-cap-separation.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmap_077_strategy_calibration.py"
+        ],
+        "docs": []
+      }
+    ],
+    "078": [
+      {
+        "number": "078",
+        "status": "completed",
+        "path": "Voltooid docs\\078-roadmap-paper-strategy-deployment-continuous-evaluation-auto-rollback.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_078_paper_deployment.py"
+        ],
+        "docs": []
+      },
+      {
+        "number": "078",
+        "status": "completed",
+        "path": "Voltooid docs\\078-roadmap-readable-live-candle-chart.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmap_078_paper_deployment.py"
+        ],
+        "docs": []
+      }
+    ],
+    "079": [
+      {
+        "number": "079",
+        "status": "completed",
+        "path": "Voltooid docs\\079-roadmap-multi-symbol-visual-overview.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmap_079_paper_portfolio_ops.py"
+        ],
+        "docs": []
+      },
+      {
+        "number": "079",
+        "status": "completed",
+        "path": "Voltooid docs\\079-roadmap-paper-portfolio-operations-capital-allocation-strategy-rotation.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_079_paper_portfolio_ops.py"
+        ],
+        "docs": []
+      }
+    ],
+    "080": [
+      {
+        "number": "080",
+        "status": "completed",
+        "path": "Voltooid docs\\080-roadmap-live-dashboard-stability-final-validation.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmap_080_portfolio_benchmarking.py"
+        ],
+        "docs": []
+      },
+      {
+        "number": "080",
+        "status": "completed",
+        "path": "Voltooid docs\\080-roadmap-paper-portfolio-benchmarking-stress-testing-scenario-replay.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_080_portfolio_benchmarking.py"
+        ],
+        "docs": []
+      }
+    ],
+    "081": [
+      {
+        "number": "081",
+        "status": "completed",
+        "path": "Voltooid docs\\081-roadmap-indicator-engine-core.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmap_081_portfolio_optimization.py"
+        ],
+        "docs": []
+      },
+      {
+        "number": "081",
+        "status": "completed",
+        "path": "Voltooid docs\\081-roadmap-paper-portfolio-optimization-risk-budget-search-robust-allocation-selection.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_081_portfolio_optimization.py"
+        ],
+        "docs": []
+      }
+    ],
+    "082": [
+      {
+        "number": "082",
+        "status": "completed",
+        "path": "Voltooid docs\\082-roadmap-adaptive-indicator-profiles.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmaps_082_088_ops_governance.py",
+          "tests\\test_roadmap_082_complete_governance_acceptance.py",
+          "tests\\test_roadmap_082_policy_governance_full.py"
+        ],
+        "docs": [
+          "docs\\roadmap-082-122-correctie-audit-2026-05-11.md"
+        ]
+      },
+      {
+        "number": "082",
+        "status": "completed",
+        "path": "Voltooid docs\\082-roadmap-paper-policy-rollout-ab-paper-experiments-champion-challenger-governance.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmaps_082_088_ops_governance.py",
+          "tests\\test_roadmap_082_complete_governance_acceptance.py",
+          "tests\\test_roadmap_082_policy_governance_full.py"
+        ],
+        "docs": [
+          "docs\\roadmap-082-122-correctie-audit-2026-05-11.md"
+        ]
+      }
+    ],
+    "083": [
+      {
+        "number": "083",
+        "status": "completed",
+        "path": "Voltooid docs\\083-roadmap-indicator-signal-advisor.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmaps_083_088_full_surface.py",
+          "tests\\test_roadmap_083_local_ops_acceptance.py"
+        ],
+        "docs": []
+      },
+      {
+        "number": "083",
+        "status": "completed",
+        "path": "Voltooid docs\\083-roadmap-local-paper-operations-automation-scheduled-reports-operator-runbooks.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmaps_083_088_full_surface.py",
+          "tests\\test_roadmap_083_local_ops_acceptance.py"
+        ],
+        "docs": []
+      }
+    ],
+    "084": [
+      {
+        "number": "084",
+        "status": "completed",
+        "path": "Voltooid docs\\084-roadmap-dashboard-indicator-control-panel.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmap_084_observability_acceptance.py"
+        ],
+        "docs": []
+      },
+      {
+        "number": "084",
+        "status": "completed",
+        "path": "Voltooid docs\\084-roadmap-local-paper-ops-observability-metrics-warehouse-long-term-analytics.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_084_observability_acceptance.py"
+        ],
+        "docs": []
+      }
+    ],
+    "085": [
+      {
+        "number": "085",
+        "status": "completed",
+        "path": "Voltooid docs\\085-roadmap-local-ai-ops-assistant-natural-language-queries-safe-operator-guidance.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_085_ai_ops_acceptance.py"
+        ],
+        "docs": []
+      },
+      {
+        "number": "085",
+        "status": "completed",
+        "path": "Voltooid docs\\085-roadmap-per-symbol-indicator-table.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmap_085_ai_ops_acceptance.py"
+        ],
+        "docs": []
+      }
+    ],
+    "086": [
+      {
+        "number": "086",
+        "status": "completed",
+        "path": "Voltooid docs\\086-roadmap-indicator-chart-context.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmap_086_action_center_acceptance.py"
+        ],
+        "docs": []
+      },
+      {
+        "number": "086",
+        "status": "completed",
+        "path": "Voltooid docs\\086-roadmap-safe-human-in-the-loop-action-center-approval-workflows-operator-decision-journal.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_086_action_center_acceptance.py"
+        ],
+        "docs": []
+      }
+    ],
+    "087": [
+      {
+        "number": "087",
+        "status": "completed",
+        "path": "Voltooid docs\\087-roadmap-auto-strategy-preset-selector.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmap_087_permissions_compliance_acceptance.py"
+        ],
+        "docs": []
+      },
+      {
+        "number": "087",
+        "status": "completed",
+        "path": "Voltooid docs\\087-roadmap-local-permission-profiles-operator-roles-hardening-audit-grade-compliance-reports.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_087_permissions_compliance_acceptance.py"
+        ],
+        "docs": []
+      }
+    ],
+    "088": [
+      {
+        "number": "088",
+        "status": "completed",
+        "path": "Voltooid docs\\088-roadmap-market-regime-detection.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmaps_082_088_ops_governance.py",
+          "tests\\test_roadmaps_083_088_full_surface.py",
+          "tests\\test_roadmap_088_disaster_recovery_acceptance.py"
+        ],
+        "docs": []
+      },
+      {
+        "number": "088",
+        "status": "completed",
+        "path": "Voltooid docs\\088-roadmap-offline-disaster-recovery-backup-restore-drills-local-state-integrity.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmaps_082_088_ops_governance.py",
+          "tests\\test_roadmaps_083_088_full_surface.py",
+          "tests\\test_roadmap_088_disaster_recovery_acceptance.py"
+        ],
+        "docs": []
+      }
+    ],
+    "089": [
+      {
+        "number": "089",
+        "status": "completed",
+        "path": "Voltooid docs\\089-roadmap-indicator-evidence-export.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmaps_089_096_full_surface.py",
+          "tests\\test_roadmap_089_release_management_acceptance.py"
+        ],
+        "docs": []
+      },
+      {
+        "number": "089",
+        "status": "completed",
+        "path": "Voltooid docs\\089-roadmap-local-release-management-versioned-upgrade-paths-migration-safety.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmaps_089_096_full_surface.py",
+          "tests\\test_roadmap_089_release_management_acceptance.py"
+        ],
+        "docs": []
+      }
+    ],
+    "090": [
+      {
+        "number": "090",
+        "status": "completed",
+        "path": "Voltooid docs\\090-roadmap-bot-trading-decision-explanation.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmap_090_roadmap_execution_acceptance.py"
+        ],
+        "docs": []
+      },
+      {
+        "number": "090",
+        "status": "completed",
+        "path": "Voltooid docs\\090-roadmap-developer-experience-codex-task-packs-roadmap-execution-automation.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_090_roadmap_execution_acceptance.py"
+        ],
+        "docs": []
+      }
+    ],
+    "091": [
+      {
+        "number": "091",
+        "status": "completed",
+        "path": "Voltooid docs\\091-roadmap-multi-symbol-performance-summary.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmap_091_repo_knowledge_acceptance.py"
+        ],
+        "docs": []
+      },
+      {
+        "number": "091",
+        "status": "completed",
+        "path": "Voltooid docs\\091-roadmap-repository-knowledge-graph-code-ownership-impact-analysis.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_091_repo_knowledge_acceptance.py"
+        ],
+        "docs": []
+      }
+    ],
+    "092": [
+      {
+        "number": "092",
+        "status": "completed",
+        "path": "Voltooid docs\\092-roadmap-intelligent-test-selection-ci-acceleration-regression-risk-scoring.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_092_intelligent_test_selection_acceptance.py"
+        ],
+        "docs": []
+      },
+      {
+        "number": "092",
+        "status": "completed",
+        "path": "Voltooid docs\\092-roadmap-risk-adjusted-allocation-hints.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmap_092_intelligent_test_selection_acceptance.py"
+        ],
+        "docs": []
+      }
+    ],
+    "093": [
+      {
+        "number": "093",
+        "status": "completed",
+        "path": "Voltooid docs\\093-roadmap-dashboard-indicator-compact-mode.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmap_093_performance_profiling_acceptance.py"
+        ],
+        "docs": []
+      },
+      {
+        "number": "093",
+        "status": "completed",
+        "path": "Voltooid docs\\093-roadmap-performance-profiling-runtime-bottleneck-analysis-resource-budgeting.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_093_performance_profiling_acceptance.py"
+        ],
+        "docs": []
+      }
+    ],
+    "094": [
+      {
+        "number": "094",
+        "status": "completed",
+        "path": "Voltooid docs\\094-roadmap-dashboard-component-refactor-lazy-loading-ux-performance-hardening.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_094_dashboard_refactor_acceptance.py"
+        ],
+        "docs": []
+      },
+      {
+        "number": "094",
+        "status": "completed",
+        "path": "Voltooid docs\\094-roadmap-indicator-backtest-lite-panel.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmap_094_dashboard_refactor_acceptance.py"
+        ],
+        "docs": []
+      }
+    ],
+    "095": [
+      {
+        "number": "095",
+        "status": "completed",
+        "path": "Voltooid docs\\095-roadmap-indicator-dashboard-final-validation.md",
+        "has_definition_of_done": false,
+        "tests": [
+          "tests\\test_roadmap_095_runtime_core_acceptance.py"
+        ],
+        "docs": []
+      },
+      {
+        "number": "095",
+        "status": "completed",
+        "path": "Voltooid docs\\095-roadmap-runtime-core-decomposition-event-bus-snapshot-optimization.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_095_runtime_core_acceptance.py"
+        ],
+        "docs": []
+      }
+    ],
+    "096": [
+      {
+        "number": "096",
+        "status": "completed",
+        "path": "Voltooid docs\\096-roadmap-data-pipeline-decomposition-feature-store-contracts-indicator-compute-optimization.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmaps_089_096_full_surface.py",
+          "tests\\test_roadmap_096_data_pipeline_acceptance.py"
+        ],
+        "docs": []
+      }
+    ],
+    "097": [
+      {
+        "number": "097",
+        "status": "completed",
+        "path": "Voltooid docs\\097-roadmap-model-training-pipeline-v2-experiment-tracking-feature-contract-aware-model-promotion.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmaps_097_102_full_surface.py",
+          "tests\\test_roadmap_097_model_training_acceptance.py"
+        ],
+        "docs": []
+      }
+    ],
+    "098": [
+      {
+        "number": "098",
+        "status": "completed",
+        "path": "Voltooid docs\\098-roadmap-shadow-paper-model-monitoring-drift-detection-automatic-candidate-downgrade.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_098_model_monitoring_acceptance.py"
+        ],
+        "docs": []
+      }
+    ],
+    "099": [
+      {
+        "number": "099",
+        "status": "completed",
+        "path": "Voltooid docs\\099-roadmap-paper-portfolio-model-ensemble-strategy-allocation-model-rotation-governance.md",
+        "has_definition_of_done": true,
+        "tests": [
+          "tests\\test_roadmap_099_portfolio_ensemble_acceptance.py"
+        ],
+        "docs": []
+      }
+    ]
+  },
+  "missing": [],
+  "duplicates": [
+    "076",
+    "077",
+    "078",
+    "079",
+    "080",
+    "081",
+    "082",
+    "083",
+    "084",
+    "085",
+    "086",
+    "087",
+    "088",
+    "089",
+    "090",
+    "091",
+    "092",
+    "093",
+    "094",
+    "095"
+  ],
+  "completed_without_evidence": [
+    "002",
+    "003",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "056",
+    "057",
+    "058",
+    "059",
+    "060",
+    "061",
+    "062",
+    "063",
+    "065",
+    "066",
+    "067",
+    "068",
+    "069",
+    "070",
+    "071",
+    "072",
+    "073",
+    "074",
+    "075"
+  ],
+  "live_trading_enabled": false
+}

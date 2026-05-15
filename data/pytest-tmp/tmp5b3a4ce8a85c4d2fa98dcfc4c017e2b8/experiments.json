@@ -1,0 +1,12 @@
+[
+  {
+    "experiment_id": "exp-1778848282075",
+    "kind": "dataset_manifest",
+    "artifact_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp5b3a4ce8a85c4d2fa98dcfc4c017e2b8\\manifest.json",
+    "metrics": {
+      "dataset_id": "wizard-demo",
+      "status": "pass"
+    },
+    "created_at_ms": 1778848282075
+  }
+]

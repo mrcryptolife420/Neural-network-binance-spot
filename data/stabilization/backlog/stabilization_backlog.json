@@ -1,0 +1,26 @@
+{
+  "status": "review",
+  "items": [
+    {
+      "item_id": "STAB-001",
+      "title": "production_readiness is blocked",
+      "priority": "P1",
+      "status": "new",
+      "domain": "runtime_paper_simulation",
+      "source": "data/milestone/readiness/production_readiness_simulation.json",
+      "acceptance_gate": "deep_milestone",
+      "live_trading_enabled": false
+    },
+    {
+      "item_id": "STAB-002",
+      "title": "Missing safety_invariants",
+      "priority": "P1",
+      "status": "new",
+      "domain": "check_all",
+      "source": "data/milestone/safety-invariants/system_safety_invariants.json",
+      "acceptance_gate": "deep_milestone",
+      "live_trading_enabled": false
+    }
+  ],
+  "live_trading_enabled": false
+}

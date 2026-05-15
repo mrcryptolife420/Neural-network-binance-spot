@@ -1,0 +1,14 @@
+{
+  "bundle_id": "action-audit-1778852954518",
+  "files": [
+    {
+      "source": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_086_action_center_acceptance.py_test_ai_ops_runbook_plans_identity_audit_analytics_and_report-b76e79a5315141edbd2176c753bcdaec\\decision-journal.jsonl",
+      "target": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_086_action_center_acceptance.py_test_ai_ops_runbook_plans_identity_audit_analytics_and_report-b76e79a5315141edbd2176c753bcdaec\\bundles\\action-audit-1778852954518\\files\\decision-journal.jsonl",
+      "sha256": "ca263ab4d01cacfbf7648fa8"
+    }
+  ],
+  "no_live_proof": true,
+  "redaction_proof": true,
+  "live_trading_enabled": false,
+  "manifest_hash": "9a9f6546aabcea07f1dbc7a3"
+}

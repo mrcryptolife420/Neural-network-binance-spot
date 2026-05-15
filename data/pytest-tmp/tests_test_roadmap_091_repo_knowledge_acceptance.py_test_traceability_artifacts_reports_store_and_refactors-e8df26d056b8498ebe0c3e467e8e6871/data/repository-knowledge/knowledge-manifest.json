@@ -1,0 +1,16 @@
+{
+  "status": "ready",
+  "files": [
+    {
+      "name": "report",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_091_repo_knowledge_acceptance.py_test_traceability_artifacts_reports_store_and_refactors-e8df26d056b8498ebe0c3e467e8e6871\\data\\repository-knowledge\\report.json",
+      "sha256": "fe1d991c03d80df7e0744b3d"
+    },
+    {
+      "name": "artifact_flow",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_091_repo_knowledge_acceptance.py_test_traceability_artifacts_reports_store_and_refactors-e8df26d056b8498ebe0c3e467e8e6871\\data\\repository-knowledge\\artifact_flow.json",
+      "sha256": "6d34b0b296630a7ffb78cf7d"
+    }
+  ],
+  "live_trading_enabled": false
+}

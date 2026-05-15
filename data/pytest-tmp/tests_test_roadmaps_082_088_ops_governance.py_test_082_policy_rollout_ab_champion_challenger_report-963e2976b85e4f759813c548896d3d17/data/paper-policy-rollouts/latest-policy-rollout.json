@@ -1,0 +1,62 @@
+{
+  "experiment": {
+    "experiment_id": "paper-policy-1778846284013",
+    "champion": {
+      "policy_id": "champion",
+      "model_alias": "champion",
+      "risk_preset": "balanced",
+      "max_symbols": 3,
+      "allocation_cap_pct": 0.35
+    },
+    "challenger": {
+      "policy_id": "challenger",
+      "model_alias": "candidate",
+      "risk_preset": "conservative",
+      "max_symbols": 4,
+      "allocation_cap_pct": 0.25
+    },
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT"
+    ],
+    "traffic_split_pct": 50,
+    "min_observations": 1,
+    "max_drawdown_quote": 25.0,
+    "status": "paper_running",
+    "created_at_ms": 1778846284013,
+    "live_trading_enabled": false
+  },
+  "assignments": [
+    {
+      "symbol": "BTCUSDT",
+      "variant": "champion"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "variant": "champion"
+    }
+  ],
+  "evaluation": {
+    "status": "evaluated",
+    "experiment_id": "paper-policy-1778846284013",
+    "metrics": {
+      "champion": {
+        "observations": 2,
+        "pnl_quote": 1.2,
+        "drawdown_quote": 0.1,
+        "trades": 2,
+        "score": 1.15
+      },
+      "challenger": {
+        "observations": 0,
+        "pnl_quote": 0,
+        "drawdown_quote": 0.0,
+        "trades": 0,
+        "score": 0.0
+      }
+    },
+    "decision": "keep_champion",
+    "blockers": [],
+    "live_trading_enabled": false
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "artifact_path": "data\\model-training\\models\\train-1778848930702-eaa1a26a\\model.json",
+  "artifact_sha256": "e7efbf5e9340fcc03a82227a",
+  "created_at_ms": 1778848930714,
+  "dataset_id": "synthetic-demo",
+  "feature_schema_hash": "e2f9bb099851f0b1",
+  "live_trading_enabled": false,
+  "metrics": {
+    "candidate_beats_baseline": true,
+    "leakage_pass": true,
+    "max_allowed_drawdown_quote": 1000.0,
+    "max_drawdown_quote": 0,
+    "min_trade_count": 1,
+    "score": 0.65,
+    "trade_count": 10
+  },
+  "model_id": "train-1778848930702-eaa1a26a"
+}

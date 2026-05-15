@@ -1,0 +1,69 @@
+{
+  "status": "ok",
+  "dry_run_id": "dry-demo-1778846282558",
+  "migration": "demo",
+  "plan": {
+    "status": "ok",
+    "plan_id": "plan-0.1.0-0.2.0",
+    "steps": [
+      {
+        "migration_id": "local-state",
+        "from_version": "0.1.0",
+        "to_version": "0.2.0",
+        "schema_domain": "data_store",
+        "description": "Local state schema alignment",
+        "destructive": false,
+        "reversible": true,
+        "requires_backup": true,
+        "requires_dry_run": true,
+        "dependencies": [],
+        "affected_paths": [
+          "data/**"
+        ],
+        "validation_steps": [
+          "state_integrity_check"
+        ],
+        "rollback_steps": [
+          "restore_pre_upgrade_backup"
+        ],
+        "no_live_required": true,
+        "live_trading_enabled": false
+      },
+      {
+        "migration_id": "release-manifest",
+        "from_version": "0.1.0",
+        "to_version": "0.2.0",
+        "schema_domain": "release_manifest",
+        "description": "Create release manifest state",
+        "destructive": false,
+        "reversible": true,
+        "requires_backup": true,
+        "requires_dry_run": true,
+        "dependencies": [],
+        "affected_paths": [
+          "data/releases/**"
+        ],
+        "validation_steps": [
+          "state_integrity_check"
+        ],
+        "rollback_steps": [
+          "restore_pre_upgrade_backup"
+        ],
+        "no_live_required": true,
+        "live_trading_enabled": false
+      }
+    ],
+    "live_trading_enabled": false
+  },
+  "creates": [
+    "releases/current-install-fingerprint.json"
+  ],
+  "updates": [
+    "sample.json",
+    "releases\\migrations\\migration-dry-run.json"
+  ],
+  "deletes": [],
+  "destructive": false,
+  "source_modified": false,
+  "live_trading_enabled": false
+}

@@ -1,0 +1,14 @@
+{
+  "watchlist_id": "majors",
+  "name": "Majors",
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT"
+  ],
+  "default_interval": "1m",
+  "source_preference": "demo",
+  "notes": "",
+  "tags": [],
+  "created_at_ms": 1778864744931,
+  "updated_at_ms": 1778864744931
+}

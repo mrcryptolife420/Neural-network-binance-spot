@@ -1,0 +1,15 @@
+{
+  "current_champion": "champion",
+  "decision": {
+    "decision": "promote_challenger",
+    "reasons": [
+      "challenger_leads",
+      "operator_confirmed",
+      "paper_only"
+    ],
+    "operator_confirmed": true,
+    "evidence_refs": [],
+    "live_trading_enabled": false
+  },
+  "live_trading_enabled": false
+}

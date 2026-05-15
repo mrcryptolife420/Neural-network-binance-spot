@@ -1,0 +1,25 @@
+{
+  "status": "ok",
+  "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmpf16d9e456f904c5cbab2c2758493e03e\\data\\dashboard-v2\\preferences.json",
+  "preferences": {
+    "default_workspace": "operator_overview",
+    "default_mode": "demo",
+    "default_source": "demo",
+    "default_symbol": "BTCUSDT",
+    "default_interval": "1m",
+    "chart_point_limit": 500,
+    "theme": "system",
+    "compact_mode": false,
+    "advanced_panels_visible": true,
+    "notifications_enabled": true,
+    "local_metrics_retention_days": 30,
+    "disable_local_ux_metrics": false,
+    "live_trading_enabled": false
+  },
+  "validation": {
+    "status": "ok",
+    "blockers": [],
+    "live_trading_enabled": false
+  },
+  "live_trading_enabled": false
+}

@@ -1,0 +1,37 @@
+{
+  "status": "blocked",
+  "decision": {
+    "outcome": "blocked_cleanup_required",
+    "remove_code_now": false,
+    "keep_legacy": true,
+    "explanation": "Gate is read-only; deletion requires separate exact-confirm execution."
+  },
+  "blockers": [
+    {
+      "code": "rollback_archive_missing",
+      "severity": "hard",
+      "message": "rollback archive missing"
+    }
+  ],
+  "warnings": [
+    "rollback archive missing; removal is blocked but legacy can remain"
+  ],
+  "inputs": {
+    "deprecation_gate": "deprecation_candidate",
+    "v2_only_smoke": "ok",
+    "browser_smoke": "ok",
+    "api_smoke": "ok",
+    "uat_open_p0_p1": 0,
+    "critical_parity_missing": 0,
+    "support_evidence": "ok",
+    "rollback_archive_present": false,
+    "streamlit_imported_by_v2": false,
+    "docs_v2_only": true,
+    "check_all_v2_only": "ok",
+    "no_live_proof": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+    "live_mode_found": false
+  },
+  "generated_at_ms": 1778863027655,
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

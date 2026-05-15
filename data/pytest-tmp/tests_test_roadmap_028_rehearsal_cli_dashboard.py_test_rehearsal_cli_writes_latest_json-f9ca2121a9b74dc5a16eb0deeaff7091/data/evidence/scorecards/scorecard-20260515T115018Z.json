@@ -1,0 +1,28 @@
+{
+  "status": "warn",
+  "blockers": [],
+  "warnings": [
+    {
+      "severity": "warning",
+      "name": "browser_smoke.missing",
+      "message": "artifact missing",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_rehearsal_cli_dashboard.py_test_rehearsal_cli_writes_latest_json-f9ca2121a9b74dc5a16eb0deeaff7091\\data\\checks\\dashboard\\browser-smoke.json"
+    },
+    {
+      "severity": "warning",
+      "name": "operator_diagnostics.warn",
+      "message": "operator diagnostics has warnings",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_rehearsal_cli_dashboard.py_test_rehearsal_cli_writes_latest_json-f9ca2121a9b74dc5a16eb0deeaff7091\\data\\evidence\\diagnostics\\latest-diagnostics.json"
+    }
+  ],
+  "artifacts": {
+    "launch_evidence": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_rehearsal_cli_dashboard.py_test_rehearsal_cli_writes_latest_json-f9ca2121a9b74dc5a16eb0deeaff7091\\data\\checks\\dashboard\\launch-evidence.json",
+    "operator_evidence": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_rehearsal_cli_dashboard.py_test_rehearsal_cli_writes_latest_json-f9ca2121a9b74dc5a16eb0deeaff7091\\data\\evidence\\dashboard\\operator-evidence-2026-05-15T115018.350621Z0000.json",
+    "demo_execution": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_rehearsal_cli_dashboard.py_test_rehearsal_cli_writes_latest_json-f9ca2121a9b74dc5a16eb0deeaff7091\\data\\evidence\\demo-execution\\demo_execution_drill.json",
+    "pilot_start_idempotency": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_rehearsal_cli_dashboard.py_test_rehearsal_cli_writes_latest_json-f9ca2121a9b74dc5a16eb0deeaff7091\\data\\evidence\\pilot-start-idempotency.json",
+    "operator_diagnostics": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_rehearsal_cli_dashboard.py_test_rehearsal_cli_writes_latest_json-f9ca2121a9b74dc5a16eb0deeaff7091\\data\\evidence\\diagnostics\\latest-diagnostics.json"
+  },
+  "next_safe_action": "Collect or refresh evidence: artifact missing",
+  "live_trading_enabled": false,
+  "generated_at": "2026-05-15T11:50:18.361384+00:00"
+}

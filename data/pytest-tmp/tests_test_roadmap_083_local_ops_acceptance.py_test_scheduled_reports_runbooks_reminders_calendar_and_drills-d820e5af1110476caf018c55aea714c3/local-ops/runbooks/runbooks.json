@@ -1,0 +1,126 @@
+{
+  "status": "ready",
+  "runbooks": [
+    {
+      "runbook_id": "morning-check",
+      "title": "Morning check",
+      "trigger": "daily_start",
+      "severity": "info",
+      "steps": [
+        {
+          "title": "Run health score",
+          "command": "operator-health-score --json",
+          "expected_output": "status ok or warn",
+          "done": false
+        },
+        {
+          "title": "Review local ops snapshot",
+          "command": "local-ops-snapshot --json",
+          "expected_output": "snapshot generated",
+          "done": false
+        }
+      ],
+      "escalation": "manual_review",
+      "done_criteria": "All steps completed and evidence written.",
+      "safety_notes": "Local paper operations only. Live trading remains disabled.",
+      "live_trading_enabled": false
+    },
+    {
+      "runbook_id": "evening-review",
+      "title": "Evening review",
+      "trigger": "daily_end",
+      "severity": "info",
+      "steps": [
+        {
+          "title": "Generate operator report",
+          "command": "operator-report --json",
+          "expected_output": "report path",
+          "done": false
+        },
+        {
+          "title": "Refresh evidence manifest",
+          "command": "evidence-manifest --json",
+          "expected_output": "manifest path",
+          "done": false
+        }
+      ],
+      "escalation": "manual_review",
+      "done_criteria": "All steps completed and evidence written.",
+      "safety_notes": "Local paper operations only. Live trading remains disabled.",
+      "live_trading_enabled": false
+    },
+    {
+      "runbook_id": "failed-scheduled-report",
+      "title": "Failed scheduled report",
+      "trigger": "job_failed",
+      "severity": "warning",
+      "steps": [
+        {
+          "title": "Run diagnostics",
+          "command": "diagnostics --json",
+          "expected_output": "diagnostics generated",
+          "done": false
+        },
+        {
+          "title": "Create support bundle",
+          "command": "support-bundle --json",
+          "expected_output": "bundle path",
+          "done": false
+        }
+      ],
+      "escalation": "manual_review",
+      "done_criteria": "All steps completed and evidence written.",
+      "safety_notes": "Local paper operations only. Live trading remains disabled.",
+      "live_trading_enabled": false
+    },
+    {
+      "runbook_id": "policy-challenger-failed",
+      "title": "Policy challenger failed",
+      "trigger": "governance_stop",
+      "severity": "warning",
+      "steps": [
+        {
+          "title": "Run governance simulation",
+          "command": "governance-simulation --case policy_violation --json",
+          "expected_output": "suspend decision",
+          "done": false
+        },
+        {
+          "title": "Write weekly governance report",
+          "command": "weekly-governance-report --json",
+          "expected_output": "report path",
+          "done": false
+        }
+      ],
+      "escalation": "manual_review",
+      "done_criteria": "All steps completed and evidence written.",
+      "safety_notes": "Local paper operations only. Live trading remains disabled.",
+      "live_trading_enabled": false
+    },
+    {
+      "runbook_id": "browser-smoke-failed",
+      "title": "Browser smoke failed",
+      "trigger": "dashboard_smoke_failed",
+      "severity": "warning",
+      "steps": [
+        {
+          "title": "Run dashboard smoke",
+          "command": "dashboard-smoke --seconds 1",
+          "expected_output": "status ok",
+          "done": false
+        },
+        {
+          "title": "Create support bundle",
+          "command": "support-bundle --json",
+          "expected_output": "bundle path",
+          "done": false
+        }
+      ],
+      "escalation": "manual_review",
+      "done_criteria": "All steps completed and evidence written.",
+      "safety_notes": "Local paper operations only. Live trading remains disabled.",
+      "live_trading_enabled": false
+    }
+  ],
+  "live_trading_enabled": false
+}

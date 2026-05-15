@@ -1,0 +1,9 @@
+{
+  "status": "ok",
+  "decision": "plan_only",
+  "legacy_path": "src/binance_spot_bot/ui",
+  "compat_wrapper_kept": true,
+  "v2_paths_import_legacy": false,
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

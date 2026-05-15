@@ -1,0 +1,29 @@
+{
+  "status": "ready",
+  "active_roadmaps": 1,
+  "blocked_roadmaps": 0,
+  "task_packs_generated": 0,
+  "duplicate_guard": {
+    "status": "ok",
+    "highest_number": 90,
+    "next_number": 91,
+    "duplicate_numbers": [],
+    "duplicate_titles": [],
+    "blockers": [],
+    "warnings": [],
+    "live_trading_enabled": false
+  },
+  "next_codex_task": "Execution",
+  "completion_gate_sample": {
+    "status": "ready_to_complete",
+    "roadmap": "090",
+    "blockers": [],
+    "evidence": {
+      "tests_passed": true,
+      "check_all_passed": true,
+      "no_live_proof": true
+    },
+    "live_trading_enabled": false
+  },
+  "live_trading_enabled": false
+}

@@ -1,0 +1,174 @@
+[
+  {
+    "job_id": "daily-operator-health",
+    "name": "Daily operator health",
+    "description": "Write local operator health score.",
+    "command": "operator-health-score",
+    "args": [
+      "--json"
+    ],
+    "schedule": {
+      "schedule_type": "daily",
+      "config": {
+        "time": "08:00"
+      }
+    },
+    "enabled": true,
+    "category": "health",
+    "allowlist_policy": "default",
+    "max_runtime_seconds": 60,
+    "retry_policy": {
+      "max_retries": 0,
+      "backoff_seconds": 0
+    },
+    "failure_policy": {
+      "action": "record_only",
+      "max_failures": 3,
+      "create_support_bundle": false,
+      "create_incident_timeline": false,
+      "disable_after_failures": false
+    },
+    "output_dir": "data/local-ops/jobs",
+    "created_at_ms": 1778852953593,
+    "updated_at_ms": 1778852953593,
+    "live_trading_enabled": false
+  },
+  {
+    "job_id": "daily-operator-report",
+    "name": "Daily operator report",
+    "description": "Write the local paper operator report.",
+    "command": "operator-report",
+    "args": [
+      "--json"
+    ],
+    "schedule": {
+      "schedule_type": "daily",
+      "config": {
+        "time": "18:00"
+      }
+    },
+    "enabled": true,
+    "category": "report",
+    "allowlist_policy": "default",
+    "max_runtime_seconds": 60,
+    "retry_policy": {
+      "max_retries": 0,
+      "backoff_seconds": 0
+    },
+    "failure_policy": {
+      "action": "record_only",
+      "max_failures": 3,
+      "create_support_bundle": false,
+      "create_incident_timeline": false,
+      "disable_after_failures": false
+    },
+    "output_dir": "data/local-ops/jobs",
+    "created_at_ms": 1778852953593,
+    "updated_at_ms": 1778852953593,
+    "live_trading_enabled": false
+  },
+  {
+    "job_id": "daily-evidence-manifest",
+    "name": "Daily evidence manifest",
+    "description": "Refresh local evidence manifest.",
+    "command": "evidence-manifest",
+    "args": [
+      "--json"
+    ],
+    "schedule": {
+      "schedule_type": "daily",
+      "config": {
+        "time": "18:10"
+      }
+    },
+    "enabled": true,
+    "category": "evidence",
+    "allowlist_policy": "default",
+    "max_runtime_seconds": 60,
+    "retry_policy": {
+      "max_retries": 0,
+      "backoff_seconds": 0
+    },
+    "failure_policy": {
+      "action": "record_only",
+      "max_failures": 3,
+      "create_support_bundle": false,
+      "create_incident_timeline": false,
+      "disable_after_failures": false
+    },
+    "output_dir": "data/local-ops/jobs",
+    "created_at_ms": 1778852953593,
+    "updated_at_ms": 1778852953593,
+    "live_trading_enabled": false
+  },
+  {
+    "job_id": "weekly-governance-report",
+    "name": "Weekly governance report",
+    "description": "Write weekly paper policy governance report.",
+    "command": "weekly-governance-report",
+    "args": [
+      "--json"
+    ],
+    "schedule": {
+      "schedule_type": "weekly",
+      "config": {
+        "weekday": "monday",
+        "time": "09:00"
+      }
+    },
+    "enabled": true,
+    "category": "governance",
+    "allowlist_policy": "default",
+    "max_runtime_seconds": 120,
+    "retry_policy": {
+      "max_retries": 0,
+      "backoff_seconds": 0
+    },
+    "failure_policy": {
+      "action": "record_only",
+      "max_failures": 3,
+      "create_support_bundle": false,
+      "create_incident_timeline": false,
+      "disable_after_failures": false
+    },
+    "output_dir": "data/local-ops/jobs",
+    "created_at_ms": 1778852953593,
+    "updated_at_ms": 1778852953593,
+    "live_trading_enabled": false
+  },
+  {
+    "job_id": "weekly-support-verify",
+    "name": "Weekly support bundle verify",
+    "description": "Verify local support bundles.",
+    "command": "support-bundles-verify",
+    "args": [
+      "--json"
+    ],
+    "schedule": {
+      "schedule_type": "weekly",
+      "config": {
+        "weekday": "friday",
+        "time": "16:00"
+      }
+    },
+    "enabled": true,
+    "category": "diagnostics",
+    "allowlist_policy": "default",
+    "max_runtime_seconds": 60,
+    "retry_policy": {
+      "max_retries": 0,
+      "backoff_seconds": 0
+    },
+    "failure_policy": {
+      "action": "record_only",
+      "max_failures": 3,
+      "create_support_bundle": false,
+      "create_incident_timeline": false,
+      "disable_after_failures": false
+    },
+    "output_dir": "data/local-ops/jobs",
+    "created_at_ms": 1778852953593,
+    "updated_at_ms": 1778852953593,
+    "live_trading_enabled": false
+  }
+]

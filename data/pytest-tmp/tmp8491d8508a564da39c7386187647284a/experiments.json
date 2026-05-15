@@ -1,0 +1,12 @@
+[
+  {
+    "experiment_id": "exp-1778849543046",
+    "kind": "scanner",
+    "artifact_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp8491d8508a564da39c7386187647284a\\scanner.jsonl",
+    "metrics": {
+      "rows": 1,
+      "orders_allowed": false
+    },
+    "created_at_ms": 1778849543046
+  }
+]

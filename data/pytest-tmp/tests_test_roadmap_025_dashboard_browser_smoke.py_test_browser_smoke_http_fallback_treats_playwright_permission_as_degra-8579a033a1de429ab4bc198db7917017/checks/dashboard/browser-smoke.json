@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-05-15T11:53:29.911121+00:00",
+  "status": "ok",
+  "url": "http://127.0.0.1:8506",
+  "browser_mode": "http-fallback",
+  "seconds": 1,
+  "checks": [
+    {
+      "name": "http:reachable",
+      "status": "ok",
+      "message": "response body received"
+    },
+    {
+      "name": "absent:StreamlitDuplicateElementId",
+      "status": "ok",
+      "message": "absent"
+    },
+    {
+      "name": "absent:Traceback",
+      "status": "ok",
+      "message": "absent"
+    },
+    {
+      "name": "absent:ModuleNotFoundError",
+      "status": "ok",
+      "message": "absent"
+    },
+    {
+      "name": "absent:StreamlitAPIException",
+      "status": "ok",
+      "message": "absent"
+    },
+    {
+      "name": "absent:Uncaught app exception",
+      "status": "ok",
+      "message": "absent"
+    },
+    {
+      "name": "browser:playwright",
+      "status": "skipped",
+      "message": "[WinError 5] Toegang geweigerd"
+    }
+  ],
+  "screenshots": {},
+  "live_trading_enabled": false
+}

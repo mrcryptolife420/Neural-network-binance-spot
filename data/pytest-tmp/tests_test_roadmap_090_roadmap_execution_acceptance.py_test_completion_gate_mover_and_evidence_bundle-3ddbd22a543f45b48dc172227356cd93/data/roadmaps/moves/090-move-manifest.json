@@ -1,0 +1,21 @@
+{
+  "status": "moved",
+  "roadmap": "090",
+  "source": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_090_roadmap_execution_acceptance.py_test_completion_gate_mover_and_evidence_bundle-3ddbd22a543f45b48dc172227356cd93\\Roadmap docs\\090-roadmap-execution.md",
+  "target": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_090_roadmap_execution_acceptance.py_test_completion_gate_mover_and_evidence_bundle-3ddbd22a543f45b48dc172227356cd93\\Voltooid docs\\090-roadmap-execution.md",
+  "source_sha256": "ec05ec31b73a3d453cba5976",
+  "completion_gate": {
+    "status": "ready_to_complete",
+    "roadmap": "090",
+    "blockers": [],
+    "evidence": {
+      "tests_passed": true,
+      "check_all_passed": true,
+      "no_live_proof": true
+    },
+    "live_trading_enabled": false
+  },
+  "blockers": [],
+  "live_trading_enabled": false,
+  "target_sha256": "ec05ec31b73a3d453cba5976"
+}

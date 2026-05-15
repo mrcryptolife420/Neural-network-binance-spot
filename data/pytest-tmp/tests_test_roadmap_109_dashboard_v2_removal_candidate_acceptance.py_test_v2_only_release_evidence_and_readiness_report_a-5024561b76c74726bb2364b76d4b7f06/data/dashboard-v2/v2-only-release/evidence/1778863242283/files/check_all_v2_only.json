@@ -1,0 +1,13 @@
+{
+  "status": "ok",
+  "profile": "v2-only",
+  "checks": {
+    "v2_import_without_streamlit": true,
+    "api_smoke": "ok",
+    "no_live_proof": "ok",
+    "critical_workflow_lock": "ok",
+    "support_evidence": "ok"
+  },
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

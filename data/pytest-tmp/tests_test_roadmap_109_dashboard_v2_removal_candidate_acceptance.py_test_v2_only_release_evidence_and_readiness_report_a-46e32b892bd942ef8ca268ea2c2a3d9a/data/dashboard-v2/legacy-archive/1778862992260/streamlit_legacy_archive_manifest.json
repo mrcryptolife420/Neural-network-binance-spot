@@ -1,0 +1,14 @@
+{
+  "status": "ok",
+  "run_id": "1778862992260",
+  "files": [
+    {
+      "source": "streamlit_inventory",
+      "archive_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_v2_only_release_evidence_and_readiness_report_a-46e32b892bd942ef8ca268ea2c2a3d9a\\data\\dashboard-v2\\legacy-archive\\1778862992260\\files\\streamlit_inventory.json",
+      "sha256_16": "4083244d7d987f13"
+    }
+  ],
+  "rollback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit",
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

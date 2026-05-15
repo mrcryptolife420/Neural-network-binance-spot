@@ -1,0 +1,38 @@
+{
+  "proposal": {
+    "proposal_id": "act-1778848020535-2ff1d20501",
+    "title": "Metrics Compact",
+    "description": "",
+    "command": {
+      "command": "metrics-compact",
+      "args": [
+        "--confirm",
+        "COMPACT_METRICS"
+      ],
+      "timeout_seconds": 60
+    },
+    "source": "operator_manual",
+    "category": "diagnostics",
+    "safety_class": "destructive_confirm_required",
+    "expected_outputs": [],
+    "required_evidence": [],
+    "preconditions": [],
+    "confirm_phrase": "COMPACT_METRICS",
+    "forbidden_reasons": [],
+    "related_runbook_id": "",
+    "related_incident_id": "",
+    "related_evidence_ids": [],
+    "status": "proposed",
+    "created_at_ms": 1778848020535,
+    "expires_at_ms": 0,
+    "no_auto_execute": true,
+    "live_trading_enabled": false,
+    "proposal_hash": "8397dbafd9e120c56b6bb8a7"
+  },
+  "status": "blocked",
+  "decisions": [],
+  "executions": [],
+  "verifications": [],
+  "updated_at_ms": 1778848020535,
+  "live_trading_enabled": false
+}

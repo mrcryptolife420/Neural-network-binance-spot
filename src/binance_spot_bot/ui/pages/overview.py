@@ -1,12 +1,11 @@
 from __future__ import annotations
 
-from binance_spot_bot.ui.page_context import PageContext
+from typing import Any
 
 
 def page_key() -> str:
     return "overview"
 
 
-def validate_context(context: PageContext) -> None:
-    if context.live_trading_enabled:
-        raise ValueError("Dashboard pages cannot enable live trading")
+def render_page(*_args: Any, **_kwargs: Any) -> dict[str, object]:
+    return {"page": "overview", "status": "delegated_to_streamlit_app", "live_trading_enabled": False}

@@ -1,0 +1,8 @@
+{
+  "operator_id": "operator",
+  "lesson_id": "lesson-no-live",
+  "status": "complete",
+  "updated_at_ms": 1778853388208,
+  "live_trading_enabled": false,
+  "sha256": "64a35521ce6647e119c87e07778990ce"
+}

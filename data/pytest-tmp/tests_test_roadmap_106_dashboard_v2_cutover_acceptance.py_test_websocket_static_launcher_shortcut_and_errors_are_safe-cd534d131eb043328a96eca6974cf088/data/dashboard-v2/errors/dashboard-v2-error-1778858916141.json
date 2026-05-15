@@ -1,0 +1,10 @@
+{
+  "status": "captured",
+  "message": "[REDACTED]",
+  "route": "/",
+  "context": {},
+  "playbook": "docs/dashboard-v2/troubleshooting-v2.md",
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false,
+  "created_at_ms": 1778858916141
+}

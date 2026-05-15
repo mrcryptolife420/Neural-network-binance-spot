@@ -1,0 +1,10 @@
+{
+  "pilot_start_gate": {
+    "checks": [
+      {
+        "check": "credentials",
+        "reason": "api_[REDACTED]"
+      }
+    ]
+  }
+}

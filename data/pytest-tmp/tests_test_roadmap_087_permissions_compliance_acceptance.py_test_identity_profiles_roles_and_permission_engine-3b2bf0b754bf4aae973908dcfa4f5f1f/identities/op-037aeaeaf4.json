@@ -1,0 +1,29 @@
+{
+  "operator_id": "op-037aeaeaf4",
+  "display_name": "op",
+  "local_machine_id_hash": "4bf26035962b5100",
+  "role_ids": [
+    "operator"
+  ],
+  "profile_hash": "6b3398c3072193775b0b6a41",
+  "created_at_ms": 1778848020626,
+  "updated_at_ms": 1778848020636,
+  "last_seen_ms": 1778848020636,
+  "disabled": true,
+  "notes": "",
+  "live_trading_enabled": false,
+  "role": "operator",
+  "permissions": [
+    "approve_read_only",
+    "approve_safe_action",
+    "approve_safe_artifact",
+    "ask_ai_ops",
+    "create_action_proposal",
+    "execute_approved_action",
+    "start_demo",
+    "view_dashboard",
+    "view_evidence",
+    "view_metrics",
+    "view_reports"
+  ]
+}

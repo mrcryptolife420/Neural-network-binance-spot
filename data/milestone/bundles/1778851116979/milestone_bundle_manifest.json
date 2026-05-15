@@ -1,0 +1,28 @@
+{
+  "status": "ok",
+  "created_at_ms": 1778851117023,
+  "files": [
+    {
+      "path": "files\\system_inventory.json",
+      "sha256": "d58895eafe5ddbee852eaf43dd60d2bb"
+    },
+    {
+      "path": "files\\no_live_proof_pack.json",
+      "sha256": "022ad190d411dd303d26c5ee682b5535"
+    },
+    {
+      "path": "files\\paper_os_simulation.json",
+      "sha256": "22b820fbb4c9d2b14d8cb79eca27e032"
+    },
+    {
+      "path": "files\\production_readiness_simulation.json",
+      "sha256": "5687712f880df76f35bd83d2514a835f"
+    },
+    {
+      "path": "files\\system_audit_report.json",
+      "sha256": "256ac04be18be50f41e5a95572085e4b"
+    }
+  ],
+  "live_trading_enabled": false,
+  "signed_endpoints_used": false
+}

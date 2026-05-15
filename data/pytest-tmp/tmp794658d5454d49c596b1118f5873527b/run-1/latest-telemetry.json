@@ -1,0 +1,15 @@
+{
+  "timestamp_ms": 1778849034700,
+  "runner_status": "running",
+  "runtime_status": "running",
+  "heartbeat_age_ms": 20,
+  "equity": "1005",
+  "pnl": "5",
+  "orders": 2,
+  "rejects": 1,
+  "api_errors": 0,
+  "alerts_count": 1,
+  "reconciliation": {
+    "status": "needs_operator_action"
+  }
+}

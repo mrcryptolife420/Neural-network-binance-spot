@@ -1,0 +1,30 @@
+{
+  "status": "ready",
+  "url": "http://127.0.0.1:8800",
+  "host": "127.0.0.1",
+  "port": 8800,
+  "no_browser": true,
+  "safe_env": {
+    "LIVE_TRADING_ENABLED": "false",
+    "KILL_SWITCH": "true"
+  },
+  "static_build": {
+    "status": "warn",
+    "build_dir": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_106_dashboard_v2_cutover_acceptance.py_test_support_cutover_evidence_and_fallback_snapshot-fcfb36c8e9e245c5a3a4717575e88007\\src\\binance_spot_bot\\dashboard_v2\\static",
+    "index_exists": false,
+    "manifest_exists": false,
+    "asset_count": 0,
+    "external_refs": [],
+    "warnings": [
+      "static build missing; Vite dev server or fallback can still be used"
+    ],
+    "hard_blockers": [],
+    "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+    "live_trading_enabled": false
+  },
+  "startup_health_wait": true,
+  "session_file": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_106_dashboard_v2_cutover_acceptance.py_test_support_cutover_evidence_and_fallback_snapshot-fcfb36c8e9e245c5a3a4717575e88007\\data\\dashboard-v2\\launcher\\last-launch.json",
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false,
+  "created_at_ms": 1778865683744
+}

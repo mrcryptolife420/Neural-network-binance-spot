@@ -1,3 +1,15 @@
+from __future__ import annotations
+
+import json
 from pathlib import Path
-from .model_ops_facade import export_model_ops_evidence
-def export_model_evidence_bundle(files: list[Path], out: Path): return export_model_ops_evidence(files, out)
+from typing import Any
+
+from .redaction import redact_payload
+
+
+def export_model_evidence_bundle(path: Path | str, payload: dict[str, Any]) -> Path:
+    target = Path(path)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    safe = redact_payload({**payload, "live_trading_enabled": False})
+    target.write_text(json.dumps(safe, indent=2, sort_keys=True, default=str), encoding="utf-8")
+    return target

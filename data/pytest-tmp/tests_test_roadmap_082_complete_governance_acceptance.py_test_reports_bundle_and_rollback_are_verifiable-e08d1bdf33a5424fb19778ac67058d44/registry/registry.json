@@ -1,0 +1,159 @@
+{
+  "policies": [
+    {
+      "policy_id": "new",
+      "policy_name": "Demo paper policy",
+      "policy_type": "paper_portfolio",
+      "alloc_weights": {
+        "BTCUSDT": "0.50",
+        "ETHUSDT": "0.50"
+      },
+      "risk_budget_hash": "risk-demo",
+      "scenario_weight_hash": "scenario-demo",
+      "optimizer_id": "optimizer-demo",
+      "benchmark_id": "benchmark-demo",
+      "robustness_score": 0.74,
+      "max_drawdown": "5.0",
+      "worst_case_scenario": "volatile",
+      "policy_card_path": "docs/portfolio-policy-registry.md",
+      "evidence_manifest_path": "docs/roadmap-082-122-correctie-audit-2026-05-11.md",
+      "status": "archived",
+      "role": "prev_champion",
+      "prev_champion_id": "old",
+      "governance_notes": "",
+      "created_at_ms": 1778845571300,
+      "promoted_at_ms": 1778845571324,
+      "live_trading_enabled": false
+    },
+    {
+      "policy_id": "old",
+      "policy_name": "Demo paper policy",
+      "policy_type": "paper_portfolio",
+      "alloc_weights": {
+        "BTCUSDT": "0.50",
+        "ETHUSDT": "0.50"
+      },
+      "risk_budget_hash": "risk-demo",
+      "scenario_weight_hash": "scenario-demo",
+      "optimizer_id": "optimizer-demo",
+      "benchmark_id": "benchmark-demo",
+      "robustness_score": 0.74,
+      "max_drawdown": "5.0",
+      "worst_case_scenario": "volatile",
+      "policy_card_path": "docs/portfolio-policy-registry.md",
+      "evidence_manifest_path": "docs/roadmap-082-122-correctie-audit-2026-05-11.md",
+      "status": "champion",
+      "role": "champion",
+      "prev_champion_id": "new",
+      "governance_notes": "",
+      "created_at_ms": 1778845571298,
+      "promoted_at_ms": 1778845571334,
+      "live_trading_enabled": false
+    }
+  ],
+  "lineage": [
+    {
+      "policy_id": "old",
+      "parent_policy_id": "",
+      "prev_champion_id": "",
+      "action": "registered",
+      "reason": "policy_registered",
+      "evidence_refs": [
+        "docs/portfolio-policy-registry.md",
+        "docs/roadmap-082-122-correctie-audit-2026-05-11.md"
+      ],
+      "created_at_ms": 1778845571298,
+      "live_trading_enabled": false
+    },
+    {
+      "policy_id": "new",
+      "parent_policy_id": "",
+      "prev_champion_id": "",
+      "action": "registered",
+      "reason": "policy_registered",
+      "evidence_refs": [
+        "docs/portfolio-policy-registry.md",
+        "docs/roadmap-082-122-correctie-audit-2026-05-11.md"
+      ],
+      "created_at_ms": 1778845571306,
+      "live_trading_enabled": false
+    },
+    {
+      "policy_id": "old",
+      "parent_policy_id": "",
+      "prev_champion_id": "",
+      "action": "promoted",
+      "reason": "operator_confirmed",
+      "evidence_refs": [],
+      "created_at_ms": 1778845571315,
+      "live_trading_enabled": false
+    },
+    {
+      "policy_id": "new",
+      "parent_policy_id": "",
+      "prev_champion_id": "old",
+      "action": "promoted",
+      "reason": "operator_confirmed",
+      "evidence_refs": [],
+      "created_at_ms": 1778845571324,
+      "live_trading_enabled": false
+    },
+    {
+      "policy_id": "old",
+      "parent_policy_id": "",
+      "prev_champion_id": "new",
+      "action": "promoted",
+      "reason": "operator_confirmed",
+      "evidence_refs": [
+        "rollback"
+      ],
+      "created_at_ms": 1778845571334,
+      "live_trading_enabled": false
+    }
+  ],
+  "decisions": [
+    {
+      "policy_id": "old",
+      "decision": "promoted",
+      "reasons": [
+        "operator_confirmed",
+        "paper_only"
+      ],
+      "operator_confirmed": true,
+      "prev_champion_id": "",
+      "evidence_refs": [],
+      "created_at_ms": 1778845571315,
+      "live_trading_enabled": false
+    },
+    {
+      "policy_id": "new",
+      "decision": "promoted",
+      "reasons": [
+        "operator_confirmed",
+        "paper_only"
+      ],
+      "operator_confirmed": true,
+      "prev_champion_id": "old",
+      "evidence_refs": [],
+      "created_at_ms": 1778845571324,
+      "live_trading_enabled": false
+    },
+    {
+      "policy_id": "old",
+      "decision": "promoted",
+      "reasons": [
+        "operator_confirmed",
+        "paper_only"
+      ],
+      "operator_confirmed": true,
+      "prev_champion_id": "new",
+      "evidence_refs": [
+        "rollback"
+      ],
+      "created_at_ms": 1778845571334,
+      "live_trading_enabled": false
+    }
+  ],
+  "latest_champion_id": "old",
+  "live_trading_enabled": false
+}

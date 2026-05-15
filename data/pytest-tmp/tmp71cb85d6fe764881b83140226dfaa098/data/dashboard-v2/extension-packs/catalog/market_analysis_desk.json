@@ -1,0 +1,336 @@
+{
+  "manifest": {
+    "pack_id": "market_analysis_desk",
+    "name": "Binance Spot Market Scanner",
+    "description": "Local pluginless Dashboard V2 pack for Binance Spot Market Scanner.",
+    "version": "1.0",
+    "pack_type": "workspace_template",
+    "schema_version": 2,
+    "author": "local",
+    "created_at_ms": 1778866324838,
+    "compatible_workspace_schema_versions": [
+      2
+    ],
+    "required_widget_types": [
+      "candle_chart",
+      "data_quality",
+      "no_live_banner",
+      "spread",
+      "stop_button",
+      "top_of_book",
+      "volume",
+      "watchlist"
+    ],
+    "required_dashboard_v2_features": [
+      "workspaces",
+      "widget_registry"
+    ],
+    "mode_scope": "all_safe_modes",
+    "operator_level": "operator",
+    "tags": [
+      "market_analysis",
+      "local-only",
+      "no-live"
+    ],
+    "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+    "live_trading_enabled": false,
+    "content_hash": "ffa8f68fdd8d447b"
+  },
+  "content": {
+    "workspace_templates": [
+      {
+        "workspace_id": "binance-spot-market-scanner",
+        "name": "Binance Spot Market Scanner",
+        "description": "Dashboard V2 local-only preset: market_analysis",
+        "version": "2.0",
+        "operator_level": "operator",
+        "mode_scope": "all_safe_modes",
+        "layout": {
+          "grid": {
+            "columns": 12,
+            "row_height": 90,
+            "gap": 12
+          },
+          "panels": [
+            {
+              "panel_id": "panel_1",
+              "title": "No Live Banner",
+              "x": 0,
+              "y": 0,
+              "w": 4,
+              "h": 3,
+              "widget_id": "no_live_banner_1",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": true,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "no_live_proof"
+            },
+            {
+              "panel_id": "panel_2",
+              "title": "Stop Button",
+              "x": 6,
+              "y": 0,
+              "w": 4,
+              "h": 3,
+              "widget_id": "stop_button_2",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": true,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "runtime_controls"
+            },
+            {
+              "panel_id": "panel_3",
+              "title": "Candle Chart",
+              "x": 0,
+              "y": 4,
+              "w": 6,
+              "h": 4,
+              "widget_id": "candle_chart_3",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "candles"
+            },
+            {
+              "panel_id": "panel_4",
+              "title": "Top Of Book",
+              "x": 6,
+              "y": 4,
+              "w": 4,
+              "h": 3,
+              "widget_id": "top_of_book_4",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "runtime_snapshot"
+            },
+            {
+              "panel_id": "panel_5",
+              "title": "Spread",
+              "x": 0,
+              "y": 8,
+              "w": 4,
+              "h": 3,
+              "widget_id": "spread_5",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "runtime_snapshot"
+            },
+            {
+              "panel_id": "panel_6",
+              "title": "Volume",
+              "x": 6,
+              "y": 8,
+              "w": 4,
+              "h": 3,
+              "widget_id": "volume_6",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "candles"
+            },
+            {
+              "panel_id": "panel_7",
+              "title": "Data Quality",
+              "x": 0,
+              "y": 12,
+              "w": 4,
+              "h": 3,
+              "widget_id": "data_quality_7",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "runtime_snapshot"
+            },
+            {
+              "panel_id": "panel_8",
+              "title": "Watchlist",
+              "x": 6,
+              "y": 12,
+              "w": 4,
+              "h": 3,
+              "widget_id": "watchlist_8",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "watchlists"
+            }
+          ],
+          "widgets": [
+            {
+              "widget_id": "no_live_banner_1",
+              "widget_type": "no_live_banner",
+              "title": "No Live Banner",
+              "settings": {},
+              "locked": true,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "no_live_proof"
+              ]
+            },
+            {
+              "widget_id": "stop_button_2",
+              "widget_type": "stop_button",
+              "title": "Stop Button",
+              "settings": {},
+              "locked": true,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "runtime_controls"
+              ]
+            },
+            {
+              "widget_id": "candle_chart_3",
+              "widget_type": "candle_chart",
+              "title": "Candle Chart",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "candles"
+              ]
+            },
+            {
+              "widget_id": "top_of_book_4",
+              "widget_type": "top_of_book",
+              "title": "Top Of Book",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "runtime_snapshot"
+              ]
+            },
+            {
+              "widget_id": "spread_5",
+              "widget_type": "spread",
+              "title": "Spread",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "runtime_snapshot"
+              ]
+            },
+            {
+              "widget_id": "volume_6",
+              "widget_type": "volume",
+              "title": "Volume",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "candles"
+              ]
+            },
+            {
+              "widget_id": "data_quality_7",
+              "widget_type": "data_quality",
+              "title": "Data Quality",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "runtime_snapshot"
+              ]
+            },
+            {
+              "widget_id": "watchlist_8",
+              "widget_type": "watchlist",
+              "title": "Watchlist",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "watchlists"
+              ]
+            }
+          ]
+        },
+        "safety_widgets_locked": true,
+        "live_trading_enabled": false,
+        "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+        "metadata": {
+          "created_at_ms": 1778866324838,
+          "updated_at_ms": 1778866324838,
+          "owner": "local-operator",
+          "schema_version": 2
+        }
+      }
+    ],
+    "widget_presets": [],
+    "analytics_presets": [],
+    "watchlists": [],
+    "workflow_steps": [],
+    "docs": "# Binance Spot Market Scanner\n\nLOCAL REALTIME DASHBOARD - NO LIVE TRADING\n",
+    "evidence_expectations": {
+      "workspace_validation": true,
+      "no_live_proof": true
+    }
+  },
+  "dependencies": [],
+  "compatibility": {
+    "workspace_schema_versions": [
+      2
+    ],
+    "dashboard_v2_features": [
+      "workspaces",
+      "widget_registry",
+      "analytics_query"
+    ],
+    "safe_modes": [
+      "demo",
+      "paper",
+      "testnet-readiness"
+    ]
+  }
+}

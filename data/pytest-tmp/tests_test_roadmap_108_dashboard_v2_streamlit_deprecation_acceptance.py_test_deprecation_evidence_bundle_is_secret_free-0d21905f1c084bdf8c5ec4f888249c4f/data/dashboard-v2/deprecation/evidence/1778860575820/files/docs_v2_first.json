@@ -1,0 +1,8 @@
+{
+  "status": "ok",
+  "v2_first_docs": true,
+  "streamlit_fallback_documented": true,
+  "forbidden_live_wording": [],
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

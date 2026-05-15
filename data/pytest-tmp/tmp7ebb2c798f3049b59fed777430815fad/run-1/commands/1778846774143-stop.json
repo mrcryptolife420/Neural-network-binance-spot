@@ -1,0 +1,11 @@
+{
+  "command_id": "1778846774143-stop",
+  "type": "stop",
+  "created_at_ms": 1778846774143,
+  "status": "failed",
+  "payload": {},
+  "processed_at_ms": 1778846774144,
+  "result": {
+    "error": "boom"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "status": "ok",
+  "packs": [
+    {
+      "pack_id": "beginner_paper_operator",
+      "name": "Beginner Paper Operator",
+      "pack_type": "workspace_template",
+      "validation": {
+        "status": "ok",
+        "blockers": [],
+        "warnings": [],
+        "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+        "live_trading_enabled": false
+      }
+    },
+    {
+      "pack_id": "demo_spot_control_room",
+      "name": "Demo Spot Trading Control Room",
+      "pack_type": "workspace_template",
+      "validation": {
+        "status": "ok",
+        "blockers": [],
+        "warnings": [],
+        "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+        "live_trading_enabled": false
+      }
+    },
+    {
+      "pack_id": "market_analysis_desk",
+      "name": "Binance Spot Market Scanner",
+      "pack_type": "workspace_template",
+      "validation": {
+        "status": "ok",
+        "blockers": [],
+        "warnings": [],
+        "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+        "live_trading_enabled": false
+      }
+    },
+    {
+      "pack_id": "model_monitoring_desk",
+      "name": "Model Monitoring Desk",
+      "pack_type": "model_ops_pack",
+      "validation": {
+        "status": "ok",
+        "blockers": [],
+        "warnings": [],
+        "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+        "live_trading_enabled": false
+      }
+    },
+    {
+      "pack_id": "portfolio_allocation_desk",
+      "name": "Portfolio Allocation Desk",
+      "pack_type": "portfolio_ops_pack",
+      "validation": {
+        "status": "ok",
+        "blockers": [],
+        "warnings": [],
+        "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+        "live_trading_enabled": false
+      }
+    },
+    {
+      "pack_id": "release_roadmap_ops_desk",
+      "name": "Roadmap/Release Ops Desk",
+      "pack_type": "release_ops_pack",
+      "validation": {
+        "status": "ok",
+        "blockers": [],
+        "warnings": [],
+        "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+        "live_trading_enabled": false
+      }
+    },
+    {
+      "pack_id": "risk_alerts_war_room",
+      "name": "Risk & Alerts War Room",
+      "pack_type": "workspace_template",
+      "validation": {
+        "status": "ok",
+        "blockers": [],
+        "warnings": [],
+        "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+        "live_trading_enabled": false
+      }
+    },
+    {
+      "pack_id": "support_evidence_desk",
+      "name": "Support & Evidence Desk",
+      "pack_type": "support_evidence_pack",
+      "validation": {
+        "status": "ok",
+        "blockers": [],
+        "warnings": [],
+        "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+        "live_trading_enabled": false
+      }
+    },
+    {
+      "pack_id": "uat_training_desk",
+      "name": "UAT Training Desk",
+      "pack_type": "training_uat_pack",
+      "validation": {
+        "status": "ok",
+        "blockers": [],
+        "warnings": [],
+        "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+        "live_trading_enabled": false
+      }
+    }
+  ],
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

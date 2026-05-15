@@ -1,0 +1,31 @@
+{
+  "dataset_id": "dataset-1",
+  "lineage": {
+    "dataset_id": "dataset-1",
+    "lineage": [
+      {
+        "path": "raw.json",
+        "stage": "raw"
+      },
+      {
+        "path": "features.jsonl",
+        "stage": "features"
+      },
+      {
+        "path": "model.json",
+        "stage": "model"
+      }
+    ],
+    "live_trading_enabled": false,
+    "status": "ready"
+  },
+  "live_trading_enabled": false,
+  "quality": {
+    "duplicate_count": 0,
+    "gap_count": 0,
+    "live_trading_enabled": false,
+    "ordered": true,
+    "rows": 1,
+    "status": "ok"
+  }
+}

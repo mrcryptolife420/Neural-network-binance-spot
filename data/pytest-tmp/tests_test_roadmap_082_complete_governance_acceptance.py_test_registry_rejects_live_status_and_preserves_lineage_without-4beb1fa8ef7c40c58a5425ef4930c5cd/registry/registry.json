@@ -1,0 +1,140 @@
+{
+  "policies": [
+    {
+      "policy_id": "base",
+      "policy_name": "Demo paper policy",
+      "policy_type": "paper_portfolio",
+      "alloc_weights": {
+        "BTCUSDT": "0.50",
+        "ETHUSDT": "0.50"
+      },
+      "risk_budget_hash": "risk-demo",
+      "scenario_weight_hash": "scenario-demo",
+      "optimizer_id": "optimizer-demo",
+      "benchmark_id": "benchmark-demo",
+      "robustness_score": 0.74,
+      "max_drawdown": "5.0",
+      "worst_case_scenario": "volatile",
+      "policy_card_path": "docs/portfolio-policy-registry.md",
+      "evidence_manifest_path": "docs/roadmap-082-122-correctie-audit-2026-05-11.md",
+      "status": "archived",
+      "role": "prev_champion",
+      "prev_champion_id": "",
+      "governance_notes": "",
+      "created_at_ms": 1778850398575,
+      "promoted_at_ms": 1778850398592,
+      "live_trading_enabled": false
+    },
+    {
+      "policy_id": "candidate",
+      "policy_name": "Demo paper policy",
+      "policy_type": "paper_portfolio",
+      "alloc_weights": {
+        "BTCUSDT": "0.50",
+        "ETHUSDT": "0.50"
+      },
+      "risk_budget_hash": "risk-demo",
+      "scenario_weight_hash": "scenario-demo",
+      "optimizer_id": "optimizer-demo",
+      "benchmark_id": "benchmark-demo",
+      "robustness_score": 0.74,
+      "max_drawdown": "5.0",
+      "worst_case_scenario": "volatile",
+      "policy_card_path": "docs/portfolio-policy-registry.md",
+      "evidence_manifest_path": "docs/roadmap-082-122-correctie-audit-2026-05-11.md",
+      "status": "champion",
+      "role": "champion",
+      "prev_champion_id": "base",
+      "governance_notes": "",
+      "created_at_ms": 1778850398577,
+      "promoted_at_ms": 1778850398601,
+      "live_trading_enabled": false
+    }
+  ],
+  "lineage": [
+    {
+      "policy_id": "base",
+      "parent_policy_id": "",
+      "prev_champion_id": "",
+      "action": "registered",
+      "reason": "policy_registered",
+      "evidence_refs": [
+        "docs/portfolio-policy-registry.md",
+        "docs/roadmap-082-122-correctie-audit-2026-05-11.md"
+      ],
+      "created_at_ms": 1778850398575,
+      "live_trading_enabled": false
+    },
+    {
+      "policy_id": "candidate",
+      "parent_policy_id": "",
+      "prev_champion_id": "",
+      "action": "registered",
+      "reason": "policy_registered",
+      "evidence_refs": [
+        "docs/portfolio-policy-registry.md",
+        "docs/roadmap-082-122-correctie-audit-2026-05-11.md"
+      ],
+      "created_at_ms": 1778850398584,
+      "live_trading_enabled": false
+    },
+    {
+      "policy_id": "base",
+      "parent_policy_id": "",
+      "prev_champion_id": "",
+      "action": "promoted",
+      "reason": "operator_confirmed",
+      "evidence_refs": [
+        "policy-card"
+      ],
+      "created_at_ms": 1778850398592,
+      "live_trading_enabled": false
+    },
+    {
+      "policy_id": "candidate",
+      "parent_policy_id": "",
+      "prev_champion_id": "base",
+      "action": "promoted",
+      "reason": "operator_confirmed",
+      "evidence_refs": [
+        "gate-report"
+      ],
+      "created_at_ms": 1778850398601,
+      "live_trading_enabled": false
+    }
+  ],
+  "decisions": [
+    {
+      "policy_id": "base",
+      "decision": "promoted",
+      "reasons": [
+        "operator_confirmed",
+        "paper_only"
+      ],
+      "operator_confirmed": true,
+      "prev_champion_id": "",
+      "evidence_refs": [
+        "policy-card"
+      ],
+      "created_at_ms": 1778850398592,
+      "live_trading_enabled": false
+    },
+    {
+      "policy_id": "candidate",
+      "decision": "promoted",
+      "reasons": [
+        "operator_confirmed",
+        "paper_only"
+      ],
+      "operator_confirmed": true,
+      "prev_champion_id": "base",
+      "evidence_refs": [
+        "gate-report"
+      ],
+      "created_at_ms": 1778850398601,
+      "live_trading_enabled": false
+    }
+  ],
+  "latest_champion_id": "candidate",
+  "live_trading_enabled": false
+}

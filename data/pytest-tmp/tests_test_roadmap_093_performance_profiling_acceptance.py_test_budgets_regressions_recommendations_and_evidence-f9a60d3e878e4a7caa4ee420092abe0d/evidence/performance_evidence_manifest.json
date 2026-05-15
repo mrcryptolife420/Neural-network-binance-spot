@@ -1,0 +1,13 @@
+{
+  "status": "ready",
+  "files": [
+    {
+      "source": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_093_performance_profiling_acceptance.py_test_budgets_regressions_recommendations_and_evidence-f9a60d3e878e4a7caa4ee420092abe0d\\perf.json",
+      "bundle_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_093_performance_profiling_acceptance.py_test_budgets_regressions_recommendations_and_evidence-f9a60d3e878e4a7caa4ee420092abe0d\\evidence\\files\\perf.json",
+      "sha256": "f872a432028f296d7af4f211"
+    }
+  ],
+  "no_live_proof": true,
+  "redaction_proof": true,
+  "live_trading_enabled": false
+}

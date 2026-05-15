@@ -1,0 +1,258 @@
+{
+  "status": "ok",
+  "artifacts": {
+    "static_build": {
+      "status": "warn",
+      "build_dir": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_106_dashboard_v2_cutover_acceptance.py_test_support_cutover_evidence_and_fallback_snapshot-9daa3e994a6646ef8de28a3fb2395b5c\\src\\binance_spot_bot\\dashboard_v2\\static",
+      "index_exists": false,
+      "manifest_exists": false,
+      "asset_count": 0,
+      "external_refs": [],
+      "warnings": [
+        "static build missing; Vite dev server or fallback can still be used"
+      ],
+      "hard_blockers": [],
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "live_trading_enabled": false
+    },
+    "performance_budget": {
+      "status": "warn",
+      "results": [
+        {
+          "metric": "backend_startup_ms",
+          "status": "unknown",
+          "value": null,
+          "budget": 2500,
+          "recommendation": "collect metric before cutover"
+        },
+        {
+          "metric": "api_health_ms",
+          "status": "unknown",
+          "value": null,
+          "budget": 100,
+          "recommendation": "collect metric before cutover"
+        },
+        {
+          "metric": "api_config_ms",
+          "status": "unknown",
+          "value": null,
+          "budget": 150,
+          "recommendation": "collect metric before cutover"
+        },
+        {
+          "metric": "api_pages_ms",
+          "status": "unknown",
+          "value": null,
+          "budget": 250,
+          "recommendation": "collect metric before cutover"
+        },
+        {
+          "metric": "api_snapshot_ms",
+          "status": "unknown",
+          "value": null,
+          "budget": 500,
+          "recommendation": "collect metric before cutover"
+        },
+        {
+          "metric": "websocket_connect_ms",
+          "status": "unknown",
+          "value": null,
+          "budget": 500,
+          "recommendation": "collect metric before cutover"
+        },
+        {
+          "metric": "websocket_heartbeat_ms",
+          "status": "unknown",
+          "value": null,
+          "budget": null,
+          "recommendation": "collect metric before cutover"
+        },
+        {
+          "metric": "snapshot_serialization_ms",
+          "status": "unknown",
+          "value": null,
+          "budget": null,
+          "recommendation": "collect metric before cutover"
+        },
+        {
+          "metric": "snapshot_payload_bytes",
+          "status": "unknown",
+          "value": null,
+          "budget": 500000,
+          "recommendation": "collect metric before cutover"
+        },
+        {
+          "metric": "frontend_initial_load_ms",
+          "status": "unknown",
+          "value": null,
+          "budget": 2500,
+          "recommendation": "collect metric before cutover"
+        },
+        {
+          "metric": "route_navigation_ms",
+          "status": "unknown",
+          "value": null,
+          "budget": 500,
+          "recommendation": "collect metric before cutover"
+        },
+        {
+          "metric": "chart_update_ms",
+          "status": "unknown",
+          "value": null,
+          "budget": 120,
+          "recommendation": "collect metric before cutover"
+        },
+        {
+          "metric": "memory_best_effort_mb",
+          "status": "unknown",
+          "value": null,
+          "budget": null,
+          "recommendation": "collect metric before cutover"
+        },
+        {
+          "metric": "cpu_best_effort_pct",
+          "status": "unknown",
+          "value": null,
+          "budget": null,
+          "recommendation": "collect metric before cutover"
+        },
+        {
+          "metric": "browser_console_errors",
+          "status": "pass",
+          "value": 0,
+          "budget": 0,
+          "recommendation": ""
+        }
+      ],
+      "hard_blockers": [],
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "live_trading_enabled": false
+    },
+    "browser_smoke": {
+      "status": "ok",
+      "routes": [
+        {
+          "route": "/",
+          "url": "http://127.0.0.1:8800/",
+          "no_live_banner_visible": true,
+          "websocket_status_visible": true,
+          "primary_panel_visible": true,
+          "safe_actions_guarded": true,
+          "fatal_console_errors": 0,
+          "live_mode_present": false
+        },
+        {
+          "route": "/demo-spot-trading",
+          "url": "http://127.0.0.1:8800/demo-spot-trading",
+          "no_live_banner_visible": true,
+          "websocket_status_visible": true,
+          "primary_panel_visible": true,
+          "safe_actions_guarded": true,
+          "fatal_console_errors": 0,
+          "live_mode_present": false
+        },
+        {
+          "route": "/bot-controls",
+          "url": "http://127.0.0.1:8800/bot-controls",
+          "no_live_banner_visible": true,
+          "websocket_status_visible": true,
+          "primary_panel_visible": true,
+          "safe_actions_guarded": true,
+          "fatal_console_errors": 0,
+          "live_mode_present": false
+        },
+        {
+          "route": "/market-data",
+          "url": "http://127.0.0.1:8800/market-data",
+          "no_live_banner_visible": true,
+          "websocket_status_visible": true,
+          "primary_panel_visible": true,
+          "safe_actions_guarded": true,
+          "fatal_console_errors": 0,
+          "live_mode_present": false
+        },
+        {
+          "route": "/orders-account",
+          "url": "http://127.0.0.1:8800/orders-account",
+          "no_live_banner_visible": true,
+          "websocket_status_visible": true,
+          "primary_panel_visible": true,
+          "safe_actions_guarded": true,
+          "fatal_console_errors": 0,
+          "live_mode_present": false
+        },
+        {
+          "route": "/sessions",
+          "url": "http://127.0.0.1:8800/sessions",
+          "no_live_banner_visible": true,
+          "websocket_status_visible": true,
+          "primary_panel_visible": true,
+          "safe_actions_guarded": true,
+          "fatal_console_errors": 0,
+          "live_mode_present": false
+        },
+        {
+          "route": "/readiness",
+          "url": "http://127.0.0.1:8800/readiness",
+          "no_live_banner_visible": true,
+          "websocket_status_visible": true,
+          "primary_panel_visible": true,
+          "safe_actions_guarded": true,
+          "fatal_console_errors": 0,
+          "live_mode_present": false
+        },
+        {
+          "route": "/logs-security",
+          "url": "http://127.0.0.1:8800/logs-security",
+          "no_live_banner_visible": true,
+          "websocket_status_visible": true,
+          "primary_panel_visible": true,
+          "safe_actions_guarded": true,
+          "fatal_console_errors": 0,
+          "live_mode_present": false
+        },
+        {
+          "route": "/support",
+          "url": "http://127.0.0.1:8800/support",
+          "no_live_banner_visible": true,
+          "websocket_status_visible": true,
+          "primary_panel_visible": true,
+          "safe_actions_guarded": true,
+          "fatal_console_errors": 0,
+          "live_mode_present": false
+        },
+        {
+          "route": "/evidence",
+          "url": "http://127.0.0.1:8800/evidence",
+          "no_live_banner_visible": true,
+          "websocket_status_visible": true,
+          "primary_panel_visible": true,
+          "safe_actions_guarded": true,
+          "fatal_console_errors": 0,
+          "live_mode_present": false
+        },
+        {
+          "route": "/system/logs",
+          "url": "http://127.0.0.1:8800/system/logs",
+          "no_live_banner_visible": true,
+          "websocket_status_visible": true,
+          "primary_panel_visible": true,
+          "safe_actions_guarded": true,
+          "fatal_console_errors": 0,
+          "live_mode_present": false
+        }
+      ],
+      "fast_mode": true,
+      "deep_mode_supported": true,
+      "live_trading_enabled": false
+    },
+    "errors": {
+      "status": "ok",
+      "reports": [],
+      "live_trading_enabled": false
+    }
+  },
+  "missing_optional_artifacts_are_warnings": true,
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

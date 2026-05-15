@@ -1,0 +1,2 @@
+{"event_type": "runtime.signal", "payload": {"api_key": "[REDACTED]"}, "source": "runtime", "severity": "info", "event_id": "evt-2c9593c14bd3", "timestamp_ms": 1778849858676, "live_trading_enabled": false}
+{"type": "runtime.risk", "decision": "blocked"}

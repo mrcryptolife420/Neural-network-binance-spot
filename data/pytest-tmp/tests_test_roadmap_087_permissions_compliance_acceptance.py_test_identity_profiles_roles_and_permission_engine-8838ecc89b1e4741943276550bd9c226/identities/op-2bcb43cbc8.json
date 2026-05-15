@@ -1,0 +1,22 @@
+{
+  "operator_id": "op-2bcb43cbc8",
+  "display_name": "view",
+  "local_machine_id_hash": "4bf26035962b5100",
+  "role_ids": [
+    "viewer"
+  ],
+  "profile_hash": "4f92afec60202d42646efe49",
+  "created_at_ms": 1778847471502,
+  "updated_at_ms": 1778847471502,
+  "last_seen_ms": 1778847471502,
+  "disabled": false,
+  "notes": "",
+  "live_trading_enabled": false,
+  "role": "viewer",
+  "permissions": [
+    "view_dashboard",
+    "view_evidence",
+    "view_metrics",
+    "view_reports"
+  ]
+}

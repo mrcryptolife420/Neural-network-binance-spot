@@ -1,0 +1,29 @@
+{
+  "status": "ok",
+  "run_id": "1778865000246",
+  "files": [
+    {
+      "source": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_dependency_archive_and_rollback_drill-94992038935c428b91c87cf4f212ee63\\src\\binance_spot_bot\\ui\\streamlit_app.py",
+      "archive_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_dependency_archive_and_rollback_drill-94992038935c428b91c87cf4f212ee63\\data\\dashboard-v2\\legacy-archive\\1778865000246\\files\\streamlit_app.py",
+      "sha256_16": "ecfe951e8dbafe74"
+    },
+    {
+      "source": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_dependency_archive_and_rollback_drill-94992038935c428b91c87cf4f212ee63\\src\\binance_spot_bot\\ui\\components.py",
+      "archive_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_dependency_archive_and_rollback_drill-94992038935c428b91c87cf4f212ee63\\data\\dashboard-v2\\legacy-archive\\1778865000246\\files\\components.py",
+      "sha256_16": "e3b0c44298fc1c14"
+    },
+    {
+      "source": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_dependency_archive_and_rollback_drill-94992038935c428b91c87cf4f212ee63\\src\\binance_spot_bot\\ui\\page_registry.py",
+      "archive_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_dependency_archive_and_rollback_drill-94992038935c428b91c87cf4f212ee63\\data\\dashboard-v2\\legacy-archive\\1778865000246\\files\\page_registry.py",
+      "sha256_16": "e3b0c44298fc1c14"
+    },
+    {
+      "source": "streamlit_inventory",
+      "archive_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_dependency_archive_and_rollback_drill-94992038935c428b91c87cf4f212ee63\\data\\dashboard-v2\\legacy-archive\\1778865000246\\files\\streamlit_inventory.json",
+      "sha256_16": "dc0a06a10f53a50c"
+    }
+  ],
+  "rollback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit",
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

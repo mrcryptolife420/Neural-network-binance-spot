@@ -1,0 +1,34 @@
+{
+  "status": "ok",
+  "preview_id": "preview-1778865685624",
+  "backup": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_083_088_full_surface.py_test_088_backup_restore_inventory_preview_no_forbidden_files-398b15238ef3466fa7af8aa3f5cd8d4a\\backup.zip",
+  "target": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_083_088_full_surface.py_test_088_backup_restore_inventory_preview_no_forbidden_files-398b15238ef3466fa7af8aa3f5cd8d4a\\restore",
+  "creates": [],
+  "overwrites": [],
+  "skips": [],
+  "conflicts": [],
+  "forbidden": [],
+  "verify": {
+    "status": "ok",
+    "zip": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_083_088_full_surface.py_test_088_backup_restore_inventory_preview_no_forbidden_files-398b15238ef3466fa7af8aa3f5cd8d4a\\backup.zip",
+    "files": [
+      {
+        "path": "no_live_proof.json",
+        "sha256": "00fcf70f20f264f475667e1a"
+      },
+      {
+        "path": "redaction_proof.json",
+        "sha256": "633391127c758ab6a1ec74b4"
+      },
+      {
+        "path": "restore_instructions.md",
+        "sha256": "5973a43f9889895e3b868ccd"
+      }
+    ],
+    "errors": [],
+    "live_trading_enabled": false
+  },
+  "preview_only": true,
+  "no_live_proof": true,
+  "live_trading_enabled": false
+}

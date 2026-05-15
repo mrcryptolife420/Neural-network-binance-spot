@@ -1,0 +1,16 @@
+{
+  "status": "ok",
+  "grade": "deprecation_candidate",
+  "streamlit_removed": false,
+  "remaining_blockers": [],
+  "fallback": {
+    "status": "ok",
+    "fallback_available": true,
+    "command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit",
+    "policy": "docs/dashboard-v2/streamlit-fallback-policy.md",
+    "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+    "live_trading_enabled": false
+  },
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

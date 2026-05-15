@@ -1,0 +1,21 @@
+{
+  "bundle_id": "compliance-1778856690999",
+  "files": [
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_087_permissions_compliance_acceptance.py_test_compliance_evidence_report_score_bundle_and_review-063cce63dc6f4ec2a300e40c0f0de879\\compliance\\bundles\\compliance-1778856690999\\files\\compliance_report.json",
+      "hash": "ceead8b54cd5ab5fe5a974e1"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_087_permissions_compliance_acceptance.py_test_compliance_evidence_report_score_bundle_and_review-063cce63dc6f4ec2a300e40c0f0de879\\compliance\\bundles\\compliance-1778856690999\\files\\compliance_report.md",
+      "hash": "85a51f1a691f92aef7258ffe"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_087_permissions_compliance_acceptance.py_test_compliance_evidence_report_score_bundle_and_review-063cce63dc6f4ec2a300e40c0f0de879\\compliance\\bundles\\compliance-1778856690999\\files\\permission-profile-manifest.json",
+      "hash": "ac360e107aaf50aad5523acd"
+    }
+  ],
+  "no_live_proof": true,
+  "redaction_proof": true,
+  "live_trading_enabled": false,
+  "manifest_hash": "f7b06d20076350e6835b2db0"
+}

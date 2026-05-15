@@ -1,0 +1,23 @@
+{
+  "status": "ready",
+  "count": 3,
+  "reminders": [
+    {
+      "id": "weekly_governance_report_due",
+      "severity": "warning",
+      "reason": "weekly governance report missing"
+    },
+    {
+      "id": "browser_smoke_stale",
+      "severity": "warning",
+      "reason": "browser smoke evidence missing"
+    },
+    {
+      "id": "evidence_manifest_due",
+      "severity": "info",
+      "reason": "evidence directory missing"
+    }
+  ],
+  "generated_at_ms": 1778849856747,
+  "live_trading_enabled": false
+}

@@ -1,0 +1,98 @@
+{
+  "action": "place_order",
+  "status": "NEW",
+  "reason": "demo order submitted",
+  "preview": {
+    "intent": {
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "quote_size": "10",
+      "last_price": "100",
+      "order_type": "MARKET"
+    },
+    "order": {
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "order_type": "MARKET",
+      "quantity": "0.1",
+      "quote_order_qty": null,
+      "price": null,
+      "client_order_id": "spotbot-716516fbd4684efc827bdba3"
+    },
+    "filters": {
+      "symbol": "BTCUSDT",
+      "status": "TRADING",
+      "tick_size": "0.01",
+      "step_size": "0.000001",
+      "min_qty": "0.000001",
+      "max_qty": "1000",
+      "min_notional": "5",
+      "market_max_qty": "None"
+    },
+    "market": {
+      "symbol": "BTCUSDT",
+      "last_price": "100",
+      "bid": "100",
+      "ask": "100"
+    },
+    "risk_decision": {
+      "decision": "ALLOW",
+      "reason": "manual sandbox intent"
+    },
+    "live_trading_enabled": false
+  },
+  "response": {
+    "test_order": {
+      "status": "TEST_OK",
+      "clientOrderId": "spotbot-716516fbd4684efc827bdba3"
+    },
+    "status": "NEW",
+    "symbol": "BTCUSDT",
+    "side": "BUY",
+    "clientOrderId": "spotbot-716516fbd4684efc827bdba3",
+    "orderId": 123,
+    "executedQty": "0",
+    "price": "0"
+  },
+  "lifecycle": [
+    {
+      "client_order_id": "spotbot-716516fbd4684efc827bdba3",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "status": "NEW",
+      "order_id": 123,
+      "filled_quantity": "0",
+      "last_price": "0",
+      "events": [
+        {
+          "type": "INTENT",
+          "status": "INTENT"
+        },
+        {
+          "type": "PREVIEW_CREATED",
+          "status": "PREVIEW"
+        },
+        {
+          "type": "REST_QUERY",
+          "status": "NEW",
+          "payload": {
+            "test_order": {
+              "status": "TEST_OK",
+              "clientOrderId": "spotbot-716516fbd4684efc827bdba3"
+            },
+            "status": "NEW",
+            "symbol": "BTCUSDT",
+            "side": "BUY",
+            "clientOrderId": "spotbot-716516fbd4684efc827bdba3",
+            "orderId": 123,
+            "executedQty": "0",
+            "price": "0"
+          }
+        }
+      ],
+      "needs_reconciliation": true
+    }
+  ],
+  "evidence_path": "",
+  "live_trading_enabled": false
+}

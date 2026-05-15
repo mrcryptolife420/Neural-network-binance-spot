@@ -1,0 +1,17 @@
+{
+  "runner_id": "runner-1",
+  "run_id": "run-1",
+  "pid": 1234,
+  "status": "running",
+  "started_at_ms": 1778851232807,
+  "updated_at_ms": 1778851231807,
+  "command_dir": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp63269c45ffd84511aa155ba6bc3127bd\\run-1\\commands",
+  "telemetry_jsonl": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp63269c45ffd84511aa155ba6bc3127bd\\run-1\\telemetry.jsonl",
+  "latest_telemetry_json": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp63269c45ffd84511aa155ba6bc3127bd\\run-1\\latest-telemetry.json",
+  "process_command": [],
+  "last_tick_ms": 0,
+  "last_reconciliation_ms": 0,
+  "last_account_sync_ms": 0,
+  "last_command": "",
+  "last_error": ""
+}

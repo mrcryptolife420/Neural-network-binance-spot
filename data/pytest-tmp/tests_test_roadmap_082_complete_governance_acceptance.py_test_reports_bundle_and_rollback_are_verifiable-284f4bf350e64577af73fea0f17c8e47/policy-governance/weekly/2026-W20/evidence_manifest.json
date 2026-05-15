@@ -1,0 +1,30 @@
+{
+  "files": [
+    {
+      "name": "weekly_governance_report.json",
+      "relative_path": "weekly_governance_report.json",
+      "bytes": 2607
+    },
+    {
+      "name": "weekly_governance_report.md",
+      "relative_path": "weekly_governance_report.md",
+      "bytes": 139
+    },
+    {
+      "name": "policy_status.csv",
+      "relative_path": "policy_status.csv",
+      "bytes": 48
+    },
+    {
+      "name": "experiment_results.csv",
+      "relative_path": "experiment_results.csv",
+      "bytes": 161
+    },
+    {
+      "name": "governance_decisions.jsonl",
+      "relative_path": "governance_decisions.jsonl",
+      "bytes": 185
+    }
+  ],
+  "live_trading_enabled": false
+}

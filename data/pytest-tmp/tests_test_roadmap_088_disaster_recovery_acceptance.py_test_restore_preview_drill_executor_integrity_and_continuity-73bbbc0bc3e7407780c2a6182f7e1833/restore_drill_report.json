@@ -1,0 +1,91 @@
+{
+  "status": "pass",
+  "sandbox": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\spotbot-restore-drill-76a4e89611844090ab8d6518a34f11f6",
+  "extracted": 2,
+  "verify": {
+    "status": "ok",
+    "zip": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_088_disaster_recovery_acceptance.py_test_restore_preview_drill_executor_integrity_and_continuity-73bbbc0bc3e7407780c2a6182f7e1833\\backup.zip",
+    "files": [
+      {
+        "path": "files/action-center/decision-journal.jsonl",
+        "sha256": "bd05f508df58c560dca70ed8"
+      },
+      {
+        "path": "files/reports/report.json",
+        "sha256": "b74a85e010ec63393ba3744c"
+      },
+      {
+        "path": "no_live_proof.json",
+        "sha256": "00fcf70f20f264f475667e1a"
+      },
+      {
+        "path": "redaction_proof.json",
+        "sha256": "633391127c758ab6a1ec74b4"
+      },
+      {
+        "path": "restore_instructions.md",
+        "sha256": "5973a43f9889895e3b868ccd"
+      }
+    ],
+    "errors": [],
+    "live_trading_enabled": false
+  },
+  "preview": {
+    "status": "ok",
+    "preview_id": "preview-1778856691101",
+    "backup": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_088_disaster_recovery_acceptance.py_test_restore_preview_drill_executor_integrity_and_continuity-73bbbc0bc3e7407780c2a6182f7e1833\\backup.zip",
+    "target": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\spotbot-restore-drill-76a4e89611844090ab8d6518a34f11f6",
+    "creates": [
+      "action-center/decision-journal.jsonl",
+      "reports/report.json"
+    ],
+    "overwrites": [],
+    "skips": [],
+    "conflicts": [],
+    "forbidden": [],
+    "verify": {
+      "status": "ok",
+      "zip": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_088_disaster_recovery_acceptance.py_test_restore_preview_drill_executor_integrity_and_continuity-73bbbc0bc3e7407780c2a6182f7e1833\\backup.zip",
+      "files": [
+        {
+          "path": "files/action-center/decision-journal.jsonl",
+          "sha256": "bd05f508df58c560dca70ed8"
+        },
+        {
+          "path": "files/reports/report.json",
+          "sha256": "b74a85e010ec63393ba3744c"
+        },
+        {
+          "path": "no_live_proof.json",
+          "sha256": "00fcf70f20f264f475667e1a"
+        },
+        {
+          "path": "redaction_proof.json",
+          "sha256": "633391127c758ab6a1ec74b4"
+        },
+        {
+          "path": "restore_instructions.md",
+          "sha256": "5973a43f9889895e3b868ccd"
+        }
+      ],
+      "errors": [],
+      "live_trading_enabled": false
+    },
+    "preview_only": true,
+    "no_live_proof": true,
+    "live_trading_enabled": false
+  },
+  "integrity": {
+    "status": "ok",
+    "issues": [],
+    "repair_plan": [],
+    "read_only": true,
+    "live_trading_enabled": false
+  },
+  "permission_drift": {
+    "status": "ok",
+    "findings": [],
+    "live_trading_enabled": false
+  },
+  "live_trading_enabled": false
+}

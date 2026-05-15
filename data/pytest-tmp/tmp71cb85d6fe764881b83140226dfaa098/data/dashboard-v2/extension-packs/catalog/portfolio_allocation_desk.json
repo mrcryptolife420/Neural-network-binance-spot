@@ -1,0 +1,274 @@
+{
+  "manifest": {
+    "pack_id": "portfolio_allocation_desk",
+    "name": "Portfolio Allocation Desk",
+    "description": "Local pluginless Dashboard V2 pack for Portfolio Allocation Desk.",
+    "version": "1.0",
+    "pack_type": "portfolio_ops_pack",
+    "schema_version": 2,
+    "author": "local",
+    "created_at_ms": 1778866324839,
+    "compatible_workspace_schema_versions": [
+      2
+    ],
+    "required_widget_types": [
+      "attribution",
+      "no_live_banner",
+      "portfolio_allocation",
+      "risk_budget",
+      "rotation_status",
+      "stop_button"
+    ],
+    "required_dashboard_v2_features": [
+      "workspaces",
+      "widget_registry"
+    ],
+    "mode_scope": "all_safe_modes",
+    "operator_level": "operator",
+    "tags": [
+      "portfolio_ops",
+      "local-only",
+      "no-live"
+    ],
+    "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+    "live_trading_enabled": false,
+    "content_hash": "128b4a51dcc944e2"
+  },
+  "content": {
+    "workspace_templates": [
+      {
+        "workspace_id": "portfolio-allocation-desk",
+        "name": "Portfolio Allocation Desk",
+        "description": "Dashboard V2 local-only preset: portfolio_ops",
+        "version": "2.0",
+        "operator_level": "operator",
+        "mode_scope": "all_safe_modes",
+        "layout": {
+          "grid": {
+            "columns": 12,
+            "row_height": 90,
+            "gap": 12
+          },
+          "panels": [
+            {
+              "panel_id": "panel_1",
+              "title": "No Live Banner",
+              "x": 0,
+              "y": 0,
+              "w": 4,
+              "h": 3,
+              "widget_id": "no_live_banner_1",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": true,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "no_live_proof"
+            },
+            {
+              "panel_id": "panel_2",
+              "title": "Stop Button",
+              "x": 6,
+              "y": 0,
+              "w": 4,
+              "h": 3,
+              "widget_id": "stop_button_2",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": true,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "runtime_controls"
+            },
+            {
+              "panel_id": "panel_3",
+              "title": "Portfolio Allocation",
+              "x": 0,
+              "y": 4,
+              "w": 4,
+              "h": 3,
+              "widget_id": "portfolio_allocation_3",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "portfolio_status"
+            },
+            {
+              "panel_id": "panel_4",
+              "title": "Risk Budget",
+              "x": 6,
+              "y": 4,
+              "w": 4,
+              "h": 3,
+              "widget_id": "risk_budget_4",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "portfolio_status"
+            },
+            {
+              "panel_id": "panel_5",
+              "title": "Attribution",
+              "x": 0,
+              "y": 8,
+              "w": 4,
+              "h": 3,
+              "widget_id": "attribution_5",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "portfolio_status"
+            },
+            {
+              "panel_id": "panel_6",
+              "title": "Rotation Status",
+              "x": 6,
+              "y": 8,
+              "w": 4,
+              "h": 3,
+              "widget_id": "rotation_status_6",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "portfolio_status"
+            }
+          ],
+          "widgets": [
+            {
+              "widget_id": "no_live_banner_1",
+              "widget_type": "no_live_banner",
+              "title": "No Live Banner",
+              "settings": {},
+              "locked": true,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "no_live_proof"
+              ]
+            },
+            {
+              "widget_id": "stop_button_2",
+              "widget_type": "stop_button",
+              "title": "Stop Button",
+              "settings": {},
+              "locked": true,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "runtime_controls"
+              ]
+            },
+            {
+              "widget_id": "portfolio_allocation_3",
+              "widget_type": "portfolio_allocation",
+              "title": "Portfolio Allocation",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "portfolio_status"
+              ]
+            },
+            {
+              "widget_id": "risk_budget_4",
+              "widget_type": "risk_budget",
+              "title": "Risk Budget",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "portfolio_status"
+              ]
+            },
+            {
+              "widget_id": "attribution_5",
+              "widget_type": "attribution",
+              "title": "Attribution",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "portfolio_status"
+              ]
+            },
+            {
+              "widget_id": "rotation_status_6",
+              "widget_type": "rotation_status",
+              "title": "Rotation Status",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "portfolio_status"
+              ]
+            }
+          ]
+        },
+        "safety_widgets_locked": true,
+        "live_trading_enabled": false,
+        "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+        "metadata": {
+          "created_at_ms": 1778866324839,
+          "updated_at_ms": 1778866324839,
+          "owner": "local-operator",
+          "schema_version": 2
+        }
+      }
+    ],
+    "widget_presets": [],
+    "analytics_presets": [],
+    "watchlists": [],
+    "workflow_steps": [],
+    "docs": "# Portfolio Allocation Desk\n\nLOCAL REALTIME DASHBOARD - NO LIVE TRADING\n",
+    "evidence_expectations": {
+      "workspace_validation": true,
+      "no_live_proof": true
+    }
+  },
+  "dependencies": [],
+  "compatibility": {
+    "workspace_schema_versions": [
+      2
+    ],
+    "dashboard_v2_features": [
+      "workspaces",
+      "widget_registry",
+      "analytics_query"
+    ],
+    "safe_modes": [
+      "demo",
+      "paper",
+      "testnet-readiness"
+    ]
+  }
+}

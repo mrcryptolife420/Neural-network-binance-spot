@@ -1,0 +1,238 @@
+{
+  "workspace_id": "roadmap-110-smoke",
+  "name": "Roadmap 110 Smoke",
+  "description": "Dashboard V2 local-only preset: operator_overview",
+  "version": "2.0",
+  "operator_level": "operator",
+  "mode_scope": "all_safe_modes",
+  "layout": {
+    "grid": {
+      "columns": 12,
+      "row_height": 90,
+      "gap": 12
+    },
+    "panels": [
+      {
+        "panel_id": "panel_1",
+        "title": "No Live Banner",
+        "x": 0,
+        "y": 0,
+        "w": 4,
+        "h": 3,
+        "widget_id": "no_live_banner_1",
+        "min_w": 2,
+        "min_h": 2,
+        "pinned": true,
+        "collapsed": false,
+        "refresh_policy": "snapshot",
+        "query_scope": "no_live_proof"
+      },
+      {
+        "panel_id": "panel_2",
+        "title": "Stop Button",
+        "x": 6,
+        "y": 0,
+        "w": 4,
+        "h": 3,
+        "widget_id": "stop_button_2",
+        "min_w": 2,
+        "min_h": 2,
+        "pinned": true,
+        "collapsed": false,
+        "refresh_policy": "snapshot",
+        "query_scope": "runtime_controls"
+      },
+      {
+        "panel_id": "panel_3",
+        "title": "Runtime Status",
+        "x": 0,
+        "y": 4,
+        "w": 4,
+        "h": 3,
+        "widget_id": "runtime_status_3",
+        "min_w": 2,
+        "min_h": 2,
+        "pinned": false,
+        "collapsed": false,
+        "refresh_policy": "snapshot",
+        "query_scope": "runtime_snapshot"
+      },
+      {
+        "panel_id": "panel_4",
+        "title": "Candle Chart",
+        "x": 6,
+        "y": 4,
+        "w": 6,
+        "h": 4,
+        "widget_id": "candle_chart_4",
+        "min_w": 2,
+        "min_h": 2,
+        "pinned": false,
+        "collapsed": false,
+        "refresh_policy": "snapshot",
+        "query_scope": "candles"
+      },
+      {
+        "panel_id": "panel_5",
+        "title": "Equity Curve",
+        "x": 0,
+        "y": 8,
+        "w": 6,
+        "h": 3,
+        "widget_id": "equity_chart_5",
+        "min_w": 2,
+        "min_h": 2,
+        "pinned": false,
+        "collapsed": false,
+        "refresh_policy": "snapshot",
+        "query_scope": "equity_points"
+      },
+      {
+        "panel_id": "panel_6",
+        "title": "Alerts Inbox",
+        "x": 6,
+        "y": 8,
+        "w": 4,
+        "h": 3,
+        "widget_id": "alerts_inbox_6",
+        "min_w": 2,
+        "min_h": 2,
+        "pinned": false,
+        "collapsed": false,
+        "refresh_policy": "snapshot",
+        "query_scope": "alerts"
+      },
+      {
+        "panel_id": "panel_7",
+        "title": "Session Summary",
+        "x": 0,
+        "y": 12,
+        "w": 4,
+        "h": 3,
+        "widget_id": "session_summary_7",
+        "min_w": 2,
+        "min_h": 2,
+        "pinned": false,
+        "collapsed": false,
+        "refresh_policy": "snapshot",
+        "query_scope": "sessions"
+      }
+    ],
+    "widgets": [
+      {
+        "widget_id": "no_live_banner_1",
+        "widget_type": "no_live_banner",
+        "title": "No Live Banner",
+        "settings": {},
+        "locked": true,
+        "safe_modes": [
+          "demo",
+          "paper",
+          "testnet-readiness"
+        ],
+        "data_sources": [
+          "no_live_proof"
+        ]
+      },
+      {
+        "widget_id": "stop_button_2",
+        "widget_type": "stop_button",
+        "title": "Stop Button",
+        "settings": {},
+        "locked": true,
+        "safe_modes": [
+          "demo",
+          "paper",
+          "testnet-readiness"
+        ],
+        "data_sources": [
+          "runtime_controls"
+        ]
+      },
+      {
+        "widget_id": "runtime_status_3",
+        "widget_type": "runtime_status",
+        "title": "Runtime Status",
+        "settings": {},
+        "locked": false,
+        "safe_modes": [
+          "demo",
+          "paper",
+          "testnet-readiness"
+        ],
+        "data_sources": [
+          "runtime_snapshot"
+        ]
+      },
+      {
+        "widget_id": "candle_chart_4",
+        "widget_type": "candle_chart",
+        "title": "Candle Chart",
+        "settings": {},
+        "locked": false,
+        "safe_modes": [
+          "demo",
+          "paper",
+          "testnet-readiness"
+        ],
+        "data_sources": [
+          "candles"
+        ]
+      },
+      {
+        "widget_id": "equity_chart_5",
+        "widget_type": "equity_chart",
+        "title": "Equity Curve",
+        "settings": {},
+        "locked": false,
+        "safe_modes": [
+          "demo",
+          "paper",
+          "testnet-readiness"
+        ],
+        "data_sources": [
+          "equity_points"
+        ]
+      },
+      {
+        "widget_id": "alerts_inbox_6",
+        "widget_type": "alerts_inbox",
+        "title": "Alerts Inbox",
+        "settings": {},
+        "locked": false,
+        "safe_modes": [
+          "demo",
+          "paper",
+          "testnet-readiness"
+        ],
+        "data_sources": [
+          "alerts"
+        ]
+      },
+      {
+        "widget_id": "session_summary_7",
+        "widget_type": "session_summary",
+        "title": "Session Summary",
+        "settings": {},
+        "locked": false,
+        "safe_modes": [
+          "demo",
+          "paper",
+          "testnet-readiness"
+        ],
+        "data_sources": [
+          "sessions"
+        ]
+      }
+    ]
+  },
+  "safety_widgets_locked": true,
+  "live_trading_enabled": false,
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "metadata": {
+    "created_at_ms": 1778864813862,
+    "updated_at_ms": 1778864813862,
+    "owner": "local-operator",
+    "schema_version": 2
+  }
+}

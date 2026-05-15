@@ -1,0 +1,8 @@
+{
+  "status": "ok",
+  "v2_tests_primary": true,
+  "legacy_tests_fallback_only": true,
+  "test_selector_v2_first": true,
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

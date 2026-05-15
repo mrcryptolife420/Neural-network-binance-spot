@@ -1,0 +1,32 @@
+{
+  "status": "ok",
+  "zip": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_088_disaster_recovery_acceptance.py_test_backup_profiles_inventory_preflight_and_package_are_secret_f-0106b4b447f54247ad66bc898da8555c\\backup.zip",
+  "files": [
+    {
+      "path": "files/action-center/decision-journal.jsonl",
+      "sha256": "bd05f508df58c560dca70ed8"
+    },
+    {
+      "path": "files/disaster-recovery/backup_preflight_report.json",
+      "sha256": "79091a495f9b976636a6cc8b"
+    },
+    {
+      "path": "files/reports/report.json",
+      "sha256": "b74a85e010ec63393ba3744c"
+    },
+    {
+      "path": "no_live_proof.json",
+      "sha256": "00fcf70f20f264f475667e1a"
+    },
+    {
+      "path": "redaction_proof.json",
+      "sha256": "633391127c758ab6a1ec74b4"
+    },
+    {
+      "path": "restore_instructions.md",
+      "sha256": "5973a43f9889895e3b868ccd"
+    }
+  ],
+  "errors": [],
+  "live_trading_enabled": false
+}

@@ -1,0 +1,10 @@
+{
+  "status": "ready",
+  "run_id": "perf-report",
+  "category": "report",
+  "span_count": 0,
+  "total_duration_ms": 0,
+  "max_duration_ms": 0.0,
+  "slowest_spans": [],
+  "live_trading_enabled": false
+}

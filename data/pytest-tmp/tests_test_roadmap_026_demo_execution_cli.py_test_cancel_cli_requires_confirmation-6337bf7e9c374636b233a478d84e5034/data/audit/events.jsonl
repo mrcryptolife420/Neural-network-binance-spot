@@ -1,0 +1,1 @@
+{"component": "demo_execution_sandbox", "correlation_id": "b4d633e2-40f2-47fb-ad64-b3846791b663", "event": "cancel_order", "payload": {"action": "cancel_order", "evidence_path": "", "lifecycle": [], "live_trading_enabled": false, "preview": null, "reason": "confirm cancel first", "response": null, "status": "BLOCKED"}, "timestamp_ms": 1778859781494}

@@ -1,0 +1,20 @@
+{
+  "status": "ok",
+  "zip": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_089_release_management_acceptance.py_test_migration_backup_gate_apply_rollback_and_quality-aea5c937103744d5a8378cac1ef5d2e2\\backup.zip",
+  "files": [
+    {
+      "path": "no_live_proof.json",
+      "sha256": "00fcf70f20f264f475667e1a"
+    },
+    {
+      "path": "redaction_proof.json",
+      "sha256": "633391127c758ab6a1ec74b4"
+    },
+    {
+      "path": "restore_instructions.md",
+      "sha256": "5973a43f9889895e3b868ccd"
+    }
+  ],
+  "errors": [],
+  "live_trading_enabled": false
+}

@@ -1,0 +1,70 @@
+[
+  {
+    "job_id": "due",
+    "name": "Due",
+    "description": "Due job",
+    "command": "operator-health-score",
+    "args": [
+      "--json"
+    ],
+    "schedule": {
+      "schedule_type": "interval",
+      "config": {
+        "next_due_ms": 1
+      }
+    },
+    "enabled": true,
+    "category": "diagnostics",
+    "allowlist_policy": "default",
+    "max_runtime_seconds": 60,
+    "retry_policy": {
+      "max_retries": 0,
+      "backoff_seconds": 0
+    },
+    "failure_policy": {
+      "action": "record_only",
+      "max_failures": 3,
+      "create_support_bundle": false,
+      "create_incident_timeline": false,
+      "disable_after_failures": false
+    },
+    "output_dir": "data/local-ops/jobs",
+    "created_at_ms": 1778858913095,
+    "updated_at_ms": 1778858913095,
+    "live_trading_enabled": false
+  },
+  {
+    "job_id": "future",
+    "name": "Future",
+    "description": "Future job",
+    "command": "operator-report",
+    "args": [
+      "--json"
+    ],
+    "schedule": {
+      "schedule_type": "interval",
+      "config": {
+        "next_due_ms": 9999999999999
+      }
+    },
+    "enabled": true,
+    "category": "diagnostics",
+    "allowlist_policy": "default",
+    "max_runtime_seconds": 60,
+    "retry_policy": {
+      "max_retries": 0,
+      "backoff_seconds": 0
+    },
+    "failure_policy": {
+      "action": "record_only",
+      "max_failures": 3,
+      "create_support_bundle": false,
+      "create_incident_timeline": false,
+      "disable_after_failures": false
+    },
+    "output_dir": "data/local-ops/jobs",
+    "created_at_ms": 1778858913095,
+    "updated_at_ms": 1778858913095,
+    "live_trading_enabled": false
+  }
+]

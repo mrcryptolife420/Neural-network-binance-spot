@@ -1,0 +1,224 @@
+{
+  "status": "ok",
+  "mappings": [
+    {
+      "page_key": "overview",
+      "streamlit_title": "Overview",
+      "v2_route": "/",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "demo_spot_trading",
+      "streamlit_title": "Demo Spot Trading",
+      "v2_route": "/demo-spot-trading",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "credentials_profile",
+      "streamlit_title": "Credentials & Profile",
+      "v2_route": "/credentials-profile",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "bot_controls",
+      "streamlit_title": "Bot Controls",
+      "v2_route": "/bot-controls",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "risk_controls",
+      "streamlit_title": "Risk Controls",
+      "v2_route": "/risk-controls",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "strategy_model",
+      "streamlit_title": "Strategy & Model",
+      "v2_route": "/strategy-model",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "market_data",
+      "streamlit_title": "Market Data",
+      "v2_route": "/market-data",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "orders_account",
+      "streamlit_title": "Orders & Account",
+      "v2_route": "/orders-account",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "sessions",
+      "streamlit_title": "Sessions",
+      "v2_route": "/sessions",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "evaluation",
+      "streamlit_title": "Evaluation",
+      "v2_route": "/evaluation",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "strategy_lab",
+      "streamlit_title": "Strategy Lab",
+      "v2_route": "/strategy-lab",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "research",
+      "streamlit_title": "Research",
+      "v2_route": "/research",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "portfolio",
+      "streamlit_title": "Portfolio",
+      "v2_route": "/portfolio",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "readiness",
+      "streamlit_title": "Readiness",
+      "v2_route": "/readiness",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "logs_security",
+      "streamlit_title": "Logs & Security",
+      "v2_route": "/logs-security",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "demo_pilot",
+      "streamlit_title": "Demo Pilot",
+      "v2_route": "/demo-pilot",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "policy_governance",
+      "streamlit_title": "Policy Governance",
+      "v2_route": "/policy-governance",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "ops_automation",
+      "streamlit_title": "Ops Automation",
+      "v2_route": "/ops-automation",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "observability",
+      "streamlit_title": "Observability",
+      "v2_route": "/observability",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "ai_ops_assistant",
+      "streamlit_title": "AI Ops Assistant",
+      "v2_route": "/ai-ops-assistant",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "action_center",
+      "streamlit_title": "Action Center",
+      "v2_route": "/action-center",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "permissions",
+      "streamlit_title": "Permissions",
+      "v2_route": "/permissions",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "disaster_recovery",
+      "streamlit_title": "Disaster Recovery",
+      "v2_route": "/disaster-recovery",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "release_management",
+      "streamlit_title": "Release Management",
+      "v2_route": "/release-management",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "roadmap_automation",
+      "streamlit_title": "Roadmap Automation",
+      "v2_route": "/roadmap-automation",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "repo_knowledge",
+      "streamlit_title": "Repo Knowledge",
+      "v2_route": "/repo-knowledge",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "test_selection",
+      "streamlit_title": "Test Selection",
+      "v2_route": "/test-selection",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "performance",
+      "streamlit_title": "Performance",
+      "v2_route": "/performance",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "runtime_core",
+      "streamlit_title": "Runtime Core",
+      "v2_route": "/runtime-core",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "data_pipeline",
+      "streamlit_title": "Data Pipeline",
+      "v2_route": "/data-pipeline",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "model_training",
+      "streamlit_title": "Model Training",
+      "v2_route": "/model-training",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "model_monitoring",
+      "streamlit_title": "Model Monitoring",
+      "v2_route": "/model-monitoring",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "portfolio_ensemble",
+      "streamlit_title": "Portfolio Ensemble",
+      "v2_route": "/portfolio-ensemble",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "paper_os_audit",
+      "streamlit_title": "Paper OS Audit",
+      "v2_route": "/paper-os-audit",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "stabilization",
+      "streamlit_title": "Stabilization",
+      "v2_route": "/stabilization",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    },
+    {
+      "page_key": "operator_training",
+      "streamlit_title": "Operator Training",
+      "v2_route": "/operator-training",
+      "fallback_command": "python -m binance_spot_bot.cli dashboard --legacy-streamlit"
+    }
+  ],
+  "missing": [],
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

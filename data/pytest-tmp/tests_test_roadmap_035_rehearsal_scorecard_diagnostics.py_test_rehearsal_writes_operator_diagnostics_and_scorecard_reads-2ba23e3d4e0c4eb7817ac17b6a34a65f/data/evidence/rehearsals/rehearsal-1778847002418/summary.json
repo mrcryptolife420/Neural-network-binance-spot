@@ -1,0 +1,111 @@
+{
+  "run_id": "rehearsal-1778847002418",
+  "status": "warn",
+  "started_at_ms": 1778847002418,
+  "finished_at_ms": 1778847047506,
+  "duration_seconds": 45.088,
+  "steps": [
+    {
+      "name": "validate-config",
+      "status": "ok",
+      "message": "configuration validates",
+      "artifact": ""
+    },
+    {
+      "name": "preflight",
+      "status": "ok",
+      "message": "ok",
+      "artifact": ""
+    },
+    {
+      "name": "launch-evidence",
+      "status": "ok",
+      "message": "launch plan evidence written",
+      "artifact": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\checks\\dashboard\\launch-evidence.json"
+    },
+    {
+      "name": "dashboard-smoke",
+      "status": "ok",
+      "message": "static dashboard smoke ok",
+      "artifact": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\checks\\dashboard-smoke.json"
+    },
+    {
+      "name": "dashboard-browser-smoke",
+      "status": "skipped",
+      "message": "browser URL not provided",
+      "artifact": ""
+    },
+    {
+      "name": "check-all",
+      "status": "ok",
+      "message": "ok",
+      "artifact": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\checks\\check-all.json"
+    },
+    {
+      "name": "pilot-idempotent-start-smoke",
+      "status": "ok",
+      "message": "ok",
+      "artifact": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\evidence\\pilot-start-idempotency.json"
+    },
+    {
+      "name": "operator-diagnostics",
+      "status": "warn",
+      "message": "warn",
+      "artifact": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\evidence\\diagnostics\\latest-diagnostics.json"
+    },
+    {
+      "name": "demo-execution-preview",
+      "status": "ok",
+      "message": "PREVIEW_READY",
+      "artifact": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\evidence\\demo-execution\\demo_execution_drill.json"
+    },
+    {
+      "name": "demo-execution-test-order",
+      "status": "skipped",
+      "message": "Demo Spot credentials not configured",
+      "artifact": ""
+    },
+    {
+      "name": "dashboard-operator-evidence",
+      "status": "ok",
+      "message": "operator evidence written",
+      "artifact": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\evidence\\dashboard\\operator-evidence-2026-05-15T121047.486509Z0000.json"
+    },
+    {
+      "name": "evidence-scorecard",
+      "status": "warn",
+      "message": "warn",
+      "artifact": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\evidence\\scorecards\\latest-scorecard.json"
+    }
+  ],
+  "artifacts": {
+    "launch_evidence": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\checks\\dashboard\\launch-evidence.json",
+    "dashboard_smoke": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\checks\\dashboard-smoke.json",
+    "check_all": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\checks\\check-all.json",
+    "pilot_start_idempotency": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\evidence\\pilot-start-idempotency.json",
+    "operator_diagnostics": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\evidence\\diagnostics\\latest-diagnostics.json",
+    "demo_execution": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\evidence\\demo-execution\\demo_execution_drill.json",
+    "operator_evidence": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\evidence\\dashboard\\operator-evidence-2026-05-15T121047.486509Z0000.json",
+    "scorecard": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\evidence\\scorecards\\latest-scorecard.json",
+    "summary": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\evidence\\rehearsals\\rehearsal-1778847002418\\summary.json",
+    "artifacts": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\evidence\\rehearsals\\rehearsal-1778847002418\\artifacts.json"
+  },
+  "scorecard_status": "warn",
+  "blockers": [],
+  "warnings": [
+    {
+      "severity": "warning",
+      "name": "browser_smoke.missing",
+      "message": "artifact missing",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\checks\\dashboard\\browser-smoke.json"
+    },
+    {
+      "severity": "warning",
+      "name": "operator_diagnostics.warn",
+      "message": "operator diagnostics has warnings",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_035_rehearsal_scorecard_diagnostics.py_test_rehearsal_writes_operator_diagnostics_and_scorecard_reads-2ba23e3d4e0c4eb7817ac17b6a34a65f\\data\\evidence\\diagnostics\\latest-diagnostics.json"
+    }
+  ],
+  "next_safe_action": "Collect or refresh evidence: artifact missing",
+  "live_trading_enabled": false
+}

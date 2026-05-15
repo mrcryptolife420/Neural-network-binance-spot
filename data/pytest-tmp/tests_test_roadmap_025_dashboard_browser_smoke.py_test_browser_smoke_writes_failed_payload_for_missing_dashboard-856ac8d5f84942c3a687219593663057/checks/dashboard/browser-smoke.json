@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-05-15T11:48:06.142634+00:00",
+  "status": "failed",
+  "url": "http://127.0.0.1:9",
+  "browser_mode": "http-fallback",
+  "seconds": 1,
+  "checks": [
+    {
+      "name": "http:reachable",
+      "status": "failed",
+      "message": "<urlopen error [WinError 10061] Kan geen verbinding maken omdat de doelcomputer de verbinding actief heeft geweigerd>"
+    },
+    {
+      "name": "absent:StreamlitDuplicateElementId",
+      "status": "ok",
+      "message": "absent"
+    },
+    {
+      "name": "absent:Traceback",
+      "status": "ok",
+      "message": "absent"
+    },
+    {
+      "name": "absent:ModuleNotFoundError",
+      "status": "ok",
+      "message": "absent"
+    },
+    {
+      "name": "absent:StreamlitAPIException",
+      "status": "ok",
+      "message": "absent"
+    },
+    {
+      "name": "absent:Uncaught app exception",
+      "status": "ok",
+      "message": "absent"
+    },
+    {
+      "name": "browser:playwright",
+      "status": "skipped",
+      "message": "[WinError 5] Toegang geweigerd"
+    },
+    {
+      "name": "http:body",
+      "status": "failed",
+      "message": "<urlopen error [WinError 10061] Kan geen verbinding maken omdat de doelcomputer de verbinding actief heeft geweigerd>"
+    }
+  ],
+  "screenshots": {},
+  "live_trading_enabled": false
+}

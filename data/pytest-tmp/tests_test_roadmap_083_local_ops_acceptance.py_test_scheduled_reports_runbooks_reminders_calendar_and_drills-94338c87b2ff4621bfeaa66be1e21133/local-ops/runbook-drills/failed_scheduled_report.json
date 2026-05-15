@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "drill": "failed_scheduled_report",
+  "runbook_id": "failed-scheduled-report",
+  "steps_passed": 2,
+  "incident": {
+    "fake": true,
+    "created_at_ms": 1778849856750
+  },
+  "live_trading_enabled": false
+}

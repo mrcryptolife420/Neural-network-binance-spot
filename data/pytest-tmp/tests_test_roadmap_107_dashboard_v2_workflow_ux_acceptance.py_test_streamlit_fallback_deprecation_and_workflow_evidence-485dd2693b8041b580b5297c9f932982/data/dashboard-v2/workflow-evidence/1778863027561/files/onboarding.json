@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "steps": [
+    {
+      "key": "local_environment",
+      "status": "pass"
+    },
+    {
+      "key": "no_live_explanation",
+      "status": "pass"
+    },
+    {
+      "key": "data_dir",
+      "status": "pass"
+    },
+    {
+      "key": "dashboard_health",
+      "status": "pass"
+    },
+    {
+      "key": "demo_source",
+      "status": "pass"
+    },
+    {
+      "key": "paper_smoke",
+      "status": "pass"
+    },
+    {
+      "key": "support_bundle",
+      "status": "pass"
+    },
+    {
+      "key": "evidence_export",
+      "status": "pass"
+    }
+  ],
+  "works_without_api_keys": true,
+  "progress_saved_locally": true,
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

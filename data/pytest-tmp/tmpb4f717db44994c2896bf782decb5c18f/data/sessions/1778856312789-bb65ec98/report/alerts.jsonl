@@ -1,0 +1,4 @@
+{"action": "observe", "created_at_ms": 1778856312790, "message": "runtime created", "metadata": {}, "name": "runtime_created", "severity": "info"}
+{"action": "stop_runtime", "created_at_ms": 1778856312792, "message": "stop", "metadata": {}, "name": "forced_stop", "severity": "critical"}
+{"action": "observe", "created_at_ms": 1778856312794, "message": "runtime started", "metadata": {}, "name": "runtime_started", "severity": "info"}
+{"action": "observe", "created_at_ms": 1778856312819, "message": "insufficient base balance", "metadata": {}, "name": "risk_block", "severity": "warning"}

@@ -1,0 +1,134 @@
+{
+  "status": "warn",
+  "blockers": [],
+  "warnings": [
+    {
+      "severity": "warning",
+      "name": "demo_execution.missing",
+      "message": "critical evidence artifact missing",
+      "next_action": "Run rehearsal or check-all",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-178b2dd628f148e5bf79c7987d31c926\\data\\evidence\\demo-execution\\demo_execution_drill.json"
+    },
+    {
+      "severity": "warning",
+      "name": "operator_evidence.missing",
+      "message": "critical evidence artifact missing",
+      "next_action": "Run rehearsal or check-all",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-178b2dd628f148e5bf79c7987d31c926\\data\\evidence\\dashboard"
+    }
+  ],
+  "next_safe_action": "Run rehearsal or check-all",
+  "python": "3.14.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "data_dir": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-178b2dd628f148e5bf79c7987d31c926\\data",
+  "audit_log_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-178b2dd628f148e5bf79c7987d31c926\\data\\audit\\events.jsonl",
+  "pkgs": {
+    "streamlit": "1.57.0",
+    "plotly": "6.7.0",
+    "pytest": "9.0.3"
+  },
+  "live_trading_enabled": false,
+  "artifact_inventory": [
+    {
+      "name": "launch_evidence",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-178b2dd628f148e5bf79c7987d31c926\\data\\checks\\dashboard\\launch-evidence.json",
+      "critical": true,
+      "exists": true,
+      "state": "fresh",
+      "age_seconds": 70,
+      "status": "planned"
+    },
+    {
+      "name": "browser_smoke",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-178b2dd628f148e5bf79c7987d31c926\\data\\checks\\dashboard\\browser-smoke.json",
+      "critical": false,
+      "exists": false,
+      "state": "missing",
+      "age_seconds": 0,
+      "status": ""
+    },
+    {
+      "name": "check_all",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-178b2dd628f148e5bf79c7987d31c926\\data\\checks\\check-all.json",
+      "critical": true,
+      "exists": true,
+      "state": "fresh",
+      "age_seconds": 0,
+      "status": "ok"
+    },
+    {
+      "name": "demo_execution",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-178b2dd628f148e5bf79c7987d31c926\\data\\evidence\\demo-execution\\demo_execution_drill.json",
+      "critical": true,
+      "exists": false,
+      "state": "missing",
+      "age_seconds": 0,
+      "status": ""
+    },
+    {
+      "name": "pilot_start_idempotency",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-178b2dd628f148e5bf79c7987d31c926\\data\\evidence\\pilot-start-idempotency.json",
+      "critical": true,
+      "exists": true,
+      "state": "fresh",
+      "age_seconds": 0,
+      "status": "ok"
+    },
+    {
+      "name": "scorecard",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-178b2dd628f148e5bf79c7987d31c926\\data\\evidence\\scorecards\\latest-scorecard.json",
+      "critical": false,
+      "exists": false,
+      "state": "missing",
+      "age_seconds": 0,
+      "status": ""
+    },
+    {
+      "name": "rehearsal",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-178b2dd628f148e5bf79c7987d31c926\\data\\evidence\\rehearsals\\latest.json",
+      "critical": false,
+      "exists": false,
+      "state": "missing",
+      "age_seconds": 0,
+      "status": ""
+    },
+    {
+      "name": "operator_evidence",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-178b2dd628f148e5bf79c7987d31c926\\data\\evidence\\dashboard",
+      "critical": true,
+      "exists": false,
+      "state": "missing",
+      "age_seconds": 0,
+      "status": ""
+    }
+  ],
+  "pilot_run_health": {
+    "state": "none",
+    "run_id": "",
+    "age_seconds": 0,
+    "stale": false,
+    "non_terminal_count": 0,
+    "recent": []
+  },
+  "runner_lock_health": {
+    "state": "missing",
+    "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_028_demo_acceptance_rehearsal.py_test_missing_browser_url_is_warning_not_failure-178b2dd628f148e5bf79c7987d31c926\\data\\pilot-runs\\runner.lock.json",
+    "age_seconds": 0,
+    "runner_id": "",
+    "run_id": "",
+    "failed_commands": 0
+  },
+  "recommended_actions": [
+    {
+      "severity": "warning",
+      "action": "Run rehearsal or check-all",
+      "source": "demo_execution.missing"
+    },
+    {
+      "severity": "warning",
+      "action": "Run rehearsal or check-all",
+      "source": "operator_evidence.missing"
+    }
+  ],
+  "generated_at_ms": 1778866741228
+}

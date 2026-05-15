@@ -1,0 +1,69 @@
+{
+  "status": "ok",
+  "run_id": "1778864758484",
+  "workspace_id": "roadmap-110-smoke",
+  "files": [
+    {
+      "name": "safety_contract",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\dashboard-v2\\workspaces\\evidence\\1778864758484\\files\\safety_contract.json",
+      "sha256": "[REDACTED]"
+    },
+    {
+      "name": "workspace_schema",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\dashboard-v2\\workspaces\\evidence\\1778864758484\\files\\workspace_schema.json",
+      "sha256": "[REDACTED]"
+    },
+    {
+      "name": "workspace",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\dashboard-v2\\workspaces\\evidence\\1778864758484\\files\\workspace.json",
+      "sha256": "[REDACTED]"
+    },
+    {
+      "name": "widget_registry",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\dashboard-v2\\workspaces\\evidence\\1778864758484\\files\\widget_registry.json",
+      "sha256": "[REDACTED]"
+    },
+    {
+      "name": "widget_registry_validation",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\dashboard-v2\\workspaces\\evidence\\1778864758484\\files\\widget_registry_validation.json",
+      "sha256": "[REDACTED]"
+    },
+    {
+      "name": "workspace_store_hashes",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\dashboard-v2\\workspaces\\evidence\\1778864758484\\files\\workspace_store_hashes.json",
+      "sha256": "[REDACTED]"
+    },
+    {
+      "name": "presets",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\dashboard-v2\\workspaces\\evidence\\1778864758484\\files\\presets.json",
+      "sha256": "[REDACTED]"
+    },
+    {
+      "name": "analytics_query",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\dashboard-v2\\workspaces\\evidence\\1778864758484\\files\\analytics_query.json",
+      "sha256": "[REDACTED]"
+    },
+    {
+      "name": "advanced_analytics",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\dashboard-v2\\workspaces\\evidence\\1778864758484\\files\\advanced_analytics.json",
+      "sha256": "[REDACTED]"
+    },
+    {
+      "name": "workspace_performance",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\dashboard-v2\\workspaces\\evidence\\1778864758484\\files\\workspace_performance.json",
+      "sha256": "[REDACTED]"
+    },
+    {
+      "name": "operator_preferences",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\dashboard-v2\\workspaces\\evidence\\1778864758484\\files\\operator_preferences.json",
+      "sha256": "[REDACTED]"
+    },
+    {
+      "name": "no_live_proof",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\dashboard-v2\\workspaces\\evidence\\1778864758484\\files\\no_live_proof.json",
+      "sha256": "[REDACTED]"
+    }
+  ],
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

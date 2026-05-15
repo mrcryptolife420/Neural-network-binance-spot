@@ -1,0 +1,14 @@
+{
+  "status": "ok",
+  "enabled": true,
+  "local_only": true,
+  "aggregate": {
+    "page_load_count": 0,
+    "action_start_count": 0,
+    "blocked_action_count": 0,
+    "no_live_proof_views": 0
+  },
+  "raw_events_stored": false,
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

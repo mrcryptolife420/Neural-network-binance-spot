@@ -1,0 +1,44 @@
+{
+  "timestamp_ms": 1778848282948,
+  "runner_id": "runner-1778848282904",
+  "run_id": "1778848282901-btcusdt-smoke",
+  "runner_status": "running",
+  "heartbeat_age_ms": 1,
+  "runtime_status": "running",
+  "pilot_state": "ok",
+  "equity": "1000.0000",
+  "pnl": "0.0000",
+  "orders": 0,
+  "rejects": 0,
+  "api_errors": 0,
+  "reconciliation": {
+    "status": "ok",
+    "known_orders": 0,
+    "open_orders": 0,
+    "orphan_orders": 0,
+    "failures": 0,
+    "events": [],
+    "checked_at_ms": 1778848282906,
+    "needs_operator_action": false
+  },
+  "account": {
+    "status": "ok",
+    "can_trade": true,
+    "account_type": "SPOT",
+    "balances": [
+      {
+        "asset": "USDT",
+        "free": "100",
+        "locked": "0"
+      }
+    ],
+    "last_sync_ms": 1778848282901,
+    "error": ""
+  },
+  "open_orders": 0,
+  "latest_signal": null,
+  "latest_risk_decision": null,
+  "latest_execution_result": null,
+  "alerts_count": 2,
+  "report_paths": {}
+}

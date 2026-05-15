@@ -1,0 +1,17 @@
+{
+  "bundle_id": "dr-evidence-1778867140256",
+  "files": [
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_088_disaster_recovery_acceptance.py_test_reports_bundle_migration_and_corrupt_detection-c2c74ddc14c64e37a5bee5d703fa2fdd\\disaster-recovery\\evidence\\dr-evidence-1778867140256\\files\\disaster_recovery_report.json",
+      "sha256": "89d552fbac014f5169bf7e7b"
+    },
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_088_disaster_recovery_acceptance.py_test_reports_bundle_migration_and_corrupt_detection-c2c74ddc14c64e37a5bee5d703fa2fdd\\disaster-recovery\\evidence\\dr-evidence-1778867140256\\files\\inventory_manifest.json",
+      "sha256": "a6c3139bb3df7a2f03101874"
+    }
+  ],
+  "no_live_proof": true,
+  "redaction_proof": true,
+  "live_trading_enabled": false,
+  "manifest_hash": "c8546ee1c916587d604c4ad0"
+}

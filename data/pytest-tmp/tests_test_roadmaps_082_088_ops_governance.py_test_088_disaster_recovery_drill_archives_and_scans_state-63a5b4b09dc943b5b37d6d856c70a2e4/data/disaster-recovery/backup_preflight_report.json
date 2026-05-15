@@ -1,0 +1,93 @@
+{
+  "status": "ok",
+  "profile": {
+    "profile_id": "restore_drill_fixture",
+    "description": "Small deterministic fixture subset.",
+    "includes": [
+      {
+        "pattern": "*.json",
+        "category": "state"
+      },
+      {
+        "pattern": "reports/**",
+        "category": "state"
+      },
+      {
+        "pattern": "checks/**",
+        "category": "state"
+      }
+    ],
+    "excludes": [
+      {
+        "pattern": "*.key",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*.pem",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*credential*",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*listenKey*",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*secret*",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": ".env",
+        "reason": "secret_or_unsafe"
+      }
+    ],
+    "live_trading_enabled": false,
+    "profile_hash": "6594d33dd5da6479bfaedf0d"
+  },
+  "checks": [
+    {
+      "name": "profile",
+      "status": "ok",
+      "blocking": false
+    },
+    {
+      "name": "secret_scan",
+      "status": "ok",
+      "blocking": false
+    },
+    {
+      "name": "forbidden_backup_files",
+      "status": "ok",
+      "blocking": false
+    },
+    {
+      "name": "no_live_proof",
+      "status": "ok",
+      "blocking": false
+    },
+    {
+      "name": "permission_drift",
+      "status": "ok",
+      "blocking": false
+    },
+    {
+      "name": "compliance_score",
+      "status": "ok",
+      "blocking": false
+    },
+    {
+      "name": "disk_space",
+      "status": "ok",
+      "blocking": false
+    }
+  ],
+  "blockers": [],
+  "inventory_count": 2,
+  "estimated_output_size_bytes": 676,
+  "secret_findings": [],
+  "forbidden_inventory": [],
+  "no_live_proof": true,
+  "live_trading_enabled": false
+}

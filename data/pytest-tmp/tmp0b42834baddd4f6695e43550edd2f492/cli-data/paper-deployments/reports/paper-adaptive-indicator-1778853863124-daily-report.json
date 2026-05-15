@@ -1,0 +1,37 @@
+{
+  "plan": {
+    "deployment_id": "paper-adaptive-indicator-1778853863124",
+    "strategy_id": "adaptive-indicator",
+    "model_alias": "candidate",
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT"
+    ],
+    "risk_preset": "balanced",
+    "version_lock": "adaptive-indicator:candidate:balanced",
+    "status": "planned",
+    "rollback_preset": "conservative",
+    "created_at_ms": 1778853863124,
+    "live_trading_enabled": false
+  },
+  "evaluation": {
+    "status": "healthy",
+    "deployment_id": "paper-adaptive-indicator-1778853863124",
+    "pnl": "2.0",
+    "drawdown": "0",
+    "trades": 2,
+    "drift_score": 0.08,
+    "watchdog_status": "clear",
+    "rollback_required": false,
+    "reasons": [],
+    "live_trading_enabled": false
+  },
+  "rollback": {
+    "deployment_id": "paper-adaptive-indicator-1778853863124",
+    "status": "no_rollback",
+    "target_preset": "conservative",
+    "safe_mode": "paper_only",
+    "reasons": [],
+    "live_trading_enabled": false
+  }
+}

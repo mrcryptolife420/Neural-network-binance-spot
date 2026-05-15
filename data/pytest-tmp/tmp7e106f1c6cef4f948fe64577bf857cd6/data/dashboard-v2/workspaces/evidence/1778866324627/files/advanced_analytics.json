@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "session_pnl_distribution": {
+    "points": 20,
+    "start": 1000.0,
+    "end": 1019.0
+  },
+  "equity_drawdown": {
+    "max_drawdown_quote": 0.0
+  },
+  "fill_quality_summary": {
+    "fills": 4
+  },
+  "risk_block_heatmap": {
+    "blocks": 1
+  },
+  "signal_confidence_trend": {
+    "signals": 20,
+    "avg_confidence": 0.475
+  },
+  "data_quality_warnings_trend": {
+    "alerts": 1
+  },
+  "market_data_latency_reconnects": {
+    "reconnects": 0
+  },
+  "demo_pilot_counters": {
+    "orders": 0
+  },
+  "model_status_summary": {
+    "model_version": "demo-model"
+  },
+  "portfolio_exposure_summary": {
+    "exposure_quote": "0"
+  },
+  "operator_evidence_status": {},
+  "support_bundle_health": {},
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

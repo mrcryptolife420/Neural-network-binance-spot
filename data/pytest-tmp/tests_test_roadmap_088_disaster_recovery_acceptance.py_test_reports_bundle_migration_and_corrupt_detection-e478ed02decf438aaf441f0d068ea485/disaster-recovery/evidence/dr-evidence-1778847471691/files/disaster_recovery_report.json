@@ -1,0 +1,116 @@
+{
+  "status": "ok",
+  "created_at_ms": 1778847471690,
+  "backup": {
+    "status": "ok",
+    "backup_id": "backup-1778847471650",
+    "zip": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_088_disaster_recovery_acceptance.py_test_reports_bundle_migration_and_corrupt_detection-e478ed02decf438aaf441f0d068ea485\\backup.zip",
+    "manifest": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_088_disaster_recovery_acceptance.py_test_reports_bundle_migration_and_corrupt_detection-e478ed02decf438aaf441f0d068ea485\\backup_manifest.json",
+    "summary": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_088_disaster_recovery_acceptance.py_test_reports_bundle_migration_and_corrupt_detection-e478ed02decf438aaf441f0d068ea485\\backup_summary.md",
+    "inventory": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_088_disaster_recovery_acceptance.py_test_reports_bundle_migration_and_corrupt_detection-e478ed02decf438aaf441f0d068ea485\\inventory_manifest.json",
+    "profile": {
+      "profile_id": "paper_ops_full",
+      "description": "Full local paper ops state without secrets.",
+      "includes": [
+        {
+          "pattern": "**/*",
+          "category": "state"
+        }
+      ],
+      "excludes": [
+        {
+          "pattern": "*.key",
+          "reason": "secret_or_unsafe"
+        },
+        {
+          "pattern": "*.pem",
+          "reason": "secret_or_unsafe"
+        },
+        {
+          "pattern": "*credential*",
+          "reason": "secret_or_unsafe"
+        },
+        {
+          "pattern": "*listenKey*",
+          "reason": "secret_or_unsafe"
+        },
+        {
+          "pattern": "*secret*",
+          "reason": "secret_or_unsafe"
+        },
+        {
+          "pattern": ".env",
+          "reason": "secret_or_unsafe"
+        }
+      ],
+      "live_trading_enabled": false,
+      "profile_hash": "45129c6e81b2788ecf5a3e99"
+    },
+    "files": [
+      {
+        "path": "action-center/decision-journal.jsonl",
+        "archive_path": "files/action-center/decision-journal.jsonl",
+        "sha256": "bd05f508df58c560dca70ed8",
+        "size_bytes": 24
+      },
+      {
+        "path": "reports/report.json",
+        "archive_path": "files/reports/report.json",
+        "sha256": "b74a85e010ec63393ba3744c",
+        "size_bytes": 43
+      }
+    ],
+    "created_at_ms": 1778847471655,
+    "source_fingerprint": "93c57465b25f08496573949b",
+    "zip_sha256": "46fe449ef7bed9a607523761",
+    "no_live_proof": true,
+    "redaction_proof": true,
+    "live_trading_enabled": false,
+    "manifest_hash": "592cbe0e7c54cd749ea48810"
+  },
+  "verify": {},
+  "restore_preview": {},
+  "restore_drill": {},
+  "integrity": {
+    "status": "blocked",
+    "issues": [
+      {
+        "severity": "blocked",
+        "path": ".env",
+        "reason": "forbidden_file_present"
+      },
+      {
+        "severity": "blocked",
+        "path": "key.pem",
+        "reason": "forbidden_file_present"
+      },
+      {
+        "severity": "warn",
+        "path": "reports/corrupt.json",
+        "reason": "invalid_json"
+      }
+    ],
+    "repair_plan": [
+      {
+        "action": "manual_review_required",
+        "path": ".env"
+      },
+      {
+        "action": "manual_review_required",
+        "path": "key.pem"
+      },
+      {
+        "action": "quarantine_corrupt_file",
+        "path": "reports/corrupt.json",
+        "confirm_required": true
+      }
+    ],
+    "read_only": true,
+    "live_trading_enabled": false
+  },
+  "permission_restore": {},
+  "evidence_continuity": {},
+  "no_live_proof": true,
+  "redaction_proof": true,
+  "live_trading_enabled": false
+}

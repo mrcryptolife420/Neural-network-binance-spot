@@ -1,0 +1,70 @@
+{
+  "status": "ok",
+  "grade": "A",
+  "score": 110,
+  "categories": [
+    {
+      "name": "feature_parity",
+      "status": "ok",
+      "points": 15,
+      "detail": ""
+    },
+    {
+      "name": "api_smoke",
+      "status": "ok",
+      "points": 10,
+      "detail": ""
+    },
+    {
+      "name": "browser_smoke",
+      "status": "ok",
+      "points": 10,
+      "detail": ""
+    },
+    {
+      "name": "performance_budgets",
+      "status": "ok",
+      "points": 10,
+      "detail": ""
+    },
+    {
+      "name": "websocket_stability",
+      "status": "ok",
+      "points": 10,
+      "detail": ""
+    },
+    {
+      "name": "static_build_offline_assets",
+      "status": "ok",
+      "points": 10,
+      "detail": ""
+    },
+    {
+      "name": "support_bundle_integration",
+      "status": "ok",
+      "points": 10,
+      "detail": ""
+    },
+    {
+      "name": "operator_uat_acceptance",
+      "status": "ok",
+      "points": 10,
+      "detail": "local acceptance scaffold available"
+    },
+    {
+      "name": "streamlit_fallback_available",
+      "status": "ok",
+      "points": 10,
+      "detail": ""
+    },
+    {
+      "name": "no_live_proof",
+      "status": "ok",
+      "points": 15,
+      "detail": ""
+    }
+  ],
+  "hard_blockers": [],
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

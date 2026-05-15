@@ -5,7 +5,7 @@
   "symbol": "BTCUSDT",
   "preset": "operator",
   "started_at_ms": 1778500348845,
-  "updated_at_ms": 1778520155733,
+  "updated_at_ms": 1778855300003,
   "completed_at_ms": null,
   "blockers": [],
   "transitions": [
@@ -33,13 +33,13 @@
       "event": "start_snapshot",
       "timestamp_ms": 1778500348857,
       "payload": {
-        "session_id": "1778500281135-f111696a",
-        "mode": "demo",
-        "status": "running",
         "message": "runtime started",
-        "symbol": "BTCUSDT",
+        "status": "running",
         "resume_required": false,
+        "symbol": "BTCUSDT",
+        "mode": "demo",
         "interval": "1m",
+        "session_id": "1778500281135-f111696a",
         "exchange_profile": {
           "name": "binance-demo-spot",
           "label": "Binance Demo Spot API",
@@ -250,7 +250,7 @@
           "data_quality_warnings": 0,
           "stream_status": "ok"
         },
-        "demo_order_errors": {
+        "candles": {
           "count": 0,
           "latest": null
         },
@@ -258,7 +258,30 @@
           "count": 0,
           "latest": null
         },
-        "order_lifecycle": {
+        "alerts": {
+          "count": 1,
+          "latest": {
+            "name": "runtime_created",
+            "severity": "info",
+            "message": "runtime created",
+            "action": "observe",
+            "created_at_ms": 1778500281136,
+            "metadata": {}
+          }
+        },
+        "fills": {
+          "count": 0,
+          "latest": null
+        },
+        "signals": {
+          "count": 0,
+          "latest": null
+        },
+        "equity_points": {
+          "count": 0,
+          "latest": null
+        },
+        "demo_open_orders": {
           "count": 0,
           "latest": null
         },
@@ -299,34 +322,11 @@
             }
           }
         },
-        "alerts": {
-          "count": 1,
-          "latest": {
-            "name": "runtime_created",
-            "severity": "info",
-            "message": "runtime created",
-            "action": "observe",
-            "created_at_ms": 1778500281136,
-            "metadata": {}
-          }
-        },
-        "equity_points": {
+        "demo_order_errors": {
           "count": 0,
           "latest": null
         },
-        "demo_open_orders": {
-          "count": 0,
-          "latest": null
-        },
-        "fills": {
-          "count": 0,
-          "latest": null
-        },
-        "candles": {
-          "count": 0,
-          "latest": null
-        },
-        "signals": {
+        "order_lifecycle": {
           "count": 0,
           "latest": null
         },
@@ -360,13 +360,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654119-fa3aba9b",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime started",
-          "symbol": "BTCUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "BTCUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654119-fa3aba9b",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -577,7 +577,7 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
+          "candles": {
             "count": 0,
             "latest": null
           },
@@ -585,7 +585,30 @@
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 1,
+            "latest": {
+              "name": "runtime_created",
+              "severity": "info",
+              "message": "runtime created",
+              "action": "observe",
+              "created_at_ms": 1778500654136,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 0,
+            "latest": null
+          },
+          "equity_points": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -626,34 +649,11 @@
               }
             }
           },
-          "alerts": {
-            "count": 1,
-            "latest": {
-              "name": "runtime_created",
-              "severity": "info",
-              "message": "runtime created",
-              "action": "observe",
-              "created_at_ms": 1778500654136,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "demo_open_orders": {
-            "count": 0,
-            "latest": null
-          },
-          "fills": {
-            "count": 0,
-            "latest": null
-          },
-          "candles": {
-            "count": 0,
-            "latest": null
-          },
-          "signals": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
           },
@@ -688,13 +688,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654142-874620fc",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime started",
-          "symbol": "ETHUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "ETHUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654142-874620fc",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -905,7 +905,7 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
+          "candles": {
             "count": 0,
             "latest": null
           },
@@ -913,7 +913,30 @@
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 1,
+            "latest": {
+              "name": "runtime_created",
+              "severity": "info",
+              "message": "runtime created",
+              "action": "observe",
+              "created_at_ms": 1778500654143,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 0,
+            "latest": null
+          },
+          "equity_points": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -954,34 +977,11 @@
               }
             }
           },
-          "alerts": {
-            "count": 1,
-            "latest": {
-              "name": "runtime_created",
-              "severity": "info",
-              "message": "runtime created",
-              "action": "observe",
-              "created_at_ms": 1778500654143,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "demo_open_orders": {
-            "count": 0,
-            "latest": null
-          },
-          "fills": {
-            "count": 0,
-            "latest": null
-          },
-          "candles": {
-            "count": 0,
-            "latest": null
-          },
-          "signals": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
           },
@@ -1016,13 +1016,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654148-eecd792d",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime started",
-          "symbol": "BNBUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "BNBUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654148-eecd792d",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -1233,7 +1233,7 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
+          "candles": {
             "count": 0,
             "latest": null
           },
@@ -1241,7 +1241,30 @@
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 1,
+            "latest": {
+              "name": "runtime_created",
+              "severity": "info",
+              "message": "runtime created",
+              "action": "observe",
+              "created_at_ms": 1778500654149,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 0,
+            "latest": null
+          },
+          "equity_points": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -1282,34 +1305,11 @@
               }
             }
           },
-          "alerts": {
-            "count": 1,
-            "latest": {
-              "name": "runtime_created",
-              "severity": "info",
-              "message": "runtime created",
-              "action": "observe",
-              "created_at_ms": 1778500654149,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "demo_open_orders": {
-            "count": 0,
-            "latest": null
-          },
-          "fills": {
-            "count": 0,
-            "latest": null
-          },
-          "candles": {
-            "count": 0,
-            "latest": null
-          },
-          "signals": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
           },
@@ -1344,13 +1344,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654153-edc5fc86",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime started",
-          "symbol": "SOLUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "SOLUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654153-edc5fc86",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -1561,7 +1561,7 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
+          "candles": {
             "count": 0,
             "latest": null
           },
@@ -1569,7 +1569,30 @@
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 1,
+            "latest": {
+              "name": "runtime_created",
+              "severity": "info",
+              "message": "runtime created",
+              "action": "observe",
+              "created_at_ms": 1778500654154,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 0,
+            "latest": null
+          },
+          "equity_points": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -1610,34 +1633,11 @@
               }
             }
           },
-          "alerts": {
-            "count": 1,
-            "latest": {
-              "name": "runtime_created",
-              "severity": "info",
-              "message": "runtime created",
-              "action": "observe",
-              "created_at_ms": 1778500654154,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "demo_open_orders": {
-            "count": 0,
-            "latest": null
-          },
-          "fills": {
-            "count": 0,
-            "latest": null
-          },
-          "candles": {
-            "count": 0,
-            "latest": null
-          },
-          "signals": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
           },
@@ -1672,13 +1672,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654159-0cf85019",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime started",
-          "symbol": "XRPUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "XRPUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654159-0cf85019",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -1889,7 +1889,7 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
+          "candles": {
             "count": 0,
             "latest": null
           },
@@ -1897,7 +1897,30 @@
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 1,
+            "latest": {
+              "name": "runtime_created",
+              "severity": "info",
+              "message": "runtime created",
+              "action": "observe",
+              "created_at_ms": 1778500654160,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 0,
+            "latest": null
+          },
+          "equity_points": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -1958,34 +1981,11 @@
               }
             }
           },
-          "alerts": {
-            "count": 1,
-            "latest": {
-              "name": "runtime_created",
-              "severity": "info",
-              "message": "runtime created",
-              "action": "observe",
-              "created_at_ms": 1778500654160,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "demo_open_orders": {
-            "count": 0,
-            "latest": null
-          },
-          "fills": {
-            "count": 0,
-            "latest": null
-          },
-          "candles": {
-            "count": 0,
-            "latest": null
-          },
-          "signals": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
           },
@@ -2020,13 +2020,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654165-4ac2a810",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime started",
-          "symbol": "ADAUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "ADAUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654165-4ac2a810",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -2237,7 +2237,7 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
+          "candles": {
             "count": 0,
             "latest": null
           },
@@ -2245,7 +2245,30 @@
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 1,
+            "latest": {
+              "name": "runtime_created",
+              "severity": "info",
+              "message": "runtime created",
+              "action": "observe",
+              "created_at_ms": 1778500654166,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 0,
+            "latest": null
+          },
+          "equity_points": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -2306,34 +2329,11 @@
               }
             }
           },
-          "alerts": {
-            "count": 1,
-            "latest": {
-              "name": "runtime_created",
-              "severity": "info",
-              "message": "runtime created",
-              "action": "observe",
-              "created_at_ms": 1778500654166,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "demo_open_orders": {
-            "count": 0,
-            "latest": null
-          },
-          "fills": {
-            "count": 0,
-            "latest": null
-          },
-          "candles": {
-            "count": 0,
-            "latest": null
-          },
-          "signals": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
           },
@@ -2368,13 +2368,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654171-22412784",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime started",
-          "symbol": "DOGEUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "DOGEUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654171-22412784",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -2585,7 +2585,7 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
+          "candles": {
             "count": 0,
             "latest": null
           },
@@ -2593,7 +2593,30 @@
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 1,
+            "latest": {
+              "name": "runtime_created",
+              "severity": "info",
+              "message": "runtime created",
+              "action": "observe",
+              "created_at_ms": 1778500654172,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 0,
+            "latest": null
+          },
+          "equity_points": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -2654,34 +2677,11 @@
               }
             }
           },
-          "alerts": {
-            "count": 1,
-            "latest": {
-              "name": "runtime_created",
-              "severity": "info",
-              "message": "runtime created",
-              "action": "observe",
-              "created_at_ms": 1778500654172,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "demo_open_orders": {
-            "count": 0,
-            "latest": null
-          },
-          "fills": {
-            "count": 0,
-            "latest": null
-          },
-          "candles": {
-            "count": 0,
-            "latest": null
-          },
-          "signals": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
           },
@@ -2716,13 +2716,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654177-ca724fee",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime started",
-          "symbol": "LINKUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "LINKUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654177-ca724fee",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -2933,7 +2933,7 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
+          "candles": {
             "count": 0,
             "latest": null
           },
@@ -2941,7 +2941,30 @@
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 1,
+            "latest": {
+              "name": "runtime_created",
+              "severity": "info",
+              "message": "runtime created",
+              "action": "observe",
+              "created_at_ms": 1778500654178,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 0,
+            "latest": null
+          },
+          "equity_points": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -3002,34 +3025,11 @@
               }
             }
           },
-          "alerts": {
-            "count": 1,
-            "latest": {
-              "name": "runtime_created",
-              "severity": "info",
-              "message": "runtime created",
-              "action": "observe",
-              "created_at_ms": 1778500654178,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "demo_open_orders": {
-            "count": 0,
-            "latest": null
-          },
-          "fills": {
-            "count": 0,
-            "latest": null
-          },
-          "candles": {
-            "count": 0,
-            "latest": null
-          },
-          "signals": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
           },
@@ -3064,13 +3064,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654119-fa3aba9b",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime already running",
-          "symbol": "BTCUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "BTCUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654119-fa3aba9b",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -3337,15 +3337,57 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
-            "count": 0,
-            "latest": null
+          "candles": {
+            "count": 10,
+            "latest": {
+              "open_time_ms": 540000,
+              "open": "99.5064",
+              "high": "100.0284",
+              "low": "99.1655",
+              "close": "99.6875",
+              "volume": "20.6358",
+              "close_time_ms": 599999,
+              "quote_volume": "2057.1313",
+              "trade_count": 40
+            }
           },
           "cancel_on_stop_status": {
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 7,
+            "latest": {
+              "name": "risk_block",
+              "severity": "warning",
+              "message": "model returned HOLD",
+              "action": "observe",
+              "created_at_ms": 1778500813133,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 5,
+            "latest": {
+              "timestamp_ms": 599999,
+              "price": "99.6875",
+              "side": "HOLD",
+              "confidence": 0.5,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "equity_points": {
+            "count": 10,
+            "latest": {
+              "timestamp_ms": 599999,
+              "equity": "1000.0000"
+            }
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -3406,55 +3448,13 @@
               }
             }
           },
-          "alerts": {
-            "count": 7,
-            "latest": {
-              "name": "risk_block",
-              "severity": "warning",
-              "message": "model returned HOLD",
-              "action": "observe",
-              "created_at_ms": 1778500813133,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
-            "count": 10,
-            "latest": {
-              "timestamp_ms": 599999,
-              "equity": "1000.0000"
-            }
-          },
-          "demo_open_orders": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "fills": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
-          },
-          "candles": {
-            "count": 10,
-            "latest": {
-              "open_time_ms": 540000,
-              "open": "99.5064",
-              "high": "100.0284",
-              "low": "99.1655",
-              "close": "99.6875",
-              "volume": "20.6358",
-              "close_time_ms": 599999,
-              "quote_volume": "2057.1313",
-              "trade_count": 40
-            }
-          },
-          "signals": {
-            "count": 5,
-            "latest": {
-              "timestamp_ms": 599999,
-              "price": "99.6875",
-              "side": "HOLD",
-              "confidence": 0.5,
-              "model_version": "rule-baseline-0.1"
-            }
           },
           "audit_tail": {
             "count": 20,
@@ -3482,13 +3482,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654142-874620fc",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime already running",
-          "symbol": "ETHUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "ETHUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654142-874620fc",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -3755,15 +3755,57 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
-            "count": 0,
-            "latest": null
+          "candles": {
+            "count": 10,
+            "latest": {
+              "open_time_ms": 540000,
+              "open": "99.5064",
+              "high": "100.0284",
+              "low": "99.1655",
+              "close": "99.6875",
+              "volume": "20.6358",
+              "close_time_ms": 599999,
+              "quote_volume": "2057.1313",
+              "trade_count": 40
+            }
           },
           "cancel_on_stop_status": {
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 7,
+            "latest": {
+              "name": "risk_block",
+              "severity": "warning",
+              "message": "model returned HOLD",
+              "action": "observe",
+              "created_at_ms": 1778500819640,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 5,
+            "latest": {
+              "timestamp_ms": 599999,
+              "price": "99.6875",
+              "side": "HOLD",
+              "confidence": 0.5,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "equity_points": {
+            "count": 10,
+            "latest": {
+              "timestamp_ms": 599999,
+              "equity": "1000.0000"
+            }
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -3824,55 +3866,13 @@
               }
             }
           },
-          "alerts": {
-            "count": 7,
-            "latest": {
-              "name": "risk_block",
-              "severity": "warning",
-              "message": "model returned HOLD",
-              "action": "observe",
-              "created_at_ms": 1778500819640,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
-            "count": 10,
-            "latest": {
-              "timestamp_ms": 599999,
-              "equity": "1000.0000"
-            }
-          },
-          "demo_open_orders": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "fills": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
-          },
-          "candles": {
-            "count": 10,
-            "latest": {
-              "open_time_ms": 540000,
-              "open": "99.5064",
-              "high": "100.0284",
-              "low": "99.1655",
-              "close": "99.6875",
-              "volume": "20.6358",
-              "close_time_ms": 599999,
-              "quote_volume": "2057.1313",
-              "trade_count": 40
-            }
-          },
-          "signals": {
-            "count": 5,
-            "latest": {
-              "timestamp_ms": 599999,
-              "price": "99.6875",
-              "side": "HOLD",
-              "confidence": 0.5,
-              "model_version": "rule-baseline-0.1"
-            }
           },
           "audit_tail": {
             "count": 20,
@@ -3900,13 +3900,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654148-eecd792d",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime already running",
-          "symbol": "BNBUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "BNBUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654148-eecd792d",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -4173,15 +4173,57 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
-            "count": 0,
-            "latest": null
+          "candles": {
+            "count": 10,
+            "latest": {
+              "open_time_ms": 540000,
+              "open": "99.5064",
+              "high": "100.0284",
+              "low": "99.1655",
+              "close": "99.6875",
+              "volume": "20.6358",
+              "close_time_ms": 599999,
+              "quote_volume": "2057.1313",
+              "trade_count": 40
+            }
           },
           "cancel_on_stop_status": {
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 7,
+            "latest": {
+              "name": "risk_block",
+              "severity": "warning",
+              "message": "model returned HOLD",
+              "action": "observe",
+              "created_at_ms": 1778500825787,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 5,
+            "latest": {
+              "timestamp_ms": 599999,
+              "price": "99.6875",
+              "side": "HOLD",
+              "confidence": 0.5,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "equity_points": {
+            "count": 10,
+            "latest": {
+              "timestamp_ms": 599999,
+              "equity": "1000.0000"
+            }
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -4242,55 +4284,13 @@
               }
             }
           },
-          "alerts": {
-            "count": 7,
-            "latest": {
-              "name": "risk_block",
-              "severity": "warning",
-              "message": "model returned HOLD",
-              "action": "observe",
-              "created_at_ms": 1778500825787,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
-            "count": 10,
-            "latest": {
-              "timestamp_ms": 599999,
-              "equity": "1000.0000"
-            }
-          },
-          "demo_open_orders": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "fills": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
-          },
-          "candles": {
-            "count": 10,
-            "latest": {
-              "open_time_ms": 540000,
-              "open": "99.5064",
-              "high": "100.0284",
-              "low": "99.1655",
-              "close": "99.6875",
-              "volume": "20.6358",
-              "close_time_ms": 599999,
-              "quote_volume": "2057.1313",
-              "trade_count": 40
-            }
-          },
-          "signals": {
-            "count": 5,
-            "latest": {
-              "timestamp_ms": 599999,
-              "price": "99.6875",
-              "side": "HOLD",
-              "confidence": 0.5,
-              "model_version": "rule-baseline-0.1"
-            }
           },
           "audit_tail": {
             "count": 20,
@@ -4318,13 +4318,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654153-edc5fc86",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime already running",
-          "symbol": "SOLUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "SOLUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654153-edc5fc86",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -4591,15 +4591,57 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
-            "count": 0,
-            "latest": null
+          "candles": {
+            "count": 10,
+            "latest": {
+              "open_time_ms": 540000,
+              "open": "99.5064",
+              "high": "100.0284",
+              "low": "99.1655",
+              "close": "99.6875",
+              "volume": "20.6358",
+              "close_time_ms": 599999,
+              "quote_volume": "2057.1313",
+              "trade_count": 40
+            }
           },
           "cancel_on_stop_status": {
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 7,
+            "latest": {
+              "name": "risk_block",
+              "severity": "warning",
+              "message": "model returned HOLD",
+              "action": "observe",
+              "created_at_ms": 1778500831960,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 5,
+            "latest": {
+              "timestamp_ms": 599999,
+              "price": "99.6875",
+              "side": "HOLD",
+              "confidence": 0.5,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "equity_points": {
+            "count": 10,
+            "latest": {
+              "timestamp_ms": 599999,
+              "equity": "1000.0000"
+            }
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -4660,55 +4702,13 @@
               }
             }
           },
-          "alerts": {
-            "count": 7,
-            "latest": {
-              "name": "risk_block",
-              "severity": "warning",
-              "message": "model returned HOLD",
-              "action": "observe",
-              "created_at_ms": 1778500831960,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
-            "count": 10,
-            "latest": {
-              "timestamp_ms": 599999,
-              "equity": "1000.0000"
-            }
-          },
-          "demo_open_orders": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "fills": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
-          },
-          "candles": {
-            "count": 10,
-            "latest": {
-              "open_time_ms": 540000,
-              "open": "99.5064",
-              "high": "100.0284",
-              "low": "99.1655",
-              "close": "99.6875",
-              "volume": "20.6358",
-              "close_time_ms": 599999,
-              "quote_volume": "2057.1313",
-              "trade_count": 40
-            }
-          },
-          "signals": {
-            "count": 5,
-            "latest": {
-              "timestamp_ms": 599999,
-              "price": "99.6875",
-              "side": "HOLD",
-              "confidence": 0.5,
-              "model_version": "rule-baseline-0.1"
-            }
           },
           "audit_tail": {
             "count": 20,
@@ -4736,13 +4736,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654159-0cf85019",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime already running",
-          "symbol": "XRPUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "XRPUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654159-0cf85019",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -5009,15 +5009,57 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
-            "count": 0,
-            "latest": null
+          "candles": {
+            "count": 10,
+            "latest": {
+              "open_time_ms": 540000,
+              "open": "99.5064",
+              "high": "100.0284",
+              "low": "99.1655",
+              "close": "99.6875",
+              "volume": "20.6358",
+              "close_time_ms": 599999,
+              "quote_volume": "2057.1313",
+              "trade_count": 40
+            }
           },
           "cancel_on_stop_status": {
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 7,
+            "latest": {
+              "name": "risk_block",
+              "severity": "warning",
+              "message": "model returned HOLD",
+              "action": "observe",
+              "created_at_ms": 1778500838214,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 5,
+            "latest": {
+              "timestamp_ms": 599999,
+              "price": "99.6875",
+              "side": "HOLD",
+              "confidence": 0.5,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "equity_points": {
+            "count": 10,
+            "latest": {
+              "timestamp_ms": 599999,
+              "equity": "1000.0000"
+            }
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -5078,55 +5120,13 @@
               }
             }
           },
-          "alerts": {
-            "count": 7,
-            "latest": {
-              "name": "risk_block",
-              "severity": "warning",
-              "message": "model returned HOLD",
-              "action": "observe",
-              "created_at_ms": 1778500838214,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
-            "count": 10,
-            "latest": {
-              "timestamp_ms": 599999,
-              "equity": "1000.0000"
-            }
-          },
-          "demo_open_orders": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "fills": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
-          },
-          "candles": {
-            "count": 10,
-            "latest": {
-              "open_time_ms": 540000,
-              "open": "99.5064",
-              "high": "100.0284",
-              "low": "99.1655",
-              "close": "99.6875",
-              "volume": "20.6358",
-              "close_time_ms": 599999,
-              "quote_volume": "2057.1313",
-              "trade_count": 40
-            }
-          },
-          "signals": {
-            "count": 5,
-            "latest": {
-              "timestamp_ms": 599999,
-              "price": "99.6875",
-              "side": "HOLD",
-              "confidence": 0.5,
-              "model_version": "rule-baseline-0.1"
-            }
           },
           "audit_tail": {
             "count": 20,
@@ -5154,13 +5154,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654165-4ac2a810",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime already running",
-          "symbol": "ADAUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "ADAUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654165-4ac2a810",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -5427,15 +5427,57 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
-            "count": 0,
-            "latest": null
+          "candles": {
+            "count": 10,
+            "latest": {
+              "open_time_ms": 540000,
+              "open": "99.5064",
+              "high": "100.0284",
+              "low": "99.1655",
+              "close": "99.6875",
+              "volume": "20.6358",
+              "close_time_ms": 599999,
+              "quote_volume": "2057.1313",
+              "trade_count": 40
+            }
           },
           "cancel_on_stop_status": {
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 7,
+            "latest": {
+              "name": "risk_block",
+              "severity": "warning",
+              "message": "model returned HOLD",
+              "action": "observe",
+              "created_at_ms": 1778500844192,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 5,
+            "latest": {
+              "timestamp_ms": 599999,
+              "price": "99.6875",
+              "side": "HOLD",
+              "confidence": 0.5,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "equity_points": {
+            "count": 10,
+            "latest": {
+              "timestamp_ms": 599999,
+              "equity": "1000.0000"
+            }
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -5496,55 +5538,13 @@
               }
             }
           },
-          "alerts": {
-            "count": 7,
-            "latest": {
-              "name": "risk_block",
-              "severity": "warning",
-              "message": "model returned HOLD",
-              "action": "observe",
-              "created_at_ms": 1778500844192,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
-            "count": 10,
-            "latest": {
-              "timestamp_ms": 599999,
-              "equity": "1000.0000"
-            }
-          },
-          "demo_open_orders": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "fills": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
-          },
-          "candles": {
-            "count": 10,
-            "latest": {
-              "open_time_ms": 540000,
-              "open": "99.5064",
-              "high": "100.0284",
-              "low": "99.1655",
-              "close": "99.6875",
-              "volume": "20.6358",
-              "close_time_ms": 599999,
-              "quote_volume": "2057.1313",
-              "trade_count": 40
-            }
-          },
-          "signals": {
-            "count": 5,
-            "latest": {
-              "timestamp_ms": 599999,
-              "price": "99.6875",
-              "side": "HOLD",
-              "confidence": 0.5,
-              "model_version": "rule-baseline-0.1"
-            }
           },
           "audit_tail": {
             "count": 20,
@@ -5572,13 +5572,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654171-22412784",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime already running",
-          "symbol": "DOGEUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "DOGEUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654171-22412784",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -5845,15 +5845,57 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
-            "count": 0,
-            "latest": null
+          "candles": {
+            "count": 10,
+            "latest": {
+              "open_time_ms": 540000,
+              "open": "99.5064",
+              "high": "100.0284",
+              "low": "99.1655",
+              "close": "99.6875",
+              "volume": "20.6358",
+              "close_time_ms": 599999,
+              "quote_volume": "2057.1313",
+              "trade_count": 40
+            }
           },
           "cancel_on_stop_status": {
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 7,
+            "latest": {
+              "name": "risk_block",
+              "severity": "warning",
+              "message": "model returned HOLD",
+              "action": "observe",
+              "created_at_ms": 1778500851017,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 5,
+            "latest": {
+              "timestamp_ms": 599999,
+              "price": "99.6875",
+              "side": "HOLD",
+              "confidence": 0.5,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "equity_points": {
+            "count": 10,
+            "latest": {
+              "timestamp_ms": 599999,
+              "equity": "1000.0000"
+            }
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -5914,55 +5956,13 @@
               }
             }
           },
-          "alerts": {
-            "count": 7,
-            "latest": {
-              "name": "risk_block",
-              "severity": "warning",
-              "message": "model returned HOLD",
-              "action": "observe",
-              "created_at_ms": 1778500851017,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
-            "count": 10,
-            "latest": {
-              "timestamp_ms": 599999,
-              "equity": "1000.0000"
-            }
-          },
-          "demo_open_orders": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "fills": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
-          },
-          "candles": {
-            "count": 10,
-            "latest": {
-              "open_time_ms": 540000,
-              "open": "99.5064",
-              "high": "100.0284",
-              "low": "99.1655",
-              "close": "99.6875",
-              "volume": "20.6358",
-              "close_time_ms": 599999,
-              "quote_volume": "2057.1313",
-              "trade_count": 40
-            }
-          },
-          "signals": {
-            "count": 5,
-            "latest": {
-              "timestamp_ms": 599999,
-              "price": "99.6875",
-              "side": "HOLD",
-              "confidence": 0.5,
-              "model_version": "rule-baseline-0.1"
-            }
           },
           "audit_tail": {
             "count": 20,
@@ -5990,13 +5990,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654177-ca724fee",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime already running",
-          "symbol": "LINKUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "LINKUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654177-ca724fee",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -6263,15 +6263,57 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
-            "count": 0,
-            "latest": null
+          "candles": {
+            "count": 10,
+            "latest": {
+              "open_time_ms": 540000,
+              "open": "99.5064",
+              "high": "100.0284",
+              "low": "99.1655",
+              "close": "99.6875",
+              "volume": "20.6358",
+              "close_time_ms": 599999,
+              "quote_volume": "2057.1313",
+              "trade_count": 40
+            }
           },
           "cancel_on_stop_status": {
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 7,
+            "latest": {
+              "name": "risk_block",
+              "severity": "warning",
+              "message": "model returned HOLD",
+              "action": "observe",
+              "created_at_ms": 1778500857531,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 5,
+            "latest": {
+              "timestamp_ms": 599999,
+              "price": "99.6875",
+              "side": "HOLD",
+              "confidence": 0.5,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "equity_points": {
+            "count": 10,
+            "latest": {
+              "timestamp_ms": 599999,
+              "equity": "1000.0000"
+            }
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -6332,55 +6374,13 @@
               }
             }
           },
-          "alerts": {
-            "count": 7,
-            "latest": {
-              "name": "risk_block",
-              "severity": "warning",
-              "message": "model returned HOLD",
-              "action": "observe",
-              "created_at_ms": 1778500857531,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
-            "count": 10,
-            "latest": {
-              "timestamp_ms": 599999,
-              "equity": "1000.0000"
-            }
-          },
-          "demo_open_orders": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "fills": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
-          },
-          "candles": {
-            "count": 10,
-            "latest": {
-              "open_time_ms": 540000,
-              "open": "99.5064",
-              "high": "100.0284",
-              "low": "99.1655",
-              "close": "99.6875",
-              "volume": "20.6358",
-              "close_time_ms": 599999,
-              "quote_volume": "2057.1313",
-              "trade_count": 40
-            }
-          },
-          "signals": {
-            "count": 5,
-            "latest": {
-              "timestamp_ms": 599999,
-              "price": "99.6875",
-              "side": "HOLD",
-              "confidence": 0.5,
-              "model_version": "rule-baseline-0.1"
-            }
           },
           "audit_tail": {
             "count": 20,
@@ -6408,13 +6408,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654119-fa3aba9b",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime already running",
-          "symbol": "BTCUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "BTCUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654119-fa3aba9b",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -6681,48 +6681,59 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
-            "count": 1,
+          "candles": {
+            "count": 12,
             "latest": {
-              "error": "Binance API request failed",
-              "status": 400,
-              "payload": {
-                "code": -2010,
-                "msg": "Account has insufficient balance for requested action."
-              }
+              "open_time_ms": 660000,
+              "open": "99.8092",
+              "high": "100.1755",
+              "low": "99.3607",
+              "close": "99.7270",
+              "volume": "19.1567",
+              "close_time_ms": 719999,
+              "quote_volume": "1910.4402",
+              "trade_count": 39
             }
           },
           "cancel_on_stop_status": {
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
-            "count": 1,
+          "alerts": {
+            "count": 9,
             "latest": {
-              "client_order_id": "spotbot-69f6702fd1da472da0fb9ee2",
-              "symbol": "BTCUSDT",
-              "side": "BUY",
-              "status": "REJECTED",
-              "order_id": null,
-              "filled_quantity": "0",
-              "last_price": "0",
-              "events": {
-                "count": 2,
-                "latest": {
-                  "type": "DEMO_SPOT",
-                  "status": "REJECTED",
-                  "response": {
-                    "error": "Binance API request failed",
-                    "status": 400,
-                    "payload": {
-                      "code": "-2010",
-                      "msg": "Account has insufficient balance for requested action."
-                    }
-                  }
-                }
-              },
-              "needs_reconciliation": false
+              "name": "risk_block",
+              "severity": "warning",
+              "message": "model returned HOLD",
+              "action": "observe",
+              "created_at_ms": 1778500873619,
+              "metadata": {}
             }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 7,
+            "latest": {
+              "timestamp_ms": 719999,
+              "price": "99.7270",
+              "side": "HOLD",
+              "confidence": 0.5,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "equity_points": {
+            "count": 12,
+            "latest": {
+              "timestamp_ms": 719999,
+              "equity": "1000.0000"
+            }
+          },
+          "demo_open_orders": {
+            "count": 0,
+            "latest": null
           },
           "recent_sessions": {
             "count": 5,
@@ -6781,54 +6792,43 @@
               }
             }
           },
-          "alerts": {
-            "count": 9,
+          "demo_order_errors": {
+            "count": 1,
             "latest": {
-              "name": "risk_block",
-              "severity": "warning",
-              "message": "model returned HOLD",
-              "action": "observe",
-              "created_at_ms": 1778500873619,
-              "metadata": {}
+              "error": "Binance API request failed",
+              "status": 400,
+              "payload": {
+                "code": -2010,
+                "msg": "Account has insufficient balance for requested action."
+              }
             }
           },
-          "equity_points": {
-            "count": 12,
+          "order_lifecycle": {
+            "count": 1,
             "latest": {
-              "timestamp_ms": 719999,
-              "equity": "1000.0000"
-            }
-          },
-          "demo_open_orders": {
-            "count": 0,
-            "latest": null
-          },
-          "fills": {
-            "count": 0,
-            "latest": null
-          },
-          "candles": {
-            "count": 12,
-            "latest": {
-              "open_time_ms": 660000,
-              "open": "99.8092",
-              "high": "100.1755",
-              "low": "99.3607",
-              "close": "99.7270",
-              "volume": "19.1567",
-              "close_time_ms": 719999,
-              "quote_volume": "1910.4402",
-              "trade_count": 39
-            }
-          },
-          "signals": {
-            "count": 7,
-            "latest": {
-              "timestamp_ms": 719999,
-              "price": "99.7270",
-              "side": "HOLD",
-              "confidence": 0.5,
-              "model_version": "rule-baseline-0.1"
+              "client_order_id": "spotbot-69f6702fd1da472da0fb9ee2",
+              "symbol": "BTCUSDT",
+              "side": "BUY",
+              "status": "REJECTED",
+              "order_id": null,
+              "filled_quantity": "0",
+              "last_price": "0",
+              "events": {
+                "count": 2,
+                "latest": {
+                  "type": "DEMO_SPOT",
+                  "status": "REJECTED",
+                  "response": {
+                    "error": "Binance API request failed",
+                    "status": 400,
+                    "payload": {
+                      "code": "-2010",
+                      "msg": "Account has insufficient balance for requested action."
+                    }
+                  }
+                }
+              },
+              "needs_reconciliation": false
             }
           },
           "audit_tail": {
@@ -6862,13 +6862,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654142-874620fc",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime already running",
-          "symbol": "ETHUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "ETHUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654142-874620fc",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -7135,48 +7135,59 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
-            "count": 1,
+          "candles": {
+            "count": 12,
             "latest": {
-              "error": "Binance API request failed",
-              "status": 400,
-              "payload": {
-                "code": -1013,
-                "msg": "Filter failure: LOT_SIZE"
-              }
+              "open_time_ms": 660000,
+              "open": "99.8092",
+              "high": "100.1755",
+              "low": "99.3607",
+              "close": "99.7270",
+              "volume": "19.1567",
+              "close_time_ms": 719999,
+              "quote_volume": "1910.4402",
+              "trade_count": 39
             }
           },
           "cancel_on_stop_status": {
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
-            "count": 1,
+          "alerts": {
+            "count": 9,
             "latest": {
-              "client_order_id": "spotbot-5f79fa750f0f463486451d66",
-              "symbol": "ETHUSDT",
-              "side": "BUY",
-              "status": "REJECTED",
-              "order_id": null,
-              "filled_quantity": "0",
-              "last_price": "0",
-              "events": {
-                "count": 2,
-                "latest": {
-                  "type": "DEMO_SPOT",
-                  "status": "REJECTED",
-                  "response": {
-                    "error": "Binance API request failed",
-                    "status": 400,
-                    "payload": {
-                      "code": "-1013",
-                      "msg": "Filter failure: LOT_SIZE"
-                    }
-                  }
-                }
-              },
-              "needs_reconciliation": false
+              "name": "risk_block",
+              "severity": "warning",
+              "message": "model returned HOLD",
+              "action": "observe",
+              "created_at_ms": 1778500882258,
+              "metadata": {}
             }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 7,
+            "latest": {
+              "timestamp_ms": 719999,
+              "price": "99.7270",
+              "side": "HOLD",
+              "confidence": 0.5,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "equity_points": {
+            "count": 12,
+            "latest": {
+              "timestamp_ms": 719999,
+              "equity": "1000.0000"
+            }
+          },
+          "demo_open_orders": {
+            "count": 0,
+            "latest": null
           },
           "recent_sessions": {
             "count": 5,
@@ -7235,54 +7246,43 @@
               }
             }
           },
-          "alerts": {
-            "count": 9,
+          "demo_order_errors": {
+            "count": 1,
             "latest": {
-              "name": "risk_block",
-              "severity": "warning",
-              "message": "model returned HOLD",
-              "action": "observe",
-              "created_at_ms": 1778500882258,
-              "metadata": {}
+              "error": "Binance API request failed",
+              "status": 400,
+              "payload": {
+                "code": -1013,
+                "msg": "Filter failure: LOT_SIZE"
+              }
             }
           },
-          "equity_points": {
-            "count": 12,
+          "order_lifecycle": {
+            "count": 1,
             "latest": {
-              "timestamp_ms": 719999,
-              "equity": "1000.0000"
-            }
-          },
-          "demo_open_orders": {
-            "count": 0,
-            "latest": null
-          },
-          "fills": {
-            "count": 0,
-            "latest": null
-          },
-          "candles": {
-            "count": 12,
-            "latest": {
-              "open_time_ms": 660000,
-              "open": "99.8092",
-              "high": "100.1755",
-              "low": "99.3607",
-              "close": "99.7270",
-              "volume": "19.1567",
-              "close_time_ms": 719999,
-              "quote_volume": "1910.4402",
-              "trade_count": 39
-            }
-          },
-          "signals": {
-            "count": 7,
-            "latest": {
-              "timestamp_ms": 719999,
-              "price": "99.7270",
-              "side": "HOLD",
-              "confidence": 0.5,
-              "model_version": "rule-baseline-0.1"
+              "client_order_id": "spotbot-5f79fa750f0f463486451d66",
+              "symbol": "ETHUSDT",
+              "side": "BUY",
+              "status": "REJECTED",
+              "order_id": null,
+              "filled_quantity": "0",
+              "last_price": "0",
+              "events": {
+                "count": 2,
+                "latest": {
+                  "type": "DEMO_SPOT",
+                  "status": "REJECTED",
+                  "response": {
+                    "error": "Binance API request failed",
+                    "status": 400,
+                    "payload": {
+                      "code": "-1013",
+                      "msg": "Filter failure: LOT_SIZE"
+                    }
+                  }
+                }
+              },
+              "needs_reconciliation": false
             }
           },
           "audit_tail": {
@@ -7311,13 +7311,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654148-eecd792d",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime already running",
-          "symbol": "BNBUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "BNBUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654148-eecd792d",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -7584,48 +7584,59 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
-            "count": 1,
+          "candles": {
+            "count": 12,
             "latest": {
-              "error": "Binance API request failed",
-              "status": 400,
-              "payload": {
-                "code": -1013,
-                "msg": "Filter failure: LOT_SIZE"
-              }
+              "open_time_ms": 660000,
+              "open": "99.8092",
+              "high": "100.1755",
+              "low": "99.3607",
+              "close": "99.7270",
+              "volume": "19.1567",
+              "close_time_ms": 719999,
+              "quote_volume": "1910.4402",
+              "trade_count": 39
             }
           },
           "cancel_on_stop_status": {
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
-            "count": 1,
+          "alerts": {
+            "count": 9,
             "latest": {
-              "client_order_id": "spotbot-9f30cd54a7be40ffb5f8999f",
-              "symbol": "BNBUSDT",
-              "side": "BUY",
-              "status": "REJECTED",
-              "order_id": null,
-              "filled_quantity": "0",
-              "last_price": "0",
-              "events": {
-                "count": 2,
-                "latest": {
-                  "type": "DEMO_SPOT",
-                  "status": "REJECTED",
-                  "response": {
-                    "error": "Binance API request failed",
-                    "status": 400,
-                    "payload": {
-                      "code": "-1013",
-                      "msg": "Filter failure: LOT_SIZE"
-                    }
-                  }
-                }
-              },
-              "needs_reconciliation": false
+              "name": "risk_block",
+              "severity": "warning",
+              "message": "model returned HOLD",
+              "action": "observe",
+              "created_at_ms": 1778500891172,
+              "metadata": {}
             }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 7,
+            "latest": {
+              "timestamp_ms": 719999,
+              "price": "99.7270",
+              "side": "HOLD",
+              "confidence": 0.5,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "equity_points": {
+            "count": 12,
+            "latest": {
+              "timestamp_ms": 719999,
+              "equity": "1000.0000"
+            }
+          },
+          "demo_open_orders": {
+            "count": 0,
+            "latest": null
           },
           "recent_sessions": {
             "count": 5,
@@ -7684,54 +7695,43 @@
               }
             }
           },
-          "alerts": {
-            "count": 9,
+          "demo_order_errors": {
+            "count": 1,
             "latest": {
-              "name": "risk_block",
-              "severity": "warning",
-              "message": "model returned HOLD",
-              "action": "observe",
-              "created_at_ms": 1778500891172,
-              "metadata": {}
+              "error": "Binance API request failed",
+              "status": 400,
+              "payload": {
+                "code": -1013,
+                "msg": "Filter failure: LOT_SIZE"
+              }
             }
           },
-          "equity_points": {
-            "count": 12,
+          "order_lifecycle": {
+            "count": 1,
             "latest": {
-              "timestamp_ms": 719999,
-              "equity": "1000.0000"
-            }
-          },
-          "demo_open_orders": {
-            "count": 0,
-            "latest": null
-          },
-          "fills": {
-            "count": 0,
-            "latest": null
-          },
-          "candles": {
-            "count": 12,
-            "latest": {
-              "open_time_ms": 660000,
-              "open": "99.8092",
-              "high": "100.1755",
-              "low": "99.3607",
-              "close": "99.7270",
-              "volume": "19.1567",
-              "close_time_ms": 719999,
-              "quote_volume": "1910.4402",
-              "trade_count": 39
-            }
-          },
-          "signals": {
-            "count": 7,
-            "latest": {
-              "timestamp_ms": 719999,
-              "price": "99.7270",
-              "side": "HOLD",
-              "confidence": 0.5,
-              "model_version": "rule-baseline-0.1"
+              "client_order_id": "spotbot-9f30cd54a7be40ffb5f8999f",
+              "symbol": "BNBUSDT",
+              "side": "BUY",
+              "status": "REJECTED",
+              "order_id": null,
+              "filled_quantity": "0",
+              "last_price": "0",
+              "events": {
+                "count": 2,
+                "latest": {
+                  "type": "DEMO_SPOT",
+                  "status": "REJECTED",
+                  "response": {
+                    "error": "Binance API request failed",
+                    "status": 400,
+                    "payload": {
+                      "code": "-1013",
+                      "msg": "Filter failure: LOT_SIZE"
+                    }
+                  }
+                }
+              },
+              "needs_reconciliation": false
             }
           },
           "audit_tail": {
@@ -7760,13 +7760,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654153-edc5fc86",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime already running",
-          "symbol": "SOLUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "SOLUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654153-edc5fc86",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -8052,48 +8052,59 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
-            "count": 1,
+          "candles": {
+            "count": 11,
             "latest": {
-              "error": "Binance API request failed",
-              "status": 400,
-              "payload": {
-                "code": -1013,
-                "msg": "Filter failure: LOT_SIZE"
-              }
+              "open_time_ms": 600000,
+              "open": "99.6875",
+              "high": "100.1151",
+              "low": "99.3816",
+              "close": "99.8092",
+              "volume": "18.1320",
+              "close_time_ms": 659999,
+              "quote_volume": "1809.7404",
+              "trade_count": 38
             }
           },
           "cancel_on_stop_status": {
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
-            "count": 1,
+          "alerts": {
+            "count": 8,
             "latest": {
-              "client_order_id": "spotbot-db11e21b3c0e47e49ab604b8",
-              "symbol": "SOLUSDT",
-              "side": "BUY",
-              "status": "REJECTED",
-              "order_id": null,
-              "filled_quantity": "0",
-              "last_price": "0",
-              "events": {
-                "count": 2,
-                "latest": {
-                  "type": "DEMO_SPOT",
-                  "status": "REJECTED",
-                  "response": {
-                    "error": "Binance API request failed",
-                    "status": 400,
-                    "payload": {
-                      "code": "-1013",
-                      "msg": "Filter failure: LOT_SIZE"
-                    }
-                  }
-                }
-              },
-              "needs_reconciliation": false
+              "name": "runtime_start_idempotent",
+              "severity": "info",
+              "message": "runtime already running",
+              "action": "observe",
+              "created_at_ms": 1778500857295,
+              "metadata": {}
             }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 5,
+            "latest": {
+              "timestamp_ms": 599999,
+              "price": "99.6875",
+              "side": "HOLD",
+              "confidence": 0.5,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "equity_points": {
+            "count": 10,
+            "latest": {
+              "timestamp_ms": 599999,
+              "equity": "1000.0000"
+            }
+          },
+          "demo_open_orders": {
+            "count": 0,
+            "latest": null
           },
           "recent_sessions": {
             "count": 5,
@@ -8152,54 +8163,43 @@
               }
             }
           },
-          "alerts": {
-            "count": 8,
+          "demo_order_errors": {
+            "count": 1,
             "latest": {
-              "name": "runtime_start_idempotent",
-              "severity": "info",
-              "message": "runtime already running",
-              "action": "observe",
-              "created_at_ms": 1778500857295,
-              "metadata": {}
+              "error": "Binance API request failed",
+              "status": 400,
+              "payload": {
+                "code": -1013,
+                "msg": "Filter failure: LOT_SIZE"
+              }
             }
           },
-          "equity_points": {
-            "count": 10,
+          "order_lifecycle": {
+            "count": 1,
             "latest": {
-              "timestamp_ms": 599999,
-              "equity": "1000.0000"
-            }
-          },
-          "demo_open_orders": {
-            "count": 0,
-            "latest": null
-          },
-          "fills": {
-            "count": 0,
-            "latest": null
-          },
-          "candles": {
-            "count": 11,
-            "latest": {
-              "open_time_ms": 600000,
-              "open": "99.6875",
-              "high": "100.1151",
-              "low": "99.3816",
-              "close": "99.8092",
-              "volume": "18.1320",
-              "close_time_ms": 659999,
-              "quote_volume": "1809.7404",
-              "trade_count": 38
-            }
-          },
-          "signals": {
-            "count": 5,
-            "latest": {
-              "timestamp_ms": 599999,
-              "price": "99.6875",
-              "side": "HOLD",
-              "confidence": 0.5,
-              "model_version": "rule-baseline-0.1"
+              "client_order_id": "spotbot-db11e21b3c0e47e49ab604b8",
+              "symbol": "SOLUSDT",
+              "side": "BUY",
+              "status": "REJECTED",
+              "order_id": null,
+              "filled_quantity": "0",
+              "last_price": "0",
+              "events": {
+                "count": 2,
+                "latest": {
+                  "type": "DEMO_SPOT",
+                  "status": "REJECTED",
+                  "response": {
+                    "error": "Binance API request failed",
+                    "status": 400,
+                    "payload": {
+                      "code": "-1013",
+                      "msg": "Filter failure: LOT_SIZE"
+                    }
+                  }
+                }
+              },
+              "needs_reconciliation": false
             }
           },
           "audit_tail": {
@@ -8228,13 +8228,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654159-0cf85019",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime already running",
-          "symbol": "XRPUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "XRPUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654159-0cf85019",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -8501,15 +8501,57 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
-            "count": 0,
-            "latest": null
+          "candles": {
+            "count": 10,
+            "latest": {
+              "open_time_ms": 540000,
+              "open": "99.5064",
+              "high": "100.0284",
+              "low": "99.1655",
+              "close": "99.6875",
+              "volume": "20.6358",
+              "close_time_ms": 599999,
+              "quote_volume": "2057.1313",
+              "trade_count": 40
+            }
           },
           "cancel_on_stop_status": {
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 8,
+            "latest": {
+              "name": "runtime_start_idempotent",
+              "severity": "info",
+              "message": "runtime already running",
+              "action": "observe",
+              "created_at_ms": 1778500859366,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 5,
+            "latest": {
+              "timestamp_ms": 599999,
+              "price": "99.6875",
+              "side": "HOLD",
+              "confidence": 0.5,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "equity_points": {
+            "count": 10,
+            "latest": {
+              "timestamp_ms": 599999,
+              "equity": "1000.0000"
+            }
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -8570,55 +8612,13 @@
               }
             }
           },
-          "alerts": {
-            "count": 8,
-            "latest": {
-              "name": "runtime_start_idempotent",
-              "severity": "info",
-              "message": "runtime already running",
-              "action": "observe",
-              "created_at_ms": 1778500859366,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
-            "count": 10,
-            "latest": {
-              "timestamp_ms": 599999,
-              "equity": "1000.0000"
-            }
-          },
-          "demo_open_orders": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "fills": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
-          },
-          "candles": {
-            "count": 10,
-            "latest": {
-              "open_time_ms": 540000,
-              "open": "99.5064",
-              "high": "100.0284",
-              "low": "99.1655",
-              "close": "99.6875",
-              "volume": "20.6358",
-              "close_time_ms": 599999,
-              "quote_volume": "2057.1313",
-              "trade_count": 40
-            }
-          },
-          "signals": {
-            "count": 5,
-            "latest": {
-              "timestamp_ms": 599999,
-              "price": "99.6875",
-              "side": "HOLD",
-              "confidence": 0.5,
-              "model_version": "rule-baseline-0.1"
-            }
           },
           "audit_tail": {
             "count": 20,
@@ -8646,13 +8646,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654165-4ac2a810",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime already running",
-          "symbol": "ADAUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "ADAUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654165-4ac2a810",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -8919,15 +8919,57 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
-            "count": 0,
-            "latest": null
+          "candles": {
+            "count": 10,
+            "latest": {
+              "open_time_ms": 540000,
+              "open": "99.5064",
+              "high": "100.0284",
+              "low": "99.1655",
+              "close": "99.6875",
+              "volume": "20.6358",
+              "close_time_ms": 599999,
+              "quote_volume": "2057.1313",
+              "trade_count": 40
+            }
           },
           "cancel_on_stop_status": {
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 8,
+            "latest": {
+              "name": "runtime_start_idempotent",
+              "severity": "info",
+              "message": "runtime already running",
+              "action": "observe",
+              "created_at_ms": 1778500861550,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 5,
+            "latest": {
+              "timestamp_ms": 599999,
+              "price": "99.6875",
+              "side": "HOLD",
+              "confidence": 0.5,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "equity_points": {
+            "count": 10,
+            "latest": {
+              "timestamp_ms": 599999,
+              "equity": "1000.0000"
+            }
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -8988,55 +9030,13 @@
               }
             }
           },
-          "alerts": {
-            "count": 8,
-            "latest": {
-              "name": "runtime_start_idempotent",
-              "severity": "info",
-              "message": "runtime already running",
-              "action": "observe",
-              "created_at_ms": 1778500861550,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
-            "count": 10,
-            "latest": {
-              "timestamp_ms": 599999,
-              "equity": "1000.0000"
-            }
-          },
-          "demo_open_orders": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "fills": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
-          },
-          "candles": {
-            "count": 10,
-            "latest": {
-              "open_time_ms": 540000,
-              "open": "99.5064",
-              "high": "100.0284",
-              "low": "99.1655",
-              "close": "99.6875",
-              "volume": "20.6358",
-              "close_time_ms": 599999,
-              "quote_volume": "2057.1313",
-              "trade_count": 40
-            }
-          },
-          "signals": {
-            "count": 5,
-            "latest": {
-              "timestamp_ms": 599999,
-              "price": "99.6875",
-              "side": "HOLD",
-              "confidence": 0.5,
-              "model_version": "rule-baseline-0.1"
-            }
           },
           "audit_tail": {
             "count": 20,
@@ -9064,13 +9064,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654171-22412784",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime already running",
-          "symbol": "DOGEUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "DOGEUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654171-22412784",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -9337,15 +9337,57 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
-            "count": 0,
-            "latest": null
+          "candles": {
+            "count": 10,
+            "latest": {
+              "open_time_ms": 540000,
+              "open": "99.5064",
+              "high": "100.0284",
+              "low": "99.1655",
+              "close": "99.6875",
+              "volume": "20.6358",
+              "close_time_ms": 599999,
+              "quote_volume": "2057.1313",
+              "trade_count": 40
+            }
           },
           "cancel_on_stop_status": {
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 8,
+            "latest": {
+              "name": "runtime_start_idempotent",
+              "severity": "info",
+              "message": "runtime already running",
+              "action": "observe",
+              "created_at_ms": 1778500863484,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 5,
+            "latest": {
+              "timestamp_ms": 599999,
+              "price": "99.6875",
+              "side": "HOLD",
+              "confidence": 0.5,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "equity_points": {
+            "count": 10,
+            "latest": {
+              "timestamp_ms": 599999,
+              "equity": "1000.0000"
+            }
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -9406,55 +9448,13 @@
               }
             }
           },
-          "alerts": {
-            "count": 8,
-            "latest": {
-              "name": "runtime_start_idempotent",
-              "severity": "info",
-              "message": "runtime already running",
-              "action": "observe",
-              "created_at_ms": 1778500863484,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
-            "count": 10,
-            "latest": {
-              "timestamp_ms": 599999,
-              "equity": "1000.0000"
-            }
-          },
-          "demo_open_orders": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "fills": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
-          },
-          "candles": {
-            "count": 10,
-            "latest": {
-              "open_time_ms": 540000,
-              "open": "99.5064",
-              "high": "100.0284",
-              "low": "99.1655",
-              "close": "99.6875",
-              "volume": "20.6358",
-              "close_time_ms": 599999,
-              "quote_volume": "2057.1313",
-              "trade_count": 40
-            }
-          },
-          "signals": {
-            "count": 5,
-            "latest": {
-              "timestamp_ms": 599999,
-              "price": "99.6875",
-              "side": "HOLD",
-              "confidence": 0.5,
-              "model_version": "rule-baseline-0.1"
-            }
           },
           "audit_tail": {
             "count": 20,
@@ -9482,13 +9482,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778500654177-ca724fee",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime already running",
-          "symbol": "LINKUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "LINKUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778500654177-ca724fee",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -9755,15 +9755,57 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
-            "count": 0,
-            "latest": null
+          "candles": {
+            "count": 10,
+            "latest": {
+              "open_time_ms": 540000,
+              "open": "99.5064",
+              "high": "100.0284",
+              "low": "99.1655",
+              "close": "99.6875",
+              "volume": "20.6358",
+              "close_time_ms": 599999,
+              "quote_volume": "2057.1313",
+              "trade_count": 40
+            }
           },
           "cancel_on_stop_status": {
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 8,
+            "latest": {
+              "name": "runtime_start_idempotent",
+              "severity": "info",
+              "message": "runtime already running",
+              "action": "observe",
+              "created_at_ms": 1778500865467,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 5,
+            "latest": {
+              "timestamp_ms": 599999,
+              "price": "99.6875",
+              "side": "HOLD",
+              "confidence": 0.5,
+              "model_version": "rule-baseline-0.1"
+            }
+          },
+          "equity_points": {
+            "count": 10,
+            "latest": {
+              "timestamp_ms": 599999,
+              "equity": "1000.0000"
+            }
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -9824,55 +9866,13 @@
               }
             }
           },
-          "alerts": {
-            "count": 8,
-            "latest": {
-              "name": "runtime_start_idempotent",
-              "severity": "info",
-              "message": "runtime already running",
-              "action": "observe",
-              "created_at_ms": 1778500865467,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
-            "count": 10,
-            "latest": {
-              "timestamp_ms": 599999,
-              "equity": "1000.0000"
-            }
-          },
-          "demo_open_orders": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "fills": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
-          },
-          "candles": {
-            "count": 10,
-            "latest": {
-              "open_time_ms": 540000,
-              "open": "99.5064",
-              "high": "100.0284",
-              "low": "99.1655",
-              "close": "99.6875",
-              "volume": "20.6358",
-              "close_time_ms": 599999,
-              "quote_volume": "2057.1313",
-              "trade_count": 40
-            }
-          },
-          "signals": {
-            "count": 5,
-            "latest": {
-              "timestamp_ms": 599999,
-              "price": "99.6875",
-              "side": "HOLD",
-              "confidence": 0.5,
-              "model_version": "rule-baseline-0.1"
-            }
           },
           "audit_tail": {
             "count": 20,
@@ -9900,13 +9900,13 @@
       "payload": {
         "status": "already_running",
         "snapshot": {
-          "session_id": "1778520133563-cdbe0a44",
-          "mode": "demo",
-          "status": "running",
           "message": "runtime started",
-          "symbol": "BTCUSDT",
+          "status": "running",
           "resume_required": false,
+          "symbol": "BTCUSDT",
+          "mode": "demo",
           "interval": "1m",
+          "session_id": "1778520133563-cdbe0a44",
           "exchange_profile": {
             "name": "binance-demo-spot",
             "label": "Binance Demo Spot API",
@@ -10117,7 +10117,7 @@
             "data_quality_warnings": 0,
             "stream_status": "ok"
           },
-          "demo_order_errors": {
+          "candles": {
             "count": 0,
             "latest": null
           },
@@ -10125,7 +10125,30 @@
             "count": 0,
             "latest": null
           },
-          "order_lifecycle": {
+          "alerts": {
+            "count": 1,
+            "latest": {
+              "name": "runtime_created",
+              "severity": "info",
+              "message": "runtime created",
+              "action": "observe",
+              "created_at_ms": 1778520133564,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 0,
+            "latest": null
+          },
+          "equity_points": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
             "count": 0,
             "latest": null
           },
@@ -10166,34 +10189,11 @@
               }
             }
           },
-          "alerts": {
-            "count": 1,
-            "latest": {
-              "name": "runtime_created",
-              "severity": "info",
-              "message": "runtime created",
-              "action": "observe",
-              "created_at_ms": 1778520133564,
-              "metadata": {}
-            }
-          },
-          "equity_points": {
+          "demo_order_errors": {
             "count": 0,
             "latest": null
           },
-          "demo_open_orders": {
-            "count": 0,
-            "latest": null
-          },
-          "fills": {
-            "count": 0,
-            "latest": null
-          },
-          "candles": {
-            "count": 0,
-            "latest": null
-          },
-          "signals": {
+          "order_lifecycle": {
             "count": 0,
             "latest": null
           },
@@ -10217,6 +10217,1726 @@
                 "status": "ok"
               },
               "timestamp_ms": 1778520151840
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "start_idempotent",
+      "timestamp_ms": 1778855270340,
+      "payload": {
+        "status": "already_running",
+        "snapshot": {
+          "message": "runtime started",
+          "status": "running",
+          "resume_required": false,
+          "symbol": "BTCUSDT",
+          "mode": "demo",
+          "interval": "1m",
+          "session_id": "1778855262948-67381cb7",
+          "exchange_profile": {
+            "name": "binance-demo-spot",
+            "label": "Binance Demo Spot API",
+            "mode_badge": "BINANCE DEMO SPOT",
+            "trading_mode": "testnet",
+            "rest_base_url": "https://demo-api.binance.com",
+            "websocket_base_url": "wss://stream.binance.com:9443",
+            "user_data_stream_enabled": true,
+            "requires_credentials": true,
+            "storage": "session"
+          },
+          "credential_status": {
+            "profile": "binance-demo-spot",
+            "has_api_key": true,
+            "has_api_secret": true,
+            "capability": "Credentials loaded for signed checks"
+          },
+          "demo_connection": {
+            "profile": "binance-demo-spot",
+            "base_url": "https://demo-api.binance.com",
+            "armed": true,
+            "connected": true,
+            "authenticated": true,
+            "trading_permission_ok": true,
+            "kill_switch": false,
+            "gate": {
+              "allowed": true,
+              "reason": "allowed",
+              "checks": {
+                "profile_is_demo_spot": "True",
+                "base_url_is_demo": "True",
+                "credentials_present": "True",
+                "connection_ok": "True",
+                "armed": "True",
+                "live_disabled": "True",
+                "kill_switch_off": "True",
+                "risk_allowed": "True",
+                "filters_loaded": "True",
+                "max_orders_ok": "True"
+              }
+            }
+          },
+          "demo_account": {
+            "status": "ok",
+            "can_trade": true,
+            "account_type": "SPOT",
+            "balances": {
+              "count": 39,
+              "latest": {
+                "asset": "XAUT",
+                "free": "0.00070160",
+                "locked": "0.00000000"
+              }
+            },
+            "last_sync_ms": 1778855266908,
+            "error": ""
+          },
+          "reconciliation": {
+            "status": "ok",
+            "known_orders": 0,
+            "open_orders": 0,
+            "orphan_orders": 0,
+            "failures": 0,
+            "events": {
+              "count": 0,
+              "latest": null
+            },
+            "checked_at_ms": 1778855264408,
+            "needs_operator_action": false
+          },
+          "demo_pilot": {
+            "config": {
+              "pilot_name": "smoke",
+              "duration_minutes": 15,
+              "max_demo_orders": 5,
+              "max_rejects": 2,
+              "max_api_errors": 3,
+              "max_reconciliation_failures": 1,
+              "cancel_open_orders_on_stop": true,
+              "reconciliation_interval_seconds": 30,
+              "account_sync_interval_seconds": 60,
+              "pause_on_connection_degraded": true,
+              "require_clean_start": true
+            },
+            "counters": {
+              "orders": 0,
+              "rejects": 0,
+              "api_errors": 0,
+              "reconciliation_failures": 0,
+              "started_at_ms": 1778855262948,
+              "elapsed_seconds": 7
+            },
+            "should_pause": false,
+            "pause_reason": "",
+            "status": "armed",
+            "last_reconciliation_check_ms": 1778855264408,
+            "last_demo_account_sync_ms": 1778855266908
+          },
+          "market_data": {
+            "source": "demo",
+            "status": "ok",
+            "message": "demo replay source",
+            "last_event_age_ms": null,
+            "reconnect_count": 0,
+            "stream_url": null
+          },
+          "top_of_book": {
+            "status": "empty"
+          },
+          "data_quality": {
+            "status": "degraded",
+            "checked_rows": 0,
+            "issues": {
+              "count": 1,
+              "latest": {
+                "severity": "warning",
+                "code": "missing_candles",
+                "message": "no candles available",
+                "details": "{}"
+              }
+            }
+          },
+          "readiness": {
+            "level": "R3",
+            "blockers": {
+              "count": 0,
+              "latest": null
+            },
+            "live_allowed": false
+          },
+          "active_model": {
+            "alias": "baseline",
+            "model_version": "rule-baseline-0.1",
+            "model_type": "rule-based",
+            "metrics": {}
+          },
+          "paper_account": {
+            "quote_balance": "1000",
+            "base_balance": "0",
+            "average_entry": "0",
+            "realized_pnl": "0",
+            "fees_paid": "0",
+            "slippage_bps": "10",
+            "fills": {
+              "count": 0,
+              "latest": null
+            }
+          },
+          "session_summary": {
+            "session_id": "1778855262948-67381cb7",
+            "mode": "demo",
+            "symbol": "BTCUSDT",
+            "interval": "1m",
+            "started_at_ms": 1778855262949,
+            "ended_at_ms": null,
+            "pnl": "0",
+            "max_drawdown": "0",
+            "trades": 0,
+            "blocks": 0,
+            "model_version": "rule-baseline-0.1",
+            "status": "running",
+            "metadata": {
+              "source": "demo",
+              "model_alias": "",
+              "demo_trading_armed": true,
+              "exchange_profile": "binance-demo-spot",
+              "demo_pilot": {
+                "pilot_name": "smoke",
+                "duration_minutes": "15",
+                "max_demo_orders": "5",
+                "max_rejects": "2",
+                "max_api_errors": "3",
+                "max_reconciliation_failures": "1",
+                "cancel_open_orders_on_stop": "True",
+                "reconciliation_interval_seconds": "30",
+                "account_sync_interval_seconds": "60",
+                "pause_on_connection_degraded": "True",
+                "require_clean_start": "True"
+              },
+              "pilot_run": {}
+            }
+          },
+          "testnet_prechecks": {
+            "api_key_present": true,
+            "api_secret_present": true,
+            "mode_is_testnet": true,
+            "live_disabled": true,
+            "risk_limits_set": true,
+            "demo_trading_armed": true
+          },
+          "current_candle": null,
+          "latest_signal": null,
+          "latest_risk_decision": null,
+          "latest_execution_result": null,
+          "metrics": {
+            "api_requests": 0,
+            "api_errors": 0,
+            "rate_limit_events": 0,
+            "signals": {
+              "BUY": 0,
+              "SELL": 0,
+              "HOLD": 0
+            },
+            "block_reasons": {},
+            "paper_pnl": "0",
+            "exposure_quote": "0",
+            "reconciliation_failures": 0,
+            "data_quality_warnings": 0,
+            "stream_status": "ok"
+          },
+          "candles": {
+            "count": 0,
+            "latest": null
+          },
+          "cancel_on_stop_status": {
+            "count": 0,
+            "latest": null
+          },
+          "alerts": {
+            "count": 1,
+            "latest": {
+              "name": "runtime_created",
+              "severity": "info",
+              "message": "runtime created",
+              "action": "observe",
+              "created_at_ms": 1778855262950,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 0,
+            "latest": null
+          },
+          "equity_points": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
+            "count": 0,
+            "latest": null
+          },
+          "recent_sessions": {
+            "count": 5,
+            "latest": {
+              "session_id": "1778855262948-67381cb7",
+              "mode": "demo",
+              "symbol": "BTCUSDT",
+              "interval": "1m",
+              "started_at_ms": 1778855262949,
+              "ended_at_ms": null,
+              "pnl": "0",
+              "max_drawdown": "0",
+              "trades": 0,
+              "blocks": 0,
+              "model_version": "rule-baseline-0.1",
+              "status": "running",
+              "metadata": {
+                "source": "demo",
+                "model_alias": "",
+                "demo_trading_armed": true,
+                "exchange_profile": "binance-demo-spot",
+                "demo_pilot": {
+                  "pilot_name": "smoke",
+                  "duration_minutes": "15",
+                  "max_demo_orders": "5",
+                  "max_rejects": "2",
+                  "max_api_errors": "3",
+                  "max_reconciliation_failures": "1",
+                  "cancel_open_orders_on_stop": "True",
+                  "reconciliation_interval_seconds": "30",
+                  "account_sync_interval_seconds": "60",
+                  "pause_on_connection_degraded": "True",
+                  "require_clean_start": "True"
+                },
+                "pilot_run": {}
+              }
+            }
+          },
+          "demo_order_errors": {
+            "count": 0,
+            "latest": null
+          },
+          "order_lifecycle": {
+            "count": 0,
+            "latest": null
+          },
+          "audit_tail": {
+            "count": 20,
+            "latest": {
+              "component": "execution",
+              "correlation_id": "6c8e5d39-e69f-4fdc-8a04-8fbfb7ff1dad",
+              "event": "demo_clean_start_check",
+              "payload": {
+                "checked_at_ms": 1778855264408,
+                "events": {
+                  "count": 0,
+                  "latest": null
+                },
+                "failures": 0,
+                "known_orders": 0,
+                "needs_operator_action": false,
+                "open_orders": 0,
+                "orphan_orders": 0,
+                "status": "ok"
+              },
+              "timestamp_ms": 1778855264408
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "start_idempotent",
+      "timestamp_ms": 1778855277682,
+      "payload": {
+        "status": "already_running",
+        "snapshot": {
+          "message": "runtime started",
+          "status": "running",
+          "resume_required": false,
+          "symbol": "ETHUSDT",
+          "mode": "demo",
+          "interval": "1m",
+          "session_id": "1778855262955-dd53e056",
+          "exchange_profile": {
+            "name": "binance-demo-spot",
+            "label": "Binance Demo Spot API",
+            "mode_badge": "BINANCE DEMO SPOT",
+            "trading_mode": "testnet",
+            "rest_base_url": "https://demo-api.binance.com",
+            "websocket_base_url": "wss://stream.binance.com:9443",
+            "user_data_stream_enabled": true,
+            "requires_credentials": true,
+            "storage": "session"
+          },
+          "credential_status": {
+            "profile": "binance-demo-spot",
+            "has_api_key": true,
+            "has_api_secret": true,
+            "capability": "Credentials loaded for signed checks"
+          },
+          "demo_connection": {
+            "profile": "binance-demo-spot",
+            "base_url": "https://demo-api.binance.com",
+            "armed": true,
+            "connected": true,
+            "authenticated": true,
+            "trading_permission_ok": true,
+            "kill_switch": false,
+            "gate": {
+              "allowed": true,
+              "reason": "allowed",
+              "checks": {
+                "profile_is_demo_spot": "True",
+                "base_url_is_demo": "True",
+                "credentials_present": "True",
+                "connection_ok": "True",
+                "armed": "True",
+                "live_disabled": "True",
+                "kill_switch_off": "True",
+                "risk_allowed": "True",
+                "filters_loaded": "True",
+                "max_orders_ok": "True"
+              }
+            }
+          },
+          "demo_account": {
+            "status": "ok",
+            "can_trade": true,
+            "account_type": "SPOT",
+            "balances": {
+              "count": 39,
+              "latest": {
+                "asset": "XAUT",
+                "free": "0.00070160",
+                "locked": "0.00000000"
+              }
+            },
+            "last_sync_ms": 1778855274303,
+            "error": ""
+          },
+          "reconciliation": {
+            "status": "ok",
+            "known_orders": 0,
+            "open_orders": 0,
+            "orphan_orders": 0,
+            "failures": 0,
+            "events": {
+              "count": 0,
+              "latest": null
+            },
+            "checked_at_ms": 1778855271858,
+            "needs_operator_action": false
+          },
+          "demo_pilot": {
+            "config": {
+              "pilot_name": "smoke",
+              "duration_minutes": 15,
+              "max_demo_orders": 5,
+              "max_rejects": 2,
+              "max_api_errors": 3,
+              "max_reconciliation_failures": 1,
+              "cancel_open_orders_on_stop": true,
+              "reconciliation_interval_seconds": 30,
+              "account_sync_interval_seconds": 60,
+              "pause_on_connection_degraded": true,
+              "require_clean_start": true
+            },
+            "counters": {
+              "orders": 0,
+              "rejects": 0,
+              "api_errors": 0,
+              "reconciliation_failures": 0,
+              "started_at_ms": 1778855262955,
+              "elapsed_seconds": 14
+            },
+            "should_pause": false,
+            "pause_reason": "",
+            "status": "armed",
+            "last_reconciliation_check_ms": 1778855271858,
+            "last_demo_account_sync_ms": 1778855274303
+          },
+          "market_data": {
+            "source": "demo",
+            "status": "ok",
+            "message": "demo replay source",
+            "last_event_age_ms": null,
+            "reconnect_count": 0,
+            "stream_url": null
+          },
+          "top_of_book": {
+            "status": "empty"
+          },
+          "data_quality": {
+            "status": "degraded",
+            "checked_rows": 0,
+            "issues": {
+              "count": 1,
+              "latest": {
+                "severity": "warning",
+                "code": "missing_candles",
+                "message": "no candles available",
+                "details": "{}"
+              }
+            }
+          },
+          "readiness": {
+            "level": "R3",
+            "blockers": {
+              "count": 0,
+              "latest": null
+            },
+            "live_allowed": false
+          },
+          "active_model": {
+            "alias": "baseline",
+            "model_version": "rule-baseline-0.1",
+            "model_type": "rule-based",
+            "metrics": {}
+          },
+          "paper_account": {
+            "quote_balance": "1000",
+            "base_balance": "0",
+            "average_entry": "0",
+            "realized_pnl": "0",
+            "fees_paid": "0",
+            "slippage_bps": "10",
+            "fills": {
+              "count": 0,
+              "latest": null
+            }
+          },
+          "session_summary": {
+            "session_id": "1778855262955-dd53e056",
+            "mode": "demo",
+            "symbol": "ETHUSDT",
+            "interval": "1m",
+            "started_at_ms": 1778855262955,
+            "ended_at_ms": null,
+            "pnl": "0",
+            "max_drawdown": "0",
+            "trades": 0,
+            "blocks": 0,
+            "model_version": "rule-baseline-0.1",
+            "status": "running",
+            "metadata": {
+              "source": "demo",
+              "model_alias": "",
+              "demo_trading_armed": true,
+              "exchange_profile": "binance-demo-spot",
+              "demo_pilot": {
+                "pilot_name": "smoke",
+                "duration_minutes": "15",
+                "max_demo_orders": "5",
+                "max_rejects": "2",
+                "max_api_errors": "3",
+                "max_reconciliation_failures": "1",
+                "cancel_open_orders_on_stop": "True",
+                "reconciliation_interval_seconds": "30",
+                "account_sync_interval_seconds": "60",
+                "pause_on_connection_degraded": "True",
+                "require_clean_start": "True"
+              },
+              "pilot_run": {}
+            }
+          },
+          "testnet_prechecks": {
+            "api_key_present": true,
+            "api_secret_present": true,
+            "mode_is_testnet": true,
+            "live_disabled": true,
+            "risk_limits_set": true,
+            "demo_trading_armed": true
+          },
+          "current_candle": null,
+          "latest_signal": null,
+          "latest_risk_decision": null,
+          "latest_execution_result": null,
+          "metrics": {
+            "api_requests": 0,
+            "api_errors": 0,
+            "rate_limit_events": 0,
+            "signals": {
+              "BUY": 0,
+              "SELL": 0,
+              "HOLD": 0
+            },
+            "block_reasons": {},
+            "paper_pnl": "0",
+            "exposure_quote": "0",
+            "reconciliation_failures": 0,
+            "data_quality_warnings": 0,
+            "stream_status": "ok"
+          },
+          "candles": {
+            "count": 0,
+            "latest": null
+          },
+          "cancel_on_stop_status": {
+            "count": 0,
+            "latest": null
+          },
+          "alerts": {
+            "count": 1,
+            "latest": {
+              "name": "runtime_created",
+              "severity": "info",
+              "message": "runtime created",
+              "action": "observe",
+              "created_at_ms": 1778855262957,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 0,
+            "latest": null
+          },
+          "equity_points": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
+            "count": 0,
+            "latest": null
+          },
+          "recent_sessions": {
+            "count": 5,
+            "latest": {
+              "session_id": "1778855262948-67381cb7",
+              "mode": "demo",
+              "symbol": "BTCUSDT",
+              "interval": "1m",
+              "started_at_ms": 1778855262949,
+              "ended_at_ms": null,
+              "pnl": "0",
+              "max_drawdown": "0",
+              "trades": 0,
+              "blocks": 0,
+              "model_version": "rule-baseline-0.1",
+              "status": "running",
+              "metadata": {
+                "source": "demo",
+                "model_alias": "",
+                "demo_trading_armed": true,
+                "exchange_profile": "binance-demo-spot",
+                "demo_pilot": {
+                  "pilot_name": "smoke",
+                  "duration_minutes": "15",
+                  "max_demo_orders": "5",
+                  "max_rejects": "2",
+                  "max_api_errors": "3",
+                  "max_reconciliation_failures": "1",
+                  "cancel_open_orders_on_stop": "True",
+                  "reconciliation_interval_seconds": "30",
+                  "account_sync_interval_seconds": "60",
+                  "pause_on_connection_degraded": "True",
+                  "require_clean_start": "True"
+                },
+                "pilot_run": {
+                  "run_id": "1778500348845-btcusdt-operator",
+                  "state": "running",
+                  "profile": "binance-demo-spot",
+                  "symbol": "BTCUSDT",
+                  "preset": "operator",
+                  "started_at_ms": "1778500348845",
+                  "updated_at_ms": "1778855270340",
+                  "completed_at_ms": "None",
+                  "blockers": "[]",
+                  "transitions": "[{'from': 'idle', 'to': 'blocked', 'timestamp_ms': 1778500348845, 'reason': 'run created'}, {'from': 'blocked', 'to': 'ready', 'timestamp_ms': 1778500348847, 'reason': 'start gate evaluated'}, {'from': 'ready', 'to': 'running', 'timestamp_m",
+                  "checkpoints": "[{'event': 'start_snapshot', 'timestamp_ms': 1778500348857, 'payload': {'message': 'runtime started', 'status': 'running', 'resume_required': False, 'symbol': 'BTCUSDT', 'mode': 'demo', 'interval': '1m', 'session_id': '1778500281135-f111696",
+                  "report_paths": "{}"
+                },
+                "pilot_start_gate": {
+                  "allowed": "True",
+                  "state": "ready",
+                  "checks": "[{'check': 'profile', 'status': 'pass', 'reason': 'binance-demo-spot', 'next_action': 'Select Binance Demo Spot profile', 'blocking': True}, {'check': 'demo_base_url', 'status': 'pass', 'reason': 'https://demo-api.binance.com', 'next_action",
+                  "blockers": "[]",
+                  "next_action": "Start Demo Spot pilot"
+                }
+              }
+            }
+          },
+          "demo_order_errors": {
+            "count": 0,
+            "latest": null
+          },
+          "order_lifecycle": {
+            "count": 0,
+            "latest": null
+          },
+          "audit_tail": {
+            "count": 20,
+            "latest": {
+              "component": "execution",
+              "correlation_id": "3033a4ed-2090-4192-b966-20204ad9955d",
+              "event": "demo_clean_start_check",
+              "payload": {
+                "checked_at_ms": 1778855271858,
+                "events": {
+                  "count": 0,
+                  "latest": null
+                },
+                "failures": 0,
+                "known_orders": 0,
+                "needs_operator_action": false,
+                "open_orders": 0,
+                "orphan_orders": 0,
+                "status": "ok"
+              },
+              "timestamp_ms": 1778855271858
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "start_idempotent",
+      "timestamp_ms": 1778855285070,
+      "payload": {
+        "status": "already_running",
+        "snapshot": {
+          "message": "runtime started",
+          "status": "running",
+          "resume_required": false,
+          "symbol": "BNBUSDT",
+          "mode": "demo",
+          "interval": "1m",
+          "session_id": "1778855262962-be989f50",
+          "exchange_profile": {
+            "name": "binance-demo-spot",
+            "label": "Binance Demo Spot API",
+            "mode_badge": "BINANCE DEMO SPOT",
+            "trading_mode": "testnet",
+            "rest_base_url": "https://demo-api.binance.com",
+            "websocket_base_url": "wss://stream.binance.com:9443",
+            "user_data_stream_enabled": true,
+            "requires_credentials": true,
+            "storage": "session"
+          },
+          "credential_status": {
+            "profile": "binance-demo-spot",
+            "has_api_key": true,
+            "has_api_secret": true,
+            "capability": "Credentials loaded for signed checks"
+          },
+          "demo_connection": {
+            "profile": "binance-demo-spot",
+            "base_url": "https://demo-api.binance.com",
+            "armed": true,
+            "connected": true,
+            "authenticated": true,
+            "trading_permission_ok": true,
+            "kill_switch": false,
+            "gate": {
+              "allowed": true,
+              "reason": "allowed",
+              "checks": {
+                "profile_is_demo_spot": "True",
+                "base_url_is_demo": "True",
+                "credentials_present": "True",
+                "connection_ok": "True",
+                "armed": "True",
+                "live_disabled": "True",
+                "kill_switch_off": "True",
+                "risk_allowed": "True",
+                "filters_loaded": "True",
+                "max_orders_ok": "True"
+              }
+            }
+          },
+          "demo_account": {
+            "status": "ok",
+            "can_trade": true,
+            "account_type": "SPOT",
+            "balances": {
+              "count": 39,
+              "latest": {
+                "asset": "XAUT",
+                "free": "0.00070160",
+                "locked": "0.00000000"
+              }
+            },
+            "last_sync_ms": 1778855281686,
+            "error": ""
+          },
+          "reconciliation": {
+            "status": "ok",
+            "known_orders": 0,
+            "open_orders": 0,
+            "orphan_orders": 0,
+            "failures": 0,
+            "events": {
+              "count": 0,
+              "latest": null
+            },
+            "checked_at_ms": 1778855279194,
+            "needs_operator_action": false
+          },
+          "demo_pilot": {
+            "config": {
+              "pilot_name": "smoke",
+              "duration_minutes": 15,
+              "max_demo_orders": 5,
+              "max_rejects": 2,
+              "max_api_errors": 3,
+              "max_reconciliation_failures": 1,
+              "cancel_open_orders_on_stop": true,
+              "reconciliation_interval_seconds": 30,
+              "account_sync_interval_seconds": 60,
+              "pause_on_connection_degraded": true,
+              "require_clean_start": true
+            },
+            "counters": {
+              "orders": 0,
+              "rejects": 0,
+              "api_errors": 0,
+              "reconciliation_failures": 0,
+              "started_at_ms": 1778855262962,
+              "elapsed_seconds": 22
+            },
+            "should_pause": false,
+            "pause_reason": "",
+            "status": "armed",
+            "last_reconciliation_check_ms": 1778855279194,
+            "last_demo_account_sync_ms": 1778855281686
+          },
+          "market_data": {
+            "source": "demo",
+            "status": "ok",
+            "message": "demo replay source",
+            "last_event_age_ms": null,
+            "reconnect_count": 0,
+            "stream_url": null
+          },
+          "top_of_book": {
+            "status": "empty"
+          },
+          "data_quality": {
+            "status": "degraded",
+            "checked_rows": 0,
+            "issues": {
+              "count": 1,
+              "latest": {
+                "severity": "warning",
+                "code": "missing_candles",
+                "message": "no candles available",
+                "details": "{}"
+              }
+            }
+          },
+          "readiness": {
+            "level": "R3",
+            "blockers": {
+              "count": 0,
+              "latest": null
+            },
+            "live_allowed": false
+          },
+          "active_model": {
+            "alias": "baseline",
+            "model_version": "rule-baseline-0.1",
+            "model_type": "rule-based",
+            "metrics": {}
+          },
+          "paper_account": {
+            "quote_balance": "1000",
+            "base_balance": "0",
+            "average_entry": "0",
+            "realized_pnl": "0",
+            "fees_paid": "0",
+            "slippage_bps": "10",
+            "fills": {
+              "count": 0,
+              "latest": null
+            }
+          },
+          "session_summary": {
+            "session_id": "1778855262962-be989f50",
+            "mode": "demo",
+            "symbol": "BNBUSDT",
+            "interval": "1m",
+            "started_at_ms": 1778855262962,
+            "ended_at_ms": null,
+            "pnl": "0",
+            "max_drawdown": "0",
+            "trades": 0,
+            "blocks": 0,
+            "model_version": "rule-baseline-0.1",
+            "status": "running",
+            "metadata": {
+              "source": "demo",
+              "model_alias": "",
+              "demo_trading_armed": true,
+              "exchange_profile": "binance-demo-spot",
+              "demo_pilot": {
+                "pilot_name": "smoke",
+                "duration_minutes": "15",
+                "max_demo_orders": "5",
+                "max_rejects": "2",
+                "max_api_errors": "3",
+                "max_reconciliation_failures": "1",
+                "cancel_open_orders_on_stop": "True",
+                "reconciliation_interval_seconds": "30",
+                "account_sync_interval_seconds": "60",
+                "pause_on_connection_degraded": "True",
+                "require_clean_start": "True"
+              },
+              "pilot_run": {}
+            }
+          },
+          "testnet_prechecks": {
+            "api_key_present": true,
+            "api_secret_present": true,
+            "mode_is_testnet": true,
+            "live_disabled": true,
+            "risk_limits_set": true,
+            "demo_trading_armed": true
+          },
+          "current_candle": null,
+          "latest_signal": null,
+          "latest_risk_decision": null,
+          "latest_execution_result": null,
+          "metrics": {
+            "api_requests": 0,
+            "api_errors": 0,
+            "rate_limit_events": 0,
+            "signals": {
+              "BUY": 0,
+              "SELL": 0,
+              "HOLD": 0
+            },
+            "block_reasons": {},
+            "paper_pnl": "0",
+            "exposure_quote": "0",
+            "reconciliation_failures": 0,
+            "data_quality_warnings": 0,
+            "stream_status": "ok"
+          },
+          "candles": {
+            "count": 0,
+            "latest": null
+          },
+          "cancel_on_stop_status": {
+            "count": 0,
+            "latest": null
+          },
+          "alerts": {
+            "count": 1,
+            "latest": {
+              "name": "runtime_created",
+              "severity": "info",
+              "message": "runtime created",
+              "action": "observe",
+              "created_at_ms": 1778855262964,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 0,
+            "latest": null
+          },
+          "equity_points": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
+            "count": 0,
+            "latest": null
+          },
+          "recent_sessions": {
+            "count": 5,
+            "latest": {
+              "session_id": "1778855262948-67381cb7",
+              "mode": "demo",
+              "symbol": "BTCUSDT",
+              "interval": "1m",
+              "started_at_ms": 1778855262949,
+              "ended_at_ms": null,
+              "pnl": "0",
+              "max_drawdown": "0",
+              "trades": 0,
+              "blocks": 0,
+              "model_version": "rule-baseline-0.1",
+              "status": "running",
+              "metadata": {
+                "source": "demo",
+                "model_alias": "",
+                "demo_trading_armed": true,
+                "exchange_profile": "binance-demo-spot",
+                "demo_pilot": {
+                  "pilot_name": "smoke",
+                  "duration_minutes": "15",
+                  "max_demo_orders": "5",
+                  "max_rejects": "2",
+                  "max_api_errors": "3",
+                  "max_reconciliation_failures": "1",
+                  "cancel_open_orders_on_stop": "True",
+                  "reconciliation_interval_seconds": "30",
+                  "account_sync_interval_seconds": "60",
+                  "pause_on_connection_degraded": "True",
+                  "require_clean_start": "True"
+                },
+                "pilot_run": {
+                  "run_id": "1778500348845-btcusdt-operator",
+                  "state": "running",
+                  "profile": "binance-demo-spot",
+                  "symbol": "BTCUSDT",
+                  "preset": "operator",
+                  "started_at_ms": "1778500348845",
+                  "updated_at_ms": "1778855270340",
+                  "completed_at_ms": "None",
+                  "blockers": "[]",
+                  "transitions": "[{'from': 'idle', 'to': 'blocked', 'timestamp_ms': 1778500348845, 'reason': 'run created'}, {'from': 'blocked', 'to': 'ready', 'timestamp_ms': 1778500348847, 'reason': 'start gate evaluated'}, {'from': 'ready', 'to': 'running', 'timestamp_m",
+                  "checkpoints": "[{'event': 'start_snapshot', 'timestamp_ms': 1778500348857, 'payload': {'message': 'runtime started', 'status': 'running', 'resume_required': False, 'symbol': 'BTCUSDT', 'mode': 'demo', 'interval': '1m', 'session_id': '1778500281135-f111696",
+                  "report_paths": "{}"
+                },
+                "pilot_start_gate": {
+                  "allowed": "True",
+                  "state": "ready",
+                  "checks": "[{'check': 'profile', 'status': 'pass', 'reason': 'binance-demo-spot', 'next_action': 'Select Binance Demo Spot profile', 'blocking': True}, {'check': 'demo_base_url', 'status': 'pass', 'reason': 'https://demo-api.binance.com', 'next_action",
+                  "blockers": "[]",
+                  "next_action": "Start Demo Spot pilot"
+                }
+              }
+            }
+          },
+          "demo_order_errors": {
+            "count": 0,
+            "latest": null
+          },
+          "order_lifecycle": {
+            "count": 0,
+            "latest": null
+          },
+          "audit_tail": {
+            "count": 20,
+            "latest": {
+              "component": "execution",
+              "correlation_id": "9fe84acd-4803-4878-8be7-588beb22160a",
+              "event": "demo_clean_start_check",
+              "payload": {
+                "checked_at_ms": 1778855279194,
+                "events": {
+                  "count": 0,
+                  "latest": null
+                },
+                "failures": 0,
+                "known_orders": 0,
+                "needs_operator_action": false,
+                "open_orders": 0,
+                "orphan_orders": 0,
+                "status": "ok"
+              },
+              "timestamp_ms": 1778855279195
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "start_idempotent",
+      "timestamp_ms": 1778855292610,
+      "payload": {
+        "status": "already_running",
+        "snapshot": {
+          "message": "runtime started",
+          "status": "running",
+          "resume_required": false,
+          "symbol": "SOLUSDT",
+          "mode": "demo",
+          "interval": "1m",
+          "session_id": "1778855262970-e9dc79ed",
+          "exchange_profile": {
+            "name": "binance-demo-spot",
+            "label": "Binance Demo Spot API",
+            "mode_badge": "BINANCE DEMO SPOT",
+            "trading_mode": "testnet",
+            "rest_base_url": "https://demo-api.binance.com",
+            "websocket_base_url": "wss://stream.binance.com:9443",
+            "user_data_stream_enabled": true,
+            "requires_credentials": true,
+            "storage": "session"
+          },
+          "credential_status": {
+            "profile": "binance-demo-spot",
+            "has_api_key": true,
+            "has_api_secret": true,
+            "capability": "Credentials loaded for signed checks"
+          },
+          "demo_connection": {
+            "profile": "binance-demo-spot",
+            "base_url": "https://demo-api.binance.com",
+            "armed": true,
+            "connected": true,
+            "authenticated": true,
+            "trading_permission_ok": true,
+            "kill_switch": false,
+            "gate": {
+              "allowed": true,
+              "reason": "allowed",
+              "checks": {
+                "profile_is_demo_spot": "True",
+                "base_url_is_demo": "True",
+                "credentials_present": "True",
+                "connection_ok": "True",
+                "armed": "True",
+                "live_disabled": "True",
+                "kill_switch_off": "True",
+                "risk_allowed": "True",
+                "filters_loaded": "True",
+                "max_orders_ok": "True"
+              }
+            }
+          },
+          "demo_account": {
+            "status": "ok",
+            "can_trade": true,
+            "account_type": "SPOT",
+            "balances": {
+              "count": 39,
+              "latest": {
+                "asset": "XAUT",
+                "free": "0.00070160",
+                "locked": "0.00000000"
+              }
+            },
+            "last_sync_ms": 1778855289051,
+            "error": ""
+          },
+          "reconciliation": {
+            "status": "ok",
+            "known_orders": 0,
+            "open_orders": 0,
+            "orphan_orders": 0,
+            "failures": 0,
+            "events": {
+              "count": 0,
+              "latest": null
+            },
+            "checked_at_ms": 1778855286557,
+            "needs_operator_action": false
+          },
+          "demo_pilot": {
+            "config": {
+              "pilot_name": "smoke",
+              "duration_minutes": 15,
+              "max_demo_orders": 5,
+              "max_rejects": 2,
+              "max_api_errors": 3,
+              "max_reconciliation_failures": 1,
+              "cancel_open_orders_on_stop": true,
+              "reconciliation_interval_seconds": 30,
+              "account_sync_interval_seconds": 60,
+              "pause_on_connection_degraded": true,
+              "require_clean_start": true
+            },
+            "counters": {
+              "orders": 0,
+              "rejects": 0,
+              "api_errors": 0,
+              "reconciliation_failures": 0,
+              "started_at_ms": 1778855262970,
+              "elapsed_seconds": 29
+            },
+            "should_pause": false,
+            "pause_reason": "",
+            "status": "armed",
+            "last_reconciliation_check_ms": 1778855286557,
+            "last_demo_account_sync_ms": 1778855289051
+          },
+          "market_data": {
+            "source": "demo",
+            "status": "ok",
+            "message": "demo replay source",
+            "last_event_age_ms": null,
+            "reconnect_count": 0,
+            "stream_url": null
+          },
+          "top_of_book": {
+            "status": "empty"
+          },
+          "data_quality": {
+            "status": "degraded",
+            "checked_rows": 0,
+            "issues": {
+              "count": 1,
+              "latest": {
+                "severity": "warning",
+                "code": "missing_candles",
+                "message": "no candles available",
+                "details": "{}"
+              }
+            }
+          },
+          "readiness": {
+            "level": "R3",
+            "blockers": {
+              "count": 0,
+              "latest": null
+            },
+            "live_allowed": false
+          },
+          "active_model": {
+            "alias": "baseline",
+            "model_version": "rule-baseline-0.1",
+            "model_type": "rule-based",
+            "metrics": {}
+          },
+          "paper_account": {
+            "quote_balance": "1000",
+            "base_balance": "0",
+            "average_entry": "0",
+            "realized_pnl": "0",
+            "fees_paid": "0",
+            "slippage_bps": "10",
+            "fills": {
+              "count": 0,
+              "latest": null
+            }
+          },
+          "session_summary": {
+            "session_id": "1778855262970-e9dc79ed",
+            "mode": "demo",
+            "symbol": "SOLUSDT",
+            "interval": "1m",
+            "started_at_ms": 1778855262970,
+            "ended_at_ms": null,
+            "pnl": "0",
+            "max_drawdown": "0",
+            "trades": 0,
+            "blocks": 0,
+            "model_version": "rule-baseline-0.1",
+            "status": "running",
+            "metadata": {
+              "source": "demo",
+              "model_alias": "",
+              "demo_trading_armed": true,
+              "exchange_profile": "binance-demo-spot",
+              "demo_pilot": {
+                "pilot_name": "smoke",
+                "duration_minutes": "15",
+                "max_demo_orders": "5",
+                "max_rejects": "2",
+                "max_api_errors": "3",
+                "max_reconciliation_failures": "1",
+                "cancel_open_orders_on_stop": "True",
+                "reconciliation_interval_seconds": "30",
+                "account_sync_interval_seconds": "60",
+                "pause_on_connection_degraded": "True",
+                "require_clean_start": "True"
+              },
+              "pilot_run": {}
+            }
+          },
+          "testnet_prechecks": {
+            "api_key_present": true,
+            "api_secret_present": true,
+            "mode_is_testnet": true,
+            "live_disabled": true,
+            "risk_limits_set": true,
+            "demo_trading_armed": true
+          },
+          "current_candle": null,
+          "latest_signal": null,
+          "latest_risk_decision": null,
+          "latest_execution_result": null,
+          "metrics": {
+            "api_requests": 0,
+            "api_errors": 0,
+            "rate_limit_events": 0,
+            "signals": {
+              "BUY": 0,
+              "SELL": 0,
+              "HOLD": 0
+            },
+            "block_reasons": {},
+            "paper_pnl": "0",
+            "exposure_quote": "0",
+            "reconciliation_failures": 0,
+            "data_quality_warnings": 0,
+            "stream_status": "ok"
+          },
+          "candles": {
+            "count": 0,
+            "latest": null
+          },
+          "cancel_on_stop_status": {
+            "count": 0,
+            "latest": null
+          },
+          "alerts": {
+            "count": 1,
+            "latest": {
+              "name": "runtime_created",
+              "severity": "info",
+              "message": "runtime created",
+              "action": "observe",
+              "created_at_ms": 1778855262971,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 0,
+            "latest": null
+          },
+          "equity_points": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
+            "count": 0,
+            "latest": null
+          },
+          "recent_sessions": {
+            "count": 5,
+            "latest": {
+              "session_id": "1778855262948-67381cb7",
+              "mode": "demo",
+              "symbol": "BTCUSDT",
+              "interval": "1m",
+              "started_at_ms": 1778855262949,
+              "ended_at_ms": null,
+              "pnl": "0",
+              "max_drawdown": "0",
+              "trades": 0,
+              "blocks": 0,
+              "model_version": "rule-baseline-0.1",
+              "status": "running",
+              "metadata": {
+                "source": "demo",
+                "model_alias": "",
+                "demo_trading_armed": true,
+                "exchange_profile": "binance-demo-spot",
+                "demo_pilot": {
+                  "pilot_name": "smoke",
+                  "duration_minutes": "15",
+                  "max_demo_orders": "5",
+                  "max_rejects": "2",
+                  "max_api_errors": "3",
+                  "max_reconciliation_failures": "1",
+                  "cancel_open_orders_on_stop": "True",
+                  "reconciliation_interval_seconds": "30",
+                  "account_sync_interval_seconds": "60",
+                  "pause_on_connection_degraded": "True",
+                  "require_clean_start": "True"
+                },
+                "pilot_run": {
+                  "run_id": "1778500348845-btcusdt-operator",
+                  "state": "running",
+                  "profile": "binance-demo-spot",
+                  "symbol": "BTCUSDT",
+                  "preset": "operator",
+                  "started_at_ms": "1778500348845",
+                  "updated_at_ms": "1778855270340",
+                  "completed_at_ms": "None",
+                  "blockers": "[]",
+                  "transitions": "[{'from': 'idle', 'to': 'blocked', 'timestamp_ms': 1778500348845, 'reason': 'run created'}, {'from': 'blocked', 'to': 'ready', 'timestamp_ms': 1778500348847, 'reason': 'start gate evaluated'}, {'from': 'ready', 'to': 'running', 'timestamp_m",
+                  "checkpoints": "[{'event': 'start_snapshot', 'timestamp_ms': 1778500348857, 'payload': {'message': 'runtime started', 'status': 'running', 'resume_required': False, 'symbol': 'BTCUSDT', 'mode': 'demo', 'interval': '1m', 'session_id': '1778500281135-f111696",
+                  "report_paths": "{}"
+                },
+                "pilot_start_gate": {
+                  "allowed": "True",
+                  "state": "ready",
+                  "checks": "[{'check': 'profile', 'status': 'pass', 'reason': 'binance-demo-spot', 'next_action': 'Select Binance Demo Spot profile', 'blocking': True}, {'check': 'demo_base_url', 'status': 'pass', 'reason': 'https://demo-api.binance.com', 'next_action",
+                  "blockers": "[]",
+                  "next_action": "Start Demo Spot pilot"
+                }
+              }
+            }
+          },
+          "demo_order_errors": {
+            "count": 0,
+            "latest": null
+          },
+          "order_lifecycle": {
+            "count": 0,
+            "latest": null
+          },
+          "audit_tail": {
+            "count": 20,
+            "latest": {
+              "component": "execution",
+              "correlation_id": "c77b0d0a-5d21-4a1d-aabd-3c1c13b5996b",
+              "event": "demo_clean_start_check",
+              "payload": {
+                "checked_at_ms": 1778855286557,
+                "events": {
+                  "count": 0,
+                  "latest": null
+                },
+                "failures": 0,
+                "known_orders": 0,
+                "needs_operator_action": false,
+                "open_orders": 0,
+                "orphan_orders": 0,
+                "status": "ok"
+              },
+              "timestamp_ms": 1778855286557
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "start_idempotent",
+      "timestamp_ms": 1778855300003,
+      "payload": {
+        "status": "already_running",
+        "snapshot": {
+          "message": "runtime started",
+          "status": "running",
+          "resume_required": false,
+          "symbol": "XRPUSDT",
+          "mode": "demo",
+          "interval": "1m",
+          "session_id": "1778855262976-bd411fb4",
+          "exchange_profile": {
+            "name": "binance-demo-spot",
+            "label": "Binance Demo Spot API",
+            "mode_badge": "BINANCE DEMO SPOT",
+            "trading_mode": "testnet",
+            "rest_base_url": "https://demo-api.binance.com",
+            "websocket_base_url": "wss://stream.binance.com:9443",
+            "user_data_stream_enabled": true,
+            "requires_credentials": true,
+            "storage": "session"
+          },
+          "credential_status": {
+            "profile": "binance-demo-spot",
+            "has_api_key": true,
+            "has_api_secret": true,
+            "capability": "Credentials loaded for signed checks"
+          },
+          "demo_connection": {
+            "profile": "binance-demo-spot",
+            "base_url": "https://demo-api.binance.com",
+            "armed": true,
+            "connected": true,
+            "authenticated": true,
+            "trading_permission_ok": true,
+            "kill_switch": false,
+            "gate": {
+              "allowed": true,
+              "reason": "allowed",
+              "checks": {
+                "profile_is_demo_spot": "True",
+                "base_url_is_demo": "True",
+                "credentials_present": "True",
+                "connection_ok": "True",
+                "armed": "True",
+                "live_disabled": "True",
+                "kill_switch_off": "True",
+                "risk_allowed": "True",
+                "filters_loaded": "True",
+                "max_orders_ok": "True"
+              }
+            }
+          },
+          "demo_account": {
+            "status": "ok",
+            "can_trade": true,
+            "account_type": "SPOT",
+            "balances": {
+              "count": 39,
+              "latest": {
+                "asset": "XAUT",
+                "free": "0.00070160",
+                "locked": "0.00000000"
+              }
+            },
+            "last_sync_ms": 1778855296574,
+            "error": ""
+          },
+          "reconciliation": {
+            "status": "ok",
+            "known_orders": 0,
+            "open_orders": 0,
+            "orphan_orders": 0,
+            "failures": 0,
+            "events": {
+              "count": 0,
+              "latest": null
+            },
+            "checked_at_ms": 1778855294138,
+            "needs_operator_action": false
+          },
+          "demo_pilot": {
+            "config": {
+              "pilot_name": "smoke",
+              "duration_minutes": 15,
+              "max_demo_orders": 5,
+              "max_rejects": 2,
+              "max_api_errors": 3,
+              "max_reconciliation_failures": 1,
+              "cancel_open_orders_on_stop": true,
+              "reconciliation_interval_seconds": 30,
+              "account_sync_interval_seconds": 60,
+              "pause_on_connection_degraded": true,
+              "require_clean_start": true
+            },
+            "counters": {
+              "orders": 0,
+              "rejects": 0,
+              "api_errors": 0,
+              "reconciliation_failures": 0,
+              "started_at_ms": 1778855262975,
+              "elapsed_seconds": 36
+            },
+            "should_pause": false,
+            "pause_reason": "",
+            "status": "armed",
+            "last_reconciliation_check_ms": 1778855294138,
+            "last_demo_account_sync_ms": 1778855296574
+          },
+          "market_data": {
+            "source": "demo",
+            "status": "ok",
+            "message": "demo replay source",
+            "last_event_age_ms": null,
+            "reconnect_count": 0,
+            "stream_url": null
+          },
+          "top_of_book": {
+            "status": "empty"
+          },
+          "data_quality": {
+            "status": "degraded",
+            "checked_rows": 0,
+            "issues": {
+              "count": 1,
+              "latest": {
+                "severity": "warning",
+                "code": "missing_candles",
+                "message": "no candles available",
+                "details": "{}"
+              }
+            }
+          },
+          "readiness": {
+            "level": "R3",
+            "blockers": {
+              "count": 0,
+              "latest": null
+            },
+            "live_allowed": false
+          },
+          "active_model": {
+            "alias": "baseline",
+            "model_version": "rule-baseline-0.1",
+            "model_type": "rule-based",
+            "metrics": {}
+          },
+          "paper_account": {
+            "quote_balance": "1000",
+            "base_balance": "0",
+            "average_entry": "0",
+            "realized_pnl": "0",
+            "fees_paid": "0",
+            "slippage_bps": "10",
+            "fills": {
+              "count": 0,
+              "latest": null
+            }
+          },
+          "session_summary": {
+            "session_id": "1778855262976-bd411fb4",
+            "mode": "demo",
+            "symbol": "XRPUSDT",
+            "interval": "1m",
+            "started_at_ms": 1778855262976,
+            "ended_at_ms": null,
+            "pnl": "0",
+            "max_drawdown": "0",
+            "trades": 0,
+            "blocks": 0,
+            "model_version": "rule-baseline-0.1",
+            "status": "running",
+            "metadata": {
+              "source": "demo",
+              "model_alias": "",
+              "demo_trading_armed": true,
+              "exchange_profile": "binance-demo-spot",
+              "demo_pilot": {
+                "pilot_name": "smoke",
+                "duration_minutes": "15",
+                "max_demo_orders": "5",
+                "max_rejects": "2",
+                "max_api_errors": "3",
+                "max_reconciliation_failures": "1",
+                "cancel_open_orders_on_stop": "True",
+                "reconciliation_interval_seconds": "30",
+                "account_sync_interval_seconds": "60",
+                "pause_on_connection_degraded": "True",
+                "require_clean_start": "True"
+              },
+              "pilot_run": {}
+            }
+          },
+          "testnet_prechecks": {
+            "api_key_present": true,
+            "api_secret_present": true,
+            "mode_is_testnet": true,
+            "live_disabled": true,
+            "risk_limits_set": true,
+            "demo_trading_armed": true
+          },
+          "current_candle": null,
+          "latest_signal": null,
+          "latest_risk_decision": null,
+          "latest_execution_result": null,
+          "metrics": {
+            "api_requests": 0,
+            "api_errors": 0,
+            "rate_limit_events": 0,
+            "signals": {
+              "BUY": 0,
+              "SELL": 0,
+              "HOLD": 0
+            },
+            "block_reasons": {},
+            "paper_pnl": "0",
+            "exposure_quote": "0",
+            "reconciliation_failures": 0,
+            "data_quality_warnings": 0,
+            "stream_status": "ok"
+          },
+          "candles": {
+            "count": 0,
+            "latest": null
+          },
+          "cancel_on_stop_status": {
+            "count": 0,
+            "latest": null
+          },
+          "alerts": {
+            "count": 1,
+            "latest": {
+              "name": "runtime_created",
+              "severity": "info",
+              "message": "runtime created",
+              "action": "observe",
+              "created_at_ms": 1778855262977,
+              "metadata": {}
+            }
+          },
+          "fills": {
+            "count": 0,
+            "latest": null
+          },
+          "signals": {
+            "count": 0,
+            "latest": null
+          },
+          "equity_points": {
+            "count": 0,
+            "latest": null
+          },
+          "demo_open_orders": {
+            "count": 0,
+            "latest": null
+          },
+          "recent_sessions": {
+            "count": 5,
+            "latest": {
+              "session_id": "1778855262948-67381cb7",
+              "mode": "demo",
+              "symbol": "BTCUSDT",
+              "interval": "1m",
+              "started_at_ms": 1778855262949,
+              "ended_at_ms": null,
+              "pnl": "0",
+              "max_drawdown": "0",
+              "trades": 0,
+              "blocks": 0,
+              "model_version": "rule-baseline-0.1",
+              "status": "running",
+              "metadata": {
+                "source": "demo",
+                "model_alias": "",
+                "demo_trading_armed": true,
+                "exchange_profile": "binance-demo-spot",
+                "demo_pilot": {
+                  "pilot_name": "smoke",
+                  "duration_minutes": "15",
+                  "max_demo_orders": "5",
+                  "max_rejects": "2",
+                  "max_api_errors": "3",
+                  "max_reconciliation_failures": "1",
+                  "cancel_open_orders_on_stop": "True",
+                  "reconciliation_interval_seconds": "30",
+                  "account_sync_interval_seconds": "60",
+                  "pause_on_connection_degraded": "True",
+                  "require_clean_start": "True"
+                },
+                "pilot_run": {
+                  "run_id": "1778500348845-btcusdt-operator",
+                  "state": "running",
+                  "profile": "binance-demo-spot",
+                  "symbol": "BTCUSDT",
+                  "preset": "operator",
+                  "started_at_ms": "1778500348845",
+                  "updated_at_ms": "1778855270340",
+                  "completed_at_ms": "None",
+                  "blockers": "[]",
+                  "transitions": "[{'from': 'idle', 'to': 'blocked', 'timestamp_ms': 1778500348845, 'reason': 'run created'}, {'from': 'blocked', 'to': 'ready', 'timestamp_ms': 1778500348847, 'reason': 'start gate evaluated'}, {'from': 'ready', 'to': 'running', 'timestamp_m",
+                  "checkpoints": "[{'event': 'start_snapshot', 'timestamp_ms': 1778500348857, 'payload': {'message': 'runtime started', 'status': 'running', 'resume_required': False, 'symbol': 'BTCUSDT', 'mode': 'demo', 'interval': '1m', 'session_id': '1778500281135-f111696",
+                  "report_paths": "{}"
+                },
+                "pilot_start_gate": {
+                  "allowed": "True",
+                  "state": "ready",
+                  "checks": "[{'check': 'profile', 'status': 'pass', 'reason': 'binance-demo-spot', 'next_action': 'Select Binance Demo Spot profile', 'blocking': True}, {'check': 'demo_base_url', 'status': 'pass', 'reason': 'https://demo-api.binance.com', 'next_action",
+                  "blockers": "[]",
+                  "next_action": "Start Demo Spot pilot"
+                }
+              }
+            }
+          },
+          "demo_order_errors": {
+            "count": 0,
+            "latest": null
+          },
+          "order_lifecycle": {
+            "count": 0,
+            "latest": null
+          },
+          "audit_tail": {
+            "count": 20,
+            "latest": {
+              "component": "execution",
+              "correlation_id": "90a93c12-13b7-4286-98b1-9a60bc26a694",
+              "event": "demo_clean_start_check",
+              "payload": {
+                "checked_at_ms": 1778855294138,
+                "events": {
+                  "count": 0,
+                  "latest": null
+                },
+                "failures": 0,
+                "known_orders": 0,
+                "needs_operator_action": false,
+                "open_orders": 0,
+                "orphan_orders": 0,
+                "status": "ok"
+              },
+              "timestamp_ms": 1778855294138
             }
           }
         }

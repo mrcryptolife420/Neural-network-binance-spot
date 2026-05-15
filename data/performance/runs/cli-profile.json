@@ -1,0 +1,23 @@
+{
+  "run_id": "cli-profile",
+  "category": "cli",
+  "spans": [
+    {
+      "span_id": "d2b1bc99-bd8",
+      "name": "python -m binance_spot_bot.cli diagnostics",
+      "category": "cli",
+      "started_at_ms": 890808.8435,
+      "parent_span_id": "",
+      "duration_ms": 0.006300000008195639,
+      "status": "ok",
+      "labels": {
+        "command": "python -m binance_spot_bot.cli diagnostics"
+      },
+      "error_type": "",
+      "redacted": true,
+      "live_trading_enabled": false
+    }
+  ],
+  "metrics": [],
+  "live_trading_enabled": false
+}

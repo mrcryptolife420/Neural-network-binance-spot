@@ -1,0 +1,24 @@
+{
+  "status": "ok",
+  "created_at_ms": 1778852227631,
+  "files": [
+    {
+      "path": "files\\stabilization_backlog.json",
+      "sha256": "ca329152762e21ea3c4ad6aa2b5053db"
+    },
+    {
+      "path": "files\\stabilization_ingest_report.json",
+      "sha256": "4d277a597edd9e3c30c09d9a6d0d9919"
+    },
+    {
+      "path": "files\\stabilization_report.json",
+      "sha256": "d9489cfc5549144f36ffc9e62b6273bc"
+    },
+    {
+      "path": "files\\stabilization_workplans.json",
+      "sha256": "7e2d8482d8a360fba7b858f869741afa"
+    }
+  ],
+  "roadmap100_bundle_linked": false,
+  "live_trading_enabled": false
+}

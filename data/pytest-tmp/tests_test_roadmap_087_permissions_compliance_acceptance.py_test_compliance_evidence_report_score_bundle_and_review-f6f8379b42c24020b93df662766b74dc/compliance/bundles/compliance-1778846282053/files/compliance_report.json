@@ -1,0 +1,140 @@
+{
+  "status": "ok",
+  "summary": "local permissions compliance",
+  "no_live_proof": true,
+  "permission_profiles": {
+    "status": "ready",
+    "profiles": {
+      "viewer": {
+        "role": "viewer",
+        "scopes": [
+          "view_dashboard",
+          "view_reports",
+          "view_metrics",
+          "view_evidence"
+        ],
+        "denied_scopes": [],
+        "notes": "",
+        "live_trading_enabled": false,
+        "profile_hash": "43369eb8d595343e001f37a2"
+      },
+      "operator": {
+        "role": "operator",
+        "scopes": [
+          "view_dashboard",
+          "view_reports",
+          "view_metrics",
+          "view_evidence",
+          "ask_ai_ops",
+          "create_action_proposal",
+          "approve_read_only",
+          "approve_safe_artifact",
+          "execute_approved_action",
+          "start_demo",
+          "approve_safe_action"
+        ],
+        "denied_scopes": [],
+        "notes": "",
+        "live_trading_enabled": false,
+        "profile_hash": "33f037253d59978574a83782"
+      },
+      "maintainer": {
+        "role": "maintainer",
+        "scopes": [
+          "view_dashboard",
+          "view_reports",
+          "view_metrics",
+          "view_evidence",
+          "create_action_proposal",
+          "approve_read_only",
+          "approve_safe_artifact",
+          "approve_confirm_required",
+          "approve_destructive_local",
+          "execute_approved_action",
+          "verify_action",
+          "manage_scheduler",
+          "manage_runbooks",
+          "manage_retention"
+        ],
+        "denied_scopes": [],
+        "notes": "",
+        "live_trading_enabled": false,
+        "profile_hash": "ed0e37c3665c07763ce5c412"
+      },
+      "governance_reviewer": {
+        "role": "governance_reviewer",
+        "scopes": [
+          "view_dashboard",
+          "view_reports",
+          "view_evidence",
+          "approve_paper_risk_reducing",
+          "approve_paper_risk_changing",
+          "manage_policies"
+        ],
+        "denied_scopes": [],
+        "notes": "",
+        "live_trading_enabled": false,
+        "profile_hash": "fdfe2b7437a0d9049cc49ebe"
+      },
+      "admin_local": {
+        "role": "admin_local",
+        "scopes": [
+          "view_dashboard",
+          "view_reports",
+          "view_metrics",
+          "view_evidence",
+          "export_audit_bundle",
+          "manage_permissions",
+          "install_local_scheduler",
+          "view_security_findings",
+          "edit_keys"
+        ],
+        "denied_scopes": [],
+        "notes": "",
+        "live_trading_enabled": false,
+        "profile_hash": "21bc53b8fe99e17448cbc6f6"
+      },
+      "key_manager": {
+        "role": "key_manager",
+        "scopes": [
+          "edit_keys"
+        ],
+        "denied_scopes": [],
+        "notes": "",
+        "live_trading_enabled": false,
+        "profile_hash": "97dac35db03149c30cbb470e"
+      },
+      "admin": {
+        "role": "admin",
+        "scopes": [
+          "start_demo",
+          "approve_safe_action",
+          "edit_keys"
+        ],
+        "denied_scopes": [],
+        "notes": "",
+        "live_trading_enabled": false,
+        "profile_hash": "716d7113b320564470432cfe"
+      }
+    },
+    "manifest_hash": "ed224d6fcb3a1407e89184e7",
+    "live_trading_enabled": false
+  },
+  "permission_drift": {
+    "status": "ok",
+    "findings": [],
+    "live_trading_enabled": false
+  },
+  "compliance_score": {
+    "status": "ok",
+    "score": 100,
+    "grade": "A",
+    "blockers": [],
+    "hard_blockers": [],
+    "no_live_proof": true,
+    "live_trading_enabled": false
+  },
+  "evidence_manifest": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_087_permissions_compliance_acceptance.py_test_compliance_evidence_report_score_bundle_and_review-f6f8379b42c24020b93df662766b74dc\\permissions\\permission-profile-manifest.json",
+  "created_at_ms": 1778846282058,
+  "live_trading_enabled": false
+}

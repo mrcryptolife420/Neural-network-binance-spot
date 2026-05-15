@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "files": [
+    {
+      "file": "daily.json",
+      "sha256": "5050aa6fd5d0c8e5...7f5cb03e14770c38",
+      "sha256_parts": [
+        "5050aa6fd5d0c8e5",
+        "8d5dfed499a28cf0",
+        "9ae20d23fc086f06",
+        "7f5cb03e14770c38"
+      ],
+      "bytes": 727
+    },
+    {
+      "file": "weekly.json",
+      "sha256": "2a870bcbfbcfdbe1...28f64f6e0c42f6c7",
+      "sha256_parts": [
+        "2a870bcbfbcfdbe1",
+        "0901616f89779a72",
+        "bc2e35559f832d72",
+        "28f64f6e0c42f6c7"
+      ],
+      "bytes": 728
+    },
+    {
+      "file": "analytics-report.json",
+      "sha256": "fdd8e3ce511adc07...18da927f7412259d",
+      "sha256_parts": [
+        "fdd8e3ce511adc07",
+        "305f7cab6fdb84ef",
+        "33388caf45af9c00",
+        "18da927f7412259d"
+      ],
+      "bytes": 115
+    }
+  ],
+  "no_live_proof": true,
+  "redaction_proof": true,
+  "live_trading_enabled": false
+}

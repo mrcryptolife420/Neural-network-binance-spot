@@ -1,0 +1,79 @@
+{
+  "status": "ok",
+  "run_id": "1778863027675",
+  "removal_decision": "remove_now",
+  "files": [
+    {
+      "name": "removal_gate",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_v2_only_release_evidence_and_readiness_report_a-ce882675ee12464789fba34017803a63\\data\\dashboard-v2\\v2-only-release\\evidence\\1778863027675\\files\\removal_gate.json",
+      "sha256_16": "d785f4afe5af3548"
+    },
+    {
+      "name": "dependency_isolation",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_v2_only_release_evidence_and_readiness_report_a-ce882675ee12464789fba34017803a63\\data\\dashboard-v2\\v2-only-release\\evidence\\1778863027675\\files\\dependency_isolation.json",
+      "sha256_16": "17927667799f30e2"
+    },
+    {
+      "name": "legacy_archive",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_v2_only_release_evidence_and_readiness_report_a-ce882675ee12464789fba34017803a63\\data\\dashboard-v2\\v2-only-release\\evidence\\1778863027675\\files\\legacy_archive.json",
+      "sha256_16": "ca6a5fce0b2c205e"
+    },
+    {
+      "name": "isolation_plan",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_v2_only_release_evidence_and_readiness_report_a-ce882675ee12464789fba34017803a63\\data\\dashboard-v2\\v2-only-release\\evidence\\1778863027675\\files\\isolation_plan.json",
+      "sha256_16": "bfc3b67472b31f03"
+    },
+    {
+      "name": "component_cleanup",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_v2_only_release_evidence_and_readiness_report_a-ce882675ee12464789fba34017803a63\\data\\dashboard-v2\\v2-only-release\\evidence\\1778863027675\\files\\component_cleanup.json",
+      "sha256_16": "3bcd55e36874d9d8"
+    },
+    {
+      "name": "check_all_v2_only",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_v2_only_release_evidence_and_readiness_report_a-ce882675ee12464789fba34017803a63\\data\\dashboard-v2\\v2-only-release\\evidence\\1778863027675\\files\\check_all_v2_only.json",
+      "sha256_16": "9da47a91307ea397"
+    },
+    {
+      "name": "support_evidence",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_v2_only_release_evidence_and_readiness_report_a-ce882675ee12464789fba34017803a63\\data\\dashboard-v2\\v2-only-release\\evidence\\1778863027675\\files\\support_evidence.json",
+      "sha256_16": "64990e3aa41807cc"
+    },
+    {
+      "name": "release_simulation",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_v2_only_release_evidence_and_readiness_report_a-ce882675ee12464789fba34017803a63\\data\\dashboard-v2\\v2-only-release\\evidence\\1778863027675\\files\\release_simulation.json",
+      "sha256_16": "34453e0b1e4e16ca"
+    },
+    {
+      "name": "docs_lock",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_v2_only_release_evidence_and_readiness_report_a-ce882675ee12464789fba34017803a63\\data\\dashboard-v2\\v2-only-release\\evidence\\1778863027675\\files\\docs_lock.json",
+      "sha256_16": "1b47fc7543bcc9be"
+    },
+    {
+      "name": "legacy_test_cleanup",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_v2_only_release_evidence_and_readiness_report_a-ce882675ee12464789fba34017803a63\\data\\dashboard-v2\\v2-only-release\\evidence\\1778863027675\\files\\legacy_test_cleanup.json",
+      "sha256_16": "5f2291ecfe27e079"
+    },
+    {
+      "name": "runtime_state_audit",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_v2_only_release_evidence_and_readiness_report_a-ce882675ee12464789fba34017803a63\\data\\dashboard-v2\\v2-only-release\\evidence\\1778863027675\\files\\runtime_state_audit.json",
+      "sha256_16": "6133703ff2de65a8"
+    },
+    {
+      "name": "removal_patch_plan",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_v2_only_release_evidence_and_readiness_report_a-ce882675ee12464789fba34017803a63\\data\\dashboard-v2\\v2-only-release\\evidence\\1778863027675\\files\\removal_patch_plan.json",
+      "sha256_16": "546b4b11bc7035a2"
+    },
+    {
+      "name": "post_removal_verify",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_v2_only_release_evidence_and_readiness_report_a-ce882675ee12464789fba34017803a63\\data\\dashboard-v2\\v2-only-release\\evidence\\1778863027675\\files\\post_removal_verify.json",
+      "sha256_16": "f335f8a0bfbcaf73"
+    },
+    {
+      "name": "rollback_drill",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_v2_only_release_evidence_and_readiness_report_a-ce882675ee12464789fba34017803a63\\data\\dashboard-v2\\v2-only-release\\evidence\\1778863027675\\files\\rollback_drill.json",
+      "sha256_16": "d41564783bd6f5fd"
+    }
+  ],
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

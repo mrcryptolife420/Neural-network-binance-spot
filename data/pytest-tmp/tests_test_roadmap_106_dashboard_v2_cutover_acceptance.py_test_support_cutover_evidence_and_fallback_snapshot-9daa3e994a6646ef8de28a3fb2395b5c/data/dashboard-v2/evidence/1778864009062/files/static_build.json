@@ -1,0 +1,14 @@
+{
+  "status": "warn",
+  "build_dir": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_106_dashboard_v2_cutover_acceptance.py_test_support_cutover_evidence_and_fallback_snapshot-9daa3e994a6646ef8de28a3fb2395b5c\\src\\binance_spot_bot\\dashboard_v2\\static",
+  "index_exists": false,
+  "manifest_exists": false,
+  "asset_count": 0,
+  "external_refs": [],
+  "warnings": [
+    "static build missing; Vite dev server or fallback can still be used"
+  ],
+  "hard_blockers": [],
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

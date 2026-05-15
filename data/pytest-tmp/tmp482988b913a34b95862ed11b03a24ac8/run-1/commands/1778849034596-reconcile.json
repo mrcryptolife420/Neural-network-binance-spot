@@ -1,0 +1,11 @@
+{
+  "command_id": "1778849034596-reconcile",
+  "type": "reconcile",
+  "created_at_ms": 1778849034596,
+  "status": "processed",
+  "payload": {},
+  "processed_at_ms": 1778849034597,
+  "result": {
+    "ok": true
+  }
+}

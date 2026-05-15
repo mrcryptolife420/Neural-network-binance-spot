@@ -1,0 +1,89 @@
+{
+  "status": "ready",
+  "datasets": [
+    {
+      "dataset_id": "BTCUSDT_1m_strategy_calibration",
+      "symbol": "BTCUSDT",
+      "interval": "1m",
+      "candles": 160,
+      "features": 140,
+      "labels": 137,
+      "train": 84,
+      "validation": 28,
+      "test": 28,
+      "feature_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmpffcec6fab5244d39bf28d2d059a0db73\\data\\features\\BTCUSDT_1m_strategy_calibration_features.jsonl",
+      "label_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmpffcec6fab5244d39bf28d2d059a0db73\\data\\features\\BTCUSDT_1m_strategy_calibration_labels.jsonl",
+      "leakage_guard": "pass"
+    }
+  ],
+  "symbol_rankings": [
+    {
+      "symbol": "BTCUSDT",
+      "score": 0.0146,
+      "status": "ready",
+      "trend": 0.003395,
+      "volatility": 0.001241
+    }
+  ],
+  "indicator_rankings": [
+    {
+      "profile": "auto",
+      "ready_symbols": 1,
+      "avg_confidence": 0.55,
+      "score": 0.55
+    },
+    {
+      "profile": "trend",
+      "ready_symbols": 1,
+      "avg_confidence": 0.55,
+      "score": 0.55
+    },
+    {
+      "profile": "momentum",
+      "ready_symbols": 1,
+      "avg_confidence": 0.55,
+      "score": 0.55
+    },
+    {
+      "profile": "volatility",
+      "ready_symbols": 1,
+      "avg_confidence": 0.55,
+      "score": 0.55
+    },
+    {
+      "profile": "range",
+      "ready_symbols": 1,
+      "avg_confidence": 0.55,
+      "score": 0.55
+    }
+  ],
+  "confidence_thresholds": [
+    {
+      "symbol": "BTCUSDT",
+      "interval": "1m",
+      "status": "ready",
+      "trend": 0.003395,
+      "volatility": 0.001241,
+      "hit_rate_proxy": 0.4969,
+      "recommended_min_confidence": 0.5617
+    }
+  ],
+  "promotion_gate": {
+    "status": "paper_approved",
+    "scope": "paper_only",
+    "blockers": [],
+    "operator_confirmation_required": true,
+    "live_trading_enabled": false,
+    "backtests": [
+      {
+        "symbol": "BTCUSDT",
+        "status": "ready",
+        "trades": 0,
+        "final_equity": "1000.0000",
+        "max_drawdown": "0"
+      }
+    ]
+  },
+  "report_paths": {},
+  "live_trading_enabled": false
+}

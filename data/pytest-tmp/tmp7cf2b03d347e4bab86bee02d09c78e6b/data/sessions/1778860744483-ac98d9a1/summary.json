@@ -1,0 +1,210 @@
+{
+  "session_id": "1778860744483-ac98d9a1",
+  "mode": "demo",
+  "symbol": "BTCUSDT",
+  "interval": "1m",
+  "started_at_ms": 1778860744483,
+  "ended_at_ms": null,
+  "pnl": "0",
+  "max_drawdown": "0",
+  "trades": 0,
+  "blocks": 0,
+  "model_version": "rule-baseline-0.1",
+  "status": "running",
+  "metadata": {
+    "source": "demo",
+    "model_alias": "",
+    "demo_trading_armed": true,
+    "exchange_profile": "binance-demo-spot",
+    "demo_pilot": {
+      "pilot_name": "smoke",
+      "duration_minutes": 15,
+      "max_demo_orders": 5,
+      "max_rejects": 2,
+      "max_api_errors": 3,
+      "max_reconciliation_failures": 1,
+      "cancel_open_orders_on_stop": true,
+      "reconciliation_interval_seconds": 30,
+      "account_sync_interval_seconds": 60,
+      "pause_on_connection_degraded": true,
+      "require_clean_start": true
+    },
+    "pilot_run": {
+      "run_id": "1778860744500-btcusdt-smoke",
+      "state": "resume_required",
+      "profile": "binance-demo-spot",
+      "symbol": "BTCUSDT",
+      "preset": "smoke",
+      "started_at_ms": 1778860744500,
+      "updated_at_ms": 1778860744503,
+      "completed_at_ms": null,
+      "blockers": [
+        {
+          "check": "pilot_state",
+          "status": "fail",
+          "reason": "resume_required",
+          "next_action": "Resolve pilot recovery before starting",
+          "blocking": true
+        }
+      ],
+      "transitions": [
+        {
+          "from": "idle",
+          "to": "resume_required",
+          "timestamp_ms": 1778860744500,
+          "reason": "run created"
+        },
+        {
+          "from": "resume_required",
+          "to": "resume_required",
+          "timestamp_ms": 1778860744503,
+          "reason": "start blocked by pilot state"
+        }
+      ],
+      "checkpoints": [],
+      "report_paths": {}
+    },
+    "pilot_start_gate": {
+      "allowed": false,
+      "state": "resume_required",
+      "checks": [
+        {
+          "check": "profile",
+          "status": "pass",
+          "reason": "binance-demo-spot",
+          "next_action": "Select Binance Demo Spot profile",
+          "blocking": true
+        },
+        {
+          "check": "demo_base_url",
+          "status": "pass",
+          "reason": "https://demo-api.binance.com",
+          "next_action": "Use Demo Spot base URL",
+          "blocking": true
+        },
+        {
+          "check": "live_disabled",
+          "status": "pass",
+          "reason": "live disabled",
+          "next_action": "Disable live trading",
+          "blocking": true
+        },
+        {
+          "check": "credentials",
+          "status": "pass",
+          "reason": "Credentials loaded for signed checks",
+          "next_action": "Load Demo Spot credentials",
+          "blocking": true
+        },
+        {
+          "check": "connection",
+          "status": "pass",
+          "reason": "allowed",
+          "next_action": "Test connection",
+          "blocking": true
+        },
+        {
+          "check": "account_can_trade",
+          "status": "pass",
+          "reason": "ok",
+          "next_action": "Sync Demo Spot account",
+          "blocking": true
+        },
+        {
+          "check": "filters_loaded",
+          "status": "pass",
+          "reason": "symbol filters ready",
+          "next_action": "Refresh symbol filters",
+          "blocking": true
+        },
+        {
+          "check": "risk_limits",
+          "status": "pass",
+          "reason": "configured",
+          "next_action": "Set risk limits",
+          "blocking": true
+        },
+        {
+          "check": "pilot_preset",
+          "status": "pass",
+          "reason": "smoke",
+          "next_action": "Choose pilot preset",
+          "blocking": true
+        },
+        {
+          "check": "armed",
+          "status": "pass",
+          "reason": "armed",
+          "next_action": "Arm Demo Spot trading",
+          "blocking": true
+        },
+        {
+          "check": "clean_start",
+          "status": "fail",
+          "reason": "needs_operator_action",
+          "next_action": "Reconcile/cancel before start",
+          "blocking": true
+        },
+        {
+          "check": "no_open_orders",
+          "status": "fail",
+          "reason": "1 open orders",
+          "next_action": "Cancel or reconcile open orders",
+          "blocking": true
+        },
+        {
+          "check": "runtime_idle",
+          "status": "pass",
+          "reason": "running",
+          "next_action": "Stop current runtime",
+          "blocking": true
+        },
+        {
+          "check": "Clean start",
+          "status": "fail",
+          "reason": "needs_operator_action",
+          "next_action": "Resolve dashboard checklist blocker",
+          "blocking": true
+        },
+        {
+          "check": "No orphan orders",
+          "status": "fail",
+          "reason": "1 orphan orders",
+          "next_action": "Resolve dashboard checklist blocker",
+          "blocking": true
+        }
+      ],
+      "blockers": [
+        {
+          "check": "clean_start",
+          "status": "fail",
+          "reason": "needs_operator_action",
+          "next_action": "Reconcile/cancel before start",
+          "blocking": true
+        },
+        {
+          "check": "no_open_orders",
+          "status": "fail",
+          "reason": "1 open orders",
+          "next_action": "Cancel or reconcile open orders",
+          "blocking": true
+        },
+        {
+          "check": "Clean start",
+          "status": "fail",
+          "reason": "needs_operator_action",
+          "next_action": "Resolve dashboard checklist blocker",
+          "blocking": true
+        },
+        {
+          "check": "No orphan orders",
+          "status": "fail",
+          "reason": "1 orphan orders",
+          "next_action": "Resolve dashboard checklist blocker",
+          "blocking": true
+        }
+      ],
+      "next_action": "Reconcile/cancel before start"
+    }
+  }
+}

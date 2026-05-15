@@ -1,0 +1,57 @@
+{
+  "checksum": "c263bcc87353b9faeefa62d4a4cd1661",
+  "created_at_ms": 1778852604993,
+  "data_quality_summary": {
+    "duplicate_count": 0,
+    "gap_count": 0,
+    "issues": [],
+    "passed": true,
+    "status": "pass"
+  },
+  "dataset_id": "wizard-demo",
+  "duplicate_count": 0,
+  "feature_range": {
+    "count": 85,
+    "end": 5399999,
+    "start": 359999
+  },
+  "feature_schema_hash": "3e8b2d28093cfcf0",
+  "feature_set_version": "features-v1",
+  "fee_bps": "10",
+  "gap_count": 0,
+  "interval": "1m",
+  "label_horizon": 2,
+  "label_name": "future_return_up",
+  "label_range": {
+    "count": 83,
+    "end": 5279999,
+    "start": 359999
+  },
+  "raw_data_range": {
+    "count": 90,
+    "end": 5399999,
+    "start": 0
+  },
+  "row_count": 85,
+  "slippage_bps": "5",
+  "source": "demo",
+  "spread_bps": "0",
+  "symbols": [
+    "BTCUSDT"
+  ],
+  "test_range": {
+    "count": 20,
+    "end": 4559999,
+    "start": 3419999
+  },
+  "train_range": {
+    "count": 36,
+    "end": 2459999,
+    "start": 359999
+  },
+  "validation_range": {
+    "count": 15,
+    "end": 3359999,
+    "start": 2519999
+  }
+}

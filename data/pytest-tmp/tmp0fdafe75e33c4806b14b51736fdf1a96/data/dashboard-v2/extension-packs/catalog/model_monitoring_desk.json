@@ -1,0 +1,305 @@
+{
+  "manifest": {
+    "pack_id": "model_monitoring_desk",
+    "name": "Model Monitoring Desk",
+    "description": "Local pluginless Dashboard V2 pack for Model Monitoring Desk.",
+    "version": "1.0",
+    "pack_type": "model_ops_pack",
+    "schema_version": 2,
+    "author": "local",
+    "created_at_ms": 1778866221499,
+    "compatible_workspace_schema_versions": [
+      2
+    ],
+    "required_widget_types": [
+      "active_model",
+      "model_health",
+      "monitoring_alerts",
+      "no_live_banner",
+      "prediction_drift",
+      "signal_confidence",
+      "stop_button"
+    ],
+    "required_dashboard_v2_features": [
+      "workspaces",
+      "widget_registry"
+    ],
+    "mode_scope": "all_safe_modes",
+    "operator_level": "operator",
+    "tags": [
+      "model_ops",
+      "local-only",
+      "no-live"
+    ],
+    "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+    "live_trading_enabled": false,
+    "content_hash": "127ccc8614c4f175"
+  },
+  "content": {
+    "workspace_templates": [
+      {
+        "workspace_id": "model-monitoring-desk",
+        "name": "Model Monitoring Desk",
+        "description": "Dashboard V2 local-only preset: model_ops",
+        "version": "2.0",
+        "operator_level": "operator",
+        "mode_scope": "all_safe_modes",
+        "layout": {
+          "grid": {
+            "columns": 12,
+            "row_height": 90,
+            "gap": 12
+          },
+          "panels": [
+            {
+              "panel_id": "panel_1",
+              "title": "No Live Banner",
+              "x": 0,
+              "y": 0,
+              "w": 4,
+              "h": 3,
+              "widget_id": "no_live_banner_1",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": true,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "no_live_proof"
+            },
+            {
+              "panel_id": "panel_2",
+              "title": "Stop Button",
+              "x": 6,
+              "y": 0,
+              "w": 4,
+              "h": 3,
+              "widget_id": "stop_button_2",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": true,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "runtime_controls"
+            },
+            {
+              "panel_id": "panel_3",
+              "title": "Active Model",
+              "x": 0,
+              "y": 4,
+              "w": 4,
+              "h": 3,
+              "widget_id": "active_model_3",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "model_status"
+            },
+            {
+              "panel_id": "panel_4",
+              "title": "Model Health",
+              "x": 6,
+              "y": 4,
+              "w": 4,
+              "h": 3,
+              "widget_id": "model_health_4",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "model_status"
+            },
+            {
+              "panel_id": "panel_5",
+              "title": "Signal Confidence",
+              "x": 0,
+              "y": 8,
+              "w": 4,
+              "h": 3,
+              "widget_id": "signal_confidence_5",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "signals"
+            },
+            {
+              "panel_id": "panel_6",
+              "title": "Prediction Drift",
+              "x": 6,
+              "y": 8,
+              "w": 4,
+              "h": 3,
+              "widget_id": "prediction_drift_6",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "model_status"
+            },
+            {
+              "panel_id": "panel_7",
+              "title": "Monitoring Alerts",
+              "x": 0,
+              "y": 12,
+              "w": 4,
+              "h": 3,
+              "widget_id": "monitoring_alerts_7",
+              "min_w": 2,
+              "min_h": 2,
+              "pinned": false,
+              "collapsed": false,
+              "refresh_policy": "snapshot",
+              "query_scope": "alerts"
+            }
+          ],
+          "widgets": [
+            {
+              "widget_id": "no_live_banner_1",
+              "widget_type": "no_live_banner",
+              "title": "No Live Banner",
+              "settings": {},
+              "locked": true,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "no_live_proof"
+              ]
+            },
+            {
+              "widget_id": "stop_button_2",
+              "widget_type": "stop_button",
+              "title": "Stop Button",
+              "settings": {},
+              "locked": true,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "runtime_controls"
+              ]
+            },
+            {
+              "widget_id": "active_model_3",
+              "widget_type": "active_model",
+              "title": "Active Model",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "model_status"
+              ]
+            },
+            {
+              "widget_id": "model_health_4",
+              "widget_type": "model_health",
+              "title": "Model Health",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "model_status"
+              ]
+            },
+            {
+              "widget_id": "signal_confidence_5",
+              "widget_type": "signal_confidence",
+              "title": "Signal Confidence",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "signals"
+              ]
+            },
+            {
+              "widget_id": "prediction_drift_6",
+              "widget_type": "prediction_drift",
+              "title": "Prediction Drift",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "model_status"
+              ]
+            },
+            {
+              "widget_id": "monitoring_alerts_7",
+              "widget_type": "monitoring_alerts",
+              "title": "Monitoring Alerts",
+              "settings": {},
+              "locked": false,
+              "safe_modes": [
+                "demo",
+                "paper",
+                "testnet-readiness"
+              ],
+              "data_sources": [
+                "alerts"
+              ]
+            }
+          ]
+        },
+        "safety_widgets_locked": true,
+        "live_trading_enabled": false,
+        "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+        "metadata": {
+          "created_at_ms": 1778866221499,
+          "updated_at_ms": 1778866221499,
+          "owner": "local-operator",
+          "schema_version": 2
+        }
+      }
+    ],
+    "widget_presets": [],
+    "analytics_presets": [],
+    "watchlists": [],
+    "workflow_steps": [],
+    "docs": "# Model Monitoring Desk\n\nLOCAL REALTIME DASHBOARD - NO LIVE TRADING\n",
+    "evidence_expectations": {
+      "workspace_validation": true,
+      "no_live_proof": true
+    }
+  },
+  "dependencies": [],
+  "compatibility": {
+    "workspace_schema_versions": [
+      2
+    ],
+    "dashboard_v2_features": [
+      "workspaces",
+      "widget_registry",
+      "analytics_query"
+    ],
+    "safe_modes": [
+      "demo",
+      "paper",
+      "testnet-readiness"
+    ]
+  }
+}

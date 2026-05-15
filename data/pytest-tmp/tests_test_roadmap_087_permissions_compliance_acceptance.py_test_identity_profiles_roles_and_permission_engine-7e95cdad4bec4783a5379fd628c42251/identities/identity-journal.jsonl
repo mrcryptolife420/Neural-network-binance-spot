@@ -1,0 +1,4 @@
+{"event": "identity_saved", "operator_id": "op-2bcb43cbc8", "roles": ["viewer"], "disabled": false, "live_trading_enabled": false}
+{"event": "identity_saved", "operator_id": "op-037aeaeaf4", "roles": ["operator"], "disabled": false, "live_trading_enabled": false}
+{"event": "identity_saved", "operator_id": "op-de0d979d82", "roles": ["maintainer"], "disabled": false, "live_trading_enabled": false}
+{"event": "identity_saved", "operator_id": "op-037aeaeaf4", "roles": ["operator"], "disabled": true, "live_trading_enabled": false}

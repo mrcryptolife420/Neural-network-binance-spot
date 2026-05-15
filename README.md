@@ -37,4 +37,6 @@ This starts Streamlit locally, chooses a free port, opens the default browser, a
 Never put real API keys in the repository. Use environment variables or a secret manager.
 The dashboard supports session-only demo/testnet key entry. Keys are masked, never stored in repo files, and live mode is not selectable.
 
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/mrcryptolife420/Neural-network-binance-spot?utm_source=oss&utm_medium=github&utm_campaign=mrcryptolife420%2FNeural-network-binance-spot&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
+
 Meer details: [docs/local-dashboard.md](docs/local-dashboard.md).

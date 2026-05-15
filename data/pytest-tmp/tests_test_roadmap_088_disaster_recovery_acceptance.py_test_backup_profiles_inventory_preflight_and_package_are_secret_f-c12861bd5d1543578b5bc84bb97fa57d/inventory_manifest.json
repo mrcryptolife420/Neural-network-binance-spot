@@ -1,0 +1,72 @@
+{
+  "status": "ok",
+  "items": [
+    {
+      "path": ".env",
+      "category": "state",
+      "suffix": "",
+      "size_bytes": 26,
+      "modified_at": 1778845572433,
+      "sha256": "",
+      "redacted": true,
+      "required": false,
+      "stale": false,
+      "include_eligible": false,
+      "restore_priority": 50
+    },
+    {
+      "path": "action-center/decision-journal.jsonl",
+      "category": "action_center",
+      "suffix": ".jsonl",
+      "size_bytes": 25,
+      "modified_at": 1778845572432,
+      "sha256": "361618d2cec875edce782f82",
+      "redacted": true,
+      "required": false,
+      "stale": false,
+      "include_eligible": true,
+      "restore_priority": 10
+    },
+    {
+      "path": "disaster-recovery/backup_preflight_report.json",
+      "category": "state",
+      "suffix": ".json",
+      "size_bytes": 1853,
+      "modified_at": 1778845572459,
+      "sha256": "5a1cb64fdaf061166e154454",
+      "redacted": true,
+      "required": false,
+      "stale": false,
+      "include_eligible": true,
+      "restore_priority": 50
+    },
+    {
+      "path": "key.pem",
+      "category": "state",
+      "suffix": ".pem",
+      "size_bytes": 7,
+      "modified_at": 1778845572434,
+      "sha256": "",
+      "redacted": true,
+      "required": false,
+      "stale": false,
+      "include_eligible": false,
+      "restore_priority": 50
+    },
+    {
+      "path": "reports/report.json",
+      "category": "reports",
+      "suffix": ".json",
+      "size_bytes": 43,
+      "modified_at": 1778845572430,
+      "sha256": "b74a85e010ec63393ba3744c",
+      "redacted": true,
+      "required": false,
+      "stale": false,
+      "include_eligible": true,
+      "restore_priority": 20
+    }
+  ],
+  "warnings": [],
+  "live_trading_enabled": false
+}

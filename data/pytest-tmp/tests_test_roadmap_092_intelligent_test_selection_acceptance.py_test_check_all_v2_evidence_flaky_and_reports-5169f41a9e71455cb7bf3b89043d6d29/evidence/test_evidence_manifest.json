@@ -1,0 +1,13 @@
+{
+  "status": "ready",
+  "files": [
+    {
+      "source": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_092_intelligent_test_selection_acceptance.py_test_check_all_v2_evidence_flaky_and_reports-5169f41a9e71455cb7bf3b89043d6d29\\data\\test-runs\\reports\\regression-risk-report.json",
+      "bundle_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_092_intelligent_test_selection_acceptance.py_test_check_all_v2_evidence_flaky_and_reports-5169f41a9e71455cb7bf3b89043d6d29\\evidence\\files\\regression-risk-report.json",
+      "sha256": "7e856d6e229f255b1bb5e7db"
+    }
+  ],
+  "no_live_proof": true,
+  "security_redaction_proof": true,
+  "live_trading_enabled": false
+}

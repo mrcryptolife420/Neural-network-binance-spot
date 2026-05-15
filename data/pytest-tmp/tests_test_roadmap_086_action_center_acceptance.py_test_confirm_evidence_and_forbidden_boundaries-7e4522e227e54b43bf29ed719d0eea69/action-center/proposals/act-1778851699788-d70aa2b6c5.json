@@ -1,0 +1,48 @@
+{
+  "proposal": {
+    "proposal_id": "act-1778851699788-d70aa2b6c5",
+    "title": "Metrics Compact",
+    "description": "",
+    "command": {
+      "command": "metrics-compact",
+      "args": [
+        "--confirm",
+        "COMPACT_METRICS"
+      ],
+      "timeout_seconds": 60
+    },
+    "source": "operator_manual",
+    "category": "diagnostics",
+    "safety_class": "destructive_confirm_required",
+    "expected_outputs": [],
+    "required_evidence": [
+      {
+        "evidence_id": "preview-compaction",
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_086_action_center_acceptance.py_test_confirm_evidence_and_forbidden_boundaries-7e4522e227e54b43bf29ed719d0eea69\\preview.json",
+        "description": "preview first",
+        "required": true
+      }
+    ],
+    "preconditions": [],
+    "confirm_phrase": "COMPACT_METRICS",
+    "forbidden_reasons": [],
+    "related_runbook_id": "",
+    "related_incident_id": "",
+    "related_evidence_ids": [],
+    "status": "proposed",
+    "created_at_ms": 1778851699788,
+    "expires_at_ms": 0,
+    "no_auto_execute": true,
+    "live_trading_enabled": false,
+    "proposal_hash": "17b9ebd53ed6210371c2aa2c"
+  },
+  "status": "approved",
+  "decisions": [
+    "dec-1778851699808",
+    "dec-1778851699830"
+  ],
+  "executions": [],
+  "verifications": [],
+  "updated_at_ms": 1778851699832,
+  "live_trading_enabled": false
+}

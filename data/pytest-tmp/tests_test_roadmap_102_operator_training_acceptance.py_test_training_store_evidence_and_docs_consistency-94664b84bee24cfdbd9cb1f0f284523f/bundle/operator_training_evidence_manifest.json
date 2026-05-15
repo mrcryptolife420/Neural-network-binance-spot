@@ -1,0 +1,11 @@
+{
+  "status": "ok",
+  "created_at_ms": 1778853331472,
+  "files": [
+    {
+      "path": "files\\operator-lesson-no-live.json",
+      "sha256": "ee4e6a46a57d53baf96286e3a041b2df"
+    }
+  ],
+  "live_trading_enabled": false
+}

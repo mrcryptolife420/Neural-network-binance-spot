@@ -1,0 +1,11 @@
+{
+  "command_id": "1778856317505-unknown",
+  "type": "unknown",
+  "created_at_ms": 1778856317505,
+  "status": "ignored",
+  "payload": {},
+  "processed_at_ms": 1778856317538,
+  "result": {
+    "reason": "unsupported command"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "status": "blocked",
+  "executive_summary": "Paper OS stabilization report generated with live trading disabled.",
+  "roadmap100_input_status": "review",
+  "backlog_summary": {
+    "status": "review",
+    "items": 2
+  },
+  "gate": {
+    "status": "blocked",
+    "profile": "standard",
+    "blockers": [
+      "open unwaived P1 stabilization items"
+    ],
+    "open_p0": 0,
+    "open_p1": 2,
+    "live_trading_enabled": false
+  },
+  "check_reliability": {},
+  "evidence_gaps": {},
+  "readiness_score_delta": 0,
+  "recommended_next_fixes": [
+    "production_readiness is blocked",
+    "Missing safety_invariants"
+  ],
+  "no_live_proof": "required",
+  "live_trading_enabled": false
+}

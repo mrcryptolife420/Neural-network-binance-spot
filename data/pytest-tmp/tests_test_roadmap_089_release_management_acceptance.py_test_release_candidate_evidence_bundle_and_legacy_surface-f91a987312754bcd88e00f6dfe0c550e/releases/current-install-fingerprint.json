@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "payload": {
+    "version": "0.1.0",
+    "python_version": "3.14.5",
+    "platform_name": "Windows-11-10.0.26200-SP0",
+    "git_available": true,
+    "git_commit": "9483da579a8cb660",
+    "git_dirty": true,
+    "data_dir_hash": "e96b517e7a0d6d987b22c28d",
+    "components": [
+      {
+        "name": "config_schema",
+        "version": "1",
+        "status": "ok"
+      },
+      {
+        "name": "data_schema",
+        "version": "1",
+        "status": "ok"
+      },
+      {
+        "name": "metrics_schema",
+        "version": "1",
+        "status": "ok"
+      },
+      {
+        "name": "permission_schema",
+        "version": "1",
+        "status": "ok"
+      },
+      {
+        "name": "backup_schema",
+        "version": "1",
+        "status": "ok"
+      }
+    ],
+    "created_at_ms": 1778867141267,
+    "live_trading_enabled": false,
+    "fingerprint_hash": "068a45d4d6e24765aed3f136"
+  },
+  "version_source": "pyproject",
+  "live_trading_enabled": false
+}

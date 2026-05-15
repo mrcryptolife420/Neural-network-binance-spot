@@ -1,0 +1,49 @@
+{
+  "backup_id": "backup-1778864011641",
+  "profile": {
+    "profile_id": "paper_ops_full",
+    "description": "Full local paper ops state without secrets.",
+    "includes": [
+      {
+        "pattern": "**/*",
+        "category": "state"
+      }
+    ],
+    "excludes": [
+      {
+        "pattern": "*.key",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*.pem",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*credential*",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*listenKey*",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*secret*",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": ".env",
+        "reason": "secret_or_unsafe"
+      }
+    ],
+    "live_trading_enabled": false,
+    "profile_hash": "45129c6e81b2788ecf5a3e99"
+  },
+  "files": [],
+  "created_at_ms": 1778864011648,
+  "source_fingerprint": "af14c7622a0ace2b906f4d0f",
+  "zip_sha256": "edd6dc8a059aaada9afd7732",
+  "no_live_proof": true,
+  "redaction_proof": true,
+  "live_trading_enabled": false,
+  "manifest_hash": "37fc3a868da01e9d90f50f6b"
+}

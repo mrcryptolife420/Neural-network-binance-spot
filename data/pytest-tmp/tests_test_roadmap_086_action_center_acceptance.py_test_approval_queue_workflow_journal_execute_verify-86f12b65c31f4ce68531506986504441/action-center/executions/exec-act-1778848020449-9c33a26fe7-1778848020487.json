@@ -1,0 +1,16 @@
+{
+  "execution_id": "exec-act-1778848020449-9c33a26fe7-1778848020487",
+  "proposal_id": "act-1778848020449-9c33a26fe7",
+  "started_at_ms": 1778848020487,
+  "finished_at_ms": 1778848020487,
+  "status": "executed",
+  "exit_code": 0,
+  "stdout_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_086_action_center_acceptance.py_test_approval_queue_workflow_journal_execute_verify-86f12b65c31f4ce68531506986504441\\action-center\\executions\\exec-act-1778848020449-9c33a26fe7-1778848020487.stdout.txt",
+  "stderr_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_086_action_center_acceptance.py_test_approval_queue_workflow_journal_execute_verify-86f12b65c31f4ce68531506986504441\\action-center\\executions\\exec-act-1778848020449-9c33a26fe7-1778848020487.stderr.txt",
+  "artifacts": [
+    "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_086_action_center_acceptance.py_test_approval_queue_workflow_journal_execute_verify-86f12b65c31f4ce68531506986504441\\action-center\\executions\\exec-act-1778848020449-9c33a26fe7-1778848020487.stdout.txt",
+    "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_086_action_center_acceptance.py_test_approval_queue_workflow_journal_execute_verify-86f12b65c31f4ce68531506986504441\\action-center\\executions\\exec-act-1778848020449-9c33a26fe7-1778848020487.stderr.txt"
+  ],
+  "redacted": true,
+  "live_trading_enabled": false
+}

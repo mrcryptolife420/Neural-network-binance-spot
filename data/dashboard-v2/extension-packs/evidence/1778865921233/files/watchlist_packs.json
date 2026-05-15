@@ -1,0 +1,48 @@
+{
+  "status": "ok",
+  "watchlist_packs": [
+    {
+      "pack_id": "binance_spot_majors",
+      "symbols": [
+        "BTCUSDT",
+        "ETHUSDT",
+        "BNBUSDT",
+        "SOLUSDT",
+        "XRPUSDT"
+      ],
+      "status": "ok",
+      "invalid_symbols": []
+    },
+    {
+      "pack_id": "low_scope_smoke_watchlist",
+      "symbols": [
+        "BTCUSDT"
+      ],
+      "status": "ok",
+      "invalid_symbols": []
+    },
+    {
+      "pack_id": "operator_demo_watchlist",
+      "symbols": [
+        "BTCUSDT",
+        "ETHUSDT"
+      ],
+      "status": "ok",
+      "invalid_symbols": []
+    },
+    {
+      "pack_id": "stablecoin_pairs",
+      "symbols": [
+        "BTCUSDT",
+        "ETHUSDT",
+        "BNBUSDT",
+        "ADAUSDT",
+        "DOGEUSDT"
+      ],
+      "status": "ok",
+      "invalid_symbols": []
+    }
+  ],
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

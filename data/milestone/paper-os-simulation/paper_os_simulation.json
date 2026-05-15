@@ -1,0 +1,32 @@
+{
+  "record_id": "paper_os_simulation-1778851091796",
+  "kind": "paper_os_simulation",
+  "status": "ready",
+  "payload": {
+    "status": "ready",
+    "profile": "standard_milestone",
+    "inventory_status": "ready",
+    "subsystems": 19,
+    "invariants": [
+      "live mode not selectable",
+      "ui modes are demo paper testnet-readiness only",
+      "check-all safe env present",
+      "milestone runner forbids live/order/account commands",
+      "dashboard states no-live milestone",
+      "reports force live_trading_enabled false"
+    ],
+    "no_live_proof_status": "ok",
+    "roadmap_traceability_status": "review",
+    "paper_session": {
+      "steps": 3,
+      "fills": 0,
+      "risk_blocks_expected": true
+    },
+    "blockers": [],
+    "live_trading_enabled": false,
+    "signed_endpoints_used": false,
+    "account_endpoints_required": false
+  },
+  "created_at_ms": 1778851091796,
+  "live_trading_enabled": false
+}

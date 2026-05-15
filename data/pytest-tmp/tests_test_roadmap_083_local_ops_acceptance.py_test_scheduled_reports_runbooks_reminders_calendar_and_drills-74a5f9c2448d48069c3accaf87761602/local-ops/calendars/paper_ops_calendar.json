@@ -1,0 +1,63 @@
+{
+  "status": "ready",
+  "items": [
+    {
+      "id": "daily-paper-deployment",
+      "title": "Daily paper deployment",
+      "type": "daily",
+      "config": {
+        "time": "18:00"
+      },
+      "enabled": true
+    },
+    {
+      "id": "daily-data-quality",
+      "title": "Daily data quality",
+      "type": "daily",
+      "config": {
+        "time": "18:05"
+      },
+      "enabled": true
+    },
+    {
+      "id": "daily-local-ops",
+      "title": "Daily local ops snapshot",
+      "type": "daily",
+      "config": {
+        "time": "18:10"
+      },
+      "enabled": true
+    },
+    {
+      "id": "weekly-governance",
+      "title": "Weekly governance",
+      "type": "weekly",
+      "config": {
+        "weekday": "monday",
+        "time": "09:00"
+      },
+      "enabled": true
+    },
+    {
+      "id": "weekly-support-verify",
+      "title": "Weekly support verify",
+      "type": "weekly",
+      "config": {
+        "weekday": "friday",
+        "time": "16:00"
+      },
+      "enabled": true
+    },
+    {
+      "id": "weekly-data-growth",
+      "title": "Weekly data growth",
+      "type": "weekly",
+      "config": {
+        "weekday": "friday",
+        "time": "16:10"
+      },
+      "enabled": true
+    }
+  ],
+  "live_trading_enabled": false
+}

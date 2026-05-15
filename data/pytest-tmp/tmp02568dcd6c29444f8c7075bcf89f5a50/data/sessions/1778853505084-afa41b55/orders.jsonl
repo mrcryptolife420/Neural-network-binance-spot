@@ -1,0 +1,3 @@
+{"demo_trading_armed": false, "mode": "paper", "order_request": null, "response": {"reason": "insufficient base balance"}, "status": "BLOCKED", "timestamp_ms": 359999}
+{"demo_trading_armed": false, "mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 419999}
+{"demo_trading_armed": false, "mode": "paper", "order_request": null, "response": {"reason": "model returned HOLD"}, "status": "BLOCKED", "timestamp_ms": 479999}

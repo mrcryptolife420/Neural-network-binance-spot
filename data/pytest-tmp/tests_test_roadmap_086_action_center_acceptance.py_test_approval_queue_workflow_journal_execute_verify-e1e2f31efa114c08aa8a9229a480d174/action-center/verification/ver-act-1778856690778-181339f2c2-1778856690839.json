@@ -1,0 +1,39 @@
+{
+  "verification_id": "ver-act-1778856690778-181339f2c2-1778856690839",
+  "execution_id": "exec-act-1778856690778-181339f2c2-1778856690817",
+  "proposal_id": "act-1778856690778-181339f2c2",
+  "checks": [
+    {
+      "name": "execution completed",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "no-live proof",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "output redacted",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "stdout_path exists",
+      "status": "pass",
+      "detail": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_086_action_center_acceptance.py_test_approval_queue_workflow_journal_execute_verify-e1e2f31efa114c08aa8a9229a480d174\\action-center\\executions\\exec-act-1778856690778-181339f2c2-1778856690817.stdout.txt"
+    },
+    {
+      "name": "stderr_path exists",
+      "status": "pass",
+      "detail": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_086_action_center_acceptance.py_test_approval_queue_workflow_journal_execute_verify-e1e2f31efa114c08aa8a9229a480d174\\action-center\\executions\\exec-act-1778856690778-181339f2c2-1778856690817.stderr.txt"
+    }
+  ],
+  "status": "pass",
+  "blockers": [],
+  "warnings": [],
+  "artifacts": [],
+  "next_action": "",
+  "timestamp_ms": 1778856690839,
+  "live_trading_enabled": false
+}

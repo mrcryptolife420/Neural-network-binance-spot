@@ -1,0 +1,9 @@
+{
+  "status": "blocked",
+  "session_state_offenders": [
+    "src/binance_spot_bot/dashboard_v2/release_hardening.py"
+  ],
+  "v2_state_owned_by_runtime_bridge": true,
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

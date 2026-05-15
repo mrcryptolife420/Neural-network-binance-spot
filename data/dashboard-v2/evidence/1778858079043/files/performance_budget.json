@@ -1,0 +1,118 @@
+{
+  "status": "warn",
+  "json": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\dashboard-v2\\performance\\budget.json",
+  "markdown": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\dashboard-v2\\performance\\budget.md",
+  "report": {
+    "status": "warn",
+    "results": [
+      {
+        "metric": "backend_startup_ms",
+        "status": "unknown",
+        "value": null,
+        "budget": 2500,
+        "recommendation": "collect metric before cutover"
+      },
+      {
+        "metric": "api_health_ms",
+        "status": "unknown",
+        "value": null,
+        "budget": 100,
+        "recommendation": "collect metric before cutover"
+      },
+      {
+        "metric": "api_config_ms",
+        "status": "unknown",
+        "value": null,
+        "budget": 150,
+        "recommendation": "collect metric before cutover"
+      },
+      {
+        "metric": "api_pages_ms",
+        "status": "unknown",
+        "value": null,
+        "budget": 250,
+        "recommendation": "collect metric before cutover"
+      },
+      {
+        "metric": "api_snapshot_ms",
+        "status": "unknown",
+        "value": null,
+        "budget": 500,
+        "recommendation": "collect metric before cutover"
+      },
+      {
+        "metric": "websocket_connect_ms",
+        "status": "unknown",
+        "value": null,
+        "budget": 500,
+        "recommendation": "collect metric before cutover"
+      },
+      {
+        "metric": "websocket_heartbeat_ms",
+        "status": "unknown",
+        "value": null,
+        "budget": null,
+        "recommendation": "collect metric before cutover"
+      },
+      {
+        "metric": "snapshot_serialization_ms",
+        "status": "unknown",
+        "value": null,
+        "budget": null,
+        "recommendation": "collect metric before cutover"
+      },
+      {
+        "metric": "snapshot_payload_bytes",
+        "status": "unknown",
+        "value": null,
+        "budget": 500000,
+        "recommendation": "collect metric before cutover"
+      },
+      {
+        "metric": "frontend_initial_load_ms",
+        "status": "unknown",
+        "value": null,
+        "budget": 2500,
+        "recommendation": "collect metric before cutover"
+      },
+      {
+        "metric": "route_navigation_ms",
+        "status": "unknown",
+        "value": null,
+        "budget": 500,
+        "recommendation": "collect metric before cutover"
+      },
+      {
+        "metric": "chart_update_ms",
+        "status": "unknown",
+        "value": null,
+        "budget": 120,
+        "recommendation": "collect metric before cutover"
+      },
+      {
+        "metric": "memory_best_effort_mb",
+        "status": "unknown",
+        "value": null,
+        "budget": null,
+        "recommendation": "collect metric before cutover"
+      },
+      {
+        "metric": "cpu_best_effort_pct",
+        "status": "unknown",
+        "value": null,
+        "budget": null,
+        "recommendation": "collect metric before cutover"
+      },
+      {
+        "metric": "browser_console_errors",
+        "status": "pass",
+        "value": 0,
+        "budget": 0,
+        "recommendation": ""
+      }
+    ],
+    "hard_blockers": [],
+    "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+    "live_trading_enabled": false
+  }
+}

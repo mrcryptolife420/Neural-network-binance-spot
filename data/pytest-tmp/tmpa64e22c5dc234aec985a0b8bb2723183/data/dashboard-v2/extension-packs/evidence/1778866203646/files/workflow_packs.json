@@ -1,0 +1,88 @@
+{
+  "status": "ok",
+  "workflow_packs": [
+    {
+      "workflow_id": "demo_spot_guarded_order_rehearsal",
+      "steps": [
+        {
+          "step": "Review no-live proof",
+          "command": "dashboard-v2-no-live-proof"
+        }
+      ],
+      "status": "ok",
+      "blockers": []
+    },
+    {
+      "workflow_id": "evidence_review",
+      "steps": [
+        {
+          "step": "Export pack evidence",
+          "command": "dashboard-v2-extension-pack-evidence-export"
+        }
+      ],
+      "status": "ok",
+      "blockers": []
+    },
+    {
+      "workflow_id": "first_dashboard_launch",
+      "steps": [
+        {
+          "step": "Smoke Dashboard V2",
+          "command": "dashboard-v2-smoke"
+        }
+      ],
+      "status": "ok",
+      "blockers": []
+    },
+    {
+      "workflow_id": "first_install_health_check",
+      "steps": [
+        {
+          "step": "Validate config",
+          "command": "validate-config"
+        },
+        {
+          "step": "Run preflight",
+          "command": "preflight"
+        }
+      ],
+      "status": "ok",
+      "blockers": []
+    },
+    {
+      "workflow_id": "first_paper_session",
+      "steps": [
+        {
+          "step": "Open paper workspace",
+          "command": "dashboard-v2-workspace-presets"
+        }
+      ],
+      "status": "ok",
+      "blockers": []
+    },
+    {
+      "workflow_id": "release_readiness_review",
+      "steps": [
+        {
+          "step": "Operator quality gate",
+          "command": "operator-quality-gate"
+        }
+      ],
+      "status": "ok",
+      "blockers": []
+    },
+    {
+      "workflow_id": "support_bundle_creation",
+      "steps": [
+        {
+          "step": "Create support bundle",
+          "command": "support-bundle"
+        }
+      ],
+      "status": "ok",
+      "blockers": []
+    }
+  ],
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

@@ -1,0 +1,39 @@
+{
+  "proposal": {
+    "proposal_id": "act-1778852958018-f649612e99",
+    "title": "export_report",
+    "description": "daily report",
+    "command": {
+      "command": "operator-report",
+      "args": [
+        "--json"
+      ],
+      "timeout_seconds": 60
+    },
+    "source": "operator_manual",
+    "category": "report",
+    "safety_class": "safe_generate_artifact",
+    "expected_outputs": [],
+    "required_evidence": [],
+    "preconditions": [],
+    "confirm_phrase": "",
+    "forbidden_reasons": [],
+    "related_runbook_id": "",
+    "related_incident_id": "",
+    "related_evidence_ids": [],
+    "status": "proposed",
+    "created_at_ms": 1778852958018,
+    "expires_at_ms": 0,
+    "no_auto_execute": true,
+    "live_trading_enabled": false,
+    "proposal_hash": "1866c1c3d49cdcd346a9bfef"
+  },
+  "status": "approved",
+  "decisions": [
+    "dec-1778852958043"
+  ],
+  "executions": [],
+  "verifications": [],
+  "updated_at_ms": 1778852958045,
+  "live_trading_enabled": false
+}

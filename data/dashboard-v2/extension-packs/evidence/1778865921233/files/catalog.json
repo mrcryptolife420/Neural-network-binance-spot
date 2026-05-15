@@ -1,0 +1,321 @@
+{
+  "status": "ok",
+  "packs": [
+    {
+      "pack_id": "beginner_paper_operator",
+      "name": "Beginner Paper Operator",
+      "description": "Local pluginless Dashboard V2 pack for Beginner Paper Operator.",
+      "version": "1.0",
+      "pack_type": "workspace_template",
+      "author": "local",
+      "created_at_ms": 1778865921236,
+      "compatible_workspace_schema_versions": [
+        2
+      ],
+      "required_widget_types": [
+        "equity_chart",
+        "fill_markers",
+        "no_live_banner",
+        "paper_account",
+        "risk_decision",
+        "session_report",
+        "stop_button"
+      ],
+      "required_dashboard_v2_features": [
+        "workspaces",
+        "widget_registry"
+      ],
+      "mode_scope": "all_safe_modes",
+      "operator_level": "operator",
+      "tags": [
+        "paper_session_trader",
+        "local-only",
+        "no-live"
+      ],
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "live_trading_enabled": false,
+      "content_hash": "444c312433c990f2"
+    },
+    {
+      "pack_id": "demo_spot_control_room",
+      "name": "Demo Spot Trading Control Room",
+      "description": "Local pluginless Dashboard V2 pack for Demo Spot Trading Control Room.",
+      "version": "1.0",
+      "pack_type": "workspace_template",
+      "author": "local",
+      "created_at_ms": 1778865921236,
+      "compatible_workspace_schema_versions": [
+        2
+      ],
+      "required_widget_types": [
+        "alerts_inbox",
+        "candle_chart",
+        "demo_connection",
+        "demo_order_status",
+        "no_live_banner",
+        "reconciliation",
+        "stop_button"
+      ],
+      "required_dashboard_v2_features": [
+        "workspaces",
+        "widget_registry"
+      ],
+      "mode_scope": "all_safe_modes",
+      "operator_level": "operator",
+      "tags": [
+        "demo_spot_monitor",
+        "local-only",
+        "no-live"
+      ],
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "live_trading_enabled": false,
+      "content_hash": "a3d1033ce7c5e238"
+    },
+    {
+      "pack_id": "market_analysis_desk",
+      "name": "Binance Spot Market Scanner",
+      "description": "Local pluginless Dashboard V2 pack for Binance Spot Market Scanner.",
+      "version": "1.0",
+      "pack_type": "workspace_template",
+      "author": "local",
+      "created_at_ms": 1778865921237,
+      "compatible_workspace_schema_versions": [
+        2
+      ],
+      "required_widget_types": [
+        "candle_chart",
+        "data_quality",
+        "no_live_banner",
+        "spread",
+        "stop_button",
+        "top_of_book",
+        "volume",
+        "watchlist"
+      ],
+      "required_dashboard_v2_features": [
+        "workspaces",
+        "widget_registry"
+      ],
+      "mode_scope": "all_safe_modes",
+      "operator_level": "operator",
+      "tags": [
+        "market_analysis",
+        "local-only",
+        "no-live"
+      ],
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "live_trading_enabled": false,
+      "content_hash": "63b63e15517d26c1"
+    },
+    {
+      "pack_id": "model_monitoring_desk",
+      "name": "Model Monitoring Desk",
+      "description": "Local pluginless Dashboard V2 pack for Model Monitoring Desk.",
+      "version": "1.0",
+      "pack_type": "model_ops_pack",
+      "author": "local",
+      "created_at_ms": 1778865921237,
+      "compatible_workspace_schema_versions": [
+        2
+      ],
+      "required_widget_types": [
+        "active_model",
+        "model_health",
+        "monitoring_alerts",
+        "no_live_banner",
+        "prediction_drift",
+        "signal_confidence",
+        "stop_button"
+      ],
+      "required_dashboard_v2_features": [
+        "workspaces",
+        "widget_registry"
+      ],
+      "mode_scope": "all_safe_modes",
+      "operator_level": "operator",
+      "tags": [
+        "model_ops",
+        "local-only",
+        "no-live"
+      ],
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "live_trading_enabled": false,
+      "content_hash": "fa128eafeb4b9641"
+    },
+    {
+      "pack_id": "portfolio_allocation_desk",
+      "name": "Portfolio Allocation Desk",
+      "description": "Local pluginless Dashboard V2 pack for Portfolio Allocation Desk.",
+      "version": "1.0",
+      "pack_type": "portfolio_ops_pack",
+      "author": "local",
+      "created_at_ms": 1778865921238,
+      "compatible_workspace_schema_versions": [
+        2
+      ],
+      "required_widget_types": [
+        "attribution",
+        "no_live_banner",
+        "portfolio_allocation",
+        "risk_budget",
+        "rotation_status",
+        "stop_button"
+      ],
+      "required_dashboard_v2_features": [
+        "workspaces",
+        "widget_registry"
+      ],
+      "mode_scope": "all_safe_modes",
+      "operator_level": "operator",
+      "tags": [
+        "portfolio_ops",
+        "local-only",
+        "no-live"
+      ],
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "live_trading_enabled": false,
+      "content_hash": "2d2fa927f926cc5c"
+    },
+    {
+      "pack_id": "release_roadmap_ops_desk",
+      "name": "Roadmap/Release Ops Desk",
+      "description": "Local pluginless Dashboard V2 pack for Roadmap/Release Ops Desk.",
+      "version": "1.0",
+      "pack_type": "release_ops_pack",
+      "author": "local",
+      "created_at_ms": 1778865921238,
+      "compatible_workspace_schema_versions": [
+        2
+      ],
+      "required_widget_types": [
+        "evidence_manifest",
+        "local_ops_snapshot",
+        "no_live_banner",
+        "operator_quality_gate",
+        "stop_button",
+        "support_bundle_status"
+      ],
+      "required_dashboard_v2_features": [
+        "workspaces",
+        "widget_registry"
+      ],
+      "mode_scope": "all_safe_modes",
+      "operator_level": "operator",
+      "tags": [
+        "support_evidence",
+        "local-only",
+        "no-live"
+      ],
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "live_trading_enabled": false,
+      "content_hash": "88a754b5a2fb521d"
+    },
+    {
+      "pack_id": "risk_alerts_war_room",
+      "name": "Risk & Alerts War Room",
+      "description": "Local pluginless Dashboard V2 pack for Risk & Alerts War Room.",
+      "version": "1.0",
+      "pack_type": "workspace_template",
+      "author": "local",
+      "created_at_ms": 1778865921238,
+      "compatible_workspace_schema_versions": [
+        2
+      ],
+      "required_widget_types": [
+        "alerts_inbox",
+        "candle_chart",
+        "equity_chart",
+        "no_live_banner",
+        "runtime_status",
+        "session_summary",
+        "stop_button"
+      ],
+      "required_dashboard_v2_features": [
+        "workspaces",
+        "widget_registry"
+      ],
+      "mode_scope": "all_safe_modes",
+      "operator_level": "operator",
+      "tags": [
+        "operator_overview",
+        "local-only",
+        "no-live"
+      ],
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "live_trading_enabled": false,
+      "content_hash": "77768e1e0b31bd13"
+    },
+    {
+      "pack_id": "support_evidence_desk",
+      "name": "Support & Evidence Desk",
+      "description": "Local pluginless Dashboard V2 pack for Support & Evidence Desk.",
+      "version": "1.0",
+      "pack_type": "support_evidence_pack",
+      "author": "local",
+      "created_at_ms": 1778865921239,
+      "compatible_workspace_schema_versions": [
+        2
+      ],
+      "required_widget_types": [
+        "evidence_manifest",
+        "local_ops_snapshot",
+        "no_live_banner",
+        "operator_quality_gate",
+        "stop_button",
+        "support_bundle_status"
+      ],
+      "required_dashboard_v2_features": [
+        "workspaces",
+        "widget_registry"
+      ],
+      "mode_scope": "all_safe_modes",
+      "operator_level": "operator",
+      "tags": [
+        "support_evidence",
+        "local-only",
+        "no-live"
+      ],
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "live_trading_enabled": false,
+      "content_hash": "3956cbfc74aa21ff"
+    },
+    {
+      "pack_id": "uat_training_desk",
+      "name": "UAT Training Desk",
+      "description": "Local pluginless Dashboard V2 pack for UAT Training Desk.",
+      "version": "1.0",
+      "pack_type": "training_uat_pack",
+      "author": "local",
+      "created_at_ms": 1778865921239,
+      "compatible_workspace_schema_versions": [
+        2
+      ],
+      "required_widget_types": [
+        "alerts_inbox",
+        "candle_chart",
+        "equity_chart",
+        "no_live_banner",
+        "runtime_status",
+        "session_summary",
+        "stop_button"
+      ],
+      "required_dashboard_v2_features": [
+        "workspaces",
+        "widget_registry"
+      ],
+      "mode_scope": "all_safe_modes",
+      "operator_level": "operator",
+      "tags": [
+        "operator_overview",
+        "local-only",
+        "no-live"
+      ],
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "live_trading_enabled": false,
+      "content_hash": "d561a5a108954cd0"
+    }
+  ],
+  "count": 9,
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

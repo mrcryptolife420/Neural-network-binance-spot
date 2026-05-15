@@ -1,0 +1,34 @@
+{
+  "session_id": "1778851575507-1adbaaee",
+  "mode": "demo",
+  "symbol": "BTCUSDT",
+  "interval": "1m",
+  "started_at_ms": 1778851575507,
+  "ended_at_ms": null,
+  "pnl": "0",
+  "max_drawdown": "0",
+  "trades": 0,
+  "blocks": 0,
+  "model_version": "rule-baseline-0.1",
+  "status": "running",
+  "metadata": {
+    "source": "demo",
+    "model_alias": "",
+    "demo_trading_armed": false,
+    "exchange_profile": "local-demo",
+    "demo_pilot": {
+      "pilot_name": "smoke",
+      "duration_minutes": 15,
+      "max_demo_orders": 5,
+      "max_rejects": 2,
+      "max_api_errors": 3,
+      "max_reconciliation_failures": 1,
+      "cancel_open_orders_on_stop": true,
+      "reconciliation_interval_seconds": 30,
+      "account_sync_interval_seconds": 60,
+      "pause_on_connection_degraded": true,
+      "require_clean_start": true
+    },
+    "pilot_run": {}
+  }
+}

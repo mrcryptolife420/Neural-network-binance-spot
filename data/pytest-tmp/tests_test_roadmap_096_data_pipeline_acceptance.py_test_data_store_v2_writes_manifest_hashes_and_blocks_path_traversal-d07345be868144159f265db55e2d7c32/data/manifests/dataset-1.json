@@ -1,0 +1,17 @@
+{
+  "artifacts": [
+    {
+      "artifact_id": "BTCUSDT",
+      "artifact_type": "json",
+      "live_trading_enabled": false,
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_096_data_pipeline_acceptance.py_test_data_store_v2_writes_manifest_hashes_and_blocks_path_traversal-d07345be868144159f265db55e2d7c32\\data\\raw\\BTCUSDT.json",
+      "rows": 1,
+      "schema_version": "data-store-v2",
+      "sha256": "47da6a0ba0bc3b462ae426bb"
+    }
+  ],
+  "created_at_ms": 1778848619941,
+  "live_trading_enabled": false,
+  "manifest_id": "dataset-1",
+  "no_secret_proof": true
+}

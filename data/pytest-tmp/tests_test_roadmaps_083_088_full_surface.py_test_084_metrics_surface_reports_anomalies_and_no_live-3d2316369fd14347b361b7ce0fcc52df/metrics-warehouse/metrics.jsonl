@@ -1,0 +1,1 @@
+{"name": "pnl_quote", "value": -1.0, "source": "legacy", "category": "health", "unit": "count", "status": "ok", "severity": "info", "labels": {}, "artifact_path": "", "evidence_id": "", "timestamp_ms": 1778845953953, "event_id": "legacy-pnl_quote-1778845953953", "schema_version": "1.0", "redacted": true, "live_trading_enabled": false, "pnl_quote": -2}

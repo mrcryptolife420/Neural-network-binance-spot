@@ -1,0 +1,79 @@
+{
+  "plan": {
+    "portfolio_id": "paper-portfolio-1778849855833",
+    "total_quote_budget": "1000",
+    "allocations": [
+      {
+        "strategy_id": "trend",
+        "symbol": "BTCUSDT",
+        "weight": "0.40",
+        "quote_budget": "400.00",
+        "max_open_orders": 2
+      },
+      {
+        "strategy_id": "trend",
+        "symbol": "ETHUSDT",
+        "weight": "0.40",
+        "quote_budget": "400.00",
+        "max_open_orders": 2
+      },
+      {
+        "strategy_id": "mean",
+        "symbol": "BNBUSDT",
+        "weight": "0.40",
+        "quote_budget": "400.00",
+        "max_open_orders": 2
+      }
+    ],
+    "conflicts": [
+      {
+        "symbol": "ETHUSDT",
+        "strategies": [
+          "trend",
+          "mean"
+        ],
+        "winner": "trend"
+      }
+    ],
+    "risk_limits": {
+      "max_total_exposure_quote": "1000",
+      "max_strategy_weight": "0.40",
+      "max_open_positions": 3,
+      "max_daily_loss_quote": "50.00"
+    },
+    "rotation": [
+      {
+        "strategy_id": "trend",
+        "action": "eligible",
+        "reason": "score_above_threshold"
+      },
+      {
+        "strategy_id": "mean",
+        "action": "eligible",
+        "reason": "score_above_threshold"
+      }
+    ],
+    "live_trading_enabled": false
+  },
+  "watchdog": {
+    "status": "healthy",
+    "equity": "1000",
+    "exposure": "0",
+    "loss": "0",
+    "blockers": [],
+    "live_trading_enabled": false
+  },
+  "attribution": [
+    {
+      "strategy_id": "mean",
+      "pnl": "1",
+      "trades": 1
+    },
+    {
+      "strategy_id": "trend",
+      "pnl": "2",
+      "trades": 1
+    }
+  ],
+  "live_trading_enabled": false
+}

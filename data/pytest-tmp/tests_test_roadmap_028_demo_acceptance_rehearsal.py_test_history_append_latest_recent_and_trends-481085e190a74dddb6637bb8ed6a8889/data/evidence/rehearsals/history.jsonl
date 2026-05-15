@@ -1,0 +1,2 @@
+{"run_id": "run-1", "status": "warn", "started_at_ms": 1, "finished_at_ms": 2, "duration_seconds": 1.0, "steps": [{"name": "x", "status": "ok", "message": "", "artifact": ""}], "artifacts": {"summary": "summary.json"}, "scorecard_status": "warn", "blockers": [], "warnings": [{"name": "missing"}], "next_safe_action": "collect evidence", "live_trading_enabled": false}
+{not-json

@@ -1,0 +1,772 @@
+{
+  "run_id": "1778856564399-btcusdt-smoke",
+  "state": "ready",
+  "profile": "binance-demo-spot",
+  "symbol": "BTCUSDT",
+  "preset": "smoke",
+  "started_at_ms": 1778856564399,
+  "updated_at_ms": 1778856564399,
+  "completed_at_ms": null,
+  "blockers": [],
+  "transitions": [
+    {
+      "from": "idle",
+      "to": "ready",
+      "timestamp_ms": 1778856564399,
+      "reason": "run created"
+    }
+  ],
+  "checkpoints": [
+    {
+      "event": "snapshot_30",
+      "timestamp_ms": 30,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_31",
+      "timestamp_ms": 31,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_32",
+      "timestamp_ms": 32,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_33",
+      "timestamp_ms": 33,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_34",
+      "timestamp_ms": 34,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_35",
+      "timestamp_ms": 35,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_36",
+      "timestamp_ms": 36,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_37",
+      "timestamp_ms": 37,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_38",
+      "timestamp_ms": 38,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_39",
+      "timestamp_ms": 39,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_40",
+      "timestamp_ms": 40,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_41",
+      "timestamp_ms": 41,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_42",
+      "timestamp_ms": 42,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_43",
+      "timestamp_ms": 43,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_44",
+      "timestamp_ms": 44,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_45",
+      "timestamp_ms": 45,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_46",
+      "timestamp_ms": 46,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_47",
+      "timestamp_ms": 47,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_48",
+      "timestamp_ms": 48,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_49",
+      "timestamp_ms": 49,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_50",
+      "timestamp_ms": 50,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_51",
+      "timestamp_ms": 51,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_52",
+      "timestamp_ms": 52,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_53",
+      "timestamp_ms": 53,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_54",
+      "timestamp_ms": 54,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_55",
+      "timestamp_ms": 55,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_56",
+      "timestamp_ms": 56,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_57",
+      "timestamp_ms": 57,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_58",
+      "timestamp_ms": 58,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_59",
+      "timestamp_ms": 59,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_60",
+      "timestamp_ms": 60,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_61",
+      "timestamp_ms": 61,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_62",
+      "timestamp_ms": 62,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_63",
+      "timestamp_ms": 63,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_64",
+      "timestamp_ms": 64,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_65",
+      "timestamp_ms": 65,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_66",
+      "timestamp_ms": 66,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_67",
+      "timestamp_ms": 67,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_68",
+      "timestamp_ms": 68,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_69",
+      "timestamp_ms": 69,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_70",
+      "timestamp_ms": 70,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_71",
+      "timestamp_ms": 71,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_72",
+      "timestamp_ms": 72,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_73",
+      "timestamp_ms": 73,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_74",
+      "timestamp_ms": 74,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_75",
+      "timestamp_ms": 75,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_76",
+      "timestamp_ms": 76,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_77",
+      "timestamp_ms": 77,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_78",
+      "timestamp_ms": 78,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "event": "snapshot_79",
+      "timestamp_ms": 79,
+      "payload": {
+        "snapshot": {
+          "symbol": "BTCUSDT",
+          "candles": {
+            "count": 500,
+            "latest": {
+              "close": "1.0"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "report_paths": {}
+}

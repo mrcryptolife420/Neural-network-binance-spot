@@ -1,0 +1,19 @@
+{
+  "demo_pilot": {
+    "config": {
+      "pilot_name": "smoke",
+      "max_demo_orders": 5
+    },
+    "counters": {
+      "orders": 1,
+      "rejects": 0
+    }
+  },
+  "reconciliation": {
+    "status": "ok",
+    "orphan_orders": 0,
+    "failures": 0,
+    "needs_operator_action": false
+  },
+  "cancel_on_stop_status": []
+}

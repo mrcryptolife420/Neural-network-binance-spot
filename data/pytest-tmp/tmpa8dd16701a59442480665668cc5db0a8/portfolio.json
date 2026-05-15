@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "portfolio": {
+    "balances": {
+      "USDT": "969.97"
+    },
+    "positions": {
+      "BTCUSDT": {
+        "symbol": "BTCUSDT",
+        "quantity": "0.1",
+        "average_entry": "1.0E+2"
+      },
+      "ETHUSDT": {
+        "symbol": "ETHUSDT",
+        "quantity": "1",
+        "average_entry": "10"
+      },
+      "BNBUSDT": {
+        "symbol": "BNBUSDT",
+        "quantity": "10",
+        "average_entry": "1"
+      }
+    },
+    "fees_paid": "0.03",
+    "realized_pnl": "0"
+  },
+  "blocks": []
+}

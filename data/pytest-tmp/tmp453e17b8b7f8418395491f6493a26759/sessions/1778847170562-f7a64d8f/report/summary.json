@@ -1,0 +1,24 @@
+{
+  "session_id": "1778847170562-f7a64d8f",
+  "mode": "demo",
+  "symbol": "BTCUSDT",
+  "interval": "1m",
+  "started_at_ms": 1778847170562,
+  "ended_at_ms": null,
+  "pnl": "0",
+  "max_drawdown": "0",
+  "trades": 0,
+  "blocks": 0,
+  "model_version": "baseline",
+  "status": "running",
+  "metadata": {
+    "pilot_start_gate": {
+      "checks": [
+        {
+          "check": "credentials",
+          "reason": "api_[REDACTED]"
+        }
+      ]
+    }
+  }
+}

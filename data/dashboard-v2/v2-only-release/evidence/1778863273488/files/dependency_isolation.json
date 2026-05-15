@@ -1,0 +1,9 @@
+{
+  "status": "ok",
+  "streamlit_import_offenders": [],
+  "dashboard_v2_extra_present": true,
+  "legacy_streamlit_extra_present": true,
+  "v2_import_without_streamlit": true,
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

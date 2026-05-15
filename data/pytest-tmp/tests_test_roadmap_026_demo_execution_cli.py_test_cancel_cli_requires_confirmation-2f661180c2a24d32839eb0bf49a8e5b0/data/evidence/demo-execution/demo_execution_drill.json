@@ -1,0 +1,10 @@
+{
+  "action": "cancel_order",
+  "status": "BLOCKED",
+  "reason": "confirm cancel first",
+  "preview": null,
+  "response": null,
+  "lifecycle": [],
+  "evidence_path": "",
+  "live_trading_enabled": false
+}

@@ -1,0 +1,31 @@
+{
+  "baseline_comparison": {
+    "candidate_beats_baseline": false
+  },
+  "created_at_ms": 1778852601455,
+  "dataset_id": "demo",
+  "feature_schema_hash": "unknown",
+  "forbidden_use": "live trading without a later roadmap, readiness gate, and manual approval",
+  "intended_use": "offline evaluation, paper trading, and shadow-only research",
+  "known_limitations": [
+    "paper/shadow validation only",
+    "not financial advice",
+    "not live-trading approved"
+  ],
+  "model_id": "model-1778852601454-d1ad7f",
+  "operator_notes": "",
+  "ranges": {
+    "test": "demo-test",
+    "train": "demo-train",
+    "validation": "demo-validation"
+  },
+  "role": "candidate",
+  "status": "candidate",
+  "training_config": {
+    "feature_set_version": "features-v1",
+    "model_type": "tiny-neural-signal"
+  },
+  "walk_forward_summary": {
+    "rows": 55
+  }
+}

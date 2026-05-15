@@ -20,9 +20,14 @@ class CheckResult:
 
 def run_command(name: str, command: list[str], root: Path) -> CheckResult:
     env = dict(os.environ)
+    temp_root = root / ".tmp" / "check-all-temp"
+    temp_root.mkdir(parents=True, exist_ok=True)
     env["PYTHONPATH"] = "src"
     env["LIVE_TRADING_ENABLED"] = "false"
     env["KILL_SWITCH"] = "true"
+    env["TMP"] = str(temp_root)
+    env["TEMP"] = str(temp_root)
+    env["TMPDIR"] = str(temp_root)
     completed = subprocess.run(command, cwd=root, env=env, text=True, capture_output=True, timeout=120)
     return CheckResult(
         name=name,
@@ -54,7 +59,7 @@ def run_checks(root: Path, skip_tests: bool = False) -> list[CheckResult]:
                 [
                     sys.executable,
                     "-c",
-                    "import tempfile; from pathlib import Path; from binance_spot_bot.pilot_orchestrator import PilotRunStore; s=PilotRunStore(Path(tempfile.mkdtemp())/'runs'); v='abcde'*6; r=s.create_run('binance-demo-spot','BTCUSDT','smoke','blocked',[{'reason':'secret='+v}]); assert s.load(r.run_id).blockers[0]['reason']=='[REDACTED]'",
+                    "from pathlib import Path; import uuid; from binance_spot_bot.pilot_orchestrator import PilotRunStore; s=PilotRunStore(Path('.tmp')/'check-all-temp'/('pilot-store-'+uuid.uuid4().hex)/'runs'); v='abcde'*6; r=s.create_run('binance-demo-spot','BTCUSDT','smoke','blocked',[{'reason':'secret='+v}]); assert s.load(r.run_id).blockers[0]['reason']=='[REDACTED]'",
                 ],
             ),
             (
@@ -62,10 +67,29 @@ def run_checks(root: Path, skip_tests: bool = False) -> list[CheckResult]:
                 [
                     sys.executable,
                     "-c",
-                    "import tempfile; from pathlib import Path; from binance_spot_bot.config import BotSettings; from binance_spot_bot.pilot_runner import PilotRunnerService; from dataclasses import replace; s=replace(BotSettings.from_env(), data_dir=Path(tempfile.mkdtemp())/'data'); p=PilotRunnerService(s).status(); assert p['runner']['state']=='not_running'",
+                    "from pathlib import Path; import uuid; from binance_spot_bot.config import BotSettings; from binance_spot_bot.pilot_runner import PilotRunnerService; from dataclasses import replace; s=replace(BotSettings.from_env(), data_dir=Path('.tmp')/'check-all-temp'/('pilot-runner-'+uuid.uuid4().hex)/'data'); p=PilotRunnerService(s).status(); assert p['runner']['state']=='not_running'",
                 ],
             ),
             ("cli_smoke", [sys.executable, "-m", "binance_spot_bot.cli", "launch-dashboard", "--start-port", "8700"]),
+            ("dashboard_v2_import", [sys.executable, "-c", "import binance_spot_bot.dashboard_v2"]),
+            ("dashboard_v2_api_smoke", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-api-smoke", "--json"]),
+            ("dashboard_v2_page_parity", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-page-parity", "--json"]),
+            ("dashboard_v2_performance_budget", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-performance-budget", "--json"]),
+            ("dashboard_v2_cutover_readiness", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-cutover-readiness", "--json"]),
+            ("dashboard_v2_ux_backlog", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-ux-backlog", "--json"]),
+            ("dashboard_v2_streamlit_deprecation", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-streamlit-deprecation-readiness", "--json"]),
+            ("dashboard_v2_final_parity_lock", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-final-parity-lock", "--json"]),
+            ("dashboard_v2_deprecation_gate", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-deprecation-gate", "--json"]),
+            ("dashboard_v2_only_smoke", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-only-smoke", "--json"]),
+            ("dashboard_v2_removal_readiness_gate", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-removal-readiness-gate", "--json"]),
+            ("dashboard_v2_dependency_isolation", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-dependency-isolation", "--json"]),
+            ("dashboard_v2_check_all_v2_only", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-check-all", "--profile", "v2-only", "--json"]),
+            ("dashboard_v2_workspace_presets", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-workspace-presets", "--json"]),
+            ("dashboard_v2_widget_registry", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-widget-registry", "--json"]),
+            ("dashboard_v2_analytics_query", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-analytics-query", "--scope", "runtime_snapshot", "--json"]),
+            ("dashboard_v2_extension_packs", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-extension-packs", "--json"]),
+            ("dashboard_v2_template_packs", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-template-packs", "--json"]),
+            ("dashboard_v2_pack_recommendations", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-pack-recommendations", "--workflow", "paper-session", "--json"]),
             ("no_live_ui", [sys.executable, "-c", "from binance_spot_bot.ui.state import SELECTABLE_MODES; assert 'live' not in SELECTABLE_MODES"]),
             ("no_secret_artifacts", [sys.executable, "-m", "binance_spot_bot.cli", "security-scan"]),
         ]

@@ -1,0 +1,59 @@
+{
+  "status": "ok",
+  "items": [
+    {
+      "path": ".env",
+      "category": "state",
+      "suffix": "",
+      "size_bytes": 26,
+      "modified_at": 1778847471588,
+      "sha256": "",
+      "redacted": true,
+      "required": false,
+      "stale": false,
+      "include_eligible": false,
+      "restore_priority": 50
+    },
+    {
+      "path": "action-center/decision-journal.jsonl",
+      "category": "action_center",
+      "suffix": ".jsonl",
+      "size_bytes": 25,
+      "modified_at": 1778847471588,
+      "sha256": "361618d2cec875edce782f82",
+      "redacted": true,
+      "required": false,
+      "stale": false,
+      "include_eligible": true,
+      "restore_priority": 10
+    },
+    {
+      "path": "key.pem",
+      "category": "state",
+      "suffix": ".pem",
+      "size_bytes": 7,
+      "modified_at": 1778847471589,
+      "sha256": "",
+      "redacted": true,
+      "required": false,
+      "stale": false,
+      "include_eligible": false,
+      "restore_priority": 50
+    },
+    {
+      "path": "reports/report.json",
+      "category": "reports",
+      "suffix": ".json",
+      "size_bytes": 43,
+      "modified_at": 1778847471587,
+      "sha256": "b74a85e010ec63393ba3744c",
+      "redacted": true,
+      "required": false,
+      "stale": false,
+      "include_eligible": true,
+      "restore_priority": 20
+    }
+  ],
+  "warnings": [],
+  "live_trading_enabled": false
+}

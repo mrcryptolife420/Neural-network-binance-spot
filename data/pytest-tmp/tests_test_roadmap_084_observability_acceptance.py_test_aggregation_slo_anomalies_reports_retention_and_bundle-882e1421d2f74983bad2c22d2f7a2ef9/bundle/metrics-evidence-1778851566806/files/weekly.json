@@ -1,0 +1,40 @@
+{
+  "period": "weekly",
+  "status": "warn",
+  "metrics": {
+    "check_all.success": {
+      "avg": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "count": 1
+    },
+    "job.status": {
+      "avg": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "count": 2
+    },
+    "old.metric": {
+      "avg": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "count": 1
+    },
+    "paper.pnl": {
+      "avg": -5.0,
+      "min": -5.0,
+      "max": -5.0,
+      "count": 1
+    }
+  },
+  "anomalies": [
+    {
+      "metric": "paper.pnl",
+      "reason": "negative_equity_or_pnl",
+      "value": -5.0,
+      "recommended_action": "review_operator_report"
+    }
+  ],
+  "rows": 5,
+  "live_trading_enabled": false
+}

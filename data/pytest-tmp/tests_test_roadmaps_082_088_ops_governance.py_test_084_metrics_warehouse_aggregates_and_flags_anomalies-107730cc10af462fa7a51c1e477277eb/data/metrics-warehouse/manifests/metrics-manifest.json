@@ -1,0 +1,12 @@
+{
+  "metrics_file": "metrics.jsonl",
+  "sha256": "7e259673f14d65ae...233864dba253262e",
+  "sha256_parts": [
+    "7e259673f14d65ae",
+    "80170a04d10a32fe",
+    "670703eff6fe1556",
+    "233864dba253262e"
+  ],
+  "bytes": 779,
+  "live_trading_enabled": false
+}

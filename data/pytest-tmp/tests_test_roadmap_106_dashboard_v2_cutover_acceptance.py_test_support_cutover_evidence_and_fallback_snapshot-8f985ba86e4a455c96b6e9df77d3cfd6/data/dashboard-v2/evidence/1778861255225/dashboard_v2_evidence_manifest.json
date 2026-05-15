@@ -1,0 +1,53 @@
+{
+  "status": "ok",
+  "run_id": "1778861255225",
+  "files": [
+    {
+      "name": "performance_baseline",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_106_dashboard_v2_cutover_acceptance.py_test_support_cutover_evidence_and_fallback_snapshot-8f985ba86e4a455c96b6e9df77d3cfd6\\data\\dashboard-v2\\evidence\\1778861255225\\files\\performance_baseline.json",
+      "sha256_16": "08f7061d897ca3d7"
+    },
+    {
+      "name": "performance_budget",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_106_dashboard_v2_cutover_acceptance.py_test_support_cutover_evidence_and_fallback_snapshot-8f985ba86e4a455c96b6e9df77d3cfd6\\data\\dashboard-v2\\evidence\\1778861255225\\files\\performance_budget.json",
+      "sha256_16": "cd9e7b3b3949470b"
+    },
+    {
+      "name": "payload_profiles",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_106_dashboard_v2_cutover_acceptance.py_test_support_cutover_evidence_and_fallback_snapshot-8f985ba86e4a455c96b6e9df77d3cfd6\\data\\dashboard-v2\\evidence\\1778861255225\\files\\payload_profiles.json",
+      "sha256_16": "e648d2d614a3b21a"
+    },
+    {
+      "name": "ws_stability",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_106_dashboard_v2_cutover_acceptance.py_test_support_cutover_evidence_and_fallback_snapshot-8f985ba86e4a455c96b6e9df77d3cfd6\\data\\dashboard-v2\\evidence\\1778861255225\\files\\ws_stability.json",
+      "sha256_16": "dcebe3913f2f9440"
+    },
+    {
+      "name": "static_build",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_106_dashboard_v2_cutover_acceptance.py_test_support_cutover_evidence_and_fallback_snapshot-8f985ba86e4a455c96b6e9df77d3cfd6\\data\\dashboard-v2\\evidence\\1778861255225\\files\\static_build.json",
+      "sha256_16": "0b1a7cd1b59bafdb"
+    },
+    {
+      "name": "launcher",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_106_dashboard_v2_cutover_acceptance.py_test_support_cutover_evidence_and_fallback_snapshot-8f985ba86e4a455c96b6e9df77d3cfd6\\data\\dashboard-v2\\evidence\\1778861255225\\files\\launcher.json",
+      "sha256_16": "4c3c23fb237b04f9"
+    },
+    {
+      "name": "support_diagnostics",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_106_dashboard_v2_cutover_acceptance.py_test_support_cutover_evidence_and_fallback_snapshot-8f985ba86e4a455c96b6e9df77d3cfd6\\data\\dashboard-v2\\evidence\\1778861255225\\files\\support_diagnostics.json",
+      "sha256_16": "e06bd3ccb0cf6fd4"
+    },
+    {
+      "name": "cutover_readiness",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_106_dashboard_v2_cutover_acceptance.py_test_support_cutover_evidence_and_fallback_snapshot-8f985ba86e4a455c96b6e9df77d3cfd6\\data\\dashboard-v2\\evidence\\1778861255225\\files\\cutover_readiness.json",
+      "sha256_16": "cf42ce560eee4c8b"
+    },
+    {
+      "name": "no_live_proof",
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_106_dashboard_v2_cutover_acceptance.py_test_support_cutover_evidence_and_fallback_snapshot-8f985ba86e4a455c96b6e9df77d3cfd6\\data\\dashboard-v2\\evidence\\1778861255225\\files\\no_live_proof.json",
+      "sha256_16": "cc322fdd9204a8a1"
+    }
+  ],
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

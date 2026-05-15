@@ -1,0 +1,40 @@
+{
+  "policy": {
+    "policy_id": "policy-1778857459783",
+    "selected_candidate": "conservative",
+    "robustness_score": 0.89638,
+    "max_strategy_weight": "0.25",
+    "max_daily_loss_pct": "0.03",
+    "rotation_threshold": 0.65,
+    "status": "paper_selected",
+    "selection_reason": "stress_pass_then_highest_robustness_with_conservative_tiebreak",
+    "live_trading_enabled": false
+  },
+  "search": [
+    {
+      "candidate": "conservative",
+      "robustness_score": 0.89638,
+      "benchmark_status": "review",
+      "max_strategy_weight": "0.25",
+      "max_daily_loss_pct": "0.03",
+      "rotation_threshold": 0.65
+    },
+    {
+      "candidate": "aggressive-paper",
+      "robustness_score": 0.896375,
+      "benchmark_status": "review",
+      "max_strategy_weight": "0.45",
+      "max_daily_loss_pct": "0.08",
+      "rotation_threshold": 0.55
+    },
+    {
+      "candidate": "balanced",
+      "robustness_score": 0.896371,
+      "benchmark_status": "review",
+      "max_strategy_weight": "0.35",
+      "max_daily_loss_pct": "0.05",
+      "rotation_threshold": 0.6
+    }
+  ],
+  "live_trading_enabled": false
+}

@@ -1,0 +1,133 @@
+{
+  "status": "warn",
+  "json": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_106_dashboard_v2_cutover_acceptance.py_test_support_cutover_evidence_and_fallback_snapshot-8fa95a7a59d442c3958040c2db5e763a\\data\\dashboard-v2\\performance\\baseline.json",
+  "markdown": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_106_dashboard_v2_cutover_acceptance.py_test_support_cutover_evidence_and_fallback_snapshot-8fa95a7a59d442c3958040c2db5e763a\\data\\dashboard-v2\\performance\\baseline.md",
+  "report": {
+    "status": "warn",
+    "baseline": {
+      "samples": [
+        {
+          "name": "backend_startup_ms",
+          "value": null,
+          "unit": "ms",
+          "status": "unknown",
+          "note": "optional sample missing"
+        },
+        {
+          "name": "api_health_ms",
+          "value": null,
+          "unit": "ms",
+          "status": "unknown",
+          "note": "optional sample missing"
+        },
+        {
+          "name": "api_config_ms",
+          "value": null,
+          "unit": "ms",
+          "status": "unknown",
+          "note": "optional sample missing"
+        },
+        {
+          "name": "api_pages_ms",
+          "value": null,
+          "unit": "ms",
+          "status": "unknown",
+          "note": "optional sample missing"
+        },
+        {
+          "name": "api_snapshot_ms",
+          "value": null,
+          "unit": "ms",
+          "status": "unknown",
+          "note": "optional sample missing"
+        },
+        {
+          "name": "websocket_connect_ms",
+          "value": null,
+          "unit": "ms",
+          "status": "unknown",
+          "note": "optional sample missing"
+        },
+        {
+          "name": "websocket_heartbeat_ms",
+          "value": null,
+          "unit": "ms",
+          "status": "unknown",
+          "note": "optional sample missing"
+        },
+        {
+          "name": "snapshot_serialization_ms",
+          "value": null,
+          "unit": "ms",
+          "status": "unknown",
+          "note": "optional sample missing"
+        },
+        {
+          "name": "snapshot_payload_bytes",
+          "value": null,
+          "unit": "bytes",
+          "status": "unknown",
+          "note": "optional sample missing"
+        },
+        {
+          "name": "frontend_initial_load_ms",
+          "value": null,
+          "unit": "ms",
+          "status": "unknown",
+          "note": "optional sample missing"
+        },
+        {
+          "name": "route_navigation_ms",
+          "value": null,
+          "unit": "ms",
+          "status": "unknown",
+          "note": "optional sample missing"
+        },
+        {
+          "name": "chart_update_ms",
+          "value": null,
+          "unit": "ms",
+          "status": "unknown",
+          "note": "optional sample missing"
+        },
+        {
+          "name": "memory_best_effort_mb",
+          "value": null,
+          "unit": "mb",
+          "status": "unknown",
+          "note": "optional sample missing"
+        },
+        {
+          "name": "cpu_best_effort_pct",
+          "value": null,
+          "unit": "pct",
+          "status": "unknown",
+          "note": "optional sample missing"
+        }
+      ],
+      "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+      "live_trading_enabled": false,
+      "generated_at_ms": 1778858095672,
+      "warnings": [
+        "backend_startup_ms: optional sample missing",
+        "api_health_ms: optional sample missing",
+        "api_config_ms: optional sample missing",
+        "api_pages_ms: optional sample missing",
+        "api_snapshot_ms: optional sample missing",
+        "websocket_connect_ms: optional sample missing",
+        "websocket_heartbeat_ms: optional sample missing",
+        "snapshot_serialization_ms: optional sample missing",
+        "snapshot_payload_bytes: optional sample missing",
+        "frontend_initial_load_ms: optional sample missing",
+        "route_navigation_ms: optional sample missing",
+        "chart_update_ms: optional sample missing",
+        "memory_best_effort_mb: optional sample missing",
+        "cpu_best_effort_pct: optional sample missing"
+      ]
+    },
+    "browser_console_errors": 0,
+    "recommendations": [
+      "Collect missing optional browser/static metrics"
+    ]
+  }
+}

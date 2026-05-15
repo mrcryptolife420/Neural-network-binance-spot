@@ -1,0 +1,40 @@
+{
+  "status": "ready",
+  "rows": [
+    {
+      "symbol": "BTCUSDT",
+      "status": "ready",
+      "source": "public-rest",
+      "candles_loaded": 130,
+      "required_candles": 30,
+      "recommended_candles": 120,
+      "strong_candles": 500,
+      "freshness_score": 100,
+      "quality_status": "warning",
+      "confidence_penalty": 0.0,
+      "indicator": {
+        "symbol": "BTCUSDT",
+        "profile": "volatility",
+        "requested_profile": "auto",
+        "regime": "high_volatility",
+        "regime_reason": "ATR is elevated",
+        "ema_fast": 112.85,
+        "ema_slow": 112.150061,
+        "rsi": 100.0,
+        "atr": 2.0,
+        "macd_histogram": 2.9e-05,
+        "bollinger_position": 0.9119,
+        "bias": "BUY",
+        "confidence": 0.35,
+        "reason": "EMA trend up; MACD positive; RSI overbought",
+        "live_trading_enabled": false
+      },
+      "next_action": "ready"
+    }
+  ],
+  "manifests": [
+    "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmpacfc92ca521b416eabc4dc91d46c17b2\\data\\public_binance\\manifests\\BTCUSDT-1778857459170.json"
+  ],
+  "warnings": [],
+  "live_trading_enabled": false
+}

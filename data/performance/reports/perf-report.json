@@ -1,0 +1,7 @@
+{
+  "run_id": "perf-report",
+  "category": "report",
+  "spans": [],
+  "metrics": [],
+  "live_trading_enabled": false
+}

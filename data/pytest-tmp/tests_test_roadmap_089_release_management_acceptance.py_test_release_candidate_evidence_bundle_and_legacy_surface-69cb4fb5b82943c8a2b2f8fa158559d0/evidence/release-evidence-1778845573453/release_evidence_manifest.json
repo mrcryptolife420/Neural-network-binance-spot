@@ -1,0 +1,13 @@
+{
+  "bundle_id": "release-evidence-1778845573453",
+  "files": [
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_089_release_management_acceptance.py_test_release_candidate_evidence_bundle_and_legacy_surface-69cb4fb5b82943c8a2b2f8fa158559d0\\evidence\\release-evidence-1778845573453\\files\\release-manifest.json",
+      "sha256": "20b222a2f0d2e587f1696c8a"
+    }
+  ],
+  "no_live_proof": true,
+  "redaction_proof": true,
+  "live_trading_enabled": false,
+  "manifest_hash": "3ee21dcb71cdddc2d60bafaf"
+}

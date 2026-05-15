@@ -1,0 +1,8 @@
+{
+  "status": "ok",
+  "package_imports_without_streamlit": true,
+  "v2_launch": "ok",
+  "api_smoke": "ok",
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

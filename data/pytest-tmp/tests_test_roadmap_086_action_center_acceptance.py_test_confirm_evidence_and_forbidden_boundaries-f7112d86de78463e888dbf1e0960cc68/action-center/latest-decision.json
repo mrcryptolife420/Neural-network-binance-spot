@@ -1,0 +1,19 @@
+{
+  "decision_id": "dec-1778847471474",
+  "proposal_id": "act-1778847471434-f4781a1234",
+  "operator_id_local": "local-operator",
+  "decision": "approve",
+  "reason_text": "",
+  "reason_codes": [],
+  "evidence_links": [
+    "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_086_action_center_acceptance.py_test_confirm_evidence_and_forbidden_boundaries-f7112d86de78463e888dbf1e0960cc68\\preview.json"
+  ],
+  "risk_acknowledgement": "destructive_confirm_required",
+  "confirm_phrase_used": "[CONFIRMED]",
+  "previous_status": "needs_confirmation",
+  "next_status": "approved",
+  "created_at_ms": 1778847471474,
+  "redacted": true,
+  "live_trading_enabled": false,
+  "decision_hash": "f9bc83cbccc95da4401c5cbb"
+}

@@ -1,26 +1,47 @@
 from __future__ import annotations
 
-import time
-from contextlib import contextmanager
+import contextlib
+from typing import Any, Iterator
 
-from .dev_quality_facade import profile_payload
-
-
-def dashboard_profile(elapsed_ms: float):
-    return profile_payload("dashboard", elapsed_ms)
+from .profiling_core import ProfileRun, profile_block, summarize_profile_run
 
 
 class DashboardProfiler:
-    def __init__(self):
-        self.samples = []
+    def __init__(self, enabled: bool = True) -> None:
+        self.enabled = enabled
+        self.run = ProfileRun("dashboard-profile", "dashboard")
 
-    @contextmanager
-    def measure(self, name: str):
-        started = time.perf_counter()
-        try:
+    @contextlib.contextmanager
+    def measure(self, name: str, labels: dict[str, Any] | None = None) -> Iterator[None]:
+        if not self.enabled:
             yield
-        finally:
-            self.samples.append({"name": name, "elapsed_ms": round((time.perf_counter() - started) * 1000, 6)})
+            return
+        with profile_block(name, "dashboard", labels or {}, self.run):
+            yield
 
-    def to_dict(self):
-        return {"samples": self.samples, "live_trading_enabled": False}
+    def summary(self) -> dict[str, Any]:
+        return summarize_profile_run(self.run)
+
+    def to_dict(self) -> dict[str, Any]:
+        run = self.run.to_dict()
+        return {
+            "status": "ready",
+            "run": run,
+            "samples": run["spans"],
+            "summary": self.summary(),
+            "live_trading_enabled": False,
+        }
+
+
+def profile_dashboard_panels(panels: list[str]) -> dict[str, Any]:
+    profiler = DashboardProfiler()
+    for panel in panels:
+        with profiler.measure(panel, {"panel": panel}):
+            pass
+    payload = profiler.to_dict()
+    payload["slow_panels"] = [span for span in payload["run"]["spans"] if span["duration_ms"] > 500]
+    return payload
+
+
+def dashboard_profile(elapsed_ms: float) -> dict[str, Any]:
+    return {"status": "ok" if elapsed_ms <= 1000 else "warn", "payload": {"elapsed_ms": elapsed_ms}, "live_trading_enabled": False}

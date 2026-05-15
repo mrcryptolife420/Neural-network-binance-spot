@@ -1,0 +1,46 @@
+{
+  "status": "ok",
+  "items": [
+    {
+      "path": "disaster-recovery/backup_preflight_report.json",
+      "category": "state",
+      "suffix": ".json",
+      "size_bytes": 1943,
+      "modified_at": 1778861257357,
+      "sha256": "be9f083f1b582919935f168f",
+      "redacted": true,
+      "required": false,
+      "stale": false,
+      "include_eligible": true,
+      "restore_priority": 50
+    },
+    {
+      "path": "sample.json",
+      "category": "state",
+      "suffix": ".json",
+      "size_bytes": 12,
+      "modified_at": 1778861257338,
+      "sha256": "6bc0da1f42f96fc37b8bd7ed",
+      "redacted": true,
+      "required": false,
+      "stale": false,
+      "include_eligible": true,
+      "restore_priority": 50
+    },
+    {
+      "path": "support/dr-state-archive.zip",
+      "category": "support_bundles",
+      "suffix": ".zip",
+      "size_bytes": 664,
+      "modified_at": 1778861257340,
+      "sha256": "c4374419107853f60f9e9ccf",
+      "redacted": true,
+      "required": false,
+      "stale": false,
+      "include_eligible": true,
+      "restore_priority": 50
+    }
+  ],
+  "warnings": [],
+  "live_trading_enabled": false
+}

@@ -1,0 +1,12 @@
+{
+  "status": "healthy",
+  "deployment_id": "paper-adaptive-1778857459632",
+  "pnl": "1",
+  "drawdown": "0",
+  "trades": 1,
+  "drift_score": 0.05,
+  "watchdog_status": "clear",
+  "rollback_required": false,
+  "reasons": [],
+  "live_trading_enabled": false
+}

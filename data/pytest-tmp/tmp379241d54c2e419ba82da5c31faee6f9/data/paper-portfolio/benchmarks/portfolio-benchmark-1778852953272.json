@@ -1,0 +1,120 @@
+{
+  "status": "review",
+  "robustness_score": 0.896375,
+  "replays": [
+    {
+      "scenario": {
+        "name": "bull_momentum",
+        "price_shock_bps": 150,
+        "spread_shock_bps": 5,
+        "liquidity_haircut": "0",
+        "correlation_shock": "0"
+      },
+      "rows": [
+        {
+          "strategy_id": "trend",
+          "symbol": "BTCUSDT",
+          "quote_budget": "400.00",
+          "stressed_loss": "0.20",
+          "scenario": "bull_momentum"
+        },
+        {
+          "strategy_id": "mean",
+          "symbol": "ETHUSDT",
+          "quote_budget": "400.00",
+          "stressed_loss": "0.20",
+          "scenario": "bull_momentum"
+        }
+      ],
+      "total_stressed_loss": "0.40",
+      "drawdown_pct": 0.0005,
+      "status": "pass"
+    },
+    {
+      "scenario": {
+        "name": "bear_liquidity",
+        "price_shock_bps": -300,
+        "spread_shock_bps": 80,
+        "liquidity_haircut": "0.35",
+        "correlation_shock": "0"
+      },
+      "rows": [
+        {
+          "strategy_id": "trend",
+          "symbol": "BTCUSDT",
+          "quote_budget": "400.00",
+          "stressed_loss": "155.20",
+          "scenario": "bear_liquidity"
+        },
+        {
+          "strategy_id": "mean",
+          "symbol": "ETHUSDT",
+          "quote_budget": "400.00",
+          "stressed_loss": "155.20",
+          "scenario": "bear_liquidity"
+        }
+      ],
+      "total_stressed_loss": "310.40",
+      "drawdown_pct": 0.388,
+      "status": "review"
+    },
+    {
+      "scenario": {
+        "name": "range_chop",
+        "price_shock_bps": -50,
+        "spread_shock_bps": 20,
+        "liquidity_haircut": "0",
+        "correlation_shock": "0"
+      },
+      "rows": [
+        {
+          "strategy_id": "trend",
+          "symbol": "BTCUSDT",
+          "quote_budget": "400.00",
+          "stressed_loss": "2.80",
+          "scenario": "range_chop"
+        },
+        {
+          "strategy_id": "mean",
+          "symbol": "ETHUSDT",
+          "quote_budget": "400.00",
+          "stressed_loss": "2.80",
+          "scenario": "range_chop"
+        }
+      ],
+      "total_stressed_loss": "5.60",
+      "drawdown_pct": 0.007,
+      "status": "pass"
+    },
+    {
+      "scenario": {
+        "name": "correlation_break",
+        "price_shock_bps": -150,
+        "spread_shock_bps": 40,
+        "liquidity_haircut": "0",
+        "correlation_shock": "0.50"
+      },
+      "rows": [
+        {
+          "strategy_id": "trend",
+          "symbol": "BTCUSDT",
+          "quote_budget": "400.00",
+          "stressed_loss": "7.60",
+          "scenario": "correlation_break"
+        },
+        {
+          "strategy_id": "mean",
+          "symbol": "ETHUSDT",
+          "quote_budget": "400.00",
+          "stressed_loss": "7.60",
+          "scenario": "correlation_break"
+        }
+      ],
+      "total_stressed_loss": "15.20",
+      "drawdown_pct": 0.019,
+      "status": "pass"
+    }
+  ],
+  "reproducibility_hash": "[REDACTED]",
+  "live_trading_enabled": false
+}

@@ -1,0 +1,26 @@
+{
+  "fetched_at_ms": 1778860273708,
+  "files": {
+    "bundle": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp0c0cd8d7412644318c05e72e22873df7\\data\\public_binance\\bundles\\BTCUSDT-1778860273708.json",
+    "klines_1m": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp0c0cd8d7412644318c05e72e22873df7\\data\\processed\\BTCUSDT_1m_candles.csv",
+    "klines_5m": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp0c0cd8d7412644318c05e72e22873df7\\data\\processed\\BTCUSDT_5m_candles.csv"
+  },
+  "freshness_score": 100,
+  "hashes": {
+    "bundle": "046df77aedca5c272f5315e6",
+    "klines_1m": "c6cd4e6399c90428470ec7f7",
+    "klines_5m": "c6cd4e6399c90428470ec7f7"
+  },
+  "intervals": [
+    "1m",
+    "5m"
+  ],
+  "live_trading_enabled": false,
+  "row_counts": {
+    "1m": 130,
+    "5m": 130
+  },
+  "source_endpoint": "public-rest/cache",
+  "symbol": "BTCUSDT",
+  "warnings": []
+}

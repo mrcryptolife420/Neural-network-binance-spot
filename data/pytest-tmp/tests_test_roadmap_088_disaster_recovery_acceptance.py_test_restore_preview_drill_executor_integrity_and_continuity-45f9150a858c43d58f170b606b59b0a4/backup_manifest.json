@@ -1,0 +1,62 @@
+{
+  "backup_id": "backup-1778857460976",
+  "profile": {
+    "profile_id": "paper_ops_full",
+    "description": "Full local paper ops state without secrets.",
+    "includes": [
+      {
+        "pattern": "**/*",
+        "category": "state"
+      }
+    ],
+    "excludes": [
+      {
+        "pattern": "*.key",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*.pem",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*credential*",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*listenKey*",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": "*secret*",
+        "reason": "secret_or_unsafe"
+      },
+      {
+        "pattern": ".env",
+        "reason": "secret_or_unsafe"
+      }
+    ],
+    "live_trading_enabled": false,
+    "profile_hash": "45129c6e81b2788ecf5a3e99"
+  },
+  "files": [
+    {
+      "path": "action-center/decision-journal.jsonl",
+      "archive_path": "files/action-center/decision-journal.jsonl",
+      "sha256": "bd05f508df58c560dca70ed8",
+      "size_bytes": 24
+    },
+    {
+      "path": "reports/report.json",
+      "archive_path": "files/reports/report.json",
+      "sha256": "b74a85e010ec63393ba3744c",
+      "size_bytes": 43
+    }
+  ],
+  "created_at_ms": 1778857460982,
+  "source_fingerprint": "f3d39a349793e0da237e2c35",
+  "zip_sha256": "37f5989866182754ae9cff33",
+  "no_live_proof": true,
+  "redaction_proof": true,
+  "live_trading_enabled": false,
+  "manifest_hash": "3250a7f7e8ad99b82b450056"
+}

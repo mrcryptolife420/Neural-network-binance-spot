@@ -1,0 +1,77 @@
+{
+  "status": "ok",
+  "profile": {
+    "name": "standard_milestone",
+    "commands": [
+      "system-inventory",
+      "system-safety-invariants",
+      "operator-quality-gate",
+      "evidence-manifest",
+      "dashboard-smoke",
+      "roadmap-traceability-audit",
+      "paper-os-simulation"
+    ],
+    "required_evidence": [
+      "system_inventory",
+      "safety_invariants",
+      "operator_quality_gate",
+      "dashboard_smoke",
+      "roadmap_traceability",
+      "paper_simulation"
+    ],
+    "confirm_phrase": "RUN_STANDARD_MILESTONE",
+    "browser_smoke_required": false,
+    "safe_env": {
+      "PYTHONPATH": "src",
+      "LIVE_TRADING_ENABLED": "false",
+      "KILL_SWITCH": "true"
+    },
+    "live_trading_enabled": false
+  },
+  "commands": [
+    {
+      "command": "system-inventory",
+      "status": "ok",
+      "reason": "safe command resolved"
+    },
+    {
+      "command": "system-safety-invariants",
+      "status": "ok",
+      "reason": "safe command resolved"
+    },
+    {
+      "command": "operator-quality-gate",
+      "status": "ok",
+      "reason": "safe command resolved"
+    },
+    {
+      "command": "evidence-manifest",
+      "status": "ok",
+      "reason": "safe command resolved"
+    },
+    {
+      "command": "dashboard-smoke",
+      "status": "ok",
+      "reason": "safe command resolved"
+    },
+    {
+      "command": "roadmap-traceability-audit",
+      "status": "ok",
+      "reason": "safe command resolved"
+    },
+    {
+      "command": "paper-os-simulation",
+      "status": "ok",
+      "reason": "safe command resolved"
+    }
+  ],
+  "executed_subprocesses": false,
+  "safe_env": {
+    "PYTHONPATH": "src",
+    "LIVE_TRADING_ENABLED": "false",
+    "KILL_SWITCH": "true"
+  },
+  "created_at_ms": 1778851568599,
+  "live_trading_enabled": false,
+  "signed_endpoints_used": false
+}

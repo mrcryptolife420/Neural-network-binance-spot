@@ -1,0 +1,134 @@
+{
+  "status": "ok",
+  "workflows": [
+    {
+      "key": "open_dashboard",
+      "route": "/",
+      "api_endpoints": [
+        "/api/health"
+      ],
+      "action_policy": "safe",
+      "browser_smoke": "pass",
+      "uat_status": "pass",
+      "evidence_output": true,
+      "fallback_path": "python -m binance_spot_bot.cli dashboard --legacy-streamlit",
+      "no_live_step": true,
+      "status": "locked"
+    },
+    {
+      "key": "no_live_proof",
+      "route": "/readiness",
+      "api_endpoints": [
+        "/api/no-live-proof"
+      ],
+      "action_policy": "safe",
+      "browser_smoke": "pass",
+      "uat_status": "pass",
+      "evidence_output": true,
+      "fallback_path": "python -m binance_spot_bot.cli dashboard --legacy-streamlit",
+      "no_live_step": true,
+      "status": "locked"
+    },
+    {
+      "key": "runtime_configure",
+      "route": "/start",
+      "api_endpoints": [
+        "/api/runtime/snapshot"
+      ],
+      "action_policy": "safe",
+      "browser_smoke": "pass",
+      "uat_status": "pass",
+      "evidence_output": true,
+      "fallback_path": "python -m binance_spot_bot.cli dashboard --legacy-streamlit",
+      "no_live_step": true,
+      "status": "locked"
+    },
+    {
+      "key": "demo_bot_start_stop",
+      "route": "/start",
+      "api_endpoints": [
+        "/api/runtime/start",
+        "/api/runtime/stop"
+      ],
+      "action_policy": "safe",
+      "browser_smoke": "pass",
+      "uat_status": "pass",
+      "evidence_output": true,
+      "fallback_path": "python -m binance_spot_bot.cli dashboard --legacy-streamlit",
+      "no_live_step": true,
+      "status": "locked"
+    },
+    {
+      "key": "paper_session_start_stop",
+      "route": "/paper-session-workflow",
+      "api_endpoints": [
+        "/api/runtime/start",
+        "/api/runtime/stop"
+      ],
+      "action_policy": "safe",
+      "browser_smoke": "pass",
+      "uat_status": "pass",
+      "evidence_output": true,
+      "fallback_path": "python -m binance_spot_bot.cli dashboard --legacy-streamlit",
+      "no_live_step": true,
+      "status": "locked"
+    },
+    {
+      "key": "demo_spot_guarded_flow",
+      "route": "/demo-spot-guided",
+      "api_endpoints": [
+        "/api/runtime/snapshot"
+      ],
+      "action_policy": "safe",
+      "browser_smoke": "pass",
+      "uat_status": "pass",
+      "evidence_output": true,
+      "fallback_path": "python -m binance_spot_bot.cli dashboard --legacy-streamlit",
+      "no_live_step": true,
+      "status": "locked"
+    },
+    {
+      "key": "support_bundle",
+      "route": "/support",
+      "api_endpoints": [
+        "/api/pages"
+      ],
+      "action_policy": "safe",
+      "browser_smoke": "pass",
+      "uat_status": "pass",
+      "evidence_output": true,
+      "fallback_path": "python -m binance_spot_bot.cli dashboard --legacy-streamlit",
+      "no_live_step": true,
+      "status": "locked"
+    },
+    {
+      "key": "evidence_export",
+      "route": "/evidence",
+      "api_endpoints": [
+        "/api/pages"
+      ],
+      "action_policy": "safe",
+      "browser_smoke": "pass",
+      "uat_status": "pass",
+      "evidence_output": true,
+      "fallback_path": "python -m binance_spot_bot.cli dashboard --legacy-streamlit",
+      "no_live_step": true,
+      "status": "locked"
+    },
+    {
+      "key": "streamlit_fallback",
+      "route": "/system/logs",
+      "api_endpoints": [],
+      "action_policy": "safe",
+      "browser_smoke": "pass",
+      "uat_status": "pass",
+      "evidence_output": true,
+      "fallback_path": "python -m binance_spot_bot.cli dashboard --legacy-streamlit",
+      "no_live_step": true,
+      "status": "locked"
+    }
+  ],
+  "hard_blockers": [],
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

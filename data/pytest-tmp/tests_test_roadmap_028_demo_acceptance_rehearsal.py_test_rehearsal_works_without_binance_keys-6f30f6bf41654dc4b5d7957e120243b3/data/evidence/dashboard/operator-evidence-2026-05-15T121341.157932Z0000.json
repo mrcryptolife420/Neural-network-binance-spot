@@ -1,0 +1,207 @@
+{
+  "timestamp": "2026-05-15T12:13:41.150097+00:00",
+  "mode": "demo",
+  "profile": "local-demo",
+  "source": "demo",
+  "base_url": "https://api.binance.com",
+  "live_trading_enabled": false,
+  "kill_switch": true,
+  "connectivity": {},
+  "snapshot": {},
+  "runner": {
+    "state": "not_running",
+    "alive": false,
+    "stale": false,
+    "heartbeat_age_ms": 0,
+    "health": {
+      "state": "not_running",
+      "alive": false,
+      "stale": false,
+      "heartbeat_age_ms": 0,
+      "run_id": "",
+      "runner_id": "",
+      "pid": "-",
+      "latest_command": "",
+      "pending_commands": 0,
+      "failed_commands": 0,
+      "ignored_commands": 0,
+      "telemetry_rows": 0,
+      "latest_equity": "0",
+      "latest_pnl": "0",
+      "report_paths": 0,
+      "next_safe_action": "Start runner"
+    },
+    "telemetry_summary": {
+      "row_count": 0,
+      "first_timestamp_ms": 0,
+      "last_timestamp_ms": 0,
+      "max_heartbeat_age_ms": 0,
+      "latest_equity": "0",
+      "latest_pnl": "0",
+      "latest_runner_status": "not_running",
+      "latest_runtime_status": "-",
+      "orders": 0,
+      "rejects": 0,
+      "api_errors": 0,
+      "alerts_count": 0,
+      "reconciliation_status_counts": {}
+    },
+    "commands": []
+  },
+  "dashboard": {
+    "pages": [
+      "overview",
+      "demo_spot_trading",
+      "credentials_profile",
+      "bot_controls",
+      "risk_controls",
+      "strategy_model",
+      "market_data",
+      "orders_account",
+      "sessions",
+      "evaluation",
+      "strategy_lab",
+      "research",
+      "portfolio",
+      "readiness",
+      "logs_security",
+      "demo_pilot",
+      "policy_governance",
+      "ops_automation",
+      "observability",
+      "ai_ops_assistant",
+      "action_center",
+      "permissions",
+      "disaster_recovery",
+      "release_management",
+      "roadmap_automation",
+      "repo_knowledge",
+      "test_selection",
+      "performance",
+      "runtime_core",
+      "data_pipeline",
+      "model_training",
+      "model_monitoring",
+      "portfolio_ensemble",
+      "paper_os_audit",
+      "stabilization",
+      "operator_training"
+    ],
+    "page_titles": [
+      "Overview",
+      "Demo Spot Trading",
+      "Credentials & Profile",
+      "Bot Controls",
+      "Risk Controls",
+      "Strategy & Model",
+      "Market Data",
+      "Orders & Account",
+      "Sessions",
+      "Evaluation",
+      "Strategy Lab",
+      "Research",
+      "Portfolio",
+      "Readiness",
+      "Logs & Security",
+      "Demo Pilot",
+      "Policy Governance",
+      "Ops Automation",
+      "Observability",
+      "AI Ops Assistant",
+      "Action Center",
+      "Permissions",
+      "Disaster Recovery",
+      "Release Management",
+      "Roadmap Automation",
+      "Repo Knowledge",
+      "Test Selection",
+      "Performance",
+      "Runtime Core",
+      "Data Pipeline",
+      "Model Training",
+      "Model Monitoring",
+      "Portfolio Ensemble",
+      "Paper OS Audit",
+      "Stabilization",
+      "Operator Training"
+    ],
+    "chart_keys": [
+      "overview.candlestick",
+      "overview.equity",
+      "demo_pilot.runner.heartbeat",
+      "demo_pilot.runner.counters",
+      "demo_pilot.runner.equity_pnl",
+      "demo_pilot.runner.command_status"
+    ],
+    "unique_chart_keys": true
+  },
+  "demo_execution_drill": {
+    "action": "preview",
+    "status": "PREVIEW_READY",
+    "reason": "order preview created",
+    "preview": {
+      "intent": {
+        "symbol": "BTCUSDT",
+        "side": "BUY",
+        "quote_size": "10",
+        "last_price": "100",
+        "order_type": "MARKET"
+      },
+      "order": {
+        "symbol": "BTCUSDT",
+        "side": "BUY",
+        "order_type": "MARKET",
+        "quantity": "0.1",
+        "quote_order_qty": null,
+        "price": null,
+        "client_order_id": "spotbot-5e4df697821d47fd92ac5a64"
+      },
+      "filters": {
+        "symbol": "BTCUSDT",
+        "status": "TRADING",
+        "tick_size": "0.01",
+        "step_size": "0.000001",
+        "min_qty": "0.000001",
+        "max_qty": "1000",
+        "min_notional": "5",
+        "market_max_qty": "None"
+      },
+      "market": {
+        "symbol": "BTCUSDT",
+        "last_price": "100",
+        "bid": "100",
+        "ask": "100"
+      },
+      "risk_decision": {
+        "decision": "ALLOW",
+        "reason": "manual sandbox intent"
+      },
+      "live_trading_enabled": false
+    },
+    "response": null,
+    "lifecycle": [
+      {
+        "client_order_id": "spotbot-5e4df697821d47fd92ac5a64",
+        "symbol": "BTCUSDT",
+        "side": "BUY",
+        "status": "INTENT",
+        "order_id": null,
+        "filled_quantity": "0",
+        "last_price": "0",
+        "events": [
+          {
+            "type": "INTENT",
+            "status": "INTENT"
+          },
+          {
+            "type": "PREVIEW_CREATED",
+            "status": "PREVIEW"
+          }
+        ],
+        "needs_reconciliation": false
+      }
+    ],
+    "evidence_path": "",
+    "live_trading_enabled": false
+  }
+}

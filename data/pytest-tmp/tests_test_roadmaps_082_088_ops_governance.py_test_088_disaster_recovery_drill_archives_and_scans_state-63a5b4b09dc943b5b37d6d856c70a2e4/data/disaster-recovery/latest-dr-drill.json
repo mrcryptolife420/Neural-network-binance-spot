@@ -1,0 +1,445 @@
+{
+  "status": "pass",
+  "archive": {
+    "status": "ok",
+    "archive": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\support\\dr-state-archive.zip",
+    "mode": "preview-only",
+    "live_trading_enabled": false
+  },
+  "backup_preflight": {
+    "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\backup_preflight_report.json",
+    "status": "ok",
+    "profile": {
+      "profile_id": "restore_drill_fixture",
+      "description": "Small deterministic fixture subset.",
+      "includes": [
+        {
+          "pattern": "*.json",
+          "category": "state"
+        },
+        {
+          "pattern": "reports/**",
+          "category": "state"
+        },
+        {
+          "pattern": "checks/**",
+          "category": "state"
+        }
+      ],
+      "excludes": [
+        {
+          "pattern": "*.key",
+          "reason": "secret_or_unsafe"
+        },
+        {
+          "pattern": "*.pem",
+          "reason": "secret_or_unsafe"
+        },
+        {
+          "pattern": "*credential*",
+          "reason": "secret_or_unsafe"
+        },
+        {
+          "pattern": "*listenKey*",
+          "reason": "secret_or_unsafe"
+        },
+        {
+          "pattern": "*secret*",
+          "reason": "secret_or_unsafe"
+        },
+        {
+          "pattern": ".env",
+          "reason": "secret_or_unsafe"
+        }
+      ],
+      "live_trading_enabled": false,
+      "profile_hash": "6594d33dd5da6479bfaedf0d"
+    },
+    "checks": [
+      {
+        "name": "profile",
+        "status": "ok",
+        "blocking": false
+      },
+      {
+        "name": "secret_scan",
+        "status": "ok",
+        "blocking": false
+      },
+      {
+        "name": "forbidden_backup_files",
+        "status": "ok",
+        "blocking": false
+      },
+      {
+        "name": "no_live_proof",
+        "status": "ok",
+        "blocking": false
+      },
+      {
+        "name": "permission_drift",
+        "status": "ok",
+        "blocking": false
+      },
+      {
+        "name": "compliance_score",
+        "status": "ok",
+        "blocking": false
+      },
+      {
+        "name": "disk_space",
+        "status": "ok",
+        "blocking": false
+      }
+    ],
+    "blockers": [],
+    "inventory_count": 2,
+    "estimated_output_size_bytes": 676,
+    "secret_findings": [],
+    "forbidden_inventory": [],
+    "no_live_proof": true,
+    "live_trading_enabled": false
+  },
+  "backup": {
+    "status": "ok",
+    "backup_id": "backup-1778860278955",
+    "zip": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\backup.zip",
+    "manifest": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\backup_manifest.json",
+    "summary": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\backup_summary.md",
+    "inventory": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\inventory_manifest.json",
+    "profile": {
+      "profile_id": "restore_drill_fixture",
+      "description": "Small deterministic fixture subset.",
+      "includes": [
+        {
+          "pattern": "*.json",
+          "category": "state"
+        },
+        {
+          "pattern": "reports/**",
+          "category": "state"
+        },
+        {
+          "pattern": "checks/**",
+          "category": "state"
+        }
+      ],
+      "excludes": [
+        {
+          "pattern": "*.key",
+          "reason": "secret_or_unsafe"
+        },
+        {
+          "pattern": "*.pem",
+          "reason": "secret_or_unsafe"
+        },
+        {
+          "pattern": "*credential*",
+          "reason": "secret_or_unsafe"
+        },
+        {
+          "pattern": "*listenKey*",
+          "reason": "secret_or_unsafe"
+        },
+        {
+          "pattern": "*secret*",
+          "reason": "secret_or_unsafe"
+        },
+        {
+          "pattern": ".env",
+          "reason": "secret_or_unsafe"
+        }
+      ],
+      "live_trading_enabled": false,
+      "profile_hash": "6594d33dd5da6479bfaedf0d"
+    },
+    "files": [
+      {
+        "path": "disaster-recovery/backup_preflight_report.json",
+        "archive_path": "files/disaster-recovery/backup_preflight_report.json",
+        "sha256": "4c6c6a3c728fed27894c8655",
+        "size_bytes": 1851
+      },
+      {
+        "path": "sample.json",
+        "archive_path": "files/sample.json",
+        "sha256": "6bc0da1f42f96fc37b8bd7ed",
+        "size_bytes": 12
+      }
+    ],
+    "created_at_ms": 1778860278964,
+    "source_fingerprint": "4a6d2bca207b56950d7a7c82",
+    "zip_sha256": "1547ac8b113ed93894e3cfd2",
+    "no_live_proof": true,
+    "redaction_proof": true,
+    "live_trading_enabled": false,
+    "manifest_hash": "011d5092bea3d92de0f491ea"
+  },
+  "backup_verify": {
+    "status": "ok",
+    "zip": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\backup.zip",
+    "files": [
+      {
+        "path": "files/disaster-recovery/backup_preflight_report.json",
+        "sha256": "4c6c6a3c728fed27894c8655"
+      },
+      {
+        "path": "files/sample.json",
+        "sha256": "6bc0da1f42f96fc37b8bd7ed"
+      },
+      {
+        "path": "no_live_proof.json",
+        "sha256": "00fcf70f20f264f475667e1a"
+      },
+      {
+        "path": "redaction_proof.json",
+        "sha256": "633391127c758ab6a1ec74b4"
+      },
+      {
+        "path": "restore_instructions.md",
+        "sha256": "5973a43f9889895e3b868ccd"
+      }
+    ],
+    "errors": [],
+    "live_trading_enabled": false
+  },
+  "restore_preview_v2": {
+    "status": "ok",
+    "preview_id": "preview-1778860278982",
+    "backup": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\backup.zip",
+    "target": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\restore-preview-target",
+    "creates": [
+      "disaster-recovery/backup_preflight_report.json",
+      "sample.json"
+    ],
+    "overwrites": [],
+    "skips": [],
+    "conflicts": [],
+    "forbidden": [],
+    "verify": {
+      "status": "ok",
+      "zip": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\backup.zip",
+      "files": [
+        {
+          "path": "files/disaster-recovery/backup_preflight_report.json",
+          "sha256": "4c6c6a3c728fed27894c8655"
+        },
+        {
+          "path": "files/sample.json",
+          "sha256": "6bc0da1f42f96fc37b8bd7ed"
+        },
+        {
+          "path": "no_live_proof.json",
+          "sha256": "00fcf70f20f264f475667e1a"
+        },
+        {
+          "path": "redaction_proof.json",
+          "sha256": "633391127c758ab6a1ec74b4"
+        },
+        {
+          "path": "restore_instructions.md",
+          "sha256": "5973a43f9889895e3b868ccd"
+        }
+      ],
+      "errors": [],
+      "live_trading_enabled": false
+    },
+    "preview_only": true,
+    "no_live_proof": true,
+    "live_trading_enabled": false
+  },
+  "restore_drill": {
+    "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\restore_drill_report.json",
+    "status": "pass",
+    "sandbox": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\spotbot-restore-drill-6e4e49b4951341b8bda36b39acd48b09",
+    "extracted": 2,
+    "verify": {
+      "status": "ok",
+      "zip": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\backup.zip",
+      "files": [
+        {
+          "path": "files/disaster-recovery/backup_preflight_report.json",
+          "sha256": "4c6c6a3c728fed27894c8655"
+        },
+        {
+          "path": "files/sample.json",
+          "sha256": "6bc0da1f42f96fc37b8bd7ed"
+        },
+        {
+          "path": "no_live_proof.json",
+          "sha256": "00fcf70f20f264f475667e1a"
+        },
+        {
+          "path": "redaction_proof.json",
+          "sha256": "633391127c758ab6a1ec74b4"
+        },
+        {
+          "path": "restore_instructions.md",
+          "sha256": "5973a43f9889895e3b868ccd"
+        }
+      ],
+      "errors": [],
+      "live_trading_enabled": false
+    },
+    "preview": {
+      "status": "ok",
+      "preview_id": "preview-1778860278991",
+      "backup": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\backup.zip",
+      "target": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\spotbot-restore-drill-6e4e49b4951341b8bda36b39acd48b09",
+      "creates": [
+        "disaster-recovery/backup_preflight_report.json",
+        "sample.json"
+      ],
+      "overwrites": [],
+      "skips": [],
+      "conflicts": [],
+      "forbidden": [],
+      "verify": {
+        "status": "ok",
+        "zip": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\backup.zip",
+        "files": [
+          {
+            "path": "files/disaster-recovery/backup_preflight_report.json",
+            "sha256": "4c6c6a3c728fed27894c8655"
+          },
+          {
+            "path": "files/sample.json",
+            "sha256": "6bc0da1f42f96fc37b8bd7ed"
+          },
+          {
+            "path": "no_live_proof.json",
+            "sha256": "00fcf70f20f264f475667e1a"
+          },
+          {
+            "path": "redaction_proof.json",
+            "sha256": "633391127c758ab6a1ec74b4"
+          },
+          {
+            "path": "restore_instructions.md",
+            "sha256": "5973a43f9889895e3b868ccd"
+          }
+        ],
+        "errors": [],
+        "live_trading_enabled": false
+      },
+      "preview_only": true,
+      "no_live_proof": true,
+      "live_trading_enabled": false
+    },
+    "integrity": {
+      "status": "ok",
+      "issues": [],
+      "repair_plan": [],
+      "read_only": true,
+      "live_trading_enabled": false
+    },
+    "permission_drift": {
+      "status": "ok",
+      "findings": [],
+      "live_trading_enabled": false
+    },
+    "live_trading_enabled": false,
+    "sandbox_cleaned": true
+  },
+  "restore_preview": {
+    "status": "skipped",
+    "reason": "no_bundle_supplied"
+  },
+  "integrity": {
+    "status": "ok",
+    "checked": 10,
+    "unreadable": [],
+    "hashes": [
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\sample.json",
+        "sha256": "6bc0da1f42f96fc37b8bd7ed",
+        "bytes": 12
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\backup_manifest.json",
+        "sha256": "90a693c374e83422fc63e73c",
+        "bytes": 1752
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\backup_preflight_report.json",
+        "sha256": "be9f083f1b582919935f168f",
+        "bytes": 1943
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\backup_summary.md",
+        "sha256": "aa588f74e5baa3af07f0a497",
+        "bytes": 95
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\backup_verify_report.json",
+        "sha256": "5f8b6e5d42f808ccb8b07421",
+        "bytes": 876
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\backup_verify_report.md",
+        "sha256": "3fd7e8f81ca25fe5a5ccddf5",
+        "bytes": 62
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\inventory_manifest.json",
+        "sha256": "bab1848f72b73283902fb1de",
+        "bytes": 1187
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\restore_drill_report.json",
+        "sha256": "24629447ca7f4e501627c2f3",
+        "bytes": 3212
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\restore_preview.json",
+        "sha256": "9c3688d6a8edef6f88a3466c",
+        "bytes": 1682
+      },
+      {
+        "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmaps_082_088_ops_governance.py_test_088_disaster_recovery_drill_archives_and_scans_state-63a5b4b09dc943b5b37d6d856c70a2e4\\data\\disaster-recovery\\restore_preview.md",
+        "sha256": "38cab588ecec27a9171d7a1e",
+        "bytes": 78
+      }
+    ]
+  },
+  "integrity_v2": {
+    "status": "ok",
+    "issues": [],
+    "repair_plan": [],
+    "read_only": true,
+    "live_trading_enabled": false
+  },
+  "permission_restore": {
+    "status": "blocked",
+    "blockers": [
+      "forbidden_scope:backup_manifest.json",
+      "forbidden_scope:backup_preflight_report.json",
+      "forbidden_scope:backup_verify_report.json",
+      "forbidden_scope:inventory_manifest.json",
+      "forbidden_scope:restore_drill_report.json",
+      "forbidden_scope:restore_preview.json"
+    ],
+    "warnings": [
+      "permissions_missing",
+      "action_journal_missing"
+    ],
+    "permission_drift": {
+      "status": "ok",
+      "findings": [],
+      "live_trading_enabled": false
+    },
+    "no_live_proof": false,
+    "live_trading_enabled": false
+  },
+  "evidence_continuity": {
+    "status": "warn",
+    "warnings": [
+      "no_evidence_files_in_backup"
+    ],
+    "blockers": [],
+    "evidence_files": 0,
+    "live_trading_enabled": false
+  },
+  "blockers": [],
+  "live_trading_enabled": false
+}

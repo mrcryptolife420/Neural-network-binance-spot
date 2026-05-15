@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "dry_run_id": "dry-demo-1778560487840",
+  "dry_run_id": "dry-demo-1778867158812",
   "migration": "demo",
   "plan": {
     "status": "ok",
@@ -100,6 +100,7 @@
     "logs\\dashboard.pid",
     "metrics-warehouse\\metrics.jsonl",
     "models\\registry.json",
+    "performance\\latest.json",
     "permission-profiles\\compliance-report.json",
     "permissions\\approved-permission-change.json",
     "permissions\\approved-permission-change.rollback.json",
@@ -141,6 +142,7 @@
     "processed\\XRPUSDT_1h_candles.csv",
     "processed\\XRPUSDT_1m_candles.csv",
     "processed\\XRPUSDT_5m_candles.csv",
+    "pytest-basetemp-probe-78f1023bd0914552a5ea16294bc1c38b\\probe.txt",
     "raw\\BTCUSDT_1m_latest.json",
     "releases\\current-install-fingerprint.json",
     "repository-knowledge\\artifact_flow.json",
@@ -156,9 +158,7 @@
     "settings\\dashboard.json",
     "support\\dr-state-archive.zip",
     "support\\quality-gate-support.zip",
-    "support\\support-bundle.zip",
-    "test-runs\\history.jsonl",
-    "test-runs\\latest.json"
+    "support\\support-bundle.zip"
   ],
   "deletes": [],
   "destructive": false,

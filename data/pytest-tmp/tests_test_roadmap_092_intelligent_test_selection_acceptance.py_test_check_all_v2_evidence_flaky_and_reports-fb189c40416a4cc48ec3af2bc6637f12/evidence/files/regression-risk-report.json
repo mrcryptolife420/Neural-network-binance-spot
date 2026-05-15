@@ -1,0 +1,29 @@
+{
+  "status": "ready",
+  "changed_files": [
+    "src/binance_spot_bot/runtime.py"
+  ],
+  "risk": {
+    "score": 70,
+    "level": "high",
+    "profile": "deep",
+    "factors": [
+      {
+        "name": "high_core_surface",
+        "weight": 70,
+        "reason": "src/binance_spot_bot/runtime.py"
+      }
+    ]
+  },
+  "selected_profile": "deep",
+  "required_tests": [
+    "tests/test_runtime_pilot_runner.py",
+    "python -m pytest -q",
+    "python -m binance_spot_bot.cli check-all --json",
+    "python -m binance_spot_bot.cli redaction-self-test --json"
+  ],
+  "blockers": [],
+  "estimated_runtime_ms": 120000,
+  "no_live_proof": true,
+  "live_trading_enabled": false
+}

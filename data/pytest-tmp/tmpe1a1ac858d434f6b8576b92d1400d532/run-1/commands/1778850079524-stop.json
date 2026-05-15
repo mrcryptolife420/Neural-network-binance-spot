@@ -1,0 +1,9 @@
+{
+  "command_id": "1778850079524-stop",
+  "type": "stop",
+  "created_at_ms": 1778850079524,
+  "status": "pending",
+  "payload": {},
+  "processed_at_ms": 0,
+  "result": {}
+}

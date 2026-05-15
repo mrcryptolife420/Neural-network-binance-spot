@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-15T12:14:44.791498+00:00",
+  "status": "planned",
+  "url": "http://127.0.0.1:8503",
+  "port": 8503,
+  "pid": null,
+  "log_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\logs\\control-center.log",
+  "error_log_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\logs\\control-center.err.log",
+  "live_trading_enabled": false,
+  "kill_switch": true,
+  "preflight_status": "rehearsal"
+}

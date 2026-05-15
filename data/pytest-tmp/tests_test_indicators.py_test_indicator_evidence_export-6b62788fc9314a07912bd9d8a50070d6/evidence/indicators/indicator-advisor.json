@@ -1,0 +1,36 @@
+{
+  "created_at_ms": 1778853504835,
+  "profile": "auto",
+  "auto_profile": true,
+  "rows": [
+    {
+      "symbol": "BTCUSDT",
+      "profile": "trend",
+      "requested_profile": "auto",
+      "regime": "uptrend",
+      "regime_reason": "EMA fast is above EMA slow",
+      "ema_fast": 101.186456,
+      "ema_slow": 100.608174,
+      "rsi": 96.5,
+      "atr": 0.927514,
+      "macd_histogram": 0.172175,
+      "bollinger_position": 0.9007,
+      "bias": "BUY",
+      "confidence": 0.35,
+      "reason": "EMA trend up; MACD positive; RSI overbought",
+      "live_trading_enabled": false
+    }
+  ],
+  "summary": {
+    "symbols": 1,
+    "bias_counts": {
+      "BUY": 1
+    },
+    "regime_counts": {
+      "uptrend": 1
+    },
+    "avg_confidence": 0.35,
+    "live_trading_enabled": false
+  },
+  "live_trading_enabled": false
+}

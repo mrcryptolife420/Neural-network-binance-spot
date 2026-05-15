@@ -1,0 +1,39 @@
+{
+  "status": "ready",
+  "run_id": "unit-profile",
+  "category": "test",
+  "span_count": 2,
+  "total_duration_ms": 0.021,
+  "max_duration_ms": 0.01,
+  "slowest_spans": [
+    {
+      "span_id": "95c8ec36-d57",
+      "name": "ok-span",
+      "category": "test",
+      "started_at_ms": 12479956.9137,
+      "parent_span_id": "",
+      "duration_ms": 0.010300001129508018,
+      "status": "ok",
+      "labels": {
+        "api_secret": "[REDACTED]"
+      },
+      "error_type": "",
+      "redacted": true,
+      "live_trading_enabled": false
+    },
+    {
+      "span_id": "0dad5ae6-425",
+      "name": "bad-span",
+      "category": "test",
+      "started_at_ms": 12479956.9675,
+      "parent_span_id": "",
+      "duration_ms": 0.010300001129508018,
+      "status": "error",
+      "labels": {},
+      "error_type": "RuntimeError",
+      "redacted": true,
+      "live_trading_enabled": false
+    }
+  ],
+  "live_trading_enabled": false
+}

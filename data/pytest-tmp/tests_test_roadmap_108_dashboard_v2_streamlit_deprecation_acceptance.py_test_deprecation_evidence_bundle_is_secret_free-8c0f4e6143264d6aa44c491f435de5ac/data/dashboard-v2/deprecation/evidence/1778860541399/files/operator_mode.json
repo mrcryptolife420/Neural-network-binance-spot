@@ -1,0 +1,18 @@
+{
+  "status": "ok",
+  "streamlit_import_required": false,
+  "routes": [
+    "/",
+    "/start",
+    "/demo-spot-guided",
+    "/paper-session-workflow",
+    "/support",
+    "/evidence",
+    "/system/logs"
+  ],
+  "advanced_hidden_by_default": true,
+  "stop_button_always_visible": true,
+  "fallback_link_visible": true,
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

@@ -1,0 +1,175 @@
+{
+  "status": "ready",
+  "payload": {
+    "files": [
+      {
+        "path": "docs/impact-analysis.md",
+        "suffix": ".md",
+        "size_bytes": 42,
+        "modified_at": 1778849858.4357042,
+        "sha256": "6df4f9181429033e24e6cf0d",
+        "category": "docs",
+        "line_count": 4,
+        "class_count": 0,
+        "function_count": 0,
+        "import_count": 0,
+        "has_tests_guess": false,
+        "safety_relevant_guess": false,
+        "secret_scan_status": "ok"
+      },
+      {
+        "path": "Roadmap docs/091-roadmap-repo-knowledge.md",
+        "suffix": ".md",
+        "size_bytes": 261,
+        "modified_at": 1778849858.4367032,
+        "sha256": "9fbfe2c1813a03c46d432535",
+        "category": "roadmap",
+        "line_count": 17,
+        "class_count": 0,
+        "function_count": 0,
+        "import_count": 0,
+        "has_tests_guess": false,
+        "safety_relevant_guess": false,
+        "secret_scan_status": "ok"
+      },
+      {
+        "path": "src/binance_spot_bot/__init__.py",
+        "suffix": ".py",
+        "size_bytes": 0,
+        "modified_at": 1778849858.4311905,
+        "sha256": "e3b0c44298fc1c149afbf4c8",
+        "category": "source",
+        "line_count": 0,
+        "class_count": 0,
+        "function_count": 0,
+        "import_count": 0,
+        "has_tests_guess": false,
+        "safety_relevant_guess": false,
+        "secret_scan_status": "ok"
+      },
+      {
+        "path": "src/binance_spot_bot/cli.py",
+        "suffix": ".py",
+        "size_bytes": 64,
+        "modified_at": 1778849858.4331913,
+        "sha256": "86e0bdd2e2f055756d339fa3",
+        "category": "source",
+        "line_count": 3,
+        "class_count": 0,
+        "function_count": 0,
+        "import_count": 0,
+        "has_tests_guess": false,
+        "safety_relevant_guess": false,
+        "secret_scan_status": "ok"
+      },
+      {
+        "path": "src/binance_spot_bot/risk.py",
+        "suffix": ".py",
+        "size_bytes": 24,
+        "modified_at": 1778849858.4331913,
+        "sha256": "518f933e82f6f71c911899a3",
+        "category": "source",
+        "line_count": 2,
+        "class_count": 1,
+        "function_count": 0,
+        "import_count": 0,
+        "has_tests_guess": false,
+        "safety_relevant_guess": true,
+        "secret_scan_status": "ok"
+      },
+      {
+        "path": "src/binance_spot_bot/runtime.py",
+        "suffix": ".py",
+        "size_bytes": 68,
+        "modified_at": 1778849858.43219,
+        "sha256": "95d28fd97d1e41bb32a2762a",
+        "category": "source",
+        "line_count": 4,
+        "class_count": 1,
+        "function_count": 1,
+        "import_count": 1,
+        "has_tests_guess": true,
+        "safety_relevant_guess": false,
+        "secret_scan_status": "ok"
+      },
+      {
+        "path": "src/binance_spot_bot/ui/streamlit_app.py",
+        "suffix": ".py",
+        "size_bytes": 56,
+        "modified_at": 1778849858.4347067,
+        "sha256": "dcd5f2b0fac829d502351d92",
+        "category": "source",
+        "line_count": 3,
+        "class_count": 0,
+        "function_count": 1,
+        "import_count": 0,
+        "has_tests_guess": false,
+        "safety_relevant_guess": false,
+        "secret_scan_status": "ok"
+      },
+      {
+        "path": "tests/test_runtime.py",
+        "suffix": ".py",
+        "size_bytes": 46,
+        "modified_at": 1778849858.4352036,
+        "sha256": "8fe92ea5b0b4ca63a3f5531c",
+        "category": "test",
+        "line_count": 2,
+        "class_count": 0,
+        "function_count": 0,
+        "import_count": 1,
+        "has_tests_guess": false,
+        "safety_relevant_guess": false,
+        "secret_scan_status": "ok"
+      },
+      {
+        "path": "Voltooid docs/090-roadmap.md",
+        "suffix": ".md",
+        "size_bytes": 42,
+        "modified_at": 1778849858.437203,
+        "sha256": "ac9ee305c1686a6aa220ca45",
+        "category": "completed_roadmap",
+        "line_count": 4,
+        "class_count": 0,
+        "function_count": 0,
+        "import_count": 0,
+        "has_tests_guess": false,
+        "safety_relevant_guess": false,
+        "secret_scan_status": "ok"
+      }
+    ],
+    "directories": [
+      {
+        "directory": "Roadmap docs",
+        "file_count": 1,
+        "size_bytes": 261
+      },
+      {
+        "directory": "Voltooid docs",
+        "file_count": 1,
+        "size_bytes": 42
+      },
+      {
+        "directory": "docs",
+        "file_count": 1,
+        "size_bytes": 42
+      },
+      {
+        "directory": "src/binance_spot_bot",
+        "file_count": 4,
+        "size_bytes": 156
+      },
+      {
+        "directory": "src/binance_spot_bot/ui",
+        "file_count": 1,
+        "size_bytes": 56
+      },
+      {
+        "directory": "tests",
+        "file_count": 1,
+        "size_bytes": 46
+      }
+    ]
+  },
+  "live_trading_enabled": false
+}

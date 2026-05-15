@@ -1,0 +1,63 @@
+[
+  {
+    "artifacts": {
+      "evidence": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_097_model_training_acceptance.py_test_training_pipeline_writes_manifest_evidence_and_blocks_unconfirm-e06b53c022194c8fb59825bf78f150ef\\confirmed\\evidence\\train-1778865683085-772ce98f-evidence.json",
+      "manifest": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_097_model_training_acceptance.py_test_training_pipeline_writes_manifest_evidence_and_blocks_unconfirm-e06b53c022194c8fb59825bf78f150ef\\confirmed\\manifests\\train-1778865683085-772ce98f-manifest.json",
+      "model": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_097_model_training_acceptance.py_test_training_pipeline_writes_manifest_evidence_and_blocks_unconfirm-e06b53c022194c8fb59825bf78f150ef\\confirmed\\models\\train-1778865683085-772ce98f\\model.json"
+    },
+    "config": {
+      "costs": {
+        "fee_bps": 10.0,
+        "slippage_bps": 5.0,
+        "spread_bps": 0.0
+      },
+      "data": {
+        "dataset_manifest_path": "",
+        "feature_dataset_id": "synthetic-demo",
+        "feature_schema_hash": "e2f9bb099851f0b1",
+        "label_dataset_id": "synthetic-demo-labels",
+        "label_schema_hash": "labels-v1"
+      },
+      "experiment_name": "local-demo-training",
+      "job_id": "training-demo",
+      "live_trading_enabled": false,
+      "model": {
+        "epochs": 20,
+        "hidden_size": 6,
+        "learning_rate": 0.03,
+        "model_type": "tiny_neural_signal",
+        "random_seed": 7
+      },
+      "risk": {
+        "candidate_beats_baseline_required": true,
+        "max_drawdown_quote": 1000.0,
+        "min_trade_count": 1
+      },
+      "split": {
+        "train_ratio": 0.6,
+        "validation_ratio": 0.2,
+        "walk_forward_required": true
+      },
+      "validation": {
+        "leakage_pass_required": true,
+        "no_live_required": true,
+        "operator_confirmation_required": true
+      }
+    },
+    "created_at_ms": 1778865683085,
+    "experiment_name": "local-demo-training",
+    "live_trading_enabled": false,
+    "metrics": {
+      "candidate_beats_baseline": true,
+      "leakage_pass": true,
+      "max_allowed_drawdown_quote": 1000.0,
+      "max_drawdown_quote": 0,
+      "min_trade_count": 1,
+      "score": 0.75,
+      "status": "ok",
+      "trade_count": 20
+    },
+    "run_id": "train-1778865683085-772ce98f",
+    "status": "completed"
+  }
+]

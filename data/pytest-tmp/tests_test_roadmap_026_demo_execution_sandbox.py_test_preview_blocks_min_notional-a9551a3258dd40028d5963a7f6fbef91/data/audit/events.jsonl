@@ -1,0 +1,1 @@
+{"component": "demo_execution_sandbox", "correlation_id": "d0b4e683-87ca-41da-9db3-7e699b88bea2", "event": "preview", "payload": {"action": "preview", "evidence_path": "", "lifecycle": null, "live_trading_enabled": false, "preview": null, "reason": "order notional below NOTIONAL minNotional", "response": null, "status": "BLOCKED"}, "timestamp_ms": 1778853513263}
