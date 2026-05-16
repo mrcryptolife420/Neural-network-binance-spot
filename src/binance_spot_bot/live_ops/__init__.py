@@ -1,0 +1,6 @@
+from __future__ import annotations
+
+NO_ORDER_PLACEMENT_STATEMENT = "LIVE OPS DOES NOT PLACE ORDERS"
+NO_AUTO_REARM_STATEMENT = "NO AUTOMATIC LIVE RE-ARM - OPERATOR REVIEW REQUIRED"
+NOT_FINANCIAL_ADVICE_STATEMENT = "Operational safety tooling only - not financial advice"
+

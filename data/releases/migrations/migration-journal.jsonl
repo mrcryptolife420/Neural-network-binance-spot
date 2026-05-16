@@ -36,3 +36,9 @@
 {"status": "applied", "migration": "demo", "applied_at_ms": 1778864026628, "dry_run": "dry-demo-1778864026619", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
 {"status": "applied", "migration": "demo", "applied_at_ms": 1778865696446, "dry_run": "dry-demo-1778865696438", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
 {"status": "applied", "migration": "demo", "applied_at_ms": 1778867158822, "dry_run": "dry-demo-1778867158812", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778930352679, "dry_run": "dry-demo-1778930352670", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778931080795, "dry_run": "dry-demo-1778931080786", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778932468353, "dry_run": "dry-demo-1778932468342", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778933909880, "dry_run": "dry-demo-1778933909868", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778935507583, "dry_run": "dry-demo-1778935507571", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778937863640, "dry_run": "dry-demo-1778937863631", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}

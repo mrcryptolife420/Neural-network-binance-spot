@@ -7,7 +7,7 @@
     "pack_type": "training_uat_pack",
     "schema_version": 2,
     "author": "local",
-    "created_at_ms": 1778867144452,
+    "created_at_ms": 1778937809820,
     "compatible_workspace_schema_versions": [
       2
     ],
@@ -33,7 +33,7 @@
     ],
     "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
     "live_trading_enabled": false,
-    "content_hash": "0361e5cbac0e1ac3"
+    "content_hash": "9dc00be4cb200200"
   },
   "content": {
     "workspace_templates": [
@@ -269,8 +269,8 @@
         "live_trading_enabled": false,
         "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
         "metadata": {
-          "created_at_ms": 1778867144451,
-          "updated_at_ms": 1778867144451,
+          "created_at_ms": 1778937809820,
+          "updated_at_ms": 1778937809820,
           "owner": "local-operator",
           "schema_version": 2
         }

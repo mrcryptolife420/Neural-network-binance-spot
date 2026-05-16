@@ -181,10 +181,59 @@ nav a {
   flex-basis: 100%;
 }
 
+.workspace-toolbar label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: #5b6472;
+}
+
+.workspace-toolbar select {
+  min-height: 34px;
+  min-width: 220px;
+}
+
+.market-table {
+  display: grid;
+  gap: 6px;
+  overflow: auto;
+}
+
+.market-row {
+  display: grid;
+  grid-template-columns: 1.2fr repeat(5, minmax(90px, 1fr));
+  gap: 8px;
+  min-width: 720px;
+  border-bottom: 1px solid #dbe1ea;
+  padding: 8px 0;
+}
+
+.market-head {
+  color: #5b6472;
+  font-weight: 700;
+}
+
 pre {
   max-height: 420px;
   overflow: auto;
   white-space: pre-wrap;
+}
+
+.mini-chart {
+  align-items: end;
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(24, minmax(8px, 1fr));
+  height: 180px;
+  overflow: hidden;
+}
+
+.mini-chart span {
+  background: #2764d8;
+  border-radius: 4px 4px 0 0;
+  display: block;
+  min-height: 8px;
 }
 
 @media (max-width: 760px) {

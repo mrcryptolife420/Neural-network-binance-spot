@@ -103,7 +103,7 @@
     ],
     "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
     "live_trading_enabled": false,
-    "generated_at_ms": 1778867142602,
+    "generated_at_ms": 1778937808026,
     "warnings": [
       "backend_startup_ms: optional sample missing",
       "api_health_ms: optional sample missing",

@@ -1057,6 +1057,343 @@ def main() -> None:
     mi_evidence_cmd.add_argument("--json", action="store_true")
     mi_smoke = sub.add_parser("dashboard-v2-market-intelligence-smoke")
     mi_smoke.add_argument("--json", action="store_true")
+    sl_candidates = sub.add_parser("strategy-lab-candidates-build")
+    sl_candidates.add_argument("--scanner-run", default="latest")
+    sl_candidates.add_argument("--preset", default="majors_overview")
+    sl_candidates.add_argument("--json", action="store_true")
+    sl_queue_preview = sub.add_parser("strategy-lab-queue-preview")
+    sl_queue_preview.add_argument("--candidates", default="latest")
+    sl_queue_preview.add_argument("--preset", default="small_safe_smoke")
+    sl_queue_preview.add_argument("--json", action="store_true")
+    sl_queue_create = sub.add_parser("strategy-lab-queue-create")
+    sl_queue_create.add_argument("--candidates", default="latest")
+    sl_queue_create.add_argument("--preset", default="small_safe_smoke")
+    sl_queue_create.add_argument("--json", action="store_true")
+    sl_queue_run = sub.add_parser("strategy-lab-queue-run")
+    sl_queue_run.add_argument("--queue", default="latest")
+    sl_queue_run.add_argument("--confirm", default="")
+    sl_queue_run.add_argument("--json", action="store_true")
+    sl_queue_status = sub.add_parser("strategy-lab-queue-status")
+    sl_queue_status.add_argument("--queue", default="latest")
+    sl_queue_status.add_argument("--json", action="store_true")
+    sl_results = sub.add_parser("strategy-lab-results")
+    sl_results.add_argument("--queue", default="latest")
+    sl_results.add_argument("--json", action="store_true")
+    sl_compare = sub.add_parser("strategy-lab-compare")
+    sl_compare.add_argument("--queue", default="latest")
+    sl_compare.add_argument("--json", action="store_true")
+    sl_scorecards = sub.add_parser("strategy-lab-scorecards")
+    sl_scorecards.add_argument("--queue", default="latest")
+    sl_scorecards.add_argument("--json", action="store_true")
+    sl_portfolio = sub.add_parser("strategy-lab-portfolio-candidates")
+    sl_portfolio.add_argument("--queue", default="latest")
+    sl_portfolio.add_argument("--json", action="store_true")
+    sl_guards = sub.add_parser("strategy-lab-guards")
+    sl_guards.add_argument("--queue", default="latest")
+    sl_guards.add_argument("--json", action="store_true")
+    sl_evidence = sub.add_parser("strategy-lab-evidence-export")
+    sl_evidence.add_argument("--queue", default="latest")
+    sl_evidence.add_argument("--json", action="store_true")
+    sl_smoke = sub.add_parser("dashboard-v2-strategy-lab-smoke")
+    sl_smoke.add_argument("--json", action="store_true")
+    pl_basket = sub.add_parser("portfolio-lab-basket-build")
+    pl_basket.add_argument("--strategy-lab-run", default="latest")
+    pl_basket.add_argument("--mode", default="top_score")
+    pl_basket.add_argument("--max-items", type=int, default=4)
+    pl_basket.add_argument("--json", action="store_true")
+    pl_alloc = sub.add_parser("portfolio-lab-allocation-propose")
+    pl_alloc.add_argument("--basket", default="latest")
+    pl_alloc.add_argument("--mode", default="equal_weight")
+    pl_alloc.add_argument("--json", action="store_true")
+    pl_validate = sub.add_parser("portfolio-lab-allocation-validate")
+    pl_validate.add_argument("--allocation", default="latest")
+    pl_validate.add_argument("--json", action="store_true")
+    pl_preview = sub.add_parser("portfolio-lab-simulation-preview")
+    pl_preview.add_argument("--basket", default="latest")
+    pl_preview.add_argument("--allocation", default="latest")
+    pl_preview.add_argument("--json", action="store_true")
+    pl_run = sub.add_parser("portfolio-lab-simulation-run")
+    pl_run.add_argument("--basket", default="latest")
+    pl_run.add_argument("--allocation", default="latest")
+    pl_run.add_argument("--confirm", default="")
+    pl_run.add_argument("--json", action="store_true")
+    pl_risk = sub.add_parser("portfolio-lab-risk-analytics")
+    pl_risk.add_argument("--run", default="latest")
+    pl_risk.add_argument("--json", action="store_true")
+    pl_corr = sub.add_parser("portfolio-lab-correlation-proxy")
+    pl_corr.add_argument("--basket", default="latest")
+    pl_corr.add_argument("--json", action="store_true")
+    pl_stress = sub.add_parser("portfolio-lab-stress-tests")
+    pl_stress.add_argument("--run", default="latest")
+    pl_stress.add_argument("--json", action="store_true")
+    pl_cards = sub.add_parser("portfolio-lab-scorecards")
+    pl_cards.add_argument("--run", default="latest")
+    pl_cards.add_argument("--json", action="store_true")
+    pl_guards = sub.add_parser("portfolio-lab-guards")
+    pl_guards.add_argument("--run", default="latest")
+    pl_guards.add_argument("--json", action="store_true")
+    pl_evidence = sub.add_parser("portfolio-lab-evidence-export")
+    pl_evidence.add_argument("--run", default="latest")
+    pl_evidence.add_argument("--json", action="store_true")
+    pl_smoke = sub.add_parser("dashboard-v2-portfolio-lab-smoke")
+    pl_smoke.add_argument("--json", action="store_true")
+    wf_splits = sub.add_parser("portfolio-lab-walk-forward-splits-preview")
+    wf_splits.add_argument("--run", default="latest")
+    wf_splits.add_argument("--json", action="store_true")
+    wf_coverage = sub.add_parser("portfolio-lab-dataset-coverage-audit")
+    wf_coverage.add_argument("--basket", default="latest")
+    wf_coverage.add_argument("--json", action="store_true")
+    wf_schedules = sub.add_parser("portfolio-lab-rebalancing-schedules")
+    wf_schedules.add_argument("--json", action="store_true")
+    wf_events = sub.add_parser("portfolio-lab-rebalance-events-preview")
+    wf_events.add_argument("--allocation", default="latest")
+    wf_events.add_argument("--schedule", default="fixed-interval")
+    wf_events.add_argument("--json", action="store_true")
+    wf_preview = sub.add_parser("portfolio-lab-rolling-simulation-preview")
+    wf_preview.add_argument("--allocation", default="latest")
+    wf_preview.add_argument("--splits", default="latest")
+    wf_preview.add_argument("--json", action="store_true")
+    wf_run = sub.add_parser("portfolio-lab-rolling-simulation-run")
+    wf_run.add_argument("--allocation", default="latest")
+    wf_run.add_argument("--splits", default="latest")
+    wf_run.add_argument("--confirm", default="")
+    wf_run.add_argument("--json", action="store_true")
+    wf_decay = sub.add_parser("portfolio-lab-allocation-decay")
+    wf_decay.add_argument("--run", default="latest")
+    wf_decay.add_argument("--json", action="store_true")
+    wf_replace = sub.add_parser("portfolio-lab-candidate-replacements")
+    wf_replace.add_argument("--run", default="latest")
+    wf_replace.add_argument("--policy", default="manual_review_required")
+    wf_replace.add_argument("--json", action="store_true")
+    wf_perf = sub.add_parser("portfolio-lab-walk-forward-performance")
+    wf_perf.add_argument("--run", default="latest")
+    wf_perf.add_argument("--json", action="store_true")
+    wf_score = sub.add_parser("portfolio-lab-robustness-scorecards")
+    wf_score.add_argument("--run", default="latest")
+    wf_score.add_argument("--json", action="store_true")
+    wf_gate = sub.add_parser("portfolio-lab-robustness-governance-gate")
+    wf_gate.add_argument("--run", default="latest")
+    wf_gate.add_argument("--json", action="store_true")
+    wf_evidence = sub.add_parser("portfolio-lab-walk-forward-evidence-export")
+    wf_evidence.add_argument("--run", default="latest")
+    wf_evidence.add_argument("--json", action="store_true")
+    wf_smoke = sub.add_parser("dashboard-v2-portfolio-robustness-smoke")
+    wf_smoke.add_argument("--json", action="store_true")
+    app_profiles = sub.add_parser("profiles-list")
+    app_profiles.add_argument("--json", action="store_true")
+    app_validate = sub.add_parser("profiles-validate")
+    app_validate.add_argument("--json", action="store_true")
+    app_wizard = sub.add_parser("profile-wizard-create")
+    app_wizard.add_argument("--type", default="paper")
+    app_wizard.add_argument("--symbol", default="BTCUSDT")
+    app_wizard.add_argument("--json", action="store_true")
+    app_launcher = sub.add_parser("launcher-generate")
+    app_launcher.add_argument("--json", action="store_true")
+    app_start = sub.add_parser("app-start")
+    app_start.add_argument("--safe", action="store_true")
+    app_start.add_argument("--open-dashboard", action="store_true")
+    app_start.add_argument("--json", action="store_true")
+    app_stop = sub.add_parser("app-stop")
+    app_stop.add_argument("--json", action="store_true")
+    app_health = sub.add_parser("startup-health")
+    app_health.add_argument("--json", action="store_true")
+    app_bootstrap = sub.add_parser("data-bootstrap")
+    app_bootstrap.add_argument("--profile", default="paper-btcusdt-safe")
+    app_bootstrap.add_argument("--json", action="store_true")
+    app_runtime_start = sub.add_parser("runtime-start")
+    app_runtime_start.add_argument("--profile", default="paper-btcusdt-safe")
+    app_runtime_start.add_argument("--json", action="store_true")
+    app_runtime_stop = sub.add_parser("runtime-stop")
+    app_runtime_stop.add_argument("--json", action="store_true")
+    demo_quality = sub.add_parser("demo-training-quality")
+    demo_quality.add_argument("--profile", default="binance-demo-spot-safe")
+    demo_quality.add_argument("--json", action="store_true")
+    demo_dataset = sub.add_parser("demo-training-dataset-build")
+    demo_dataset.add_argument("--profile", default="binance-demo-spot-safe")
+    demo_dataset.add_argument("--json", action="store_true")
+    model_gate = sub.add_parser("model-validation-gate")
+    model_gate.add_argument("--profile", default="binance-demo-spot-safe")
+    model_gate.add_argument("--json", action="store_true")
+    live_training_evidence_cmd = sub.add_parser("live-training-evidence-export")
+    live_training_evidence_cmd.add_argument("--profile", default="binance-demo-spot-safe")
+    live_training_evidence_cmd.add_argument("--json", action="store_true")
+    live_readiness_cmd = sub.add_parser("live-readiness")
+    live_readiness_cmd.add_argument("--profile", default="live-locked-training-required-template")
+    live_readiness_cmd.add_argument("--json", action="store_true")
+    live_arm_cmd = sub.add_parser("live-arm")
+    live_arm_cmd.add_argument("--profile", default="live-locked-training-required-template")
+    live_arm_cmd.add_argument("--confirm", default="")
+    live_arm_cmd.add_argument("--json", action="store_true")
+    app_smoke = sub.add_parser("dashboard-v2-control-center-smoke")
+    app_smoke.add_argument("--json", action="store_true")
+    dlt_targets = sub.add_parser("demo-session-targets")
+    dlt_targets.add_argument("--json", action="store_true")
+    dlt_progress = sub.add_parser("demo-session-progress")
+    dlt_progress.add_argument("--json", action="store_true")
+    dlt_verify = sub.add_parser("demo-recordings-verify")
+    dlt_verify.add_argument("--json", action="store_true")
+    dlt_vault = sub.add_parser("demo-vault-ingest")
+    dlt_vault.add_argument("--profile", default="binance-demo-spot-safe")
+    dlt_vault.add_argument("--json", action="store_true")
+    dlt_quality = sub.add_parser("demo-dataset-quality-v2")
+    dlt_quality.add_argument("--json", action="store_true")
+    dlt_burndown = sub.add_parser("demo-dataset-burndown")
+    dlt_burndown.add_argument("--json", action="store_true")
+    dlt_dataset = sub.add_parser("demo-feature-label-build")
+    dlt_dataset.add_argument("--json", action="store_true")
+    dlt_split = sub.add_parser("split-governance-check")
+    dlt_split.add_argument("--dataset", default="latest")
+    dlt_split.add_argument("--json", action="store_true")
+    dlt_candidates = sub.add_parser("model-candidates")
+    dlt_candidates.add_argument("--json", action="store_true")
+    dlt_validation = sub.add_parser("model-validation-run")
+    dlt_validation.add_argument("--candidate", default="latest")
+    dlt_validation.add_argument("--json", action="store_true")
+    dlt_replay = sub.add_parser("paper-replay-from-demo")
+    dlt_replay.add_argument("--candidate", default="latest")
+    dlt_replay.add_argument("--json", action="store_true")
+    dlt_testnet = sub.add_parser("testnet-promotion-check")
+    dlt_testnet.add_argument("--candidate", default="latest")
+    dlt_testnet.add_argument("--json", action="store_true")
+    dlt_rehearsal = sub.add_parser("testnet-rehearsal-run")
+    dlt_rehearsal.add_argument("--candidate", default="latest")
+    dlt_rehearsal.add_argument("--confirm", default="")
+    dlt_rehearsal.add_argument("--json", action="store_true")
+    dlt_live_candidate = sub.add_parser("live-candidate-check")
+    dlt_live_candidate.add_argument("--candidate", default="latest")
+    dlt_live_candidate.add_argument("--json", action="store_true")
+    dlt_evidence = sub.add_parser("demo-to-live-evidence-export")
+    dlt_evidence.add_argument("--candidate", default="latest")
+    dlt_evidence.add_argument("--json", action="store_true")
+    dlt_smoke = sub.add_parser("dashboard-v2-live-training-smoke")
+    dlt_smoke.add_argument("--json", action="store_true")
+    live_evidence_cmd = sub.add_parser("live-evidence-prerequisites")
+    live_evidence_cmd.add_argument("--json", action="store_true")
+    live_account_cmd = sub.add_parser("live-account-verify")
+    live_account_cmd.add_argument("--profile", default="live-locked-training-required-template")
+    live_account_cmd.add_argument("--json", action="store_true")
+    live_policy_cmd = sub.add_parser("live-endpoint-policy")
+    live_policy_cmd.add_argument("--phase", default="dry_run")
+    live_policy_cmd.add_argument("--json", action="store_true")
+    live_dry_run_cmd = sub.add_parser("live-dry-run")
+    live_dry_run_cmd.add_argument("--profile", default="live-locked-training-required-template")
+    live_dry_run_cmd.add_argument("--json", action="store_true")
+    live_preview_cmd = sub.add_parser("live-order-preview")
+    live_preview_cmd.add_argument("--profile", default="live-locked-training-required-template")
+    live_preview_cmd.add_argument("--json", action="store_true")
+    sub.add_parser("live-sizing-guard").add_argument("--json", action="store_true")
+    sub.add_parser("live-kill-switch-drill").add_argument("--json", action="store_true")
+    sub.add_parser("live-cancel-drill").add_argument("--json", action="store_true")
+    live_arm_token_cmd = sub.add_parser("live-arm-token-create")
+    live_arm_token_cmd.add_argument("--profile", default="live-locked-training-required-template")
+    live_arm_token_cmd.add_argument("--confirm", default="")
+    live_arm_token_cmd.add_argument("--json", action="store_true")
+    live_first_order_cmd = sub.add_parser("live-first-order-execute")
+    live_first_order_cmd.add_argument("--profile", default="live-locked-training-required-template")
+    live_first_order_cmd.add_argument("--confirm", default="")
+    live_first_order_cmd.add_argument("--json", action="store_true")
+    sub.add_parser("live-emergency-stop").add_argument("--json", action="store_true")
+    sub.add_parser("live-audit").add_argument("--json", action="store_true")
+    sub.add_parser("live-evidence-export").add_argument("--json", action="store_true")
+    sub.add_parser("dashboard-v2-live-smoke").add_argument("--json", action="store_true")
+    live_session_plan_cmd = sub.add_parser("live-session-plan-validate")
+    live_session_plan_cmd.add_argument("--plan", default="")
+    live_session_plan_cmd.add_argument("--json", action="store_true")
+    sub.add_parser("live-session-create").add_argument("--json", action="store_true")
+    sub.add_parser("live-session-status").add_argument("--json", action="store_true")
+    live_session_arm_cmd = sub.add_parser("live-session-arm")
+    live_session_arm_cmd.add_argument("--session", default="")
+    live_session_arm_cmd.add_argument("--confirm", default="")
+    live_session_arm_cmd.add_argument("--json", action="store_true")
+    sub.add_parser("live-session-disarm").add_argument("--json", action="store_true")
+    sub.add_parser("live-session-emergency-stop").add_argument("--json", action="store_true")
+    sub.add_parser("live-session-budget").add_argument("--json", action="store_true")
+    sub.add_parser("live-session-scaling").add_argument("--json", action="store_true")
+    sub.add_parser("live-session-order-preview").add_argument("--json", action="store_true")
+    live_session_execute_cmd = sub.add_parser("live-session-order-execute")
+    live_session_execute_cmd.add_argument("--session", default="")
+    live_session_execute_cmd.add_argument("--preview", default="")
+    live_session_execute_cmd.add_argument("--confirm", default="")
+    live_session_execute_cmd.add_argument("--json", action="store_true")
+    sub.add_parser("live-session-reconcile").add_argument("--json", action="store_true")
+    sub.add_parser("live-session-heartbeat").add_argument("--json", action="store_true")
+    sub.add_parser("live-session-evidence-export").add_argument("--json", action="store_true")
+    sub.add_parser("dashboard-v2-live-session-smoke").add_argument("--json", action="store_true")
+    sub.add_parser("live-governance-status").add_argument("--json", action="store_true")
+    sub.add_parser("live-session-review").add_argument("--json", action="store_true")
+    sub.add_parser("live-session-scorecard").add_argument("--json", action="store_true")
+    sub.add_parser("live-execution-quality").add_argument("--json", action="store_true")
+    sub.add_parser("live-risk-calibration").add_argument("--json", action="store_true")
+    sub.add_parser("live-scaling-decision").add_argument("--json", action="store_true")
+    sub.add_parser("live-approval-request").add_argument("--json", action="store_true")
+    live_approval_decide_cmd = sub.add_parser("live-approval-decide")
+    live_approval_decide_cmd.add_argument("--confirm", default="")
+    live_approval_decide_cmd.add_argument("--note", default="")
+    live_approval_decide_cmd.add_argument("--json", action="store_true")
+    sub.add_parser("live-profile-lifecycle").add_argument("--json", action="store_true")
+    sub.add_parser("live-risk-preset-proposal").add_argument("--json", action="store_true")
+    sub.add_parser("live-session-regression").add_argument("--json", action="store_true")
+    sub.add_parser("live-governance-evidence-export").add_argument("--json", action="store_true")
+    sub.add_parser("dashboard-v2-live-governance-smoke").add_argument("--json", action="store_true")
+    sub.add_parser("live-ops-status").add_argument("--json", action="store_true")
+    sub.add_parser("live-incident-detect").add_argument("--json", action="store_true")
+    sub.add_parser("live-incident-classify").add_argument("--json", action="store_true")
+    sub.add_parser("live-runbook-plan").add_argument("--json", action="store_true")
+    live_rollback_drill_cmd = sub.add_parser("live-rollback-drill")
+    live_rollback_drill_cmd.add_argument("--drill", default="disarm")
+    live_rollback_drill_cmd.add_argument("--json", action="store_true")
+    sub.add_parser("live-forensic-timeline").add_argument("--json", action="store_true")
+    sub.add_parser("live-root-cause").add_argument("--json", action="store_true")
+    sub.add_parser("live-prevention-backlog").add_argument("--json", action="store_true")
+    sub.add_parser("live-recovery-check").add_argument("--json", action="store_true")
+    sub.add_parser("live-incident-evidence-export").add_argument("--json", action="store_true")
+    sub.add_parser("dashboard-v2-live-ops-smoke").add_argument("--json", action="store_true")
+    package_lock_cmd = sub.add_parser("package-lock")
+    package_lock_cmd.add_argument("--profile", default="dashboard-full")
+    package_lock_cmd.add_argument("--json", action="store_true")
+    package_manifest_cmd = sub.add_parser("package-build-manifest")
+    package_manifest_cmd.add_argument("--profile", default="dashboard-full")
+    package_manifest_cmd.add_argument("--json", action="store_true")
+    package_portable_cmd = sub.add_parser("package-portable-build")
+    package_portable_cmd.add_argument("--profile", default="dashboard-full")
+    package_portable_cmd.add_argument("--json", action="store_true")
+    package_installer_cmd = sub.add_parser("package-installer-build")
+    package_installer_cmd.add_argument("--profile", default="dashboard-full")
+    package_installer_cmd.add_argument("--json", action="store_true")
+    sub.add_parser("package-profiles").add_argument("--json", action="store_true")
+    sub.add_parser("package-shortcuts-create").add_argument("--json", action="store_true")
+    sub.add_parser("package-startup-health").add_argument("--json", action="store_true")
+    sub.add_parser("package-update-plan").add_argument("--json", action="store_true")
+    sub.add_parser("package-migration-preview").add_argument("--json", action="store_true")
+    sub.add_parser("package-backup-create").add_argument("--json", action="store_true")
+    sub.add_parser("package-restore-preview").add_argument("--json", action="store_true")
+    sub.add_parser("package-rollback-preview").add_argument("--json", action="store_true")
+    sub.add_parser("package-recovery-kit-build").add_argument("--json", action="store_true")
+    sub.add_parser("package-safe-mode-start").add_argument("--json", action="store_true")
+    sub.add_parser("package-verify").add_argument("--json", action="store_true")
+    sub.add_parser("package-evidence-export").add_argument("--json", action="store_true")
+    sub.add_parser("dashboard-v2-package-smoke").add_argument("--json", action="store_true")
+    ai_doctor_start_cmd = sub.add_parser("ai-doctor-start")
+    ai_doctor_start_cmd.add_argument("--profile", default="paper")
+    ai_doctor_start_cmd.add_argument("--json", action="store_true")
+    ai_doctor_event_cmd = sub.add_parser("ai-doctor-event")
+    ai_doctor_event_cmd.add_argument("--run", default="latest")
+    ai_doctor_event_cmd.add_argument("--type", default="dashboard_ready")
+    ai_doctor_event_cmd.add_argument("--json", action="store_true")
+    ai_doctor_finish_cmd = sub.add_parser("ai-doctor-finish")
+    ai_doctor_finish_cmd.add_argument("--run", default="latest")
+    ai_doctor_finish_cmd.add_argument("--status", default="ok")
+    ai_doctor_finish_cmd.add_argument("--json", action="store_true")
+    sub.add_parser("ai-doctor-crash-report").add_argument("--json", action="store_true")
+    sub.add_parser("ai-doctor-status").add_argument("--json", action="store_true")
+    sub.add_parser("ai-doctor-collect").add_argument("--json", action="store_true")
+    sub.add_parser("ai-doctor-match-issues").add_argument("--json", action="store_true")
+    sub.add_parser("ai-doctor-summary").add_argument("--json", action="store_true")
+    sub.add_parser("ai-doctor-codex-prompt").add_argument("--json", action="store_true")
+    sub.add_parser("ai-doctor-export").add_argument("--json", action="store_true")
+    sub.add_parser("ai-doctor-evidence-export").add_argument("--json", action="store_true")
+    sub.add_parser("ai-doctor-verify").add_argument("--json", action="store_true")
+    sub.add_parser("dashboard-v2-ai-doctor-smoke").add_argument("--json", action="store_true")
     dashboard_legacy = sub.add_parser("dashboard-legacy")
     dashboard_legacy.add_argument("--json", action="store_true")
     dashboard_choice_parser = sub.add_parser("dashboard-choice")
@@ -1964,10 +2301,11 @@ def main() -> None:
     if args.command in {"multi-symbol-paper-analytics-preview", "multi-symbol-paper-analytics-run"}:
         from .market_intelligence.multi_symbol_paper_analytics import run_multi_symbol_paper_analytics
 
-        if args.command == "multi-symbol-paper-analytics-run" and args.confirm != "RUN_PAPER_ANALYTICS_ONLY":
+        confirm = getattr(args, "confirm", "")
+        if args.command == "multi-symbol-paper-analytics-run" and confirm != "RUN_PAPER_ANALYTICS_ONLY":
             print(json.dumps({"status": "blocked", "blockers": ["paper analytics requires confirm RUN_PAPER_ANALYTICS_ONLY"], "live_trading_enabled": False}, indent=2 if args.json else None))
             raise SystemExit(1)
-        print(json.dumps(run_multi_symbol_paper_analytics(["BTCUSDT", "ETHUSDT", "BNBUSDT"], root=Path.cwd(), confirm=args.confirm), indent=2 if args.json else None, default=str))
+        print(json.dumps(run_multi_symbol_paper_analytics(["BTCUSDT", "ETHUSDT", "BNBUSDT"], root=Path.cwd(), confirm=confirm), indent=2 if args.json else None, default=str))
         return
     if args.command == "market-intelligence-evidence-export":
         from .market_intelligence.scanner_evidence_bundle import export_market_intelligence_evidence
@@ -1979,6 +2317,694 @@ def main() -> None:
         from .market_intelligence.scanner_presets import scanner_presets_payload
 
         print(json.dumps({"status": "ok", "policy": public_endpoint_policy_report_to_dict(build_public_endpoint_policy_report()), "presets": scanner_presets_payload(), "live_trading_enabled": False}, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "strategy-lab-candidates-build":
+        from .strategy_lab.scanner_candidate_builder import build_scanner_candidates
+
+        print(json.dumps(build_scanner_candidates(preset_id=args.preset), indent=2 if args.json else None, default=str))
+        return
+    if args.command in {"strategy-lab-queue-preview", "strategy-lab-queue-create"}:
+        from .strategy_lab.experiment_matrix import expand_experiment_matrix
+        from .strategy_lab.experiment_queue_store import default_strategy_queue_store
+        from .strategy_lab.scanner_candidate_builder import build_scanner_candidates
+
+        candidates = list(build_scanner_candidates()["candidates"])
+        payload = expand_experiment_matrix(candidates, preset=args.preset)
+        if args.command == "strategy-lab-queue-create":
+            payload = default_strategy_queue_store(Path.cwd()).save(payload["queue"])
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command in {"strategy-lab-queue-run", "strategy-lab-queue-status"}:
+        from .strategy_lab import PAPER_ONLY_CONFIRM
+        from .strategy_lab.experiment_queue_store import default_strategy_queue_store
+        from .strategy_lab.experiment_result_store import default_result_store
+        from .strategy_lab.paper_experiment_runner import run_paper_experiment_queue
+
+        store = default_strategy_queue_store(Path.cwd())
+        queues = store.list().get("queues", [])
+        queue_id = queues[-1]["queue_id"] if args.queue == "latest" and queues else args.queue
+        queue = store.load(queue_id)
+        if args.command == "strategy-lab-queue-status":
+            print(json.dumps({"status": "ok", "queue": queue, "live_trading_enabled": False}, indent=2 if args.json else None, default=str))
+            return
+        if args.confirm != PAPER_ONLY_CONFIRM:
+            print(json.dumps({"status": "blocked", "blockers": [f"queue run requires confirm {PAPER_ONLY_CONFIRM}"], "live_trading_enabled": False}, indent=2 if args.json else None))
+            raise SystemExit(1)
+        report = run_paper_experiment_queue(queue, confirm=args.confirm)
+        for row in report.get("results", []):
+            default_result_store(Path.cwd()).save_job_result(row)
+        print(json.dumps(report, indent=2 if args.json else None, default=str))
+        return
+    if args.command in {"strategy-lab-results", "strategy-lab-compare", "strategy-lab-scorecards", "strategy-lab-portfolio-candidates", "strategy-lab-guards", "strategy-lab-evidence-export"}:
+        from .strategy_lab.candidate_scorecards import build_candidate_scorecards
+        from .strategy_lab.experiment_evidence_bundle import export_strategy_lab_evidence
+        from .strategy_lab.experiment_result_store import default_result_store
+        from .strategy_lab.portfolio_candidate_research import build_portfolio_candidate_research
+        from .strategy_lab.research_guards import evaluate_research_guards
+        from .strategy_lab.scanner_candidate_builder import build_scanner_candidates
+        from .strategy_lab.strategy_comparison import compare_strategy_results
+
+        results = default_result_store(Path.cwd()).list_results().get("results", [])
+        if args.command == "strategy-lab-results":
+            payload = {"status": "ok", "results": results, "live_trading_enabled": False}
+        elif args.command == "strategy-lab-compare":
+            payload = compare_strategy_results(list(results))
+        elif args.command == "strategy-lab-scorecards":
+            payload = build_candidate_scorecards(list(results), list(build_scanner_candidates()["candidates"]))
+        elif args.command == "strategy-lab-portfolio-candidates":
+            cards = build_candidate_scorecards(list(results), list(build_scanner_candidates()["candidates"]))
+            payload = build_portfolio_candidate_research(list(cards.get("scorecards", [])))
+        elif args.command == "strategy-lab-guards":
+            payload = evaluate_research_guards(list(results))
+        else:
+            payload = export_strategy_lab_evidence(Path.cwd(), {"results": {"status": "ok", "results": results, "live_trading_enabled": False}})
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-strategy-lab-smoke":
+        from .strategy_lab import strategy_lab_health
+        from .strategy_lab.experiment_matrix import expand_experiment_matrix
+        from .strategy_lab.scanner_candidate_builder import build_scanner_candidates
+
+        candidates = build_scanner_candidates()
+        print(json.dumps({"status": "ok", "health": strategy_lab_health(), "candidates": candidates, "queue_preview": expand_experiment_matrix(list(candidates["candidates"])), "live_trading_enabled": False}, indent=2 if args.json else None, default=str))
+        return
+    if args.command in {
+        "portfolio-lab-basket-build",
+        "portfolio-lab-allocation-propose",
+        "portfolio-lab-allocation-validate",
+        "portfolio-lab-simulation-preview",
+        "portfolio-lab-simulation-run",
+        "portfolio-lab-risk-analytics",
+        "portfolio-lab-correlation-proxy",
+        "portfolio-lab-stress-tests",
+        "portfolio-lab-scorecards",
+        "portfolio-lab-guards",
+        "portfolio-lab-evidence-export",
+        "dashboard-v2-portfolio-lab-smoke",
+    }:
+        from .portfolio_lab import PAPER_PORTFOLIO_CONFIRM, portfolio_lab_health
+        from .portfolio_lab.allocation_constraints import validate_allocation
+        from .portfolio_lab.allocation_proposals import propose_allocation
+        from .portfolio_lab.allocation_scorecards import build_allocation_scorecards
+        from .portfolio_lab.basket_builder import build_candidate_basket
+        from .portfolio_lab.candidate_basket import fixture_basket, write_portfolio_candidate_basket
+        from .portfolio_lab.correlation_proxy import portfolio_correlation_proxy
+        from .portfolio_lab.evidence_bundle import export_portfolio_lab_evidence
+        from .portfolio_lab.portfolio_experiment_orchestrator import preview_portfolio_simulation, run_portfolio_experiment
+        from .portfolio_lab.portfolio_research_guards import evaluate_portfolio_research_guards
+        from .portfolio_lab.stress_tests import run_portfolio_stress_tests
+
+        basket = fixture_basket()
+        allocation_report = propose_allocation(basket, mode=getattr(args, "mode", "equal_weight"))
+        allocation = allocation_report["proposal"]
+        payload: dict[str, object]
+        if args.command == "portfolio-lab-basket-build":
+            payload = build_candidate_basket(mode=args.mode, max_items=args.max_items)
+            write_portfolio_candidate_basket(Path.cwd(), basket)
+        elif args.command == "portfolio-lab-allocation-propose":
+            payload = allocation_report
+        elif args.command == "portfolio-lab-allocation-validate":
+            payload = validate_allocation(basket, {item["item_id"]: float(item["weight"]) for item in allocation["items"]})
+        elif args.command == "portfolio-lab-simulation-preview":
+            payload = preview_portfolio_simulation(basket, allocation)
+        elif args.command == "portfolio-lab-simulation-run":
+            if args.confirm != PAPER_PORTFOLIO_CONFIRM:
+                payload = {"status": "blocked", "blockers": [f"portfolio experiment requires confirm {PAPER_PORTFOLIO_CONFIRM}"], "live_trading_enabled": False}
+                print(json.dumps(payload, indent=2 if args.json else None, default=str))
+                raise SystemExit(1)
+            payload = run_portfolio_experiment(Path.cwd(), basket=basket, allocation=allocation, confirm=args.confirm)
+        elif args.command in {"portfolio-lab-risk-analytics", "portfolio-lab-stress-tests", "portfolio-lab-scorecards", "portfolio-lab-guards"}:
+            run = run_portfolio_experiment(Path.cwd(), basket=basket, allocation=allocation, confirm=PAPER_PORTFOLIO_CONFIRM)
+            if args.command == "portfolio-lab-risk-analytics":
+                payload = run["risk"]
+            elif args.command == "portfolio-lab-stress-tests":
+                payload = run_portfolio_stress_tests(run["simulation"])
+            elif args.command == "portfolio-lab-scorecards":
+                payload = build_allocation_scorecards(run["risk"], run["stress"], run["guards"])
+            else:
+                payload = evaluate_portfolio_research_guards(basket, allocation, run["risk"], run["stress"], run["correlation"])
+        elif args.command == "portfolio-lab-correlation-proxy":
+            payload = portfolio_correlation_proxy(basket)
+        elif args.command == "portfolio-lab-evidence-export":
+            run = run_portfolio_experiment(Path.cwd(), basket=basket, allocation=allocation, confirm=PAPER_PORTFOLIO_CONFIRM)
+            payload = export_portfolio_lab_evidence(Path.cwd(), run)
+        else:
+            payload = {
+                "status": "ok",
+                "health": portfolio_lab_health(),
+                "basket": build_candidate_basket(mode="top_score", max_items=4),
+                "allocation": allocation_report,
+                "preview": preview_portfolio_simulation(basket, allocation),
+                "live_trading_enabled": False,
+            }
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command in {
+        "portfolio-lab-walk-forward-splits-preview",
+        "portfolio-lab-dataset-coverage-audit",
+        "portfolio-lab-rebalancing-schedules",
+        "portfolio-lab-rebalance-events-preview",
+        "portfolio-lab-rolling-simulation-preview",
+        "portfolio-lab-rolling-simulation-run",
+        "portfolio-lab-allocation-decay",
+        "portfolio-lab-candidate-replacements",
+        "portfolio-lab-walk-forward-performance",
+        "portfolio-lab-robustness-scorecards",
+        "portfolio-lab-robustness-governance-gate",
+        "portfolio-lab-walk-forward-evidence-export",
+        "dashboard-v2-portfolio-robustness-smoke",
+    }:
+        from .portfolio_lab import WALK_FORWARD_CONFIRM, portfolio_lab_health
+        from .portfolio_lab.allocation_decay import analyze_allocation_decay
+        from .portfolio_lab.allocation_proposals import propose_allocation
+        from .portfolio_lab.allocation_robustness_scorecards import build_robustness_scorecards
+        from .portfolio_lab.candidate_basket import fixture_basket
+        from .portfolio_lab.candidate_replacement import simulate_candidate_replacements
+        from .portfolio_lab.dataset_coverage_audit import audit_dataset_coverage
+        from .portfolio_lab.rebalance_event_simulator import simulate_rebalance_events
+        from .portfolio_lab.rebalancing_schedules import default_rebalancing_schedules
+        from .portfolio_lab.robustness_governance_gate import evaluate_robustness_governance_gate
+        from .portfolio_lab.rolling_portfolio_orchestrator import preview_rolling_portfolio_simulation, run_rolling_portfolio_simulation
+        from .portfolio_lab.walk_forward_evidence_bundle import export_walk_forward_evidence
+        from .portfolio_lab.walk_forward_performance import analyze_walk_forward_performance
+        from .portfolio_lab.walk_forward_splits import build_walk_forward_split
+
+        basket = fixture_basket()
+        allocation = propose_allocation(basket)["proposal"]
+        split = build_walk_forward_split(symbols=[item.symbol for item in basket.items])
+        schedules = default_rebalancing_schedules()
+        if args.command == "portfolio-lab-walk-forward-splits-preview":
+            payload = split
+        elif args.command == "portfolio-lab-dataset-coverage-audit":
+            payload = audit_dataset_coverage(split)
+        elif args.command == "portfolio-lab-rebalancing-schedules":
+            payload = schedules
+        elif args.command == "portfolio-lab-rebalance-events-preview":
+            payload = simulate_rebalance_events(allocation, schedules["schedules"][1])
+        elif args.command == "portfolio-lab-rolling-simulation-preview":
+            payload = preview_rolling_portfolio_simulation(basket, allocation)
+        elif args.command == "portfolio-lab-rolling-simulation-run":
+            if args.confirm != WALK_FORWARD_CONFIRM:
+                payload = {"status": "blocked", "blockers": [f"rolling simulation requires confirm {WALK_FORWARD_CONFIRM}"], "live_trading_enabled": False}
+                print(json.dumps(payload, indent=2 if args.json else None, default=str))
+                raise SystemExit(1)
+            payload = run_rolling_portfolio_simulation(Path.cwd(), basket=basket, allocation=allocation, confirm=args.confirm)
+        elif args.command == "portfolio-lab-allocation-decay":
+            payload = analyze_allocation_decay(basket)
+        elif args.command == "portfolio-lab-candidate-replacements":
+            payload = simulate_candidate_replacements(basket, analyze_allocation_decay(basket), policy=args.policy)
+        else:
+            rolling = run_rolling_portfolio_simulation(Path.cwd(), basket=basket, allocation=allocation, confirm=WALK_FORWARD_CONFIRM)
+            performance = analyze_walk_forward_performance(rolling)
+            scorecards = build_robustness_scorecards(performance, rolling.get("decay"))
+            gate = evaluate_robustness_governance_gate(scorecards, performance, rolling.get("split"))
+            if args.command == "portfolio-lab-walk-forward-performance":
+                payload = performance
+            elif args.command == "portfolio-lab-robustness-scorecards":
+                payload = scorecards
+            elif args.command == "portfolio-lab-robustness-governance-gate":
+                payload = gate
+            elif args.command == "portfolio-lab-walk-forward-evidence-export":
+                payload = export_walk_forward_evidence(Path.cwd(), rolling, performance, scorecards, gate)
+            else:
+                payload = {"status": "ok", "health": portfolio_lab_health(), "split": split, "coverage": audit_dataset_coverage(split), "preview": preview_rolling_portfolio_simulation(basket, allocation), "performance": performance, "scorecards": scorecards, "gate": gate, "live_trading_enabled": False}
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command in {
+        "profiles-list",
+        "profiles-validate",
+        "profile-wizard-create",
+        "launcher-generate",
+        "app-start",
+        "app-stop",
+        "startup-health",
+        "data-bootstrap",
+        "runtime-start",
+        "runtime-stop",
+        "demo-training-quality",
+        "demo-training-dataset-build",
+        "model-validation-gate",
+        "live-training-evidence-export",
+        "live-readiness",
+        "live-arm",
+        "dashboard-v2-control-center-smoke",
+    }:
+        from .app_control import LIVE_ARM_CONFIRM
+        from .app_control.app_evidence import export_app_control_evidence
+        from .app_control.app_supervisor import app_supervisor_plan
+        from .app_control.bot_profile import BotProfileMode, built_in_profiles
+        from .app_control.config_wizard import create_profile_from_wizard
+        from .app_control.data_bootstrap import data_bootstrap_report
+        from .app_control.one_click_launcher import generate_one_click_launcher
+        from .app_control.profile_matrix import profile_matrix_report
+        from .app_control.profile_store import default_profile_store
+        from .app_control.runtime_orchestrator import start_profile
+        from .app_control.secret_refs import secret_ref_status
+        from .app_control.startup_health import startup_health_report
+        from .live_training.demo_dataset_quality import evaluate_demo_dataset_quality
+        from .live_training.demo_spot_data_recorder import record_demo_spot_events
+        from .live_training.live_readiness_gate import evaluate_live_readiness_gate
+        from .live_training.live_training_evidence import export_live_training_evidence
+        from .live_training.model_validation_gate import evaluate_model_validation_gate
+        from .live_training.training_dataset_builder import build_training_dataset
+
+        profiles = built_in_profiles()
+        profile = profiles[1]
+        if args.command == "profiles-list":
+            payload = default_profile_store(Path.cwd()).list()
+        elif args.command == "profiles-validate":
+            payload = default_profile_store(Path.cwd()).validate_all()
+        elif args.command == "profile-wizard-create":
+            payload = create_profile_from_wizard(args.type, args.symbol)
+        elif args.command == "launcher-generate":
+            payload = generate_one_click_launcher(Path.cwd())
+        elif args.command == "app-start":
+            payload = app_supervisor_plan(Path.cwd(), open_browser=args.open_dashboard)
+        elif args.command in {"app-stop", "runtime-stop"}:
+            payload = {"status": "ok", "state": "stopped", "live_trading_enabled": False}
+        elif args.command == "startup-health":
+            payload = startup_health_report(Path.cwd())
+        elif args.command == "data-bootstrap":
+            payload = data_bootstrap_report(profile)
+        elif args.command == "runtime-start":
+            payload = start_profile(profile)
+        elif args.command in {"demo-training-quality", "demo-training-dataset-build", "model-validation-gate", "live-training-evidence-export", "live-readiness"}:
+            recording = record_demo_spot_events(Path.cwd())
+            quality = evaluate_demo_dataset_quality(recording)
+            dataset = build_training_dataset(Path.cwd(), recording, quality)
+            validation = evaluate_model_validation_gate(dataset)
+            if args.command == "demo-training-quality":
+                payload = quality
+            elif args.command == "demo-training-dataset-build":
+                payload = dataset
+            elif args.command == "model-validation-gate":
+                payload = validation
+            elif args.command == "live-training-evidence-export":
+                payload = export_live_training_evidence(Path.cwd(), recording, quality, dataset, validation)
+            else:
+                live_profile = next(item for item in profiles if item.mode == BotProfileMode.LIVE_LOCKED.value)
+                payload = evaluate_live_readiness_gate(live_profile, validation)
+        elif args.command == "live-arm":
+            if args.confirm != LIVE_ARM_CONFIRM:
+                payload = {"status": "blocked", "blockers": [f"live arm requires confirm {LIVE_ARM_CONFIRM}", "live execution implementation gate remains blocked"], "live_trading_enabled": False}
+                print(json.dumps(payload, indent=2 if args.json else None, default=str))
+                raise SystemExit(1)
+            payload = {"status": "blocked", "blockers": ["live execution implementation gate is not implemented in this roadmap"], "manual_confirm_received": True, "live_trading_enabled": False}
+        else:
+            recording = record_demo_spot_events(Path.cwd())
+            quality = evaluate_demo_dataset_quality(recording)
+            dataset = build_training_dataset(Path.cwd(), recording, quality)
+            validation = evaluate_model_validation_gate(dataset)
+            payload = {
+                "status": "ok",
+                "profiles": default_profile_store(Path.cwd()).validate_all(),
+                "startup": startup_health_report(Path.cwd()),
+                "secret_refs": secret_ref_status(),
+                "supervisor": app_supervisor_plan(Path.cwd()),
+                "profile_matrix": profile_matrix_report(),
+                "quality": quality,
+                "validation": validation,
+                "live_readiness": evaluate_live_readiness_gate(next(item for item in profiles if item.mode == BotProfileMode.LIVE_LOCKED.value), validation),
+                "evidence": export_app_control_evidence(Path.cwd(), {"run_id": "control-center-smoke", "validation": validation, "live_trading_enabled": False}),
+                "live_trading_enabled": False,
+            }
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command in {
+        "demo-session-targets",
+        "demo-session-progress",
+        "demo-recordings-verify",
+        "demo-vault-ingest",
+        "demo-dataset-quality-v2",
+        "demo-dataset-burndown",
+        "demo-feature-label-build",
+        "split-governance-check",
+        "model-candidates",
+        "model-validation-run",
+        "paper-replay-from-demo",
+        "testnet-promotion-check",
+        "testnet-rehearsal-run",
+        "live-candidate-check",
+        "demo-to-live-evidence-export",
+        "dashboard-v2-live-training-smoke",
+    }:
+        from .live_training.demo_to_live_pipeline import run_demo_to_live_pipeline
+        from .live_training.demo_session_targets import calculate_demo_session_target_progress, default_demo_session_target, fixture_complete_sessions
+        from .live_training.testnet_rehearsal_runner import TESTNET_REHEARSAL_CONFIRM, run_testnet_rehearsal
+
+        if args.command == "demo-session-targets":
+            payload = {"status": "ok", "target": default_demo_session_target().__dict__, "live_trading_enabled": False}
+        elif args.command == "demo-session-progress":
+            payload = calculate_demo_session_target_progress(default_demo_session_target(), fixture_complete_sessions())
+        else:
+            pipeline = run_demo_to_live_pipeline(Path.cwd())
+            if args.command == "demo-recordings-verify":
+                payload = pipeline["recording"]
+            elif args.command == "demo-vault-ingest":
+                payload = pipeline["vault"]
+            elif args.command == "demo-dataset-quality-v2":
+                payload = pipeline["quality"]
+            elif args.command == "demo-dataset-burndown":
+                payload = pipeline["burndown"]
+            elif args.command == "demo-feature-label-build":
+                payload = pipeline["dataset"]
+            elif args.command == "split-governance-check":
+                payload = pipeline["split"]
+            elif args.command == "model-candidates":
+                payload = pipeline["candidate"]
+            elif args.command == "model-validation-run":
+                payload = pipeline["validation"]
+            elif args.command == "paper-replay-from-demo":
+                payload = pipeline["paper_replay"]
+            elif args.command == "testnet-promotion-check":
+                payload = pipeline["testnet_promotion"]
+            elif args.command == "testnet-rehearsal-run":
+                if args.confirm != TESTNET_REHEARSAL_CONFIRM:
+                    payload = {"status": "blocked", "blockers": [f"testnet rehearsal requires confirm {TESTNET_REHEARSAL_CONFIRM}"], "live_trading_enabled": False}
+                    print(json.dumps(payload, indent=2 if args.json else None, default=str))
+                    raise SystemExit(1)
+                payload = run_testnet_rehearsal(pipeline["testnet_promotion"], confirm=args.confirm)
+            elif args.command == "live-candidate-check":
+                payload = pipeline["live_candidate"]
+            elif args.command == "demo-to-live-evidence-export":
+                payload = pipeline["evidence"]
+            else:
+                payload = pipeline
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command in {
+        "live-evidence-prerequisites",
+        "live-account-verify",
+        "live-endpoint-policy",
+        "live-dry-run",
+        "live-order-preview",
+        "live-sizing-guard",
+        "live-kill-switch-drill",
+        "live-cancel-drill",
+        "live-arm-token-create",
+        "live-first-order-execute",
+        "live-emergency-stop",
+        "live-audit",
+        "live-evidence-export",
+        "dashboard-v2-live-smoke",
+    }:
+        from .live_trading import LIVE_RISK_CONFIRM, REAL_ORDER_CONFIRM
+        from .live_trading.live_safety_pipeline import run_live_safety_pipeline
+
+        pipeline = run_live_safety_pipeline(
+            Path.cwd(),
+            arm_confirm=getattr(args, "confirm", LIVE_RISK_CONFIRM) if args.command == "live-arm-token-create" else LIVE_RISK_CONFIRM,
+            order_confirm=getattr(args, "confirm", "") if args.command == "live-first-order-execute" else "",
+            execute_first_order=args.command == "live-first-order-execute" and getattr(args, "confirm", "") == REAL_ORDER_CONFIRM,
+        )
+        if args.command == "live-evidence-prerequisites":
+            payload = pipeline["evidence"]
+        elif args.command == "live-account-verify":
+            payload = pipeline["account"]
+        elif args.command == "live-endpoint-policy":
+            from .live_trading.live_endpoint_policy import live_endpoint_policy_report
+
+            payload = live_endpoint_policy_report(args.phase)
+        elif args.command == "live-dry-run":
+            payload = pipeline["dry_run"]
+        elif args.command == "live-order-preview":
+            payload = pipeline["preview"]
+        elif args.command == "live-sizing-guard":
+            payload = pipeline["sizing"]
+        elif args.command == "live-kill-switch-drill":
+            payload = pipeline["kill_switch_drill"]
+        elif args.command == "live-cancel-drill":
+            payload = pipeline["cancel_drill"]
+        elif args.command == "live-arm-token-create":
+            payload = pipeline["arm_token"]
+            if payload.get("status") != "ok":
+                print(json.dumps(payload, indent=2 if args.json else None, default=str))
+                raise SystemExit(1)
+        elif args.command == "live-first-order-execute":
+            payload = pipeline["first_order"]
+            if payload.get("status") != "ok":
+                print(json.dumps(payload, indent=2 if args.json else None, default=str))
+                raise SystemExit(1)
+        elif args.command == "live-emergency-stop":
+            payload = {"status": "ok", "state": "emergency_stopped", "disarmed": True, "live_trading_enabled": False}
+        elif args.command == "live-audit":
+            payload = pipeline["audit"]
+        elif args.command == "live-evidence-export":
+            payload = pipeline["evidence_bundle"]
+        else:
+            payload = pipeline
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command in {
+        "live-session-plan-validate",
+        "live-session-create",
+        "live-session-status",
+        "live-session-arm",
+        "live-session-disarm",
+        "live-session-emergency-stop",
+        "live-session-budget",
+        "live-session-scaling",
+        "live-session-order-preview",
+        "live-session-order-execute",
+        "live-session-reconcile",
+        "live-session-heartbeat",
+        "live-session-evidence-export",
+        "dashboard-v2-live-session-smoke",
+    }:
+        from .live_trading import CONTROLLED_ORDER_CONFIRM, CONTROLLED_SESSION_CONFIRM
+        from .live_trading.live_session_pipeline import run_controlled_live_session_pipeline
+
+        pipeline = run_controlled_live_session_pipeline(
+            Path.cwd(),
+            arm_confirm=getattr(args, "confirm", CONTROLLED_SESSION_CONFIRM) if args.command == "live-session-arm" else CONTROLLED_SESSION_CONFIRM,
+            order_confirm=getattr(args, "confirm", "") if args.command == "live-session-order-execute" else "",
+        )
+        if args.command == "live-session-plan-validate":
+            payload = pipeline["plan"]
+        elif args.command == "live-session-create":
+            payload = pipeline["session"]
+        elif args.command == "live-session-status":
+            payload = {"status": "locked", "session": pipeline["session"]["session"], "live_trading_enabled": False}
+        elif args.command == "live-session-arm":
+            payload = pipeline["arm"]
+            if payload.get("status") != "ok":
+                print(json.dumps(payload, indent=2 if args.json else None, default=str))
+                raise SystemExit(1)
+        elif args.command in {"live-session-disarm", "live-session-emergency-stop"}:
+            payload = {"status": "ok", "state": "emergency_stopped" if args.command.endswith("emergency-stop") else "disarmed", "live_trading_enabled": False}
+        elif args.command == "live-session-budget":
+            payload = pipeline["budget"]
+        elif args.command == "live-session-scaling":
+            payload = pipeline["scaling"]
+        elif args.command == "live-session-order-preview":
+            payload = pipeline["lifecycle"]
+        elif args.command == "live-session-order-execute":
+            payload = pipeline["executor"]
+            if payload.get("status") != "ok":
+                print(json.dumps(payload, indent=2 if args.json else None, default=str))
+                raise SystemExit(1)
+        elif args.command == "live-session-reconcile":
+            payload = pipeline["reconciliation"]
+        elif args.command == "live-session-heartbeat":
+            payload = pipeline["heartbeat"]
+        elif args.command == "live-session-evidence-export":
+            payload = pipeline["evidence"]
+        else:
+            payload = pipeline
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command in {
+        "live-governance-status",
+        "live-session-review",
+        "live-session-scorecard",
+        "live-execution-quality",
+        "live-risk-calibration",
+        "live-scaling-decision",
+        "live-approval-request",
+        "live-approval-decide",
+        "live-profile-lifecycle",
+        "live-risk-preset-proposal",
+        "live-session-regression",
+        "live-governance-evidence-export",
+        "dashboard-v2-live-governance-smoke",
+    }:
+        from .live_trading.live_governance_pipeline import run_live_governance_pipeline
+
+        pipeline = run_live_governance_pipeline(Path.cwd(), approval_confirm=getattr(args, "confirm", ""), approval_note=getattr(args, "note", ""))
+        if args.command == "live-governance-status":
+            payload = {"status": "ok", "no_auto_scale": True, "live_trading_enabled": False}
+        elif args.command == "live-session-review":
+            payload = pipeline["review"]
+        elif args.command == "live-session-scorecard":
+            payload = pipeline["scorecard"]
+        elif args.command == "live-execution-quality":
+            payload = pipeline["execution_quality"]
+        elif args.command == "live-risk-calibration":
+            payload = pipeline["calibration"]
+        elif args.command == "live-scaling-decision":
+            payload = pipeline["scaling"]
+        elif args.command == "live-approval-request":
+            payload = pipeline["approval_request"]
+        elif args.command == "live-approval-decide":
+            payload = pipeline["approval"]
+            if payload.get("status") != "approved":
+                print(json.dumps(payload, indent=2 if args.json else None, default=str))
+                raise SystemExit(1)
+        elif args.command == "live-profile-lifecycle":
+            payload = pipeline["lifecycle"]
+        elif args.command == "live-risk-preset-proposal":
+            payload = pipeline["risk_proposal"]
+        elif args.command == "live-session-regression":
+            payload = pipeline["regression"]
+        elif args.command == "live-governance-evidence-export":
+            payload = pipeline["evidence"]
+        else:
+            payload = pipeline
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command in {
+        "live-ops-status",
+        "live-incident-detect",
+        "live-incident-classify",
+        "live-runbook-plan",
+        "live-rollback-drill",
+        "live-forensic-timeline",
+        "live-root-cause",
+        "live-prevention-backlog",
+        "live-recovery-check",
+        "live-incident-evidence-export",
+        "dashboard-v2-live-ops-smoke",
+    }:
+        from .live_ops.live_ops_pipeline import run_live_ops_pipeline
+
+        pipeline = run_live_ops_pipeline(Path.cwd(), drill=getattr(args, "drill", "disarm"))
+        if args.command == "live-ops-status":
+            payload = {"status": "ok", "open_incidents": pipeline["detected"]["count"], "live_order_submitted": False, "live_rearmed": False}
+        elif args.command == "live-incident-detect":
+            payload = pipeline["detected"]
+        elif args.command == "live-incident-classify":
+            payload = pipeline["classification"]
+        elif args.command == "live-runbook-plan":
+            payload = pipeline["plan"]
+        elif args.command == "live-rollback-drill":
+            payload = pipeline["rollback"]
+        elif args.command == "live-forensic-timeline":
+            payload = pipeline["timeline"]
+        elif args.command == "live-root-cause":
+            payload = pipeline["root_cause"]
+        elif args.command == "live-prevention-backlog":
+            payload = pipeline["backlog"]
+        elif args.command == "live-recovery-check":
+            payload = pipeline["recovery"]
+        elif args.command == "live-incident-evidence-export":
+            payload = pipeline["evidence"]
+        else:
+            payload = pipeline
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command in {
+        "package-profiles",
+        "package-lock",
+        "package-build-manifest",
+        "package-portable-build",
+        "package-installer-build",
+        "package-shortcuts-create",
+        "package-startup-health",
+        "package-update-plan",
+        "package-migration-preview",
+        "package-backup-create",
+        "package-restore-preview",
+        "package-rollback-preview",
+        "package-recovery-kit-build",
+        "package-safe-mode-start",
+        "package-verify",
+        "package-evidence-export",
+        "dashboard-v2-package-smoke",
+    }:
+        from .packaging.packaging_pipeline import run_packaging_pipeline
+
+        pipeline = run_packaging_pipeline(Path.cwd(), profile_id=getattr(args, "profile", "dashboard-full"))
+        if args.command == "package-profiles":
+            payload = pipeline["profiles"]
+        elif args.command == "package-lock":
+            payload = pipeline["lock"]
+        elif args.command == "package-build-manifest":
+            payload = pipeline["manifest"]
+        elif args.command == "package-portable-build":
+            payload = pipeline["portable"]
+        elif args.command == "package-installer-build":
+            payload = pipeline["installer"]
+        elif args.command == "package-shortcuts-create":
+            payload = pipeline["shortcuts"]
+        elif args.command == "package-startup-health":
+            payload = pipeline["startup"]
+        elif args.command == "package-update-plan":
+            payload = pipeline["update"]
+        elif args.command == "package-migration-preview":
+            payload = pipeline["migration"]
+        elif args.command == "package-backup-create":
+            payload = pipeline["backup"]
+        elif args.command == "package-restore-preview":
+            payload = pipeline["restore"]
+        elif args.command == "package-rollback-preview":
+            payload = pipeline["rollback"]
+        elif args.command == "package-recovery-kit-build":
+            payload = pipeline["recovery_kit"]
+        elif args.command == "package-safe-mode-start":
+            payload = pipeline["safe_mode"]
+        elif args.command == "package-verify":
+            payload = pipeline["verify"]
+        elif args.command == "package-evidence-export":
+            payload = pipeline["evidence"]
+        else:
+            payload = pipeline
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
+        return
+    if args.command in {
+        "ai-doctor-start",
+        "ai-doctor-event",
+        "ai-doctor-finish",
+        "ai-doctor-crash-report",
+        "ai-doctor-status",
+        "ai-doctor-collect",
+        "ai-doctor-match-issues",
+        "ai-doctor-summary",
+        "ai-doctor-codex-prompt",
+        "ai-doctor-export",
+        "ai-doctor-evidence-export",
+        "ai-doctor-verify",
+        "dashboard-v2-ai-doctor-smoke",
+    }:
+        from .ai_doctor.ai_doctor_pipeline import run_ai_doctor_pipeline
+
+        pipeline = run_ai_doctor_pipeline(Path.cwd(), profile_id=getattr(args, "profile", "paper"))
+        if args.command == "ai-doctor-start":
+            payload = pipeline["start"]
+        elif args.command == "ai-doctor-event":
+            payload = pipeline["event"]
+        elif args.command == "ai-doctor-finish":
+            payload = pipeline["finish"]
+        elif args.command == "ai-doctor-crash-report":
+            payload = pipeline["errors"]
+        elif args.command == "ai-doctor-status":
+            payload = {"status": "ok", "run_id": pipeline["run_id"], "issues": pipeline["issues"], "live_trading_enabled": False}
+        elif args.command == "ai-doctor-collect":
+            payload = {"status": "ok", "system_state": pipeline["system_state"], "logs": pipeline["logs"], "errors": pipeline["errors"], "live_trading_enabled": False}
+        elif args.command == "ai-doctor-match-issues":
+            payload = pipeline["issues"]
+        elif args.command == "ai-doctor-summary":
+            payload = pipeline["summary"]
+        elif args.command == "ai-doctor-codex-prompt":
+            payload = pipeline["prompt"]
+        elif args.command == "ai-doctor-export":
+            payload = pipeline["debug_pack"]
+        elif args.command == "ai-doctor-evidence-export":
+            payload = pipeline["evidence"]
+        elif args.command == "ai-doctor-verify":
+            payload = {"status": "ok", "bundle_path": pipeline["debug_pack"]["bundle_path"], "secret_scan_status": "ok", "live_trading_enabled": False}
+        else:
+            payload = pipeline
+        print(json.dumps(payload, indent=2 if args.json else None, default=str))
         return
     if args.command == "dashboard-legacy":
         from .dashboard_v2.legacy import streamlit_legacy_status

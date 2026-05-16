@@ -38,6 +38,61 @@ from binance_spot_bot.market_intelligence.scanner_presets import get_scanner_pre
 from binance_spot_bot.market_intelligence.symbol_ranking import rank_symbols
 from binance_spot_bot.market_intelligence.symbol_universe import build_symbol_universe, symbol_universe_to_dict
 from binance_spot_bot.market_intelligence.watchlist_scanner import run_watchlist_scan
+from binance_spot_bot.strategy_lab import PAPER_ONLY_CONFIRM, strategy_lab_health
+from binance_spot_bot.strategy_lab.candidate_scorecards import build_candidate_scorecards
+from binance_spot_bot.strategy_lab.experiment_evidence_bundle import export_strategy_lab_evidence
+from binance_spot_bot.strategy_lab.experiment_matrix import expand_experiment_matrix
+from binance_spot_bot.strategy_lab.experiment_queue import build_queue_from_candidates
+from binance_spot_bot.strategy_lab.experiment_queue_store import default_strategy_queue_store
+from binance_spot_bot.strategy_lab.experiment_result_store import default_result_store
+from binance_spot_bot.strategy_lab.paper_experiment_runner import run_paper_experiment_queue
+from binance_spot_bot.strategy_lab.portfolio_candidate_research import build_portfolio_candidate_research
+from binance_spot_bot.strategy_lab.research_guards import evaluate_research_guards
+from binance_spot_bot.strategy_lab.scanner_candidate_builder import build_scanner_candidates
+from binance_spot_bot.strategy_lab.strategy_comparison import compare_strategy_results
+from binance_spot_bot.portfolio_lab import PAPER_PORTFOLIO_CONFIRM, WALK_FORWARD_CONFIRM, portfolio_lab_health
+from binance_spot_bot.portfolio_lab.allocation_constraints import validate_allocation
+from binance_spot_bot.portfolio_lab.allocation_proposals import propose_allocation
+from binance_spot_bot.portfolio_lab.basket_builder import build_candidate_basket
+from binance_spot_bot.portfolio_lab.candidate_basket import fixture_basket
+from binance_spot_bot.portfolio_lab.correlation_proxy import portfolio_correlation_proxy
+from binance_spot_bot.portfolio_lab.evidence_bundle import export_portfolio_lab_evidence
+from binance_spot_bot.portfolio_lab.portfolio_experiment_orchestrator import preview_portfolio_simulation, run_portfolio_experiment
+from binance_spot_bot.portfolio_lab.portfolio_experiment_store import default_portfolio_store
+from binance_spot_bot.portfolio_lab.portfolio_research_guards import evaluate_portfolio_research_guards
+from binance_spot_bot.portfolio_lab.stress_tests import run_portfolio_stress_tests
+from binance_spot_bot.portfolio_lab.allocation_scorecards import build_allocation_scorecards
+from binance_spot_bot.portfolio_lab.allocation_decay import analyze_allocation_decay
+from binance_spot_bot.portfolio_lab.allocation_robustness_scorecards import build_robustness_scorecards
+from binance_spot_bot.portfolio_lab.candidate_replacement import simulate_candidate_replacements
+from binance_spot_bot.portfolio_lab.dataset_coverage_audit import audit_dataset_coverage
+from binance_spot_bot.portfolio_lab.rebalance_event_simulator import simulate_rebalance_events
+from binance_spot_bot.portfolio_lab.rebalancing_schedules import default_rebalancing_schedules, validate_rebalancing_schedule
+from binance_spot_bot.portfolio_lab.robustness_governance_gate import evaluate_robustness_governance_gate
+from binance_spot_bot.portfolio_lab.rolling_portfolio_orchestrator import preview_rolling_portfolio_simulation, run_rolling_portfolio_simulation
+from binance_spot_bot.portfolio_lab.walk_forward_evidence_bundle import export_walk_forward_evidence
+from binance_spot_bot.portfolio_lab.walk_forward_performance import analyze_walk_forward_performance
+from binance_spot_bot.portfolio_lab.walk_forward_splits import build_walk_forward_split
+from binance_spot_bot.app_control.app_evidence import export_app_control_evidence
+from binance_spot_bot.app_control.app_supervisor import app_supervisor_plan
+from binance_spot_bot.app_control.bot_profile import BotProfileMode, built_in_profiles
+from binance_spot_bot.app_control.config_wizard import create_profile_from_wizard
+from binance_spot_bot.app_control.data_bootstrap import data_bootstrap_report
+from binance_spot_bot.app_control.one_click_launcher import generate_one_click_launcher
+from binance_spot_bot.app_control.profile_matrix import profile_matrix_report
+from binance_spot_bot.app_control.profile_store import default_profile_store
+from binance_spot_bot.app_control.runtime_orchestrator import runtime_orchestrator_status, start_profile
+from binance_spot_bot.app_control.secret_refs import secret_ref_status
+from binance_spot_bot.app_control.startup_health import startup_health_report
+from binance_spot_bot.live_training.demo_dataset_quality import evaluate_demo_dataset_quality
+from binance_spot_bot.live_training.demo_spot_data_recorder import record_demo_spot_events
+from binance_spot_bot.live_training.live_readiness_gate import evaluate_live_readiness_gate
+from binance_spot_bot.live_training.live_training_evidence import export_live_training_evidence
+from binance_spot_bot.live_training.model_validation_gate import evaluate_model_validation_gate
+from binance_spot_bot.live_training.training_dataset_builder import build_training_dataset
+from binance_spot_bot.live_training.demo_to_live_pipeline import run_demo_to_live_pipeline
+from binance_spot_bot.live_training.demo_session_targets import calculate_demo_session_target_progress, default_demo_session_target, fixture_complete_sessions
+from binance_spot_bot.live_training.testnet_rehearsal_runner import TESTNET_REHEARSAL_CONFIRM, run_testnet_rehearsal
 
 
 def dashboard_v2_pages() -> list[dict[str, Any]]:
@@ -58,6 +113,25 @@ def dashboard_v2_pages() -> list[dict[str, Any]]:
             DashboardV2Page("templates", "Templates", "/templates").to_dict(),
             DashboardV2Page("analytics_presets", "Analytics Presets", "/analytics-presets").to_dict(),
             DashboardV2Page("workflow_packs", "Workflow Packs", "/workflow-packs").to_dict(),
+            DashboardV2Page("market_intelligence", "Market Intelligence", "/market-intelligence").to_dict(),
+            DashboardV2Page("market_intelligence_scanner", "Market Scanner", "/market-intelligence/scanner").to_dict(),
+            DashboardV2Page("market_intelligence_rankings", "Market Rankings", "/market-intelligence/rankings").to_dict(),
+            DashboardV2Page("market_intelligence_symbols", "Symbol Universe", "/market-intelligence/symbols").to_dict(),
+            DashboardV2Page("market_intelligence_paper_analytics", "Paper Analytics", "/market-intelligence/paper-analytics").to_dict(),
+            DashboardV2Page("strategy_lab", "Strategy Lab", "/strategy-lab").to_dict(),
+            DashboardV2Page("portfolio_lab", "Portfolio Lab", "/portfolio-lab").to_dict(),
+            DashboardV2Page("portfolio_lab_baskets", "Portfolio Baskets", "/portfolio-lab/baskets").to_dict(),
+            DashboardV2Page("portfolio_lab_allocations", "Portfolio Allocations", "/portfolio-lab/allocations").to_dict(),
+            DashboardV2Page("portfolio_lab_simulations", "Portfolio Simulations", "/portfolio-lab/simulations").to_dict(),
+            DashboardV2Page("portfolio_robustness", "Portfolio Robustness", "/portfolio-lab/robustness").to_dict(),
+            DashboardV2Page("control_center", "Control Center", "/control-center").to_dict(),
+            DashboardV2Page("live_training", "Live Training", "/live-training").to_dict(),
+            DashboardV2Page("live_safety", "Live Safety", "/live").to_dict(),
+            DashboardV2Page("live_session", "Live Session", "/live/session").to_dict(),
+            DashboardV2Page("live_governance", "Live Governance", "/live/governance").to_dict(),
+            DashboardV2Page("live_ops", "Live Ops", "/live-ops").to_dict(),
+            DashboardV2Page("package_center", "Package Center", "/package").to_dict(),
+            DashboardV2Page("ai_doctor", "AI Doctor", "/ai-doctor").to_dict(),
         ]
     )
     return pages
@@ -81,7 +155,26 @@ class DashboardV2FallbackApp:
             "/api/extension-packs/installed",
             "/api/extension-packs/recommendations",
             "/api/market-intelligence/health",
+            "/api/market-intelligence/policy",
+            "/api/market-intelligence/symbol-universe",
             "/api/market-intelligence/scanner-presets",
+            "/api/market-intelligence/scan/preview",
+            "/api/market-intelligence/paper-analytics/preview",
+            "/api/market-intelligence/evidence",
+            "/api/strategy-lab/health",
+            "/api/strategy-lab/candidates",
+            "/api/strategy-lab/queue/preview",
+            "/api/portfolio-lab/health",
+            "/api/portfolio-lab/baskets/build",
+            "/api/portfolio-lab/allocations/propose",
+            "/api/portfolio-lab/simulations/preview",
+            "/api/portfolio-lab/simulations/run",
+            "/api/portfolio-lab/robustness/health",
+            "/api/portfolio-lab/walk-forward/splits/preview",
+            "/api/portfolio-lab/rolling-simulation/preview",
+            "/api/app-control/health",
+            "/api/app-control/profiles",
+            "/api/app-control/config-wizard/profile",
             "/ws/events",
         ]
         self.bridge = DashboardRuntimeBridge()
@@ -125,6 +218,15 @@ class DashboardV2FallbackApp:
 
     def market_intelligence_health(self) -> dict[str, Any]:
         return {"status": "ok", "public_data_only": True, "live_trading_enabled": False}
+
+    def market_intelligence_policy(self) -> dict[str, Any]:
+        return write_public_endpoint_policy_report(Path.cwd())
+
+    def market_intelligence_presets(self) -> dict[str, Any]:
+        return scanner_presets_payload()
+
+    def strategy_lab_health(self) -> dict[str, Any]:
+        return strategy_lab_health()
 
 
 def create_dashboard_v2_app(settings: BotSettings | None = None) -> Any:
@@ -361,6 +463,715 @@ def create_dashboard_v2_app(settings: BotSettings | None = None) -> Any:
     @app.get("/api/market-intelligence/policy")
     def market_intelligence_policy() -> dict[str, Any]:
         return write_public_endpoint_policy_report(Path.cwd())
+
+    @app.get("/api/strategy-lab/health")
+    def strategy_lab_health_route() -> dict[str, Any]:
+        return strategy_lab_health()
+
+    @app.post("/api/strategy-lab/candidates/build")
+    def strategy_lab_candidates_build(preset: str = "majors_overview") -> dict[str, Any]:
+        return build_scanner_candidates(preset_id=preset)
+
+    @app.get("/api/strategy-lab/candidates")
+    def strategy_lab_candidates() -> dict[str, Any]:
+        return build_scanner_candidates()
+
+    @app.post("/api/strategy-lab/queue/preview")
+    def strategy_lab_queue_preview(preset: str = "small_safe_smoke") -> dict[str, Any]:
+        candidates = list(build_scanner_candidates()["candidates"])
+        return expand_experiment_matrix(candidates, preset=preset)
+
+    @app.post("/api/strategy-lab/queue/create")
+    def strategy_lab_queue_create(preset: str = "small_safe_smoke") -> dict[str, Any]:
+        candidates = list(build_scanner_candidates()["candidates"])
+        queue = build_queue_from_candidates(candidates, preset=preset)
+        return default_strategy_queue_store(Path.cwd()).save(queue)
+
+    @app.get("/api/strategy-lab/queues")
+    def strategy_lab_queues() -> dict[str, Any]:
+        return default_strategy_queue_store(Path.cwd()).list()
+
+    @app.get("/api/strategy-lab/queues/{queue_id}")
+    def strategy_lab_queue_detail(queue_id: str) -> dict[str, Any]:
+        return {"status": "ok", "queue": default_strategy_queue_store(Path.cwd()).load(queue_id), "live_trading_enabled": False}
+
+    @app.post("/api/strategy-lab/queues/{queue_id}/run")
+    def strategy_lab_queue_run(queue_id: str, confirm: str = "") -> dict[str, Any]:
+        if confirm != PAPER_ONLY_CONFIRM:
+            return {"status": "blocked", "blockers": [f"queue run requires confirm {PAPER_ONLY_CONFIRM}"], "live_trading_enabled": False}
+        queue = default_strategy_queue_store(Path.cwd()).load(queue_id)
+        report = run_paper_experiment_queue(queue, confirm=confirm)
+        for row in report.get("results", []):
+            default_result_store(Path.cwd()).save_job_result(row)
+        return report
+
+    @app.post("/api/strategy-lab/queues/{queue_id}/cancel")
+    def strategy_lab_queue_cancel(queue_id: str) -> dict[str, Any]:
+        return {"status": "ok", "queue_id": queue_id, "cancelled": True, "live_trading_enabled": False}
+
+    @app.get("/api/strategy-lab/results")
+    def strategy_lab_results() -> dict[str, Any]:
+        return default_result_store(Path.cwd()).list_results()
+
+    @app.get("/api/strategy-lab/results/{run_id}")
+    def strategy_lab_result_detail(run_id: str) -> dict[str, Any]:
+        return {"status": "ok", "run_id": run_id, "results": default_result_store(Path.cwd()).list_results().get("results", []), "live_trading_enabled": False}
+
+    @app.post("/api/strategy-lab/comparison")
+    def strategy_lab_comparison() -> dict[str, Any]:
+        return compare_strategy_results(default_result_store(Path.cwd()).list_results().get("results", []))
+
+    @app.post("/api/strategy-lab/scorecards")
+    def strategy_lab_scorecards() -> dict[str, Any]:
+        return build_candidate_scorecards(default_result_store(Path.cwd()).list_results().get("results", []), list(build_scanner_candidates()["candidates"]))
+
+    @app.post("/api/strategy-lab/portfolio-research")
+    def strategy_lab_portfolio_research() -> dict[str, Any]:
+        cards = build_candidate_scorecards(default_result_store(Path.cwd()).list_results().get("results", []), list(build_scanner_candidates()["candidates"]))
+        return build_portfolio_candidate_research(list(cards.get("scorecards", [])))
+
+    @app.post("/api/strategy-lab/guards")
+    def strategy_lab_guards() -> dict[str, Any]:
+        return evaluate_research_guards(default_result_store(Path.cwd()).list_results().get("results", []))
+
+    @app.post("/api/strategy-lab/evidence-export")
+    def strategy_lab_evidence_export() -> dict[str, Any]:
+        results = default_result_store(Path.cwd()).list_results()
+        return export_strategy_lab_evidence(Path.cwd(), {"results": results})
+
+    @app.get("/api/portfolio-lab/health")
+    def portfolio_lab_health_route() -> dict[str, Any]:
+        return portfolio_lab_health()
+
+    @app.post("/api/portfolio-lab/baskets/build")
+    def portfolio_lab_baskets_build(mode: str = "top_score", max_items: int = 4) -> dict[str, Any]:
+        return build_candidate_basket(mode=mode, max_items=max_items)
+
+    @app.get("/api/portfolio-lab/baskets")
+    def portfolio_lab_baskets() -> dict[str, Any]:
+        return default_portfolio_store(Path.cwd()).list("baskets")
+
+    @app.get("/api/portfolio-lab/baskets/{basket_id}")
+    def portfolio_lab_basket_detail(basket_id: str) -> dict[str, Any]:
+        return default_portfolio_store(Path.cwd()).load("baskets", basket_id)
+
+    @app.post("/api/portfolio-lab/allocations/propose")
+    def portfolio_lab_allocation_propose(mode: str = "equal_weight") -> dict[str, Any]:
+        basket = fixture_basket()
+        return propose_allocation(basket, mode=mode)
+
+    @app.post("/api/portfolio-lab/allocations/validate")
+    def portfolio_lab_allocation_validate() -> dict[str, Any]:
+        basket = fixture_basket()
+        proposal = propose_allocation(basket)
+        weights = {item["item_id"]: float(item["weight"]) for item in proposal["proposal"]["items"]}
+        return validate_allocation(basket, weights)
+
+    @app.get("/api/portfolio-lab/allocations")
+    def portfolio_lab_allocations() -> dict[str, Any]:
+        return default_portfolio_store(Path.cwd()).list("allocations")
+
+    @app.post("/api/portfolio-lab/simulations/preview")
+    def portfolio_lab_simulation_preview() -> dict[str, Any]:
+        return preview_portfolio_simulation()
+
+    @app.post("/api/portfolio-lab/simulations/run")
+    def portfolio_lab_simulation_run(confirm: str = "") -> dict[str, Any]:
+        return run_portfolio_experiment(Path.cwd(), confirm=confirm)
+
+    @app.get("/api/portfolio-lab/simulations")
+    def portfolio_lab_simulations() -> dict[str, Any]:
+        return default_portfolio_store(Path.cwd()).list("runs")
+
+    @app.get("/api/portfolio-lab/simulations/{run_id}")
+    def portfolio_lab_simulation_detail(run_id: str) -> dict[str, Any]:
+        return default_portfolio_store(Path.cwd()).load("runs", run_id)
+
+    @app.post("/api/portfolio-lab/stress-tests/run")
+    def portfolio_lab_stress_tests_run() -> dict[str, Any]:
+        run = run_portfolio_experiment(Path.cwd(), confirm=PAPER_PORTFOLIO_CONFIRM)
+        return run_portfolio_stress_tests(run["simulation"])
+
+    @app.post("/api/portfolio-lab/scorecards")
+    def portfolio_lab_scorecards() -> dict[str, Any]:
+        run = run_portfolio_experiment(Path.cwd(), confirm=PAPER_PORTFOLIO_CONFIRM)
+        return build_allocation_scorecards(run["risk"], run["stress"], run["guards"])
+
+    @app.post("/api/portfolio-lab/research-guards")
+    def portfolio_lab_research_guards() -> dict[str, Any]:
+        basket = fixture_basket()
+        proposal = propose_allocation(basket)["proposal"]
+        run = run_portfolio_experiment(Path.cwd(), basket=basket, allocation=proposal, confirm=PAPER_PORTFOLIO_CONFIRM)
+        return evaluate_portfolio_research_guards(basket, proposal, run["risk"], run["stress"], run["correlation"])
+
+    @app.post("/api/portfolio-lab/evidence-export")
+    def portfolio_lab_evidence_export() -> dict[str, Any]:
+        run = run_portfolio_experiment(Path.cwd(), confirm=PAPER_PORTFOLIO_CONFIRM)
+        return export_portfolio_lab_evidence(Path.cwd(), run)
+
+    @app.get("/api/portfolio-lab/correlation-proxy")
+    def portfolio_lab_correlation_proxy_route() -> dict[str, Any]:
+        return portfolio_correlation_proxy(fixture_basket())
+
+    @app.get("/api/portfolio-lab/robustness/health")
+    def portfolio_robustness_health_route() -> dict[str, Any]:
+        payload = portfolio_lab_health()
+        payload["robustness_lab"] = True
+        payload["requires_confirm"] = WALK_FORWARD_CONFIRM
+        return payload
+
+    @app.post("/api/portfolio-lab/walk-forward/splits/preview")
+    def portfolio_walk_forward_splits_preview() -> dict[str, Any]:
+        return build_walk_forward_split()
+
+    @app.post("/api/portfolio-lab/walk-forward/splits/create")
+    def portfolio_walk_forward_splits_create() -> dict[str, Any]:
+        return build_walk_forward_split()
+
+    @app.post("/api/portfolio-lab/dataset-coverage/audit")
+    def portfolio_dataset_coverage_audit() -> dict[str, Any]:
+        return audit_dataset_coverage(build_walk_forward_split())
+
+    @app.get("/api/portfolio-lab/rebalancing/schedules")
+    def portfolio_rebalancing_schedules() -> dict[str, Any]:
+        return default_rebalancing_schedules()
+
+    @app.post("/api/portfolio-lab/rebalancing/schedules/validate")
+    def portfolio_rebalancing_schedules_validate() -> dict[str, Any]:
+        return validate_rebalancing_schedule(default_rebalancing_schedules()["schedules"][1])
+
+    @app.post("/api/portfolio-lab/rebalancing/events/simulate")
+    def portfolio_rebalancing_events_simulate() -> dict[str, Any]:
+        basket = fixture_basket()
+        allocation = propose_allocation(basket)["proposal"]
+        return simulate_rebalance_events(allocation, default_rebalancing_schedules()["schedules"][1])
+
+    @app.post("/api/portfolio-lab/rolling-simulation/preview")
+    def portfolio_rolling_simulation_preview() -> dict[str, Any]:
+        return preview_rolling_portfolio_simulation()
+
+    @app.post("/api/portfolio-lab/rolling-simulation/run")
+    def portfolio_rolling_simulation_run(confirm: str = "") -> dict[str, Any]:
+        return run_rolling_portfolio_simulation(Path.cwd(), confirm=confirm)
+
+    @app.post("/api/portfolio-lab/decay/analyze")
+    def portfolio_decay_analyze() -> dict[str, Any]:
+        return analyze_allocation_decay(fixture_basket())
+
+    @app.post("/api/portfolio-lab/replacements/simulate")
+    def portfolio_replacements_simulate(policy: str = "manual_review_required") -> dict[str, Any]:
+        basket = fixture_basket()
+        return simulate_candidate_replacements(basket, analyze_allocation_decay(basket), policy=policy)
+
+    @app.post("/api/portfolio-lab/walk-forward/performance")
+    def portfolio_walk_forward_performance() -> dict[str, Any]:
+        rolling = run_rolling_portfolio_simulation(Path.cwd(), confirm=WALK_FORWARD_CONFIRM)
+        return analyze_walk_forward_performance(rolling)
+
+    @app.post("/api/portfolio-lab/robustness/scorecards")
+    def portfolio_robustness_scorecards() -> dict[str, Any]:
+        rolling = run_rolling_portfolio_simulation(Path.cwd(), confirm=WALK_FORWARD_CONFIRM)
+        performance = analyze_walk_forward_performance(rolling)
+        return build_robustness_scorecards(performance, rolling.get("decay"))
+
+    @app.post("/api/portfolio-lab/robustness/governance-gate")
+    def portfolio_robustness_governance_gate() -> dict[str, Any]:
+        rolling = run_rolling_portfolio_simulation(Path.cwd(), confirm=WALK_FORWARD_CONFIRM)
+        performance = analyze_walk_forward_performance(rolling)
+        scorecards = build_robustness_scorecards(performance, rolling.get("decay"))
+        return evaluate_robustness_governance_gate(scorecards, performance, rolling.get("split"))
+
+    @app.post("/api/portfolio-lab/walk-forward/evidence-export")
+    def portfolio_walk_forward_evidence_export() -> dict[str, Any]:
+        rolling = run_rolling_portfolio_simulation(Path.cwd(), confirm=WALK_FORWARD_CONFIRM)
+        performance = analyze_walk_forward_performance(rolling)
+        scorecards = build_robustness_scorecards(performance, rolling.get("decay"))
+        gate = evaluate_robustness_governance_gate(scorecards, performance, rolling.get("split"))
+        return export_walk_forward_evidence(Path.cwd(), rolling, performance, scorecards, gate)
+
+    @app.get("/api/app-control/health")
+    def app_control_health_route() -> dict[str, Any]:
+        return startup_health_report(Path.cwd())
+
+    @app.get("/api/app-control/profiles")
+    def app_control_profiles() -> dict[str, Any]:
+        return default_profile_store(Path.cwd()).list()
+
+    @app.get("/api/app-control/profile-templates")
+    def app_control_profile_templates() -> dict[str, Any]:
+        return default_profile_store(Path.cwd()).templates()
+
+    @app.post("/api/app-control/config-wizard/profile")
+    def app_control_config_wizard_profile(profile_type: str = "paper", symbol: str = "BTCUSDT") -> dict[str, Any]:
+        return create_profile_from_wizard(profile_type, symbol)
+
+    @app.get("/api/app-control/secret-ref-status")
+    def app_control_secret_ref_status() -> dict[str, Any]:
+        return secret_ref_status()
+
+    @app.post("/api/app-control/launcher/generate")
+    def app_control_launcher_generate() -> dict[str, Any]:
+        return generate_one_click_launcher(Path.cwd())
+
+    @app.get("/api/app-control/supervisor/plan")
+    def app_control_supervisor_plan() -> dict[str, Any]:
+        return app_supervisor_plan(Path.cwd())
+
+    @app.post("/api/app-control/data-bootstrap")
+    def app_control_data_bootstrap() -> dict[str, Any]:
+        profile = built_in_profiles()[1]
+        return data_bootstrap_report(profile)
+
+    @app.post("/api/app-control/runtime/start")
+    def app_control_runtime_start(profile_type: str = "paper") -> dict[str, Any]:
+        profile = next((item for item in built_in_profiles() if item.mode == profile_type), built_in_profiles()[1])
+        return start_profile(profile)
+
+    @app.post("/api/app-control/runtime/status")
+    def app_control_runtime_status(profile_type: str = "paper") -> dict[str, Any]:
+        profile = next((item for item in built_in_profiles() if item.mode == profile_type), built_in_profiles()[1])
+        return runtime_orchestrator_status(profile)
+
+    @app.post("/api/live-training/demo-record")
+    def live_training_demo_record() -> dict[str, Any]:
+        return record_demo_spot_events(Path.cwd())
+
+    @app.post("/api/live-training/quality")
+    def live_training_quality() -> dict[str, Any]:
+        recording = record_demo_spot_events(Path.cwd())
+        return evaluate_demo_dataset_quality(recording)
+
+    @app.post("/api/live-training/dataset-build")
+    def live_training_dataset_build() -> dict[str, Any]:
+        recording = record_demo_spot_events(Path.cwd())
+        quality = evaluate_demo_dataset_quality(recording)
+        return build_training_dataset(Path.cwd(), recording, quality)
+
+    @app.post("/api/live-training/model-validation-gate")
+    def live_training_model_validation_gate() -> dict[str, Any]:
+        recording = record_demo_spot_events(Path.cwd())
+        quality = evaluate_demo_dataset_quality(recording)
+        dataset = build_training_dataset(Path.cwd(), recording, quality)
+        return evaluate_model_validation_gate(dataset)
+
+    @app.post("/api/live-training/evidence-export")
+    def live_training_evidence_export() -> dict[str, Any]:
+        recording = record_demo_spot_events(Path.cwd())
+        quality = evaluate_demo_dataset_quality(recording)
+        dataset = build_training_dataset(Path.cwd(), recording, quality)
+        validation = evaluate_model_validation_gate(dataset)
+        return export_live_training_evidence(Path.cwd(), recording, quality, dataset, validation)
+
+    @app.post("/api/app-control/live-readiness")
+    def app_control_live_readiness() -> dict[str, Any]:
+        profile = next(item for item in built_in_profiles() if item.mode == BotProfileMode.LIVE_LOCKED.value)
+        recording = record_demo_spot_events(Path.cwd())
+        quality = evaluate_demo_dataset_quality(recording)
+        dataset = build_training_dataset(Path.cwd(), recording, quality)
+        validation = evaluate_model_validation_gate(dataset)
+        return evaluate_live_readiness_gate(profile, validation)
+
+    @app.post("/api/app-control/evidence-export")
+    def app_control_evidence_export() -> dict[str, Any]:
+        payload = {"run_id": "app-control-dashboard", "profiles": default_profile_store(Path.cwd()).validate_all(), "startup": startup_health_report(Path.cwd()), "live_trading_enabled": False}
+        return export_app_control_evidence(Path.cwd(), payload)
+
+    @app.get("/api/app-control/profile-matrix")
+    def app_control_profile_matrix() -> dict[str, Any]:
+        return profile_matrix_report()
+
+    @app.get("/api/live-training/health")
+    def live_training_health() -> dict[str, Any]:
+        return {"status": "ok", "demo_to_live_training": True, "live_execution_enabled": False, "live_trading_enabled": False}
+
+    @app.get("/api/live-training/demo-targets")
+    def live_training_demo_targets() -> dict[str, Any]:
+        return {"status": "ok", "target": default_demo_session_target().__dict__, "live_trading_enabled": False}
+
+    @app.get("/api/live-training/demo-targets/progress")
+    def live_training_demo_targets_progress() -> dict[str, Any]:
+        return calculate_demo_session_target_progress(default_demo_session_target(), fixture_complete_sessions())
+
+    @app.post("/api/live-training/testnet-rehearsal/run")
+    def live_training_testnet_rehearsal_run(confirm: str = "") -> dict[str, Any]:
+        pipeline = run_demo_to_live_pipeline(Path.cwd(), testnet_confirm=TESTNET_REHEARSAL_CONFIRM)
+        return run_testnet_rehearsal(pipeline["testnet_promotion"], confirm=confirm)
+
+    @app.post("/api/live-training/demo-to-live/run")
+    def live_training_demo_to_live_run() -> dict[str, Any]:
+        return run_demo_to_live_pipeline(Path.cwd())
+
+    @app.get("/api/live/status")
+    def live_status() -> dict[str, Any]:
+        return {"status": "locked", "live_execution_enabled": False, "live_order_placement_enabled": False, "live_trading_enabled": False}
+
+    @app.get("/api/live/evidence-prerequisites")
+    def live_evidence_prerequisites() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_safety_pipeline import run_live_safety_pipeline
+
+        return run_live_safety_pipeline(Path.cwd())["evidence"]
+
+    @app.post("/api/live/account/verify")
+    def live_account_verify() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_safety_pipeline import run_live_safety_pipeline
+
+        return run_live_safety_pipeline(Path.cwd())["account"]
+
+    @app.post("/api/live/endpoint-policy/check")
+    def live_endpoint_policy_check(phase: str = "dry_run") -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_endpoint_policy import live_endpoint_policy_report
+
+        return live_endpoint_policy_report(phase)
+
+    @app.post("/api/live/dry-run/start")
+    def live_dry_run_start() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_safety_pipeline import run_live_safety_pipeline
+
+        return run_live_safety_pipeline(Path.cwd())["dry_run"]
+
+    @app.post("/api/live/order-preview")
+    def live_order_preview_route() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_safety_pipeline import run_live_safety_pipeline
+
+        return run_live_safety_pipeline(Path.cwd())["preview"]
+
+    @app.post("/api/live/sizing-guard/check")
+    def live_sizing_guard_check() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_safety_pipeline import run_live_safety_pipeline
+
+        return run_live_safety_pipeline(Path.cwd())["sizing"]
+
+    @app.post("/api/live/safety-drills/kill-switch")
+    def live_kill_switch_drill() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_safety_pipeline import run_live_safety_pipeline
+
+        return run_live_safety_pipeline(Path.cwd())["kill_switch_drill"]
+
+    @app.post("/api/live/safety-drills/cancel")
+    def live_cancel_drill() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_safety_pipeline import run_live_safety_pipeline
+
+        return run_live_safety_pipeline(Path.cwd())["cancel_drill"]
+
+    @app.post("/api/live/arm-token/create")
+    def live_arm_token_create(confirm: str = "") -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_safety_pipeline import run_live_safety_pipeline
+
+        return run_live_safety_pipeline(Path.cwd(), arm_confirm=confirm)["arm_token"]
+
+    @app.post("/api/live/first-order/execute")
+    def live_first_order_execute(confirm: str = "") -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_safety_pipeline import run_live_safety_pipeline
+
+        return run_live_safety_pipeline(Path.cwd(), order_confirm=confirm, execute_first_order=True)["first_order"]
+
+    @app.post("/api/live/emergency-stop")
+    def live_emergency_stop() -> dict[str, Any]:
+        return {"status": "ok", "state": "emergency_stopped", "disarmed": True, "live_trading_enabled": False}
+
+    @app.get("/api/live/audit")
+    def live_audit() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_safety_pipeline import run_live_safety_pipeline
+
+        return run_live_safety_pipeline(Path.cwd())["audit"]
+
+    @app.post("/api/live/evidence/export")
+    def live_evidence_export() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_safety_pipeline import run_live_safety_pipeline
+
+        return run_live_safety_pipeline(Path.cwd())["evidence_bundle"]
+
+    @app.get("/api/live-session/status")
+    def live_session_status() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_session_pipeline import run_controlled_live_session_pipeline
+
+        return {"status": "locked", "pipeline": run_controlled_live_session_pipeline(Path.cwd()), "live_trading_enabled": False}
+
+    @app.post("/api/live-session/plan/validate")
+    def live_session_plan_validate() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_session_pipeline import run_controlled_live_session_pipeline
+
+        return run_controlled_live_session_pipeline(Path.cwd())["plan"]
+
+    @app.post("/api/live-session/create")
+    def live_session_create() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_session_pipeline import run_controlled_live_session_pipeline
+
+        return run_controlled_live_session_pipeline(Path.cwd())["session"]
+
+    @app.post("/api/live-session/arm")
+    def live_session_arm(confirm: str = "") -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_session_pipeline import run_controlled_live_session_pipeline
+
+        return run_controlled_live_session_pipeline(Path.cwd(), arm_confirm=confirm)["arm"]
+
+    @app.post("/api/live-session/disarm")
+    def live_session_disarm() -> dict[str, Any]:
+        return {"status": "ok", "state": "disarmed", "live_trading_enabled": False}
+
+    @app.post("/api/live-session/emergency-stop")
+    def live_session_emergency_stop() -> dict[str, Any]:
+        return {"status": "ok", "state": "emergency_stopped", "live_trading_enabled": False}
+
+    @app.get("/api/live-session/budget")
+    def live_session_budget() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_session_pipeline import run_controlled_live_session_pipeline
+
+        return run_controlled_live_session_pipeline(Path.cwd())["budget"]
+
+    @app.get("/api/live-session/scaling")
+    def live_session_scaling() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_session_pipeline import run_controlled_live_session_pipeline
+
+        return run_controlled_live_session_pipeline(Path.cwd())["scaling"]
+
+    @app.post("/api/live-session/orders/execute")
+    def live_session_order_execute(confirm: str = "") -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_session_pipeline import run_controlled_live_session_pipeline
+
+        return run_controlled_live_session_pipeline(Path.cwd(), order_confirm=confirm)["executor"]
+
+    @app.post("/api/live-session/orders/reconcile")
+    def live_session_reconcile() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_session_pipeline import run_controlled_live_session_pipeline
+
+        return run_controlled_live_session_pipeline(Path.cwd())["reconciliation"]
+
+    @app.get("/api/live-session/heartbeat")
+    def live_session_heartbeat() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_session_pipeline import run_controlled_live_session_pipeline
+
+        return run_controlled_live_session_pipeline(Path.cwd())["heartbeat"]
+
+    @app.get("/api/live-session/evidence")
+    def live_session_evidence() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_session_pipeline import run_controlled_live_session_pipeline
+
+        return run_controlled_live_session_pipeline(Path.cwd())["evidence"]
+
+    @app.get("/api/live-governance/status")
+    def live_governance_status() -> dict[str, Any]:
+        return {"status": "ok", "no_auto_scale": True, "live_order_submitted": False, "live_trading_enabled": False}
+
+    @app.post("/api/live-governance/review/run")
+    def live_governance_review_run() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_governance_pipeline import run_live_governance_pipeline
+
+        return run_live_governance_pipeline(Path.cwd())["review"]
+
+    @app.post("/api/live-governance/scorecards/generate")
+    def live_governance_scorecard() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_governance_pipeline import run_live_governance_pipeline
+
+        return run_live_governance_pipeline(Path.cwd())["scorecard"]
+
+    @app.post("/api/live-governance/risk-calibration/run")
+    def live_governance_calibration() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_governance_pipeline import run_live_governance_pipeline
+
+        return run_live_governance_pipeline(Path.cwd())["calibration"]
+
+    @app.post("/api/live-governance/scaling-decision")
+    def live_governance_scaling_decision() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_governance_pipeline import run_live_governance_pipeline
+
+        return run_live_governance_pipeline(Path.cwd())["scaling"]
+
+    @app.post("/api/live-governance/approval/decide")
+    def live_governance_approval_decide(confirm: str = "", note: str = "") -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_governance_pipeline import run_live_governance_pipeline
+
+        return run_live_governance_pipeline(Path.cwd(), approval_confirm=confirm, approval_note=note)["approval"]
+
+    @app.post("/api/live-governance/evidence/export")
+    def live_governance_evidence_export() -> dict[str, Any]:
+        from binance_spot_bot.live_trading.live_governance_pipeline import run_live_governance_pipeline
+
+        return run_live_governance_pipeline(Path.cwd())["evidence"]
+
+    @app.get("/api/live-ops/status")
+    def live_ops_status() -> dict[str, Any]:
+        from binance_spot_bot.live_ops.live_ops_pipeline import run_live_ops_pipeline
+
+        pipeline = run_live_ops_pipeline(Path.cwd())
+        return {"status": "ok", "open_incidents": pipeline["detected"]["count"], "live_order_submitted": False, "live_rearmed": False}
+
+    @app.post("/api/live-ops/incidents/detect")
+    def live_ops_incident_detect() -> dict[str, Any]:
+        from binance_spot_bot.live_ops.live_ops_pipeline import run_live_ops_pipeline
+
+        return run_live_ops_pipeline(Path.cwd())["detected"]
+
+    @app.get("/api/live-ops/incidents")
+    def live_ops_incidents() -> dict[str, Any]:
+        from binance_spot_bot.live_ops.live_ops_pipeline import run_live_ops_pipeline
+
+        return run_live_ops_pipeline(Path.cwd())["detected"]
+
+    @app.post("/api/live-ops/incidents/classify")
+    def live_ops_incident_classify() -> dict[str, Any]:
+        from binance_spot_bot.live_ops.live_ops_pipeline import run_live_ops_pipeline
+
+        return run_live_ops_pipeline(Path.cwd())["classification"]
+
+    @app.get("/api/live-ops/runbooks")
+    def live_ops_runbooks() -> dict[str, Any]:
+        from binance_spot_bot.live_ops.live_ops_pipeline import run_live_ops_pipeline
+
+        return run_live_ops_pipeline(Path.cwd())["registry"]
+
+    @app.post("/api/live-ops/runbooks/plan")
+    def live_ops_runbook_plan() -> dict[str, Any]:
+        from binance_spot_bot.live_ops.live_ops_pipeline import run_live_ops_pipeline
+
+        return run_live_ops_pipeline(Path.cwd())["plan"]
+
+    @app.post("/api/live-ops/command-center/update")
+    def live_ops_command_center_update() -> dict[str, Any]:
+        from binance_spot_bot.live_ops.live_ops_pipeline import run_live_ops_pipeline
+
+        return run_live_ops_pipeline(Path.cwd())["command_center"]
+
+    @app.post("/api/live-ops/rollback-drills/run")
+    def live_ops_rollback_drill() -> dict[str, Any]:
+        from binance_spot_bot.live_ops.live_ops_pipeline import run_live_ops_pipeline
+
+        return run_live_ops_pipeline(Path.cwd())["rollback"]
+
+    @app.post("/api/live-ops/forensics/build-timeline")
+    def live_ops_forensics() -> dict[str, Any]:
+        from binance_spot_bot.live_ops.live_ops_pipeline import run_live_ops_pipeline
+
+        return run_live_ops_pipeline(Path.cwd())["timeline"]
+
+    @app.post("/api/live-ops/root-cause/analyze")
+    def live_ops_root_cause() -> dict[str, Any]:
+        from binance_spot_bot.live_ops.live_ops_pipeline import run_live_ops_pipeline
+
+        return run_live_ops_pipeline(Path.cwd())["root_cause"]
+
+    @app.post("/api/live-ops/prevention-backlog/generate")
+    def live_ops_prevention_backlog() -> dict[str, Any]:
+        from binance_spot_bot.live_ops.live_ops_pipeline import run_live_ops_pipeline
+
+        return run_live_ops_pipeline(Path.cwd())["backlog"]
+
+    @app.post("/api/live-ops/recovery/check")
+    def live_ops_recovery_check() -> dict[str, Any]:
+        from binance_spot_bot.live_ops.live_ops_pipeline import run_live_ops_pipeline
+
+        return run_live_ops_pipeline(Path.cwd())["recovery"]
+
+    @app.post("/api/live-ops/evidence/export")
+    def live_ops_evidence_export() -> dict[str, Any]:
+        from binance_spot_bot.live_ops.live_ops_pipeline import run_live_ops_pipeline
+
+        return run_live_ops_pipeline(Path.cwd())["evidence"]
+
+    @app.get("/api/package/status")
+    def package_status() -> dict[str, Any]:
+        from binance_spot_bot.packaging.packaging_pipeline import run_packaging_pipeline
+
+        pipeline = run_packaging_pipeline(Path.cwd())
+        return {"status": "ok", "profile": pipeline["profiles"], "startup": pipeline["startup"], "live_trading_enabled": False}
+
+    @app.get("/api/package/profiles")
+    def package_profiles() -> dict[str, Any]:
+        from binance_spot_bot.packaging.packaging_pipeline import run_packaging_pipeline
+
+        return run_packaging_pipeline(Path.cwd())["profiles"]
+
+    @app.post("/api/package/backup/create")
+    def package_backup_create() -> dict[str, Any]:
+        from binance_spot_bot.packaging.packaging_pipeline import run_packaging_pipeline
+
+        return run_packaging_pipeline(Path.cwd())["backup"]
+
+    @app.post("/api/package/update/plan")
+    def package_update_plan() -> dict[str, Any]:
+        from binance_spot_bot.packaging.packaging_pipeline import run_packaging_pipeline
+
+        return run_packaging_pipeline(Path.cwd())["update"]
+
+    @app.post("/api/package/rollback/preview")
+    def package_rollback_preview() -> dict[str, Any]:
+        from binance_spot_bot.packaging.packaging_pipeline import run_packaging_pipeline
+
+        return run_packaging_pipeline(Path.cwd())["rollback"]
+
+    @app.post("/api/package/recovery-kit/build")
+    def package_recovery_kit() -> dict[str, Any]:
+        from binance_spot_bot.packaging.packaging_pipeline import run_packaging_pipeline
+
+        return run_packaging_pipeline(Path.cwd())["recovery_kit"]
+
+    @app.post("/api/package/evidence/export")
+    def package_evidence_export() -> dict[str, Any]:
+        from binance_spot_bot.packaging.packaging_pipeline import run_packaging_pipeline
+
+        return run_packaging_pipeline(Path.cwd())["evidence"]
+
+    @app.get("/api/ai-doctor/status")
+    def ai_doctor_status() -> dict[str, Any]:
+        from binance_spot_bot.ai_doctor.ai_doctor_pipeline import run_ai_doctor_pipeline
+
+        pipeline = run_ai_doctor_pipeline(Path.cwd())
+        return {"status": "ok", "run_id": pipeline["run_id"], "issues": pipeline["issues"], "live_trading_enabled": False}
+
+    @app.post("/api/ai-doctor/runs/start")
+    def ai_doctor_start() -> dict[str, Any]:
+        from binance_spot_bot.ai_doctor.ai_doctor_pipeline import run_ai_doctor_pipeline
+
+        return run_ai_doctor_pipeline(Path.cwd())["start"]
+
+    @app.post("/api/ai-doctor/runs/{run_id}/event")
+    def ai_doctor_event(run_id: str) -> dict[str, Any]:
+        from binance_spot_bot.ai_doctor.ai_doctor_pipeline import run_ai_doctor_pipeline
+
+        return run_ai_doctor_pipeline(Path.cwd())["event"]
+
+    @app.post("/api/ai-doctor/runs/{run_id}/finish")
+    def ai_doctor_finish(run_id: str) -> dict[str, Any]:
+        from binance_spot_bot.ai_doctor.ai_doctor_pipeline import run_ai_doctor_pipeline
+
+        return run_ai_doctor_pipeline(Path.cwd())["finish"]
+
+    @app.post("/api/ai-doctor/runs/{run_id}/collect")
+    def ai_doctor_collect(run_id: str) -> dict[str, Any]:
+        from binance_spot_bot.ai_doctor.ai_doctor_pipeline import run_ai_doctor_pipeline
+
+        pipeline = run_ai_doctor_pipeline(Path.cwd())
+        return {"status": "ok", "errors": pipeline["errors"], "logs": pipeline["logs"], "system_state": pipeline["system_state"], "live_trading_enabled": False}
+
+    @app.post("/api/ai-doctor/runs/{run_id}/match-issues")
+    def ai_doctor_match_issues(run_id: str) -> dict[str, Any]:
+        from binance_spot_bot.ai_doctor.ai_doctor_pipeline import run_ai_doctor_pipeline
+
+        return run_ai_doctor_pipeline(Path.cwd())["issues"]
+
+    @app.post("/api/ai-doctor/runs/{run_id}/summary")
+    def ai_doctor_summary(run_id: str) -> dict[str, Any]:
+        from binance_spot_bot.ai_doctor.ai_doctor_pipeline import run_ai_doctor_pipeline
+
+        return run_ai_doctor_pipeline(Path.cwd())["summary"]
+
+    @app.post("/api/ai-doctor/runs/{run_id}/codex-prompt")
+    def ai_doctor_codex_prompt(run_id: str) -> dict[str, Any]:
+        from binance_spot_bot.ai_doctor.ai_doctor_pipeline import run_ai_doctor_pipeline
+
+        return run_ai_doctor_pipeline(Path.cwd())["prompt"]
+
+    @app.post("/api/ai-doctor/runs/{run_id}/export")
+    def ai_doctor_export(run_id: str) -> dict[str, Any]:
+        from binance_spot_bot.ai_doctor.ai_doctor_pipeline import run_ai_doctor_pipeline
+
+        return run_ai_doctor_pipeline(Path.cwd())["debug_pack"]
+
+    @app.post("/api/ai-doctor/runs/{run_id}/evidence")
+    def ai_doctor_evidence(run_id: str) -> dict[str, Any]:
+        from binance_spot_bot.ai_doctor.ai_doctor_pipeline import run_ai_doctor_pipeline
+
+        return run_ai_doctor_pipeline(Path.cwd())["evidence"]
 
     @app.websocket("/ws/events")
     async def ws_events(websocket: WebSocket) -> None:

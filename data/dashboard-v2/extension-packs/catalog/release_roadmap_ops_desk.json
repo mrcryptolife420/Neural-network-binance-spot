@@ -7,7 +7,7 @@
     "pack_type": "release_ops_pack",
     "schema_version": 2,
     "author": "local",
-    "created_at_ms": 1778867144439,
+    "created_at_ms": 1778937809807,
     "compatible_workspace_schema_versions": [
       2
     ],
@@ -32,7 +32,7 @@
     ],
     "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
     "live_trading_enabled": false,
-    "content_hash": "35fd51e12bfb9fe0"
+    "content_hash": "417236c20c00df0f"
   },
   "content": {
     "workspace_templates": [
@@ -238,8 +238,8 @@
         "live_trading_enabled": false,
         "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
         "metadata": {
-          "created_at_ms": 1778867144439,
-          "updated_at_ms": 1778867144439,
+          "created_at_ms": 1778937809806,
+          "updated_at_ms": 1778937809806,
           "owner": "local-operator",
           "schema_version": 2
         }

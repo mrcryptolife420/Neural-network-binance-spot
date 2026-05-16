@@ -7,7 +7,7 @@
     "pack_type": "support_evidence_pack",
     "schema_version": 2,
     "author": "local",
-    "created_at_ms": 1778867144448,
+    "created_at_ms": 1778937809816,
     "compatible_workspace_schema_versions": [
       2
     ],
@@ -32,7 +32,7 @@
     ],
     "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
     "live_trading_enabled": false,
-    "content_hash": "e1c8f822aafac0b9"
+    "content_hash": "26ea033d96df2338"
   },
   "content": {
     "workspace_templates": [
@@ -238,8 +238,8 @@
         "live_trading_enabled": false,
         "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
         "metadata": {
-          "created_at_ms": 1778867144447,
-          "updated_at_ms": 1778867144447,
+          "created_at_ms": 1778937809815,
+          "updated_at_ms": 1778937809815,
           "owner": "local-operator",
           "schema_version": 2
         }
