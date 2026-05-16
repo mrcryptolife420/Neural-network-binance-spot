@@ -1,0 +1,20 @@
+{
+  "status": "ok",
+  "review_id": "review-8c4c505bcc31",
+  "session_id": "live-session-fixture",
+  "evidence_integrity_status": "ok",
+  "findings": [],
+  "blockers": [],
+  "warnings": [],
+  "score_summary": {
+    "grade": "pending_scorecard"
+  },
+  "eligible_for_scorecard": true,
+  "eligible_for_scaling_review": false,
+  "no_auto_scale_statement": "NO AUTOMATIC LIVE SCALE-UP - OPERATOR APPROVAL REQUIRED",
+  "not_financial_advice_statement": "LIVE SAFETY OUTPUT IS OPERATIONAL EVIDENCE, NOT FINANCIAL ADVICE",
+  "secret_redaction_status": "ok",
+  "created_at_ms": 1778950930939,
+  "live_order_submitted": false,
+  "live_trading_enabled": false
+}

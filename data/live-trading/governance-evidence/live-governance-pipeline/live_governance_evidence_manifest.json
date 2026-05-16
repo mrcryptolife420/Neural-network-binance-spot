@@ -1,0 +1,18 @@
+{
+  "status": "ok",
+  "run_id": "live-governance-pipeline",
+  "files": [
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\live-trading\\governance-evidence\\live-governance-pipeline\\files\\governance.json",
+      "sha256": "[REDACTED]"
+    }
+  ],
+  "hashes": [
+    "[REDACTED]"
+  ],
+  "no_auto_scale_proof": true,
+  "no_unattended_live_proof": true,
+  "no_secret_proof": true,
+  "live_trading_enabled": false,
+  "manifest_hash": "[REDACTED]"
+}

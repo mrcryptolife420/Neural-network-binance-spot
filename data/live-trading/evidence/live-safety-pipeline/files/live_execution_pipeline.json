@@ -1,0 +1,102 @@
+{
+  "run_id": "live-safety-pipeline",
+  "dry_run": {
+    "status": "ok",
+    "state": "dry_run_passed",
+    "evidence": {
+      "status": "ok",
+      "state": "eligible_for_live_dry_run",
+      "evidence_hash": "[REDACTED]",
+      "blockers": [],
+      "warnings": [],
+      "next_required_actions": [],
+      "no_auto_live_start_statement": "NO AUTO LIVE START - MANUAL GATED LIVE SAFETY ONLY",
+      "not_financial_advice_statement": "LIVE SAFETY OUTPUT IS OPERATIONAL EVIDENCE, NOT FINANCIAL ADVICE",
+      "live_execution_enabled": false,
+      "live_order_placement_enabled": false,
+      "live_trading_enabled": false
+    },
+    "account": {
+      "status": "ok",
+      "api_key_fingerprint": "70d04bd73843",
+      "permissions": [
+        "SPOT"
+      ],
+      "balance_summary": {
+        "assets_seen": 1,
+        "privacy_mode": true
+      },
+      "server_time_drift_ms": 0,
+      "adapter_calls": [
+        "account_state"
+      ],
+      "blockers": [],
+      "warnings": [],
+      "order_endpoints_called": false,
+      "live_execution_enabled": false,
+      "live_order_placement_enabled": false,
+      "live_trading_enabled": false
+    },
+    "preview": {
+      "status": "preview",
+      "action": "no_submit",
+      "reasons": [
+        "operator_approval_required"
+      ],
+      "requires_approval": true,
+      "created_at_ms": 1778952553881,
+      "live_order_submitted": false,
+      "profile_id": "live-locked",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "order_type": "MARKET",
+      "quote_size": 5.0,
+      "quantity": 0.05,
+      "estimated_price": 100.0,
+      "spread_bps": 5.0,
+      "estimated_fee_quote": 0.005,
+      "max_slippage_bps": 10.0,
+      "confirm_phrase": "I_UNDERSTAND_THIS_WILL_PLACE_A_REAL_BINANCE_SPOT_ORDER",
+      "expires_at_ms": 1778952613880,
+      "preview_hash": "[REDACTED]",
+      "blockers": [],
+      "signed_order_endpoint_called": false,
+      "live_trading_enabled": false,
+      "live_order_placement_enabled": false
+    },
+    "sizing": {
+      "status": "ok",
+      "blockers": [],
+      "first_order_cap": 10,
+      "free_quote_balance": 100.0,
+      "live_execution_enabled": false,
+      "live_order_placement_enabled": false,
+      "live_trading_enabled": false
+    },
+    "expected_api_request_plan": [
+      "server_time",
+      "get_account_state",
+      "local_order_preview"
+    ],
+    "place_order_called": false,
+    "blockers": [],
+    "live_execution_enabled": false,
+    "live_order_placement_enabled": false,
+    "live_trading_enabled": false
+  },
+  "first_order": {
+    "status": "blocked",
+    "blockers": [
+      "first live order execute not requested"
+    ],
+    "live_order_submitted": false,
+    "live_trading_enabled": false
+  },
+  "audit": {
+    "status": "ok",
+    "event_count": 6,
+    "blockers": [],
+    "live_trading_enabled": false
+  },
+  "live_trading_enabled": false
+}

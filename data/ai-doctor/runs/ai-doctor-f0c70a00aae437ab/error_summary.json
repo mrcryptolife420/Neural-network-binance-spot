@@ -1,0 +1,16 @@
+{
+  "errors": [
+    {
+      "error_id": "err-30846e31992d",
+      "error_type": "ModuleNotFoundError",
+      "message": "ModuleNotFoundError: No module named 'fastapi'",
+      "file": "",
+      "line": null,
+      "traceback_hash": "[REDACTED]",
+      "first_seen_ms": 1778952527108,
+      "last_seen_ms": 1778952527108,
+      "count": 1,
+      "severity_guess": "P2"
+    }
+  ]
+}

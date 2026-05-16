@@ -31,7 +31,9 @@ class CheckAllControlCenterTests(unittest.TestCase):
         self.assertTrue(plan.kill_switch)
         self.assertEqual(env["LIVE_TRADING_ENABLED"], "false")
         self.assertEqual(env["KILL_SWITCH"], "true")
-        self.assertIn("streamlit", plan.command)
+        self.assertIn("uvicorn", plan.command)
+        self.assertIn("binance_spot_bot.dashboard_v2.app:create_dashboard_v2_app", plan.command)
+        self.assertNotIn("streamlit", plan.command)
 
     def test_control_center_dry_run_cli_outputs_safe_json(self):
         with tempfile.TemporaryDirectory() as tmp:

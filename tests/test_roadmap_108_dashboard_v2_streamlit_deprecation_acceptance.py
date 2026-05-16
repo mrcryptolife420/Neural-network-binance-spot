@@ -55,9 +55,10 @@ def test_deprecation_gate_v2_only_smoke_fallback_and_docs_uat():
     assert docs["status"] == "ok"
     assert uat["status"] == "ok"
     assert gate["status"] == "deprecation_candidate"
-    assert gate["streamlit_removed"] is False
+    assert gate["streamlit_removed"] is True
     assert smoke["streamlit_imported"] is False
-    assert "--legacy-streamlit" in drill["fallback_command"]
+    assert drill["fallback_available"] is False
+    assert drill["fallback_command"] == ""
 
 
 def test_deprecation_evidence_bundle_is_secret_free(tmp_path):

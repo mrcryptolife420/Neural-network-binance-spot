@@ -1,0 +1,57 @@
+{
+  "status": "created",
+  "session_id": "live-session-ef3f13dc9672",
+  "state": "locked",
+  "plan": {
+    "status": "ok",
+    "plan": {
+      "session_plan_id": "controlled-live-session-fixture",
+      "profile_id": "live-locked-training-required-template",
+      "symbol_scope": {
+        "symbol": "BTCUSDT",
+        "allowed_sides": [
+          "BUY",
+          "SELL"
+        ],
+        "allowed_order_types": [
+          "MARKET",
+          "LIMIT"
+        ]
+      },
+      "budget": {
+        "max_session_orders": 2,
+        "max_session_quote_exposure": 15.0,
+        "max_single_order_quote": 5.0,
+        "max_session_loss_quote": 2.0,
+        "max_daily_loss_quote": 5.0,
+        "max_session_duration_minutes": 15
+      },
+      "risk": {
+        "max_spread_bps": 25.0,
+        "max_data_age_ms": 30000,
+        "max_open_orders": 1,
+        "require_preview_hash": true,
+        "require_arm_token": true,
+        "require_reconciliation_after_each_order": true,
+        "require_kill_switch_drill": true,
+        "require_cancel_drill": true
+      },
+      "evidence_refs": {
+        "roadmap_117_evidence": "demo-to-live-evidence-fixture",
+        "roadmap_118_evidence": "live-execution-evidence-fixture"
+      },
+      "no_unattended_live_statement": "NO UNATTENDED LIVE TRADING - CONTROLLED SESSION ONLY",
+      "not_financial_advice_statement": "LIVE SAFETY OUTPUT IS OPERATIONAL EVIDENCE, NOT FINANCIAL ADVICE",
+      "created_at_ms": 1778949034106,
+      "expires_at_ms": 1778949934106
+    },
+    "plan_hash": "[REDACTED]",
+    "blockers": [],
+    "warnings": [],
+    "live_trading_enabled": false
+  },
+  "orders": [],
+  "reconciliations": [],
+  "disarms": [],
+  "live_trading_enabled": false
+}

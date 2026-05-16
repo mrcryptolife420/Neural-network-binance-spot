@@ -1,0 +1,429 @@
+{
+  "incident_id": "inc-f62c0ea3ba77fd45",
+  "taxonomy": {
+    "status": "ok",
+    "incident_types": [
+      {
+        "name": "unknown_order_state",
+        "default_severity": "P1",
+        "description": "unknown order state"
+      },
+      {
+        "name": "reconciliation_mismatch",
+        "default_severity": "P1",
+        "description": "reconciliation mismatch"
+      },
+      {
+        "name": "unexpected_open_order",
+        "default_severity": "P1",
+        "description": "unexpected open order"
+      },
+      {
+        "name": "balance_drift",
+        "default_severity": "P2",
+        "description": "balance drift"
+      },
+      {
+        "name": "order_rejected",
+        "default_severity": "P3",
+        "description": "order rejected"
+      },
+      {
+        "name": "partial_fill_stuck",
+        "default_severity": "P2",
+        "description": "partial fill stuck"
+      },
+      {
+        "name": "cancel_failed",
+        "default_severity": "P2",
+        "description": "cancel failed"
+      },
+      {
+        "name": "api_connectivity_loss",
+        "default_severity": "P2",
+        "description": "api connectivity loss"
+      },
+      {
+        "name": "api_rate_limit",
+        "default_severity": "P3",
+        "description": "api rate limit"
+      },
+      {
+        "name": "market_data_stale",
+        "default_severity": "P2",
+        "description": "market data stale"
+      },
+      {
+        "name": "spread_spike",
+        "default_severity": "P2",
+        "description": "spread spike"
+      },
+      {
+        "name": "risk_limit_breach",
+        "default_severity": "P1",
+        "description": "risk limit breach"
+      },
+      {
+        "name": "kill_switch_triggered",
+        "default_severity": "P3",
+        "description": "kill switch triggered"
+      },
+      {
+        "name": "emergency_stop_triggered",
+        "default_severity": "P1",
+        "description": "emergency stop triggered"
+      },
+      {
+        "name": "dashboard_disconnect",
+        "default_severity": "P2",
+        "description": "dashboard disconnect"
+      },
+      {
+        "name": "evidence_writer_failure",
+        "default_severity": "P2",
+        "description": "evidence writer failure"
+      },
+      {
+        "name": "audit_hash_mismatch",
+        "default_severity": "P1",
+        "description": "audit hash mismatch"
+      },
+      {
+        "name": "secret_leak_detected",
+        "default_severity": "P0",
+        "description": "secret leak detected"
+      },
+      {
+        "name": "profile_config_drift",
+        "default_severity": "P2",
+        "description": "profile config drift"
+      },
+      {
+        "name": "model_signal_anomaly",
+        "default_severity": "P3",
+        "description": "model signal anomaly"
+      },
+      {
+        "name": "unexpected_live_session_state",
+        "default_severity": "P2",
+        "description": "unexpected live session state"
+      }
+    ],
+    "severities": [
+      {
+        "level": "P0",
+        "label": "emergency",
+        "blocks_rearm": true
+      },
+      {
+        "level": "P1",
+        "label": "critical",
+        "blocks_rearm": true
+      },
+      {
+        "level": "P2",
+        "label": "high",
+        "blocks_rearm": true
+      },
+      {
+        "level": "P3",
+        "label": "medium",
+        "blocks_rearm": false
+      },
+      {
+        "level": "P4",
+        "label": "low",
+        "blocks_rearm": false
+      }
+    ],
+    "no_order_placement_statement": "LIVE OPS DOES NOT PLACE ORDERS",
+    "no_auto_rearm_statement": "NO AUTOMATIC LIVE RE-ARM - OPERATOR REVIEW REQUIRED",
+    "not_financial_advice_statement": "Operational safety tooling only - not financial advice",
+    "coverage_count": 21,
+    "all_types_mapped": true
+  },
+  "detected": {
+    "status": "ok",
+    "incidents": [
+      {
+        "incident_id": "inc-f62c0ea3ba77fd45",
+        "incident_type": "unknown_order_state",
+        "severity": "P1",
+        "session_id": "live-session-fixture",
+        "order_id": "order-1",
+        "metadata": {
+          "event": "order",
+          "state": "UNKNOWN",
+          "session_id": "live-session-fixture",
+          "order_id": "order-1"
+        },
+        "requires_immediate_disarm": true,
+        "blocks_rearm": true,
+        "no_order_placement_statement": "LIVE OPS DOES NOT PLACE ORDERS",
+        "no_auto_rearm_statement": "NO AUTOMATIC LIVE RE-ARM - OPERATOR REVIEW REQUIRED",
+        "not_financial_advice_statement": "Operational safety tooling only - not financial advice"
+      },
+      {
+        "incident_id": "inc-02600cea943a3b37",
+        "incident_type": "reconciliation_mismatch",
+        "severity": "P1",
+        "session_id": "live-session-fixture",
+        "order_id": "order-1",
+        "metadata": {
+          "event": "reconciliation",
+          "matched": false,
+          "session_id": "live-session-fixture",
+          "order_id": "order-1"
+        },
+        "requires_immediate_disarm": true,
+        "blocks_rearm": true,
+        "no_order_placement_statement": "LIVE OPS DOES NOT PLACE ORDERS",
+        "no_auto_rearm_statement": "NO AUTOMATIC LIVE RE-ARM - OPERATOR REVIEW REQUIRED",
+        "not_financial_advice_statement": "Operational safety tooling only - not financial advice"
+      },
+      {
+        "incident_id": "inc-69660a50184f619f",
+        "incident_type": "dashboard_disconnect",
+        "severity": "P2",
+        "session_id": "live-session-fixture",
+        "order_id": "",
+        "metadata": {
+          "event": "dashboard",
+          "disconnect_ms": 45000,
+          "live_armed": true,
+          "session_id": "live-session-fixture"
+        },
+        "requires_immediate_disarm": false,
+        "blocks_rearm": true,
+        "no_order_placement_statement": "LIVE OPS DOES NOT PLACE ORDERS",
+        "no_auto_rearm_statement": "NO AUTOMATIC LIVE RE-ARM - OPERATOR REVIEW REQUIRED",
+        "not_financial_advice_statement": "Operational safety tooling only - not financial advice"
+      }
+    ],
+    "count": 3,
+    "live_order_submitted": false,
+    "live_rearmed": false
+  },
+  "classification": {
+    "incident_id": "inc-f62c0ea3ba77fd45",
+    "severity": "P1",
+    "required_runbook": "unknown_order_state_runbook",
+    "recommended_immediate_action": "emergency_stop_or_disarm",
+    "recovery_allowed": false,
+    "live_rearm_allowed": false,
+    "operator_escalation_required": true,
+    "blockers": [
+      "live_rearm_blocked"
+    ],
+    "live_order_submitted": false,
+    "live_rearmed": false
+  },
+  "plan": {
+    "status": "ok",
+    "classification": {
+      "incident_id": "inc-f62c0ea3ba77fd45",
+      "severity": "P1",
+      "required_runbook": "unknown_order_state_runbook",
+      "recommended_immediate_action": "emergency_stop_or_disarm",
+      "recovery_allowed": false,
+      "live_rearm_allowed": false,
+      "operator_escalation_required": true,
+      "blockers": [
+        "live_rearm_blocked"
+      ],
+      "live_order_submitted": false,
+      "live_rearmed": false
+    },
+    "runbook": {
+      "runbook_id": "unknown_order_state_runbook",
+      "incident_type": "unknown_order_state",
+      "title": "Unknown Order State",
+      "severity": "P1",
+      "immediate_actions": [
+        "disarm_live_session",
+        "collect_evidence"
+      ],
+      "safe_automated_actions": [
+        "collect_evidence",
+        "verify_hashes"
+      ],
+      "manual_actions": [
+        "operator_review",
+        "do_not_rearm_until_recovery_gate_passes"
+      ],
+      "forbidden_actions": [
+        "place_order",
+        "start_live_session",
+        "auto_rearm",
+        "increase_risk_limit"
+      ],
+      "recovery_criteria": [
+        "incident_classified",
+        "evidence_bundle_created",
+        "rollback_drill_passed"
+      ],
+      "rearm_blockers": [
+        "P0/P1 unresolved",
+        "missing evidence",
+        "failed rollback drill"
+      ]
+    },
+    "recommended_immediate_safe_action": "emergency_stop_or_disarm",
+    "operator_checklist": [
+      "disarm_live_session",
+      "collect_evidence",
+      "operator_review",
+      "do_not_rearm_until_recovery_gate_passes"
+    ],
+    "evidence_collection_plan": [
+      "snapshot_state",
+      "export_audit_hashes",
+      "export_incident_bundle"
+    ],
+    "rollback_plan": [
+      "run_fake_rollback_drill",
+      "verify_profile_safe_state"
+    ],
+    "recovery_criteria": [
+      "incident_classified",
+      "evidence_bundle_created",
+      "rollback_drill_passed"
+    ],
+    "rearm_blockers": [
+      "P0/P1 unresolved",
+      "missing evidence",
+      "failed rollback drill"
+    ],
+    "forbidden_actions": [
+      "place_order",
+      "start_live_session",
+      "auto_rearm",
+      "increase_risk_limit"
+    ],
+    "live_order_submitted": false,
+    "live_rearmed": false
+  },
+  "command_center": {
+    "status": "ok",
+    "state": "awaiting_operator_action",
+    "active_incident_id": "inc-f62c0ea3ba77fd45",
+    "severity": "P1",
+    "runbook_id": "unknown_order_state_runbook",
+    "current_step": "collect_evidence",
+    "completed_steps": [],
+    "blockers": [
+      "live_rearm_blocked"
+    ],
+    "safe_actions_taken": [],
+    "evidence_paths": [],
+    "operator_notes": "",
+    "rearm_allowed": false,
+    "live_order_submitted": false,
+    "live_rearmed": false
+  },
+  "rollback": {
+    "status": "passed",
+    "drill": "disarm",
+    "mode": "offline_fake",
+    "actions_taken": [
+      "fake_disarm_signal",
+      "evidence_snapshot"
+    ],
+    "blockers": [],
+    "recommended_fixes": [],
+    "live_order_submitted": false,
+    "live_rearmed": false
+  },
+  "timeline": {
+    "status": "ok",
+    "events": [
+      {
+        "ts": 1778952556415,
+        "category": "risk decision",
+        "message": "risk approved paper/demo intent"
+      },
+      {
+        "ts": 1778952557415,
+        "category": "preview",
+        "message": "order preview hash recorded"
+      },
+      {
+        "ts": 1778952558415,
+        "category": "reconciliation",
+        "message": "mismatch detected"
+      },
+      {
+        "ts": 1778952559415,
+        "category": "operator action",
+        "message": "runbook selected"
+      }
+    ],
+    "missing_timestamp_warnings": [],
+    "live_order_submitted": false
+  },
+  "root_cause": {
+    "status": "ok",
+    "likely_root_cause": "reconciliation/order state issue",
+    "confidence": "medium",
+    "contributing_factors": [
+      "risk decision",
+      "preview",
+      "reconciliation",
+      "operator action"
+    ],
+    "unresolved_questions": [],
+    "recommended_prevention_items": [
+      "add reconciliation regression test",
+      "keep live rearm blocked until review"
+    ],
+    "required_operator_review": true,
+    "live_order_submitted": false
+  },
+  "backlog": {
+    "status": "ok",
+    "items": [
+      {
+        "backlog_id": "backlog-ff3b1b619f83",
+        "incident_id": "inc-f62c0ea3ba77fd45",
+        "title": "add reconciliation regression test",
+        "priority": "P1",
+        "owner_area": "live_ops",
+        "recommended_roadmap": "incident-hardening",
+        "acceptance_criteria": [
+          "test added",
+          "runbook updated",
+          "evidence exported"
+        ],
+        "created_at_ms": 1778952559415,
+        "status": "open"
+      },
+      {
+        "backlog_id": "backlog-ec397d13ee85",
+        "incident_id": "inc-f62c0ea3ba77fd45",
+        "title": "keep live rearm blocked until review",
+        "priority": "P1",
+        "owner_area": "live_ops",
+        "recommended_roadmap": "incident-hardening",
+        "acceptance_criteria": [
+          "test added",
+          "runbook updated",
+          "evidence exported"
+        ],
+        "created_at_ms": 1778952559415,
+        "status": "open"
+      }
+    ],
+    "live_order_submitted": false
+  },
+  "recovery": {
+    "status": "live_rearm_blocked",
+    "blockers": [
+      "P0/P1 incident requires operator review",
+      "root cause review required"
+    ],
+    "live_rearm_allowed": false,
+    "paper_or_demo_resume_allowed": false,
+    "live_order_submitted": false,
+    "live_rearmed": false
+  }
+}

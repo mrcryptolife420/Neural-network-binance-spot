@@ -1,0 +1,18 @@
+{
+  "run_id": "control-center-smoke",
+  "validation": {
+    "status": "ok",
+    "grade": "A",
+    "blockers": [],
+    "checks": {
+      "dataset_quality": "ok",
+      "leakage": "ok",
+      "backtest": "fixture",
+      "walk_forward": "fixture",
+      "paper": "fixture",
+      "demo_rehearsal": "fixture"
+    },
+    "live_trading_enabled": false
+  },
+  "live_trading_enabled": false
+}

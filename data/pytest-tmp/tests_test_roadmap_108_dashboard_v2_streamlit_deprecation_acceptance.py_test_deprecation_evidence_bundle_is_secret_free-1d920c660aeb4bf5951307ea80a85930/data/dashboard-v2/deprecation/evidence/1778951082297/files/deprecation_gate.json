@@ -1,0 +1,16 @@
+{
+  "status": "deprecation_candidate",
+  "hard_blockers": [],
+  "soft_blockers": [],
+  "streamlit_removed": true,
+  "fallback": {
+    "status": "ok",
+    "fallback_available": false,
+    "command": "",
+    "policy": "Dashboard V2 is the primary and only startable dashboard.",
+    "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+    "live_trading_enabled": false
+  },
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

@@ -1,0 +1,387 @@
+{
+  "profiles": {
+    "status": "ok",
+    "profiles": [
+      {
+        "profile_id": "minimal-operator",
+        "name": "Minimal Operator",
+        "description": "CLI and Control Center",
+        "extras": [],
+        "include_dashboard": true,
+        "include_research": false,
+        "include_visual_smoke": false,
+        "include_live_ops": false,
+        "include_dev_tools": false,
+        "safe_env_defaults": {
+          "LIVE_TRADING_ENABLED": "false",
+          "KILL_SWITCH": "true"
+        },
+        "forbidden_runtime_actions": [
+          "place_order",
+          "start_live_session",
+          "arm_live",
+          "auto_rearm",
+          "increase_risk_limit"
+        ],
+        "no_live_auto_start_statement": "PACKAGING NEVER AUTO-STARTS LIVE TRADING",
+        "secret_free_package_statement": "PACKAGE ARTIFACTS MUST NOT CONTAIN RAW SECRETS"
+      },
+      {
+        "profile_id": "dashboard-full",
+        "name": "Dashboard Full",
+        "description": "Dashboard V2 local app",
+        "extras": [
+          "ui",
+          "visual"
+        ],
+        "include_dashboard": true,
+        "include_research": false,
+        "include_visual_smoke": true,
+        "include_live_ops": false,
+        "include_dev_tools": false,
+        "safe_env_defaults": {
+          "LIVE_TRADING_ENABLED": "false",
+          "KILL_SWITCH": "true"
+        },
+        "forbidden_runtime_actions": [
+          "place_order",
+          "start_live_session",
+          "arm_live",
+          "auto_rearm",
+          "increase_risk_limit"
+        ],
+        "no_live_auto_start_statement": "PACKAGING NEVER AUTO-STARTS LIVE TRADING",
+        "secret_free_package_statement": "PACKAGE ARTIFACTS MUST NOT CONTAIN RAW SECRETS"
+      },
+      {
+        "profile_id": "research-local",
+        "name": "Research Local",
+        "description": "Local research and dataset tooling",
+        "extras": [
+          "research",
+          "mlops"
+        ],
+        "include_dashboard": true,
+        "include_research": true,
+        "include_visual_smoke": false,
+        "include_live_ops": false,
+        "include_dev_tools": false,
+        "safe_env_defaults": {
+          "LIVE_TRADING_ENABLED": "false",
+          "KILL_SWITCH": "true"
+        },
+        "forbidden_runtime_actions": [
+          "place_order",
+          "start_live_session",
+          "arm_live",
+          "auto_rearm",
+          "increase_risk_limit"
+        ],
+        "no_live_auto_start_statement": "PACKAGING NEVER AUTO-STARTS LIVE TRADING",
+        "secret_free_package_statement": "PACKAGE ARTIFACTS MUST NOT CONTAIN RAW SECRETS"
+      },
+      {
+        "profile_id": "live-ops-safe",
+        "name": "Live Ops Safe",
+        "description": "Dashboard plus governance/live-ops safety",
+        "extras": [
+          "ui"
+        ],
+        "include_dashboard": true,
+        "include_research": false,
+        "include_visual_smoke": false,
+        "include_live_ops": true,
+        "include_dev_tools": false,
+        "safe_env_defaults": {
+          "LIVE_TRADING_ENABLED": "false",
+          "KILL_SWITCH": "true"
+        },
+        "forbidden_runtime_actions": [
+          "place_order",
+          "start_live_session",
+          "arm_live",
+          "auto_rearm",
+          "increase_risk_limit"
+        ],
+        "no_live_auto_start_statement": "PACKAGING NEVER AUTO-STARTS LIVE TRADING",
+        "secret_free_package_statement": "PACKAGE ARTIFACTS MUST NOT CONTAIN RAW SECRETS"
+      },
+      {
+        "profile_id": "developer",
+        "name": "Developer",
+        "description": "All local development tooling",
+        "extras": [
+          "ui",
+          "visual",
+          "research",
+          "realtime",
+          "mlops",
+          "dev"
+        ],
+        "include_dashboard": true,
+        "include_research": true,
+        "include_visual_smoke": true,
+        "include_live_ops": true,
+        "include_dev_tools": true,
+        "safe_env_defaults": {
+          "LIVE_TRADING_ENABLED": "false",
+          "KILL_SWITCH": "true"
+        },
+        "forbidden_runtime_actions": [
+          "place_order",
+          "start_live_session",
+          "arm_live",
+          "auto_rearm",
+          "increase_risk_limit"
+        ],
+        "no_live_auto_start_statement": "PACKAGING NEVER AUTO-STARTS LIVE TRADING",
+        "secret_free_package_statement": "PACKAGE ARTIFACTS MUST NOT CONTAIN RAW SECRETS"
+      }
+    ],
+    "validations": [
+      {
+        "profile_id": "minimal-operator",
+        "status": "ok",
+        "blockers": [],
+        "warnings": []
+      },
+      {
+        "profile_id": "dashboard-full",
+        "status": "ok",
+        "blockers": [],
+        "warnings": []
+      },
+      {
+        "profile_id": "research-local",
+        "status": "ok",
+        "blockers": [],
+        "warnings": []
+      },
+      {
+        "profile_id": "live-ops-safe",
+        "status": "ok",
+        "blockers": [],
+        "warnings": []
+      },
+      {
+        "profile_id": "developer",
+        "status": "ok",
+        "blockers": [],
+        "warnings": []
+      }
+    ],
+    "no_live_auto_start_statement": "PACKAGING NEVER AUTO-STARTS LIVE TRADING",
+    "secret_free_package_statement": "PACKAGE ARTIFACTS MUST NOT CONTAIN RAW SECRETS",
+    "live_trading_enabled": false,
+    "live_order_submitted": false
+  },
+  "lock": {
+    "status": "ok",
+    "lock": {
+      "status": "ok",
+      "profile_id": "dashboard-full",
+      "python_version": "3.14.5",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "requirements": [
+        "binance-spot-bot[ui]",
+        "binance-spot-bot[visual]"
+      ],
+      "missing_wheels": [],
+      "unsafe_unpinned": [],
+      "live_trading_enabled": false,
+      "lock_hash": "[REDACTED]"
+    },
+    "saved": {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\dist\\package-locks\\dashboard-full.lock.json",
+      "sha256": "[REDACTED]"
+    },
+    "wheelhouse_manifest": {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\dist\\wheelhouse-manifest.json",
+      "sha256": "[REDACTED]"
+    }
+  },
+  "manifest": {
+    "status": "ok",
+    "manifest": {
+      "app_name": "Neural Binance Spot Bot",
+      "package_version": "0.1.0",
+      "source_git_ref": "local",
+      "build_time_ms": 1778952506680,
+      "package_profile": "dashboard-full",
+      "python_version": "3.14.5",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "dependency_lock_hash": "[REDACTED]",
+      "dashboard_build_hash": "[REDACTED]",
+      "safe_env_defaults": {
+        "LIVE_TRADING_ENABLED": "false",
+        "KILL_SWITCH": "true"
+      },
+      "live_trading_enabled_default": false,
+      "kill_switch_default": true,
+      "secret_scan_status": "required",
+      "no_live_auto_start_statement": "PACKAGING NEVER AUTO-STARTS LIVE TRADING",
+      "manifest_hash": "[REDACTED]"
+    },
+    "saved": {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\dist\\package-manifest.json",
+      "sha256": "[REDACTED]"
+    }
+  },
+  "portable": {
+    "status": "ok",
+    "bundle_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\dist\\portable\\Neural-Binance-Spot-Bot",
+    "manifest": {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\dist\\portable\\Neural-Binance-Spot-Bot\\package-manifest.json",
+      "sha256": "[REDACTED]"
+    },
+    "live_trading_enabled": false,
+    "live_order_submitted": false
+  },
+  "installer": {
+    "status": "ok",
+    "profile_id": "dashboard-full",
+    "scripts": [
+      "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\dist\\installer\\Install-Neural-Binance-Bot.ps1",
+      "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\dist\\installer\\Uninstall-Neural-Binance-Bot.ps1",
+      "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\dist\\installer\\Repair-Neural-Binance-Bot.ps1",
+      "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\dist\\installer\\Create-Desktop-Shortcut.ps1"
+    ],
+    "safe_env_defaults": {
+      "LIVE_TRADING_ENABLED": "false",
+      "KILL_SWITCH": "true"
+    },
+    "live_trading_enabled": false,
+    "live_order_submitted": false
+  },
+  "shortcuts": {
+    "status": "ok",
+    "specs": [
+      {
+        "shortcut_id": "desktop-start",
+        "target": "Start-Neural-Binance-Bot.cmd",
+        "args": ""
+      },
+      {
+        "shortcut_id": "dashboard",
+        "target": "Open-Dashboard.cmd",
+        "args": ""
+      },
+      {
+        "shortcut_id": "safe-mode",
+        "target": "safe-mode-start.cmd",
+        "args": "--safe-mode"
+      },
+      {
+        "shortcut_id": "repair",
+        "target": "Repair-Neural-Binance-Bot.ps1",
+        "args": ""
+      }
+    ],
+    "blockers": [],
+    "live_trading_enabled": false
+  },
+  "startup": {
+    "status": "ok",
+    "blockers": [],
+    "dashboard_assets_exist": true,
+    "safe_mode_available": true,
+    "live_auto_resume": false,
+    "live_trading_enabled": false
+  },
+  "update": {
+    "status": "blocked",
+    "blockers": [
+      "active live session blocks update",
+      "operator confirmation required"
+    ],
+    "rollback_point_required": true,
+    "live_trading_enabled": false,
+    "live_order_submitted": false
+  },
+  "migration": {
+    "status": "ok",
+    "mode": "preview",
+    "targets": [
+      "profiles",
+      "workspaces",
+      "sessions",
+      "evidence",
+      "live_ops_incidents"
+    ],
+    "blockers": [],
+    "live_trading_enabled": false
+  },
+  "backup": {
+    "status": "ok",
+    "backup": {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\dist\\backups\\backup-manifest.json",
+      "sha256": "[REDACTED]"
+    },
+    "live_trading_enabled": false
+  },
+  "restore": {
+    "status": "ok",
+    "mode": "preview",
+    "restore_forces_live_locked": true,
+    "invalidates_live_arm_tokens": true,
+    "pre_restore_backup_required": true,
+    "live_trading_enabled": false
+  },
+  "rollback_point": {
+    "status": "ok",
+    "rollback_point": {
+      "rollback_id": "rollback-41df62a100a7",
+      "live_locked": true,
+      "arm_tokens_invalidated": true,
+      "hash_verified": true
+    },
+    "saved": {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\dist\\rollback\\rollback-41df62a100a7.json",
+      "sha256": "[REDACTED]"
+    },
+    "live_trading_enabled": false
+  },
+  "rollback": {
+    "status": "ok",
+    "mode": "preview",
+    "locks_live_state": true,
+    "starts_live": false,
+    "live_trading_enabled": false
+  },
+  "recovery_kit": {
+    "status": "ok",
+    "kit_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\dist\\recovery-kit",
+    "files": [
+      "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\dist\\recovery-kit\\README-RECOVERY.md",
+      "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\dist\\recovery-kit\\safe-mode-start.cmd",
+      "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\dist\\recovery-kit\\verify-package.cmd",
+      "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\dist\\recovery-kit\\rollback.cmd"
+    ],
+    "live_trading_enabled": false,
+    "live_order_submitted": false
+  },
+  "safe_mode": {
+    "status": "ok",
+    "mode": "safe",
+    "dashboard_read_only": true,
+    "live_profiles_locked": true,
+    "runtime_auto_start": false,
+    "order_endpoints_enabled": false,
+    "tools": [
+      "diagnostics",
+      "restore",
+      "backup",
+      "docs",
+      "evidence"
+    ],
+    "live_trading_enabled": false
+  },
+  "verify": {
+    "status": "ok",
+    "blockers": [],
+    "hashes_match": true,
+    "secret_scan_status": "ok",
+    "safe_env_scripts": true,
+    "live_trading_enabled": false
+  }
+}

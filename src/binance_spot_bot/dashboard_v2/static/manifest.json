@@ -1,0 +1,8 @@
+{
+  "name": "Neural Binance Spot - Dashboard V2",
+  "short_name": "Dashboard V2",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f5f7fb",
+  "theme_color": "#0f172a"
+}

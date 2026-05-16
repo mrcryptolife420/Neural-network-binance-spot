@@ -5,6 +5,28 @@
     "items": [
       {
         "item_id": "ux-001",
+        "title": "cutover status blocked",
+        "category": "alerts_blockers",
+        "priority": "UX-P1",
+        "sources": [
+          "cutover"
+        ],
+        "count": 1,
+        "status": "open"
+      },
+      {
+        "item_id": "ux-002",
+        "title": "Streamlit fallback unavailable",
+        "category": "alerts_blockers",
+        "priority": "UX-P1",
+        "sources": [
+          "cutover"
+        ],
+        "count": 1,
+        "status": "open"
+      },
+      {
+        "item_id": "ux-003",
         "title": "performance status warn",
         "category": "alerts_blockers",
         "priority": "UX-P2",
@@ -23,6 +45,6 @@
     "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
     "live_trading_enabled": false
   },
-  "generated_at_ms": 1778937727204,
+  "generated_at_ms": 1778950910993,
   "live_trading_enabled": false
 }

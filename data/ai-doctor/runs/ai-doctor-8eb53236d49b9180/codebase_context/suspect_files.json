@@ -1,0 +1,12 @@
+{
+  "git_ref": "local",
+  "changed_files": [],
+  "suspect_files": [
+    "src/binance_spot_bot/cli.py",
+    "src/binance_spot_bot/dashboard_v2/app.py"
+  ],
+  "recommended_tests": [
+    "pytest -q tests/test_roadmap_123_ai_doctor_acceptance.py"
+  ],
+  "live_trading_enabled": false
+}

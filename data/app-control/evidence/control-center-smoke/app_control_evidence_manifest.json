@@ -1,0 +1,17 @@
+{
+  "status": "ok",
+  "run_id": "control-center-smoke",
+  "launcher_never_auto_starts_live": true,
+  "raw_secret_proof": true,
+  "files": [
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\app-control\\evidence\\control-center-smoke\\files\\app_control.json",
+      "sha256": "[REDACTED]"
+    }
+  ],
+  "hashes": [
+    "[REDACTED]"
+  ],
+  "live_trading_enabled": false,
+  "manifest_hash": "[REDACTED]"
+}

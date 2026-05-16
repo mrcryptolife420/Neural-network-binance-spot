@@ -1,0 +1,139 @@
+{
+  "run_id": "1778948604416",
+  "symbols": [
+    {
+      "symbol": "BTCUSDT",
+      "status": "ok",
+      "last_price": "137",
+      "bid": "136.95",
+      "ask": "137.05",
+      "spread_bps": "7.30",
+      "quote_volume_24h": "142069",
+      "price_change_percent_24h": "2",
+      "data_quality_status": "ok",
+      "warnings": []
+    },
+    {
+      "symbol": "ETHUSDT",
+      "status": "ok",
+      "last_price": "145",
+      "bid": "144.95",
+      "ask": "145.05",
+      "spread_bps": "6.90",
+      "quote_volume_24h": "151525",
+      "price_change_percent_24h": "0",
+      "data_quality_status": "ok",
+      "warnings": []
+    },
+    {
+      "symbol": "BNBUSDT",
+      "status": "ok",
+      "last_price": "130",
+      "bid": "129.95",
+      "ask": "130.05",
+      "spread_bps": "7.69",
+      "quote_volume_24h": "133900",
+      "price_change_percent_24h": "-5",
+      "data_quality_status": "ok",
+      "warnings": []
+    },
+    {
+      "symbol": "SOLUSDT",
+      "status": "ok",
+      "last_price": "158",
+      "bid": "157.95",
+      "ask": "158.05",
+      "spread_bps": "6.33",
+      "quote_volume_24h": "167164",
+      "price_change_percent_24h": "3",
+      "data_quality_status": "ok",
+      "warnings": []
+    },
+    {
+      "symbol": "XRPUSDT",
+      "status": "ok",
+      "last_price": "170",
+      "bid": "169.95",
+      "ask": "170.05",
+      "spread_bps": "5.88",
+      "quote_volume_24h": "181900",
+      "price_change_percent_24h": "-5",
+      "data_quality_status": "ok",
+      "warnings": []
+    }
+  ],
+  "metrics": [
+    {
+      "symbol": "BTCUSDT",
+      "spread_bps": "7.30",
+      "quote_volume_24h": "142069",
+      "base_volume_24h": "1037",
+      "price_change_24h": "2",
+      "high_low_range_24h": "6.00",
+      "intraday_volatility": "1.45",
+      "candle_momentum": "1.45",
+      "liquidity_proxy": "17118.25",
+      "data_quality_score": 100,
+      "warnings": []
+    },
+    {
+      "symbol": "ETHUSDT",
+      "spread_bps": "6.90",
+      "quote_volume_24h": "151525",
+      "base_volume_24h": "1045",
+      "price_change_24h": "0",
+      "high_low_range_24h": "6.00",
+      "intraday_volatility": "1.45",
+      "candle_momentum": "1.45",
+      "liquidity_proxy": "19188.76",
+      "data_quality_score": 100,
+      "warnings": []
+    },
+    {
+      "symbol": "BNBUSDT",
+      "spread_bps": "7.69",
+      "quote_volume_24h": "133900",
+      "base_volume_24h": "1030",
+      "price_change_24h": "-5",
+      "high_low_range_24h": "6.00",
+      "intraday_volatility": "1.45",
+      "candle_momentum": "1.45",
+      "liquidity_proxy": "15404.42",
+      "data_quality_score": 100,
+      "warnings": []
+    },
+    {
+      "symbol": "SOLUSDT",
+      "spread_bps": "6.33",
+      "quote_volume_24h": "167164",
+      "base_volume_24h": "1058",
+      "price_change_24h": "3",
+      "high_low_range_24h": "6.00",
+      "intraday_volatility": "1.45",
+      "candle_momentum": "1.45",
+      "liquidity_proxy": "22808.21",
+      "data_quality_score": 100,
+      "warnings": []
+    },
+    {
+      "symbol": "XRPUSDT",
+      "spread_bps": "5.88",
+      "quote_volume_24h": "181900",
+      "base_volume_24h": "1070",
+      "price_change_24h": "-5",
+      "high_low_range_24h": "6.00",
+      "intraday_volatility": "1.45",
+      "candle_momentum": "1.45",
+      "liquidity_proxy": "26429.91",
+      "data_quality_score": 100,
+      "warnings": []
+    }
+  ],
+  "source": "fixture",
+  "no_live_statement": "MARKET INTELLIGENCE - NO LIVE TRADING",
+  "public_data_only_statement": "PUBLIC UNSIGNED BINANCE SPOT MARKET DATA ONLY",
+  "no_financial_advice_statement": "SCANNER RANKINGS ARE RESEARCH METRICS, NOT FINANCIAL ADVICE",
+  "live_trading_enabled": false,
+  "status": "ok",
+  "preset": "majors_overview"
+}

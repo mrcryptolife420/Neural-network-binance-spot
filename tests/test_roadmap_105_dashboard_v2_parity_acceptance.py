@@ -58,8 +58,9 @@ def test_dashboard_v2_legacy_choice_performance_and_browser_matrix() -> None:
     browser = dashboard_v2_browser_smoke_matrix()
     parity = dashboard_v2_page_parity()
 
-    assert legacy["status"] == "available"
+    assert legacy["status"] == "removed"
     assert choice["recommended"] == "dashboard-v2"
+    assert choice["fallback"] == ""
     assert performance["status"] == "ok"
     assert browser["status"] == "ok"
     assert all(row["no_live_banner_visible"] for row in browser["routes"])

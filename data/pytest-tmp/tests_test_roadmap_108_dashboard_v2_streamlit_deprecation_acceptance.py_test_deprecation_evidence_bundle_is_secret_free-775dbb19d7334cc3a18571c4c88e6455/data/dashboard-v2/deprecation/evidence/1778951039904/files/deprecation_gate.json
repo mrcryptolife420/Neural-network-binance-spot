@@ -1,0 +1,10 @@
+{
+  "status": "blocked",
+  "hard_blockers": [
+    "Streamlit fallback unavailable"
+  ],
+  "soft_blockers": [],
+  "streamlit_removed": false,
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

@@ -1,0 +1,16 @@
+{
+  "status": "ok",
+  "files": [
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\dist\\evidence\\files\\package_evidence.json",
+      "sha256": "[REDACTED]"
+    }
+  ],
+  "hashes": [
+    "[REDACTED]"
+  ],
+  "no_live_auto_start_proof": true,
+  "no_secret_proof": true,
+  "no_order_placement_proof": true,
+  "manifest_hash": "[REDACTED]"
+}

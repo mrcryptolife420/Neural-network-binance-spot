@@ -1,13 +1,51 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard V2</title>
-    <script type="module" crossorigin src="/assets/index-Cs3Bs0w5.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DbcV_VhM.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Neural Binance Spot - Dashboard V2</title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div id="root"></div>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">LOCAL BROWSER UI</p>
+        <h1>Neural Binance Spot - Dashboard V2</h1>
+      </div>
+      <div class="status-strip">
+        <span id="backend-status">Backend: checking</span>
+        <span>LIVE_TRADING_ENABLED=false</span>
+        <span>KILL_SWITCH=true</span>
+      </div>
+    </header>
+    <main class="layout">
+      <nav class="sidebar" aria-label="Dashboard sections">
+        <button data-section="overview" class="active">Overview</button>
+        <button data-section="runtime">Runtime</button>
+        <button data-section="app-control">App Control</button>
+        <button data-section="live-training">Live Training</button>
+        <button data-section="live-safety">Live Safety</button>
+        <button data-section="live-session">Live Session</button>
+        <button data-section="live-governance">Live Governance</button>
+        <button data-section="live-ops">Live Ops</button>
+        <button data-section="package">Package Center</button>
+        <button data-section="ai-doctor">AI Doctor</button>
+        <button data-section="diagnostics">API / Diagnostics</button>
+      </nav>
+      <section class="content">
+        <section class="safety-banner">
+          <strong>Live locked:</strong> this browser UI does not place orders, does not arm live sessions, does not store API keys, and uses localhost only.
+        </section>
+        <section id="error-panel" class="error-panel" hidden></section>
+        <section id="cards" class="cards"></section>
+      </section>
+    </main>
+    <footer>
+      <span id="refresh-status">Last refresh: never</span>
+      <span id="ws-status">WebSocket: not connected</span>
+      <span>Streamlit: legacy fallback only</span>
+    </footer>
+    <script src="/app.js" defer></script>
   </body>
 </html>

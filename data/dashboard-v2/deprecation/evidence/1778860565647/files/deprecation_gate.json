@@ -1,8 +1,0 @@
-{
-  "status": "deprecation_candidate",
-  "hard_blockers": [],
-  "soft_blockers": [],
-  "streamlit_removed": false,
-  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
-  "live_trading_enabled": false
-}

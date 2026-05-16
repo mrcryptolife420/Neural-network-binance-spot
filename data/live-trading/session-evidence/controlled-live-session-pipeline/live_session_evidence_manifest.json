@@ -1,0 +1,17 @@
+{
+  "status": "ok",
+  "run_id": "controlled-live-session-pipeline",
+  "files": [
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\live-trading\\session-evidence\\controlled-live-session-pipeline\\files\\live_session.json",
+      "sha256": "[REDACTED]"
+    }
+  ],
+  "hashes": [
+    "[REDACTED]"
+  ],
+  "no_unattended_live_proof": true,
+  "secret_redaction_proof": true,
+  "live_trading_enabled": false,
+  "manifest_hash": "[REDACTED]"
+}

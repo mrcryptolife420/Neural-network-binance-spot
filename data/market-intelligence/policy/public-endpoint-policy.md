@@ -1,0 +1,5 @@
+# Public Endpoint Policy
+
+Status: ok
+
+SCANNER RANKINGS ARE RESEARCH METRICS, NOT FINANCIAL ADVICE

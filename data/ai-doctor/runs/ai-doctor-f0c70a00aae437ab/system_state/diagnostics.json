@@ -1,0 +1,13 @@
+{
+  "diagnostics": {
+    "status": "ok"
+  },
+  "redaction_self_test": {
+    "status": "ok"
+  },
+  "safe_env": {
+    "LIVE_TRADING_ENABLED": "false",
+    "KILL_SWITCH": "true"
+  },
+  "live_trading_enabled": false
+}

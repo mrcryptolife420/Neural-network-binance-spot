@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import json
 import subprocess
 import sys
 import time
@@ -33,7 +34,7 @@ class ControlCenterLaunch:
 
 def safe_environment(project_root: Path) -> dict[str, str]:
     env = dict(os.environ)
-    env["PYTHONPATH"] = "src"
+    env["PYTHONPATH"] = str(project_root / "src")
     env["LIVE_TRADING_ENABLED"] = "false"
     env["KILL_SWITCH"] = "true"
     env.setdefault("DATA_DIR", str(project_root / "data"))
@@ -51,8 +52,8 @@ def build_launch_plan(project_root: Path, start_port: int = 8503) -> ControlCent
         url=f"http://127.0.0.1:{port}",
         port=port,
         pid=None,
-        log_path=str(logs_dir / "control-center.log"),
-        error_log_path=str(logs_dir / "control-center.err.log"),
+        log_path=str(logs_dir / "dashboard-v2.log"),
+        error_log_path=str(logs_dir / "dashboard-v2.err.log"),
         live_trading_enabled=False,
         kill_switch=True,
         command=command,
@@ -91,6 +92,8 @@ def start_control_center(project_root: Path, start_port: int = 8503, open_browse
         )
     with open(plan.log_path, "w", encoding="utf-8") as stdout, open(plan.error_log_path, "w", encoding="utf-8") as stderr:
         process = subprocess.Popen(plan.command, cwd=project_root, env=env, stdout=stdout, stderr=stderr)
+    pid_file = project_root / "data" / "logs" / "dashboard.pid"
+    pid_file.write_text(str(process.pid), encoding="utf-8")
     deadline = time.time() + 30
     while time.time() < deadline:
         try:
@@ -143,4 +146,8 @@ def _with_evidence(project_root: Path, launch: ControlCenterLaunch, preflight_st
         launch_payload["diagnostics_status"] = "unavailable"
         launch_payload["diagnostics_error"] = str(exc)
     evidence_path = write_launch_evidence(project_root / "data", launch_payload, preflight_status=preflight_status)
-    return ControlCenterLaunch(**{**launch.to_dict(), "evidence_path": str(evidence_path)})
+    completed = ControlCenterLaunch(**{**launch.to_dict(), "evidence_path": str(evidence_path)})
+    launcher_dir = project_root / "data" / "dashboard-v2" / "launcher"
+    launcher_dir.mkdir(parents=True, exist_ok=True)
+    (launcher_dir / "last-launch.json").write_text(json.dumps(completed.to_dict(), indent=2, default=str), encoding="utf-8")
+    return completed

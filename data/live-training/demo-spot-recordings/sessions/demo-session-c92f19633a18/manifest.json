@@ -1,0 +1,39 @@
+{
+  "status": "ok",
+  "profile_id": "binance-demo-spot-safe",
+  "session_id": "demo-session-c92f19633a18",
+  "events": [
+    {
+      "event_id": "market-1",
+      "type": "market_snapshot",
+      "symbol": "BTCUSDT",
+      "ts_ms": 1778948802612,
+      "spread_bps": 4.2
+    },
+    {
+      "event_id": "signal-1",
+      "type": "signal",
+      "symbol": "BTCUSDT",
+      "confidence": 0.62,
+      "ts_ms": 1778948802612
+    },
+    {
+      "event_id": "risk-1",
+      "type": "risk_decision",
+      "symbol": "BTCUSDT",
+      "allowed": true,
+      "ts_ms": 1778948802612
+    },
+    {
+      "event_id": "fill-1",
+      "type": "demo_fill",
+      "symbol": "BTCUSDT",
+      "qty": "0.001",
+      "price": "65000",
+      "ts_ms": 1778948802612
+    }
+  ],
+  "event_count": 4,
+  "hash": "[REDACTED]",
+  "live_trading_enabled": false
+}

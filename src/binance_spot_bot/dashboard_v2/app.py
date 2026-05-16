@@ -235,6 +235,8 @@ def create_dashboard_v2_app(settings: BotSettings | None = None) -> Any:
     try:
         from fastapi import FastAPI, WebSocket
         from fastapi.middleware.cors import CORSMiddleware
+        from fastapi.responses import FileResponse
+        from fastapi.staticfiles import StaticFiles
     except Exception:
         return DashboardV2FallbackApp()
 
@@ -247,6 +249,25 @@ def create_dashboard_v2_app(settings: BotSettings | None = None) -> Any:
         allow_methods=["GET", "POST"],
         allow_headers=["*"],
     )
+    static_dir = Path(__file__).resolve().parent / "static"
+    if static_dir.exists():
+        app.mount("/assets", StaticFiles(directory=static_dir / "assets"), name="dashboard_assets") if (static_dir / "assets").exists() else None
+
+        @app.get("/")
+        def dashboard_index() -> Any:
+            return FileResponse(static_dir / "index.html")
+
+        @app.get("/app.js")
+        def dashboard_app_js() -> Any:
+            return FileResponse(static_dir / "app.js")
+
+        @app.get("/styles.css")
+        def dashboard_styles_css() -> Any:
+            return FileResponse(static_dir / "styles.css")
+
+        @app.get("/manifest.json")
+        def dashboard_manifest() -> Any:
+            return FileResponse(static_dir / "manifest.json")
 
     @app.get("/api/health")
     def health() -> dict[str, Any]:
@@ -994,7 +1015,13 @@ def create_dashboard_v2_app(settings: BotSettings | None = None) -> Any:
         from binance_spot_bot.live_ops.live_ops_pipeline import run_live_ops_pipeline
 
         pipeline = run_live_ops_pipeline(Path.cwd())
-        return {"status": "ok", "open_incidents": pipeline["detected"]["count"], "live_order_submitted": False, "live_rearmed": False}
+        return {
+            "status": "ok",
+            "open_incidents": pipeline["detected"]["count"],
+            "live_order_submitted": False,
+            "live_rearmed": False,
+            "live_trading_enabled": False,
+        }
 
     @app.post("/api/live-ops/incidents/detect")
     def live_ops_incident_detect() -> dict[str, Any]:
@@ -1178,5 +1205,12 @@ def create_dashboard_v2_app(settings: BotSettings | None = None) -> Any:
         await websocket.accept()
         await websocket.send_json(bus.heartbeat())
         await websocket.close()
+
+    if static_dir.exists():
+        @app.get("/{route_path:path}")
+        def dashboard_spa_fallback(route_path: str) -> Any:
+            if route_path.startswith(("api/", "ws/")):
+                return {"status": "not_found", "route": route_path, "live_trading_enabled": False}
+            return FileResponse(static_dir / "index.html")
 
     return app

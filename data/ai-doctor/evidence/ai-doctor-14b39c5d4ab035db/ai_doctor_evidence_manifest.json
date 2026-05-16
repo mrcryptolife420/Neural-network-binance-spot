@@ -1,0 +1,17 @@
+{
+  "status": "ok",
+  "run_id": "ai-doctor-14b39c5d4ab035db",
+  "files": [
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\ai-doctor\\evidence\\ai-doctor-14b39c5d4ab035db\\files\\ai_doctor_evidence.json",
+      "sha256": "[REDACTED]"
+    }
+  ],
+  "hashes": [
+    "[REDACTED]"
+  ],
+  "no_live_no_order_proof": true,
+  "no_secret_proof": true,
+  "local_only_proof": true,
+  "manifest_hash": "[REDACTED]"
+}

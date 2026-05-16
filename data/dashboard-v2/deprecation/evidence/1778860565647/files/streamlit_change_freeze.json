@@ -1,9 +1,0 @@
-{
-  "status": "ok",
-  "policy": "new dashboard features must be V2-first; Streamlit receives bugfix/security/no-live fixes only",
-  "waiver_required_for_streamlit_only": true,
-  "render_functions_seen": 40,
-  "new_streamlit_only_findings": [],
-  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
-  "live_trading_enabled": false
-}

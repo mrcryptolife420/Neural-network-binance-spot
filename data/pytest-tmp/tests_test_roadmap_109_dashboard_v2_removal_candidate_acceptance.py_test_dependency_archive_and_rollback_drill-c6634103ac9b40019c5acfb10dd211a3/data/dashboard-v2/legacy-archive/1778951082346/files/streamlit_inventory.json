@@ -1,0 +1,9 @@
+{
+  "status": "ok",
+  "render_functions": [],
+  "streamlit_only_pages": [],
+  "streamlit_only_actions": [],
+  "report_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_dependency_archive_and_rollback_drill-c6634103ac9b40019c5acfb10dd211a3\\src\\binance_spot_bot\\ui\\streamlit_app.py",
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

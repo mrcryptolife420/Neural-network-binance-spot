@@ -1,0 +1,323 @@
+{
+  "status": "completed",
+  "run_id": "rolling-54d0e0fe76cf",
+  "split": {
+    "status": "ok",
+    "split": {
+      "split_id": "wf-split-c2c2e6f40114",
+      "mode": "rolling_window",
+      "windows": [
+        {
+          "window_id": "wf-window-1",
+          "train_start_ms": 1700000000000,
+          "train_end_ms": 1700006000000,
+          "validation_start_ms": 1700006000000,
+          "validation_end_ms": 1700008400000,
+          "symbols": [
+            "BTCUSDT",
+            "ETHUSDT",
+            "BNBUSDT",
+            "SOLUSDT"
+          ],
+          "source_dataset_ids": [
+            "fixture-btcusdt-1m",
+            "fixture-ethusdt-1m",
+            "fixture-bnbusdt-1m",
+            "fixture-solusdt-1m"
+          ],
+          "min_candles_required": 10,
+          "test_start_ms": 1700008400000,
+          "test_end_ms": 1700009600000,
+          "no_live_statement": "PORTFOLIO LAB - PAPER ONLY - NO LIVE TRADING",
+          "paper_only_research_statement": "Portfolio Lab simulations are paper-only research and never create real allocations.",
+          "live_trading_enabled": false
+        },
+        {
+          "window_id": "wf-window-2",
+          "train_start_ms": 1700004800000,
+          "train_end_ms": 1700010800000,
+          "validation_start_ms": 1700010800000,
+          "validation_end_ms": 1700013200000,
+          "symbols": [
+            "BTCUSDT",
+            "ETHUSDT",
+            "BNBUSDT",
+            "SOLUSDT"
+          ],
+          "source_dataset_ids": [
+            "fixture-btcusdt-1m",
+            "fixture-ethusdt-1m",
+            "fixture-bnbusdt-1m",
+            "fixture-solusdt-1m"
+          ],
+          "min_candles_required": 10,
+          "test_start_ms": 1700013200000,
+          "test_end_ms": 1700014400000,
+          "no_live_statement": "PORTFOLIO LAB - PAPER ONLY - NO LIVE TRADING",
+          "paper_only_research_statement": "Portfolio Lab simulations are paper-only research and never create real allocations.",
+          "live_trading_enabled": false
+        },
+        {
+          "window_id": "wf-window-3",
+          "train_start_ms": 1700009600000,
+          "train_end_ms": 1700015600000,
+          "validation_start_ms": 1700015600000,
+          "validation_end_ms": 1700018000000,
+          "symbols": [
+            "BTCUSDT",
+            "ETHUSDT",
+            "BNBUSDT",
+            "SOLUSDT"
+          ],
+          "source_dataset_ids": [
+            "fixture-btcusdt-1m",
+            "fixture-ethusdt-1m",
+            "fixture-bnbusdt-1m",
+            "fixture-solusdt-1m"
+          ],
+          "min_candles_required": 10,
+          "test_start_ms": 1700018000000,
+          "test_end_ms": 1700019200000,
+          "no_live_statement": "PORTFOLIO LAB - PAPER ONLY - NO LIVE TRADING",
+          "paper_only_research_statement": "Portfolio Lab simulations are paper-only research and never create real allocations.",
+          "live_trading_enabled": false
+        }
+      ],
+      "symbols": [
+        "BTCUSDT",
+        "ETHUSDT",
+        "BNBUSDT",
+        "SOLUSDT"
+      ],
+      "created_at_ms": 1778950924374,
+      "no_live_statement": "PORTFOLIO LAB - PAPER ONLY - NO LIVE TRADING",
+      "no_financial_advice_statement": "Portfolio Lab output is local paper research, not financial advice.",
+      "paper_only_research_statement": "Portfolio Lab simulations are paper-only research and never create real allocations.",
+      "live_trading_enabled": false
+    },
+    "validation": {
+      "status": "ok",
+      "blockers": [],
+      "warnings": [],
+      "live_trading_enabled": false
+    },
+    "live_trading_enabled": false
+  },
+  "coverage": {
+    "status": "ok",
+    "coverage": [
+      {
+        "symbol": "BTCUSDT",
+        "candles": 180,
+        "first_timestamp_ms": 1700000000000,
+        "last_timestamp_ms": 1700010800000,
+        "missing_intervals": 0,
+        "duplicate_timestamps": 0,
+        "stale_data": false,
+        "data_gap_severity": "none",
+        "public_only_proof": true
+      },
+      {
+        "symbol": "ETHUSDT",
+        "candles": 180,
+        "first_timestamp_ms": 1700000000000,
+        "last_timestamp_ms": 1700010800000,
+        "missing_intervals": 0,
+        "duplicate_timestamps": 0,
+        "stale_data": false,
+        "data_gap_severity": "none",
+        "public_only_proof": true
+      },
+      {
+        "symbol": "BNBUSDT",
+        "candles": 180,
+        "first_timestamp_ms": 1700000000000,
+        "last_timestamp_ms": 1700010800000,
+        "missing_intervals": 0,
+        "duplicate_timestamps": 0,
+        "stale_data": false,
+        "data_gap_severity": "none",
+        "public_only_proof": true
+      },
+      {
+        "symbol": "SOLUSDT",
+        "candles": 180,
+        "first_timestamp_ms": 1700000000000,
+        "last_timestamp_ms": 1700010800000,
+        "missing_intervals": 0,
+        "duplicate_timestamps": 0,
+        "stale_data": false,
+        "data_gap_severity": "none",
+        "public_only_proof": true
+      }
+    ],
+    "warnings": [],
+    "live_trading_enabled": false
+  },
+  "decay": {
+    "status": "ok",
+    "decay": [
+      {
+        "item_id": "basket-item-1-btcusdt",
+        "symbol": "BTCUSDT",
+        "decay_score": 0.115,
+        "status": "stable",
+        "signals": [],
+        "live_trading_enabled": false
+      },
+      {
+        "item_id": "basket-item-2-ethusdt",
+        "symbol": "ETHUSDT",
+        "decay_score": 0.172,
+        "status": "stable",
+        "signals": [],
+        "live_trading_enabled": false
+      },
+      {
+        "item_id": "basket-item-3-bnbusdt",
+        "symbol": "BNBUSDT",
+        "decay_score": 0.251,
+        "status": "stable",
+        "signals": [],
+        "live_trading_enabled": false
+      },
+      {
+        "item_id": "basket-item-4-solusdt",
+        "symbol": "SOLUSDT",
+        "decay_score": 0.315,
+        "status": "watch",
+        "signals": [
+          "paper_score_deterioration"
+        ],
+        "live_trading_enabled": false
+      }
+    ],
+    "live_trading_enabled": false
+  },
+  "results": [
+    {
+      "window_id": "wf-window-1",
+      "schedule_id": "no-rebalance",
+      "validation_paper_pnl": 5024.88575,
+      "max_drawdown": 0.0,
+      "turnover": 0.2,
+      "fees": 4.0,
+      "rebalance_events": [],
+      "status": "ok",
+      "live_trading_enabled": false
+    },
+    {
+      "window_id": "wf-window-1",
+      "schedule_id": "fixed-interval",
+      "validation_paper_pnl": 5024.88575,
+      "max_drawdown": 0.0,
+      "turnover": 0.28,
+      "fees": 6.0,
+      "rebalance_events": [
+        {
+          "event_id": "rebalance-fixed-interval-12",
+          "step": 12,
+          "event_type": "fixed_interval",
+          "estimated_turnover": 0.04,
+          "estimated_fees": 1.0,
+          "paper_only": true,
+          "live_trading_enabled": false
+        },
+        {
+          "event_id": "rebalance-fixed-interval-24",
+          "step": 24,
+          "event_type": "fixed_interval",
+          "estimated_turnover": 0.04,
+          "estimated_fees": 1.0,
+          "paper_only": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "status": "ok",
+      "live_trading_enabled": false
+    },
+    {
+      "window_id": "wf-window-2",
+      "schedule_id": "no-rebalance",
+      "validation_paper_pnl": 5024.88575,
+      "max_drawdown": 0.0,
+      "turnover": 0.2,
+      "fees": 4.0,
+      "rebalance_events": [],
+      "status": "ok",
+      "live_trading_enabled": false
+    },
+    {
+      "window_id": "wf-window-2",
+      "schedule_id": "fixed-interval",
+      "validation_paper_pnl": 5024.88575,
+      "max_drawdown": 0.0,
+      "turnover": 0.28,
+      "fees": 6.0,
+      "rebalance_events": [
+        {
+          "event_id": "rebalance-fixed-interval-12",
+          "step": 12,
+          "event_type": "fixed_interval",
+          "estimated_turnover": 0.04,
+          "estimated_fees": 1.0,
+          "paper_only": true,
+          "live_trading_enabled": false
+        },
+        {
+          "event_id": "rebalance-fixed-interval-24",
+          "step": 24,
+          "event_type": "fixed_interval",
+          "estimated_turnover": 0.04,
+          "estimated_fees": 1.0,
+          "paper_only": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "status": "ok",
+      "live_trading_enabled": false
+    },
+    {
+      "window_id": "wf-window-3",
+      "schedule_id": "no-rebalance",
+      "validation_paper_pnl": 5024.88575,
+      "max_drawdown": 0.0,
+      "turnover": 0.2,
+      "fees": 4.0,
+      "rebalance_events": [],
+      "status": "ok",
+      "live_trading_enabled": false
+    },
+    {
+      "window_id": "wf-window-3",
+      "schedule_id": "fixed-interval",
+      "validation_paper_pnl": 5024.88575,
+      "max_drawdown": 0.0,
+      "turnover": 0.28,
+      "fees": 6.0,
+      "rebalance_events": [
+        {
+          "event_id": "rebalance-fixed-interval-12",
+          "step": 12,
+          "event_type": "fixed_interval",
+          "estimated_turnover": 0.04,
+          "estimated_fees": 1.0,
+          "paper_only": true,
+          "live_trading_enabled": false
+        },
+        {
+          "event_id": "rebalance-fixed-interval-24",
+          "step": 24,
+          "event_type": "fixed_interval",
+          "estimated_turnover": 0.04,
+          "estimated_fees": 1.0,
+          "paper_only": true,
+          "live_trading_enabled": false
+        }
+      ],
+      "status": "ok",
+      "live_trading_enabled": false
+    }
+  ],
+  "live_trading_enabled": false
+}

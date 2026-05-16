@@ -18,11 +18,11 @@ def dashboard_command(project_root: Path, port: int) -> list[str]:
     return [
         sys.executable,
         "-m",
-        "streamlit",
-        "run",
-        str(project_root / "src" / "binance_spot_bot" / "ui" / "streamlit_app.py"),
-        "--server.port",
+        "uvicorn",
+        "binance_spot_bot.dashboard_v2.app:create_dashboard_v2_app",
+        "--factory",
+        "--host",
+        "127.0.0.1",
+        "--port",
         str(port),
-        "--server.headless",
-        "true",
     ]

@@ -1,0 +1,1 @@
+AI Doctor fixture log: dashboard started in safe mode

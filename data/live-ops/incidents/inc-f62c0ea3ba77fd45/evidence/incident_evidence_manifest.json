@@ -1,0 +1,19 @@
+{
+  "status": "ok",
+  "incident_id": "inc-f62c0ea3ba77fd45",
+  "files": [
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\live-ops\\incidents\\inc-f62c0ea3ba77fd45\\evidence\\files\\incident.json",
+      "sha256": "[REDACTED]"
+    }
+  ],
+  "hashes": [
+    "[REDACTED]"
+  ],
+  "no_order_placement_proof": true,
+  "no_auto_rearm_proof": true,
+  "no_secret_proof": true,
+  "live_order_submitted": false,
+  "live_rearmed": false,
+  "manifest_hash": "[REDACTED]"
+}

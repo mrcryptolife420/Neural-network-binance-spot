@@ -13,11 +13,11 @@ $env:PYTHONPATH="src"
 python -m binance_spot_bot.cli run-local --mode demo --symbol BTCUSDT --steps 50
 ```
 
-Visueel dashboard:
+Visueel dashboard V2:
 ```powershell
 pip install -e ".[ui]"
 $env:PYTHONPATH="src"
-python -m streamlit run src/binance_spot_bot/ui/streamlit_app.py -- --mode demo --symbol BTCUSDT --interval 1m
+python -m binance_spot_bot.cli control-center
 ```
 
 Windows 11 one-click start:
@@ -25,7 +25,7 @@ Windows 11 one-click start:
 .\Start Bot Dashboard.cmd
 ```
 
-This starts Streamlit locally, chooses a free port, opens the default browser, and forces live trading off.
+This starts Dashboard V2 locally, chooses a free port, opens the default browser, and forces live trading off.
 
 `demo` is de veiligste eerste start: geen API keys, geen internet nodig, alleen synthetische replay-data.
 

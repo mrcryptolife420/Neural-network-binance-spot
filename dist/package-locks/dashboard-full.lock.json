@@ -1,0 +1,14 @@
+{
+  "status": "ok",
+  "profile_id": "dashboard-full",
+  "python_version": "3.14.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "requirements": [
+    "binance-spot-bot[ui]",
+    "binance-spot-bot[visual]"
+  ],
+  "missing_wheels": [],
+  "unsafe_unpinned": [],
+  "live_trading_enabled": false,
+  "lock_hash": "[REDACTED]"
+}

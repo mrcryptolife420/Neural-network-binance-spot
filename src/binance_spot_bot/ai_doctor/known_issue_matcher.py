@@ -12,6 +12,11 @@ def match_known_issues(errors: list[dict[str, Any]] | None = None, logs: str = "
         ("json_decode", "JSONDecodeError", "evidence_repair", ["data/evidence"]),
         ("secret_leak", "secret", "safety_blocker", []),
         ("stale_runner_lock", "stale runner lock", "runtime_fix", ["src/binance_spot_bot/pilot_runner.py"]),
+        ("blank_dashboard_v2", "blank dashboard", "dashboard_fix", ["src/binance_spot_bot/dashboard_v2/static/index.html", "src/binance_spot_bot/dashboard_v2/static/app.js"]),
+        ("missing_dashboard_app_js", "missing app.js", "dashboard_fix", ["src/binance_spot_bot/dashboard_v2/static/app.js"]),
+        ("dashboard_cors_error", "CORS", "dashboard_fix", ["src/binance_spot_bot/dashboard_v2/app.py"]),
+        ("dashboard_backend_offline", "backend offline", "dashboard_fix", ["src/binance_spot_bot/dashboard_v2/launcher.py"]),
+        ("dashboard_websocket_failed", "WebSocket failed", "dashboard_fix", ["src/binance_spot_bot/dashboard_v2/static/app.js"]),
     ]
     for issue_id, needle, task, files in patterns:
         if needle.lower() in text.lower():
@@ -19,4 +24,3 @@ def match_known_issues(errors: list[dict[str, Any]] | None = None, logs: str = "
     if not matches:
         matches.append({"issue_id": "unknown_investigate_first", "title": "Unknown issue", "severity": "P3", "confidence": "low", "suspect_files": [], "recommended_fix": "investigate_first", "recommended_tests": ["pytest -q"], "safety_notes": ["collect more evidence"]})
     return {"status": "ok", "matches": matches, "live_order_submitted": False}
-

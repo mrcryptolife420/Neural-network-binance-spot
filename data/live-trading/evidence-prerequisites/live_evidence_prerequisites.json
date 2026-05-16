@@ -1,0 +1,13 @@
+{
+  "status": "ok",
+  "state": "eligible_for_live_dry_run",
+  "evidence_hash": "[REDACTED]",
+  "blockers": [],
+  "warnings": [],
+  "next_required_actions": [],
+  "no_auto_live_start_statement": "NO AUTO LIVE START - MANUAL GATED LIVE SAFETY ONLY",
+  "not_financial_advice_statement": "LIVE SAFETY OUTPUT IS OPERATIONAL EVIDENCE, NOT FINANCIAL ADVICE",
+  "live_execution_enabled": false,
+  "live_order_placement_enabled": false,
+  "live_trading_enabled": false
+}

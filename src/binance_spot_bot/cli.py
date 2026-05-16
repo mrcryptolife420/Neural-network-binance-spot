@@ -830,6 +830,8 @@ def main() -> None:
     dashboard_v2_launcher.add_argument("--no-browser", action="store_true")
     dashboard_v2_launcher.add_argument("--find-free-port", action="store_true")
     dashboard_v2_launcher.add_argument("--json", action="store_true")
+    sub.add_parser("dashboard-v2-status").add_argument("--json", action="store_true")
+    sub.add_parser("dashboard-v2-stop").add_argument("--json", action="store_true")
     dashboard_v2_shortcut = sub.add_parser("dashboard-v2-create-shortcut")
     dashboard_v2_shortcut.add_argument("--json", action="store_true")
     dashboard_v2_shortcut_info = sub.add_parser("dashboard-v2-shortcut-info")
@@ -1373,6 +1375,9 @@ def main() -> None:
     sub.add_parser("package-verify").add_argument("--json", action="store_true")
     sub.add_parser("package-evidence-export").add_argument("--json", action="store_true")
     sub.add_parser("dashboard-v2-package-smoke").add_argument("--json", action="store_true")
+    sub.add_parser("package-exe-plan").add_argument("--json", action="store_true")
+    sub.add_parser("package-exe-build").add_argument("--json", action="store_true")
+    sub.add_parser("package-exe-smoke").add_argument("--json", action="store_true")
     ai_doctor_start_cmd = sub.add_parser("ai-doctor-start")
     ai_doctor_start_cmd.add_argument("--profile", default="paper")
     ai_doctor_start_cmd.add_argument("--json", action="store_true")
@@ -1793,6 +1798,16 @@ def main() -> None:
                 default=str,
             )
         )
+        return
+    if args.command == "dashboard-v2-status":
+        from .dashboard_v2.launcher import dashboard_v2_launcher_status
+
+        print(json.dumps(dashboard_v2_launcher_status(Path.cwd()), indent=2 if args.json else None, default=str))
+        return
+    if args.command == "dashboard-v2-stop":
+        from .dashboard_v2.launcher import dashboard_v2_launcher_stop
+
+        print(json.dumps(dashboard_v2_launcher_stop(Path.cwd()), indent=2 if args.json else None, default=str))
         return
     if args.command == "dashboard-v2-create-shortcut":
         from .dashboard_v2.desktop_shortcut import create_dashboard_v2_shortcut
@@ -2920,8 +2935,12 @@ def main() -> None:
         "package-verify",
         "package-evidence-export",
         "dashboard-v2-package-smoke",
+        "package-exe-plan",
+        "package-exe-build",
+        "package-exe-smoke",
     }:
         from .packaging.packaging_pipeline import run_packaging_pipeline
+        from .packaging.exe_builder import package_exe_build, package_exe_plan, package_exe_smoke
 
         pipeline = run_packaging_pipeline(Path.cwd(), profile_id=getattr(args, "profile", "dashboard-full"))
         if args.command == "package-profiles":
@@ -2956,6 +2975,12 @@ def main() -> None:
             payload = pipeline["verify"]
         elif args.command == "package-evidence-export":
             payload = pipeline["evidence"]
+        elif args.command == "package-exe-plan":
+            payload = package_exe_plan(Path.cwd())
+        elif args.command == "package-exe-build":
+            payload = package_exe_build(Path.cwd())
+        elif args.command == "package-exe-smoke":
+            payload = package_exe_smoke(Path.cwd())
         else:
             payload = pipeline
         print(json.dumps(payload, indent=2 if args.json else None, default=str))
@@ -4487,30 +4512,26 @@ def main() -> None:
             raise SystemExit(1)
         return
     if args.command == "dashboard":
+        if args.legacy_streamlit:
+            print(
+                json.dumps(
+                    {
+                        "status": "removed",
+                        "selected": "dashboard-v2",
+                        "reason": "Streamlit dashboard entrypoint has been removed",
+                        "start_command": "python -m binance_spot_bot.cli control-center",
+                        "live_trading_enabled": False,
+                    },
+                    default=str,
+                )
+            )
+            return
         if args.v2 or args.auto or args.fallback_if_v2_fails or not args.legacy_streamlit:
             from .dashboard_v2.cli_router import dashboard_v2_cli_router_report
 
             mode = "v2" if args.v2 else "auto"
             print(json.dumps(dashboard_v2_cli_router_report(mode, fallback_if_v2_fails=args.fallback_if_v2_fails), default=str))
             return
-        command = [
-            sys.executable,
-            "-m",
-            "streamlit",
-            "run",
-            "src/binance_spot_bot/ui/streamlit_app.py",
-            "--",
-            "--mode",
-            args.mode,
-            "--symbol",
-            args.symbol,
-            "--interval",
-            args.interval,
-            "--source",
-            args.source,
-        ]
-        print(" ".join(command))
-        return
 
 
 def _default_limits() -> RiskLimits:

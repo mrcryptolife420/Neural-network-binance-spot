@@ -1,0 +1,36 @@
+{
+  "run_id": "ai-doctor-99fbe37841969817",
+  "files": [
+    "ai_summary.md",
+    "codex_fix_prompt.md",
+    "errors.txt",
+    "error_summary.json",
+    "events.jsonl",
+    "finish_snapshot.json",
+    "log_index.json",
+    "recent_logs.txt",
+    "stacktraces.txt",
+    "start_snapshot.json",
+    "codebase_context\\suspect_files.json",
+    "system_state\\diagnostics.json"
+  ],
+  "hashes": [
+    "[REDACTED]",
+    "[REDACTED]",
+    "[REDACTED]",
+    "[REDACTED]",
+    "[REDACTED]",
+    "[REDACTED]",
+    "[REDACTED]",
+    "[REDACTED]",
+    "[REDACTED]",
+    "[REDACTED]",
+    "[REDACTED]",
+    "[REDACTED]"
+  ],
+  "redaction_status": "redacted",
+  "secret_scan_status": "ok",
+  "live_trading_enabled": false,
+  "no_order_endpoint_called": true,
+  "no_remote_upload": true
+}

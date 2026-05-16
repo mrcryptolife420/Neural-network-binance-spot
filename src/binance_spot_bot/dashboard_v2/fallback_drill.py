@@ -12,9 +12,10 @@ def dashboard_v2_fallback_drill(simulate_v2_failure: bool = True) -> dict[str, A
         "status": "ok",
         "v2_failure_simulated": simulate_v2_failure,
         "fallback_command": fallback["command"],
-        "streamlit_import": "verified",
+        "streamlit_import": "removed",
         "legacy_launch_command": fallback["command"],
         "docs_link": fallback["policy"],
+        "fallback_available": fallback["fallback_available"],
         "no_live_statement": dashboard_v2_no_live_statement(),
         "live_trading_enabled": False,
     }

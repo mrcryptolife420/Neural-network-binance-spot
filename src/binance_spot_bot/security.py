@@ -16,7 +16,21 @@ SECRET_REGEXES = [
 
 def scan_for_secrets(root: Path) -> list[tuple[Path, int, str]]:
     findings: list[tuple[Path, int, str]] = []
-    ignored_parts = {".git", "__pycache__", ".pytest_cache", ".lean-ctx"}
+    ignored_parts = {
+        ".git",
+        ".lean-ctx",
+        ".mypy_cache",
+        ".pytest_cache",
+        ".ruff_cache",
+        ".streamlit",
+        ".venv",
+        "__pycache__",
+        "build",
+        "dist",
+        "env",
+        "node_modules",
+        "venv",
+    }
     for path in root.rglob("*"):
         relative_parts = path.relative_to(root).parts
         if (

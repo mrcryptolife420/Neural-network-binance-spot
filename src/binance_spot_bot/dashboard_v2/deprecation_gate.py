@@ -20,9 +20,15 @@ def dashboard_v2_deprecation_gate() -> dict[str, Any]:
         hard_blockers.append("final parity lock blocked")
     if workflows["status"] != "ok":
         hard_blockers.append("critical workflow lock failed")
-    if not fallback["fallback_available"]:
-        hard_blockers.append("Streamlit fallback unavailable")
     if docs["status"] != "ok" or uat["status"] != "ok":
         hard_blockers.append("V2-first docs/UAT not ready")
     status = "deprecation_candidate" if not hard_blockers else "blocked"
-    return {"status": status, "hard_blockers": hard_blockers, "soft_blockers": [], "streamlit_removed": False, "no_live_statement": dashboard_v2_no_live_statement(), "live_trading_enabled": False}
+    return {
+        "status": status,
+        "hard_blockers": hard_blockers,
+        "soft_blockers": [],
+        "streamlit_removed": True,
+        "fallback": fallback,
+        "no_live_statement": dashboard_v2_no_live_statement(),
+        "live_trading_enabled": False,
+    }

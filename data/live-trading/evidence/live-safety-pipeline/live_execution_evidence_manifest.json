@@ -1,0 +1,18 @@
+{
+  "status": "ok",
+  "run_id": "live-safety-pipeline",
+  "files": [
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\live-trading\\evidence\\live-safety-pipeline\\files\\live_execution_pipeline.json",
+      "sha256": "[REDACTED]"
+    }
+  ],
+  "hashes": [
+    "[REDACTED]"
+  ],
+  "real_order_executed": false,
+  "secret_redaction_proof": true,
+  "no_unattended_live_proof": true,
+  "live_trading_enabled": false,
+  "manifest_hash": "[REDACTED]"
+}

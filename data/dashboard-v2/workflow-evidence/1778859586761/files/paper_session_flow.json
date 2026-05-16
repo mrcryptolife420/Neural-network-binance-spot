@@ -1,9 +1,0 @@
-{
-  "status": "ok",
-  "primary_action_count": 1,
-  "stop_always_visible": true,
-  "risk_blockers_visible": true,
-  "session_report_link_visible": true,
-  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
-  "live_trading_enabled": false
-}

@@ -1,0 +1,269 @@
+{
+  "start": {
+    "run_id": "ai-doctor-d3d477dd614a41e2",
+    "profile_id": "paper",
+    "mode": "safe",
+    "app_entrypoint": "dashboard-v2",
+    "started_at_ms": 1778952446723,
+    "status": "running",
+    "phase": "start",
+    "finished_at_ms": null,
+    "exit_code": null,
+    "error_count": 0,
+    "warning_count": 0,
+    "blocker_count": 0,
+    "dashboard_url": "",
+    "data_dir": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data",
+    "project_root": "C:\\Users\\highlife\\Desktop\\Neural network binance spot",
+    "git_ref": "local",
+    "python_version": "3.14.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "safe_env": {
+      "LIVE_TRADING_ENABLED": "false",
+      "KILL_SWITCH": "true"
+    },
+    "live_trading_enabled": false,
+    "kill_switch": true,
+    "artifacts": [],
+    "no_live_order_statement": "AI DOCTOR NEVER PLACES ORDERS OR STARTS LIVE SESSIONS",
+    "local_only_statement": "AI DOCTOR DEBUG BUNDLES STAY LOCAL ONLY",
+    "secret_redaction_status": "redacted",
+    "validation_status": "ok",
+    "blockers": [],
+    "warnings": []
+  },
+  "event": {
+    "status": "ok",
+    "event": {
+      "ts_ms": 1778952446725,
+      "run_id": "ai-doctor-d3d477dd614a41e2",
+      "event_type": "dashboard_ready",
+      "payload": {
+        "status": "ok"
+      },
+      "live_trading_enabled": false
+    },
+    "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\ai-doctor\\runs\\ai-doctor-d3d477dd614a41e2\\events.jsonl",
+    "live_order_submitted": false
+  },
+  "errors": {
+    "status": "ok",
+    "errors": [
+      {
+        "error_id": "err-30846e31992d",
+        "error_type": "ModuleNotFoundError",
+        "message": "ModuleNotFoundError: No module named 'fastapi'",
+        "file": "",
+        "line": null,
+        "traceback_hash": "[REDACTED]",
+        "first_seen_ms": 1778952446726,
+        "last_seen_ms": 1778952446726,
+        "count": 1,
+        "severity_guess": "P2"
+      }
+    ],
+    "saved": {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\ai-doctor\\runs\\ai-doctor-d3d477dd614a41e2\\error_summary.json",
+      "sha256": "[REDACTED]"
+    },
+    "live_order_submitted": false
+  },
+  "logs": {
+    "status": "ok",
+    "saved": {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\ai-doctor\\runs\\ai-doctor-d3d477dd614a41e2\\log_index.json",
+      "sha256": "[REDACTED]"
+    },
+    "live_trading_enabled": false
+  },
+  "system_state": {
+    "status": "ok",
+    "state": {
+      "diagnostics": {
+        "status": "ok"
+      },
+      "redaction_self_test": {
+        "status": "ok"
+      },
+      "safe_env": {
+        "LIVE_TRADING_ENABLED": "false",
+        "KILL_SWITCH": "true"
+      },
+      "live_trading_enabled": false
+    },
+    "saved": {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\ai-doctor\\runs\\ai-doctor-d3d477dd614a41e2\\system_state\\diagnostics.json",
+      "sha256": "[REDACTED]"
+    }
+  },
+  "check_all": {
+    "status": "ok",
+    "failed_checks": [],
+    "safe_env_proof": {
+      "LIVE_TRADING_ENABLED": "false",
+      "KILL_SWITCH": "true"
+    },
+    "live_trading_enabled": false
+  },
+  "codebase": {
+    "status": "ok",
+    "context": {
+      "git_ref": "local",
+      "changed_files": [],
+      "suspect_files": [
+        "src/binance_spot_bot/cli.py",
+        "src/binance_spot_bot/dashboard_v2/app.py"
+      ],
+      "recommended_tests": [
+        "pytest -q tests/test_roadmap_123_ai_doctor_acceptance.py"
+      ],
+      "live_trading_enabled": false
+    },
+    "saved": {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\ai-doctor\\runs\\ai-doctor-d3d477dd614a41e2\\codebase_context\\suspect_files.json",
+      "sha256": "[REDACTED]"
+    }
+  },
+  "issues": {
+    "status": "ok",
+    "matches": [
+      {
+        "issue_id": "module_not_found",
+        "title": "ModuleNotFoundError",
+        "severity": "P2",
+        "confidence": "high",
+        "suspect_files": [
+          "pyproject.toml"
+        ],
+        "recommended_fix": "dependency_fix",
+        "recommended_tests": [
+          "python -m compileall -q src tests",
+          "pytest -q"
+        ],
+        "safety_notes": [
+          "do not start live trading",
+          "do not expose secrets"
+        ]
+      }
+    ],
+    "live_order_submitted": false
+  },
+  "hypotheses": {
+    "status": "ok",
+    "hypotheses": [
+      {
+        "hypothesis_id": "hyp-1",
+        "title": "ModuleNotFoundError",
+        "confidence": "high",
+        "evidence_refs": [
+          "module_not_found"
+        ],
+        "suspect_files": [
+          "pyproject.toml"
+        ],
+        "safest_next_step": "dependency_fix",
+        "recommended_tests": [
+          "python -m compileall -q src tests",
+          "pytest -q"
+        ]
+      }
+    ],
+    "live_trading_enabled": false
+  },
+  "summary": {
+    "status": "ok",
+    "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\ai-doctor\\runs\\ai-doctor-d3d477dd614a41e2\\ai_summary.md",
+    "summary": "# AI Doctor Summary\n\n## Main status\nLocal debug bundle generated with safe env.\n\n## Most likely cause\nModuleNotFoundError (confidence: high)\n\n## Suspect files\n- src/binance_spot_bot/cli.py\n- src/binance_spot_bot/dashboard_v2/app.py\n\n## Recommended tests\n- `python -m compileall -q src tests`\n- `pytest -q`\n\n## Safety state\n- LIVE_TRADING_ENABLED=false\n- KILL_SWITCH=true\n- No live order path touched",
+    "live_trading_enabled": false
+  },
+  "prompt": {
+    "status": "ok",
+    "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\ai-doctor\\runs\\ai-doctor-d3d477dd614a41e2\\codex_fix_prompt.md",
+    "prompt": "# Codex Fix Prompt\n\nRead the AI Doctor bundle first, then inspect the suspect files.\n\nSafety constraints:\n- do not start live trading.\n- Do not place or cancel orders.\n- Do not expose secrets.\n- Keep LIVE_TRADING_ENABLED=false and KILL_SWITCH=true in tests.\n\nSuspect files:\n- src/binance_spot_bot/cli.py\n- src/binance_spot_bot/dashboard_v2/app.py\n\nAcceptance tests:\n- `python -m compileall -q src tests`\n- `pytest -q`",
+    "live_order_submitted": false
+  },
+  "repairs": {
+    "status": "ok",
+    "suggestions": [
+      {
+        "title": "dependency_fix",
+        "severity": "P2",
+        "why": "ModuleNotFoundError",
+        "safe_command": "",
+        "manual_steps": [
+          "inspect evidence",
+          "patch suspect files",
+          "run tests"
+        ],
+        "tests_to_run": [
+          "python -m compileall -q src tests",
+          "pytest -q"
+        ],
+        "unsafe": false
+      }
+    ],
+    "live_order_submitted": false
+  },
+  "context": {
+    "status": "ok",
+    "summary_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\ai-context\\latest-ai-doctor-summary.md",
+    "prompt_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\ai-context\\latest-codex-fix-prompt.md",
+    "live_trading_enabled": false
+  },
+  "finish": {
+    "status": "ok",
+    "snapshot": {
+      "run_id": "ai-doctor-d3d477dd614a41e2",
+      "finished_at_ms": 1778952446751,
+      "status": "warning",
+      "exit_code": 0,
+      "next_safe_action": "export_ai_doctor_bundle"
+    },
+    "saved": {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\ai-doctor\\runs\\ai-doctor-d3d477dd614a41e2\\finish_snapshot.json",
+      "sha256": "[REDACTED]"
+    },
+    "live_trading_enabled": false
+  },
+  "debug_pack": {
+    "status": "ok",
+    "manifest": {
+      "run_id": "ai-doctor-d3d477dd614a41e2",
+      "files": [
+        "ai_summary.md",
+        "codex_fix_prompt.md",
+        "errors.txt",
+        "error_summary.json",
+        "events.jsonl",
+        "finish_snapshot.json",
+        "log_index.json",
+        "recent_logs.txt",
+        "stacktraces.txt",
+        "start_snapshot.json",
+        "codebase_context\\suspect_files.json",
+        "system_state\\diagnostics.json"
+      ],
+      "hashes": [
+        "[REDACTED]",
+        "[REDACTED]",
+        "[REDACTED]",
+        "[REDACTED]",
+        "[REDACTED]",
+        "[REDACTED]",
+        "[REDACTED]",
+        "[REDACTED]",
+        "[REDACTED]",
+        "[REDACTED]",
+        "[REDACTED]",
+        "[REDACTED]"
+      ],
+      "redaction_status": "redacted",
+      "secret_scan_status": "ok",
+      "live_trading_enabled": false,
+      "no_order_endpoint_called": true,
+      "no_remote_upload": true
+    },
+    "bundle_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\ai-doctor\\runs\\ai-doctor-d3d477dd614a41e2\\ai_doctor_bundle.zip",
+    "live_order_submitted": false
+  }
+}

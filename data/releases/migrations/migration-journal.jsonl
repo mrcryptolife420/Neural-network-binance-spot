@@ -42,3 +42,5 @@
 {"status": "applied", "migration": "demo", "applied_at_ms": 1778933909880, "dry_run": "dry-demo-1778933909868", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
 {"status": "applied", "migration": "demo", "applied_at_ms": 1778935507583, "dry_run": "dry-demo-1778935507571", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
 {"status": "applied", "migration": "demo", "applied_at_ms": 1778937863640, "dry_run": "dry-demo-1778937863631", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778948857945, "dry_run": "dry-demo-1778948857935", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}
+{"status": "applied", "migration": "demo", "applied_at_ms": 1778949592078, "dry_run": "dry-demo-1778949592068", "rollback_marker": "data\\releases\\migrations\\rollback-marker.json", "live_trading_enabled": false}

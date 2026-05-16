@@ -149,8 +149,9 @@ class ControlCenter004Tests(unittest.TestCase):
         port = find_free_port(8700)
         self.assertGreaterEqual(port, 8700)
         command = dashboard_command(Path("C:/Project With Spaces"), port)
-        self.assertIn("streamlit", command)
-        self.assertTrue(any("Project With Spaces" in part for part in command))
+        self.assertIn("uvicorn", command)
+        self.assertIn("binance_spot_bot.dashboard_v2.app:create_dashboard_v2_app", command)
+        self.assertNotIn("streamlit", command)
 
     def test_windows_secret_store_adapter_can_be_mocked(self):
         class Result:

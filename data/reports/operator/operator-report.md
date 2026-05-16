@@ -5,7 +5,7 @@ Diagnostics status: warn
 Diagnostics trend points: 2
 
 ## Recommended Actions
-- Refresh evidence
+- Run rehearsal or check-all
 - Refresh evidence
 - Refresh evidence
 - Refresh evidence
@@ -15,9 +15,9 @@ Diagnostics trend points: 2
 - Verify no runner process is active
 
 ## Retention Preview
-- checks: 8 files, 0 old
+- checks: 2 files, 0 old
 - evidence: 43 files, 0 old
-- sessions: 665 files, 0 old
+- sessions: 667 files, 26 old
 - pilot-runs: 21 files, 0 old
 - support: 3 files, 0 old
 
@@ -34,4 +34,4 @@ Diagnostics trend points: 2
 - 1778500471277 pilot_run blocked
 - 1778500557914 pilot_run blocked
 - 1778855300003 pilot_run running
-- 1778865161863 launch planned
+- 1778950778691 launch running

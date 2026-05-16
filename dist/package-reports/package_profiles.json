@@ -1,0 +1,176 @@
+{
+  "status": "ok",
+  "profiles": [
+    {
+      "profile_id": "minimal-operator",
+      "name": "Minimal Operator",
+      "description": "CLI and Control Center",
+      "extras": [],
+      "include_dashboard": true,
+      "include_research": false,
+      "include_visual_smoke": false,
+      "include_live_ops": false,
+      "include_dev_tools": false,
+      "safe_env_defaults": {
+        "LIVE_TRADING_ENABLED": "false",
+        "KILL_SWITCH": "true"
+      },
+      "forbidden_runtime_actions": [
+        "place_order",
+        "start_live_session",
+        "arm_live",
+        "auto_rearm",
+        "increase_risk_limit"
+      ],
+      "no_live_auto_start_statement": "PACKAGING NEVER AUTO-STARTS LIVE TRADING",
+      "secret_free_package_statement": "PACKAGE ARTIFACTS MUST NOT CONTAIN RAW SECRETS"
+    },
+    {
+      "profile_id": "dashboard-full",
+      "name": "Dashboard Full",
+      "description": "Dashboard V2 local app",
+      "extras": [
+        "ui",
+        "visual"
+      ],
+      "include_dashboard": true,
+      "include_research": false,
+      "include_visual_smoke": true,
+      "include_live_ops": false,
+      "include_dev_tools": false,
+      "safe_env_defaults": {
+        "LIVE_TRADING_ENABLED": "false",
+        "KILL_SWITCH": "true"
+      },
+      "forbidden_runtime_actions": [
+        "place_order",
+        "start_live_session",
+        "arm_live",
+        "auto_rearm",
+        "increase_risk_limit"
+      ],
+      "no_live_auto_start_statement": "PACKAGING NEVER AUTO-STARTS LIVE TRADING",
+      "secret_free_package_statement": "PACKAGE ARTIFACTS MUST NOT CONTAIN RAW SECRETS"
+    },
+    {
+      "profile_id": "research-local",
+      "name": "Research Local",
+      "description": "Local research and dataset tooling",
+      "extras": [
+        "research",
+        "mlops"
+      ],
+      "include_dashboard": true,
+      "include_research": true,
+      "include_visual_smoke": false,
+      "include_live_ops": false,
+      "include_dev_tools": false,
+      "safe_env_defaults": {
+        "LIVE_TRADING_ENABLED": "false",
+        "KILL_SWITCH": "true"
+      },
+      "forbidden_runtime_actions": [
+        "place_order",
+        "start_live_session",
+        "arm_live",
+        "auto_rearm",
+        "increase_risk_limit"
+      ],
+      "no_live_auto_start_statement": "PACKAGING NEVER AUTO-STARTS LIVE TRADING",
+      "secret_free_package_statement": "PACKAGE ARTIFACTS MUST NOT CONTAIN RAW SECRETS"
+    },
+    {
+      "profile_id": "live-ops-safe",
+      "name": "Live Ops Safe",
+      "description": "Dashboard plus governance/live-ops safety",
+      "extras": [
+        "ui"
+      ],
+      "include_dashboard": true,
+      "include_research": false,
+      "include_visual_smoke": false,
+      "include_live_ops": true,
+      "include_dev_tools": false,
+      "safe_env_defaults": {
+        "LIVE_TRADING_ENABLED": "false",
+        "KILL_SWITCH": "true"
+      },
+      "forbidden_runtime_actions": [
+        "place_order",
+        "start_live_session",
+        "arm_live",
+        "auto_rearm",
+        "increase_risk_limit"
+      ],
+      "no_live_auto_start_statement": "PACKAGING NEVER AUTO-STARTS LIVE TRADING",
+      "secret_free_package_statement": "PACKAGE ARTIFACTS MUST NOT CONTAIN RAW SECRETS"
+    },
+    {
+      "profile_id": "developer",
+      "name": "Developer",
+      "description": "All local development tooling",
+      "extras": [
+        "ui",
+        "visual",
+        "research",
+        "realtime",
+        "mlops",
+        "dev"
+      ],
+      "include_dashboard": true,
+      "include_research": true,
+      "include_visual_smoke": true,
+      "include_live_ops": true,
+      "include_dev_tools": true,
+      "safe_env_defaults": {
+        "LIVE_TRADING_ENABLED": "false",
+        "KILL_SWITCH": "true"
+      },
+      "forbidden_runtime_actions": [
+        "place_order",
+        "start_live_session",
+        "arm_live",
+        "auto_rearm",
+        "increase_risk_limit"
+      ],
+      "no_live_auto_start_statement": "PACKAGING NEVER AUTO-STARTS LIVE TRADING",
+      "secret_free_package_statement": "PACKAGE ARTIFACTS MUST NOT CONTAIN RAW SECRETS"
+    }
+  ],
+  "validations": [
+    {
+      "profile_id": "minimal-operator",
+      "status": "ok",
+      "blockers": [],
+      "warnings": []
+    },
+    {
+      "profile_id": "dashboard-full",
+      "status": "ok",
+      "blockers": [],
+      "warnings": []
+    },
+    {
+      "profile_id": "research-local",
+      "status": "ok",
+      "blockers": [],
+      "warnings": []
+    },
+    {
+      "profile_id": "live-ops-safe",
+      "status": "ok",
+      "blockers": [],
+      "warnings": []
+    },
+    {
+      "profile_id": "developer",
+      "status": "ok",
+      "blockers": [],
+      "warnings": []
+    }
+  ],
+  "no_live_auto_start_statement": "PACKAGING NEVER AUTO-STARTS LIVE TRADING",
+  "secret_free_package_statement": "PACKAGE ARTIFACTS MUST NOT CONTAIN RAW SECRETS",
+  "live_trading_enabled": false,
+  "live_order_submitted": false
+}

@@ -1,7 +1,7 @@
 {
-  "status": "ok",
-  "grade": "A",
-  "score": 110,
+  "status": "blocked",
+  "grade": "D",
+  "score": 100,
   "categories": [
     {
       "name": "feature_parity",
@@ -53,8 +53,8 @@
     },
     {
       "name": "streamlit_fallback_available",
-      "status": "ok",
-      "points": 10,
+      "status": "blocked",
+      "points": 0,
       "detail": ""
     },
     {
@@ -64,7 +64,9 @@
       "detail": ""
     }
   ],
-  "hard_blockers": [],
+  "hard_blockers": [
+    "Streamlit fallback unavailable"
+  ],
   "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
   "live_trading_enabled": false
 }

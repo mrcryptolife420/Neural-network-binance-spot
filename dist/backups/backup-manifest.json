@@ -1,0 +1,13 @@
+{
+  "status": "ok",
+  "created_at_ms": 1778952506690,
+  "scopes": [
+    "profiles",
+    "workspaces",
+    "sessions",
+    "evidence",
+    "secret_refs"
+  ],
+  "raw_secrets_included": false,
+  "live_locked": true
+}

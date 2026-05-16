@@ -1,0 +1,157 @@
+{
+  "checks": [
+    {
+      "method_name": "get_exchange_info",
+      "status": "allowed",
+      "reason": "public unsigned market data endpoint",
+      "signed_or_account_endpoint": false,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "get_klines",
+      "status": "allowed",
+      "reason": "public unsigned market data endpoint",
+      "signed_or_account_endpoint": false,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "get_ui_klines",
+      "status": "allowed",
+      "reason": "public unsigned market data endpoint",
+      "signed_or_account_endpoint": false,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "get_order_book",
+      "status": "allowed",
+      "reason": "public unsigned market data endpoint",
+      "signed_or_account_endpoint": false,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "get_24hr_ticker",
+      "status": "allowed",
+      "reason": "public unsigned market data endpoint",
+      "signed_or_account_endpoint": false,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "get_rolling_ticker",
+      "status": "allowed",
+      "reason": "public unsigned market data endpoint",
+      "signed_or_account_endpoint": false,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "get_avg_price",
+      "status": "allowed",
+      "reason": "public unsigned market data endpoint",
+      "signed_or_account_endpoint": false,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "get_recent_trades",
+      "status": "allowed",
+      "reason": "public unsigned market data endpoint",
+      "signed_or_account_endpoint": false,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "get_agg_trades",
+      "status": "allowed",
+      "reason": "public unsigned market data endpoint",
+      "signed_or_account_endpoint": false,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "get_book_ticker",
+      "status": "allowed",
+      "reason": "public unsigned market data endpoint",
+      "signed_or_account_endpoint": false,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "get_account_state",
+      "status": "blocked",
+      "reason": "signed/account/order endpoint forbidden",
+      "signed_or_account_endpoint": true,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "test_order",
+      "status": "blocked",
+      "reason": "signed/account/order endpoint forbidden",
+      "signed_or_account_endpoint": true,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "place_order",
+      "status": "blocked",
+      "reason": "signed/account/order endpoint forbidden",
+      "signed_or_account_endpoint": true,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "cancel_order",
+      "status": "blocked",
+      "reason": "signed/account/order endpoint forbidden",
+      "signed_or_account_endpoint": true,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "get_order",
+      "status": "blocked",
+      "reason": "signed/account/order endpoint forbidden",
+      "signed_or_account_endpoint": true,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "open_orders",
+      "status": "blocked",
+      "reason": "signed/account/order endpoint forbidden",
+      "signed_or_account_endpoint": true,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "query_order",
+      "status": "blocked",
+      "reason": "signed/account/order endpoint forbidden",
+      "signed_or_account_endpoint": true,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "create_listen_key",
+      "status": "blocked",
+      "reason": "signed/account/order endpoint forbidden",
+      "signed_or_account_endpoint": true,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "keepalive_listen_key",
+      "status": "blocked",
+      "reason": "signed/account/order endpoint forbidden",
+      "signed_or_account_endpoint": true,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "close_listen_key",
+      "status": "blocked",
+      "reason": "signed/account/order endpoint forbidden",
+      "signed_or_account_endpoint": true,
+      "live_trading_enabled": false
+    },
+    {
+      "method_name": "unknown_method",
+      "status": "blocked",
+      "reason": "unknown endpoint blocked by default",
+      "signed_or_account_endpoint": false,
+      "live_trading_enabled": false
+    }
+  ],
+  "no_live_statement": "MARKET INTELLIGENCE - NO LIVE TRADING",
+  "public_data_only_statement": "PUBLIC UNSIGNED BINANCE SPOT MARKET DATA ONLY",
+  "no_financial_advice_statement": "SCANNER RANKINGS ARE RESEARCH METRICS, NOT FINANCIAL ADVICE",
+  "live_trading_enabled": false,
+  "blockers": [],
+  "status": "ok"
+}

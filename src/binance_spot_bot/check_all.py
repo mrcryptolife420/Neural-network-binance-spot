@@ -73,6 +73,8 @@ def run_checks(root: Path, skip_tests: bool = False) -> list[CheckResult]:
             ("cli_smoke", [sys.executable, "-m", "binance_spot_bot.cli", "launch-dashboard", "--start-port", "8700"]),
             ("dashboard_v2_import", [sys.executable, "-c", "import binance_spot_bot.dashboard_v2"]),
             ("dashboard_v2_api_smoke", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-api-smoke", "--json"]),
+            ("dashboard_v2_static_verify", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-static-verify", "--json"]),
+            ("dashboard_v2_launcher_report", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-launcher-report", "--find-free-port", "--json"]),
             ("dashboard_v2_page_parity", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-page-parity", "--json"]),
             ("dashboard_v2_performance_budget", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-performance-budget", "--json"]),
             ("dashboard_v2_cutover_readiness", [sys.executable, "-m", "binance_spot_bot.cli", "dashboard-v2-cutover-readiness", "--json"]),

@@ -1,0 +1,101 @@
+{
+  "run_id": "demo-to-live-pipeline",
+  "target": {
+    "status": "ok",
+    "target": {
+      "minimum_demo_sessions": 3,
+      "minimum_total_runtime_minutes": 120,
+      "minimum_candles": 500,
+      "minimum_signals": 30,
+      "minimum_allow_risk_decisions": 10,
+      "minimum_block_risk_decisions": 5,
+      "minimum_order_previews": 10,
+      "minimum_test_orders": 3,
+      "minimum_demo_orders": 3,
+      "minimum_fills": 10,
+      "minimum_rejections_or_cancellations": 2,
+      "minimum_spread_samples": 100,
+      "minimum_latency_samples": 10,
+      "minimum_reconciliation_runs": 3,
+      "required_market_regimes": [
+        "calm",
+        "volatile",
+        "low_volume",
+        "high_spread",
+        "trending",
+        "ranging"
+      ]
+    },
+    "totals": {
+      "demo_sessions": 3,
+      "total_runtime_minutes": 135,
+      "candles": 600,
+      "signals": 36,
+      "allow_risk_decisions": 15,
+      "block_risk_decisions": 9,
+      "order_previews": 12,
+      "test_orders": 6,
+      "demo_orders": 6,
+      "fills": 12,
+      "rejections_or_cancellations": 3,
+      "spread_samples": 150,
+      "latency_samples": 12,
+      "reconciliation_runs": 3
+    },
+    "market_regimes": [
+      "calm",
+      "high_spread",
+      "low_volume",
+      "ranging",
+      "trending",
+      "volatile"
+    ],
+    "missing_targets": [],
+    "missing_market_regimes": [],
+    "progress_percent": 100.0,
+    "blockers": [],
+    "warnings": [],
+    "next_recommended_collection_steps": [],
+    "no_live_statement": "DEMO-TO-LIVE TRAINING - NO LIVE TRADING",
+    "public_or_demo_data_only_statement": "PUBLIC OR DEMO/TESTNET DATA ONLY",
+    "not_financial_advice_statement": "TRAINING OUTPUT IS RESEARCH EVIDENCE, NOT FINANCIAL ADVICE",
+    "live_execution_enabled": false,
+    "live_trading_enabled": false
+  },
+  "quality": {
+    "status": "ok",
+    "quality_score": 100.0,
+    "grade": "A",
+    "blockers": [],
+    "burndown_status": "ok",
+    "live_execution_enabled": false,
+    "live_trading_enabled": false
+  },
+  "validation": {
+    "status": "ok",
+    "candidate_id": "model-candidate-fixture",
+    "grade": "A",
+    "blockers": [],
+    "baseline_comparison": "fixture_pass",
+    "confidence_calibration": "ok",
+    "not_financial_advice_statement": "VALIDATION IS RESEARCH EVIDENCE ONLY",
+    "live_trading_enabled": false
+  },
+  "promotion": {
+    "status": "ok",
+    "state": "ready_for_testnet_rehearsal",
+    "blockers": [],
+    "max_testnet_order_size_quote": 25.0,
+    "live_trading_enabled": false
+  },
+  "rehearsal": {
+    "status": "ok",
+    "test_order": "validated_fixture",
+    "order_count": 1,
+    "reconciliation": "ok",
+    "cancel_flow": "ok",
+    "kill_switch_flow": "ok",
+    "live_trading_enabled": false
+  },
+  "live_trading_enabled": false
+}

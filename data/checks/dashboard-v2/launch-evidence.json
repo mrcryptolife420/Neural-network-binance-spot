@@ -1,0 +1,48 @@
+{
+  "status": "ready",
+  "url": "http://127.0.0.1:8800",
+  "host": "127.0.0.1",
+  "port": 8800,
+  "no_browser": false,
+  "safe_env": {
+    "LIVE_TRADING_ENABLED": "false",
+    "KILL_SWITCH": "true"
+  },
+  "start_command": "python -m uvicorn binance_spot_bot.dashboard_v2.app:create_dashboard_v2_app --factory --host 127.0.0.1 --port 8800",
+  "static_build": {
+    "status": "ok",
+    "build_dir": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\src\\binance_spot_bot\\dashboard_v2\\static",
+    "index_exists": true,
+    "app_js_exists": true,
+    "styles_css_exists": true,
+    "manifest_exists": true,
+    "asset_count": 4,
+    "external_refs": [],
+    "secret_refs": [],
+    "live_order_refs": [],
+    "empty_files": [],
+    "missing_required": [],
+    "missing_api_wiring": [],
+    "warnings": [],
+    "hard_blockers": [],
+    "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+    "live_trading_enabled": false,
+    "manifest": {
+      "name": "Neural Binance Spot - Dashboard V2",
+      "short_name": "Dashboard V2",
+      "start_url": "/",
+      "display": "browser",
+      "background_color": "#f5f7fb",
+      "theme_color": "#0f172a"
+    }
+  },
+  "startup_health_wait": true,
+  "session_file": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\dashboard-v2\\launcher\\last-launch.json",
+  "stdout_log": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\logs\\dashboard-v2.log",
+  "stderr_log": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\logs\\dashboard-v2.err.log",
+  "launch_evidence": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\checks\\dashboard-v2\\launch-evidence.json",
+  "backend_health_url": "http://127.0.0.1:8800/api/health",
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false,
+  "created_at_ms": 1778951086498
+}

@@ -19,12 +19,14 @@ python -m binance_spot_bot.cli run-local --mode demo --symbol BTCUSDT --steps 50
 
 This runs the local runtime with deterministic demo candles and writes audit events under `data/audit/`.
 
-## Start visual dashboard
+## Start visual dashboard V2
 
 ```powershell
 $env:PYTHONPATH="src"
-python -m streamlit run src/binance_spot_bot/ui/streamlit_app.py -- --mode demo --symbol BTCUSDT --interval 1m
+python -m binance_spot_bot.cli control-center
 ```
+
+On Windows, double-click `Start Bot Dashboard.cmd` or `Start-Neural-Binance-Bot.cmd`.
 
 The dashboard opens in the browser and shows:
 
@@ -55,10 +57,10 @@ The dashboard opens in the browser and shows:
 
 ## Troubleshooting
 
-If Streamlit is missing:
+If Dashboard V2 dependencies are missing, the Windows one-click launcher installs the local `.[ui]` package automatically. Manual install:
 
 ```powershell
-pip install -e ".[ui]"
+python -m pip install -e ".[ui]"
 ```
 
 If imports fail:

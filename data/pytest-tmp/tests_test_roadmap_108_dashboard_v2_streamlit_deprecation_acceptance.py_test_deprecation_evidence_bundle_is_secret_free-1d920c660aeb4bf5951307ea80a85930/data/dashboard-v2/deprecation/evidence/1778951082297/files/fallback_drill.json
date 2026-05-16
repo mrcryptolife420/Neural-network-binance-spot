@@ -1,0 +1,11 @@
+{
+  "status": "ok",
+  "v2_failure_simulated": true,
+  "fallback_command": "",
+  "streamlit_import": "removed",
+  "legacy_launch_command": "",
+  "docs_link": "Dashboard V2 is the primary and only startable dashboard.",
+  "fallback_available": false,
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false
+}

@@ -7,7 +7,7 @@
     "pack_type": "workspace_template",
     "schema_version": 2,
     "author": "local",
-    "created_at_ms": 1778937809793,
+    "created_at_ms": 1778950917232,
     "compatible_workspace_schema_versions": [
       2
     ],
@@ -34,7 +34,7 @@
     ],
     "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
     "live_trading_enabled": false,
-    "content_hash": "ec0aa9bd1a7203e1"
+    "content_hash": "770cfb189d69b8d5"
   },
   "content": {
     "workspace_templates": [
@@ -300,8 +300,8 @@
         "live_trading_enabled": false,
         "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
         "metadata": {
-          "created_at_ms": 1778937809792,
-          "updated_at_ms": 1778937809792,
+          "created_at_ms": 1778950917232,
+          "updated_at_ms": 1778950917232,
           "owner": "local-operator",
           "schema_version": 2
         }

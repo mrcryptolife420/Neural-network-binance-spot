@@ -1,0 +1,7 @@
+{
+  "run_id": "ai-doctor-2e646339a4ad4696",
+  "finished_at_ms": 1778952458789,
+  "status": "warning",
+  "exit_code": 0,
+  "next_safe_action": "export_ai_doctor_bundle"
+}

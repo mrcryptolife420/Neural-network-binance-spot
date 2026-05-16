@@ -605,6 +605,7 @@ src/binance_spot_bot/packaging/__init__.py
 src/binance_spot_bot/packaging/backup_restore.py
 src/binance_spot_bot/packaging/build_manifest.py
 src/binance_spot_bot/packaging/dependency_lock.py
+src/binance_spot_bot/packaging/exe_builder.py
 src/binance_spot_bot/packaging/installed_startup_health.py
 src/binance_spot_bot/packaging/migration_planner.py
 src/binance_spot_bot/packaging/offline_recovery_kit.py
@@ -786,6 +787,7 @@ tests/test_roadmap_120_live_governance_acceptance.py
 tests/test_roadmap_121_live_ops_acceptance.py
 tests/test_roadmap_122_packaging_acceptance.py
 tests/test_roadmap_123_ai_doctor_acceptance.py
+tests/test_roadmap_124_dashboard_v2_browser_ui_acceptance.py
 tests/test_roadmaps_055_064_operator_local_ops.py
 tests/test_roadmaps_076_102_paper_os.py
 tests/test_roadmaps_082_088_ops_governance.py

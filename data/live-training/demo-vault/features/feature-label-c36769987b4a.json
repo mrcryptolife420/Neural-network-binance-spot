@@ -1,0 +1,58 @@
+{
+  "status": "ok",
+  "dataset_id": "feature-label-c36769987b4a",
+  "features": [
+    {
+      "event_id": "market-1",
+      "symbol": "BTCUSDT",
+      "spread_bps": 4.2,
+      "confidence": 0
+    },
+    {
+      "event_id": "signal-1",
+      "symbol": "BTCUSDT",
+      "spread_bps": 0,
+      "confidence": 0.62
+    },
+    {
+      "event_id": "risk-1",
+      "symbol": "BTCUSDT",
+      "spread_bps": 0,
+      "confidence": 0
+    },
+    {
+      "event_id": "fill-1",
+      "symbol": "BTCUSDT",
+      "spread_bps": 0,
+      "confidence": 0
+    }
+  ],
+  "labels": [
+    {
+      "event_id": "market-1",
+      "label": "demo_observed"
+    },
+    {
+      "event_id": "signal-1",
+      "label": "demo_observed"
+    },
+    {
+      "event_id": "risk-1",
+      "label": "demo_observed"
+    },
+    {
+      "event_id": "fill-1",
+      "label": "demo_observed"
+    }
+  ],
+  "feature_coverage": {
+    "status": "ok",
+    "optional_warnings": []
+  },
+  "leakage_report": {
+    "status": "ok",
+    "blockers": []
+  },
+  "hash": "[REDACTED]",
+  "live_trading_enabled": false
+}

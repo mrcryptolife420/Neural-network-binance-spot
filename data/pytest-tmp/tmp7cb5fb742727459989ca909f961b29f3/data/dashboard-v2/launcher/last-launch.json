@@ -1,0 +1,22 @@
+{
+  "status": "planned",
+  "url": "http://127.0.0.1:8820",
+  "port": 8820,
+  "pid": null,
+  "log_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp7cb5fb742727459989ca909f961b29f3\\data\\logs\\dashboard-v2.log",
+  "error_log_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp7cb5fb742727459989ca909f961b29f3\\data\\logs\\dashboard-v2.err.log",
+  "live_trading_enabled": false,
+  "kill_switch": true,
+  "command": [
+    "C:\\Python314\\python.exe",
+    "-m",
+    "uvicorn",
+    "binance_spot_bot.dashboard_v2.app:create_dashboard_v2_app",
+    "--factory",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8820"
+  ],
+  "evidence_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tmp7cb5fb742727459989ca909f961b29f3\\data\\checks\\dashboard\\launch-evidence.json"
+}

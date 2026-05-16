@@ -1,0 +1,19 @@
+{
+  "status": "ok",
+  "run_id": "demo-to-live-pipeline",
+  "files": [
+    {
+      "path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\live-training\\demo-to-live\\evidence\\demo-to-live-pipeline\\files\\demo_to_live_pipeline.json",
+      "sha256": "[REDACTED]"
+    }
+  ],
+  "hashes": [
+    "[REDACTED]"
+  ],
+  "no_live_order_proof": true,
+  "no_secret_proof": true,
+  "no_financial_advice_proof": true,
+  "live_execution_enabled": false,
+  "live_trading_enabled": false,
+  "manifest_hash": "[REDACTED]"
+}

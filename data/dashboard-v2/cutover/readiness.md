@@ -1,7 +1,7 @@
 # Dashboard V2 Cutover Readiness
 
-Grade: A
-Status: ok
+Grade: D
+Status: blocked
 
 - feature_parity: ok (15 pts)
 - api_smoke: ok (10 pts)
@@ -11,5 +11,5 @@ Status: ok
 - static_build_offline_assets: ok (10 pts)
 - support_bundle_integration: ok (10 pts)
 - operator_uat_acceptance: ok (10 pts)
-- streamlit_fallback_available: ok (10 pts)
+- streamlit_fallback_available: blocked (0 pts)
 - no_live_proof: ok (15 pts)

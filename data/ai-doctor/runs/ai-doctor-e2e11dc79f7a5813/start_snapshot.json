@@ -1,0 +1,11 @@
+{
+  "run_id": "ai-doctor-e2e11dc79f7a5813",
+  "started_at_ms": 1778952541318,
+  "project_root": "C:\\Users\\highlife\\Desktop\\Neural network binance spot",
+  "python_version": "3.14.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "safe_env": {
+    "LIVE_TRADING_ENABLED": "false",
+    "KILL_SWITCH": "true"
+  }
+}

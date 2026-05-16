@@ -1,0 +1,47 @@
+{
+  "status": "ready",
+  "url": "http://127.0.0.1:8800",
+  "host": "127.0.0.1",
+  "port": 8800,
+  "no_browser": true,
+  "safe_env": {
+    "LIVE_TRADING_ENABLED": "false",
+    "KILL_SWITCH": "true"
+  },
+  "start_command": "python -m uvicorn binance_spot_bot.dashboard_v2.app:create_dashboard_v2_app --factory --host 127.0.0.1 --port 8800",
+  "static_build": {
+    "status": "warn",
+    "build_dir": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_124_dashboard_v2_browser_ui_acceptance.py_test_dashboard_v2_launcher_scripts_and_packaging_are_safe-3678a886d9be40efb436bd9c23ac8af3\\src\\binance_spot_bot\\dashboard_v2\\static",
+    "index_exists": false,
+    "app_js_exists": false,
+    "styles_css_exists": false,
+    "manifest_exists": false,
+    "asset_count": 0,
+    "external_refs": [],
+    "secret_refs": [],
+    "live_order_refs": [],
+    "empty_files": [],
+    "missing_required": [
+      "index.html",
+      "app.js",
+      "styles.css",
+      "manifest.json"
+    ],
+    "missing_api_wiring": [],
+    "warnings": [
+      "static build missing; local fallback or dev server can still be used"
+    ],
+    "hard_blockers": [],
+    "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+    "live_trading_enabled": false
+  },
+  "startup_health_wait": true,
+  "session_file": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_124_dashboard_v2_browser_ui_acceptance.py_test_dashboard_v2_launcher_scripts_and_packaging_are_safe-3678a886d9be40efb436bd9c23ac8af3\\data\\dashboard-v2\\launcher\\last-launch.json",
+  "stdout_log": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_124_dashboard_v2_browser_ui_acceptance.py_test_dashboard_v2_launcher_scripts_and_packaging_are_safe-3678a886d9be40efb436bd9c23ac8af3\\data\\logs\\dashboard-v2.log",
+  "stderr_log": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_124_dashboard_v2_browser_ui_acceptance.py_test_dashboard_v2_launcher_scripts_and_packaging_are_safe-3678a886d9be40efb436bd9c23ac8af3\\data\\logs\\dashboard-v2.err.log",
+  "launch_evidence": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_124_dashboard_v2_browser_ui_acceptance.py_test_dashboard_v2_launcher_scripts_and_packaging_are_safe-3678a886d9be40efb436bd9c23ac8af3\\data\\checks\\dashboard-v2\\launch-evidence.json",
+  "backend_health_url": "http://127.0.0.1:8800/api/health",
+  "no_live_statement": "LOCAL REALTIME DASHBOARD - NO LIVE TRADING",
+  "live_trading_enabled": false,
+  "created_at_ms": 1778950970129
+}

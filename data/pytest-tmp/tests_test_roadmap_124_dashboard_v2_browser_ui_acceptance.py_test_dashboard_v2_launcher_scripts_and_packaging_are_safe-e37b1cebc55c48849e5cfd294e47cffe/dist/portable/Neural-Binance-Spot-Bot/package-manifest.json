@@ -1,0 +1,20 @@
+{
+  "app_name": "Neural Binance Spot Bot",
+  "package_version": "0.1.0",
+  "source_git_ref": "local",
+  "build_time_ms": 1778950622972,
+  "package_profile": "dashboard-full",
+  "python_version": "3.14.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependency_lock_hash": "[REDACTED]",
+  "dashboard_build_hash": "[REDACTED]",
+  "safe_env_defaults": {
+    "LIVE_TRADING_ENABLED": "false",
+    "KILL_SWITCH": "true"
+  },
+  "live_trading_enabled_default": false,
+  "kill_switch_default": true,
+  "secret_scan_status": "required",
+  "no_live_auto_start_statement": "PACKAGING NEVER AUTO-STARTS LIVE TRADING",
+  "manifest_hash": "[REDACTED]"
+}

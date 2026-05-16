@@ -1,0 +1,14 @@
+{
+  "status": "ok",
+  "run_id": "1778951039974",
+  "manifest": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_v2_only_release_evidence_and_readiness_report_a-3c8e8b710a6e41768e622619988ce9f1\\data\\dashboard-v2\\legacy-archive\\1778951039974\\streamlit_legacy_archive_manifest.json",
+  "summary": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_v2_only_release_evidence_and_readiness_report_a-3c8e8b710a6e41768e622619988ce9f1\\data\\dashboard-v2\\legacy-archive\\1778951039974\\streamlit_legacy_archive_summary.md",
+  "files": [
+    {
+      "source": "streamlit_inventory",
+      "archive_path": "C:\\Users\\highlife\\Desktop\\Neural network binance spot\\data\\pytest-tmp\\tests_test_roadmap_109_dashboard_v2_removal_candidate_acceptance.py_test_v2_only_release_evidence_and_readiness_report_a-3c8e8b710a6e41768e622619988ce9f1\\data\\dashboard-v2\\legacy-archive\\1778951039974\\files\\streamlit_inventory.json",
+      "sha256_16": "045f4ca2734a55e2"
+    }
+  ],
+  "live_trading_enabled": false
+}
